@@ -1,9 +1,9 @@
 ---
-title: "Community Contributions for ..."
+title: "edav.info, 2nd edition"
 date: "2022-01-26"
 site: bookdown::bookdown_site
-github-repo: YOUR_USER_NAME/YOUR_REPO
-description: "This book contains community contributions for ..."
+github-repo: jtr13/edav2
+description: "This line is controlled in the description field of index.Rmd..."
 ---
 
 # Welcome!
