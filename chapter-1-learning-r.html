@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 2 Chapter 1 Learning R | edav.info, 2nd edition</title>
-<meta name="description" content="This is a page working in progress :)">
+<title>Chapter 2 Chapter 1-Learning R | edav.info, 2nd edition</title>
+<meta name="description" content="2.1 Getting started Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 2 Chapter 1 Learning R | edav.info, 2nd edition">
+<meta property="og:title" content="Chapter 2 Chapter 1-Learning R | edav.info, 2nd edition">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This is a page working in progress :)">
+<meta property="og:description" content="2.1 Getting started Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 2 Chapter 1 Learning R | edav.info, 2nd edition">
-<meta name="twitter:description" content="This is a page working in progress :)">
+<meta name="twitter:title" content="Chapter 2 Chapter 1-Learning R | edav.info, 2nd edition">
+<meta name="twitter:description" content="2.1 Getting started Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -39,8 +39,8 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
-<li><a class="active" href="chapter-1-learning-r.html"><span class="header-section-number">2</span> Chapter 1 Learning R</a></li>
-<li><a class="" href="learning-ggplot2.html"><span class="header-section-number">3</span> Learning ggplot2</a></li>
+<li><a class="active" href="chapter-1-learning-r.html"><span class="header-section-number">2</span> Chapter 1-Learning R</a></li>
+<li><a class="" href="chapter-2-learning-ggplot2.html"><span class="header-section-number">3</span> Chapter 2-Learning ggplot2</a></li>
 </ul>
 
         <div class="book-extra">
@@ -50,17 +50,56 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="chapter-1-learning-r" class="section level1">
 <h1>
-<span class="header-section-number">2</span> Chapter 1 Learning R<a class="anchor" aria-label="anchor" href="#chapter-1-learning-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2</span> Chapter 1-Learning R<a class="anchor" aria-label="anchor" href="#chapter-1-learning-r"><i class="fas fa-link"></i></a>
 </h1>
-
+<div id="getting-started" class="section level2">
+<h2>
+<span class="header-section-number">2.1</span> Getting started<a class="anchor" aria-label="anchor" href="#getting-started"><i class="fas fa-link"></i></a>
+</h2>
+<p>Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of essentials so you can get up and running. The best resources are scattered in different places online, so bear with links to various sites depending on the topic.</p>
+<div id="top-10-essentials-checklist" class="section level3">
+<h3>
+<span class="header-section-number">2.1.1</span> Top 10 Essentials Checklist<a class="anchor" aria-label="anchor" href="#top-10-essentials-checklist"><i class="fas fa-link"></i></a>
+</h3>
+<p>(<em>r4ds</em> = <a href="https://r4ds.had.co.nz/">R for Data Science</a> by Garrett Grolemund and Hadley Wickham, free online)</p>
+<p>1.<a href="https://r4ds.had.co.nz/introduction.html#r" target="_blank">Install R</a> (r4ds) – You need to have this installed but you won’t open the application since you’ll be working in RStudio. If you already installed R, make sure you’re current! The latest version of R (as of 2022-01-18) is R 4.1.2 “Bird Hippie” released on 2021/11/01.</p>
+<p>2.<a href="https://r4ds.had.co.nz/introduction.html#rstudio" target="_blank">Install RStudio</a> (r4ds) – Download the free, Desktop version for your OS. Working in this IDE will make working in R much more enjoyable. As with R, stay current. RStudio is constantly adding new features. The latest version (as of 2022-01-18) is RStudio 2021.09.2+382 (“Ghost Orchid”) release notes.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>
+<p><a href="https://b-rodrigues.github.io/modern_R/getting-to-know-rstudio.html" target="_blank">Get comfortable with RStudio</a> – In this chapter of Bruno Rodriguez’s <em>Modern R with the Tidyverse</em>, you’ll learn about panes, options, getting help, keyboard shortcuts, projects, add-ins, and packages. Be sure to try out:</p>
+<ul>
+<li>Do some math in the console</li>
+<li>Create an R Markdown file (<code>.Rmd</code>) and render it to <code>.html</code>
+</li>
+<li>Install some packages like <code>tidyverse</code> or <code>MASS</code>
+</li>
+</ul>
+<p>Another great option for learning the IDE: Watch <a href="https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/" target="_blank">Writing Code in RStudio</a> (<em>RStudio webinar</em>)</p>
+</li>
+<li><p>Learn <a href="https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html" target="_blank">“R Nuts and Bolts”</a> – Roger Peng’s chapter in <em>R Programming</em> will give you a solid foundation in the basic building blocks of R. It’s worth making the investing in understanding how R objects work now so they don’t cause you problems later. Focus on <strong>vectors</strong> and especially <strong>data frames</strong>; matrices and lists don’t come up often in data visualization. Get familiar with R classes: <strong>integer, numeric, character,</strong> and <strong>logical</strong>. Understand how <strong>factors</strong> work; they are very important for graphing.</p></li>
+<li><p><a href="https://r4ds.had.co.nz/introduction.html#the-tidyverse" target="_blank">Tidy up</a> (<em>r4ds</em>) – Install the tidyverse, and get familiar with what it is. <em>We will discuss differences between base R and the tidyverse in class.</em></p></li>
+<li><p><a href="https://r4ds.had.co.nz/data-visualisation.html" target="_blank">Learn ggplot2 basics</a> (<em>r4ds</em>) – In class we will study the grammar of graphics on which <strong>ggplot2</strong> is based, but it will help to familiarize yourself with the syntax in advance. Avail yourself of the “Data Visualization with ggplot2” cheatsheet by clicking “Help” “Cheatsheets…” within RStudio.</p></li>
+<li><p><a href="https://rmarkdown.rstudio.com/articles_intro.html" target="_blank">Learn some RMarkdown</a> – For this class you will write assignments in R Markdown (stored as <code>.Rmd</code> files) and then render them into pdfs for submission. You can jump right in and open a new R Markdown file (<em>File &gt; New File &gt; R Markdown…</em>), and leave the <code>Default Output Format</code> as <code>HTML</code>. You will get a R Markdown template you can tinker with. Click the “knit” button and see what happens. For more detail, watch the RStudio webinar <a href="https://resources.rstudio.com/the-essentials-of-data-science/getting-started-with-r-markdown-60-02">Getting Started with R Markdown</a></p></li>
+<li><p><a href="https://r4ds.had.co.nz/workflow-projects.html" target="_blank">Use RStudio projects</a> (<em>r4ds</em>) – If you haven’t already, drink the Kool-Aid. Make each problem set a separate project. You will never have to worry about <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> or <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> again because everything will just be in the right places.
+Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsmanagingpart1-2" target="_blank">“Projects in RStudio”</a></p></li>
+<li><p><a href="https://r4ds.had.co.nz/transform.html" target="_blank">Learn the basic dplyr verbs</a> for data manipulation (<em>r4ds</em>) – Concentrate on the main verbs: <strong><code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code></strong> (rows), <strong><code>select()</code></strong> (columns), <strong><code>mutate()</code></strong>, <strong><code>arrange()</code></strong> (rows), <strong><code>group_by()</code></strong>, and <strong><code>summarize()</code></strong>. Learn the pipe <strong><code>%&gt;%</code></strong> operator.</p></li>
+<li><p>Know how to <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank">tidy your data</a> – The <strong><code>pivot_longer()</code></strong> function from the <strong>tidyr</strong> package – successor to <strong><code>gather()</code></strong> – will help you get your data in the right form for plotting. More on this in class. Check out these <a href="https://github.com/gadenbuie/tidyexplain" target="_blank">super cool animations</a>, which follow a data frame as it is transformed by <code>tidyr</code> functions.</p></li>
+</ol>
 <p><em>This is a page working in progress :)</em></p>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="index.html"><span class="header-section-number">1</span> Welcome!</a></div>
-<div class="next"><a href="learning-ggplot2.html"><span class="header-section-number">3</span> Learning ggplot2</a></div>
+<div class="next"><a href="chapter-2-learning-ggplot2.html"><span class="header-section-number">3</span> Chapter 2-Learning ggplot2</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#chapter-1-learning-r"><span class="header-section-number">2</span> Chapter 1 Learning R</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#chapter-1-learning-r"><span class="header-section-number">2</span> Chapter 1-Learning R</a></li>
+<li>
+<a class="nav-link" href="#getting-started"><span class="header-section-number">2.1</span> Getting started</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#top-10-essentials-checklist"><span class="header-section-number">2.1.1</span> Top 10 Essentials Checklist</a></li></ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
