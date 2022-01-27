@@ -1,1 +1,3 @@
 welcome
+chapter-1-learning-r
+learning-ggplot2
