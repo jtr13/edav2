@@ -10,7 +10,7 @@ language:
 # Chapter ordering
 rmd_files: [
   # Part: Introduction
-  'index.Rmd' # must be first chapter
-  'learning_R.Rmd'
+  'index.Rmd', # must be first chapter
+  'learning_R.Rmd',
   'learning_ggplot2.Rmd'
 ]
