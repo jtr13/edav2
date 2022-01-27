@@ -1,3 +1,5 @@
 *This is a page working in progress :)*
 
-# Learning ggplot2
+# Chapter 2-Learning ggplot2
+
+##
