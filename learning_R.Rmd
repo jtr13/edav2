@@ -76,7 +76,7 @@ The chunk options refer to the first line and you can add some of the following 
 
 `message=FALSE` – Suppress messages, especially useful when loading packages
 
-c`ache=TRUE` – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.
+`cache=TRUE` – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.
 
 ### Sizing figures
 
@@ -102,10 +102,6 @@ Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `
 
 Insert R chunk
 - **option-command-i**  (Mac) - **ctrl+alt+I**  (Windows)
-
-```{r, echo = FALSE, comment=""}
-cat("```{r}\n```")
-```
 
 Insert `%>%`   ("the pipe") 
 - **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows)
