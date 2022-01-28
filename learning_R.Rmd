@@ -78,57 +78,57 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 
 <!-- `cache=TRUE` – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected. -->
 
-### Sizing figures
+<!-- ### Sizing figures -->
 
-Always use chunk options to size figures.  You can set a default size in the YAML at the beginning of the .Rmd file as so:
+<!-- Always use chunk options to size figures.  You can set a default size in the YAML at the beginning of the .Rmd file as so: -->
 
-```
-output:
-  pdf_document:
-    fig_height: 3
-    fig_width: 5
-```
+<!-- ``` -->
+<!-- output: -->
+<!--   pdf_document: -->
+<!--     fig_height: 3 -->
+<!--     fig_width: 5 -->
+<!-- ``` -->
 
-Another method is to click the gear `r emo::ji("gear")` next to the Knit button, then  **Output Options...**, and finally the **Figures** tab.
+<!-- Another method is to click the gear `r emo::ji("gear")` next to the Knit button, then  **Output Options...**, and finally the **Figures** tab. -->
 
-Then as needed override one or more defaults in particular chunks:
+<!-- Then as needed override one or more defaults in particular chunks: -->
 
-`{r, fig.width=4, fig.height=2}`
+<!-- `{r, fig.width=4, fig.height=2}` -->
 
 
-Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `fig.align`; there are [many more](https://yihui.name/knitr/options/#plots){target="_blank"}.
+<!-- Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `fig.align`; there are [many more](https://yihui.name/knitr/options/#plots){target="_blank"}. -->
 
-### R studio keyborad shortcuts
+<!-- ### R studio keyborad shortcuts -->
 
-Insert R chunk
-- **option-command-i**  (Mac) - **ctrl+alt+I**  (Windows)
+<!-- Insert R chunk -->
+<!-- - **option-command-i**  (Mac) - **ctrl+alt+I**  (Windows) -->
 
-```{r, echo = FALSE, comment=""}
-cat("```{r}\n```")
-```
+<!-- ```{r, echo = FALSE, comment=""} -->
+<!-- cat("```{r}\n```") -->
+<!-- ``` -->
 
-Insert `%>%`   ("the pipe")
-- **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows)
+<!-- Insert `%>%`   ("the pipe") -->
+<!-- - **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows) -->
 
-Comment/Uncomment lines
-- **shift-command-C**  (Mac)  - **ctrl-shift+C** (Windows)
+<!-- Comment/Uncomment lines -->
+<!-- - **shift-command-C**  (Mac)  - **ctrl-shift+C** (Windows) -->
 
-Knit Document
-- **shift-command-K**  (Mac)  - **ctrl-shift+K** (Windows)
+<!-- Knit Document -->
+<!-- - **shift-command-K**  (Mac)  - **ctrl-shift+K** (Windows) -->
 
-For more shortcuts refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
+<!-- For more shortcuts refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE) -->
 
-### Viewing plots in plot window
+<!-- ### Viewing plots in plot window -->
 
-Would you like your plots to appear in the plot window instead of below each chunk in the `.Rmd` file? Click `r emo::ji("gear")` and then  <i class="fas fa-check"></i> **Chunk Output in Console**.
+<!-- Would you like your plots to appear in the plot window instead of below each chunk in the `.Rmd` file? Click `r emo::ji("gear")` and then  <i class="fas fa-check"></i> **Chunk Output in Console**. -->
 
-### Adding figures and links
+<!-- ### Adding figures and links -->
 
-```
-![DESCRIPTION HERE](PATH HERE)   Add images
-[CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink
-```
+<!-- ``` -->
+<!-- ![DESCRIPTION HERE](PATH HERE)   Add images -->
+<!-- [CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink -->
+<!-- ``` -->
 
-*Note:* Do not use these in r chunks as they will not work.
+<!-- *Note:* Do not use these in r chunks as they will not work. -->
 
 
