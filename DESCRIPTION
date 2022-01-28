@@ -7,4 +7,7 @@ Suggests:
     bslib,
     downlit,
     withr,
-    xml2
+    xml2,
+    ggplot2,
+    gridExtra,
+    Sleuth3
