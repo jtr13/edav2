@@ -10,4 +10,5 @@ Suggests:
     xml2,
     ggplot2,
     gridExtra,
-    Sleuth3
+    Sleuth3，
+    emo
