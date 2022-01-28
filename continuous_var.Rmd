@@ -1,112 +1,112 @@
-<!-- # Unidimensional Continuous Variables -->
+# Unidimensional Continuous Variables
 
-<!-- In this chapter, we will demonstrate all types of graphs only using `ggplot2`. -->
+In this chapter, we will demonstrate all types of graphs only using `ggplot2`.
 
-<!-- ## Histogram -->
+## Histogram
 
-<!-- ### Basics and implications -->
-<!-- We will start with an easy example.  -->
+### Basics and implications
+We will start with an easy example.
 
-<!-- ```{r} -->
-<!-- library(ggplot2) -->
-<!-- library(gridExtra) -->
+```{r}
+library(ggplot2)
+library(gridExtra)
 
-<!-- #Example data -->
-<!-- x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68) -->
-<!-- #Stored as a dataframe -->
-<!-- df <- data.frame(x) -->
+#Example data
+x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
+#Stored as a dataframe
+df <- data.frame(x)
 
-<!-- ggplot(df, aes(x)) + -->
-<!--   geom_histogram(color = "grey", fill = "lightBlue", binwidth = 5, center = 52.5) + -->
-<!--   ggtitle("ggplot2 histogram of x") -->
-<!-- ``` -->
-<!-- In this example, we used `geom_histogram` to create a histogram on variable `x`. We can see that it is quick to make and does not need much pre-processing. Moreover, Histograms show data’s empirical distribution within a set of intervals and we suggest using it as a one of the first steps to understand your data. -->
+ggplot(df, aes(x)) +
+  geom_histogram(color = "grey", fill = "lightBlue", binwidth = 5, center = 52.5) +
+  ggtitle("ggplot2 histogram of x")
+```
+In this example, we used `geom_histogram` to create a histogram on variable `x`. We can see that it is quick to make and does not need much pre-processing. Moreover, Histograms show data’s empirical distribution within a set of intervals and we suggest using it as a one of the first steps to understand your data.
 
-<!-- *Note:* as shown above, ggplot expects a dataframe, so make sure you do not throw a vector into ggplot. -->
+*Note:* as shown above, ggplot expects a dataframe, so make sure you do not throw a vector into ggplot.
 
-<!-- ### Types of Histograms -->
+### Types of Histograms
 
-<!-- The y-scale of histograms can be represented in a variety of ways to express different results: -->
+The y-scale of histograms can be represented in a variety of ways to express different results:
 
-<!-- 1. Frequency or count: y = number of values that fall in each bin -->
-<!-- 2. Relative frequency: y = number of values that fall in each bin / total number of values -->
-<!-- 3. Cumulative frequency: y = total number of values <= (or <) right boundary of bin -->
-<!-- 4. Density: y = relative frequency / binwidth -->
+1. Frequency or count: y = number of values that fall in each bin
+2. Relative frequency: y = number of values that fall in each bin / total number of values
+3. Cumulative frequency: y = total number of values <= (or <) right boundary of bin
+4. Density: y = relative frequency / binwidth
 
-<!-- ### Parameters for geom_histogram -->
+### Parameters for geom_histogram
 
-<!-- #### Bin boundaries -->
-<!-- Be mindful of the boundaries of the bins and whether a point will fall into the left or right bin if it is on a boundary. You can use the parameter `closed` to control the intervals. -->
+#### Bin boundaries
+Be mindful of the boundaries of the bins and whether a point will fall into the left or right bin if it is on a boundary. You can use the parameter `closed` to control the intervals.
 
-<!-- ```{r} -->
-<!-- p1 <- ggplot(df, aes(x)) + -->
-<!--   geom_histogram(color="blue",fill="lightblue", binwidth = 5, center = 52.5, closed="left")  + -->
-<!--   ggtitle("Left Closed graph") -->
+```{r}
+p1 <- ggplot(df, aes(x)) +
+  geom_histogram(color="blue",fill="lightblue", binwidth = 5, center = 52.5, closed="left")  +
+  ggtitle("Left Closed graph")
 
-<!-- p2 <- ggplot(df, aes(x)) + -->
-<!--   geom_histogram(color="blue",fill="lightblue", binwidth = 5, center = 52.5, closed="right")  + -->
-<!--   ggtitle("Right Closed graph") -->
+p2 <- ggplot(df, aes(x)) +
+  geom_histogram(color="blue",fill="lightblue", binwidth = 5, center = 52.5, closed="right")  +
+  ggtitle("Right Closed graph")
 
-<!-- grid.arrange(p1, p2, ncol = 2) -->
-<!-- ``` -->
+grid.arrange(p1, p2, ncol = 2)
+```
 
 
-<!-- #### Bin numbers -->
+#### Bin numbers
 
-<!-- ```{r} -->
-<!-- library(Sleuth3) -->
-<!-- finches <- Sleuth3::case0201 -->
+```{r}
+library(Sleuth3)
+finches <- Sleuth3::case0201
 
-<!-- #Default / Only adding some styles to make graph consistent -->
-<!-- ggplot(finches, aes(x = Depth)) + -->
-<!--   geom_histogram(color="blue",fill="lightblue") + -->
-<!--   ggtitle("Default with pop-up about bin number") -->
-<!-- ``` -->
-<!-- We start by passing no parameters into `geom_histogram` and you will notice a pop-up saying that the default number of bins is 30. -->
-<!-- We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with *binwidth* or provide the desired number of bins with *bins*. Consider the following modifications: -->
+#Default / Only adding some styles to make graph consistent
+ggplot(finches, aes(x = Depth)) +
+  geom_histogram(color="blue",fill="lightblue") +
+  ggtitle("Default with pop-up about bin number")
+```
+We start by passing no parameters into `geom_histogram` and you will notice a pop-up saying that the default number of bins is 30.
+We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with *binwidth* or provide the desired number of bins with *bins*. Consider the following modifications:
 
-<!-- ```{r} -->
-<!-- # using binwidth -->
-<!-- p3 <- ggplot(finches, aes(x = Depth)) + -->
-<!--   geom_histogram(color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) + -->
-<!--   ggtitle("Changed binwidth value") -->
+```{r}
+# using binwidth
+p3 <- ggplot(finches, aes(x = Depth)) +
+  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
+  ggtitle("Changed binwidth value")
 
-<!-- # using bins -->
-<!-- p4 <- ggplot(finches, aes(x = Depth)) + -->
-<!--   geom_histogram(color="blue",fill="lightblue",bins = 15, boundary = 6) + -->
-<!--   ggtitle("Changed bin value") -->
+# using bins
+p4 <- ggplot(finches, aes(x = Depth)) +
+  geom_histogram(color="blue",fill="lightblue",bins = 15, boundary = 6) +
+  ggtitle("Changed bin value")
 
-<!-- # format plot layout -->
-<!-- grid.arrange(p3, p4, ncol = 2) -->
-<!-- ``` -->
+# format plot layout
+grid.arrange(p3, p4, ncol = 2)
+```
 
-<!-- *Note:* There is no gold standard on the number of bins, so try different numbers to generate best results. -->
+*Note:* There is no gold standard on the number of bins, so try different numbers to generate best results.
 
-<!-- #### Bin alignment -->
+#### Bin alignment
 
-<!-- Consider this comparison -->
+Consider this comparison
 
-<!-- ```{r} -->
-<!-- p5 <- ggplot(finches, aes(x = Depth)) + -->
-<!--   geom_histogram(color="blue",fill="lightblue",binwidth = 0.5) + -->
-<!--   ggtitle("Without alignment") -->
+```{r}
+p5 <- ggplot(finches, aes(x = Depth)) +
+  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5) +
+  ggtitle("Without alignment")
 
-<!-- p6 <- ggplot(finches, aes(x = Depth)) + -->
-<!--   geom_histogram(color="blue",fill="lightblue",bins = 15, boundary = 6) + -->
-<!--   ggtitle("With alignment") -->
+p6 <- ggplot(finches, aes(x = Depth)) +
+  geom_histogram(color="blue",fill="lightblue",bins = 15, boundary = 6) +
+  ggtitle("With alignment")
 
-<!-- grid.arrange(p5, p6, ncol = 2) -->
-<!-- ``` -->
+grid.arrange(p5, p6, ncol = 2)
+```
 
-<!-- Notice that the boundary of bins does not start at an axis and the only difference in the code is the removal of `boundry`. To control the position of bins, we can use either parameter `center` or `boundary`. You can use `boundary` to specify the endpoint of any bin or `center` to specify the center of any bin and ggplot2 will be able to calculate where to place the rest of the bins.  (Also, notice that when the boundary was changed, the number of bins got smaller by one. This is because by default the bins are centered and go over/under the range of the data.) In the above example, we specify `boundary` to be 6. We can see the first bin starts at 6 and the position of other bins are calculated based on the binwidth 0.5. -->
+Notice that the boundary of bins does not start at an axis and the only difference in the code is the removal of `boundry`. To control the position of bins, we can use either parameter `center` or `boundary`. You can use `boundary` to specify the endpoint of any bin or `center` to specify the center of any bin and ggplot2 will be able to calculate where to place the rest of the bins.  (Also, notice that when the boundary was changed, the number of bins got smaller by one. This is because by default the bins are centered and go over/under the range of the data.) In the above example, we specify `boundary` to be 6. We can see the first bin starts at 6 and the position of other bins are calculated based on the binwidth 0.5.
 
-<!-- ### Interactive histograms with `ggvis` -->
+### Interactive histograms with `ggvis`
 
-<!-- The `ggvis` package is not currently in development, but does certain things very well, such as adjusting parameters of a histogram interactively while coding. If you are interested, refer at https://ggvis.rstudio.com/ggvis-basics.html. -->
+The `ggvis` package is not currently in development, but does certain things very well, such as adjusting parameters of a histogram interactively while coding. If you are interested, refer at https://ggvis.rstudio.com/ggvis-basics.html.
 
-<!-- ## Boxplot -->
+## Boxplot
 
-<!-- ## Ridgeline plot -->
+## Ridgeline plot
 
-<!-- ## Normal Distribution -->
+## Normal Distribution
 
