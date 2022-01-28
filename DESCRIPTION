@@ -13,4 +13,5 @@ Imports:
     gridExtra,
     Sleuth3，
     emo,
-    pak
+Remotes:
+    hadley/emo
