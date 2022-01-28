@@ -5,13 +5,10 @@ Version: 0.0.0.9000
 Imports:
     ggplot2,
     gridExtra,
-    Sleuth3，
-    emo
+    Sleuth3
 Suggests:
     bookdown,
     bslib,
     downlit,
     withr,
     xml2
-Remotes:
-    hadley/emo
