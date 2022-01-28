@@ -1,5 +1,5 @@
 welcome
-chapter-1-learning-r
+learning-r
 getting-started
 top-10-essentials-checklist
 learning-ggplot2
