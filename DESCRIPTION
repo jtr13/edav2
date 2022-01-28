@@ -7,11 +7,11 @@ Suggests:
     bslib,
     downlit,
     withr,
-    xml2,
+    xml2
 Imports:
     ggplot2,
     gridExtra,
     Sleuth3，
-    emo,
+    emo
 Remotes:
     hadley/emo
