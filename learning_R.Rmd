@@ -38,4 +38,97 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 
 10. Know how to [tidy your data](https://r4ds.had.co.nz/tidy-data.html){target="_blank"} -- The **`pivot_longer()`** function from the **tidyr** package -- successor to **`gather()`** -- will help you get your data in the right form for plotting.  More on this in class. Check out these [super cool animations](https://github.com/gadenbuie/tidyexplain){target="_blank"}, which follow a data frame as it is transformed by `tidyr` functions.
 
+## Troubleshooting
+
+### Document doesn’t knit
+
+Normally an error message will display in the `R Markdown section` pointing to some lines with specific reasons. Try Googling as your first option and if not finding a solution, leave a post on ed discussion.
+
+### Functions stop working
+
+Strange behavior from functions that previously worked are often caused by function conflicts. This can happen if you have two packages loaded with the same function names. To indicate the proper package, namespace it. Conflicts commonly occur with `select` and `filter` and `map`. If you intend the tidyverse ones use:
+
+`dplyr::select`, `dplyr::filter` and `purrr::map`.
+
+Some other culprits:
+
+`dplyr::summarise()` and `vcdExtra::summarise()`
+
+`ggmosaic::mosaic()` and `vcd::mosaic()`
+
+`leaflet::addLegend()` and `xts::addLegend()`
+
+`dplyr::select` and `MASS::select`
+
+## Tips & Tricks
+
+### knitr
+
+Upon creating a new R markdown file, you should always notice a section like this:
+
+![](knitr.png)
+
+The chunk options refer to the first line and you can add some of the following options:
+
+![](knitr2.png)
+
+`warning=FALSE` - Suppress warnings
+
+`message=FALSE` – Suppress messages, especially useful when loading packages
+
+c`ache=TRUE` – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.
+
+### Sizing figures
+
+Always use chunk options to size figures.  You can set a default size in the YAML at the beginning of the .Rmd file as so:
+
+```
+output: 
+  pdf_document: 
+    fig_height: 3
+    fig_width: 5
+```
+
+Another method is to click the gear `r emo::ji("gear")` next to the Knit button, then  **Output Options...**, and finally the **Figures** tab.
+
+Then as needed override one or more defaults in particular chunks:
+
+`{r, fig.width=4, fig.height=2}`
+
+
+Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `fig.align`; there are [many more](https://yihui.name/knitr/options/#plots){target="_blank"}.
+
+### R studio keyborad shortcuts
+
+Insert R chunk
+- **option-command-i**  (Mac) - **ctrl+alt+I**  (Windows)
+
+```{r, echo = FALSE, comment=""}
+cat("```{r}\n```")
+```
+
+Insert `%>%`   ("the pipe") 
+- **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows)
+
+Comment/Uncomment lines
+- **shift-command-C**  (Mac)  - **ctrl-shift+C** (Windows)
+
+Knit Document
+- **shift-command-K**  (Mac)  - **ctrl-shift+K** (Windows)
+
+For more shortcuts refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
+
+### Viewing plots in plot window
+
+Would you like your plots to appear in the plot window instead of below each chunk in the `.Rmd` file? Click `r emo::ji("gear")` and then  <i class="fas fa-check"></i> **Chunk Output in Console**. 
+
+### Adding figures and links
+
+```
+![DESCRIPTION HERE](PATH HERE)   Add images
+[CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink
+```
+
+*Note:* Do not use these in r chunks as they will not work.
+
 

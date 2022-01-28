@@ -57,9 +57,9 @@ grid.arrange(p1, p2, ncol = 2)
 library(Sleuth3)
 finches <- Sleuth3::case0201
 
-#Default 
+#Default / Only adding some styles to make graph consistent
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram() +
+  geom_histogram(color="blue",fill="lightblue") +
   ggtitle("Default with pop-up about bin number")
 ```
 We start by passing no parameters into `geom_histogram` and you will notice a pop-up saying that the default number of bins is 30.
