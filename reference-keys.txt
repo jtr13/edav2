@@ -4,3 +4,15 @@ getting-started
 top-10-essentials-checklist
 learning-ggplot2
 section
+unidimensional-continuous-variables
+histogram
+basics-and-implications
+types-of-histograms
+parameters-for-geom_histogram
+bin-boundaries
+bin-numbers
+bin-alignment
+interactive-histograms-with-ggvis
+boxplot
+ridgeline-plot
+normal-distribution
