@@ -2,15 +2,13 @@ Package: placeholder
 Type: Book
 Title: Does not matter
 Version: 0.0.0.9000
+Imports:
+    ggplot2,
+    gridExtra,
+    Sleuth3
 Suggests:
     bookdown,
     bslib,
     downlit,
     withr,
-    xml2,
-Imports:
-    ggplot2,
-    gridExtra,
-    Sleuth3，
-    emo,
-    pak
+    xml2
