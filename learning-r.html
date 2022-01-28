@@ -89,6 +89,91 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 </ol>
 </div>
 </div>
+<div id="troubleshooting" class="section level2">
+<h2>
+<span class="header-section-number">2.2</span> Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"><i class="fas fa-link"></i></a>
+</h2>
+<div id="document-doesnt-knit" class="section level3">
+<h3>
+<span class="header-section-number">2.2.1</span> Document doesn’t knit<a class="anchor" aria-label="anchor" href="#document-doesnt-knit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Normally an error message will display in the <code>R Markdown section</code> pointing to some lines with specific reasons. Try Googling as your first option and if not finding a solution, leave a post on ed discussion.</p>
+</div>
+<div id="functions-stop-working" class="section level3">
+<h3>
+<span class="header-section-number">2.2.2</span> Functions stop working<a class="anchor" aria-label="anchor" href="#functions-stop-working"><i class="fas fa-link"></i></a>
+</h3>
+<p>Strange behavior from functions that previously worked are often caused by function conflicts. This can happen if you have two packages loaded with the same function names. To indicate the proper package, namespace it. Conflicts commonly occur with <code>select</code> and <code>filter</code> and <code>map</code>. If you intend the tidyverse ones use:</p>
+<p><code>dplyr::select</code>, <code>dplyr::filter</code> and <code><a href="https://purrr.tidyverse.org/reference/map.html">purrr::map</a></code>.</p>
+<p>Some other culprits:</p>
+<p><code>dplyr::summarise()</code> and <code>vcdExtra::summarise()</code></p>
+<p><code>ggmosaic::mosaic()</code> and <code>vcd::mosaic()</code></p>
+<p><code>leaflet::addLegend()</code> and <code>xts::addLegend()</code></p>
+<p><code>dplyr::select</code> and <code><a href="https://rdrr.io/pkg/MASS/man/lm.ridge.html">MASS::select</a></code></p>
+</div>
+</div>
+<div id="tips-tricks" class="section level2">
+<h2>
+<span class="header-section-number">2.3</span> Tips &amp; Tricks<a class="anchor" aria-label="anchor" href="#tips-tricks"><i class="fas fa-link"></i></a>
+</h2>
+<div id="knitr" class="section level3">
+<h3>
+<span class="header-section-number">2.3.1</span> knitr<a class="anchor" aria-label="anchor" href="#knitr"><i class="fas fa-link"></i></a>
+</h3>
+<p>Upon creating a new R markdown file, you should always notice a section like this:</p>
+<div class="inline-figure"><img src="knitr.png"></div>
+<p>The chunk options refer to the first line and you can add some of the following options:</p>
+<div class="inline-figure"><img src="knitr2.png"></div>
+<p><code>warning=FALSE</code> - Suppress warnings</p>
+<p><code>message=FALSE</code> – Suppress messages, especially useful when loading packages</p>
+<p><code>cache=TRUE</code> – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.</p>
+</div>
+<div id="sizing-figures" class="section level3">
+<h3>
+<span class="header-section-number">2.3.2</span> Sizing figures<a class="anchor" aria-label="anchor" href="#sizing-figures"><i class="fas fa-link"></i></a>
+</h3>
+<p>Always use chunk options to size figures. You can set a default size in the YAML at the beginning of the .Rmd file as so:</p>
+<pre><code>output:
+  pdf_document:
+    fig_height: 3
+    fig_width: 5</code></pre>
+<p>Another method is to click the gear ⚙️ next to the Knit button, then <strong>Output Options…</strong>, and finally the <strong>Figures</strong> tab.</p>
+<p>Then as needed override one or more defaults in particular chunks:</p>
+<p><code>{r, fig.width=4, fig.height=2}</code></p>
+<p>Figure related chunk options include <code>fig.width</code>, <code>fig.height</code>, <code>fig.asp</code>, and <code>fig.align</code>; there are <a href="https://yihui.name/knitr/options/#plots" target="_blank">many more</a>.</p>
+</div>
+<div id="r-studio-keyborad-shortcuts" class="section level3">
+<h3>
+<span class="header-section-number">2.3.3</span> R studio keyborad shortcuts<a class="anchor" aria-label="anchor" href="#r-studio-keyborad-shortcuts"><i class="fas fa-link"></i></a>
+</h3>
+<p>Insert R chunk
+- <strong>option-command-i</strong> (Mac) - <strong>ctrl+alt+I</strong> (Windows)</p>
+<pre><code>```{r}
+```</code></pre>
+<p>Insert <code>%&gt;%</code> (“the pipe”)
+- <strong>shift-command-M</strong> (Mac) - <strong>ctrl+shift+M</strong> (Windows)</p>
+<p>Comment/Uncomment lines
+- <strong>shift-command-C</strong> (Mac) - <strong>ctrl-shift+C</strong> (Windows)</p>
+<p>Knit Document
+- <strong>shift-command-K</strong> (Mac) - <strong>ctrl-shift+K</strong> (Windows)</p>
+<p>For more shortcuts refer <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">here</a></p>
+</div>
+<div id="viewing-plots-in-plot-window" class="section level3">
+<h3>
+<span class="header-section-number">2.3.4</span> Viewing plots in plot window<a class="anchor" aria-label="anchor" href="#viewing-plots-in-plot-window"><i class="fas fa-link"></i></a>
+</h3>
+<p>Would you like your plots to appear in the plot window instead of below each chunk in the <code>.Rmd</code> file? Click ⚙️ and then <i class="fas fa-check"></i> <strong>Chunk Output in Console</strong>.</p>
+</div>
+<div id="adding-figures-and-links" class="section level3">
+<h3>
+<span class="header-section-number">2.3.5</span> Adding figures and links<a class="anchor" aria-label="anchor" href="#adding-figures-and-links"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>![DESCRIPTION HERE](PATH HERE)   Add images
+[CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink</code></pre>
+<p><em>Note:</em> Do not use these in r chunks as they will not work.</p>
+
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="index.html"><span class="header-section-number">1</span> Welcome!</a></div>
@@ -99,6 +184,21 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 <li><a class="nav-link" href="#learning-r"><span class="header-section-number">2</span> Learning R</a></li>
 <li>
 <a class="nav-link" href="#getting-started"><span class="header-section-number">2.1</span> Getting started</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#top-10-essentials-checklist"><span class="header-section-number">2.1.1</span> Top 10 Essentials Checklist</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#troubleshooting"><span class="header-section-number">2.2</span> Troubleshooting</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#document-doesnt-knit"><span class="header-section-number">2.2.1</span> Document doesn’t knit</a></li>
+<li><a class="nav-link" href="#functions-stop-working"><span class="header-section-number">2.2.2</span> Functions stop working</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#tips-tricks"><span class="header-section-number">2.3</span> Tips &amp; Tricks</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#knitr"><span class="header-section-number">2.3.1</span> knitr</a></li>
+<li><a class="nav-link" href="#sizing-figures"><span class="header-section-number">2.3.2</span> Sizing figures</a></li>
+<li><a class="nav-link" href="#r-studio-keyborad-shortcuts"><span class="header-section-number">2.3.3</span> R studio keyborad shortcuts</a></li>
+<li><a class="nav-link" href="#viewing-plots-in-plot-window"><span class="header-section-number">2.3.4</span> Viewing plots in plot window</a></li>
+<li><a class="nav-link" href="#adding-figures-and-links"><span class="header-section-number">2.3.5</span> Adding figures and links</a></li>
+</ul>
 </li>
 </ul>
 

@@ -1,4 +1,3 @@
-
 # Learning R
 
 *This is a page working in progress :)*
@@ -19,17 +18,17 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 
     - Do some math in the console
     - Create an R Markdown file (`.Rmd`) and render it to `.html`
-    - Install some packages like `tidyverse` or `MASS`  
-    
+    - Install some packages like `tidyverse` or `MASS`
+
     Another great option for learning the IDE: Watch [Writing Code in RStudio](https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/){target="_blank"} (*RStudio webinar*)
 
 4. Learn ["R Nuts and Bolts"](https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html){target="_blank"} -- Roger Peng's chapter in *R Programming* will give you a solid foundation in the basic building blocks of R. It's worth making the investing in understanding how R objects work now so they don't cause you problems later. Focus on **vectors** and especially **data frames**; matrices and lists don't come up often in data visualization.  Get familiar with R classes: **integer, numeric, character,** and **logical**. Understand how **factors** work; they are very important for graphing.
 
-5. [Tidy up](https://r4ds.had.co.nz/introduction.html#the-tidyverse){target=_blank} (*r4ds*) -- Install the tidyverse, and get familiar with what it is. *We will discuss differences between base R and the tidyverse in class.* 
+5. [Tidy up](https://r4ds.had.co.nz/introduction.html#the-tidyverse){target=_blank} (*r4ds*) -- Install the tidyverse, and get familiar with what it is. *We will discuss differences between base R and the tidyverse in class.*
 
 6. [Learn ggplot2 basics](https://r4ds.had.co.nz/data-visualisation.html){target="_blank"} (*r4ds*) -- In class we will study the grammar of graphics on which **ggplot2** is based, but it will help to familiarize yourself with the syntax in advance. Avail yourself of the "Data Visualization with ggplot2" cheatsheet by clicking "Help" "Cheatsheets..." within RStudio.
 
-7. [Learn some RMarkdown](https://rmarkdown.rstudio.com/articles_intro.html){target="_blank"} -- For this class you will write assignments in R Markdown (stored as `.Rmd` files) and then render them into pdfs for submission. You can jump right in and open a new R Markdown file (*File > New File > R Markdown...*), and leave the `Default Output Format` as `HTML`. You will get a R Markdown template you can tinker with. Click the "knit" button and see what happens. For more detail, watch the RStudio webinar [Getting Started with R Markdown](https://resources.rstudio.com/the-essentials-of-data-science/getting-started-with-r-markdown-60-02) 
+7. [Learn some RMarkdown](https://rmarkdown.rstudio.com/articles_intro.html){target="_blank"} -- For this class you will write assignments in R Markdown (stored as `.Rmd` files) and then render them into pdfs for submission. You can jump right in and open a new R Markdown file (*File > New File > R Markdown...*), and leave the `Default Output Format` as `HTML`. You will get a R Markdown template you can tinker with. Click the "knit" button and see what happens. For more detail, watch the RStudio webinar [Getting Started with R Markdown](https://resources.rstudio.com/the-essentials-of-data-science/getting-started-with-r-markdown-60-02)
 
 8. [Use RStudio projects](https://r4ds.had.co.nz/workflow-projects.html){target="_blank"} (*r4ds*) -- If you haven't already, drink the Kool-Aid. Make each problem set a separate project. You will never have to worry about `getwd()` or `setwd()` again because everything will just be in the right places.
     Or watch the webinar: ["Projects in RStudio"](https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsmanagingpart1-2){target="_blank"}
@@ -37,5 +36,100 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 9. [Learn the basic dplyr verbs](https://r4ds.had.co.nz/transform.html){target="_blank"} for data manipulation (*r4ds*) -- Concentrate on the main verbs: **`filter()`** (rows), **`select()`** (columns), **`mutate()`**, **`arrange()`** (rows), **`group_by()`**, and **`summarize()`**. Learn the pipe **`%>%`** operator.
 
 10. Know how to [tidy your data](https://r4ds.had.co.nz/tidy-data.html){target="_blank"} -- The **`pivot_longer()`** function from the **tidyr** package -- successor to **`gather()`** -- will help you get your data in the right form for plotting.  More on this in class. Check out these [super cool animations](https://github.com/gadenbuie/tidyexplain){target="_blank"}, which follow a data frame as it is transformed by `tidyr` functions.
+
+## Troubleshooting
+
+### Document doesn’t knit
+
+Normally an error message will display in the `R Markdown section` pointing to some lines with specific reasons. Try Googling as your first option and if not finding a solution, leave a post on ed discussion.
+
+### Functions stop working
+
+Strange behavior from functions that previously worked are often caused by function conflicts. This can happen if you have two packages loaded with the same function names. To indicate the proper package, namespace it. Conflicts commonly occur with `select` and `filter` and `map`. If you intend the tidyverse ones use:
+
+`dplyr::select`, `dplyr::filter` and `purrr::map`.
+
+Some other culprits:
+
+`dplyr::summarise()` and `vcdExtra::summarise()`
+
+`ggmosaic::mosaic()` and `vcd::mosaic()`
+
+`leaflet::addLegend()` and `xts::addLegend()`
+
+`dplyr::select` and `MASS::select`
+
+## Tips & Tricks
+
+### knitr
+
+Upon creating a new R markdown file, you should always notice a section like this:
+
+![](knitr.png)
+
+The chunk options refer to the first line and you can add some of the following options:
+
+![](knitr2.png)
+
+`warning=FALSE` - Suppress warnings
+
+`message=FALSE` – Suppress messages, especially useful when loading packages
+
+`cache=TRUE` – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.
+
+### Sizing figures
+
+Always use chunk options to size figures.  You can set a default size in the YAML at the beginning of the .Rmd file as so:
+
+```
+output:
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+```
+
+Another method is to click the gear ⚙️ next to the Knit button, then  **Output Options...**, and finally the **Figures** tab.
+
+Then as needed override one or more defaults in particular chunks:
+
+`{r, fig.width=4, fig.height=2}`
+
+
+Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `fig.align`; there are [many more](https://yihui.name/knitr/options/#plots){target="_blank"}.
+
+### R studio keyborad shortcuts
+
+Insert R chunk
+- **option-command-i**  (Mac) - **ctrl+alt+I**  (Windows)
+
+
+````
+```{r}
+```
+````
+
+Insert `%>%`   ("the pipe")
+- **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows)
+
+Comment/Uncomment lines
+- **shift-command-C**  (Mac)  - **ctrl-shift+C** (Windows)
+
+Knit Document
+- **shift-command-K**  (Mac)  - **ctrl-shift+K** (Windows)
+
+For more shortcuts refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
+
+### Viewing plots in plot window
+
+Would you like your plots to appear in the plot window instead of below each chunk in the `.Rmd` file? Click ⚙️ and then  <i class="fas fa-check"></i> **Chunk Output in Console**.
+
+### Adding figures and links
+
+```
+![DESCRIPTION HERE](PATH HERE)   Add images
+[CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink
+```
+
+*Note:* Do not use these in r chunks as they will not work.
 
 

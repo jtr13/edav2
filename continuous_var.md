@@ -5,7 +5,7 @@ In this chapter, we will demonstrate all types of graphs only using `ggplot2`.
 ## Histogram
 
 ### Basics and implications
-We will start with an easy example. 
+We will start with an easy example.
 
 
 ```r
@@ -64,9 +64,9 @@ grid.arrange(p1, p2, ncol = 2)
 library(Sleuth3)
 finches <- Sleuth3::case0201
 
-#Default 
+#Default / Only adding some styles to make graph consistent
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram() +
+  geom_histogram(color="blue",fill="lightblue") +
   ggtitle("Default with pop-up about bin number")
 ```
 
