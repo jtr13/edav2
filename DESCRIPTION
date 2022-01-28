@@ -11,4 +11,5 @@ Suggests:
     ggplot2,
     gridExtra,
     Sleuth3，
-    emo
+    emo,
+    pak
