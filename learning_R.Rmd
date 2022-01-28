@@ -1,6 +1,7 @@
-*This is a page working in progress :)*
 
-# Chapter 1-Learning R
+# Learning R
+
+*This is a page working in progress :)*
 
 ## Getting started
 
@@ -36,3 +37,5 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 9. [Learn the basic dplyr verbs](https://r4ds.had.co.nz/transform.html){target="_blank"} for data manipulation (*r4ds*) -- Concentrate on the main verbs: **`filter()`** (rows), **`select()`** (columns), **`mutate()`**, **`arrange()`** (rows), **`group_by()`**, and **`summarize()`**. Learn the pipe **`%>%`** operator.
 
 10. Know how to [tidy your data](https://r4ds.had.co.nz/tidy-data.html){target="_blank"} -- The **`pivot_longer()`** function from the **tidyr** package -- successor to **`gather()`** -- will help you get your data in the right form for plotting.  More on this in class. Check out these [super cool animations](https://github.com/gadenbuie/tidyexplain){target="_blank"}, which follow a data frame as it is transformed by `tidyr` functions.
+
+
