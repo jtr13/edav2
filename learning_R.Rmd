@@ -103,6 +103,10 @@ Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `
 Insert R chunk
 - **option-command-i**  (Mac) - **ctrl+alt+I**  (Windows)
 
+```{r, echo = FALSE}
+cat("```{r}\n```")
+```
+
 Insert `%>%`   ("the pipe") 
 - **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows)
 
@@ -118,13 +122,13 @@ For more shortcuts refer [here](https://support.rstudio.com/hc/en-us/articles/20
 
 Would you like your plots to appear in the plot window instead of below each chunk in the `.Rmd` file? Click `r emo::ji("gear")` and then  <i class="fas fa-check"></i> **Chunk Output in Console**. 
 
-### Adding figures and links
+<!-- ### Adding figures and links -->
 
-```
-![DESCRIPTION HERE](PATH HERE)   Add images
-[CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink
-```
+<!-- ``` -->
+<!-- ![DESCRIPTION HERE](PATH HERE)   Add images -->
+<!-- [CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink -->
+<!-- ``` -->
 
-*Note:* Do not use these in r chunks as they will not work.
+<!-- *Note:* Do not use these in r chunks as they will not work. -->
 
 
