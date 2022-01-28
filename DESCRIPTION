@@ -8,6 +8,7 @@ Suggests:
     downlit,
     withr,
     xml2,
+Imports:
     ggplot2,
     gridExtra,
     Sleuth3，
