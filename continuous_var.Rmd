@@ -164,20 +164,18 @@ A good example using ridgeline plots will be a great example is visualizing the 
 Consider the following example:
 
 ```{r}
-library(tidyverse)
-library(datasets)
 library(ggridges)
+library(forcats)
 
-ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inorder(Tree)))+
-  geom_density_ridges() + theme_ridges()+
-  scale_fill_brewer(palette = 4)+
+ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inorder(Tree))) +
+  geom_density_ridges() +
+  scale_fill_brewer(palette = 4) +
   scale_y_discrete(expand = c(0.8, 0)) +
-  scale_x_continuous(expand = c(0.01, 0))+
-  labs(x="Circumference at Breast Height", y="Tree with ordering of max diameter")+
-  ggtitle("Density estimation of circumference of different types of Trees")+
-  theme(plot.title = element_text(hjust = 0.5),
-        axis.title.x = element_text(hjust=0.5),
-        legend.title = element_blank())
+  scale_x_continuous(expand = c(0.01, 0)) +
+  ggtitle("Density estimation of circumference of different types of Trees") +
+  labs(x="Circumference at Breast Height", y="Tree with ordering of max diameter") +
+  theme_ridges() +
+  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_text(hjust=0.5), legend.title = element_blank())
 ```
 
 `ggridge` uses two main geoms to plot the ridgeline density plots: `geom_density_ridges` and `geom_ridgeline`. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.
@@ -185,16 +183,15 @@ ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inord
 ### Create better visuals
 
 ```{r}
-ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inorder(Tree)))+
-  geom_density_ridges(scale = 2, alpha=0.5) + theme_ridges()+
-  scale_fill_brewer(palette = 4)+
+ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inorder(Tree))) +
+  geom_density_ridges(scale = 2, alpha=0.5) +
+  scale_fill_brewer(palette = 4) +
   scale_y_discrete(expand = c(0.8, 0)) +
-  scale_x_continuous(expand = c(0.01, 0))+
-  labs(x="Circumference at Breast Height", y="Tree with ordering of max diameter")+
-  ggtitle("Density estimation of circumference of different types of Trees")+
-  theme(plot.title = element_text(hjust = 0.5),
-        axis.title.x = element_text(hjust=0.5),
-        legend.title = element_blank())
+  scale_x_continuous(expand = c(0.01, 0)) +
+  ggtitle("Density estimation of circumference of different types of Trees") +
+  labs(x="Circumference at Breast Height", y="Tree with ordering of max diameter") +
+  theme_ridges() +
+  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_text(hjust=0.5), legend.title = element_blank())
 ```
 
 In this example, we added parameter `scale` and `alpha` to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and `alpha` controls transparency. 

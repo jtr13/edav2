@@ -3,10 +3,11 @@ Type: Book
 Title: Does not matter
 Version: 0.0.0.9000
 Imports:
+    emo,
+    forcats,
     ggplot2,
     gridExtra,
-    Sleuth3,
-    emo
+    Sleuth3
 Suggests:
     bookdown,
     bslib,
