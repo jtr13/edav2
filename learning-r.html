@@ -121,9 +121,11 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 <span class="header-section-number">2.3.1</span> knitr<a class="anchor" aria-label="anchor" href="#knitr"><i class="fas fa-link"></i></a>
 </h3>
 <p>Upon creating a new R markdown file, you should always notice a section like this:</p>
-<div class="inline-figure"><img src="knitr.png"></div>
+<pre><code>{r setup, include=False}
+knitr::opts_chunk$set(echo = TRUE)</code></pre>
 <p>The chunk options refer to the first line and you can add some of the following options:</p>
-<div class="inline-figure"><img src="knitr2.png"></div>
+<pre><code>{r setup, include=False, warning=False, message=False, cache=True}
+knitr::opts_chunk$set(echo = TRUE)</code></pre>
 <p><code>warning=FALSE</code> - Suppress warnings</p>
 <p><code>message=FALSE</code> – Suppress messages, especially useful when loading packages</p>
 <p><code>cache=TRUE</code> – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.</p>
@@ -150,12 +152,21 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 - <strong>option-command-i</strong> (Mac) - <strong>ctrl+alt+I</strong> (Windows)</p>
 <pre><code>```{r}
 ```</code></pre>
-<p>Insert <code>%&gt;%</code> (“the pipe”)
-- <strong>shift-command-M</strong> (Mac) - <strong>ctrl+shift+M</strong> (Windows)</p>
-<p>Comment/Uncomment lines
-- <strong>shift-command-C</strong> (Mac) - <strong>ctrl-shift+C</strong> (Windows)</p>
-<p>Knit Document
-- <strong>shift-command-K</strong> (Mac) - <strong>ctrl-shift+K</strong> (Windows)</p>
+<p>Insert <code>%&gt;%</code> (“the pipe”):</p>
+<ul>
+<li>
+<strong>shift-command-M</strong> (Mac) - <strong>ctrl+shift+M</strong> (Windows)</li>
+</ul>
+<p>Comment/Uncomment lines:</p>
+<ul>
+<li>
+<strong>shift-command-C</strong> (Mac) - <strong>ctrl-shift+C</strong> (Windows)</li>
+</ul>
+<p>Knit Document:</p>
+<ul>
+<li>
+<strong>shift-command-K</strong> (Mac) - <strong>ctrl-shift+K</strong> (Windows)</li>
+</ul>
 <p>For more shortcuts refer <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">here</a></p>
 </div>
 <div id="viewing-plots-in-plot-window" class="section level3">
@@ -168,9 +179,12 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 <h3>
 <span class="header-section-number">2.3.5</span> Adding figures and links<a class="anchor" aria-label="anchor" href="#adding-figures-and-links"><i class="fas fa-link"></i></a>
 </h3>
-<pre><code>![DESCRIPTION HERE](PATH HERE)   Add images
-[CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink</code></pre>
-<p><em>Note:</em> Do not use these in r chunks as they will not work.</p>
+<pre><code>Add images
+![DESCRIPTION HERE](PATH HERE)
+
+Add links: The text in the content column will act as a hyperlink
+[CONTENT HERE](LINK HERE)   </code></pre>
+<p><strong>Note:</strong> Do not use these in r chunks as they will not work.</p>
 
 </div>
 </div>
@@ -217,7 +231,7 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>edav.info, 2nd edition</strong>" was written by . It was last built on 2022-01-28.</p>
+    <p>"<strong>edav.info, 2nd edition</strong>" was written by . It was last built on 2022-01-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
