@@ -1,6 +1,6 @@
 # Unidimensional Continuous Variables
 
-In this chapter, we will demonstrate all types of graphs only using `ggplot2`.
+In this chapter, we will demonstrate graphs with unidimensional continuous variables only using `ggplot2`.
 
 ## Histogram
 
@@ -21,6 +21,7 @@ ggplot(df, aes(x)) +
                  binwidth = 5, center = 52.5) +
   ggtitle("ggplot2 histogram of x")
 ```
+
 In this example, we used `geom_histogram` to create a histogram on variable `x`. We can see that it is quick to make and does not need much pre-processing. Moreover, Histograms show data’s empirical distribution within a set of intervals and we suggest using it as a one of the first steps to understand your data.
 
 *Note:* as shown above, ggplot expects a dataframe, so make sure you do not throw a vector into ggplot.
@@ -37,6 +38,7 @@ The y-scale of histograms can be represented in a variety of ways to express dif
 ### Parameters for geom_histogram
 
 #### Bin boundaries
+
 Be mindful of the boundaries of the bins and whether a point will fall into the left or right bin if it is on a boundary. You can use the parameter `closed` to control the intervals.
 
 ```{r}
@@ -65,6 +67,7 @@ ggplot(finches, aes(x = Depth)) +
   geom_histogram(color="blue",fill="lightblue") +
   ggtitle("Default with pop-up about bin number")
 ```
+
 We start by passing no parameters into `geom_histogram` and you will notice a pop-up saying that the default number of bins is 30.
 We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with *binwidth* or provide the desired number of bins with *bins*. Consider the following modifications:
 
@@ -111,7 +114,44 @@ The `ggvis` package is not currently in development, but does certain things ver
 
 ## Boxplot
 
-**TO BE FILLED**
+### Single Boxplot
+
+A boxplot is one of the simplest ways of representing a distribution of a continuous variable (**Never** use boxplots for categorical data). It consists of two parts: box and whiskers. Let's starting with a simple example: single boxplot.
+
+```{r}
+library(datasets)
+ggplot(Orange, aes(x=circumference))+
+  geom_boxplot()+
+  ggtitle("Boxplot of circumference")
+```
+
+Here as you can see, boxplots provide a ton of information for a single chart. Boxplots tell you whether the variable is normally distributed, or if the distribution is skewed in either direction. You can also easily spot the outliers, which always helps.
+
+### Multiple boxplots
+
+Next, what if you want to compare the distributions between multiple classes? Here, you can create a multiple boxplot. But remember, your data frame needs to be tidy, that is you need to have a column with levels of the grouping variable. It can be be factor, character, or integer class.
+
+The following example still use the ``Orange`` dataset. We compare the distributions of ``circumference`` between different ``Tree``(which indicates the tree types with ordering of max diameter).
+
+```{r}
+ggplot(Orange, aes(x=reorder(Tree, -circumference, median),y=circumference))+
+  geom_boxplot()+
+  ggtitle("Multiple boxplots of circumference of different types of Trees")+
+  labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
+```
+
+**Note.** Usually in a boxplot, the boxes should be reordered so that there will be a decreasing order of the class medians from left to right.
+
+Often you want boxplots to be horizontal. Super easy to do in ``ggplot2``: just tack on ``+ coord_flip()`` and remove the ``-`` from the reordering so that the factor level with the highest median will be on top:
+
+```{r}
+ggplot(Orange, aes(x=reorder(Tree, circumference, median),y=circumference))+
+  geom_boxplot()+ 
+  coord_flip()+
+  ggtitle("Multiple boxplots of circumference of different types of Trees")+
+  labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
+```
+
 
 ## Ridgeline plot
 
@@ -139,6 +179,7 @@ ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inord
         axis.title.x = element_text(hjust=0.5),
         legend.title = element_blank())
 ```
+
 `ggridge` uses two main geoms to plot the ridgeline density plots: `geom_density_ridges` and `geom_ridgeline`. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.
 
 ### Create better visuals
@@ -155,6 +196,7 @@ ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inord
         axis.title.x = element_text(hjust=0.5),
         legend.title = element_blank())
 ```
+
 In this example, we added parameter `scale` and `alpha` to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and `alpha` controls transparency. 
 
 ### Additional Resources
@@ -183,5 +225,6 @@ ggplot(finches, aes(x = Depth)) +
 
 Notice that the normal curve is not compatiable with facet. Consider the following example
 
-![](Normal_dist.png)
+![](Normal_dist.png){width=75%}
+
 As you might notice, if though a normal curve appears in all of the sections, they are actually the same one and generated on the whole dataset. In such circumstance, we suggest drawing each graph seperately and combine them.
