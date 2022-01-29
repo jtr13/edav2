@@ -17,7 +17,7 @@ x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
 df <- data.frame(x)
 
 ggplot(df, aes(x)) +
-  geom_histogram(color = "grey", fill = "lightBlue", 
+  geom_histogram(color = "blue", fill = "lightBlue", 
                  binwidth = 5, center = 52.5) +
   ggtitle("ggplot2 histogram of x")
 ```
@@ -224,4 +224,4 @@ Notice that the normal curve is not compatiable with facet. Consider the followi
 
 ![](Normal_dist.png){width=75%}
 
-As you might notice, if though a normal curve appears in all of the sections, they are actually the same one and generated on the whole dataset. In such circumstance, we suggest drawing each graph seperately and combine them.
+As you might notice, even though a normal curve appears in all of the sections, they are actually the same one and generated on the whole dataset. In such circumstance, we suggest drawing each graph separately and combine them.
