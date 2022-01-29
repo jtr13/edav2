@@ -6,9 +6,7 @@ Imports:
     ggplot2,
     gridExtra,
     Sleuth3,
-    emo,
-    ggridges，
-    tidyverse
+    emo
 Suggests:
     bookdown,
     bslib,
