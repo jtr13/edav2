@@ -12,13 +12,11 @@ description: "This line is controlled in the description field of index.Rmd..."
 
 This is the brand new start of edav.info 2.0!
 
-This resource has everything you need and more to be successful with R, this course, and beyond. Let’s get started!
+With this resource, we try to give you a curated collection of tools and references that will make it easier to learn how to work with data in R. Detailed Examples will also be used to show proper exploratory data analysis under different circumstances.
 
-With this resource, we try to give you a curated collection of tools and references that will make it easier to learn how to work with data in R. Detailed Examples will also be used to show proper exploratory data analysis under different circumstance.
+This resource is specifically tailored to the GR5293 Statistical Graphics course offered at Columbia University. However, we hope taht anyone interested in working with data in R will benefit from these pages. Happy coding!
 
-This resource is specifically tailored to the GR5293 Statistical Graphics course offered at [Columbia University](https://www.columbia.edu/). However, anyone interested in working with data in R will benefit from perusing these pages. Happy coding!
-
-(**Note.** This edav.info 2.0 is still under construction, and we will try best to update new chapters weekly so that it will be a helpful supplementary material to review course contents and finish you problem-sets)
+(**Note.** edav.info 2.0 is still under construction, and we will try our best to update new chapters weekly so that it will be a helpful supplementary material to review course contents and finish your problem-sets)
 
 
 
