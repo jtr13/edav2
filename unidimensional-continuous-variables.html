@@ -73,7 +73,7 @@
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"grey"</span>, fill <span class="op">=</span> <span class="st">"lightBlue"</span>, 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightBlue"</span>, 
                  binwidth <span class="op">=</span> <span class="fl">5</span>, center <span class="op">=</span> <span class="fl">52.5</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"ggplot2 histogram of x"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="continuous_var_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;"></div>
@@ -285,7 +285,7 @@ We see that the graph is not ideal with some gaps. There are two ways to modify 
 <div class="inline-figure"><img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>Notice that the normal curve is not compatiable with facet. Consider the following example</p>
 <div class="inline-figure"><img src="Normal_dist.png" style="width:75.0%"></div>
-<p>As you might notice, if though a normal curve appears in all of the sections, they are actually the same one and generated on the whole dataset. In such circumstance, we suggest drawing each graph seperately and combine them.</p>
+<p>As you might notice, even though a normal curve appears in all of the sections, they are actually the same one and generated on the whole dataset. In such circumstance, we suggest drawing each graph separately and combine them.</p>
 
 </div>
 </div>
