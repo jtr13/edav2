@@ -13,6 +13,7 @@ viewing-plots-in-plot-window
 adding-figures-and-links
 learning-ggplot2
 getting-started-1
+default-part-layer
 customized-parts
 geometric-object-statistical-transformation-and-position-adjustment
 scale
@@ -30,5 +31,10 @@ bin-numbers
 bin-alignment
 interactive-histograms-with-ggvis
 boxplot
+single-boxplot
+multiple-boxplots
 ridgeline-plot
+basics-and-implications-1
+create-better-visuals
+additional-resources
 normal-distribution

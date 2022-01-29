@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 3 Learning ggplot2 | edav.info, 2nd edition</title>
-<meta name="description" content="This is a page working in progress :)  3.1 Getting Started Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the...">
+<meta name="description" content="3.1 Getting Started Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R:...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 3 Learning ggplot2 | edav.info, 2nd edition">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This is a page working in progress :)  3.1 Getting Started Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the...">
+<meta property="og:description" content="3.1 Getting Started Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R:...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 3 Learning ggplot2 | edav.info, 2nd edition">
-<meta name="twitter:description" content="This is a page working in progress :)  3.1 Getting Started Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the...">
+<meta name="twitter:description" content="3.1 Getting Started Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R:...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -53,15 +53,17 @@
 <h1>
 <span class="header-section-number">3</span> Learning ggplot2<a class="anchor" aria-label="anchor" href="#learning-ggplot2"><i class="fas fa-link"></i></a>
 </h1>
-<p><em>This is a page working in progress :)</em></p>
 <div id="getting-started-1" class="section level2">
 <h2>
-<span class="header-section-number">3.1</span> Getting Started<a class="anchor" aria-label="anchor" href="#getting-started-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1</span> <strong>Getting Started</strong><a class="anchor" aria-label="anchor" href="#getting-started-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: <code>ggplot2</code> with it’s basic grammar and functions.</p>
-<div class="inline-figure">
-<img src="images/install_ggplot.png" alt="install_ggplot2">
-## Default Part: Layer</div>
+<div class="inline-figure"><img src="images/install_ggplot.png" style="width:75.0%"></div>
+</div>
+<div id="default-part-layer" class="section level2">
+<h2>
+<span class="header-section-number">3.2</span> <strong>Default Part: Layer</strong><a class="anchor" aria-label="anchor" href="#default-part-layer"><i class="fas fa-link"></i></a>
+</h2>
 <p>Unlike other graphics packages, one of the remarkable advantages of <code>ggplot2</code> is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding <code>ggplot2</code> functions to meet your needs based on your data.</p>
 <p>By definition of the grammar of graphics, the most important features are data and mapping in the layers and that’s where we are getting started.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -71,9 +73,8 @@
 <span class="co"># Using 'iris' in 'datasets' library as data</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span><span class="op">)</span> <span class="op">+</span>  <span class="co">#Data part</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sepal.Length</span>, <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span>  <span class="co">#Mapping part</span></code></pre></div>
-<div class="inline-figure">
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;">
-All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.</div>
+<div class="inline-figure"><img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span><span class="op">)</span> <span class="op">+</span>  <span class="co">#Data part</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Petal.Length</span>, <span class="va">Petal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>  <span class="co">#layer 1 with mapping </span>
@@ -82,30 +83,27 @@ All plots are composed of the data, the information you want to visualize, and a
 </div>
 <div id="customized-parts" class="section level2">
 <h2>
-<span class="header-section-number">3.2</span> Customized Parts<a class="anchor" aria-label="anchor" href="#customized-parts"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3</span> <strong>Customized Parts</strong><a class="anchor" aria-label="anchor" href="#customized-parts"><i class="fas fa-link"></i></a>
 </h2>
 <div id="geometric-object-statistical-transformation-and-position-adjustment" class="section level3">
 <h3>
-<span class="header-section-number">3.2.1</span> Geometric object, Statistical transformation and Position adjustment<a class="anchor" aria-label="anchor" href="#geometric-object-statistical-transformation-and-position-adjustment"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3.1</span> <strong>Geometric object, Statistical transformation and Position adjustment</strong><a class="anchor" aria-label="anchor" href="#geometric-object-statistical-transformation-and-position-adjustment"><i class="fas fa-link"></i></a>
 </h3>
-<div class="figure">
-<img src="images/layers.png" alt=""><p class="caption">layers</p>
-</div>
+<div class="inline-figure"><img src="images/layers.png" style="width:50.0%"></div>
 <p>Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.</p>
 <p>Geometric objects <code>geoms</code> control the type of plot you create. Each <code>geom</code> can only display certain aesthetics or visual attributes of the geom. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
 <p>A statistical transformation <code>stat</code> transforms the data, generally by summarizing the information. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>mapping<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Petal.Length</span>, fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">'bin'</span>,position <span class="op">=</span> <span class="st">'stack'</span><span class="op">)</span> </code></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>mapping<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Petal.Length</span>, fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span>, 
+                 stat <span class="op">=</span> <span class="st">'bin'</span>,position <span class="op">=</span> <span class="st">'stack'</span><span class="op">)</span> </code></pre></div>
 <div class="inline-figure"><img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;"></div>
 </div>
 <div id="scale" class="section level3">
 <h3>
-<span class="header-section-number">3.2.2</span> Scale<a class="anchor" aria-label="anchor" href="#scale"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3.2</span> <strong>Scale</strong><a class="anchor" aria-label="anchor" href="#scale"><i class="fas fa-link"></i></a>
 </h3>
-<div class="figure">
-<img src="images/scale.png" alt=""><p class="caption">scale</p>
-</div>
+<div class="inline-figure"><img src="images/scale.png" style="width:50.0%"></div>
 <p>A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span><span class="op">)</span> <span class="op">+</span> 
@@ -116,18 +114,19 @@ All plots are composed of the data, the information you want to visualize, and a
 </div>
 <div id="coordinate-system" class="section level3">
 <h3>
-<span class="header-section-number">3.2.3</span> Coordinate system<a class="anchor" aria-label="anchor" href="#coordinate-system"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3.3</span> <strong>Coordinate system</strong><a class="anchor" aria-label="anchor" href="#coordinate-system"><i class="fas fa-link"></i></a>
 </h3>
 <p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one <code>coord</code></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>mapping<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Petal.Length</span>, fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">'bin'</span>,position <span class="op">=</span> <span class="st">'stack'</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>mapping<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Petal.Length</span>, fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span>, 
+                 stat <span class="op">=</span> <span class="st">'bin'</span>,position <span class="op">=</span> <span class="st">'stack'</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="learning_ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;"></div>
 </div>
 <div id="faceting" class="section level3">
 <h3>
-<span class="header-section-number">3.2.4</span> Faceting<a class="anchor" aria-label="anchor" href="#faceting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3.4</span> <strong>Faceting</strong><a class="anchor" aria-label="anchor" href="#faceting"><i class="fas fa-link"></i></a>
 </h3>
 <p>Faceting can be used to split the data up into subsets of the entire dataset.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
@@ -138,12 +137,13 @@ All plots are composed of the data, the information you want to visualize, and a
 </div>
 <div id="labels" class="section level3">
 <h3>
-<span class="header-section-number">3.2.5</span> Labels<a class="anchor" aria-label="anchor" href="#labels"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3.5</span> <strong>Labels</strong><a class="anchor" aria-label="anchor" href="#labels"><i class="fas fa-link"></i></a>
 </h3>
 <p>Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers’ of the background knowledge of your data.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>mapping<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Petal.Length</span>, fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">'bin'</span>,position <span class="op">=</span> <span class="st">'stack'</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>mapping<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Petal.Length</span>, fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span>, 
+                 stat <span class="op">=</span> <span class="st">'bin'</span>,position <span class="op">=</span> <span class="st">'stack'</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'Stacked Histogram on Petal Length of Different Species'</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Length of Petal'</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="learning_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;"></div>
@@ -151,26 +151,17 @@ All plots are composed of the data, the information you want to visualize, and a
 </div>
 <div id="ggplot2-resources" class="section level2">
 <h2>
-<span class="header-section-number">3.3</span> ggplot2 Resources<a class="anchor" aria-label="anchor" href="#ggplot2-resources"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.4</span> <strong>ggplot2 Resources</strong><a class="anchor" aria-label="anchor" href="#ggplot2-resources"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>For more implementations and examples, one easiest way is referring to the ggplot2 Cheatsheets provided by R. Follow the steps shown below and you can find the cheat-sheets in your RStudio.</li>
 </ul>
-<div class="inline-figure">
-<img src="images/ggplotCheatsheet_1.png" alt="path_to_cheatsheet">
-The cheat-sheets clearly list the basic components of a ggplot where you can customize your unique plot by choosing different functions.</div>
-<div class="figure">
-<img src="images/ggplotCheatsheet_2.png" alt=""><p class="caption">ggplot2_cheatsheets1</p>
-</div>
-<div class="figure">
-<img src="images/ggplotCheatsheet_3.png" alt=""><p class="caption">ggplot2_cheatsheets2</p>
-</div>
+<div class="inline-figure"><img src="images/ggplotCheatsheet_1.png" style="width:50.0%"></div>
+<p>The cheat-sheets clearly list the basic components of a ggplot where you can customize your unique plot by choosing different functions.</p>
 <ul>
-<li>If you are seeking for more detailed explanations and examples with real datasets, here are some useful links for you:</li>
+<li>If you are seeking for more detailed explanations and examples with real datasets, here are some useful links for you: <a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics</a>
+</li>
 </ul>
-<ol style="list-style-type: decimal">
-<li><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics</a></li>
-</ol>
 </div>
 </div>
   <div class="chapter-nav">
@@ -181,16 +172,17 @@ The cheat-sheets clearly list the basic components of a ggplot where you can cus
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#learning-ggplot2"><span class="header-section-number">3</span> Learning ggplot2</a></li>
 <li><a class="nav-link" href="#getting-started-1"><span class="header-section-number">3.1</span> Getting Started</a></li>
+<li><a class="nav-link" href="#default-part-layer"><span class="header-section-number">3.2</span> Default Part: Layer</a></li>
 <li>
-<a class="nav-link" href="#customized-parts"><span class="header-section-number">3.2</span> Customized Parts</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#geometric-object-statistical-transformation-and-position-adjustment"><span class="header-section-number">3.2.1</span> Geometric object, Statistical transformation and Position adjustment</a></li>
-<li><a class="nav-link" href="#scale"><span class="header-section-number">3.2.2</span> Scale</a></li>
-<li><a class="nav-link" href="#coordinate-system"><span class="header-section-number">3.2.3</span> Coordinate system</a></li>
-<li><a class="nav-link" href="#faceting"><span class="header-section-number">3.2.4</span> Faceting</a></li>
-<li><a class="nav-link" href="#labels"><span class="header-section-number">3.2.5</span> Labels</a></li>
+<a class="nav-link" href="#customized-parts"><span class="header-section-number">3.3</span> Customized Parts</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#geometric-object-statistical-transformation-and-position-adjustment"><span class="header-section-number">3.3.1</span> Geometric object, Statistical transformation and Position adjustment</a></li>
+<li><a class="nav-link" href="#scale"><span class="header-section-number">3.3.2</span> Scale</a></li>
+<li><a class="nav-link" href="#coordinate-system"><span class="header-section-number">3.3.3</span> Coordinate system</a></li>
+<li><a class="nav-link" href="#faceting"><span class="header-section-number">3.3.4</span> Faceting</a></li>
+<li><a class="nav-link" href="#labels"><span class="header-section-number">3.3.5</span> Labels</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#ggplot2-resources"><span class="header-section-number">3.3</span> ggplot2 Resources</a></li>
+<li><a class="nav-link" href="#ggplot2-resources"><span class="header-section-number">3.4</span> ggplot2 Resources</a></li>
 </ul>
 
       <div class="book-extra">
