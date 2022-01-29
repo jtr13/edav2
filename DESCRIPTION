@@ -6,6 +6,7 @@ Imports:
     emo,
     forcats,
     ggplot2,
+    ggridges,
     gridExtra,
     Sleuth3
 Suggests:
