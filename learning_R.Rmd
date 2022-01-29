@@ -65,12 +65,17 @@ Some other culprits:
 
 Upon creating a new R markdown file, you should always notice a section like this:
 
-![](knitr.png)
+```
+{r setup, include=False}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 The chunk options refer to the first line and you can add some of the following options:
 
-![](knitr2.png)
-
+```
+{r setup, include=False, warning=False, message=False, cache=True}
+knitr::opts_chunk$set(echo = TRUE)
+```
 `warning=FALSE` - Suppress warnings
 
 `message=FALSE` – Suppress messages, especially useful when loading packages
@@ -106,13 +111,16 @@ Insert R chunk
 cat("```{r}\n```")
 ```
 
-Insert `%>%`   ("the pipe")
+Insert `%>%`   ("the pipe"):
+
 - **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows)
 
-Comment/Uncomment lines
+Comment/Uncomment lines:
+
 - **shift-command-C**  (Mac)  - **ctrl-shift+C** (Windows)
 
-Knit Document
+Knit Document:
+
 - **shift-command-K**  (Mac)  - **ctrl-shift+K** (Windows)
 
 For more shortcuts refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
@@ -124,10 +132,13 @@ Would you like your plots to appear in the plot window instead of below each chu
 ### Adding figures and links
 
 ```
-![DESCRIPTION HERE](PATH HERE)   Add images
-[CONTENT HERE](LINK HERE)   Add links: The text in the content column will act as a hyperlink
+Add images
+![DESCRIPTION HERE](PATH HERE)
+
+Add links: The text in the content column will act as a hyperlink
+[CONTENT HERE](LINK HERE)   
 ```
 
-*Note:* Do not use these in r chunks as they will not work.
+**Note:** Do not use these in r chunks as they will not work.
 
 
