@@ -7,7 +7,6 @@ Imports:
     gridExtra,
     Sleuth3,
     emo,
-    datasets,
     ggridges，
     tidyverse
 Suggests:
