@@ -1,5 +1,4 @@
 welcome
-everything-you-need-for-statistical-graphics-and-data-visualization
 learning-r
 getting-started
 top-10-essentials-checklist
