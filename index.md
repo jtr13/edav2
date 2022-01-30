@@ -1,6 +1,6 @@
 ---
 title: "edav.info, 2nd edition"
-date: "2022-01-29"
+date: "2022-01-30"
 site: bookdown::bookdown_site
 github-repo: jtr13/edav2
 description: "This line is controlled in the description field of index.Rmd..."
