@@ -1,4 +1,9 @@
-bookdown::bs4_book:
-  repo:
-    base: https://github.com/jtr13/edav2
-    branch: main
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">edav.info v2s</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+  anchor_sections: TRUE        
