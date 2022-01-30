@@ -2,6 +2,8 @@ book_filename: "edav2"
 new_session: true
 before_chapter_script: _common.R
 delete_merged_file: true
+view: https://github.com/jtr13/edav2/blob/main/%s
+edit: https://github.com/jtr13/edav2/edit/main/%s
 language:
   ui:
     chapter_name: "Chapter "
