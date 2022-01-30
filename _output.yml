@@ -6,7 +6,8 @@ bookdown::gitbook:
         <li><a href="./">edav.info v2</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    sharing:
+      facebook: false
+      twitter: false
   anchor_sections: TRUE
-  sharing:
-     facebook: false
-     twitter: false
+
