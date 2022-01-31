@@ -24,7 +24,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-01-30" />
+<meta name="date" content="2022-01-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,27 +215,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Unlike other graphics packages, one of the remarkable advantages of <code>ggplot2</code> is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding <code>ggplot2</code> functions to meet your needs based on your data.</p>
 <p>By definition of the grammar of graphics, the most important features are data and mapping in the layers and that’s where we are getting started.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="learning-ggplot2.html#cb6-1"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb6-2"><a href="learning-ggplot2.html#cb6-2"></a><span class="kw">library</span>(datasets)</span>
-<span id="cb6-3"><a href="learning-ggplot2.html#cb6-3"></a></span>
-<span id="cb6-4"><a href="learning-ggplot2.html#cb6-4"></a><span class="co"># Using &#39;iris&#39; in &#39;datasets&#39; library as data</span></span>
-<span id="cb6-5"><a href="learning-ggplot2.html#cb6-5"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> datasets<span class="op">::</span>iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
-<span id="cb6-6"><a href="learning-ggplot2.html#cb6-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width))  <span class="co">#Mapping part</span></span></code></pre></div>
+<span id="cb6-2"><a href="learning-ggplot2.html#cb6-2"></a></span>
+<span id="cb6-3"><a href="learning-ggplot2.html#cb6-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
+<span id="cb6-4"><a href="learning-ggplot2.html#cb6-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width))  <span class="co">#Mapping part</span></span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="learning-ggplot2.html#cb7-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> datasets<span class="op">::</span>iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="learning-ggplot2.html#cb7-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
 <span id="cb7-2"><a href="learning-ggplot2.html#cb7-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width)) <span class="op">+</span><span class="st">  </span><span class="co">#layer 1 with mapping </span></span>
 <span id="cb7-3"><a href="learning-ggplot2.html#cb7-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width), <span class="dt">color=</span><span class="st">&#39;red&#39;</span>)  <span class="co">#layer 2 with a different mapping</span></span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="customized-parts" class="section level2">
 <h2><span class="header-section-number">3.3</span> <strong>Customized Parts</strong></h2>
+<p>The following picture shows the order of ggplot functions:</p>
+<p><img src="images/codingOrder.png" /></p>
 <div id="geometric-object-statistical-transformation-and-position-adjustment" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> <strong>Geometric object, Statistical transformation and Position adjustment</strong></h3>
 <p><img src="images/layers.png" style="width:50.0%" /></p>
 <p>Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.</p>
 <p>Geometric objects <code>geoms</code> control the type of plot you create. Each <code>geom</code> can only display certain aesthetics or visual attributes of the geom. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
 <p>A statistical transformation <code>stat</code> transforms the data, generally by summarizing the information. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="learning-ggplot2.html#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> datasets<span class="op">::</span>iris) <span class="op">+</span><span class="st"> </span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="learning-ggplot2.html#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb8-2"><a href="learning-ggplot2.html#cb8-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
 <span id="cb8-3"><a href="learning-ggplot2.html#cb8-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) </span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -244,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.3.2</span> <strong>Scale</strong></h3>
 <p><img src="images/scale.png" style="width:50.0%" /></p>
 <p>A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="learning-ggplot2.html#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> datasets<span class="op">::</span>iris) <span class="op">+</span><span class="st"> </span></span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="learning-ggplot2.html#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb9-2"><a href="learning-ggplot2.html#cb9-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>)<span class="op">+</span></span>
 <span id="cb9-3"><a href="learning-ggplot2.html#cb9-3"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span></span>
 <span id="cb9-4"><a href="learning-ggplot2.html#cb9-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))</span></code></pre></div>
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="coordinate-system" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> <strong>Coordinate system</strong></h3>
 <p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one <code>coord</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="learning-ggplot2.html#cb10-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> datasets<span class="op">::</span>iris) <span class="op">+</span><span class="st"> </span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="learning-ggplot2.html#cb10-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb10-2"><a href="learning-ggplot2.html#cb10-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
 <span id="cb10-3"><a href="learning-ggplot2.html#cb10-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="op">+</span></span>
 <span id="cb10-4"><a href="learning-ggplot2.html#cb10-4"></a><span class="st">  </span><span class="kw">coord_polar</span>()</span></code></pre></div>
@@ -262,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="faceting" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> <strong>Faceting</strong></h3>
 <p>Faceting can be used to split the data up into subsets of the entire dataset.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="learning-ggplot2.html#cb11-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> datasets<span class="op">::</span>iris) <span class="op">+</span><span class="st"> </span></span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="learning-ggplot2.html#cb11-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb11-2"><a href="learning-ggplot2.html#cb11-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>)<span class="op">+</span></span>
 <span id="cb11-3"><a href="learning-ggplot2.html#cb11-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(iris<span class="op">$</span>Species)</span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -270,7 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="labels" class="section level3">
 <h3><span class="header-section-number">3.3.5</span> <strong>Labels</strong></h3>
 <p>Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers’ of the background knowledge of your data.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="learning-ggplot2.html#cb12-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> datasets<span class="op">::</span>iris) <span class="op">+</span><span class="st"> </span></span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="learning-ggplot2.html#cb12-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb12-2"><a href="learning-ggplot2.html#cb12-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
 <span id="cb12-3"><a href="learning-ggplot2.html#cb12-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>)<span class="op">+</span></span>
 <span id="cb12-4"><a href="learning-ggplot2.html#cb12-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Stacked Histogram on Petal Length of Different Species&#39;</span>) <span class="op">+</span></span>
@@ -286,8 +286,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/ggplotCheatsheet_1.png" style="width:50.0%" /></p>
 <p>The cheat-sheets clearly list the basic components of a ggplot where you can customize your unique plot by choosing different functions.</p>
 <ul>
-<li>If you are seeking for more detailed explanations and examples with real datasets, here are some useful links for you: <a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics</a></li>
+<li>If you are seeking for more detailed explanations and examples with real datasets, here are some useful links for you:</li>
 </ul>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics</a></p></li>
+<li><p><a href="https://github.com/jtr13/ggformat">ggformat</a></p></li>
+</ol>
 
 </div>
 </div>

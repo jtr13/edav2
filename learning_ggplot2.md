@@ -17,10 +17,8 @@ By definition of the grammar of graphics, the most important features are data a
 
 ```r
 library(ggplot2)
-library(datasets)
 
-# Using 'iris' in 'datasets' library as data
-ggplot(data = datasets::iris) +  #Data part
+ggplot(data = iris) +  #Data part
   geom_point(aes(Sepal.Length, Sepal.Width))  #Mapping part
 ```
 
@@ -30,7 +28,7 @@ All plots are composed of the data, the information you want to visualize, and a
 
 
 ```r
-ggplot(data = datasets::iris) +  #Data part
+ggplot(data = iris) +  #Data part
   geom_point(aes(Petal.Length, Petal.Width)) +  #layer 1 with mapping 
   geom_point(aes(Sepal.Length, Sepal.Width), color='red')  #layer 2 with a different mapping
 ```
@@ -40,6 +38,10 @@ ggplot(data = datasets::iris) +  #Data part
 
 
 ## **Customized Parts**
+
+The following picture shows the order of ggplot functions:
+
+![](images/codingOrder.png)
 
 ### **Geometric object, Statistical transformation and Position adjustment**
 
@@ -53,7 +55,7 @@ A statistical transformation ``stat`` transforms the data, generally by summariz
 
 
 ```r
-ggplot(data = datasets::iris) + 
+ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
                  stat = 'bin',position = 'stack') 
 ```
@@ -69,7 +71,7 @@ A scale controls how data is mapped to aesthetic attributes, so usually one scal
 
 
 ```r
-ggplot(data = datasets::iris) + 
+ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack')+
   scale_x_continuous(limits = c(0, 10)) +
   scale_y_continuous(limits = c(0, 50))
@@ -85,7 +87,7 @@ A coordinate system ``coord`` maps the position of objects onto the plane of the
 
 
 ```r
-ggplot(data = datasets::iris) + 
+ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
                  stat = 'bin',position = 'stack') +
   coord_polar()
@@ -100,7 +102,7 @@ Faceting can be used to split the data up into subsets of the entire dataset.
 
 
 ```r
-ggplot(data = datasets::iris) + 
+ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length), stat = 'bin')+
   facet_wrap(iris$Species)
 ```
@@ -114,7 +116,7 @@ Labels include titles, labels for x,y axis and annotates. Good graphics also nee
 
 
 ```r
-ggplot(data = datasets::iris) + 
+ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
                  stat = 'bin',position = 'stack')+
   ggtitle('Stacked Histogram on Petal Length of Different Species') +
@@ -134,4 +136,8 @@ ggplot(data = datasets::iris) +
 
 The cheat-sheets clearly list the basic components of a ggplot where you can customize your unique plot by choosing different functions.
 
-- If you are seeking for more detailed explanations and examples with real datasets, here are some useful links for you: [ggplot2: Elegant Graphics](https://ggplot2-book.org/)
+- If you are seeking for more detailed explanations and examples with real datasets, here are some useful links for you: 
+
+1. [ggplot2: Elegant Graphics](https://ggplot2-book.org/)
+
+2. [ggformat](https://github.com/jtr13/ggformat)
