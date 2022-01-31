@@ -33,10 +33,42 @@ In this example, we used `geom_histogram` to create a histogram on variable `x`.
 
 The y-scale of histograms can be represented in a variety of ways to express different results:
 
+
+
 1. Frequency or count: y = number of values that fall in each bin
-2. Relative frequency: y = number of values that fall in each bin / total number of values
-3. Cumulative frequency: y = total number of values <= (or <) right boundary of bin
-4. Density: y = relative frequency / binwidth
+
+
+```r
+ggplot(finches, aes(x = Depth)) +
+  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5,boundary = 6) +
+  ggtitle("Frequency Histogram")
+```
+
+<img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
+
+2. Cumulative frequency: y = total number of values <= (or <) right boundary of bin
+
+
+```r
+ggplot(finches, aes(x = Depth)) +
+  geom_histogram(aes(y=cumsum(..count..)),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
+  xlab("Cumulative frequency") +
+  ggtitle("Cumulative Frequency Histogram")
+```
+
+<img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+
+3. Density: y = relative frequency / binwidth
+
+
+```r
+ggplot(finches, aes(x = Depth)) +
+  geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
+  ggtitle("Density Histogram")
+```
+
+<img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+
 
 ### Parameters for geom_histogram
 
@@ -59,23 +91,20 @@ p2 <- ggplot(df, aes(x)) +
 grid.arrange(p1, p2, ncol = 2)
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
 
 
 #### Bin numbers
 
 
 ```r
-library(Sleuth3)
-finches <- Sleuth3::case0201
-
 #Default / Only adding some styles to make graph consistent
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(color="blue",fill="lightblue") +
   ggtitle("Default with pop-up about bin number")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
 
 We start by passing no parameters into `geom_histogram` and you will notice a pop-up saying that the default number of bins is 30.
 We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with *binwidth* or provide the desired number of bins with *bins*. Consider the following modifications:
@@ -84,21 +113,19 @@ We see that the graph is not ideal with some gaps. There are two ways to modify 
 ```r
 # using binwidth
 p3 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",
-                 binwidth = 0.5, boundary = 6) +
+  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
   ggtitle("Changed binwidth value")
 
 # using bins
 p4 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",
-                 bins = 15, boundary = 6) +
+  geom_histogram(color="blue",fill="lightblue",bins = 15, boundary = 6) +
   ggtitle("Changed bin value")
 
 # format plot layout
 grid.arrange(p3, p4, ncol = 2)
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
 
 *Note:* There is no gold standard on the number of bins, so try different numbers to generate best results.
 
@@ -119,13 +146,15 @@ p6 <- ggplot(finches, aes(x = Depth)) +
 grid.arrange(p5, p6, ncol = 2)
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
 
 Notice that the boundary of bins does not start at an axis and the only difference in the code is the removal of `boundry`. To control the position of bins, we can use either parameter `center` or `boundary`. You can use `boundary` to specify the endpoint of any bin or `center` to specify the center of any bin and ggplot2 will be able to calculate where to place the rest of the bins.  (Also, notice that when the boundary was changed, the number of bins got smaller by one. This is because by default the bins are centered and go over/under the range of the data.) In the above example, we specify `boundary` to be 6. We can see the first bin starts at 6 and the position of other bins are calculated based on the binwidth 0.5.
 
 ### Interactive histograms with `ggvis`
 
 The `ggvis` package is not currently in development, but does certain things very well, such as adjusting parameters of a histogram interactively while coding. If you are interested, refer [here](https://ggvis.rstudio.com/ggvis-basics.html).
+
+<br>
 
 ## Boxplot
 
@@ -141,7 +170,7 @@ ggplot(Orange, aes(x=circumference))+
   ggtitle("Boxplot of circumference")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 Here as you can see, boxplots provide a ton of information for a single chart. Boxplots tell you whether the variable is normally distributed, or if the distribution is skewed in either direction. You can also easily spot the outliers, which always helps.
 
@@ -159,7 +188,7 @@ ggplot(Orange, aes(x=reorder(Tree, -circumference, median),y=circumference))+
   labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
 
 **Note.** Usually in a boxplot, the boxes should be reordered so that there will be a decreasing order of the class medians from left to right.
 
@@ -174,8 +203,9 @@ ggplot(Orange, aes(x=reorder(Tree, circumference, median),y=circumference))+
   labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
 
+<br>
 
 ## Ridgeline plot
 
@@ -192,18 +222,15 @@ Consider the following example:
 library(ggridges)
 library(forcats)
 
-ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inorder(Tree))) +
-  geom_density_ridges() +
-  scale_fill_brewer(palette = 4) +
-  scale_y_discrete(expand = c(0.8, 0)) +
-  scale_x_continuous(expand = c(0.01, 0)) +
-  ggtitle("Density estimation of circumference of different types of Trees") +
-  labs(x="Circumference at Breast Height", y="Tree with ordering of max diameter") +
-  theme_ridges() +
-  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_text(hjust=0.5), legend.title = element_blank())
+world <- read.csv("countries2012.csv")
+
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) + 
+  geom_density_ridges(fill = "blue") +
+  ylab("Continent") +
+  ggtitle("2012 Continental GDP")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
 
 `ggridge` uses two main geoms to plot the ridgeline density plots: `geom_density_ridges` and `geom_ridgeline`. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.
 
@@ -211,18 +238,13 @@ ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inord
 
 
 ```r
-ggplot(Orange, aes(x=circumference,y=fct_rev(fct_inorder(Tree)),fill = fct_inorder(Tree))) +
-  geom_density_ridges(scale = 2, alpha=0.5) +
-  scale_fill_brewer(palette = 4) +
-  scale_y_discrete(expand = c(0.8, 0)) +
-  scale_x_continuous(expand = c(0.01, 0)) +
-  ggtitle("Density estimation of circumference of different types of Trees") +
-  labs(x="Circumference at Breast Height", y="Tree with ordering of max diameter") +
-  theme_ridges() +
-  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_text(hjust=0.5), legend.title = element_blank())
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) + 
+  geom_density_ridges(fill = "blue",alpha = .5, scale = 1.2) +
+  ylab("Continent") +
+  ggtitle("2012 Continental GDP")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
 
 In this example, we added parameter `scale` and `alpha` to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and `alpha` controls transparency. 
 
@@ -235,26 +257,28 @@ In this example, we added parameter `scale` and `alpha` to control overlaps betw
 - [History of Ridgeline plots](https://blog.revolutionanalytics.com/2017/07/joyplots.html){target="_blank"}: To refer to the theory of ridgeline plots.
 
 
+<br>
+
 ## Normal Distribution
 
 When encountering data that seems to be normally distributed, you may want to overlay a normal curve.
 
-There are many ways to draw a normal curve and we introduce one here
+There are many ways to draw a normal curve and we introduce one here:
 
 
 ```r
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(aes(y=..density..),color="blue",fill="lightblue",
-                 binwidth = 0.5) +
-  stat_function(fun=dnorm, col = "red",
-                args=list(mean(finches$Depth),sd(finches$Depth)))+
+  geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5) +
+  stat_function(fun=dnorm, col = "red",args=list(mean(finches$Depth),sd(finches$Depth)))+
   ggtitle("Normal curve overlaid")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
 
-Notice that the normal curve is not compatiable with facet. Consider the following example
+In some situations you might want to draw separate normal curves after faceting on a categorical variable. Simply using `stat_function` will not generate the desired result. Consider the following examples, where normal curves were created for four plots using a single `stat_function`.
 
+<center>
 ![](Normal_dist.png){width=75%}
+</center>
 
-As you might notice, even though a normal curve appears in all of the sections, they are actually the same one and generated on the whole dataset. In such circumstance, we suggest drawing each graph separately and combine them.
+As first glance, a normal curve appears in all of the plots. However, if you look closely, all the normal curves are actually the same one and generated on the whole dataset. In such situation, we suggest drawing each graph separately and combine them.

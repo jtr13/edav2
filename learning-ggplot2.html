@@ -207,74 +207,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Learning ggplot2</h1>
 <div id="getting-started-1" class="section level2">
 <h2><span class="header-section-number">3.1</span> <strong>Getting Started</strong></h2>
-<p>Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: <code>ggplot2</code> with it’s basic grammar and functions.</p>
-<p><img src="images/install_ggplot.png" style="width:75.0%" /></p>
+<p>Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: <code>ggplot2</code> with it’s basic grammar and functions. To start, install <code>ggplot2</code> in the console or in R chunk.</p>
+<pre><code>install.packages(&#39;ggplot2&#39;)</code></pre>
 </div>
 <div id="default-part-layer" class="section level2">
 <h2><span class="header-section-number">3.2</span> <strong>Default Part: Layer</strong></h2>
 <p>Unlike other graphics packages, one of the remarkable advantages of <code>ggplot2</code> is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding <code>ggplot2</code> functions to meet your needs based on your data.</p>
 <p>By definition of the grammar of graphics, the most important features are data and mapping in the layers and that’s where we are getting started.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="learning-ggplot2.html#cb6-1"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb6-2"><a href="learning-ggplot2.html#cb6-2"></a></span>
-<span id="cb6-3"><a href="learning-ggplot2.html#cb6-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
-<span id="cb6-4"><a href="learning-ggplot2.html#cb6-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width))  <span class="co">#Mapping part</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="learning-ggplot2.html#cb7-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="learning-ggplot2.html#cb7-2"></a></span>
+<span id="cb7-3"><a href="learning-ggplot2.html#cb7-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
+<span id="cb7-4"><a href="learning-ggplot2.html#cb7-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width))  <span class="co">#Mapping part</span></span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="learning-ggplot2.html#cb7-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
-<span id="cb7-2"><a href="learning-ggplot2.html#cb7-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width)) <span class="op">+</span><span class="st">  </span><span class="co">#layer 1 with mapping </span></span>
-<span id="cb7-3"><a href="learning-ggplot2.html#cb7-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width), <span class="dt">color=</span><span class="st">&#39;red&#39;</span>)  <span class="co">#layer 2 with a different mapping</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="learning-ggplot2.html#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
+<span id="cb8-2"><a href="learning-ggplot2.html#cb8-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width)) <span class="op">+</span><span class="st">  </span><span class="co">#layer 1 with mapping </span></span>
+<span id="cb8-3"><a href="learning-ggplot2.html#cb8-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width), <span class="dt">color=</span><span class="st">&#39;red&#39;</span>)  <span class="co">#layer 2 with a different mapping</span></span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="customized-parts" class="section level2">
 <h2><span class="header-section-number">3.3</span> <strong>Customized Parts</strong></h2>
 <p>The following picture shows the order of ggplot functions:</p>
-<p><img src="images/codingOrder.png" /></p>
+<center>
+<img src="images/codingOrder.png" style="width:75.0%" />
+</center>
 <div id="geometric-object-statistical-transformation-and-position-adjustment" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> <strong>Geometric object, Statistical transformation and Position adjustment</strong></h3>
-<p><img src="images/layers.png" style="width:50.0%" /></p>
+<center>
+<img src="images/layers.png" style="width:50.0%" />
+</center>
 <p>Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.</p>
 <p>Geometric objects <code>geoms</code> control the type of plot you create. Each <code>geom</code> can only display certain aesthetics or visual attributes of the geom. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
 <p>A statistical transformation <code>stat</code> transforms the data, generally by summarizing the information. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="learning-ggplot2.html#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb8-2"><a href="learning-ggplot2.html#cb8-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
-<span id="cb8-3"><a href="learning-ggplot2.html#cb8-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="learning-ggplot2.html#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb9-2"><a href="learning-ggplot2.html#cb9-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
+<span id="cb9-3"><a href="learning-ggplot2.html#cb9-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) </span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="scale" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> <strong>Scale</strong></h3>
-<p><img src="images/scale.png" style="width:50.0%" /></p>
+<center>
+<img src="images/scale.png" style="width:50.0%" />
+</center>
 <p>A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="learning-ggplot2.html#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb9-2"><a href="learning-ggplot2.html#cb9-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>)<span class="op">+</span></span>
-<span id="cb9-3"><a href="learning-ggplot2.html#cb9-3"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span></span>
-<span id="cb9-4"><a href="learning-ggplot2.html#cb9-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="learning-ggplot2.html#cb10-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb10-2"><a href="learning-ggplot2.html#cb10-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>)<span class="op">+</span></span>
+<span id="cb10-3"><a href="learning-ggplot2.html#cb10-3"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span></span>
+<span id="cb10-4"><a href="learning-ggplot2.html#cb10-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))</span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="coordinate-system" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> <strong>Coordinate system</strong></h3>
 <p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one <code>coord</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="learning-ggplot2.html#cb10-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb10-2"><a href="learning-ggplot2.html#cb10-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
-<span id="cb10-3"><a href="learning-ggplot2.html#cb10-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="op">+</span></span>
-<span id="cb10-4"><a href="learning-ggplot2.html#cb10-4"></a><span class="st">  </span><span class="kw">coord_polar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="learning-ggplot2.html#cb11-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb11-2"><a href="learning-ggplot2.html#cb11-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
+<span id="cb11-3"><a href="learning-ggplot2.html#cb11-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="op">+</span></span>
+<span id="cb11-4"><a href="learning-ggplot2.html#cb11-4"></a><span class="st">  </span><span class="kw">coord_polar</span>()</span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="faceting" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> <strong>Faceting</strong></h3>
 <p>Faceting can be used to split the data up into subsets of the entire dataset.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="learning-ggplot2.html#cb11-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb11-2"><a href="learning-ggplot2.html#cb11-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>)<span class="op">+</span></span>
-<span id="cb11-3"><a href="learning-ggplot2.html#cb11-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(iris<span class="op">$</span>Species)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="learning-ggplot2.html#cb12-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb12-2"><a href="learning-ggplot2.html#cb12-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>)<span class="op">+</span></span>
+<span id="cb12-3"><a href="learning-ggplot2.html#cb12-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(iris<span class="op">$</span>Species)</span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="labels" class="section level3">
 <h3><span class="header-section-number">3.3.5</span> <strong>Labels</strong></h3>
 <p>Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers’ of the background knowledge of your data.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="learning-ggplot2.html#cb12-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb12-2"><a href="learning-ggplot2.html#cb12-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
-<span id="cb12-3"><a href="learning-ggplot2.html#cb12-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>)<span class="op">+</span></span>
-<span id="cb12-4"><a href="learning-ggplot2.html#cb12-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Stacked Histogram on Petal Length of Different Species&#39;</span>) <span class="op">+</span></span>
-<span id="cb12-5"><a href="learning-ggplot2.html#cb12-5"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&#39;Length of Petal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="learning-ggplot2.html#cb13-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb13-2"><a href="learning-ggplot2.html#cb13-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), </span>
+<span id="cb13-3"><a href="learning-ggplot2.html#cb13-3"></a>                 <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>)<span class="op">+</span></span>
+<span id="cb13-4"><a href="learning-ggplot2.html#cb13-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Stacked Histogram on Petal Length of Different Species&#39;</span>) <span class="op">+</span></span>
+<span id="cb13-5"><a href="learning-ggplot2.html#cb13-5"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&#39;Length of Petal&#39;</span>)</span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>

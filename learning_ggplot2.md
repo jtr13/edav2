@@ -3,9 +3,11 @@
 
 ## **Getting Started**
 
-Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: ``ggplot2`` with it's basic grammar and functions.
+Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: ``ggplot2`` with it's basic grammar and functions. To start, install ``ggplot2`` in the console or in R chunk.
 
-![](images/install_ggplot.png){width=75%}
+```
+install.packages('ggplot2')
+```
 
 
 ## **Default Part: Layer**
@@ -41,11 +43,16 @@ ggplot(data = iris) +  #Data part
 
 The following picture shows the order of ggplot functions:
 
-![](images/codingOrder.png)
+<center>
+![](images/codingOrder.png){width=75%}
+</center>
+
 
 ### **Geometric object, Statistical transformation and Position adjustment**
 
+<center>
 ![](images/layers.png){width=50%}
+</center>
 
 Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.
 
@@ -65,7 +72,9 @@ ggplot(data = iris) +
 
 ### **Scale**
 
+<center>
 ![](images/scale.png){width=50%}
+</center>
 
 A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.
 

@@ -205,7 +205,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="learning-r" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Learning R</h1>
-<p><em>This is a page working in progress :)</em></p>
 <div id="getting-started" class="section level2">
 <h2><span class="header-section-number">2.1</span> Getting started</h2>
 <p>Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of essentials so you can get up and running. The best resources are scattered in different places online, so bear with links to various sites depending on the topic.</p>
@@ -231,6 +230,7 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 <li><p><a href="https://r4ds.had.co.nz/transform.html" target="_blank">Learn the basic dplyr verbs</a> for data manipulation (<em>r4ds</em>) – Concentrate on the main verbs: <strong><code>filter()</code></strong> (rows), <strong><code>select()</code></strong> (columns), <strong><code>mutate()</code></strong>, <strong><code>arrange()</code></strong> (rows), <strong><code>group_by()</code></strong>, and <strong><code>summarize()</code></strong>. Learn the pipe <strong><code>%&gt;%</code></strong> operator.</p></li>
 <li><p>Know how to <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank">tidy your data</a> – The <strong><code>pivot_longer()</code></strong> function from the <strong>tidyr</strong> package – successor to <strong><code>gather()</code></strong> – will help you get your data in the right form for plotting. More on this in class. Check out these <a href="https://github.com/gadenbuie/tidyexplain" target="_blank">super cool animations</a>, which follow a data frame as it is transformed by <code>tidyr</code> functions.</p></li>
 </ol>
+<p><br></p>
 </div>
 </div>
 <div id="troubleshooting" class="section level2">
@@ -248,6 +248,7 @@ Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-esse
 <p><code>ggmosaic::mosaic()</code> and <code>vcd::mosaic()</code></p>
 <p><code>leaflet::addLegend()</code> and <code>xts::addLegend()</code></p>
 <p><code>dplyr::select</code> and <code>MASS::select</code></p>
+<p><br></p>
 </div>
 </div>
 <div id="tips-tricks" class="section level2">
@@ -278,23 +279,23 @@ knitr::opts_chunk$set(echo = TRUE)</code></pre>
 </div>
 <div id="r-studio-keyborad-shortcuts" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> R studio keyborad shortcuts</h3>
-<p>Insert R chunk
-- <strong>option-command-i</strong> (Mac) - <strong>ctrl+alt+I</strong> (Windows)</p>
+<p><strong>Insert R chunk</strong>
+- option-command-i (Mac) - ctrl+alt+I (Windows)</p>
 <pre><code>```{r}
 ```</code></pre>
-<p>Insert <code>%&gt;%</code> (“the pipe”):</p>
+<p><strong>Insert <code>%&gt;%</code></strong> (“the pipe”):</p>
 <ul>
-<li><strong>shift-command-M</strong> (Mac) - <strong>ctrl+shift+M</strong> (Windows)</li>
+<li>shift-command(ctrl)-M Mac/Windows</li>
 </ul>
-<p>Comment/Uncomment lines:</p>
+<p><strong>Comment/Uncomment lines</strong></p>
 <ul>
-<li><strong>shift-command-C</strong> (Mac) - <strong>ctrl-shift+C</strong> (Windows)</li>
+<li>shift-command(ctrl)-C Mac/Windows</li>
 </ul>
-<p>Knit Document:</p>
+<p><strong>Knit Document</strong></p>
 <ul>
-<li><strong>shift-command-K</strong> (Mac) - <strong>ctrl-shift+K</strong> (Windows)</li>
+<li>shift-command(ctrl)-K Mac/Windows</li>
 </ul>
-<p>For more shortcuts refer <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">here</a></p>
+<p>For more shortcuts, refer <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">here</a></p>
 </div>
 <div id="viewing-plots-in-plot-window" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> Viewing plots in plot window</h3>

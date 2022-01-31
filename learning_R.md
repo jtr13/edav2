@@ -1,7 +1,5 @@
 # Learning R
 
-*This is a page working in progress :)*
-
 ## Getting started
 
 Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of essentials so you can get up and running. The best resources are scattered in different places online, so bear with links to various sites depending on the topic.
@@ -37,6 +35,8 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 
 10. Know how to [tidy your data](https://r4ds.had.co.nz/tidy-data.html){target="_blank"} -- The **`pivot_longer()`** function from the **tidyr** package -- successor to **`gather()`** -- will help you get your data in the right form for plotting.  More on this in class. Check out these [super cool animations](https://github.com/gadenbuie/tidyexplain){target="_blank"}, which follow a data frame as it is transformed by `tidyr` functions.
 
+<br>
+
 ## Troubleshooting
 
 ### Document doesn’t knit
@@ -58,6 +58,8 @@ Some other culprits:
 `leaflet::addLegend()` and `xts::addLegend()`
 
 `dplyr::select` and `MASS::select`
+
+<br>
 
 ## Tips & Tricks
 
@@ -104,8 +106,8 @@ Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `
 
 ### R studio keyborad shortcuts
 
-Insert R chunk
-- **option-command-i**  (Mac) - **ctrl+alt+I**  (Windows)
+**Insert R chunk**
+- option-command-i  (Mac) - ctrl+alt+I  (Windows)
 
 
 ````
@@ -113,19 +115,19 @@ Insert R chunk
 ```
 ````
 
-Insert `%>%`   ("the pipe"):
+**Insert `%>%`**   ("the pipe"):
 
-- **shift-command-M**  (Mac)  - **ctrl+shift+M**  (Windows)
+- shift-command(ctrl)-M  Mac/Windows
 
-Comment/Uncomment lines:
+**Comment/Uncomment lines**
 
-- **shift-command-C**  (Mac)  - **ctrl-shift+C** (Windows)
+- shift-command(ctrl)-C Mac/Windows
 
-Knit Document:
+**Knit Document**
 
-- **shift-command-K**  (Mac)  - **ctrl-shift+K** (Windows)
+- shift-command(ctrl)-K  Mac/Windows
 
-For more shortcuts refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
+For more shortcuts, refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
 
 ### Viewing plots in plot window
 
