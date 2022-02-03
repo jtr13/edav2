@@ -7,7 +7,7 @@ In this chapter, we will demonstrate graphs with unidimensional continuous varia
 ### Basics and implications
 We will start with an easy example.
 
-```{r}
+```{r,fig.width=4, fig.height=3}
 library(ggplot2)
 library(gridExtra)
 
@@ -17,8 +17,7 @@ x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
 df <- data.frame(x)
 
 ggplot(df, aes(x)) +
-  geom_histogram(color = "blue", fill = "lightBlue", 
-                 binwidth = 5, center = 52.5) +
+  geom_histogram(color = "blue", fill = "lightBlue", binwidth = 5, center = 52.5) +
   ggtitle("ggplot2 histogram of x")
 ```
 
@@ -37,7 +36,7 @@ finches <- Sleuth3::case0201
 
 1. Frequency or count: y = number of values that fall in each bin
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(color="blue",fill="lightblue",binwidth = 0.5,boundary = 6) +
   ggtitle("Frequency Histogram")
@@ -45,7 +44,7 @@ ggplot(finches, aes(x = Depth)) +
 
 2. Cumulative frequency: y = total number of values <= (or <) right boundary of bin
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(aes(y=cumsum(..count..)),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
   xlab("Cumulative frequency") +
@@ -54,7 +53,7 @@ ggplot(finches, aes(x = Depth)) +
 
 3. Density: y = relative frequency / binwidth
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
   ggtitle("Density Histogram")
@@ -67,7 +66,7 @@ ggplot(finches, aes(x = Depth)) +
 
 Be mindful of the boundaries of the bins and whether a point will fall into the left or right bin if it is on a boundary. You can use the parameter `closed` to control the intervals.
 
-```{r}
+```{r,fig.width=8, fig.height=3.6}
 p1 <- ggplot(df, aes(x)) +
   geom_histogram(color="blue",fill="lightblue", 
                  binwidth = 5, center = 52.5, closed="left")  +
@@ -84,7 +83,7 @@ grid.arrange(p1, p2, ncol = 2)
 
 #### Bin numbers
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 #Default / Only adding some styles to make graph consistent
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(color="blue",fill="lightblue") +
@@ -92,9 +91,9 @@ ggplot(finches, aes(x = Depth)) +
 ```
 
 We start by passing no parameters into `geom_histogram` and you will notice a pop-up saying that the default number of bins is 30.
-We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with *binwidth* or provide the desired number of bins with *bins*. Consider the following modifications:
+We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with **binwidth** or provide the desired number of bins with **bins**. Consider the following modifications:
 
-```{r}
+```{r,fig.width=8, fig.height=3.6}
 # using binwidth
 p3 <- ggplot(finches, aes(x = Depth)) +
   geom_histogram(color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
@@ -115,7 +114,7 @@ grid.arrange(p3, p4, ncol = 2)
 
 Consider this comparison
 
-```{r}
+```{r,fig.width=8, fig.height=3.6}
 p5 <- ggplot(finches, aes(x = Depth)) +
   geom_histogram(color="blue",fill="lightblue",binwidth = 0.5) +
   ggtitle("Without alignment")
@@ -141,7 +140,7 @@ The `ggvis` package is not currently in development, but does certain things ver
 
 A boxplot is one of the simplest ways of representing a distribution of a continuous variable (**Never** use boxplots for categorical data). It consists of two parts: box and whiskers. Let's starting with a simple example: single boxplot.
 
-```{r}
+```{r,fig.width=6, fig.height=1.8}
 library(datasets)
 ggplot(Orange, aes(x=circumference))+
   geom_boxplot()+
@@ -156,7 +155,7 @@ Next, what if you want to compare the distributions between multiple classes? He
 
 The following example still use the ``Orange`` dataset. We compare the distributions of ``circumference`` between different ``Tree``(which indicates the tree types with ordering of max diameter).
 
-```{r}
+```{r,fig.width=6, fig.height=4.5}
 ggplot(Orange, aes(x=reorder(Tree, -circumference, median),y=circumference))+
   geom_boxplot()+
   ggtitle("Multiple boxplots of circumference of different types of Trees")+
@@ -167,13 +166,22 @@ ggplot(Orange, aes(x=reorder(Tree, -circumference, median),y=circumference))+
 
 Often you want boxplots to be horizontal. Super easy to do in ``ggplot2``: just tack on ``+ coord_flip()`` and remove the ``-`` from the reordering so that the factor level with the highest median will be on top:
 
-```{r}
+```{r,fig.width=6, fig.height=4.5}
 ggplot(Orange, aes(x=reorder(Tree, circumference, median),y=circumference))+
   geom_boxplot()+ 
   coord_flip()+
   ggtitle("Multiple boxplots of circumference of different types of Trees")+
   labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
 ```
+
+### Additional resources
+
+- Tukey, John W. 1977. [*Exploratory Data Analysis.*](https://clio.columbia.edu/catalog/136422){target="_blank"} Addison-Wesley. (Chapter 2): the primary source in which boxplots are first presented. 
+- [Article on boxplots with ggplot2](http://t-redactyl.io/blog/2016/04/creating-plots-in-r-using-ggplot2-part-10-boxplots.html){target="_blank"}: An excellent collection of code examples on how to make boxplots with `ggplot2`. Covers layering, working with legends, faceting, formatting, and more. If you want a boxplot to look a certain way, this article will help.
+- [Boxplots with plotly package](https://plot.ly/ggplot2/box-plots/){target="_blank"}: boxplot examples using the `plotly` package. These allow for a little interactivity on hover, which might better explain the underlying statistics of your plot.
+- [ggplot2 Boxplot: Quick Start Guide](http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization){target="_blank"}: Article from [STHDA](http://www.sthda.com/english/){target="_blank"} on making boxplots using ggplot2. Excellent starting point for getting immediate results and custom formatting.
+- [Hadley Wickhan and Lisa Stryjewski on boxplots](http://vita.had.co.nz/papers/boxplots.pdf){target="_blank"}: good for understanding basics of more complex boxplots and some of the history behind them.
+
 
 <br>
 
@@ -187,7 +195,7 @@ A good example using ridgeline plots will be a great example is visualizing the 
 
 Consider the following example:
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 library(ggridges)
 library(forcats)
 
@@ -204,7 +212,7 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
 
 ### Create better visuals
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) + 
   geom_density_ridges(fill = "blue",alpha = .5, scale = 1.2) +
   ylab("Continent") +
@@ -230,7 +238,7 @@ When encountering data that seems to be normally distributed, you may want to ov
 
 There are many ways to draw a normal curve and we introduce one here:
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5) +
   stat_function(fun=dnorm, col = "red",args=list(mean(finches$Depth),sd(finches$Depth)))+
@@ -244,3 +252,4 @@ In some situations you might want to draw separate normal curves after faceting 
 </center>
 
 As first glance, a normal curve appears in all of the plots. However, if you look closely, all the normal curves are actually the same one and generated on the whole dataset. In such situation, we suggest drawing each graph separately and combine them.
+
