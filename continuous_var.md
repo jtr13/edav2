@@ -18,12 +18,11 @@ x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
 df <- data.frame(x)
 
 ggplot(df, aes(x)) +
-  geom_histogram(color = "blue", fill = "lightBlue", 
-                 binwidth = 5, center = 52.5) +
+  geom_histogram(color = "blue", fill = "lightBlue", binwidth = 5, center = 52.5) +
   ggtitle("ggplot2 histogram of x")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" />
 
 In this example, we used `geom_histogram` to create a histogram on variable `x`. We can see that it is quick to make and does not need much pre-processing. Moreover, Histograms show data’s empirical distribution within a set of intervals and we suggest using it as a one of the first steps to understand your data.
 
@@ -44,7 +43,7 @@ ggplot(finches, aes(x = Depth)) +
   ggtitle("Frequency Histogram")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" />
 
 2. Cumulative frequency: y = total number of values <= (or <) right boundary of bin
 
@@ -56,7 +55,7 @@ ggplot(finches, aes(x = Depth)) +
   ggtitle("Cumulative Frequency Histogram")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" />
 
 3. Density: y = relative frequency / binwidth
 
@@ -67,7 +66,7 @@ ggplot(finches, aes(x = Depth)) +
   ggtitle("Density Histogram")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 ### Parameters for geom_histogram
@@ -91,7 +90,7 @@ p2 <- ggplot(df, aes(x)) +
 grid.arrange(p1, p2, ncol = 2)
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;" />
 
 
 #### Bin numbers
@@ -104,10 +103,10 @@ ggplot(finches, aes(x = Depth)) +
   ggtitle("Default with pop-up about bin number")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" />
 
 We start by passing no parameters into `geom_histogram` and you will notice a pop-up saying that the default number of bins is 30.
-We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with *binwidth* or provide the desired number of bins with *bins*. Consider the following modifications:
+We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with **binwidth** or provide the desired number of bins with **bins**. Consider the following modifications:
 
 
 ```r
@@ -125,7 +124,7 @@ p4 <- ggplot(finches, aes(x = Depth)) +
 grid.arrange(p3, p4, ncol = 2)
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" />
 
 *Note:* There is no gold standard on the number of bins, so try different numbers to generate best results.
 
@@ -146,7 +145,7 @@ p6 <- ggplot(finches, aes(x = Depth)) +
 grid.arrange(p5, p6, ncol = 2)
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-9-1.png" width="768" style="display: block; margin: auto;" />
 
 Notice that the boundary of bins does not start at an axis and the only difference in the code is the removal of `boundry`. To control the position of bins, we can use either parameter `center` or `boundary`. You can use `boundary` to specify the endpoint of any bin or `center` to specify the center of any bin and ggplot2 will be able to calculate where to place the rest of the bins.  (Also, notice that when the boundary was changed, the number of bins got smaller by one. This is because by default the bins are centered and go over/under the range of the data.) In the above example, we specify `boundary` to be 6. We can see the first bin starts at 6 and the position of other bins are calculated based on the binwidth 0.5.
 
@@ -170,7 +169,7 @@ ggplot(Orange, aes(x=circumference))+
   ggtitle("Boxplot of circumference")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" />
 
 Here as you can see, boxplots provide a ton of information for a single chart. Boxplots tell you whether the variable is normally distributed, or if the distribution is skewed in either direction. You can also easily spot the outliers, which always helps.
 
@@ -188,7 +187,7 @@ ggplot(Orange, aes(x=reorder(Tree, -circumference, median),y=circumference))+
   labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" />
 
 **Note.** Usually in a boxplot, the boxes should be reordered so that there will be a decreasing order of the class medians from left to right.
 
@@ -203,7 +202,16 @@ ggplot(Orange, aes(x=reorder(Tree, circumference, median),y=circumference))+
   labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" />
+
+### Additional resources
+
+- Tukey, John W. 1977. [*Exploratory Data Analysis.*](https://clio.columbia.edu/catalog/136422){target="_blank"} Addison-Wesley. (Chapter 2): the primary source in which boxplots are first presented. 
+- [Article on boxplots with ggplot2](http://t-redactyl.io/blog/2016/04/creating-plots-in-r-using-ggplot2-part-10-boxplots.html){target="_blank"}: An excellent collection of code examples on how to make boxplots with `ggplot2`. Covers layering, working with legends, faceting, formatting, and more. If you want a boxplot to look a certain way, this article will help.
+- [Boxplots with plotly package](https://plot.ly/ggplot2/box-plots/){target="_blank"}: boxplot examples using the `plotly` package. These allow for a little interactivity on hover, which might better explain the underlying statistics of your plot.
+- [ggplot2 Boxplot: Quick Start Guide](http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization){target="_blank"}: Article from [STHDA](http://www.sthda.com/english/){target="_blank"} on making boxplots using ggplot2. Excellent starting point for getting immediate results and custom formatting.
+- [Hadley Wickhan and Lisa Stryjewski on boxplots](http://vita.had.co.nz/papers/boxplots.pdf){target="_blank"}: good for understanding basics of more complex boxplots and some of the history behind them.
+
 
 <br>
 
@@ -230,7 +238,7 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
   ggtitle("2012 Continental GDP")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-13-1.png" width="460.8" style="display: block; margin: auto;" />
 
 `ggridge` uses two main geoms to plot the ridgeline density plots: `geom_density_ridges` and `geom_ridgeline`. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.
 
@@ -244,7 +252,7 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
   ggtitle("2012 Continental GDP")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" width="460.8" style="display: block; margin: auto;" />
 
 In this example, we added parameter `scale` and `alpha` to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and `alpha` controls transparency. 
 
@@ -273,7 +281,7 @@ ggplot(finches, aes(x = Depth)) +
   ggtitle("Normal curve overlaid")
 ```
 
-<img src="continuous_var_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
+<img src="continuous_var_files/figure-html/unnamed-chunk-15-1.png" width="460.8" style="display: block; margin: auto;" />
 
 In some situations you might want to draw separate normal curves after faceting on a categorical variable. Simply using `stat_function` will not generate the desired result. Consider the following examples, where normal curves were created for four plots using a single `stat_function`.
 
@@ -282,3 +290,4 @@ In some situations you might want to draw separate normal curves after faceting 
 </center>
 
 As first glance, a normal curve appears in all of the plots. However, if you look closely, all the normal curves are actually the same one and generated on the whole dataset. In such situation, we suggest drawing each graph separately and combine them.
+

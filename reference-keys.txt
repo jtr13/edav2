@@ -33,8 +33,9 @@ interactive-histograms-with-ggvis
 boxplot
 single-boxplot
 multiple-boxplots
+additional-resources
 ridgeline-plot
 basics-and-implications-1
 create-better-visuals
-additional-resources
+additional-resources-1
 normal-distribution
