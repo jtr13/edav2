@@ -24,7 +24,7 @@ ggplot(data = iris) +  #Data part
   geom_point(aes(Sepal.Length, Sepal.Width))  #Mapping part
 ```
 
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" />
+<img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" />
 
 All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.
 
@@ -35,7 +35,7 @@ ggplot(data = iris) +  #Data part
   geom_point(aes(Sepal.Length, Sepal.Width), color='red')  #layer 2 with a different mapping
 ```
 
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" />
+<img src="learning_ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="384" style="display: block; margin: auto;" />
 
 
 
@@ -44,14 +44,14 @@ ggplot(data = iris) +  #Data part
 The following picture shows the order of ggplot functions:
 
 <center>
-![](images/codingOrder.png){width=75%}
+![](images/codingOrder.png){width=60%}
 </center>
 
 
 ### **Geometric object, Statistical transformation and Position adjustment**
 
 <center>
-![](images/layers.png){width=50%}
+![](images/layers.png)
 </center>
 
 Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.
@@ -67,7 +67,7 @@ ggplot(data = iris) +
                  stat = 'bin',position = 'stack') 
 ```
 
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
+<img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 ### **Scale**
@@ -86,7 +86,7 @@ ggplot(data = iris) +
   scale_y_continuous(limits = c(0, 50))
 ```
 
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+<img src="learning_ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 
@@ -102,7 +102,7 @@ ggplot(data = iris) +
   coord_polar()
 ```
 
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+<img src="learning_ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 ### **Faceting**
@@ -116,7 +116,7 @@ ggplot(data = iris) +
   facet_wrap(iris$Species)
 ```
 
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+<img src="learning_ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 ### **Labels**
@@ -132,7 +132,7 @@ ggplot(data = iris) +
   xlab('Length of Petal')
 ```
 
-<img src="learning_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<img src="learning_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 
@@ -141,7 +141,7 @@ ggplot(data = iris) +
 
 - For more implementations and examples, one easiest way is referring to the ggplot2 Cheatsheets provided by R. Follow the steps shown below and you can find the cheat-sheets in your RStudio. 
 
-![](images/ggplotCheatsheet_1.png){width=50%}
+![](images/ggplotCheatsheet_1.png){width=75%}
 
 The cheat-sheets clearly list the basic components of a ggplot where you can customize your unique plot by choosing different functions.
 
