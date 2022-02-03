@@ -16,7 +16,7 @@ Unlike other graphics packages, one of the remarkable advantages of ``ggplot2`` 
 
 By definition of the grammar of graphics, the most important features are data and mapping in the layers and that's where we are getting started.
 
-```{r}
+```{r,fig.width=4, fig.height=3}
 library(ggplot2)
 
 ggplot(data = iris) +  #Data part
@@ -25,7 +25,7 @@ ggplot(data = iris) +  #Data part
 
 All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.
 
-```{r}
+```{r,fig.width=4, fig.height=3}
 ggplot(data = iris) +  #Data part
   geom_point(aes(Petal.Length, Petal.Width)) +  #layer 1 with mapping 
   geom_point(aes(Sepal.Length, Sepal.Width), color='red')  #layer 2 with a different mapping
@@ -38,14 +38,14 @@ ggplot(data = iris) +  #Data part
 The following picture shows the order of ggplot functions:
 
 <center>
-![](images/codingOrder.png){width=75%}
+![](images/codingOrder.png){width=60%}
 </center>
 
 
 ### **Geometric object, Statistical transformation and Position adjustment**
 
 <center>
-![](images/layers.png){width=50%}
+![](images/layers.png)
 </center>
 
 Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.
@@ -54,7 +54,7 @@ Geometric objects ``geoms`` control the type of plot you create. Each ``geom`` c
 
 A statistical transformation ``stat`` transforms the data, generally by summarizing the information. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
                  stat = 'bin',position = 'stack') 
@@ -69,7 +69,7 @@ ggplot(data = iris) +
 
 A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack')+
   scale_x_continuous(limits = c(0, 10)) +
@@ -82,7 +82,7 @@ ggplot(data = iris) +
 
 A coordinate system ``coord`` maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one ``coord``
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
                  stat = 'bin',position = 'stack') +
@@ -94,7 +94,7 @@ ggplot(data = iris) +
 
 Faceting can be used to split the data up into subsets of the entire dataset. 
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length), stat = 'bin')+
   facet_wrap(iris$Species)
@@ -105,7 +105,7 @@ ggplot(data = iris) +
 
 Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers' of the background knowledge of your data.
 
-```{r}
+```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) + 
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
                  stat = 'bin',position = 'stack')+
@@ -120,7 +120,7 @@ ggplot(data = iris) +
 
 - For more implementations and examples, one easiest way is referring to the ggplot2 Cheatsheets provided by R. Follow the steps shown below and you can find the cheat-sheets in your RStudio. 
 
-![](images/ggplotCheatsheet_1.png){width=50%}
+![](images/ggplotCheatsheet_1.png){width=75%}
 
 The cheat-sheets clearly list the basic components of a ggplot where you can customize your unique plot by choosing different functions.
 
