@@ -55,9 +55,8 @@ Geometric objects ``geoms`` control the type of plot you create. Each ``geom`` c
 A statistical transformation ``stat`` transforms the data, generally by summarizing the information. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.
 
 ```{r,fig.width=4.8, fig.height=3.6}
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
-                 stat = 'bin',position = 'stack') 
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack')
 ```
 
 
@@ -70,8 +69,8 @@ ggplot(data = iris) +
 A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.
 
 ```{r,fig.width=4.8, fig.height=3.6}
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack')+
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
   scale_x_continuous(limits = c(0, 10)) +
   scale_y_continuous(limits = c(0, 50))
 ```
@@ -83,9 +82,8 @@ ggplot(data = iris) +
 A coordinate system ``coord`` maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one ``coord``
 
 ```{r,fig.width=4.8, fig.height=3.6}
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
-                 stat = 'bin',position = 'stack') +
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
   coord_polar()
 ```
 
@@ -95,8 +93,8 @@ ggplot(data = iris) +
 Faceting can be used to split the data up into subsets of the entire dataset. 
 
 ```{r,fig.width=4.8, fig.height=3.6}
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length), stat = 'bin')+
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length), stat = 'bin') +
   facet_wrap(iris$Species)
 ```
 
@@ -106,9 +104,8 @@ ggplot(data = iris) +
 Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers' of the background knowledge of your data.
 
 ```{r,fig.width=4.8, fig.height=3.6}
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
-                 stat = 'bin',position = 'stack')+
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
   ggtitle('Stacked Histogram on Petal Length of Different Species') +
   xlab('Length of Petal')
 ```
