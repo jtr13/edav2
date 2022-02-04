@@ -18,8 +18,8 @@ x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
 df <- data.frame(x)
 
 ggplot(df, aes(x)) +
-  geom_histogram(color = "blue", fill = "lightBlue", binwidth = 5, center = 52.5) +
-  ggtitle("ggplot2 histogram of x")
+  ggtitle("ggplot2 histogram of x") +
+  geom_histogram(color = "blue", fill = "lightBlue", binwidth = 5, center = 52.5)
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" />
@@ -51,8 +51,8 @@ ggplot(finches, aes(x = Depth)) +
 ```r
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(aes(y=cumsum(..count..)),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
-  xlab("Cumulative frequency") +
-  ggtitle("Cumulative Frequency Histogram")
+  ggtitle("Cumulative Frequency Histogram") +
+  xlab("Cumulative frequency")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" />
@@ -163,10 +163,9 @@ A boxplot is one of the simplest ways of representing a distribution of a contin
 
 
 ```r
-library(datasets)
-ggplot(Orange, aes(x=circumference))+
-  geom_boxplot()+
-  ggtitle("Boxplot of circumference")
+ggplot(chickwts, aes(x=weight)) +
+  geom_boxplot() +
+  ggtitle("Boxplot of Chicken Weights")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" />
@@ -177,14 +176,14 @@ Here as you can see, boxplots provide a ton of information for a single chart. B
 
 Next, what if you want to compare the distributions between multiple classes? Here, you can create a multiple boxplot. But remember, your data frame needs to be tidy, that is you need to have a column with levels of the grouping variable. It can be be factor, character, or integer class.
 
-The following example still use the ``Orange`` dataset. We compare the distributions of ``circumference`` between different ``Tree``(which indicates the tree types with ordering of max diameter).
+The following example still use the ``chickwts`` dataset. We compare the distributions of ``weight`` between different ``feed``(which is a column with six factor levels).
 
 
 ```r
-ggplot(Orange, aes(x=reorder(Tree, -circumference, median),y=circumference))+
-  geom_boxplot()+
-  ggtitle("Multiple boxplots of circumference of different types of Trees")+
-  labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
+ggplot(chickwts, aes(x=reorder(feed, -weight, median),y=weight)) +
+  geom_boxplot() +
+  ggtitle("Multiple boxplots of chicken weights according to feed type") +
+  labs(y="Weight", x="Feed Type")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" />
@@ -195,11 +194,11 @@ Often you want boxplots to be horizontal. Super easy to do in ``ggplot2``: just 
 
 
 ```r
-ggplot(Orange, aes(x=reorder(Tree, circumference, median),y=circumference))+
-  geom_boxplot()+ 
-  coord_flip()+
-  ggtitle("Multiple boxplots of circumference of different types of Trees")+
-  labs(y="Circumference at Breast Height", x="Tree with ordering of max diameter")
+ggplot(chickwts, aes(x=reorder(feed, weight, median),y=weight)) +
+  geom_boxplot() +
+  coord_flip() +
+  ggtitle("Multiple boxplots of chicken weights according to feed type") +
+  labs(y="Weight", x="Feed Type")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" />
@@ -232,10 +231,10 @@ library(forcats)
 
 world <- read.csv("countries2012.csv")
 
-ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) + 
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
   geom_density_ridges(fill = "blue") +
-  ylab("Continent") +
-  ggtitle("2012 Continental GDP")
+  ggtitle("2012 Continental GDP") +
+  ylab("Continent")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-13-1.png" width="460.8" style="display: block; margin: auto;" />
@@ -246,10 +245,10 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
 
 
 ```r
-ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) + 
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
   geom_density_ridges(fill = "blue",alpha = .5, scale = 1.2) +
-  ylab("Continent") +
-  ggtitle("2012 Continental GDP")
+  ggtitle("2012 Continental GDP") +
+  ylab("Continent")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" width="460.8" style="display: block; margin: auto;" />
@@ -277,7 +276,7 @@ There are many ways to draw a normal curve and we introduce one here:
 ```r
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5) +
-  stat_function(fun=dnorm, col = "red",args=list(mean(finches$Depth),sd(finches$Depth)))+
+  stat_function(fun=dnorm, col = "red",args=list(mean(finches$Depth),sd(finches$Depth))) +
   ggtitle("Normal curve overlaid")
 ```
 
