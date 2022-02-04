@@ -62,9 +62,8 @@ A statistical transformation ``stat`` transforms the data, generally by summariz
 
 
 ```r
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
-                 stat = 'bin',position = 'stack') 
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack')
 ```
 
 <img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" />
@@ -80,8 +79,8 @@ A scale controls how data is mapped to aesthetic attributes, so usually one scal
 
 
 ```r
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack')+
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
   scale_x_continuous(limits = c(0, 10)) +
   scale_y_continuous(limits = c(0, 50))
 ```
@@ -96,9 +95,8 @@ A coordinate system ``coord`` maps the position of objects onto the plane of the
 
 
 ```r
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
-                 stat = 'bin',position = 'stack') +
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
   coord_polar()
 ```
 
@@ -111,8 +109,8 @@ Faceting can be used to split the data up into subsets of the entire dataset.
 
 
 ```r
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length), stat = 'bin')+
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length), stat = 'bin') +
   facet_wrap(iris$Species)
 ```
 
@@ -125,9 +123,8 @@ Labels include titles, labels for x,y axis and annotates. Good graphics also nee
 
 
 ```r
-ggplot(data = iris) + 
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), 
-                 stat = 'bin',position = 'stack')+
+ggplot(data = iris) +
+  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
   ggtitle('Stacked Histogram on Petal Length of Different Species') +
   xlab('Length of Petal')
 ```
