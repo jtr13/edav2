@@ -24,7 +24,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-02-04" />
+<meta name="date" content="2022-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -221,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-7"><a href="unidimensional-continuous-variables.html#cb14-7"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(x)</span>
 <span id="cb14-8"><a href="unidimensional-continuous-variables.html#cb14-8"></a></span>
 <span id="cb14-9"><a href="unidimensional-continuous-variables.html#cb14-9"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(x)) <span class="op">+</span></span>
-<span id="cb14-10"><a href="unidimensional-continuous-variables.html#cb14-10"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;ggplot2 histogram of x&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-10"><a href="unidimensional-continuous-variables.html#cb14-10"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Histogram of x with ggplot2&quot;</span>) <span class="op">+</span></span>
 <span id="cb14-11"><a href="unidimensional-continuous-variables.html#cb14-11"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;lightBlue&quot;</span>, <span class="dt">binwidth =</span> <span class="dv">5</span>, <span class="dt">center =</span> <span class="fl">52.5</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>In this example, we used <code>geom_histogram</code> to create a histogram on variable <code>x</code>. We can see that it is quick to make and does not need much pre-processing. Moreover, Histograms show data’s empirical distribution within a set of intervals and we suggest using it as a one of the first steps to understand your data.</p>
@@ -235,14 +235,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="unidimensional-continuous-variables.html#cb15-1"></a><span class="kw">ggplot</span>(finches, <span class="kw">aes</span>(<span class="dt">x =</span> Depth)) <span class="op">+</span></span>
 <span id="cb15-2"><a href="unidimensional-continuous-variables.html#cb15-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;lightblue&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.5</span>,<span class="dt">boundary =</span> <span class="dv">6</span>) <span class="op">+</span></span>
-<span id="cb15-3"><a href="unidimensional-continuous-variables.html#cb15-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Frequency Histogram&quot;</span>)</span></code></pre></div>
+<span id="cb15-3"><a href="unidimensional-continuous-variables.html#cb15-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Frequency histogram&quot;</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Cumulative frequency: y = total number of values &lt;= (or &lt;) right boundary of bin</li>
 </ol>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="unidimensional-continuous-variables.html#cb16-1"></a><span class="kw">ggplot</span>(finches, <span class="kw">aes</span>(<span class="dt">x =</span> Depth)) <span class="op">+</span></span>
 <span id="cb16-2"><a href="unidimensional-continuous-variables.html#cb16-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span><span class="kw">cumsum</span>(..count..)),<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;lightblue&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.5</span>, <span class="dt">boundary =</span> <span class="dv">6</span>) <span class="op">+</span></span>
-<span id="cb16-3"><a href="unidimensional-continuous-variables.html#cb16-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Cumulative Frequency Histogram&quot;</span>) <span class="op">+</span></span>
+<span id="cb16-3"><a href="unidimensional-continuous-variables.html#cb16-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Cumulative frequency histogram&quot;</span>) <span class="op">+</span></span>
 <span id="cb16-4"><a href="unidimensional-continuous-variables.html#cb16-4"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Cumulative frequency&quot;</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <ol start="3" style="list-style-type: decimal">
@@ -250,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="unidimensional-continuous-variables.html#cb17-1"></a><span class="kw">ggplot</span>(finches, <span class="kw">aes</span>(<span class="dt">x =</span> Depth)) <span class="op">+</span></span>
 <span id="cb17-2"><a href="unidimensional-continuous-variables.html#cb17-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..density..),<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;lightblue&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.5</span>, <span class="dt">boundary =</span> <span class="dv">6</span>) <span class="op">+</span></span>
-<span id="cb17-3"><a href="unidimensional-continuous-variables.html#cb17-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Density Histogram&quot;</span>)</span></code></pre></div>
+<span id="cb17-3"><a href="unidimensional-continuous-variables.html#cb17-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Density histogram&quot;</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 <div id="parameters-for-geom_histogram" class="section level3">
@@ -261,12 +261,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="unidimensional-continuous-variables.html#cb18-1"></a>p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(x)) <span class="op">+</span></span>
 <span id="cb18-2"><a href="unidimensional-continuous-variables.html#cb18-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;lightblue&quot;</span>, </span>
 <span id="cb18-3"><a href="unidimensional-continuous-variables.html#cb18-3"></a>                 <span class="dt">binwidth =</span> <span class="dv">5</span>, <span class="dt">center =</span> <span class="fl">52.5</span>, <span class="dt">closed=</span><span class="st">&quot;left&quot;</span>)  <span class="op">+</span></span>
-<span id="cb18-4"><a href="unidimensional-continuous-variables.html#cb18-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Left Closed graph&quot;</span>)</span>
+<span id="cb18-4"><a href="unidimensional-continuous-variables.html#cb18-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Left closed graph&quot;</span>)</span>
 <span id="cb18-5"><a href="unidimensional-continuous-variables.html#cb18-5"></a></span>
 <span id="cb18-6"><a href="unidimensional-continuous-variables.html#cb18-6"></a>p2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(x)) <span class="op">+</span></span>
 <span id="cb18-7"><a href="unidimensional-continuous-variables.html#cb18-7"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;lightblue&quot;</span>, </span>
 <span id="cb18-8"><a href="unidimensional-continuous-variables.html#cb18-8"></a>                 <span class="dt">binwidth =</span> <span class="dv">5</span>, <span class="dt">center =</span> <span class="fl">52.5</span>, <span class="dt">closed=</span><span class="st">&quot;right&quot;</span>)  <span class="op">+</span></span>
-<span id="cb18-9"><a href="unidimensional-continuous-variables.html#cb18-9"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Right Closed graph&quot;</span>)</span>
+<span id="cb18-9"><a href="unidimensional-continuous-variables.html#cb18-9"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Right closed graph&quot;</span>)</span>
 <span id="cb18-10"><a href="unidimensional-continuous-variables.html#cb18-10"></a></span>
 <span id="cb18-11"><a href="unidimensional-continuous-variables.html#cb18-11"></a><span class="kw">grid.arrange</span>(p1, p2, <span class="dt">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;" /></p>
@@ -324,7 +324,7 @@ We see that the graph is not ideal with some gaps. There are two ways to modify 
 <p>A boxplot is one of the simplest ways of representing a distribution of a continuous variable (<strong>Never</strong> use boxplots for categorical data). It consists of two parts: box and whiskers. Let’s starting with a simple example: single boxplot.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="unidimensional-continuous-variables.html#cb22-1"></a><span class="kw">ggplot</span>(chickwts, <span class="kw">aes</span>(<span class="dt">x=</span>weight)) <span class="op">+</span></span>
 <span id="cb22-2"><a href="unidimensional-continuous-variables.html#cb22-2"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
-<span id="cb22-3"><a href="unidimensional-continuous-variables.html#cb22-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Boxplot of Chicken Weights&quot;</span>)</span></code></pre></div>
+<span id="cb22-3"><a href="unidimensional-continuous-variables.html#cb22-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Boxplot of chicken weights&quot;</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Here as you can see, boxplots provide a ton of information for a single chart. Boxplots tell you whether the variable is normally distributed, or if the distribution is skewed in either direction. You can also easily spot the outliers, which always helps.</p>
 </div>
@@ -372,7 +372,7 @@ We see that the graph is not ideal with some gaps. There are two ways to modify 
 <span id="cb25-5"><a href="unidimensional-continuous-variables.html#cb25-5"></a></span>
 <span id="cb25-6"><a href="unidimensional-continuous-variables.html#cb25-6"></a><span class="kw">ggplot</span>(world, <span class="kw">aes</span>(<span class="dt">x =</span> GDP, <span class="dt">y =</span> <span class="kw">reorder</span>(CONTINENT, <span class="op">-</span>GDP,median))) <span class="op">+</span></span>
 <span id="cb25-7"><a href="unidimensional-continuous-variables.html#cb25-7"></a><span class="st">  </span><span class="kw">geom_density_ridges</span>(<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
-<span id="cb25-8"><a href="unidimensional-continuous-variables.html#cb25-8"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;2012 Continental GDP&quot;</span>) <span class="op">+</span></span>
+<span id="cb25-8"><a href="unidimensional-continuous-variables.html#cb25-8"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;2012 continental GDP&quot;</span>) <span class="op">+</span></span>
 <span id="cb25-9"><a href="unidimensional-continuous-variables.html#cb25-9"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Continent&quot;</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-13-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <p><code>ggridge</code> uses two main geoms to plot the ridgeline density plots: <code>geom_density_ridges</code> and <code>geom_ridgeline</code>. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.</p>
@@ -381,7 +381,7 @@ We see that the graph is not ideal with some gaps. There are two ways to modify 
 <h3><span class="header-section-number">4.3.2</span> Create better visuals</h3>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="unidimensional-continuous-variables.html#cb26-1"></a><span class="kw">ggplot</span>(world, <span class="kw">aes</span>(<span class="dt">x =</span> GDP, <span class="dt">y =</span> <span class="kw">reorder</span>(CONTINENT, <span class="op">-</span>GDP,median))) <span class="op">+</span></span>
 <span id="cb26-2"><a href="unidimensional-continuous-variables.html#cb26-2"></a><span class="st">  </span><span class="kw">geom_density_ridges</span>(<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>,<span class="dt">alpha =</span> <span class="fl">.5</span>, <span class="dt">scale =</span> <span class="fl">1.2</span>) <span class="op">+</span></span>
-<span id="cb26-3"><a href="unidimensional-continuous-variables.html#cb26-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;2012 Continental GDP&quot;</span>) <span class="op">+</span></span>
+<span id="cb26-3"><a href="unidimensional-continuous-variables.html#cb26-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;2012 continental GDP&quot;</span>) <span class="op">+</span></span>
 <span id="cb26-4"><a href="unidimensional-continuous-variables.html#cb26-4"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Continent&quot;</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <p>In this example, we added parameter <code>scale</code> and <code>alpha</code> to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and <code>alpha</code> controls transparency.</p>

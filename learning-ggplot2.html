@@ -24,7 +24,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-02-04" />
+<meta name="date" content="2022-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -277,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers’ of the background knowledge of your data.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="learning-ggplot2.html#cb13-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span></span>
 <span id="cb13-2"><a href="learning-ggplot2.html#cb13-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="op">+</span></span>
-<span id="cb13-3"><a href="learning-ggplot2.html#cb13-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Stacked Histogram on Petal Length of Different Species&#39;</span>) <span class="op">+</span></span>
+<span id="cb13-3"><a href="learning-ggplot2.html#cb13-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Stacked petal length of different species&#39;</span>) <span class="op">+</span></span>
 <span id="cb13-4"><a href="learning-ggplot2.html#cb13-4"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&#39;Length of Petal&#39;</span>)</span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>

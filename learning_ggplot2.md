@@ -125,7 +125,7 @@ Labels include titles, labels for x,y axis and annotates. Good graphics also nee
 ```r
 ggplot(data = iris) +
   geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
-  ggtitle('Stacked Histogram on Petal Length of Different Species') +
+  ggtitle('Stacked petal length of different species') +
   xlab('Length of Petal')
 ```
 

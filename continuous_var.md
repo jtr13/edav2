@@ -18,7 +18,7 @@ x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
 df <- data.frame(x)
 
 ggplot(df, aes(x)) +
-  ggtitle("ggplot2 histogram of x") +
+  ggtitle("Histogram of x with ggplot2") +
   geom_histogram(color = "blue", fill = "lightBlue", binwidth = 5, center = 52.5)
 ```
 
@@ -40,7 +40,7 @@ The y-scale of histograms can be represented in a variety of ways to express dif
 ```r
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(color="blue",fill="lightblue",binwidth = 0.5,boundary = 6) +
-  ggtitle("Frequency Histogram")
+  ggtitle("Frequency histogram")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" />
@@ -51,7 +51,7 @@ ggplot(finches, aes(x = Depth)) +
 ```r
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(aes(y=cumsum(..count..)),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
-  ggtitle("Cumulative Frequency Histogram") +
+  ggtitle("Cumulative frequency histogram") +
   xlab("Cumulative frequency")
 ```
 
@@ -63,7 +63,7 @@ ggplot(finches, aes(x = Depth)) +
 ```r
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
-  ggtitle("Density Histogram")
+  ggtitle("Density histogram")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" />
@@ -80,12 +80,12 @@ Be mindful of the boundaries of the bins and whether a point will fall into the 
 p1 <- ggplot(df, aes(x)) +
   geom_histogram(color="blue",fill="lightblue", 
                  binwidth = 5, center = 52.5, closed="left")  +
-  ggtitle("Left Closed graph")
+  ggtitle("Left closed graph")
 
 p2 <- ggplot(df, aes(x)) +
   geom_histogram(color="blue",fill="lightblue", 
                  binwidth = 5, center = 52.5, closed="right")  +
-  ggtitle("Right Closed graph")
+  ggtitle("Right closed graph")
 
 grid.arrange(p1, p2, ncol = 2)
 ```
@@ -165,7 +165,7 @@ A boxplot is one of the simplest ways of representing a distribution of a contin
 ```r
 ggplot(chickwts, aes(x=weight)) +
   geom_boxplot() +
-  ggtitle("Boxplot of Chicken Weights")
+  ggtitle("Boxplot of chicken weights")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" />
@@ -233,7 +233,7 @@ world <- read.csv("countries2012.csv")
 
 ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
   geom_density_ridges(fill = "blue") +
-  ggtitle("2012 Continental GDP") +
+  ggtitle("2012 continental GDP") +
   ylab("Continent")
 ```
 
@@ -247,7 +247,7 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
 ```r
 ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
   geom_density_ridges(fill = "blue",alpha = .5, scale = 1.2) +
-  ggtitle("2012 Continental GDP") +
+  ggtitle("2012 continental GDP") +
   ylab("Continent")
 ```
 
