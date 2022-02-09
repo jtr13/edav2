@@ -1,4 +1,6 @@
-# Unidimensional Continuous Variables
+# (PART) R graphics {-}
+
+# Unidimensional continuous variables
 
 In this chapter, we will demonstrate graphs with unidimensional continuous variables only using `ggplot2`.
 
@@ -134,9 +136,9 @@ The `ggvis` package is not currently in development, but does certain things ver
 
 <br>
 
-## Boxplot
+## Boxplots
 
-### Single Boxplot
+### Single boxplot
 
 A boxplot is one of the simplest ways of representing a distribution of a continuous variable (**Never** use boxplots for categorical data). It consists of two parts: box and whiskers. Let's starting with a simple example: single boxplot.
 
@@ -220,7 +222,7 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, GDP,median))) +
 
 In this example, we added parameter `scale` and `alpha` to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and `alpha` controls transparency. Note that the curves are ordered from lowest median GDP on the bottom (Africa) to highest on the top (Europe).
 
-### Additional Resources
+### Additional resources
 
 - [Introduction to ggridges](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html){target="_blank"}: An excellent collection of code examples on how to make ridgeline plots with `ggplot2`. Covers every parameter of ggridges and how to modify them for better visualization. If you want a ridgeline plot to look a certain way, this article will help.
 
@@ -231,7 +233,7 @@ In this example, we added parameter `scale` and `alpha` to control overlaps betw
 
 <br>
 
-## Normal Distribution
+## Normal distribution
 
 When encountering data that seems to be normally distributed, you may want to overlay a normal curve.
 
