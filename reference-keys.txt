@@ -29,7 +29,7 @@ bin-boundaries
 bin-numbers
 bin-alignment
 interactive-histograms-with-ggvis
-boxplot
+boxplots
 single-boxplot
 multiple-boxplots
 additional-resources
