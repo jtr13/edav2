@@ -1,4 +1,5 @@
 welcome
+getting-started
 top-10-essentials-checklist
 troubleshooting
 document-doesnt-knit
