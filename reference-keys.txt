@@ -38,3 +38,7 @@ basics-and-implications-1
 create-better-visuals
 additional-resources-1
 normal-distribution
+unidimensional-categorical-variables
+working-with-factors
+data-transformation
+two-continuous-variables
