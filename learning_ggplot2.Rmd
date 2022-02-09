@@ -1,7 +1,7 @@
 
 # Learning ggplot2
 
-## **Getting Started**
+## **Getting started**
 
 Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: ``ggplot2`` with it's basic grammar and functions. To start, install ``ggplot2`` in the console or in R chunk.
 
@@ -10,7 +10,7 @@ install.packages('ggplot2')
 ```
 
 
-## **Default Part: Layer**
+## **Default part: layer**
 
 Unlike other graphics packages, one of the remarkable advantages of ``ggplot2`` is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding ``ggplot2`` functions to meet your needs based on your data. 
 
@@ -33,7 +33,7 @@ ggplot(data = iris) +  #Data part
 
 
 
-## **Customized Parts**
+## **Customized parts**
 
 The following picture shows the order of ggplot functions:
 
@@ -42,7 +42,7 @@ The following picture shows the order of ggplot functions:
 </center>
 
 
-### **Geometric object, Statistical transformation and Position adjustment**
+### **Geometric object, statistical transformation and position adjustment**
 
 <center>
 ![](images/layers.png)
@@ -113,7 +113,7 @@ ggplot(data = iris) +
 
 
 
-## **ggplot2 Resources**
+## **Resources for ggplot2**
 
 - For more implementations and examples, one easiest way is referring to the ggplot2 Cheatsheets provided by R. Follow the steps shown below and you can find the cheat-sheets in your RStudio. 
 

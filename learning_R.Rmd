@@ -61,7 +61,7 @@ Some other culprits:
 
 <br>
 
-## Tips & Tricks
+## Tips & tricks
 
 ### knitr
 

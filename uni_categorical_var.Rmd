@@ -1,0 +1,1 @@
+# Unidimensional categorical variables
