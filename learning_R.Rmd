@@ -1,10 +1,10 @@
-# Learning R
+# (PART) R resources {-}
 
 ## Getting started
 
 Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of essentials so you can get up and running. The best resources are scattered in different places online, so bear with links to various sites depending on the topic.
 
-### Top 10 Essentials Checklist
+### Top 10 essentials checklist
 
 (*r4ds* = [R for Data Science](https://r4ds.had.co.nz/) by Garrett Grolemund and Hadley Wickham, free online)
 
