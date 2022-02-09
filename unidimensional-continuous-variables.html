@@ -24,7 +24,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-02-07" />
+<meta name="date" content="2022-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -379,12 +379,12 @@ We see that the graph is not ideal with some gaps. There are two ways to modify 
 </div>
 <div id="create-better-visuals" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Create better visuals</h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="unidimensional-continuous-variables.html#cb26-1"></a><span class="kw">ggplot</span>(world, <span class="kw">aes</span>(<span class="dt">x =</span> GDP, <span class="dt">y =</span> <span class="kw">reorder</span>(CONTINENT, <span class="op">-</span>GDP,median))) <span class="op">+</span></span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="unidimensional-continuous-variables.html#cb26-1"></a><span class="kw">ggplot</span>(world, <span class="kw">aes</span>(<span class="dt">x =</span> GDP, <span class="dt">y =</span> <span class="kw">reorder</span>(CONTINENT, GDP,median))) <span class="op">+</span></span>
 <span id="cb26-2"><a href="unidimensional-continuous-variables.html#cb26-2"></a><span class="st">  </span><span class="kw">geom_density_ridges</span>(<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>,<span class="dt">alpha =</span> <span class="fl">.5</span>, <span class="dt">scale =</span> <span class="fl">1.2</span>) <span class="op">+</span></span>
 <span id="cb26-3"><a href="unidimensional-continuous-variables.html#cb26-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;2012 continental GDP&quot;</span>) <span class="op">+</span></span>
 <span id="cb26-4"><a href="unidimensional-continuous-variables.html#cb26-4"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Continent&quot;</span>)</span></code></pre></div>
 <p><img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" width="460.8" style="display: block; margin: auto;" /></p>
-<p>In this example, we added parameter <code>scale</code> and <code>alpha</code> to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and <code>alpha</code> controls transparency.</p>
+<p>In this example, we added parameter <code>scale</code> and <code>alpha</code> to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and <code>alpha</code> controls transparency. Note that the curves are ordered from lowest median GDP on the bottom (Africa) to highest on the top (Europe).</p>
 </div>
 <div id="additional-resources-1" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Additional Resources</h3>

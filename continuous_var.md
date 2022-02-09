@@ -245,7 +245,7 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
 
 
 ```r
-ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, GDP,median))) +
   geom_density_ridges(fill = "blue",alpha = .5, scale = 1.2) +
   ggtitle("2012 continental GDP") +
   ylab("Continent")
@@ -253,7 +253,7 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" width="460.8" style="display: block; margin: auto;" />
 
-In this example, we added parameter `scale` and `alpha` to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and `alpha` controls transparency. 
+In this example, we added parameter `scale` and `alpha` to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and `alpha` controls transparency. Note that the curves are ordered from lowest median GDP on the bottom (Africa) to highest on the top (Europe).
 
 ### Additional Resources
 
