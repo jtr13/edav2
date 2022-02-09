@@ -30,7 +30,7 @@ In this example, we used `geom_histogram` to create a histogram on variable `x`.
 
 *Note:* as shown above, ggplot expects a dataframe, so make sure you do not throw a vector into ggplot.
 
-### Types of Histograms
+### Types of histograms
 
 The y-scale of histograms can be represented in a variety of ways to express different results:
 

@@ -19,7 +19,7 @@ scale
 coordinate-system
 faceting
 labels
-ggplot2-resources
+resources-for-ggplot2
 unidimensional-continuous-variables
 histogram
 basics-and-implications
