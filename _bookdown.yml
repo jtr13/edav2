@@ -16,7 +16,7 @@ rmd_files: [
   'learning_R.Rmd',
   'learning_ggplot2.Rmd',
   'continuous_var.Rmd',
-  'uni_categorical_var.Rmd'
+  'uni_categorical_var.Rmd',
   'factors.Rmd',
   'data_transformation.Rmd',
   'two_continuous_var.Rmd'
