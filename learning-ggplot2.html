@@ -24,7 +24,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-02-09" />
+<meta name="date" content="2022-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,14 +217,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="default-part-layer" class="section level2">
 <h2><span class="header-section-number">3.2</span> <strong>Default part: layer</strong></h2>
-<p>Unlike other graphics packages, one of the remarkable advantages of <code>ggplot2</code> is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding <code>ggplot2</code> functions to meet your needs based on your data.</p>
+<p>For many R beginners, the question is always like: why is ggplot? One remarkable feature of <code>ggplot2</code> is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding <code>ggplot2</code> functions to meet your needs based on your data.</p>
 <p>By definition of the grammar of graphics, the most important features are data and mapping in the layers and that’s where we are getting started.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="learning-ggplot2.html#cb7-1"></a><span class="kw">library</span>(ggplot2)</span>
 <span id="cb7-2"><a href="learning-ggplot2.html#cb7-2"></a></span>
 <span id="cb7-3"><a href="learning-ggplot2.html#cb7-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
 <span id="cb7-4"><a href="learning-ggplot2.html#cb7-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width))  <span class="co">#Mapping part</span></span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
-<p>All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.</p>
+<p>The most important part of all plots is data, which includes the information you want to visualize. Based on that, the next step is to decide its mapping, which determine how the data’s variable are mapped to aesthetic attributes on a graphic. Since data is independent from the other elements, you can always add several layers of data into the same ggplot while keeping the other components the same.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="learning-ggplot2.html#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st">  </span><span class="co">#Data part</span></span>
 <span id="cb8-2"><a href="learning-ggplot2.html#cb8-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width)) <span class="op">+</span><span class="st">  </span><span class="co">#layer 1 with mapping </span></span>
 <span id="cb8-3"><a href="learning-ggplot2.html#cb8-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(Sepal.Length, Sepal.Width), <span class="dt">color=</span><span class="st">&#39;red&#39;</span>)  <span class="co">#layer 2 with a different mapping</span></span></code></pre></div>
@@ -236,14 +236,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <img src="images/codingOrder.png" style="width:60.0%" />
 </center>
+<p>For more function order suggestions and auto-correction when writing your own <code>ggplot2</code> functions, please refer to <a href="https://github.com/jtr13/ggformat">ggformat</a> addin created by Joyce.</p>
 <div id="geometric-object-statistical-transformation-and-position-adjustment" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> <strong>Geometric object, statistical transformation and position adjustment</strong></h3>
 <center>
 <img src="images/layers.png" />
 </center>
 <p>Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.</p>
-<p>Geometric objects <code>geoms</code> control the type of plot you create. Each <code>geom</code> can only display certain aesthetics or visual attributes of the geom. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
-<p>A statistical transformation <code>stat</code> transforms the data, generally by summarizing the information. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.</p>
+<p>Geometric objects <code>geoms</code> control the type of plot you create. Different types of plot have different aesthetics features. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
+<p>A statistical transformation <code>stat</code> transforms the data. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="learning-ggplot2.html#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span></span>
 <span id="cb9-2"><a href="learning-ggplot2.html#cb9-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>)</span></code></pre></div>
 <p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" /></p>
@@ -253,7 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <img src="images/scale.png" style="width:50.0%" />
 </center>
-<p>A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.</p>
+<p>A scale controls how data is mapped to aesthetic attributes, so one scale for one layer.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="learning-ggplot2.html#cb10-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span></span>
 <span id="cb10-2"><a href="learning-ggplot2.html#cb10-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>Petal.Length, <span class="dt">fill=</span>Species), <span class="dt">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="dt">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="op">+</span></span>
 <span id="cb10-3"><a href="learning-ggplot2.html#cb10-3"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span></span>
