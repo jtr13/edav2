@@ -12,7 +12,7 @@ install.packages('ggplot2')
 
 ## **Default part: layer**
 
-Unlike other graphics packages, one of the remarkable advantages of ``ggplot2`` is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding ``ggplot2`` functions to meet your needs based on your data. 
+For many R beginners, the question is always like: why is ggplot? One remarkable feature of ``ggplot2`` is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding ``ggplot2`` functions to meet your needs based on your data. 
 
 By definition of the grammar of graphics, the most important features are data and mapping in the layers and that's where we are getting started.
 
@@ -23,7 +23,7 @@ ggplot(data = iris) +  #Data part
   geom_point(aes(Sepal.Length, Sepal.Width))  #Mapping part
 ```
 
-All plots are composed of the data, the information you want to visualize, and a mapping, the description of how the data’s variables are mapped to aesthetic attributes. Because data is independent from the other elements, a layered graphic can be built which utilizes different data sources while keeping the other components the same. That is to say, you can add several layers into the same ggplot.
+The most important part of all plots is data, which includes the information you want to visualize. Based on that, the next step is to decide its mapping, which determine how the data's variable are mapped to aesthetic attributes on a graphic. Since data is independent from the other elements, you can always add several layers of data into the same ggplot while keeping the other components the same.
 
 ```{r,fig.width=4, fig.height=3}
 ggplot(data = iris) +  #Data part
@@ -41,6 +41,8 @@ The following picture shows the order of ggplot functions:
 ![](images/codingOrder.png){width=60%}
 </center>
 
+For more function order suggestions and auto-correction when writing your own ``ggplot2`` functions, please refer to [ggformat](https://github.com/jtr13/ggformat) addin created by Joyce.
+
 
 ### **Geometric object, statistical transformation and position adjustment**
 
@@ -50,9 +52,9 @@ The following picture shows the order of ggplot functions:
 
 Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.
 
-Geometric objects ``geoms`` control the type of plot you create. Each ``geom`` can only display certain aesthetics or visual attributes of the geom. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing ``geoms`` and use ``help`` function to check what aesthetics can be modified to achieve your desired effects.
+Geometric objects ``geoms`` control the type of plot you create. Different types of plot have different aesthetics features. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing ``geoms`` and use ``help`` function to check what aesthetics can be modified to achieve your desired effects.
 
-A statistical transformation ``stat`` transforms the data, generally by summarizing the information. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.
+A statistical transformation ``stat`` transforms the data. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) +
@@ -66,7 +68,7 @@ ggplot(data = iris) +
 ![](images/scale.png){width=50%}
 </center>
 
-A scale controls how data is mapped to aesthetic attributes, so usually one scale for every aesthetic property employed in a layer.
+A scale controls how data is mapped to aesthetic attributes, so one scale for one layer.
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) +
