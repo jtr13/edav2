@@ -1,4 +1,3 @@
-# (PART) R graphics {-}
 
 # Unidimensional continuous variables
 
