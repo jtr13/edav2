@@ -10,6 +10,8 @@ There are two types of uni-dimensional categorical variables: nominal and ordina
 
 Nominal data is data with no fixed category order and should be sorted from highest to lowest count (left to right, or top to bottom)
 
+The level of factors usually will be in the order of their appearances. To reorder it by a sorted value, you can try ``fct_reorder`` , ``fct_rev``, ``fct_relevel`` in the **forcats** package
+
 
 ```r
 library(vcdExtra)
@@ -84,6 +86,8 @@ Accident %>%
 
 ## Cleveland dot plot
 
+Cleveland dot plot is a good alternative to bar plots, making plots more readable and comparable even with more data. Similarly, we also need to reorder the categorical variables just like what we've done for nominal bar plot.
+
 
 ```r
 library(Lock5withR)
@@ -117,6 +121,8 @@ USStates %>%
 
 ### Cleveland dot plot with facets
 
+You can split the graph into small multiples using facet_grid().
+
 
 ```r
 ggplot(USStates, aes(x = IQ, y = reorder(State, IQ))) +
@@ -124,8 +130,9 @@ ggplot(USStates, aes(x = IQ, y = reorder(State, IQ))) +
   facet_grid(Pres2008 ~ ., scales = "free_y", space = "free_y") +
   ggtitle('IQ of US state residents facet by Pres2008') +
   xlab("IQ") +
+  ylab('') +
   theme_linedraw() +
   theme(panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank())
 ```
 
-<img src="uni_categorical_var_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<img src="uni_categorical_var_files/figure-html/unnamed-chunk-7-1.png" width="432" style="display: block; margin: auto;" />
