@@ -10,7 +10,8 @@ Imports:
     gridExtra,
     Sleuth3,
     dplyr,
-    tidyr
+    tidyr,
+    tibble
 Suggests:
     bookdown,
     bslib,

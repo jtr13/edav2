@@ -26,6 +26,7 @@ Here's the definition of Tidy Data given by Hadley Wickham:
 ```{r,echo=FALSE}
 library(dplyr)
 library(tidyr)
+library(tibble)
 library(MASS)
 
 head(mtcars)
