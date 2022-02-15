@@ -1,1 +1,78 @@
 # Data transformation
+
+Plotting a graph is easy. You just need to find the right library with the right function. However, it is sometimes not so easy to get your data into the form desired to generate a graph. In this chapter, we will cover some basic techniques in tidying data with `ggplot2`.
+
+## What is tidy data?
+
+Here's the definition of Tidy Data given by Hadley Wickham:
+
+>A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:
+>
+>* Each variable forms a column.
+>
+>* Each observation forms a row.
+>
+>* Each observational unit forms a value in the table.
+>
+*See [r4ds on tidy data](https://r4ds.had.co.nz/tidy-data.html){target="_blank"} for more info.*
+
+**What are the advantages of tidy data?**
+
+* Uniformity : It is easier to learn the tools that work with the data because they have a consistent way of storing data.
+
+* Most built-in R functions work with vectors of values. Thus, having variables as columns/vectors allows R’s vectorized nature to shine.
+
+**Take a look at the following data and can you tell whether this data is messy or not?**
+```{r,echo=FALSE}
+library(tidyverse)
+library(MASS)
+
+head(mtcars)
+```
+
+* In this data set,all the variables are parameters of cars. This means that they are not different variables, but are values of a common variable.
+
+To transform the data, we use `pivot_longer`.
+
+## `pivot_longer`
+
+```{r}
+mtcars %>%  
+  rownames_to_column("carname") %>%
+  pivot_longer(cols = !carname, names_to = "Parameters",values_to = "value") %>%
+  head()
+```
+Follow the simple two steps:
+
+* Identify the column you want to keep as is. In this case, we want all variables to match car names.
+
+* **Additionally**, notice that in the original data set, `carname` acts as the index of the data set. You would want to convert the index to a column using `rownames_to_column`.
+
+* Create meaningful names for the two new columns. In our case, straightforwardly, column names go into `parameters` and corresponding values go into `value`.
+
+
+## `pivot_wider`
+
+`pivot_wider` is just the opposite of `pivot_longer`. Using `pivot_wider`, we can just transform our tidy data back into the messy form as all distinct value in `Parameters` will become column names. 
+
+`pivot_wider` is often used in the case such that one observation being recorded over multiple rows. Consider the following example:
+
+```{r, echo=FALSE}
+example <- tibble(
+  Country = c("USA","USA","Canada","Canada"),
+  Type = c("Case","Death","Case","Death"),
+  Number = c(4,3,2,1))
+
+example
+```
+
+```{r}
+example %>% pivot_wider(names_from = Type, values_from = Number)
+```
+
+It would make much more sense if `Case` and `Death` are separate features.
+
+The main focus of this chapter is `pivot_longer` and `pivot_wider`. However, other fundamental functions in `dplyr` are also very important in manipulating your data set. In the following section, we will give an overview of the basics.
+
+## Basic `dplyr` functions
+
