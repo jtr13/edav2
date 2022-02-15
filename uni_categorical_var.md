@@ -21,10 +21,9 @@ Accident %>%
   group_by(mode) %>%
   summarise(freq = sum(Freq)) %>%
   ggplot(aes(x=fct_reorder(mode,freq,.desc = TRUE),y=freq)) +
-  geom_bar(stat = "identity") +
+  geom_bar(stat = "identity",fill = "cornflowerblue") +
   ggtitle("Number of people with different modes in accident") +
   xlab("") +
-  theme_bw(16) +
   theme(panel.grid.major.x = element_blank())
 ```
 
@@ -42,7 +41,6 @@ Accident %>%
   ggtitle("Number of people with different modes in accident") +
   coord_flip() +
   xlab("") +
-  theme_bw(16) +
   theme(panel.grid.major.x = element_blank())
 ```
 
@@ -62,7 +60,6 @@ Accident %>%
   geom_bar(stat = "identity",fill = "cornflowerblue") +
   ggtitle("Number of people of different ages in accident") +
   xlab("") +
-  theme_bw(16) +
   theme(panel.grid.major.x = element_blank())
 ```
 
@@ -80,8 +77,55 @@ Accident %>%
   ggtitle("Number of people of different ages in accident") +
   xlab("") +
   coord_flip() +
-  theme_bw(16) +
   theme(panel.grid.major.x = element_blank())
 ```
 
 <img src="uni_categorical_var_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" />
+
+## Cleveland dot plot
+
+
+```r
+library(Lock5withR)
+ggplot(USStates, aes(x = IQ, y = fct_reorder(State, IQ))) +
+  geom_point(color = "blue") +
+  ggtitle("Avg. IQ for US states") +
+  ylab("") +
+  theme_linedraw()
+```
+
+<img src="uni_categorical_var_files/figure-html/unnamed-chunk-5-1.png" width="432" style="display: block; margin: auto;" />
+
+### Cleveland dot plot with multiple dots
+
+Sort by Obese Rate
+
+
+```r
+library(tidyr)
+USStates %>%
+  select('State','Obese','HeavyDrinkers') %>%
+  gather(key='type',value='percentage',Obese,HeavyDrinkers) %>%
+  ggplot(aes(x=percentage, y=fct_reorder2(State,type=='Obese',percentage,.desc=FALSE), color = type)) +
+  geom_point() +
+  ggtitle("Obese rate & heavy drinker rate in US") +
+  ylab("") +
+  theme_linedraw()
+```
+
+<img src="uni_categorical_var_files/figure-html/unnamed-chunk-6-1.png" width="432" style="display: block; margin: auto;" />
+
+### Cleveland dot plot with facets
+
+
+```r
+ggplot(USStates, aes(x = IQ, y = reorder(State, IQ))) +
+  geom_point(color = "blue") +
+  facet_grid(Pres2008 ~ ., scales = "free_y", space = "free_y") +
+  ggtitle('IQ of US state residents facet by Pres2008') +
+  xlab("IQ") +
+  theme_linedraw() +
+  theme(panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank())
+```
+
+<img src="uni_categorical_var_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />

@@ -42,6 +42,9 @@ unidimensional-categorical-variables
 bar-plot
 nominal-data
 ordinal-data
+cleveland-dot-plot
+cleveland-dot-plot-with-multiple-dots
+cleveland-dot-plot-with-facets
 working-with-factors
 data-transformation
 what-is-tidy-data

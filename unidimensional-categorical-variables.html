@@ -189,6 +189,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#nominal-data"><i class="fa fa-check"></i><b>5.1.1</b> Nominal data</a></li>
 <li class="chapter" data-level="5.1.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#ordinal-data"><i class="fa fa-check"></i><b>5.1.2</b> Ordinal data</a></li>
 </ul></li>
+<li class="chapter" data-level="5.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>5.2</b> Cleveland dot plot</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-multiple-dots"><i class="fa fa-check"></i><b>5.2.1</b> Cleveland dot plot with multiple dots</a></li>
+<li class="chapter" data-level="5.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>5.2.2</b> Cleveland dot plot with facets</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>6</b> Working with factors</a></li>
 <li class="chapter" data-level="7" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>7</b> Data transformation</a><ul>
@@ -236,11 +240,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb28-7"><a href="unidimensional-categorical-variables.html#cb28-7"></a><span class="st">  </span><span class="kw">group_by</span>(mode) <span class="op">%&gt;%</span></span>
 <span id="cb28-8"><a href="unidimensional-categorical-variables.html#cb28-8"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">freq =</span> <span class="kw">sum</span>(Freq)) <span class="op">%&gt;%</span></span>
 <span id="cb28-9"><a href="unidimensional-categorical-variables.html#cb28-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">fct_reorder</span>(mode,freq,<span class="dt">.desc =</span> <span class="ot">TRUE</span>),<span class="dt">y=</span>freq)) <span class="op">+</span></span>
-<span id="cb28-10"><a href="unidimensional-categorical-variables.html#cb28-10"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span></span>
+<span id="cb28-10"><a href="unidimensional-categorical-variables.html#cb28-10"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;cornflowerblue&quot;</span>) <span class="op">+</span></span>
 <span id="cb28-11"><a href="unidimensional-categorical-variables.html#cb28-11"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people with different modes in accident&quot;</span>) <span class="op">+</span></span>
 <span id="cb28-12"><a href="unidimensional-categorical-variables.html#cb28-12"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
-<span id="cb28-13"><a href="unidimensional-categorical-variables.html#cb28-13"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
-<span id="cb28-14"><a href="unidimensional-categorical-variables.html#cb28-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<span id="cb28-13"><a href="unidimensional-categorical-variables.html#cb28-13"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-1-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <p>… or top to bottom</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unidimensional-categorical-variables.html#cb29-1"></a>Accident <span class="op">%&gt;%</span></span>
@@ -251,8 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-6"><a href="unidimensional-categorical-variables.html#cb29-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people with different modes in accident&quot;</span>) <span class="op">+</span></span>
 <span id="cb29-7"><a href="unidimensional-categorical-variables.html#cb29-7"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
 <span id="cb29-8"><a href="unidimensional-categorical-variables.html#cb29-8"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
-<span id="cb29-9"><a href="unidimensional-categorical-variables.html#cb29-9"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
-<span id="cb29-10"><a href="unidimensional-categorical-variables.html#cb29-10"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<span id="cb29-9"><a href="unidimensional-categorical-variables.html#cb29-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-2-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ordinal-data" class="section level3">
@@ -265,8 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb30-5"><a href="unidimensional-categorical-variables.html#cb30-5"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;cornflowerblue&quot;</span>) <span class="op">+</span></span>
 <span id="cb30-6"><a href="unidimensional-categorical-variables.html#cb30-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people of different ages in accident&quot;</span>) <span class="op">+</span></span>
 <span id="cb30-7"><a href="unidimensional-categorical-variables.html#cb30-7"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
-<span id="cb30-8"><a href="unidimensional-categorical-variables.html#cb30-8"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
-<span id="cb30-9"><a href="unidimensional-categorical-variables.html#cb30-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<span id="cb30-8"><a href="unidimensional-categorical-variables.html#cb30-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <p>Sort in logical order of the categories (starting at bottom OR top)</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="unidimensional-categorical-variables.html#cb31-1"></a>Accident <span class="op">%&gt;%</span></span>
@@ -277,9 +278,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb31-6"><a href="unidimensional-categorical-variables.html#cb31-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people of different ages in accident&quot;</span>) <span class="op">+</span></span>
 <span id="cb31-7"><a href="unidimensional-categorical-variables.html#cb31-7"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
 <span id="cb31-8"><a href="unidimensional-categorical-variables.html#cb31-8"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
-<span id="cb31-9"><a href="unidimensional-categorical-variables.html#cb31-9"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
-<span id="cb31-10"><a href="unidimensional-categorical-variables.html#cb31-10"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<span id="cb31-9"><a href="unidimensional-categorical-variables.html#cb31-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="cleveland-dot-plot" class="section level2">
+<h2><span class="header-section-number">5.2</span> Cleveland dot plot</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="unidimensional-categorical-variables.html#cb32-1"></a><span class="kw">library</span>(Lock5withR)</span>
+<span id="cb32-2"><a href="unidimensional-categorical-variables.html#cb32-2"></a><span class="kw">ggplot</span>(USStates, <span class="kw">aes</span>(<span class="dt">x =</span> IQ, <span class="dt">y =</span> <span class="kw">fct_reorder</span>(State, IQ))) <span class="op">+</span></span>
+<span id="cb32-3"><a href="unidimensional-categorical-variables.html#cb32-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb32-4"><a href="unidimensional-categorical-variables.html#cb32-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Avg. IQ for US states&quot;</span>) <span class="op">+</span></span>
+<span id="cb32-5"><a href="unidimensional-categorical-variables.html#cb32-5"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb32-6"><a href="unidimensional-categorical-variables.html#cb32-6"></a><span class="st">  </span><span class="kw">theme_linedraw</span>()</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-5-1.png" width="432" style="display: block; margin: auto;" /></p>
+<div id="cleveland-dot-plot-with-multiple-dots" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Cleveland dot plot with multiple dots</h3>
+<p>Sort by Obese Rate</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="unidimensional-categorical-variables.html#cb33-1"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb33-2"><a href="unidimensional-categorical-variables.html#cb33-2"></a>USStates <span class="op">%&gt;%</span></span>
+<span id="cb33-3"><a href="unidimensional-categorical-variables.html#cb33-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="st">&#39;State&#39;</span>,<span class="st">&#39;Obese&#39;</span>,<span class="st">&#39;HeavyDrinkers&#39;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb33-4"><a href="unidimensional-categorical-variables.html#cb33-4"></a><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span><span class="st">&#39;type&#39;</span>,<span class="dt">value=</span><span class="st">&#39;percentage&#39;</span>,Obese,HeavyDrinkers) <span class="op">%&gt;%</span></span>
+<span id="cb33-5"><a href="unidimensional-categorical-variables.html#cb33-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>percentage, <span class="dt">y=</span><span class="kw">fct_reorder2</span>(State,type<span class="op">==</span><span class="st">&#39;Obese&#39;</span>,percentage,<span class="dt">.desc=</span><span class="ot">FALSE</span>), <span class="dt">color =</span> type)) <span class="op">+</span></span>
+<span id="cb33-6"><a href="unidimensional-categorical-variables.html#cb33-6"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb33-7"><a href="unidimensional-categorical-variables.html#cb33-7"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Obese rate &amp; heavy drinker rate in US&quot;</span>) <span class="op">+</span></span>
+<span id="cb33-8"><a href="unidimensional-categorical-variables.html#cb33-8"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb33-9"><a href="unidimensional-categorical-variables.html#cb33-9"></a><span class="st">  </span><span class="kw">theme_linedraw</span>()</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-6-1.png" width="432" style="display: block; margin: auto;" /></p>
+</div>
+<div id="cleveland-dot-plot-with-facets" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Cleveland dot plot with facets</h3>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="unidimensional-categorical-variables.html#cb34-1"></a><span class="kw">ggplot</span>(USStates, <span class="kw">aes</span>(<span class="dt">x =</span> IQ, <span class="dt">y =</span> <span class="kw">reorder</span>(State, IQ))) <span class="op">+</span></span>
+<span id="cb34-2"><a href="unidimensional-categorical-variables.html#cb34-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb34-3"><a href="unidimensional-categorical-variables.html#cb34-3"></a><span class="st">  </span><span class="kw">facet_grid</span>(Pres2008 <span class="op">~</span><span class="st"> </span>., <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="dt">space =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span></span>
+<span id="cb34-4"><a href="unidimensional-categorical-variables.html#cb34-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;IQ of US state residents facet by Pres2008&#39;</span>) <span class="op">+</span></span>
+<span id="cb34-5"><a href="unidimensional-categorical-variables.html#cb34-5"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;IQ&quot;</span>) <span class="op">+</span></span>
+<span id="cb34-6"><a href="unidimensional-categorical-variables.html#cb34-6"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
+<span id="cb34-7"><a href="unidimensional-categorical-variables.html#cb34-7"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>(), <span class="dt">panel.grid.minor.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

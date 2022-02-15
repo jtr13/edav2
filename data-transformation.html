@@ -189,6 +189,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#nominal-data"><i class="fa fa-check"></i><b>5.1.1</b> Nominal data</a></li>
 <li class="chapter" data-level="5.1.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#ordinal-data"><i class="fa fa-check"></i><b>5.1.2</b> Ordinal data</a></li>
 </ul></li>
+<li class="chapter" data-level="5.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>5.2</b> Cleveland dot plot</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-multiple-dots"><i class="fa fa-check"></i><b>5.2.1</b> Cleveland dot plot with multiple dots</a></li>
+<li class="chapter" data-level="5.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>5.2.2</b> Cleveland dot plot with facets</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>6</b> Working with factors</a></li>
 <li class="chapter" data-level="7" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>7</b> Data transformation</a><ul>
@@ -253,10 +257,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="pivot_longer" class="section level2">
 <h2><span class="header-section-number">7.2</span> <code>pivot_longer</code></h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-transformation.html#cb33-1"></a>mtcars <span class="op">%&gt;%</span><span class="st">  </span></span>
-<span id="cb33-2"><a href="data-transformation.html#cb33-2"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;carname&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb33-3"><a href="data-transformation.html#cb33-3"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">!</span>carname, <span class="dt">names_to =</span> <span class="st">&quot;Parameters&quot;</span>,<span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb33-4"><a href="data-transformation.html#cb33-4"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-transformation.html#cb36-1"></a>mtcars <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb36-2"><a href="data-transformation.html#cb36-2"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;carname&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb36-3"><a href="data-transformation.html#cb36-3"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">!</span>carname, <span class="dt">names_to =</span> <span class="st">&quot;Parameters&quot;</span>,<span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb36-4"><a href="data-transformation.html#cb36-4"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   carname   Parameters  value
 ##   &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
@@ -284,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 USA     Death      3
 ## 3 Canada  Case       2
 ## 4 Canada  Death      1</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-transformation.html#cb36-1"></a>example <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> Type, <span class="dt">values_from =</span> Number)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-transformation.html#cb39-1"></a>example <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> Type, <span class="dt">values_from =</span> Number)</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   Country  Case Death
 ##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
