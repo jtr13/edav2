@@ -41,4 +41,8 @@ normal-distribution
 unidimensional-categorical-variables
 working-with-factors
 data-transformation
+what-is-tidy-data
+pivot_longer
+pivot_wider
+basic-dplyr-functions
 two-continuous-variables

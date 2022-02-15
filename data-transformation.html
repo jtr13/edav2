@@ -24,7 +24,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-02-14" />
+<meta name="date" content="2022-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -186,7 +186,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>5</b> Unidimensional categorical variables</a></li>
 <li class="chapter" data-level="6" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>6</b> Working with factors</a></li>
-<li class="chapter" data-level="7" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>7</b> Data transformation</a></li>
+<li class="chapter" data-level="7" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>7</b> Data transformation</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-transformation.html"><a href="data-transformation.html#what-is-tidy-data"><i class="fa fa-check"></i><b>7.1</b> What is tidy data?</a></li>
+<li class="chapter" data-level="7.2" data-path="data-transformation.html"><a href="data-transformation.html#pivot_longer"><i class="fa fa-check"></i><b>7.2</b> <code>pivot_longer</code></a></li>
+<li class="chapter" data-level="7.3" data-path="data-transformation.html"><a href="data-transformation.html#pivot_wider"><i class="fa fa-check"></i><b>7.3</b> <code>pivot_wider</code></a></li>
+<li class="chapter" data-level="7.4" data-path="data-transformation.html"><a href="data-transformation.html#basic-dplyr-functions"><i class="fa fa-check"></i><b>7.4</b> Basic <code>dplyr</code> functions</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>8</b> Two continuous variables</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -210,7 +215,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="data-transformation" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Data transformation</h1>
+<p>Plotting a graph is easy. You just need to find the right library with the right function. However, it is sometimes not so easy to get your data into the form desired to generate a graph. In this chapter, we will cover some basic techniques in tidying data with <code>ggplot2</code>.</p>
+<div id="what-is-tidy-data" class="section level2">
+<h2><span class="header-section-number">7.1</span> What is tidy data?</h2>
+<p>Here’s the definition of Tidy Data given by Hadley Wickham:</p>
+<blockquote>
+<p>A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:</p>
+<ul>
+<li><p>Each variable forms a column.</p></li>
+<li><p>Each observation forms a row.</p></li>
+<li><p>Each observational unit forms a value in the table.</p></li>
+</ul>
+<p><em>See <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank">r4ds on tidy data</a> for more info.</em></p>
+</blockquote>
+<p><strong>What are the advantages of tidy data?</strong></p>
+<ul>
+<li><p>Uniformity : It is easier to learn the tools that work with the data because they have a consistent way of storing data.</p></li>
+<li><p>Most built-in R functions work with vectors of values. Thus, having variables as columns/vectors allows R’s vectorized nature to shine.</p></li>
+</ul>
+<p><strong>Take a look at the following data and can you tell whether this data is messy or not?</strong></p>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<ul>
+<li>In this data set,all the variables are parameters of cars. This means that they are not different variables, but are values of a common variable.</li>
+</ul>
+<p>To transform the data, we use <code>pivot_longer</code>.</p>
+</div>
+<div id="pivot_longer" class="section level2">
+<h2><span class="header-section-number">7.2</span> <code>pivot_longer</code></h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-transformation.html#cb29-1"></a>mtcars <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb29-2"><a href="data-transformation.html#cb29-2"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;carname&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb29-3"><a href="data-transformation.html#cb29-3"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">!</span>carname, <span class="dt">names_to =</span> <span class="st">&quot;Parameters&quot;</span>,<span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb29-4"><a href="data-transformation.html#cb29-4"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   carname   Parameters  value
+##   &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
+## 1 Mazda RX4 mpg         21   
+## 2 Mazda RX4 cyl          6   
+## 3 Mazda RX4 disp       160   
+## 4 Mazda RX4 hp         110   
+## 5 Mazda RX4 drat         3.9 
+## 6 Mazda RX4 wt           2.62</code></pre>
+<p>Follow the simple two steps:</p>
+<ul>
+<li><p>Identify the column you want to keep as is. In this case, we want all variables to match car names.</p></li>
+<li><p><strong>Additionally</strong>, notice that in the original data set, <code>carname</code> acts as the index of the data set. You would want to convert the index to a column using <code>rownames_to_column</code>.</p></li>
+<li><p>Create meaningful names for the two new columns. In our case, straightforwardly, column names go into <code>parameters</code> and corresponding values go into <code>value</code>.</p></li>
+</ul>
+</div>
+<div id="pivot_wider" class="section level2">
+<h2><span class="header-section-number">7.3</span> <code>pivot_wider</code></h2>
+<p><code>pivot_wider</code> is just the opposite of <code>pivot_longer</code>. Using <code>pivot_wider</code>, we can just transform our tidy data back into the messy form as all distinct value in <code>Parameters</code> will become column names.</p>
+<p><code>pivot_wider</code> is often used in the case such that one observation being recorded over multiple rows. Consider the following example:</p>
+<pre><code>## # A tibble: 4 × 3
+##   Country Type  Number
+##   &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;
+## 1 USA     Case       4
+## 2 USA     Death      3
+## 3 Canada  Case       2
+## 4 Canada  Death      1</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-transformation.html#cb32-1"></a>example <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> Type, <span class="dt">values_from =</span> Number)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 3
+##   Country  Case Death
+##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+## 1 USA         4     3
+## 2 Canada      2     1</code></pre>
+<p>It would make much more sense if <code>Case</code> and <code>Death</code> are separate features.</p>
+<p>The main focus of this chapter is <code>pivot_longer</code> and <code>pivot_wider</code>. However, other fundamental functions in <code>dplyr</code> are also very important in manipulating your data set. In the following section, we will give an overview of the basics.</p>
+</div>
+<div id="basic-dplyr-functions" class="section level2">
+<h2><span class="header-section-number">7.4</span> Basic <code>dplyr</code> functions</h2>
 
+</div>
 </div>
             </section>
 
