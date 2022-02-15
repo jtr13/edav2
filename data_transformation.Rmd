@@ -24,7 +24,7 @@ Here's the definition of Tidy Data given by Hadley Wickham:
 
 **Take a look at the following data and can you tell whether this data is messy or not?**
 ```{r,echo=FALSE}
-library(tidyverse)
+library(dplyr)
 library(MASS)
 
 head(mtcars)
