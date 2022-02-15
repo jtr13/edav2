@@ -184,7 +184,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#normal-distribution"><i class="fa fa-check"></i><b>4.4</b> Normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>5</b> Unidimensional categorical variables</a></li>
+<li class="chapter" data-level="5" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>5</b> Unidimensional categorical variables</a><ul>
+<li class="chapter" data-level="5.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#bar-plot"><i class="fa fa-check"></i><b>5.1</b> Bar plot</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#nominal-data"><i class="fa fa-check"></i><b>5.1.1</b> Nominal data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#ordinal-data"><i class="fa fa-check"></i><b>5.1.2</b> Ordinal data</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>6</b> Working with factors</a></li>
 <li class="chapter" data-level="7" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>7</b> Data transformation</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-transformation.html"><a href="data-transformation.html#what-is-tidy-data"><i class="fa fa-check"></i><b>7.1</b> What is tidy data?</a></li>
@@ -215,7 +220,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="unidimensional-categorical-variables" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Unidimensional categorical variables</h1>
+<p>In real-world datasets, categorical features are quite common but tricky during both the data pre-processing and visualization process. In this chapter, we will demonstrate several plotting options for the uni-dimensional categorical variables with <code>ggplot</code>.</p>
+<div id="bar-plot" class="section level2">
+<h2><span class="header-section-number">5.1</span> Bar plot</h2>
+<p>There are two types of uni-dimensional categorical variables: nominal and ordinal. Here you will be shown how these variables should be plotted differently using bar plot under the same dataset.</p>
+<div id="nominal-data" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Nominal data</h3>
+<p>Nominal data is data with no fixed category order and should be sorted from highest to lowest count (left to right, or top to bottom)</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="unidimensional-categorical-variables.html#cb28-1"></a><span class="kw">library</span>(vcdExtra)</span>
+<span id="cb28-2"><a href="unidimensional-categorical-variables.html#cb28-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb28-3"><a href="unidimensional-categorical-variables.html#cb28-3"></a><span class="kw">library</span>(forcats)</span>
+<span id="cb28-4"><a href="unidimensional-categorical-variables.html#cb28-4"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb28-5"><a href="unidimensional-categorical-variables.html#cb28-5"></a></span>
+<span id="cb28-6"><a href="unidimensional-categorical-variables.html#cb28-6"></a>Accident <span class="op">%&gt;%</span></span>
+<span id="cb28-7"><a href="unidimensional-categorical-variables.html#cb28-7"></a><span class="st">  </span><span class="kw">group_by</span>(mode) <span class="op">%&gt;%</span></span>
+<span id="cb28-8"><a href="unidimensional-categorical-variables.html#cb28-8"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">freq =</span> <span class="kw">sum</span>(Freq)) <span class="op">%&gt;%</span></span>
+<span id="cb28-9"><a href="unidimensional-categorical-variables.html#cb28-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">fct_reorder</span>(mode,freq,<span class="dt">.desc =</span> <span class="ot">TRUE</span>),<span class="dt">y=</span>freq)) <span class="op">+</span></span>
+<span id="cb28-10"><a href="unidimensional-categorical-variables.html#cb28-10"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span></span>
+<span id="cb28-11"><a href="unidimensional-categorical-variables.html#cb28-11"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people with different modes in accident&quot;</span>) <span class="op">+</span></span>
+<span id="cb28-12"><a href="unidimensional-categorical-variables.html#cb28-12"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb28-13"><a href="unidimensional-categorical-variables.html#cb28-13"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb28-14"><a href="unidimensional-categorical-variables.html#cb28-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-1-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>… or top to bottom</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unidimensional-categorical-variables.html#cb29-1"></a>Accident <span class="op">%&gt;%</span></span>
+<span id="cb29-2"><a href="unidimensional-categorical-variables.html#cb29-2"></a><span class="st">  </span><span class="kw">group_by</span>(mode) <span class="op">%&gt;%</span></span>
+<span id="cb29-3"><a href="unidimensional-categorical-variables.html#cb29-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">freq =</span> <span class="kw">sum</span>(Freq)) <span class="op">%&gt;%</span></span>
+<span id="cb29-4"><a href="unidimensional-categorical-variables.html#cb29-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">fct_rev</span>(<span class="kw">fct_reorder</span>(mode,freq,<span class="dt">.desc =</span> <span class="ot">TRUE</span>)),<span class="dt">y=</span>freq)) <span class="op">+</span></span>
+<span id="cb29-5"><a href="unidimensional-categorical-variables.html#cb29-5"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;cornflowerblue&quot;</span>) <span class="op">+</span></span>
+<span id="cb29-6"><a href="unidimensional-categorical-variables.html#cb29-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people with different modes in accident&quot;</span>) <span class="op">+</span></span>
+<span id="cb29-7"><a href="unidimensional-categorical-variables.html#cb29-7"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb29-8"><a href="unidimensional-categorical-variables.html#cb29-8"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb29-9"><a href="unidimensional-categorical-variables.html#cb29-9"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb29-10"><a href="unidimensional-categorical-variables.html#cb29-10"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-2-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ordinal-data" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Ordinal data</h3>
+<p>Ordinal data is data having a fixed category order and need to sort it in logical order of the categories (left to right)</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="unidimensional-categorical-variables.html#cb30-1"></a>Accident <span class="op">%&gt;%</span></span>
+<span id="cb30-2"><a href="unidimensional-categorical-variables.html#cb30-2"></a><span class="st">  </span><span class="kw">group_by</span>(age) <span class="op">%&gt;%</span></span>
+<span id="cb30-3"><a href="unidimensional-categorical-variables.html#cb30-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">freq =</span> <span class="kw">sum</span>(Freq)) <span class="op">%&gt;%</span></span>
+<span id="cb30-4"><a href="unidimensional-categorical-variables.html#cb30-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>age,<span class="dt">y=</span>freq)) <span class="op">+</span></span>
+<span id="cb30-5"><a href="unidimensional-categorical-variables.html#cb30-5"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;cornflowerblue&quot;</span>) <span class="op">+</span></span>
+<span id="cb30-6"><a href="unidimensional-categorical-variables.html#cb30-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people of different ages in accident&quot;</span>) <span class="op">+</span></span>
+<span id="cb30-7"><a href="unidimensional-categorical-variables.html#cb30-7"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb30-8"><a href="unidimensional-categorical-variables.html#cb30-8"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb30-9"><a href="unidimensional-categorical-variables.html#cb30-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>Sort in logical order of the categories (starting at bottom OR top)</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="unidimensional-categorical-variables.html#cb31-1"></a>Accident <span class="op">%&gt;%</span></span>
+<span id="cb31-2"><a href="unidimensional-categorical-variables.html#cb31-2"></a><span class="st">  </span><span class="kw">group_by</span>(age) <span class="op">%&gt;%</span></span>
+<span id="cb31-3"><a href="unidimensional-categorical-variables.html#cb31-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">freq =</span> <span class="kw">sum</span>(Freq)) <span class="op">%&gt;%</span></span>
+<span id="cb31-4"><a href="unidimensional-categorical-variables.html#cb31-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>age,<span class="dt">y=</span>freq)) <span class="op">+</span></span>
+<span id="cb31-5"><a href="unidimensional-categorical-variables.html#cb31-5"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;cornflowerblue&quot;</span>) <span class="op">+</span></span>
+<span id="cb31-6"><a href="unidimensional-categorical-variables.html#cb31-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of people of different ages in accident&quot;</span>) <span class="op">+</span></span>
+<span id="cb31-7"><a href="unidimensional-categorical-variables.html#cb31-7"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb31-8"><a href="unidimensional-categorical-variables.html#cb31-8"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb31-9"><a href="unidimensional-categorical-variables.html#cb31-9"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb31-10"><a href="unidimensional-categorical-variables.html#cb31-10"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 
+</div>
+</div>
 </div>
             </section>
 

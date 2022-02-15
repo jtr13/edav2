@@ -39,6 +39,9 @@ create-better-visuals
 additional-resources-1
 normal-distribution
 unidimensional-categorical-variables
+bar-plot
+nominal-data
+ordinal-data
 working-with-factors
 data-transformation
 what-is-tidy-data
