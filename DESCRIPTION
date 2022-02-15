@@ -9,7 +9,8 @@ Imports:
     ggridges,
     gridExtra,
     Sleuth3,
-    dplyr
+    dplyr,
+    tidyr
 Suggests:
     bookdown,
     bslib,
