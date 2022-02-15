@@ -12,7 +12,8 @@ Imports:
     dplyr,
     tidyr,
     tibble,
-    vcdExtra
+    vcdExtra,
+    Lock5withR
 Suggests:
     bookdown,
     bslib,
