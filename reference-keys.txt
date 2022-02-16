@@ -50,5 +50,11 @@ data-transformation
 what-is-tidy-data
 pivot_longer
 pivot_wider
-basic-dplyr-functions
+basic-transformation-functions
+rename
+select
+mutate
+select-1
+arrange
+group_by-and-summarize
 two-continuous-variables
