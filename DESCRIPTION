@@ -13,7 +13,10 @@ Imports:
     tidyr,
     tibble,
     vcdExtra,
-    Lock5withR
+    Lock5withR,
+    GDAdata,
+    ggplot2,
+    plotly
 Suggests:
     bookdown,
     bslib,
