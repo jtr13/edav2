@@ -15,7 +15,7 @@ Imports:
     vcdExtra,
     Lock5withR,
     GDAdata,
-    ggplot2,
+    ggplot2movies,
     plotly
 Suggests:
     bookdown,
