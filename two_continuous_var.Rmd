@@ -28,7 +28,7 @@ In some situations a scatter plot faces the problem of overplotting as there are
 library(dplyr)
 library(ggplot2movies)
 
-sample <- sample_n(movies,0.2*nrow(movies))
+sample <- slice_sample(movies,prop=0.2)
 
 ggplot(sample,aes(x=votes,y=rating)) +
   geom_point() +
@@ -87,7 +87,7 @@ You can create an interactive scatterplot using `plotly`. In the following examp
 ```{r,fig.width=6, fig.height=4.5}
 library(plotly)
 
-sample2 <- sample_n(movies,0.01*nrow(movies)) %>%
+sample2 <- slice_sample(movies,prop=0.01) %>%
   filter(year > 2000)
 
 plot_ly(sample2, x = ~votes, y = ~rating,
@@ -123,7 +123,7 @@ For these scatterplot matrices, we use the `movies` dataset from the `ggplot2mov
 As a default, the base R plot() function will create a scatterplot matrix when given multiple variables:
 
 ```{r}
-sample3 <- sample_n(movies, 0.01*nrow(movies)) #sample data
+sample3 <- slice_sample(movies,prop=0.01) #sample data
 
 splomvar <- sample3 %>% 
   dplyr::select(length, budget, votes, rating, year)

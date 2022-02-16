@@ -16,7 +16,8 @@ Imports:
     Lock5withR,
     GDAdata,
     ggplot2movies,
-    plotly
+    plotly,
+    hexbin
 Suggests:
     bookdown,
     bslib,
