@@ -53,6 +53,13 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -208,7 +215,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4.6" data-path="data-transformation.html"><a href="data-transformation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>7.4.6</b> <code>group_by</code> and <code>summarize</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>8</b> Two continuous variables</a></li>
+<li class="chapter" data-level="8" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>8</b> Two continuous variables</a><ul>
+<li class="chapter" data-level="8.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#scatterplot"><i class="fa fa-check"></i><b>8.1</b> Scatterplot</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-2"><i class="fa fa-check"></i><b>8.1.1</b> Basics and implications</a></li>
+<li class="chapter" data-level="8.1.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#overplotting"><i class="fa fa-check"></i><b>8.1.2</b> Overplotting</a></li>
+<li class="chapter" data-level="8.1.3" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#interactive-scatterplot"><i class="fa fa-check"></i><b>8.1.3</b> Interactive scatterplot</a></li>
+<li class="chapter" data-level="8.1.4" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications"><i class="fa fa-check"></i><b>8.1.4</b> Modifications</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#heatmaps"><i class="fa fa-check"></i><b>8.2</b> Heatmaps</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-3"><i class="fa fa-check"></i><b>8.2.1</b> Basics and implications</a></li>
+<li class="chapter" data-level="8.2.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications-1"><i class="fa fa-check"></i><b>8.2.2</b> Modifications</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -231,7 +249,177 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="two-continuous-variables" class="section level1">
 <h1><span class="header-section-number">Chapter 8</span> Two continuous variables</h1>
+<p>In this chapter, we will look at techniques that explore the relationships between two continuous variables.</p>
+<div id="scatterplot" class="section level2">
+<h2><span class="header-section-number">8.1</span> Scatterplot</h2>
+<div id="basics-and-implications-2" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Basics and implications</h3>
+<p>For the following example, we use data set <code>SpeedSki</code>.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="two-continuous-variables.html#cb54-1"></a><span class="kw">library</span>(GDAdata)</span>
+<span id="cb54-2"><a href="two-continuous-variables.html#cb54-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb54-3"><a href="two-continuous-variables.html#cb54-3"></a></span>
+<span id="cb54-4"><a href="two-continuous-variables.html#cb54-4"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb54-5"><a href="two-continuous-variables.html#cb54-5"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb54-6"><a href="two-continuous-variables.html#cb54-6"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Birth year&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Speed achieved (km/hr)&quot;</span>) <span class="op">+</span></span>
+<span id="cb54-7"><a href="two-continuous-variables.html#cb54-7"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Skiers by birth year and speed achieved&quot;</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-1-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>In our example, we simply use <code>geom_point</code> on variables <code>Year</code> and <code>Speed</code> to create the scatterplot. we try to capture if there is a relationship between the age of a player and the speed he/she can achieve. From the graph, it seems such relationship does not exist. Overall, scatterplots are very useful in understanding the correlation (or lack thereof) between variables. The scatterplot gives a good idea of whether that relationship is positive or negative and if there’s a correlation. However, don’t mistake correlation in a scatterplot for causation!</p>
+</div>
+<div id="overplotting" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Overplotting</h3>
+<p>In some situations a scatter plot faces the problem of overplotting as there are so many points overlapping. Consider the following example from class. To save time, we randomly sample 20% of the data in advance.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="two-continuous-variables.html#cb55-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb55-2"><a href="two-continuous-variables.html#cb55-2"></a><span class="kw">library</span>(ggplot2movies)</span>
+<span id="cb55-3"><a href="two-continuous-variables.html#cb55-3"></a></span>
+<span id="cb55-4"><a href="two-continuous-variables.html#cb55-4"></a>sample &lt;-<span class="st"> </span><span class="kw">sample_n</span>(movies,<span class="fl">0.2</span><span class="op">*</span><span class="kw">nrow</span>(movies))</span>
+<span id="cb55-5"><a href="two-continuous-variables.html#cb55-5"></a></span>
+<span id="cb55-6"><a href="two-continuous-variables.html#cb55-6"></a><span class="kw">ggplot</span>(sample,<span class="kw">aes</span>(<span class="dt">x=</span>votes,<span class="dt">y=</span>rating)) <span class="op">+</span></span>
+<span id="cb55-7"><a href="two-continuous-variables.html#cb55-7"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb55-8"><a href="two-continuous-variables.html#cb55-8"></a><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
+<span id="cb55-9"><a href="two-continuous-variables.html#cb55-9"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Votes vs. rating&quot;</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-2-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>To create better visuals, we can use:</p>
+<ul>
+<li><p>Alpha blending - <code>alpha=...</code></p></li>
+<li><p>Open circles - <code>pch=21</code></p></li>
+<li><p>smaller circles - <code>size=...</code> or <code>shape="."</code></p></li>
+</ul>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="two-continuous-variables.html#cb56-1"></a><span class="kw">library</span>(gridExtra)</span>
+<span id="cb56-2"><a href="two-continuous-variables.html#cb56-2"></a></span>
+<span id="cb56-3"><a href="two-continuous-variables.html#cb56-3"></a>f1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(sample,<span class="kw">aes</span>(<span class="dt">x=</span>votes,<span class="dt">y=</span>rating)) <span class="op">+</span></span>
+<span id="cb56-4"><a href="two-continuous-variables.html#cb56-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb56-5"><a href="two-continuous-variables.html#cb56-5"></a><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
+<span id="cb56-6"><a href="two-continuous-variables.html#cb56-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Alpha blending&quot;</span>)</span>
+<span id="cb56-7"><a href="two-continuous-variables.html#cb56-7"></a></span>
+<span id="cb56-8"><a href="two-continuous-variables.html#cb56-8"></a>f2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(sample,<span class="kw">aes</span>(<span class="dt">x=</span>votes,<span class="dt">y=</span>rating)) <span class="op">+</span></span>
+<span id="cb56-9"><a href="two-continuous-variables.html#cb56-9"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">pch =</span> <span class="dv">21</span>) <span class="op">+</span></span>
+<span id="cb56-10"><a href="two-continuous-variables.html#cb56-10"></a><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
+<span id="cb56-11"><a href="two-continuous-variables.html#cb56-11"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Open circle&quot;</span>)</span>
+<span id="cb56-12"><a href="two-continuous-variables.html#cb56-12"></a></span>
+<span id="cb56-13"><a href="two-continuous-variables.html#cb56-13"></a>f3 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(sample,<span class="kw">aes</span>(<span class="dt">x=</span>votes,<span class="dt">y=</span>rating)) <span class="op">+</span></span>
+<span id="cb56-14"><a href="two-continuous-variables.html#cb56-14"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb56-15"><a href="two-continuous-variables.html#cb56-15"></a><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
+<span id="cb56-16"><a href="two-continuous-variables.html#cb56-16"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Smaller circle&quot;</span>)</span>
+<span id="cb56-17"><a href="two-continuous-variables.html#cb56-17"></a></span>
+<span id="cb56-18"><a href="two-continuous-variables.html#cb56-18"></a><span class="kw">grid.arrange</span>(f1, f2, f3,<span class="dt">nrow =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Other methods that directly deal with the data:</p>
+<ul>
+<li><p>Randomly sample data - as shown in the first code chunk using <code>sample_n</code></p></li>
+<li><p>Subset - split data into bins using <code>ntile(votes, 10)</code></p></li>
+<li><p>Remove outliers</p></li>
+<li><p>Transform to log scale</p></li>
+</ul>
+</div>
+<div id="interactive-scatterplot" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> Interactive scatterplot</h3>
+<p>You can create an interactive scatterplot using <code>plotly</code>. In the following example, we take 1% of the movie data set to present a better visual. We plotted the votes vs. rating and grouped by the year they are released. In this graph:</p>
+<ul>
+<li><p>You can hover on to the points to see the title of the movie</p></li>
+<li><p>You can double click on the year legend to look at a certain year</p></li>
+<li><p>You can zoom into a certain part of the graph to better understand the data points.</p></li>
+</ul>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="two-continuous-variables.html#cb57-1"></a><span class="kw">library</span>(plotly)</span>
+<span id="cb57-2"><a href="two-continuous-variables.html#cb57-2"></a></span>
+<span id="cb57-3"><a href="two-continuous-variables.html#cb57-3"></a>sample2 &lt;-<span class="st"> </span><span class="kw">sample_n</span>(movies,<span class="fl">0.01</span><span class="op">*</span><span class="kw">nrow</span>(movies)) <span class="op">%&gt;%</span></span>
+<span id="cb57-4"><a href="two-continuous-variables.html#cb57-4"></a><span class="st">  </span><span class="kw">filter</span>(year <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>)</span>
+<span id="cb57-5"><a href="two-continuous-variables.html#cb57-5"></a></span>
+<span id="cb57-6"><a href="two-continuous-variables.html#cb57-6"></a><span class="kw">plot_ly</span>(sample2, <span class="dt">x =</span> <span class="op">~</span>votes, <span class="dt">y =</span> <span class="op">~</span>rating,</span>
+<span id="cb57-7"><a href="two-continuous-variables.html#cb57-7"></a>        <span class="dt">color =</span> <span class="op">~</span><span class="kw">as.factor</span>(year), <span class="dt">text=</span> <span class="op">~</span>title,</span>
+<span id="cb57-8"><a href="two-continuous-variables.html#cb57-8"></a>        <span class="dt">hoverinfo =</span> <span class="st">&#39;text&#39;</span>) </span></code></pre></div>
+<div id="htmlwidget-8d30fee997fafa49e2e7" style="width:576px;height:432px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8d30fee997fafa49e2e7">{"x":{"visdat":{"28bd7a15e770":["function () ","plotlyVisDat"]},"cur_data":"28bd7a15e770","attrs":{"28bd7a15e770":{"x":{},"y":{},"text":{},"hoverinfo":"text","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"votes"},"yaxis":{"domain":[0,1],"automargin":true,"title":"rating"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[12,26,6,7,42,60,73,18,311,59,37,37,11,12,11,115,47,14,219],"y":[6.4,5.9,5.7,6.6,6.3,4.5,6.9,8.3,1.8,6.3,3.2,3.3,8.7,8.4,6.6,3.7,6.9,8.6,6],"text":["On the Fringe","Altyn Kyrghol","Guggen - Du store gauda","Georgie Girl","Abrafaxe - Unter schwarzer Flagge, Die","Un aller simple","Flock, The","Hr. Boe & Co.'s Anxiety","Ponterosa","Ngo dik yeh man tung hok","Bug Off!","We Sold Our Souls for Rock 'n Roll","Ladyporn","My Dark Days","Delitto impossibile, Un","Killer Bud","Cutting Room, The","Echo","Last Minute, The"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2001","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[8,22,243,62,29,232,48,93,1250,13,34,90,1730],"y":[6.2,5.6,6.9,7.4,5.1,6.7,4.8,4.7,5.4,6.8,7.6,6.8,6.7],"text":["Love Is a Treasure","Chinese muur, De","Shin jingi no hakaba","Tomorrow La Scala!","Legend of Razorback, The","Imbalsamatore, L'","Expecting","Wish You Were Dead","All About the Benjamins","Condemned","Soap Girl","Telling Nicholas","Returner"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2002","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1213,13,8,12,5,1295,8,8,35,27,24,21,25,5,58,90,939,9,43],"y":[6.1,6.9,5.2,5.5,6.4,5.7,6.7,8,4.7,5,6,7.3,7.7,8.9,4.2,4.2,7.4,6.2,5.7],"text":["Sylvia","Pull Out","Corner of Your Eye","Libiomfi","Good Boy","It's All About Love","Cameras Take Five","Aviv","Honeymooners, The","Hoodlum & Son","Teoriya zapoya","Wo he ba ba","Colorforms","Night Light","Bloom","Claustrophobia","Van God Los","Tancul","Yeokjeone sanda"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2003","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5,64,2349,6,610,8,7,45,13,8,6,29,165,208,3492,2398,25],"y":[8.8,6.9,5.7,8.8,6,5.5,7.6,1.7,7.4,7.8,5.7,6.4,6.3,5.1,6,5.7,6.8],"text":["In Justice","Nomi Song, The","Laws of Attraction","Life and Times of MC Beer Bong, The","Ginger Snaps Back: The Beginning","Camp X-Ray: Ghosts of Guantanamo","Alanis Morissette: We're with the Band","Death 4 Told","Hochbetrieb","Old Man and the Studio, The","Huapango","Cou de la girafe, Le","06/05","Romasanta","Alfie","Raising Helen","Sombra dolorosa"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2004","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[6,10,15],"y":[6.7,7.7,5.1],"text":["Year of Living Vicariously, The","Bloodshed","Chicken Tikka Masala"],"hoverinfo":["text","text","text"],"type":"scatter","mode":"markers","name":"2005","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"line":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="modifications" class="section level3">
+<h3><span class="header-section-number">8.1.4</span> Modifications</h3>
+<div id="contour-lines" class="section level4">
+<h4><span class="header-section-number">8.1.4.1</span> Contour lines</h4>
+<p>Contour lines give a sense of the density of the data at a glance.</p>
+<p>For these contour maps, we will use the <code>SpeedSki</code> dataset.</p>
+<p>Contour lines can be added to the plot using geom_density_2d() and contour lines work best when combined with other layers</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="two-continuous-variables.html#cb58-1"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb58-2"><a href="two-continuous-variables.html#cb58-2"></a><span class="st">  </span><span class="kw">geom_density_2d</span>(<span class="dt">bins=</span><span class="dv">5</span>) <span class="op">+</span></span>
+<span id="cb58-3"><a href="two-continuous-variables.html#cb58-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb58-4"><a href="two-continuous-variables.html#cb58-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Scatter plot with contour line&quot;</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>You can use <code>bins</code> to control the number of contour bins.</p>
+</div>
+<div id="scatterplot-matrices" class="section level4">
+<h4><span class="header-section-number">8.1.4.2</span> Scatterplot matrices</h4>
+<p>If you want to compare multiple parameters to each other, consider using a scatterplot matrix. This will allow you to show many comparisons in a compact and efficient manner.</p>
+<p>For these scatterplot matrices, we use the <code>movies</code> dataset from the <code>ggplot2movies</code> package.</p>
+<p>As a default, the base R plot() function will create a scatterplot matrix when given multiple variables:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="two-continuous-variables.html#cb59-1"></a>sample3 &lt;-<span class="st"> </span><span class="kw">sample_n</span>(movies, <span class="fl">0.01</span><span class="op">*</span><span class="kw">nrow</span>(movies)) <span class="co">#sample data</span></span>
+<span id="cb59-2"><a href="two-continuous-variables.html#cb59-2"></a></span>
+<span id="cb59-3"><a href="two-continuous-variables.html#cb59-3"></a>splomvar &lt;-<span class="st"> </span>sample3 <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb59-4"><a href="two-continuous-variables.html#cb59-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(length, budget, votes, rating, year)</span>
+<span id="cb59-5"><a href="two-continuous-variables.html#cb59-5"></a></span>
+<span id="cb59-6"><a href="two-continuous-variables.html#cb59-6"></a><span class="kw">plot</span>(splomvar)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>While this is quite useful for personal exploration of a datset, it is <strong>not</strong> recommended for presentation purposes. Something called the <a href="https://en.wikipedia.org/wiki/Grid_illusion" target="_blank">Hermann grid illusion</a> makes this plot very difficult to examine.</p>
+</div>
+</div>
+</div>
+<div id="heatmaps" class="section level2">
+<h2><span class="header-section-number">8.2</span> Heatmaps</h2>
+<div id="basics-and-implications-3" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Basics and implications</h3>
+<p>In the following example, we still use the <code>SpeedSki</code> data set.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="two-continuous-variables.html#cb60-1"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb60-2"><a href="two-continuous-variables.html#cb60-2"></a><span class="st">  </span><span class="kw">geom_bin2d</span>() </span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>To create a heatmap, simply substitute <code>geom_point()</code> with <code>geom_bin2d()</code>. Generally, heat maps are like a combination of scatterplots and histograms: they allow you to compare different parameters while also seeing their relative distributions.</p>
+</div>
+<div id="modifications-1" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Modifications</h3>
+<p>For the following section, we introduce some variations on heatmaps.</p>
+<div id="change-number-of-bins-binwidth" class="section level4">
+<h4><span class="header-section-number">8.2.2.1</span> Change number of bins / binwidth</h4>
+<p>By default, <code>geom_bin2d()</code> use 30 bins. Similar to a histogram, we can change the number of bins or binwidth.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="two-continuous-variables.html#cb61-1"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb61-2"><a href="two-continuous-variables.html#cb61-2"></a><span class="st">  </span><span class="kw">geom_bin2d</span>(<span class="dt">binwidth =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">5</span>)) <span class="op">+</span></span>
+<span id="cb61-3"><a href="two-continuous-variables.html#cb61-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Changing binwidth&quot;</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-8-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Notice we are specifying the binwidth for both x and y axis.</p>
+</div>
+<div id="combine-with-a-scatterplot" class="section level4">
+<h4><span class="header-section-number">8.2.2.2</span> Combine with a scatterplot</h4>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="two-continuous-variables.html#cb62-1"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span></span>
+<span id="cb62-2"><a href="two-continuous-variables.html#cb62-2"></a><span class="st">  </span><span class="kw">geom_bin2d</span>(<span class="dt">binwidth =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">10</span>), <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb62-3"><a href="two-continuous-variables.html#cb62-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb62-4"><a href="two-continuous-variables.html#cb62-4"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Combined with scatterplot&quot;</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-9-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="change-color-scale" class="section level4">
+<h4><span class="header-section-number">8.2.2.3</span> Change color scale</h4>
+<p>You can change the continuous scale of color</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="two-continuous-variables.html#cb63-1"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb63-2"><a href="two-continuous-variables.html#cb63-2"></a><span class="st">  </span><span class="kw">geom_bin2d</span>() <span class="op">+</span></span>
+<span id="cb63-3"><a href="two-continuous-variables.html#cb63-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Changing color scale&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb63-4"><a href="two-continuous-variables.html#cb63-4"></a><span class="st">  </span><span class="kw">scale_fill_viridis_c</span>()</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-10-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="hex-heatmap" class="section level4">
+<h4><span class="header-section-number">8.2.2.4</span> Hex heatmap</h4>
+<p>One alternative is a hex heatmap. You can create the graph using <code>geom_hex</code></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="two-continuous-variables.html#cb64-1"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb64-2"><a href="two-continuous-variables.html#cb64-2"></a><span class="st">  </span><span class="kw">geom_hex</span>() <span class="op">+</span></span>
+<span id="cb64-3"><a href="two-continuous-variables.html#cb64-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Hex heatmap&quot;</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="alternative-approach-to-color" class="section level4">
+<h4><span class="header-section-number">8.2.2.5</span> Alternative approach to color</h4>
+<p>If you look at all the previous examples, you might notice that lighter points corresponds to more clustered points, which is somewhat counter-intuitive. The following exmaple suggest an alternative approach in color scale.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="two-continuous-variables.html#cb65-1"></a><span class="kw">ggplot</span>(SpeedSki, <span class="kw">aes</span>(Year, Speed)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb65-2"><a href="two-continuous-variables.html#cb65-2"></a><span class="st">  </span><span class="kw">geom_hex</span>(<span class="dt">bins=</span><span class="dv">10</span>) <span class="op">+</span></span>
+<span id="cb65-3"><a href="two-continuous-variables.html#cb65-3"></a><span class="st">  </span><span class="kw">scale_fill_gradient</span>(<span class="dt">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb65-4"><a href="two-continuous-variables.html#cb65-4"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">18</span>) <span class="op">+</span></span>
+<span id="cb65-5"><a href="two-continuous-variables.html#cb65-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Alternative approach to color&quot;</span>)</span></code></pre></div>
+<p><img src="two_continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 
+</div>
+</div>
+</div>
 </div>
             </section>
 
