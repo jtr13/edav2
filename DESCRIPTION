@@ -11,7 +11,9 @@ Imports:
     Sleuth3,
     dplyr,
     tidyr,
-    tibble
+    tibble,
+    vcdExtra,
+    Lock5withR
 Suggests:
     bookdown,
     bslib,
