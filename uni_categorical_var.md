@@ -10,7 +10,7 @@ There are two types of uni-dimensional categorical variables: nominal and ordina
 
 Nominal data is data with no fixed category order and should be sorted from highest to lowest count (left to right, or top to bottom)
 
-The level of factors usually will be in the order of their appearances. To reorder it by a sorted value, you can try ``fct_reorder`` , ``fct_rev``, ``fct_relevel`` in the **forcats** package
+By default, R always sorts levels in alphabetical order. To reorder it by a sorted value, you can try ``fct_reorder`` , ``fct_rev``, ``fct_relevel`` in the **forcats** package
 
 
 ```r
