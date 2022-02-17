@@ -189,7 +189,7 @@ One alternative is a hex heatmap. You can create the graph using `geom_hex`
 
 ```{r,fig.width=4, fig.height=3}
 ggplot(SpeedSki, aes(Year, Speed)) + 
-  geom_hex() +
+  geom_hex(binswidth = c(10,10)) +
   ggtitle("Hex heatmap")
 ```
 
@@ -197,9 +197,9 @@ ggplot(SpeedSki, aes(Year, Speed)) +
 
 If you look at all the previous examples, you might notice that lighter points corresponds to more clustered points, which is somewhat counter-intuitive. The following exmaple suggest an alternative approach in color scale.
 
-```{r,fig.width=4.8, fig.height=3.6}
+```{r,fig.width=6, fig.height=4}
 ggplot(SpeedSki, aes(Year, Speed)) + 
-  geom_hex(bins=10) +
+  geom_hex(bins=12) +
   scale_fill_gradient(low = "grey", high = "purple") +  
   theme_classic(18) +
   ggtitle("Alternative approach to color")
