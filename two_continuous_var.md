@@ -222,7 +222,7 @@ One alternative is a hex heatmap. You can create the graph using `geom_hex`
 
 ```r
 ggplot(SpeedSki, aes(Year, Speed)) + 
-  geom_hex() +
+  geom_hex(binswidth = c(10,10)) +
   ggtitle("Hex heatmap")
 ```
 
@@ -235,10 +235,10 @@ If you look at all the previous examples, you might notice that lighter points c
 
 ```r
 ggplot(SpeedSki, aes(Year, Speed)) + 
-  geom_hex(bins=10) +
+  geom_hex(bins=12) +
   scale_fill_gradient(low = "grey", high = "purple") +  
   theme_classic(18) +
   ggtitle("Alternative approach to color")
 ```
 
-<img src="two_continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="two_continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" />
