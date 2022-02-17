@@ -201,7 +201,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>5.2.2</b> Cleveland dot plot with facets</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>6</b> Working with factors</a></li>
+<li class="chapter" data-level="6" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>6</b> Working with factors</a><ul>
+<li class="chapter" data-level="6.1" data-path="working-with-factors.html"><a href="working-with-factors.html#recod-factor-levels"><i class="fa fa-check"></i><b>6.1</b> Recod factor levels</a></li>
+<li class="chapter" data-level="6.2" data-path="working-with-factors.html"><a href="working-with-factors.html#relevel-the-factor"><i class="fa fa-check"></i><b>6.2</b> Relevel the factor</a></li>
+<li class="chapter" data-level="6.3" data-path="working-with-factors.html"><a href="working-with-factors.html#reorder-the-factors"><i class="fa fa-check"></i><b>6.3</b> Reorder the factors</a></li>
+<li class="chapter" data-level="6.4" data-path="working-with-factors.html"><a href="working-with-factors.html#dealing-wirh-nas"><i class="fa fa-check"></i><b>6.4</b> Dealing wirh NAs</a></li>
+<li class="chapter" data-level="6.5" data-path="working-with-factors.html"><a href="working-with-factors.html#summary-of-useful-functions"><i class="fa fa-check"></i><b>6.5</b> Summary of useful functions</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>7</b> Data transformation</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-transformation.html"><a href="data-transformation.html#what-is-tidy-data"><i class="fa fa-check"></i><b>7.1</b> What is tidy data?</a></li>
 <li class="chapter" data-level="7.2" data-path="data-transformation.html"><a href="data-transformation.html#pivot_longer"><i class="fa fa-check"></i><b>7.2</b> <code>pivot_longer</code></a></li>
@@ -249,7 +255,96 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="working-with-factors" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Working with factors</h1>
+<p>As what we have mentioned in the previous chapter, R sorts levels of factors in alphabetical order by default. In this chapter we will talk about working with factors using <strong>forcats</strong> package, which can be helpful when you managing categorical variables.</p>
+<div id="recod-factor-levels" class="section level2">
+<h2><span class="header-section-number">6.1</span> Recod factor levels</h2>
+<p><strong>Don’t</strong> directly assign levels with <code>levels()&lt;-</code>. Instead, using <code>fct_recode()</code>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="working-with-factors.html#cb35-1"></a><span class="kw">library</span>(forcats)</span>
+<span id="cb35-2"><a href="working-with-factors.html#cb35-2"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;G234&quot;</span>, <span class="st">&quot;G452&quot;</span>, <span class="st">&quot;G136&quot;</span>))  </span>
+<span id="cb35-3"><a href="working-with-factors.html#cb35-3"></a>y &lt;-<span class="st"> </span><span class="kw">fct_recode</span>(x, <span class="dt">Physics =</span> <span class="st">&quot;G234&quot;</span>, <span class="dt">Math =</span> <span class="st">&quot;G452&quot;</span>, <span class="dt">Chemistry =</span> <span class="st">&quot;G136&quot;</span>)  </span>
+<span id="cb35-4"><a href="working-with-factors.html#cb35-4"></a>y</span></code></pre></div>
+<pre><code>## [1] Physics   Math      Chemistry
+## Levels: Chemistry Physics Math</code></pre>
+</div>
+<div id="relevel-the-factor" class="section level2">
+<h2><span class="header-section-number">6.2</span> Relevel the factor</h2>
+<p>For the binned, ordinal data with levels out of order, <code>fct_relevel()</code> can be used to set a correct order.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="working-with-factors.html#cb37-1"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb37-2"><a href="working-with-factors.html#cb37-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb37-3"><a href="working-with-factors.html#cb37-3"></a>Births2015 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">MotherAge =</span> <span class="kw">c</span>(<span class="st">&quot;15-19 years&quot;</span>, <span class="st">&quot;20-24 years&quot;</span>, <span class="st">&quot;25-29 years&quot;</span>, <span class="st">&quot;30-34 years&quot;</span>, <span class="st">&quot;35-39 years&quot;</span>,  <span class="st">&quot;40-44 years&quot;</span>, <span class="st">&quot;45-49 years&quot;</span>, <span class="st">&quot;50 years and over&quot;</span>, <span class="st">&quot;Under 15 years&quot;</span>), <span class="dt">Num =</span> <span class="kw">c</span>(<span class="fl">229.715</span>, <span class="fl">850.509</span>, <span class="fl">1152.311</span>, <span class="fl">1094.693</span>, <span class="fl">527.996</span>, <span class="fl">111.848</span>, <span class="fl">8.171</span>, <span class="fl">.754</span>, <span class="fl">2.5</span>)) </span>
+<span id="cb37-4"><a href="working-with-factors.html#cb37-4"></a> </span>
+<span id="cb37-5"><a href="working-with-factors.html#cb37-5"></a><span class="kw">ggplot</span>(Births2015, <span class="kw">aes</span>(<span class="kw">fct_relevel</span>(MotherAge, <span class="st">&quot;Under 15 years&quot;</span>), Num)) <span class="op">+</span></span>
+<span id="cb37-6"><a href="working-with-factors.html#cb37-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb37-7"><a href="working-with-factors.html#cb37-7"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb37-8"><a href="working-with-factors.html#cb37-8"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1250</span>, <span class="dv">250</span>)) <span class="op">+</span></span>
+<span id="cb37-9"><a href="working-with-factors.html#cb37-9"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;United States Births, 2015&quot;</span>, <span class="dt">subtitle =</span> <span class="st">&quot;in thousands&quot;</span>) <span class="op">+</span></span>
+<span id="cb37-10"><a href="working-with-factors.html#cb37-10"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
+<p><img src="factors_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The following examples give three circumstances when using <code>fct_relevel()</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Using <code>fct_relevel()</code> to move levels to the beginning:</li>
+</ol>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="working-with-factors.html#cb38-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="st">&quot;F&quot;</span>)  </span>
+<span id="cb38-2"><a href="working-with-factors.html#cb38-2"></a><span class="kw">fct_relevel</span>(x, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;move2&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] A     B     C     move1 D     E     move2 F    
+## Levels: move1 move2 A B C D E F</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Using <code>fct_relevel()</code> to move levels after an item (by position):</li>
+</ol>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="working-with-factors.html#cb40-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="st">&quot;F&quot;</span>)  </span>
+<span id="cb40-2"><a href="working-with-factors.html#cb40-2"></a><span class="kw">fct_relevel</span>(x, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="dt">after =</span> <span class="dv">4</span>) <span class="co"># move after the fourth item</span></span></code></pre></div>
+<pre><code>## [1] A     B     C     move1 D     E     move2 F    
+## Levels: A B C D move1 move2 E F</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Using <code>fct_relevel()</code> to move levels to the end</li>
+</ol>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="working-with-factors.html#cb42-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="st">&quot;F&quot;</span>)  </span>
+<span id="cb42-2"><a href="working-with-factors.html#cb42-2"></a><span class="kw">fct_relevel</span>(x, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="dt">after =</span> <span class="ot">Inf</span>)</span></code></pre></div>
+<pre><code>## [1] A     B     C     move1 D     E     move2 F    
+## Levels: A B C D E F move1 move2</code></pre>
+</div>
+<div id="reorder-the-factors" class="section level2">
+<h2><span class="header-section-number">6.3</span> Reorder the factors</h2>
+<p>For binned, nominal data which should be sorted by frequency order, use <code>fct_reorder()</code>. In the following example <strong>count</strong> is used, generally you can also apply <strong>mean</strong>,<strong>median</strong>, etc. to <code>.fun</code> inside `fct_reorder()``.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="working-with-factors.html#cb44-1"></a>pack1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(  </span>
+<span id="cb44-2"><a href="working-with-factors.html#cb44-2"></a>  <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>),  </span>
+<span id="cb44-3"><a href="working-with-factors.html#cb44-3"></a>  <span class="dt">count =</span> <span class="kw">c</span>(<span class="dv">13</span>, <span class="dv">7</span>, <span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">8</span>)  </span>
+<span id="cb44-4"><a href="working-with-factors.html#cb44-4"></a>)  </span>
+<span id="cb44-5"><a href="working-with-factors.html#cb44-5"></a> </span>
+<span id="cb44-6"><a href="working-with-factors.html#cb44-6"></a><span class="kw">ggplot</span>(pack1, <span class="kw">aes</span>(<span class="kw">fct_reorder</span>(color, count, <span class="dt">.desc =</span> <span class="ot">TRUE</span>), count)) <span class="op">+</span><span class="st">   </span></span>
+<span id="cb44-7"><a href="working-with-factors.html#cb44-7"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span><span class="st">  </span></span>
+<span id="cb44-8"><a href="working-with-factors.html#cb44-8"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
+<p><img src="factors_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="dealing-wirh-nas" class="section level2">
+<h2><span class="header-section-number">6.4</span> Dealing wirh NAs</h2>
+<p>For prominent NA bars which should not be eliminated, use <code>fct_explicit_na(x)</code>. And using <code>fct_rev(x)</code> to reverse the factor level <strong>doesn’t</strong> help.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="working-with-factors.html#cb45-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb45-2"><a href="working-with-factors.html#cb45-2"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">temperature =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;cold&quot;</span>, <span class="st">&quot;warm&quot;</span>, <span class="st">&quot;hot&quot;</span>, <span class="ot">NA</span>)), <span class="dt">count =</span> <span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">22</span>, <span class="dv">12</span>))</span>
+<span id="cb45-3"><a href="working-with-factors.html#cb45-3"></a> </span>
+<span id="cb45-4"><a href="working-with-factors.html#cb45-4"></a>df <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb45-5"><a href="working-with-factors.html#cb45-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">temperature =</span> <span class="kw">fct_explicit_na</span>(temperature, <span class="st">&quot;NA&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb45-6"><a href="working-with-factors.html#cb45-6"></a><span class="st">  </span><span class="kw">fct_relevel</span>(<span class="st">&quot;NA&quot;</span>, <span class="st">&quot;hot&quot;</span>, <span class="st">&quot;warm&quot;</span>, <span class="st">&quot;cold&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb45-7"><a href="working-with-factors.html#cb45-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> temperature, <span class="dt">y =</span> count)) <span class="op">+</span></span>
+<span id="cb45-8"><a href="working-with-factors.html#cb45-8"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb45-9"><a href="working-with-factors.html#cb45-9"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb45-10"><a href="working-with-factors.html#cb45-10"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
+<p><img src="factors_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="summary-of-useful-functions" class="section level2">
+<h2><span class="header-section-number">6.5</span> Summary of useful functions</h2>
+<p>For analyzing categorical variables, the first step is always to decide whether the class is ordinal or nominal.</p>
+<blockquote>
+<p>fct_recode(x, …) – change names of levels</p>
+<p>fct_inorder(x) – set level order of x to row order</p>
+<p>fct_relevel(x, …) – manually set the order of levels of x</p>
+<p>fct_reorder(x, y) – reorder x by y</p>
+<p>fct_infreq(x) – order the levels of x by decreasing frequency</p>
+<p>fct_rev(x) – reverse the order of factor levels of x</p>
+<p>fct_explicit_na(x) – turn NAs into a real factor level</p>
+</blockquote>
 
+</div>
 </div>
             </section>
 

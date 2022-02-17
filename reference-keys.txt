@@ -46,6 +46,11 @@ cleveland-dot-plot
 cleveland-dot-plot-with-multiple-dots
 cleveland-dot-plot-with-facets
 working-with-factors
+recod-factor-levels
+relevel-the-factor
+reorder-the-factors
+dealing-wirh-nas
+summary-of-useful-functions
 data-transformation
 what-is-tidy-data
 pivot_longer
