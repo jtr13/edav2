@@ -11,13 +11,14 @@ language:
 
 # Chapter ordering
 rmd_files: [
-  # Part: Introduction
   'index.Rmd', # must be first chapter
-  'learning_R.Rmd',
-  'learning_ggplot2.Rmd',
-  'continuous_var.Rmd',
-  'uni_categorical_var.Rmd',
+# Part: R resources
+  'learning_R.Rmd', # must be first chapter of part
   'factors.Rmd',
   'data_transformation.Rmd',
+# Part: R graphics
+  'learning_ggplot2.Rmd', # must be first chapter of part
+  'continuous_var.Rmd',
+  'uni_categorical_var.Rmd',
   'two_continuous_var.Rmd'
 ]
