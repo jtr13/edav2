@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Working with factors | edav.info, 2nd edition</title>
+  <title>Chapter 6 Faceting | edav.info, 2nd edition</title>
   <meta name="description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Working with factors | edav.info, 2nd edition" />
+  <meta property="og:title" content="Chapter 6 Faceting | edav.info, 2nd edition" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="jtr13/edav2" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Working with factors | edav.info, 2nd edition" />
+  <meta name="twitter:title" content="Chapter 6 Faceting | edav.info, 2nd edition" />
   
   <meta name="twitter:description" content="Supplemental resources for GR5293 and GR5702" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="getting-started.html"/>
-<link rel="next" href="data-transformation.html"/>
+<link rel="prev" href="learning-ggplot2.html"/>
+<link rel="next" href="unidimensional-continuous-variables.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -258,114 +258,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="working-with-factors" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 3</span> Working with factors<a href="working-with-factors.html#working-with-factors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>As what we have mentioned in the previous chapter, R sorts levels of factors in alphabetical order by default. In this chapter we will talk about working with factors using <strong>forcats</strong> package, which can be helpful when you managing categorical variables.</p>
-<div id="recode-factor-levels" class="section level2 hasAnchor">
-<h2><span class="header-section-number">3.1</span> Recode factor levels<a href="working-with-factors.html#recode-factor-levels" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Don’t</strong> directly assign levels with <code>levels()&lt;-</code>. Instead, using <code>fct_recode()</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="working-with-factors.html#cb6-1"></a><span class="kw">library</span>(forcats)</span>
-<span id="cb6-2"><a href="working-with-factors.html#cb6-2"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;G234&quot;</span>, <span class="st">&quot;G452&quot;</span>, <span class="st">&quot;G136&quot;</span>))  </span>
-<span id="cb6-3"><a href="working-with-factors.html#cb6-3"></a>y &lt;-<span class="st"> </span><span class="kw">fct_recode</span>(x, <span class="dt">Physics =</span> <span class="st">&quot;G234&quot;</span>, <span class="dt">Math =</span> <span class="st">&quot;G452&quot;</span>, <span class="dt">Chemistry =</span> <span class="st">&quot;G136&quot;</span>)  </span>
-<span id="cb6-4"><a href="working-with-factors.html#cb6-4"></a>y</span></code></pre></div>
-<pre><code>## [1] Physics   Math      Chemistry
-## Levels: Chemistry Physics Math</code></pre>
+<div id="faceting-1" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 6</span> Faceting<a href="faceting-1.html#faceting-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter, we will introduce facets, which are usually used to combine continuous and categorical data.</p>
+<div id="faceting-on-one-variable" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.1</span> Faceting on one variable<a href="faceting-1.html#faceting-on-one-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Facet partitions a plot into a matrix of panels. Each panel shows a different subset of the data. By default, <code>facet_wrap</code> gives consistent scales, which is easier for comparison between different panels.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="faceting-1.html#cb46-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb46-2"><a href="faceting-1.html#cb46-2"></a>mycol =<span class="st"> &quot;#7192E3&quot;</span>  </span>
+<span id="cb46-3"><a href="faceting-1.html#cb46-3"></a><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Length, Sepal.Width)) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb46-4"><a href="faceting-1.html#cb46-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> mycol) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb46-5"><a href="faceting-1.html#cb46-5"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Species) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb46-6"><a href="faceting-1.html#cb46-6"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">18</span>)</span></code></pre></div>
+<p><img src="faceting_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Rather than faceting on factor level, we can have one panel for each numerical variable.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="faceting-1.html#cb47-1"></a><span class="kw">library</span>(pgmm) </span>
+<span id="cb47-2"><a href="faceting-1.html#cb47-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb47-3"><a href="faceting-1.html#cb47-3"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb47-4"><a href="faceting-1.html#cb47-4"></a><span class="kw">data</span>(wine)  </span>
+<span id="cb47-5"><a href="faceting-1.html#cb47-5"></a>tidywine &lt;-<span class="st"> </span>wine <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb47-6"><a href="faceting-1.html#cb47-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span>Type, <span class="dt">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>)  </span>
+<span id="cb47-7"><a href="faceting-1.html#cb47-7"></a>tidywine <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb47-8"><a href="faceting-1.html#cb47-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(value)) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb47-9"><a href="faceting-1.html#cb47-9"></a><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span><span class="st">  </span></span>
+<span id="cb47-10"><a href="faceting-1.html#cb47-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>variable) <span class="op">+</span><span class="st">   </span></span>
+<span id="cb47-11"><a href="faceting-1.html#cb47-11"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb47-12"><a href="faceting-1.html#cb47-12"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
+<p><img src="faceting_files/figure-html/unnamed-chunk-2-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>Axis scales can be made independent, by setting scales to <code>free</code>, <code>free_x</code>, or <code>free_y</code>.</p>
+<p>In this case, <code>scales = "free_x"</code> is a better option because the distribution of each numerical variable is more obvious.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="faceting-1.html#cb48-1"></a>tidywine  <span class="op">%&gt;%</span></span>
+<span id="cb48-2"><a href="faceting-1.html#cb48-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(value)) <span class="op">+</span></span>
+<span id="cb48-3"><a href="faceting-1.html#cb48-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></span>
+<span id="cb48-4"><a href="faceting-1.html#cb48-4"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>variable,<span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="op">+</span></span>
+<span id="cb48-5"><a href="faceting-1.html#cb48-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="op">+</span></span>
+<span id="cb48-6"><a href="faceting-1.html#cb48-6"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
+<p><img src="faceting_files/figure-html/unnamed-chunk-3-1.png" width="960" style="display: block; margin: auto;" /></p>
 </div>
-<div id="relevel-the-factor" class="section level2 hasAnchor">
-<h2><span class="header-section-number">3.2</span> Relevel the factor<a href="working-with-factors.html#relevel-the-factor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For the binned, ordinal data with levels out of order, <code>fct_relevel()</code> can be used to set a correct order.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="working-with-factors.html#cb8-1"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb8-2"><a href="working-with-factors.html#cb8-2"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb8-3"><a href="working-with-factors.html#cb8-3"></a>Births2015 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">MotherAge =</span> <span class="kw">c</span>(<span class="st">&quot;15-19 years&quot;</span>, <span class="st">&quot;20-24 years&quot;</span>, <span class="st">&quot;25-29 years&quot;</span>, <span class="st">&quot;30-34 years&quot;</span>, <span class="st">&quot;35-39 years&quot;</span>,  <span class="st">&quot;40-44 years&quot;</span>, <span class="st">&quot;45-49 years&quot;</span>, <span class="st">&quot;50 years and over&quot;</span>, <span class="st">&quot;Under 15 years&quot;</span>), <span class="dt">Num =</span> <span class="kw">c</span>(<span class="fl">229.715</span>, <span class="fl">850.509</span>, <span class="fl">1152.311</span>, <span class="fl">1094.693</span>, <span class="fl">527.996</span>, <span class="fl">111.848</span>, <span class="fl">8.171</span>, <span class="fl">.754</span>, <span class="fl">2.5</span>)) </span>
-<span id="cb8-4"><a href="working-with-factors.html#cb8-4"></a> </span>
-<span id="cb8-5"><a href="working-with-factors.html#cb8-5"></a><span class="kw">ggplot</span>(Births2015, <span class="kw">aes</span>(<span class="kw">fct_relevel</span>(MotherAge, <span class="st">&quot;Under 15 years&quot;</span>), Num)) <span class="op">+</span></span>
-<span id="cb8-6"><a href="working-with-factors.html#cb8-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
-<span id="cb8-7"><a href="working-with-factors.html#cb8-7"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
-<span id="cb8-8"><a href="working-with-factors.html#cb8-8"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1250</span>, <span class="dv">250</span>)) <span class="op">+</span></span>
-<span id="cb8-9"><a href="working-with-factors.html#cb8-9"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;United States Births, 2015&quot;</span>, <span class="dt">subtitle =</span> <span class="st">&quot;in thousands&quot;</span>) <span class="op">+</span></span>
-<span id="cb8-10"><a href="working-with-factors.html#cb8-10"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
-<p><img src="factors_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>The following examples give three circumstances when using <code>fct_relevel()</code>.</p>
-<ol style="list-style-type: decimal">
-<li>Using <code>fct_relevel()</code> to move levels to the beginning:</li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="working-with-factors.html#cb9-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="st">&quot;F&quot;</span>)  </span>
-<span id="cb9-2"><a href="working-with-factors.html#cb9-2"></a><span class="kw">fct_relevel</span>(x, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;move2&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] A     B     C     move1 D     E     move2 F    
-## Levels: move1 move2 A B C D E F</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Using <code>fct_relevel()</code> to move levels after an item (by position):</li>
-</ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="working-with-factors.html#cb11-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="st">&quot;F&quot;</span>)  </span>
-<span id="cb11-2"><a href="working-with-factors.html#cb11-2"></a><span class="kw">fct_relevel</span>(x, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="dt">after =</span> <span class="dv">4</span>) <span class="co"># move after the fourth item</span></span></code></pre></div>
-<pre><code>## [1] A     B     C     move1 D     E     move2 F    
-## Levels: A B C D move1 move2 E F</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>Using <code>fct_relevel()</code> to move levels to the end</li>
-</ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="working-with-factors.html#cb13-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="st">&quot;F&quot;</span>)  </span>
-<span id="cb13-2"><a href="working-with-factors.html#cb13-2"></a><span class="kw">fct_relevel</span>(x, <span class="st">&quot;move1&quot;</span>, <span class="st">&quot;move2&quot;</span>, <span class="dt">after =</span> <span class="ot">Inf</span>)</span></code></pre></div>
-<pre><code>## [1] A     B     C     move1 D     E     move2 F    
-## Levels: A B C D E F move1 move2</code></pre>
-<p>If the row order is correct, use <code>fct_inorder()</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="working-with-factors.html#cb15-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">temperature =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;cold&quot;</span>, <span class="st">&quot;warm&quot;</span>, <span class="st">&quot;hot&quot;</span>)),  </span>
-<span id="cb15-2"><a href="working-with-factors.html#cb15-2"></a>                 <span class="dt">count =</span> <span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">22</span>)) </span>
-<span id="cb15-3"><a href="working-with-factors.html#cb15-3"></a> </span>
-<span id="cb15-4"><a href="working-with-factors.html#cb15-4"></a><span class="co"># row order is correct (think: factor in ROW order) </span></span>
-<span id="cb15-5"><a href="working-with-factors.html#cb15-5"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">fct_inorder</span>(temperature), <span class="dt">y =</span> count)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb15-6"><a href="working-with-factors.html#cb15-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
-<span id="cb15-7"><a href="working-with-factors.html#cb15-7"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
-<p><img src="factors_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
-</div>
-<div id="reorder-the-factors" class="section level2 hasAnchor">
-<h2><span class="header-section-number">3.3</span> Reorder the factors<a href="working-with-factors.html#reorder-the-factors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Usually, unbinned, nominal data should be sorted by frequency order, which can be achieved using <code>fct_infreq()</code> (default is decreasing order of frequency)</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="working-with-factors.html#cb16-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(  </span>
-<span id="cb16-2"><a href="working-with-factors.html#cb16-2"></a>  <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>,<span class="st">&quot;brown&quot;</span>,<span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;orange&quot;</span>)</span>
-<span id="cb16-3"><a href="working-with-factors.html#cb16-3"></a>)  </span>
-<span id="cb16-4"><a href="working-with-factors.html#cb16-4"></a> </span>
-<span id="cb16-5"><a href="working-with-factors.html#cb16-5"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="kw">fct_infreq</span>(color))) <span class="op">+</span><span class="st">   </span></span>
-<span id="cb16-6"><a href="working-with-factors.html#cb16-6"></a><span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span><span class="st">  </span></span>
-<span id="cb16-7"><a href="working-with-factors.html#cb16-7"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
-<p><img src="factors_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>For binned, nominal data which should be sorted by frequency order, use <code>fct_reorder()</code>. In the following example <strong>count</strong> is used, generally you can also apply <strong>mean</strong>,<strong>median</strong>, etc. to <code>.fun</code> inside `fct_reorder()``.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="working-with-factors.html#cb17-1"></a>pack1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(  </span>
-<span id="cb17-2"><a href="working-with-factors.html#cb17-2"></a>  <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>),  </span>
-<span id="cb17-3"><a href="working-with-factors.html#cb17-3"></a>  <span class="dt">count =</span> <span class="kw">c</span>(<span class="dv">13</span>, <span class="dv">7</span>, <span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">8</span>)  </span>
-<span id="cb17-4"><a href="working-with-factors.html#cb17-4"></a>)  </span>
-<span id="cb17-5"><a href="working-with-factors.html#cb17-5"></a> </span>
-<span id="cb17-6"><a href="working-with-factors.html#cb17-6"></a><span class="kw">ggplot</span>(pack1, <span class="kw">aes</span>(<span class="kw">fct_reorder</span>(color, count, <span class="dt">.desc =</span> <span class="ot">TRUE</span>), count)) <span class="op">+</span><span class="st">   </span></span>
-<span id="cb17-7"><a href="working-with-factors.html#cb17-7"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span><span class="st">  </span></span>
-<span id="cb17-8"><a href="working-with-factors.html#cb17-8"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
-<p><img src="factors_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
-</div>
-<div id="dealing-wirh-nas" class="section level2 hasAnchor">
-<h2><span class="header-section-number">3.4</span> Dealing wirh NAs<a href="working-with-factors.html#dealing-wirh-nas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For prominent NA bars which should not be eliminated, use <code>fct_explicit_na(x)</code>. And using <code>fct_rev(x)</code> to reverse the factor level <strong>doesn’t</strong> help.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="working-with-factors.html#cb18-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb18-2"><a href="working-with-factors.html#cb18-2"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">temperature =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;cold&quot;</span>, <span class="st">&quot;warm&quot;</span>, <span class="st">&quot;hot&quot;</span>, <span class="ot">NA</span>)), <span class="dt">count =</span> <span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">22</span>, <span class="dv">12</span>))</span>
-<span id="cb18-3"><a href="working-with-factors.html#cb18-3"></a> </span>
-<span id="cb18-4"><a href="working-with-factors.html#cb18-4"></a>df <span class="op">%&gt;%</span><span class="st">   </span></span>
-<span id="cb18-5"><a href="working-with-factors.html#cb18-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">temperature =</span> <span class="kw">fct_explicit_na</span>(temperature, <span class="st">&quot;NA&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb18-6"><a href="working-with-factors.html#cb18-6"></a><span class="st">  </span><span class="kw">fct_relevel</span>(<span class="st">&quot;NA&quot;</span>, <span class="st">&quot;hot&quot;</span>, <span class="st">&quot;warm&quot;</span>, <span class="st">&quot;cold&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb18-7"><a href="working-with-factors.html#cb18-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> temperature, <span class="dt">y =</span> count)) <span class="op">+</span></span>
-<span id="cb18-8"><a href="working-with-factors.html#cb18-8"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
-<span id="cb18-9"><a href="working-with-factors.html#cb18-9"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
-<span id="cb18-10"><a href="working-with-factors.html#cb18-10"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>)</span></code></pre></div>
-<p><img src="factors_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
-</div>
-<div id="summary-of-useful-functions" class="section level2 hasAnchor">
-<h2><span class="header-section-number">3.5</span> Summary of useful functions<a href="working-with-factors.html#summary-of-useful-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For analyzing categorical variables, the first step is always to decide whether the class is ordinal or nominal.</p>
-<blockquote>
-<p>fct_recode(x, …) – change names of levels</p>
-<p>fct_inorder(x) – set level order of x to row order</p>
-<p>fct_relevel(x, …) – manually set the order of levels of x</p>
-<p>fct_reorder(x, y) – reorder x by y</p>
-<p>fct_infreq(x) – order the levels of x by decreasing frequency</p>
-<p>fct_rev(x) – reverse the order of factor levels of x</p>
-<p>fct_explicit_na(x) – turn NAs into a real factor level</p>
-</blockquote>
+<div id="faceting-on-two-variables" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.2</span> Faceting on two variables<a href="faceting-1.html#faceting-on-two-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>facet_grid</code> can be used to split data-sets on two variables and plot them on the horizontal and/or vertical direction.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="faceting-1.html#cb49-1"></a>wine <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb49-2"><a href="faceting-1.html#cb49-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Type =</span> <span class="kw">paste</span>(<span class="st">&quot;Type&quot;</span>, Type)) <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb49-3"><a href="faceting-1.html#cb49-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb49-4"><a href="faceting-1.html#cb49-4"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span>Type, <span class="dt">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb49-5"><a href="faceting-1.html#cb49-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(value)) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb49-6"><a href="faceting-1.html#cb49-6"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> mycol, <span class="dt">fill =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb49-7"><a href="faceting-1.html#cb49-7"></a><span class="st">  </span><span class="kw">facet_grid</span>(Type <span class="op">~</span><span class="st"> </span>variable, <span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb49-8"><a href="faceting-1.html#cb49-8"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
+<p><img src="faceting_files/figure-html/unnamed-chunk-4-1.png" width="960" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -374,8 +315,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-transformation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="learning-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="unidimensional-continuous-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -406,7 +347,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jtr13/edav2/edit/main/factors.Rmd",
+"link": "https://github.com/jtr13/edav2/edit/main/faceting.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -414,7 +355,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/jtr13/edav2/blob/main/factors.Rmd",
+"link": "https://github.com/jtr13/edav2/blob/main/faceting.Rmd",
 "text": null
 },
 "download": null,

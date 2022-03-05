@@ -37,6 +37,9 @@ coordinate-system
 faceting
 labels
 resources-for-ggplot2
+faceting-1
+faceting-on-one-variable
+faceting-on-two-variables
 unidimensional-continuous-variables
 histogram
 basics-and-implications
