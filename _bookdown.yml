@@ -12,13 +12,17 @@ language:
 # Chapter ordering
 rmd_files: [
   'index.Rmd', # must be first chapter
+  'faceting.Rmd',
 # Part: R resources
   'learning_R.Rmd', # must be first chapter of part
   'factors.Rmd',
   'data_transformation.Rmd',
+  'git_GitHub.Rmd',
 # Part: R graphics
   'learning_ggplot2.Rmd', # must be first chapter of part
   'continuous_var.Rmd',
   'uni_categorical_var.Rmd',
-  'two_continuous_var.Rmd'
+  'two_continuous_var.Rmd',
+  'multidimensional_continuous.Rmd',
+  'multidimensional_categorical.Rmd'
 ]
