@@ -17,7 +17,8 @@ Imports:
     GDAdata,
     ggplot2movies,
     plotly,
-    hexbin
+    hexbin,
+    pgmm
 Suggests:
     bookdown,
     bslib,
