@@ -1,0 +1,16 @@
+# Faceting
+
+In this chapter, we will introduce facets, which are usually used to combine continuous and categorical data.
+
+```{r,fig.width=4.8, fig.height=4}
+library(ggplot2)
+library(tidyverse)
+
+mycol = "#7192E3"  
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +  
+  geom_point(color = mycol) +  
+  facet_wrap(~Species) +  
+  theme_grey(18)
+```
+
+
