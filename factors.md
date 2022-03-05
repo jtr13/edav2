@@ -2,7 +2,7 @@
 
 As what we have mentioned in the previous chapter, R sorts levels of factors in alphabetical order by default. In this chapter we will talk about working with factors using **forcats** package, which can be helpful when you managing categorical variables.
 
-## Recod factor levels
+## Recode factor levels
 
 **Don't** directly assign levels with ``levels()<-``. Instead, using ``fct_recode()``.
 
@@ -38,6 +38,7 @@ ggplot(Births2015, aes(fct_relevel(MotherAge, "Under 15 years"), Num)) +
 ```
 
 <img src="factors_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" />
+
 
 The following examples give three circumstances when using ``fct_relevel()``.
 
@@ -80,7 +81,40 @@ fct_relevel(x, "move1", "move2", after = Inf)
 ## Levels: A B C D E F move1 move2
 ```
 
+If the row order is correct, use ``fct_inorder()``:
+
+
+```r
+df <- data.frame(temperature = factor(c("cold", "warm", "hot")),  
+                 count = c(15, 5, 22)) 
+ 
+# row order is correct (think: factor in ROW order) 
+ggplot(df, aes(x = fct_inorder(temperature), y = count)) +  
+  geom_col() +
+  theme_grey(16)
+```
+
+<img src="factors_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" />
+
+
 ## Reorder the factors 
+
+Usually, unbinned, nominal data should be sorted by frequency order, which can be achieved using ``fct_infreq()`` (default is decreasing order of frequency)
+
+
+```r
+df <- data.frame(  
+  color = c("orange","blue", "red","brown","yellow", "green", "orange", "red", "yellow","blue","blue","red","orange","blue","red","orange","orange")
+)  
+ 
+ggplot(df, aes(fct_infreq(color))) +   
+  geom_bar() +  
+  theme_grey(16)
+```
+
+<img src="factors_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" />
+
+
 
 For binned, nominal data which should be sorted by frequency order, use ``fct_reorder()``. In the following example **count** is used, generally you can also apply **mean**,**median**, etc. to ``.fun`` inside `fct_reorder()``.
 
@@ -96,7 +130,7 @@ ggplot(pack1, aes(fct_reorder(color, count, .desc = TRUE), count)) +
   theme_grey(16)
 ```
 
-<img src="factors_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" />
+<img src="factors_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" />
 
 ## Dealing wirh NAs
 
@@ -116,7 +150,7 @@ df %>%
   theme_grey(16)
 ```
 
-<img src="factors_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" />
+<img src="factors_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" />
 
 ## Summary of useful functions
 

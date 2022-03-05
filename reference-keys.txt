@@ -11,7 +11,7 @@ r-studio-keyborad-shortcuts
 viewing-plots-in-plot-window
 adding-figures-and-links
 working-with-factors
-recod-factor-levels
+recode-factor-levels
 relevel-the-factor
 reorder-the-factors
 dealing-wirh-nas
