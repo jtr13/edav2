@@ -20,6 +20,7 @@ Rather than faceting on factor level, we can have one panel for each numerical v
 ```{r,fig.width=10, fig.height=6}
 library(pgmm) 
 library(dplyr)
+library(tidyr)
 data(wine)  
 tidywine <- wine %>% 
   pivot_longer(cols = -Type, names_to = "variable", values_to = "value")  
