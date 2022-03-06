@@ -21,7 +21,8 @@ Imports:
     pgmm,
     GGally,
     parcoords,
-    readr
+    readr,
+    d3r
 Suggests:
     bookdown,
     bslib,
