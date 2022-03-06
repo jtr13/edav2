@@ -58,7 +58,7 @@ Mosaic plots are used for visualizing data from two or more qualitative variable
 
 ```{r,fig.width=4.8, fig.height=3.6}
 library(grid)
-icecream <- read.csv("data/MusicIceCream.csv")
+icecream <- read.csv("data/MusicIcecream.csv")
 icecreamcolors <- c("#ff99ff", "#cc9966") 
 counts2 <- icecream %>%
   group_by(Age, Favorite) %>%
@@ -116,3 +116,13 @@ vcd::mosaic(food ~ sex + size, ally,
 
 Treemap is a filled rectangular plot representing hierarchical data (fill color does not necessarily represent frequency count)
 
+```{r,fig.width=7.2, fig.height=4.8}
+library(treemap)
+data(GNI2014)
+treemap::treemap(GNI2014,
+       index=c("continent", "iso3"),
+       vSize="population",
+       vColor="GNI",
+       type="value",
+       format.legend = list(scientific = FALSE, big.mark = " "))
+```
