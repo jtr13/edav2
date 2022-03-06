@@ -22,7 +22,8 @@ Imports:
     GGally,
     parcoords,
     readr,
-    d3r
+    d3r,
+    redav
 Suggests:
     bookdown,
     bslib,
