@@ -81,3 +81,10 @@ combine-with-a-scatterplot
 change-color-scale
 hex-heatmap
 alternative-approach-to-color
+multidimensional-categorical-variables
+barcharts
+stacked-bar-chart
+grouped-bar-chart
+grouped-bar-chart-with-facets
+grouped-barchart-with-three-categorical-variables
+mosaic-plots
