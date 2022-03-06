@@ -26,7 +26,7 @@ Imports:
     redav,
     vcd,
     grid,
-    treepmap
+    treemap
 Suggests:
     bookdown,
     bslib,
