@@ -20,7 +20,8 @@ Imports:
     hexbin,
     pgmm,
     GGally,
-    parcoords
+    parcoords,
+    readr
 Suggests:
     bookdown,
     bslib,
