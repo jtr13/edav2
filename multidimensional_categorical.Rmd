@@ -54,3 +54,45 @@ ggplot(counts3, aes(x = Favorite, y = Freq, fill = Music)) +
 
 Mosaic plots are used for visualizing data from two or more qualitative variables to show their proportions or associations.
 
+### Mosaic plot with one variable
+
+```{r,fig.width=4.8, fig.height=3.6}
+library(grid)
+icecream <- read.csv("data/MusicIceCream.csv")
+icecreamcolors <- c("#ff99ff", "#cc9966") 
+counts2 <- icecream %>%
+  group_by(Age, Favorite) %>%
+  summarize(Freq = sum(Freq))
+vcd::mosaic(~Age, direction = "v", counts2)
+```
+
+### Mosaic plot with two variables
+
+```{r,fig.width=4.8, fig.height=3.6}
+vcd::mosaic(Favorite ~ Age, counts2, direction = c("v", "h"),
+            highlighting_fill = icecreamcolors)
+```
+
+### Mosaic plot with three variables(Best practice)
+
+Here's some criteria of best practice of mosaic plots :
+
+>Dependent variables is split last and split horizontally
+>
+>Fill is set to dependent variable
+>
+>Other variables are split vertically
+>
+>Most important level of dependent variable is closest to the x-axis and darkest (or most noticable shade)
+>
+
+```{r,fig.width=4.8, fig.height=3.6}
+vcd::mosaic(Favorite ~ Age + Music, counts3,
+            direction = c("v", "v", "h"),
+            highlighting_fill = icecreamcolors)
+```
+
+### Mosaic plots: spine plot
+
+Spine plot is a mosaic plot with straight, parallel cuts in one dimension (“spines”) and only one variable cutting in the other direction
+

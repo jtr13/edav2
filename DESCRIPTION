@@ -23,7 +23,9 @@ Imports:
     parcoords,
     readr,
     d3r,
-    redav
+    redav,
+    vcd,
+    grid
 Suggests:
     bookdown,
     bslib,
