@@ -64,7 +64,7 @@ ggparcoord(iris, columns=1:4, groupColumn=5, alpha=0.5, scale='uniminmax',spline
 ### Interactive parallel coordinate plot
 
 ```{r,message=FALSE,echo=FALSE}
-library(tidyverse)
+library(dplyr)
 library(parcoords)
 df <- read_csv("https://data.ny.gov/api/views/ca8h-8gjq/rows.csv")
 
