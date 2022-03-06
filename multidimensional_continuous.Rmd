@@ -1,0 +1,178 @@
+# Multidimensional continuous variables
+
+In this chapter, we will look at techniques that explore the relationships between multiple continuous variables.
+
+## Parallel coordinate plot
+
+### Basics and implications
+
+For the following example, we use the famous `iris` data set. After installing `GGally`, we use `ggparcoord` to create the plot simply by specifying the columns we want.
+```{r,fig.width=4.8, fig.height=3.6}
+library(GGally)
+
+ggparcoord(iris, columns=1:4, 
+           title = "Parallel coordinate plot for Iris flowers")
+```
+Generally, parallel coordinate plots are used to infer relationships between multiple continuous variables - we mostly use them to detect a general trend that our data follows, and also the specific cases that are outliers. 
+
+Please keep in mind that parallel coordinate plots are not the ideal graph to use when there are just categorical variables involved. We can include a few categorical variables for the sake of clustering, but using a lot of categorical variables results in overlapping profiles, which makes it difficult to interpret.
+
+### Modifications
+
+The default parallel coordinate plot might be messy and hard to interpret. The following techniques will help to create better visuals and convey clearer trends.
+
+#### Grouping
+
+Generally, you use grouping when you want to observe a pattern by group of a categorical variable. To do this, we set groupColumn to the desired categorical variable.
+
+#### Alpha
+
+In practice, parallel coordinate plots are not going to be used for very small datasets. Your data will likely have thousands and thousands of cases, and sometimes it can get very difficult to observe anything when there are many overlaps. We set the alphaLines between zero and one, and it reduces the opacity of all lines. 
+
+#### Scales
+
+Sometimes the value in your variables have very different range and it is necessary to rescale them to make comparisons. By default, `ggparcoord` standardize your data. 
+
+The following are some other scaling options:
+
+1. **std**: default value, where it subtracts mean and divides by standard deviation.
+2. **robust**: subtract median and divide by median absolute deviation.
+3. **uniminmax**: scale all values so that the minimum is at 0 and maximum at 1.
+4. **globalminmax**: no scaling, original values taken.
+
+#### Splines
+
+Generally, we use splines if we have a column where there are a lot of repeating values, which adds a lot of noise. The case lines become more and more curved when we set a higher spline factor, which removes noise and makes for easier observations of trends. It can be set using the splineFactor attribute. 
+
+#### Reordering
+
+You can reorder your columns in any way you want. Simply put the order in a vector. For example:
+
+```
+columns = c(1,3,4,2,5)
+```
+
+#### Application
+
+Consider the following example, we apply grouping, alpha tuning, scaling and splines on the `iris` data set. Compare the two plot and the modified graph is noticeably easier to interpret.
+
+```{r,fig.width=4.8, fig.height=3.6}
+ggparcoord(iris, columns=1:4, groupColumn=5, alpha=0.5, scale='uniminmax',splineFactor=10,
+           title = "Modified parallel coordinate plot for Iris flowers")
+```
+
+### Interactive parallel coordinate plot
+
+```{r,message=FALSE,echo=FALSE}
+library(tidyverse)
+library(parcoords)
+df <- read_csv("https://data.ny.gov/api/views/ca8h-8gjq/rows.csv")
+
+df_a <- df %>% 
+  filter(Year == 2020) %>%
+  group_by(County,Region) %>%
+  summarise(across(where(is.numeric),sum)) %>%
+  mutate(Region = case_when(Region == 'Non-New York City' ~ 'Non-NYC',
+                            Region == 'New York City' ~ 'NYC'))
+```
+
+Package `parcoords` can help us in creating interactive parallel coordinate plots. The following example is created using New York State crime data. 
+
+```{r,}
+df_a %>% 
+  select(-c("Year","Months Reported","Index Total","Violent Total","Property Total")) %>%
+  arrange(df_a) %>%
+  parcoords(rownames = FALSE,
+            brushMode = "1D-axes",
+            color = list(colorBy = "Region",
+                         colorScale = "scaleOrdinal",
+                         colorScheme = "schemeCategory10"),
+            alpha = 0.5,
+            withD3 = TRUE,
+            width = 770,
+            height = 600)
+```
+
+In the interactive graph, for each feature, you can create a square box to filter for observations. For example, you can look at a certain county, or you can filter for all counties that are in New York City (Region=NYC). Overall, the interactive plot is more flexible for analysis.
+
+### External resource
+
+Just like a static graph, there is a lot of things you can change in the interactive setting. Refer [R documentation](https://www.rdocumentation.org/packages/parcoords/versions/1.0.0/topics/parcoords) for more options. Unfortunately, the original develop blog of the library is unreachable currently.
+
+<br>
+
+## Biplot
+
+In the following chapter, we will introduce biplot. We will talk briefly on how to create a biplot and how to interpret it.
+
+### Principal components analysis (PCA)
+
+We first introduce PCA as the existence of biplot is built up on it. Given a data set with multiple variables, the goal of PCA is to reduce dimensionality by finding a few linear combinations of the variables that capture most of the variance. Consider the following example using rating of countries. 
+
+```{r,echo=FALSE}
+ratings = read_csv("rating.csv")
+```
+
+As a common technique, we first standardize each variable to have mean of 0 and variance of 1 
+
+```{r}
+scaled_ratings <- ratings %>% 
+  mutate(across(where(is.numeric), ~round((.x-mean(.x))/sd(.x), 2)))
+scaled_ratings
+```
+
+To apply PCA, we use function `prcomp()`. `summary()` will then be used to show result.
+
+```{r}
+pca <- prcomp(ratings[,2:7], scale. = TRUE)
+summary(pca)
+```
+
+As we can see that the first two principal components capture 92.3% of the total variance.
+
+```{r}
+mat_round <- function(matrix, n = 3) apply(matrix, 2, function(x) round(x, n))
+
+mat_round(pca$rotation)
+```
+
+We are also able to see the specific linear combination of variables for each principal component.
+
+### Draw a biplot
+
+To draw a biplot, we suggest using `draw_biplot` from `redav` package. You can install the package using `remotes::install_github("jtr13/redav")`. Note that the function will apply PCA and draw the plot.
+
+```{r,fig.width=4.8, fig.height=3.6}
+library(redav)
+draw_biplot(ratings,arrows=FALSE)
+```
+
+The above biplot is set to be without arrows. We can rougly identify clusters from the graph. By running some clustering algorithm like `k-means`, you will be able to see it clearer.
+
+```{r,fig.width=4.8, fig.height=3.6}
+scores <- pca$x[,1:2]
+k <- kmeans(scores, centers = 6)
+scores <- data.frame(scores) %>%
+  mutate(cluster = factor(k$cluster), country = ratings$country)
+g4 <- ggplot(scores, aes(PC1, PC2, color = cluster, label = country)) +
+  geom_point() +
+  geom_text(nudge_y = .2) +
+  guides(color="none")
+g4
+```
+
+Now for a standard bibplot:
+
+```{r}
+draw_biplot(ratings)
+```
+
+To interpret the graph, you could imagine a perpendicular line from a certain point(country) to a feature arrow you are concerned. The further the intersection is on the arrow line, the higher the score. Take Spain for example, it has high score on all variables except hospitality as the imaginary line would land on the negative axis. 
+
+You can also add calibrated axis, which will help you better compare a certain variable among countries.
+
+```{r}
+draw_biplot(ratings,"living_standard")
+```
+
+You see in this case, a projection line is added. We can clearly see that France has the highest living standard rating and Nigeria has the lowest raiting.

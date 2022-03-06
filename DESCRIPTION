@@ -18,7 +18,8 @@ Imports:
     ggplot2movies,
     plotly,
     hexbin,
-    pgmm
+    pgmm,
+    GGally
 Suggests:
     bookdown,
     bslib,
@@ -26,4 +27,6 @@ Suggests:
     withr,
     xml2
 Remotes:
-    hadley/emo
+    hadley/emo,
+    timelyportfolio/parcoords,
+    jtr13/redav
