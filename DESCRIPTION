@@ -19,7 +19,8 @@ Imports:
     plotly,
     hexbin,
     pgmm,
-    GGally
+    GGally,
+    parcoords
 Suggests:
     bookdown,
     bslib,
@@ -28,5 +29,4 @@ Suggests:
     xml2
 Remotes:
     hadley/emo,
-    timelyportfolio/parcoords,
     jtr13/redav
