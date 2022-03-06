@@ -94,5 +94,25 @@ vcd::mosaic(Favorite ~ Age + Music, counts3,
 
 ### Mosaic plots: spine plot
 
-Spine plot is a mosaic plot with straight, parallel cuts in one dimension (“spines”) and only one variable cutting in the other direction
+Spine plot is a mosaic plot with straight, parallel cuts in one dimension (“spines”) and only one variable cutting in the other direction.
+
+```{r,fig.width=4.8, fig.height=3.6}
+library(vcdExtra)
+library(forcats)
+foodorder <- Alligator %>% group_by(food) %>% summarize(Freq = sum(count)) %>% 
+  arrange(Freq) %>% pull(food)
+ally <- Alligator %>% 
+  rename(Freq = count) %>% 
+  mutate(size = fct_relevel(size, "small"),
+         food = factor(food, levels = foodorder),
+         food = fct_relevel(food, "other"))
+
+vcd::mosaic(food ~ sex + size, ally,
+       direction = c("v", "v", "h"),
+       highlighting_fill= RColorBrewer::brewer.pal(5, "Accent"))
+```
+
+### Mosaic plot: tree map
+
+Treemap is a filled rectangular plot representing hierarchical data (fill color does not necessarily represent frequency count)
 
