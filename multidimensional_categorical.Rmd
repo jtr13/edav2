@@ -126,3 +126,26 @@ treemap::treemap(GNI2014,
        type="value",
        format.legend = list(scientific = FALSE, big.mark = " "))
 ```
+
+## Alluvial diagrams
+
+Alluvial diagrams are usually used to represent the flow changes in network structure over time or between different levels. 
+
+The following plot shows the essential components of alluvial plots used in the naming schemes and documentation (axis, alluvium, stratum, lode):
+
+![](images/alluvial_structure.png){width=75%}
+
+### ggalluvial
+
+```{r,fig.width=4.8, fig.height=3.6}
+library(ggalluvial)
+df2 <- data.frame(Class1 = c("Stats", "Math", "Stats", "Math", "Stats", "Math", "Stats", "Math"),
+                 Class2 = c("French", "French", "Art", "Art", "French", "French", "Art", "Art"),
+                 Class3 = c("Gym", "Gym", "Gym", "Gym", "Lunch", "Lunch", "Lunch", "Lunch"),
+                 Freq = c(20, 3, 40, 5, 10, 2, 5, 15))
+ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
+  geom_alluvium(color = "black") +
+  geom_stratum() +
+  geom_text(stat = "stratum", aes(label = paste(after_stat(stratum), "\n", after_stat(count)))) +
+  scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
+```
