@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Multidimensional categorical variables | edav.info, 2nd edition</title>
   <meta name="description" content="Supplemental resources for GR5293 and GR5702" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Multidimensional categorical variables | edav.info, 2nd edition" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="github-repo" content="jtr13/edav2" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-03-06" />
+<meta name="date" content="2022-03-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,6 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="working-with-factors.html"><a href="working-with-factors.html#reorder-the-factors"><i class="fa fa-check"></i><b>3.3</b> Reorder the factors<span></span></a></li>
 <li class="chapter" data-level="3.4" data-path="working-with-factors.html"><a href="working-with-factors.html#dealing-wirh-nas"><i class="fa fa-check"></i><b>3.4</b> Dealing wirh NAs<span></span></a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-factors.html"><a href="working-with-factors.html#summary-of-useful-functions"><i class="fa fa-check"></i><b>3.5</b> Summary of useful functions<span></span></a></li>
+<li class="chapter" data-level="3.6" data-path="working-with-factors.html"><a href="working-with-factors.html#continuous-to-categorical"><i class="fa fa-check"></i><b>3.6</b> Continuous to Categorical<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>4</b> Data transformation<span></span></a><ul>
 <li class="chapter" data-level="4.1" data-path="data-transformation.html"><a href="data-transformation.html#what-is-tidy-data"><i class="fa fa-check"></i><b>4.1</b> What is tidy data?<span></span></a></li>
@@ -181,6 +181,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.4" data-path="data-transformation.html"><a href="data-transformation.html#select-1"><i class="fa fa-check"></i><b>4.4.4</b> <code>select</code><span></span></a></li>
 <li class="chapter" data-level="4.4.5" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>4.4.5</b> <code>arrange</code><span></span></a></li>
 <li class="chapter" data-level="4.4.6" data-path="data-transformation.html"><a href="data-transformation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>4.4.6</b> <code>group_by</code> and <code>summarize</code><span></span></a></li>
+<li class="chapter" data-level="4.4.7" data-path="data-transformation.html"><a href="data-transformation.html#slice_max-slice_min"><i class="fa fa-check"></i><b>4.4.7</b> <code>slice_max</code> (<code>slice_min</code>)<span></span></a></li>
+<li class="chapter" data-level="4.4.8" data-path="data-transformation.html"><a href="data-transformation.html#join"><i class="fa fa-check"></i><b>4.4.8</b> join<span></span></a></li>
+<li class="chapter" data-level="4.4.9" data-path="data-transformation.html"><a href="data-transformation.html#cases-to-tables"><i class="fa fa-check"></i><b>4.4.9</b> Cases to tables<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II R graphics<span></span></b></span></li>
@@ -296,41 +299,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Bar chats are used to display the frequency of multidimensional categorical variables. In the next few plots you will be shown different kinds of bar charts.</p>
 <div id="stacked-bar-chart" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.1.1</span> Stacked bar chart<a href="multidimensional-categorical-variables.html#stacked-bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="multidimensional-categorical-variables.html#cb97-1"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb97-2"><a href="multidimensional-categorical-variables.html#cb97-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb97-3"><a href="multidimensional-categorical-variables.html#cb97-3"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb97-4"><a href="multidimensional-categorical-variables.html#cb97-4"></a>cases &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/icecream.csv&quot;</span>)</span>
-<span id="cb97-5"><a href="multidimensional-categorical-variables.html#cb97-5"></a>icecreamcolors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#ff99ff&quot;</span>, <span class="st">&quot;#cc9966&quot;</span>) <span class="co"># pink, coffee</span></span>
-<span id="cb97-6"><a href="multidimensional-categorical-variables.html#cb97-6"></a><span class="kw">ggplot</span>(cases, <span class="kw">aes</span>(<span class="dt">x =</span> Age, <span class="dt">fill =</span> Favorite)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb97-7"><a href="multidimensional-categorical-variables.html#cb97-7"></a><span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> icecreamcolors)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="multidimensional-categorical-variables.html#cb110-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb110-2"><a href="multidimensional-categorical-variables.html#cb110-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb110-3"><a href="multidimensional-categorical-variables.html#cb110-3"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb110-4"><a href="multidimensional-categorical-variables.html#cb110-4"></a>cases &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/icecream.csv&quot;</span>)</span>
+<span id="cb110-5"><a href="multidimensional-categorical-variables.html#cb110-5"></a>icecreamcolors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#ff99ff&quot;</span>, <span class="st">&quot;#cc9966&quot;</span>) <span class="co"># pink, coffee</span></span>
+<span id="cb110-6"><a href="multidimensional-categorical-variables.html#cb110-6"></a><span class="kw">ggplot</span>(cases, <span class="kw">aes</span>(<span class="dt">x =</span> Age, <span class="dt">fill =</span> Favorite)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb110-7"><a href="multidimensional-categorical-variables.html#cb110-7"></a><span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> icecreamcolors)</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="grouped-bar-chart" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.1.2</span> Grouped bar chart<a href="multidimensional-categorical-variables.html#grouped-bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use <code>position = "dodge"</code> to create grouped bar chart</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="multidimensional-categorical-variables.html#cb98-1"></a><span class="kw">ggplot</span>(cases, <span class="kw">aes</span>(<span class="dt">x =</span> Age, <span class="dt">fill =</span> Favorite)) <span class="op">+</span></span>
-<span id="cb98-2"><a href="multidimensional-categorical-variables.html#cb98-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></span>
-<span id="cb98-3"><a href="multidimensional-categorical-variables.html#cb98-3"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> icecreamcolors)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="multidimensional-categorical-variables.html#cb111-1"></a><span class="kw">ggplot</span>(cases, <span class="kw">aes</span>(<span class="dt">x =</span> Age, <span class="dt">fill =</span> Favorite)) <span class="op">+</span></span>
+<span id="cb111-2"><a href="multidimensional-categorical-variables.html#cb111-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></span>
+<span id="cb111-3"><a href="multidimensional-categorical-variables.html#cb111-3"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> icecreamcolors)</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-2-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="grouped-bar-chart-with-facets" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.1.3</span> Grouped bar chart with facets<a href="multidimensional-categorical-variables.html#grouped-bar-chart-with-facets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="multidimensional-categorical-variables.html#cb99-1"></a><span class="kw">ggplot</span>(cases, <span class="kw">aes</span>(<span class="dt">x =</span> Age)) <span class="op">+</span></span>
-<span id="cb99-2"><a href="multidimensional-categorical-variables.html#cb99-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></span>
-<span id="cb99-3"><a href="multidimensional-categorical-variables.html#cb99-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Favorite)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="multidimensional-categorical-variables.html#cb112-1"></a><span class="kw">ggplot</span>(cases, <span class="kw">aes</span>(<span class="dt">x =</span> Age)) <span class="op">+</span></span>
+<span id="cb112-2"><a href="multidimensional-categorical-variables.html#cb112-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></span>
+<span id="cb112-3"><a href="multidimensional-categorical-variables.html#cb112-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Favorite)</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-3-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="grouped-barchart-with-three-categorical-variables" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.1.4</span> Grouped barchart with three categorical variables<a href="multidimensional-categorical-variables.html#grouped-barchart-with-three-categorical-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="multidimensional-categorical-variables.html#cb100-1"></a>counts3 &lt;-<span class="st"> </span>cases <span class="op">%&gt;%</span></span>
-<span id="cb100-2"><a href="multidimensional-categorical-variables.html#cb100-2"></a><span class="st">  </span><span class="kw">group_by</span>(Age, Favorite, Music) <span class="op">%&gt;%</span></span>
-<span id="cb100-3"><a href="multidimensional-categorical-variables.html#cb100-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb100-4"><a href="multidimensional-categorical-variables.html#cb100-4"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
-<span id="cb100-5"><a href="multidimensional-categorical-variables.html#cb100-5"></a><span class="st">  </span><span class="kw">complete</span>(Age, Favorite, Music, <span class="dt">fill =</span> <span class="kw">list</span>(<span class="dt">Freq =</span> <span class="dv">0</span>))</span>
-<span id="cb100-6"><a href="multidimensional-categorical-variables.html#cb100-6"></a></span>
-<span id="cb100-7"><a href="multidimensional-categorical-variables.html#cb100-7"></a><span class="kw">ggplot</span>(counts3, <span class="kw">aes</span>(<span class="dt">x =</span> Favorite, <span class="dt">y =</span> Freq, <span class="dt">fill =</span> Music)) <span class="op">+</span></span>
-<span id="cb100-8"><a href="multidimensional-categorical-variables.html#cb100-8"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></span>
-<span id="cb100-9"><a href="multidimensional-categorical-variables.html#cb100-9"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Age)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="multidimensional-categorical-variables.html#cb113-1"></a>counts3 &lt;-<span class="st"> </span>cases <span class="op">%&gt;%</span></span>
+<span id="cb113-2"><a href="multidimensional-categorical-variables.html#cb113-2"></a><span class="st">  </span><span class="kw">group_by</span>(Age, Favorite, Music) <span class="op">%&gt;%</span></span>
+<span id="cb113-3"><a href="multidimensional-categorical-variables.html#cb113-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></span>
+<span id="cb113-4"><a href="multidimensional-categorical-variables.html#cb113-4"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
+<span id="cb113-5"><a href="multidimensional-categorical-variables.html#cb113-5"></a><span class="st">  </span><span class="kw">complete</span>(Age, Favorite, Music, <span class="dt">fill =</span> <span class="kw">list</span>(<span class="dt">Freq =</span> <span class="dv">0</span>))</span>
+<span id="cb113-6"><a href="multidimensional-categorical-variables.html#cb113-6"></a></span>
+<span id="cb113-7"><a href="multidimensional-categorical-variables.html#cb113-7"></a><span class="kw">ggplot</span>(counts3, <span class="kw">aes</span>(<span class="dt">x =</span> Favorite, <span class="dt">y =</span> Freq, <span class="dt">fill =</span> Music)) <span class="op">+</span></span>
+<span id="cb113-8"><a href="multidimensional-categorical-variables.html#cb113-8"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></span>
+<span id="cb113-9"><a href="multidimensional-categorical-variables.html#cb113-9"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Age)</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-4-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -339,19 +342,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Mosaic plots are used for visualizing data from two or more qualitative variables to show their proportions or associations.</p>
 <div id="mosaic-plot-with-one-variable" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.2.1</span> Mosaic plot with one variable<a href="multidimensional-categorical-variables.html#mosaic-plot-with-one-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="multidimensional-categorical-variables.html#cb101-1"></a><span class="kw">library</span>(grid)</span>
-<span id="cb101-2"><a href="multidimensional-categorical-variables.html#cb101-2"></a>icecream &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/MusicIcecream.csv&quot;</span>)</span>
-<span id="cb101-3"><a href="multidimensional-categorical-variables.html#cb101-3"></a>icecreamcolors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#ff99ff&quot;</span>, <span class="st">&quot;#cc9966&quot;</span>) </span>
-<span id="cb101-4"><a href="multidimensional-categorical-variables.html#cb101-4"></a>counts2 &lt;-<span class="st"> </span>icecream <span class="op">%&gt;%</span></span>
-<span id="cb101-5"><a href="multidimensional-categorical-variables.html#cb101-5"></a><span class="st">  </span><span class="kw">group_by</span>(Age, Favorite) <span class="op">%&gt;%</span></span>
-<span id="cb101-6"><a href="multidimensional-categorical-variables.html#cb101-6"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">sum</span>(Freq))</span>
-<span id="cb101-7"><a href="multidimensional-categorical-variables.html#cb101-7"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(<span class="op">~</span>Age, <span class="dt">direction =</span> <span class="st">&quot;v&quot;</span>, counts2)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="multidimensional-categorical-variables.html#cb114-1"></a><span class="kw">library</span>(grid)</span>
+<span id="cb114-2"><a href="multidimensional-categorical-variables.html#cb114-2"></a>icecream &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/MusicIcecream.csv&quot;</span>)</span>
+<span id="cb114-3"><a href="multidimensional-categorical-variables.html#cb114-3"></a>icecreamcolors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#ff99ff&quot;</span>, <span class="st">&quot;#cc9966&quot;</span>) </span>
+<span id="cb114-4"><a href="multidimensional-categorical-variables.html#cb114-4"></a>counts2 &lt;-<span class="st"> </span>icecream <span class="op">%&gt;%</span></span>
+<span id="cb114-5"><a href="multidimensional-categorical-variables.html#cb114-5"></a><span class="st">  </span><span class="kw">group_by</span>(Age, Favorite) <span class="op">%&gt;%</span></span>
+<span id="cb114-6"><a href="multidimensional-categorical-variables.html#cb114-6"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">sum</span>(Freq))</span>
+<span id="cb114-7"><a href="multidimensional-categorical-variables.html#cb114-7"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(<span class="op">~</span>Age, <span class="dt">direction =</span> <span class="st">&quot;v&quot;</span>, counts2)</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mosaic-plot-with-two-variables" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.2.2</span> Mosaic plot with two variables<a href="multidimensional-categorical-variables.html#mosaic-plot-with-two-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="multidimensional-categorical-variables.html#cb102-1"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(Favorite <span class="op">~</span><span class="st"> </span>Age, counts2, <span class="dt">direction =</span> <span class="kw">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>),</span>
-<span id="cb102-2"><a href="multidimensional-categorical-variables.html#cb102-2"></a>            <span class="dt">highlighting_fill =</span> icecreamcolors)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="multidimensional-categorical-variables.html#cb115-1"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(Favorite <span class="op">~</span><span class="st"> </span>Age, counts2, <span class="dt">direction =</span> <span class="kw">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>),</span>
+<span id="cb115-2"><a href="multidimensional-categorical-variables.html#cb115-2"></a>            <span class="dt">highlighting_fill =</span> icecreamcolors)</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-6-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mosaic-plot-with-three-variablesbest-practice" class="section level3 hasAnchor">
@@ -363,40 +366,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Other variables are split vertically</p>
 <p>Most important level of dependent variable is closest to the x-axis and darkest (or most noticable shade)</p>
 </blockquote>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="multidimensional-categorical-variables.html#cb103-1"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(Favorite <span class="op">~</span><span class="st"> </span>Age <span class="op">+</span><span class="st"> </span>Music, counts3,</span>
-<span id="cb103-2"><a href="multidimensional-categorical-variables.html#cb103-2"></a>            <span class="dt">direction =</span> <span class="kw">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>),</span>
-<span id="cb103-3"><a href="multidimensional-categorical-variables.html#cb103-3"></a>            <span class="dt">highlighting_fill =</span> icecreamcolors)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="multidimensional-categorical-variables.html#cb116-1"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(Favorite <span class="op">~</span><span class="st"> </span>Age <span class="op">+</span><span class="st"> </span>Music, counts3,</span>
+<span id="cb116-2"><a href="multidimensional-categorical-variables.html#cb116-2"></a>            <span class="dt">direction =</span> <span class="kw">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>),</span>
+<span id="cb116-3"><a href="multidimensional-categorical-variables.html#cb116-3"></a>            <span class="dt">highlighting_fill =</span> icecreamcolors)</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mosaic-plots-spine-plot" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.2.4</span> Mosaic plots: spine plot<a href="multidimensional-categorical-variables.html#mosaic-plots-spine-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Spine plot is a mosaic plot with straight, parallel cuts in one dimension (“spines”) and only one variable cutting in the other direction.</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="multidimensional-categorical-variables.html#cb104-1"></a><span class="kw">library</span>(vcdExtra)</span>
-<span id="cb104-2"><a href="multidimensional-categorical-variables.html#cb104-2"></a><span class="kw">library</span>(forcats)</span>
-<span id="cb104-3"><a href="multidimensional-categorical-variables.html#cb104-3"></a>foodorder &lt;-<span class="st"> </span>Alligator <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(food) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">sum</span>(count)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb104-4"><a href="multidimensional-categorical-variables.html#cb104-4"></a><span class="st">  </span><span class="kw">arrange</span>(Freq) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(food)</span>
-<span id="cb104-5"><a href="multidimensional-categorical-variables.html#cb104-5"></a>ally &lt;-<span class="st"> </span>Alligator <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb104-6"><a href="multidimensional-categorical-variables.html#cb104-6"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Freq =</span> count) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb104-7"><a href="multidimensional-categorical-variables.html#cb104-7"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">size =</span> <span class="kw">fct_relevel</span>(size, <span class="st">&quot;small&quot;</span>),</span>
-<span id="cb104-8"><a href="multidimensional-categorical-variables.html#cb104-8"></a>         <span class="dt">food =</span> <span class="kw">factor</span>(food, <span class="dt">levels =</span> foodorder),</span>
-<span id="cb104-9"><a href="multidimensional-categorical-variables.html#cb104-9"></a>         <span class="dt">food =</span> <span class="kw">fct_relevel</span>(food, <span class="st">&quot;other&quot;</span>))</span>
-<span id="cb104-10"><a href="multidimensional-categorical-variables.html#cb104-10"></a></span>
-<span id="cb104-11"><a href="multidimensional-categorical-variables.html#cb104-11"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(food <span class="op">~</span><span class="st"> </span>sex <span class="op">+</span><span class="st"> </span>size, ally,</span>
-<span id="cb104-12"><a href="multidimensional-categorical-variables.html#cb104-12"></a>       <span class="dt">direction =</span> <span class="kw">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>),</span>
-<span id="cb104-13"><a href="multidimensional-categorical-variables.html#cb104-13"></a>       <span class="dt">highlighting_fill=</span> RColorBrewer<span class="op">::</span><span class="kw">brewer.pal</span>(<span class="dv">5</span>, <span class="st">&quot;Accent&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="multidimensional-categorical-variables.html#cb117-1"></a><span class="kw">library</span>(vcdExtra)</span>
+<span id="cb117-2"><a href="multidimensional-categorical-variables.html#cb117-2"></a><span class="kw">library</span>(forcats)</span>
+<span id="cb117-3"><a href="multidimensional-categorical-variables.html#cb117-3"></a>foodorder &lt;-<span class="st"> </span>Alligator <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(food) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">sum</span>(count)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb117-4"><a href="multidimensional-categorical-variables.html#cb117-4"></a><span class="st">  </span><span class="kw">arrange</span>(Freq) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(food)</span>
+<span id="cb117-5"><a href="multidimensional-categorical-variables.html#cb117-5"></a>ally &lt;-<span class="st"> </span>Alligator <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb117-6"><a href="multidimensional-categorical-variables.html#cb117-6"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Freq =</span> count) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb117-7"><a href="multidimensional-categorical-variables.html#cb117-7"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">size =</span> <span class="kw">fct_relevel</span>(size, <span class="st">&quot;small&quot;</span>),</span>
+<span id="cb117-8"><a href="multidimensional-categorical-variables.html#cb117-8"></a>         <span class="dt">food =</span> <span class="kw">factor</span>(food, <span class="dt">levels =</span> foodorder),</span>
+<span id="cb117-9"><a href="multidimensional-categorical-variables.html#cb117-9"></a>         <span class="dt">food =</span> <span class="kw">fct_relevel</span>(food, <span class="st">&quot;other&quot;</span>))</span>
+<span id="cb117-10"><a href="multidimensional-categorical-variables.html#cb117-10"></a></span>
+<span id="cb117-11"><a href="multidimensional-categorical-variables.html#cb117-11"></a>vcd<span class="op">::</span><span class="kw">mosaic</span>(food <span class="op">~</span><span class="st"> </span>sex <span class="op">+</span><span class="st"> </span>size, ally,</span>
+<span id="cb117-12"><a href="multidimensional-categorical-variables.html#cb117-12"></a>       <span class="dt">direction =</span> <span class="kw">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>),</span>
+<span id="cb117-13"><a href="multidimensional-categorical-variables.html#cb117-13"></a>       <span class="dt">highlighting_fill=</span> RColorBrewer<span class="op">::</span><span class="kw">brewer.pal</span>(<span class="dv">5</span>, <span class="st">&quot;Accent&quot;</span>))</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mosaic-plot-tree-map" class="section level3 hasAnchor">
 <h3><span class="header-section-number">11.2.5</span> Mosaic plot: tree map<a href="multidimensional-categorical-variables.html#mosaic-plot-tree-map" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Treemap is a filled rectangular plot representing hierarchical data (fill color does not necessarily represent frequency count)</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="multidimensional-categorical-variables.html#cb105-1"></a><span class="kw">library</span>(treemap)</span>
-<span id="cb105-2"><a href="multidimensional-categorical-variables.html#cb105-2"></a><span class="kw">data</span>(GNI2014)</span>
-<span id="cb105-3"><a href="multidimensional-categorical-variables.html#cb105-3"></a>treemap<span class="op">::</span><span class="kw">treemap</span>(GNI2014,</span>
-<span id="cb105-4"><a href="multidimensional-categorical-variables.html#cb105-4"></a>       <span class="dt">index=</span><span class="kw">c</span>(<span class="st">&quot;continent&quot;</span>, <span class="st">&quot;iso3&quot;</span>),</span>
-<span id="cb105-5"><a href="multidimensional-categorical-variables.html#cb105-5"></a>       <span class="dt">vSize=</span><span class="st">&quot;population&quot;</span>,</span>
-<span id="cb105-6"><a href="multidimensional-categorical-variables.html#cb105-6"></a>       <span class="dt">vColor=</span><span class="st">&quot;GNI&quot;</span>,</span>
-<span id="cb105-7"><a href="multidimensional-categorical-variables.html#cb105-7"></a>       <span class="dt">type=</span><span class="st">&quot;value&quot;</span>,</span>
-<span id="cb105-8"><a href="multidimensional-categorical-variables.html#cb105-8"></a>       <span class="dt">format.legend =</span> <span class="kw">list</span>(<span class="dt">scientific =</span> <span class="ot">FALSE</span>, <span class="dt">big.mark =</span> <span class="st">&quot; &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="multidimensional-categorical-variables.html#cb118-1"></a><span class="kw">library</span>(treemap)</span>
+<span id="cb118-2"><a href="multidimensional-categorical-variables.html#cb118-2"></a><span class="kw">data</span>(GNI2014)</span>
+<span id="cb118-3"><a href="multidimensional-categorical-variables.html#cb118-3"></a>treemap<span class="op">::</span><span class="kw">treemap</span>(GNI2014,</span>
+<span id="cb118-4"><a href="multidimensional-categorical-variables.html#cb118-4"></a>       <span class="dt">index=</span><span class="kw">c</span>(<span class="st">&quot;continent&quot;</span>, <span class="st">&quot;iso3&quot;</span>),</span>
+<span id="cb118-5"><a href="multidimensional-categorical-variables.html#cb118-5"></a>       <span class="dt">vSize=</span><span class="st">&quot;population&quot;</span>,</span>
+<span id="cb118-6"><a href="multidimensional-categorical-variables.html#cb118-6"></a>       <span class="dt">vColor=</span><span class="st">&quot;GNI&quot;</span>,</span>
+<span id="cb118-7"><a href="multidimensional-categorical-variables.html#cb118-7"></a>       <span class="dt">type=</span><span class="st">&quot;value&quot;</span>,</span>
+<span id="cb118-8"><a href="multidimensional-categorical-variables.html#cb118-8"></a>       <span class="dt">format.legend =</span> <span class="kw">list</span>(<span class="dt">scientific =</span> <span class="ot">FALSE</span>, <span class="dt">big.mark =</span> <span class="st">&quot; &quot;</span>))</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" width="691.2" style="display: block; margin: auto;" /></p>
 
 </div>

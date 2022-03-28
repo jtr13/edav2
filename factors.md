@@ -34,7 +34,8 @@ ggplot(Births2015, aes(fct_relevel(MotherAge, "Under 15 years"), Num)) +
   coord_flip() +
   scale_y_continuous(breaks = seq(0, 1250, 250)) +
   ggtitle("United States Births, 2015", subtitle = "in thousands") +
-  theme_grey(16)
+  theme_grey(16) +
+  labs(y = "mother age", x = "count")
 ```
 
 <img src="factors_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" />
@@ -91,10 +92,11 @@ df <- data.frame(temperature = factor(c("cold", "warm", "hot")),
 # row order is correct (think: factor in ROW order) 
 ggplot(df, aes(x = fct_inorder(temperature), y = count)) +  
   geom_col() +
-  theme_grey(16)
+  theme_grey(16) +
+  labs( x = "temperature")
 ```
 
-<img src="factors_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" />
+<img src="factors_files/figure-html/unnamed-chunk-6-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 ## Reorder the factors 
@@ -112,7 +114,7 @@ ggplot(df, aes(fct_infreq(color))) +
   theme_grey(16)
 ```
 
-<img src="factors_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" />
+<img src="factors_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 
@@ -127,10 +129,11 @@ pack1 <- data.frame(
  
 ggplot(pack1, aes(fct_reorder(color, count, .desc = TRUE), count)) +   
   geom_col() +  
-  theme_grey(16)
+  theme_grey(16) +
+  labs(x = "color")
 ```
 
-<img src="factors_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" />
+<img src="factors_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ## Dealing wirh NAs
 
@@ -147,10 +150,11 @@ df %>%
   ggplot(aes(x = temperature, y = count)) +
   geom_col() +
   coord_flip() +
-  theme_grey(16)
+  theme_grey(16) +
+  labs(x = "temperature")
 ```
 
-<img src="factors_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" />
+<img src="factors_files/figure-html/unnamed-chunk-9-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ## Summary of useful functions
 
@@ -170,3 +174,30 @@ For analyzing categorical variables, the first step is always to decide whether 
 >
 >fct_explicit_na(x) – turn NAs into a real factor level
 >
+
+## Continuous to Categorical
+
+Sometimes you want to transfer a continuous variable to a categorical variable. For example, you might want assign grades to final scores of a course. In the following example, we generated a data set of test scores randomly and we assign grades based on some thresholds. We then apply function `cut`. (You can similarly use `case_when`)
+
+
+```r
+set.seed(2022)
+testscore <- round(runif(100, min = 70, max = 100))
+
+df <- data.frame(testscore) |> 
+  mutate(grade = cut(testscore, breaks = seq(70, 100, 10), 
+                     labels = c("C", "B", "A"), right = FALSE,
+                     include.lowest = TRUE))
+
+head(df)
+```
+
+```
+##   testscore grade
+## 1        94     A
+## 2        89     B
+## 3        74     C
+## 4        86     B
+## 5        76     C
+## 6        89     B
+```

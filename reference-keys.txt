@@ -16,6 +16,7 @@ relevel-the-factor
 reorder-the-factors
 dealing-wirh-nas
 summary-of-useful-functions
+continuous-to-categorical
 data-transformation
 what-is-tidy-data
 pivot_longer
@@ -27,6 +28,9 @@ mutate
 select-1
 arrange
 group_by-and-summarize
+slice_max-slice_min
+join
+cases-to-tables
 learning-ggplot2
 getting-started-1
 default-part-layer

@@ -292,3 +292,134 @@ summarize(biopsy_grouped, max(thickness), mean(cell_size), var(norm_nucleoli))
 ## 1 benign                   8              2.67                 5.93
 ## 2 malignant               10              6.73                11.3
 ```
+
+### `slice_max` (`slice_min`)
+
+The **slice_max** function helps you to find the top n values of a specific column. Suppose we now want to see the top five biopsies with the biggest thickness. Notice in this case, since we have more than five rows with thickness 10, all of them are selected (for neatness, we only show first several rows).
+
+
+```r
+biopsy_new %>% 
+  slice_max(order_by = thickness,n=5) %>% 
+  head()
+```
+
+```
+##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
+## 1 1050670        10         7          7             6                    4
+## 2 1054593        10         5          5             3                    6
+## 3 1072179        10         7          7             3                    8
+## 4 1080185        10        10         10             8                    6
+## 5 1099510        10         4          3             1                    3
+## 6 1103608        10        10         10             4                    8
+##   bare_nuclei norm_nucleoli     class
+## 1         1.0             1 malignant
+## 2         0.7            10 malignant
+## 3         0.5             4 malignant
+## 4         0.1             9 malignant
+## 5         0.3             5 malignant
+## 6         0.1            10 malignant
+```
+
+### join
+
+Sometimes you will need to combine two data sets and this is when function join comes into play. There are four types of joins provided by `dplyr` and take a look at the following example. 
+
+
+```r
+# Main dataset
+s77 <- data.frame(state.x77) %>% 
+  rownames_to_column("state") %>%
+  dplyr::select(-c(Illiteracy))
+
+head(s77)
+```
+
+```
+##        state Population Income Life.Exp Murder HS.Grad Frost   Area
+## 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708
+## 2     Alaska        365   6315    69.31   11.3    66.7   152 566432
+## 3    Arizona       2212   4530    70.55    7.8    58.1    15 113417
+## 4   Arkansas       2110   3378    70.66   10.1    39.9    65  51945
+## 5 California      21198   5114    71.71   10.3    62.6    20 156361
+## 6   Colorado       2541   4884    72.06    6.8    63.9   166 103766
+```
+
+
+```r
+# https://www.cookpolitical.com/2020-national-popular-vote-tracker
+partyinfo <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv")
+partyinfo <- partyinfo %>%
+  dplyr::select(state, called)
+
+head(left_join(s77, partyinfo))
+```
+
+```
+##        state Population Income Life.Exp Murder HS.Grad Frost   Area called
+## 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708      R
+## 2     Alaska        365   6315    69.31   11.3    66.7   152 566432      R
+## 3    Arizona       2212   4530    70.55    7.8    58.1    15 113417      D
+## 4   Arkansas       2110   3378    70.66   10.1    39.9    65  51945      R
+## 5 California      21198   5114    71.71   10.3    62.6    20 156361      D
+## 6   Colorado       2541   4884    72.06    6.8    63.9   166 103766      D
+```
+
+**s77** contains statistics of 50 states in the US and **partyinfo** holds information whether a state is democratic or republican. The two data sets are joined on common feature `state`. If you want to join on features with different names, specify using the argument `by`. For detailed explanations of differnet types of joins, refer to the [documentation](https://dplyr.tidyverse.org/reference/mutate-joins.html).
+
+### Cases to tables
+
+When you want to perform a Chi-squared test or create a paired mosaic plot, your data has to follow a table format. For example, the following table is in the correct format. The columns are anxiety statues and rows are class years. 
+
+
+```
+##   moderate normal severe
+## 1       11     34      2
+## 2       22     69      4
+## 3        8     41      5
+## 4       15     37      5
+```
+
+The following example demonstrates how you can convert cases to tables. Notice the starting data has a count for each of the categorical combinations.
+
+
+```r
+# watch out: summarise
+rebates <- read_csv("https://data.ny.gov/resource/thd2-fu8y.csv")
+rebate_counts <- rebates |> group_by(make, ev_type) |> 
+  summarize(Freq = n())
+head(rebate_counts)
+```
+
+```
+## # A tibble: 6 × 3
+## # Groups:   make [3]
+##   make      ev_type  Freq
+##   <chr>     <chr>   <int>
+## 1 Audi      BEV         6
+## 2 Audi      PHEV        1
+## 3 BMW       BEV         1
+## 4 BMW       PHEV        9
+## 5 Chevrolet BEV        69
+## 6 Chevrolet PHEV       33
+```
+
+By using `xtabs`, we are able to transform our data into a table ready for Chi-squared test or paired mosaic plot.
+
+
+```r
+head(xtabs(Freq ~ ., data = rebate_counts))
+```
+
+```
+##            ev_type
+## make        BEV PHEV
+##   Audi        6    1
+##   BMW         1    9
+##   Chevrolet  69   33
+##   Chrysler    0   10
+##   Ford        1   27
+##   Honda       0   42
+```
+
+
