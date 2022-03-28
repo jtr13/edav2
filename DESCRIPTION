@@ -22,7 +22,11 @@ Imports:
     GGally,
     parcoords,
     readr,
-    d3r
+    d3r,
+    redav,
+    vcd,
+    grid,
+    treemap
 Suggests:
     bookdown,
     bslib,
