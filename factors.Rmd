@@ -27,7 +27,8 @@ ggplot(Births2015, aes(fct_relevel(MotherAge, "Under 15 years"), Num)) +
   coord_flip() +
   scale_y_continuous(breaks = seq(0, 1250, 250)) +
   ggtitle("United States Births, 2015", subtitle = "in thousands") +
-  theme_grey(16)
+  theme_grey(16) +
+  labs(y = "mother age", x = "count")
 ```
 
 
@@ -56,14 +57,15 @@ fct_relevel(x, "move1", "move2", after = Inf)
 
 If the row order is correct, use ``fct_inorder()``:
 
-```{r,fig.width=6, fig.height=4.5}
+```{r,fig.width=4.8, fig.height=3.6}
 df <- data.frame(temperature = factor(c("cold", "warm", "hot")),  
                  count = c(15, 5, 22)) 
  
 # row order is correct (think: factor in ROW order) 
 ggplot(df, aes(x = fct_inorder(temperature), y = count)) +  
   geom_col() +
-  theme_grey(16)
+  theme_grey(16) +
+  labs( x = "temperature")
 ```
 
 
@@ -71,7 +73,7 @@ ggplot(df, aes(x = fct_inorder(temperature), y = count)) +
 
 Usually, unbinned, nominal data should be sorted by frequency order, which can be achieved using ``fct_infreq()`` (default is decreasing order of frequency)
 
-```{r,fig.width=6, fig.height=4.5}
+```{r,fig.width=4.8, fig.height=3.6}
 df <- data.frame(  
   color = c("orange","blue", "red","brown","yellow", "green", "orange", "red", "yellow","blue","blue","red","orange","blue","red","orange","orange")
 )  
@@ -85,7 +87,7 @@ ggplot(df, aes(fct_infreq(color))) +
 
 For binned, nominal data which should be sorted by frequency order, use ``fct_reorder()``. In the following example **count** is used, generally you can also apply **mean**,**median**, etc. to ``.fun`` inside `fct_reorder()``.
 
-```{r,fig.width=6, fig.height=4.5}
+```{r,fig.width=4.8, fig.height=3.6}
 pack1 <- data.frame(  
   color = c("blue", "brown", "green", "orange", "red", "yellow"),  
   count = c(13, 7, 12, 9, 7, 8)  
@@ -93,14 +95,15 @@ pack1 <- data.frame(
  
 ggplot(pack1, aes(fct_reorder(color, count, .desc = TRUE), count)) +   
   geom_col() +  
-  theme_grey(16)
+  theme_grey(16) +
+  labs(x = "color")
 ```
 
 ## Dealing wirh NAs
 
 For prominent NA bars which should not be eliminated, use ``fct_explicit_na(x)``. And using ``fct_rev(x)`` to reverse the factor level **doesn't** help.
 
-```{r,fig.width=6, fig.height=4.5}
+```{r,fig.width=4.8, fig.height=3.6}
 library(dplyr)
 df <- data.frame(temperature = factor(c("cold", "warm", "hot", NA)), count = c(15, 5, 22, 12))
  
@@ -110,7 +113,8 @@ df %>%
   ggplot(aes(x = temperature, y = count)) +
   geom_col() +
   coord_flip() +
-  theme_grey(16)
+  theme_grey(16) +
+  labs(x = "temperature")
 ```
 
 ## Summary of useful functions
@@ -131,3 +135,19 @@ For analyzing categorical variables, the first step is always to decide whether 
 >
 >fct_explicit_na(x) – turn NAs into a real factor level
 >
+
+## Continuous to Categorical
+
+Sometimes you want to transfer a continuous variable to a categorical variable. For example, you might want assign grades to final scores of a course. In the following example, we generated a data set of test scores randomly and we assign grades based on some thresholds. We then apply function `cut`. (You can similarly use `case_when`)
+
+```{r}
+set.seed(2022)
+testscore <- round(runif(100, min = 70, max = 100))
+
+df <- data.frame(testscore) |> 
+  mutate(grade = cut(testscore, breaks = seq(70, 100, 10), 
+                     labels = c("C", "B", "A"), right = FALSE,
+                     include.lowest = TRUE))
+
+head(df)
+```

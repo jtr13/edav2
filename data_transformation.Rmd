@@ -27,6 +27,7 @@ Here's the definition of Tidy Data given by Hadley Wickham:
 library(dplyr)
 library(tidyr)
 library(tibble)
+library(readr)
 library(MASS)
 
 head(mtcars)
@@ -166,3 +167,73 @@ The doctors would want to see the maximum cell size and the thickness for each o
 biopsy_grouped <- group_by(biopsy_new,class)
 summarize(biopsy_grouped, max(thickness), mean(cell_size), var(norm_nucleoli))
 ```
+
+### `slice_max` (`slice_min`)
+
+The **slice_max** function helps you to find the top n values of a specific column. Suppose we now want to see the top five biopsies with the biggest thickness. Notice in this case, since we have more than five rows with thickness 10, all of them are selected (for neatness, we only show first several rows).
+
+```{r}
+biopsy_new %>% 
+  slice_max(order_by = thickness,n=5) %>% 
+  head()
+```
+
+### join
+
+Sometimes you will need to combine two data sets and this is when function join comes into play. There are four types of joins provided by `dplyr` and take a look at the following example. 
+
+```{r}
+# Main dataset
+s77 <- data.frame(state.x77) %>% 
+  rownames_to_column("state") %>%
+  dplyr::select(-c(Illiteracy))
+
+head(s77)
+```
+
+```{r}
+# https://www.cookpolitical.com/2020-national-popular-vote-tracker
+partyinfo <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv")
+partyinfo <- partyinfo %>%
+  dplyr::select(state, called)
+
+head(left_join(s77, partyinfo))
+```
+
+**s77** contains statistics of 50 states in the US and **partyinfo** holds information whether a state is democratic or republican. The two data sets are joined on common feature `state`. If you want to join on features with different names, specify using the argument `by`. For detailed explanations of differnet types of joins, refer to the [documentation](https://dplyr.tidyverse.org/reference/mutate-joins.html).
+
+### Cases to tables
+
+When you want to perform a Chi-squared test or create a paired mosaic plot, your data has to follow a table format. For example, the following table is in the correct format. The columns are anxiety statues and rows are class years. 
+
+```{r,echo=FALSE}
+library(Lock5withR)
+
+e_1 <- SleepStudy %>% 
+  group_by(ClassYear,AnxietyStatus) %>%
+  summarise(n = n()) %>%
+  pivot_wider(names_from = AnxietyStatus, values_from = n)
+
+e_1mat <- as.matrix(e_1[,2:4])
+rownames(e_1mat) <- e_1$ClassYear
+
+e_1mat
+```
+
+The following example demonstrates how you can convert cases to tables. Notice the starting data has a count for each of the categorical combinations.
+
+```{r}
+# watch out: summarise
+rebates <- read_csv("https://data.ny.gov/resource/thd2-fu8y.csv")
+rebate_counts <- rebates |> group_by(make, ev_type) |> 
+  summarize(Freq = n())
+head(rebate_counts)
+```
+
+By using `xtabs`, we are able to transform our data into a table ready for Chi-squared test or paired mosaic plot.
+
+```{r}
+head(xtabs(Freq ~ ., data = rebate_counts))
+```
+
+
