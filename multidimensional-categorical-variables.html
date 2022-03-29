@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-03-28" />
+<meta name="date" content="2022-03-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -270,6 +270,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots-spine-plot"><i class="fa fa-check"></i><b>11.2.4</b> Mosaic plots: spine plot<span></span></a></li>
 <li class="chapter" data-level="11.2.5" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-tree-map"><i class="fa fa-check"></i><b>11.2.5</b> Mosaic plot: tree map<span></span></a></li>
 </ul></li>
+<li class="chapter" data-level="11.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#alluvial-diagrams"><i class="fa fa-check"></i><b>11.3</b> Alluvial diagrams<span></span></a><ul>
+<li class="chapter" data-level="11.3.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#ggalluvial"><i class="fa fa-check"></i><b>11.3.1</b> ggalluvial<span></span></a></li>
+<li class="chapter" data-level="11.3.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#geom_flow"><i class="fa fa-check"></i><b>11.3.2</b> geom_flow<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#heat-map"><i class="fa fa-check"></i><b>11.4</b> Heat map<span></span></a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -401,8 +406,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb118-7"><a href="multidimensional-categorical-variables.html#cb118-7"></a>       <span class="dt">type=</span><span class="st">&quot;value&quot;</span>,</span>
 <span id="cb118-8"><a href="multidimensional-categorical-variables.html#cb118-8"></a>       <span class="dt">format.legend =</span> <span class="kw">list</span>(<span class="dt">scientific =</span> <span class="ot">FALSE</span>, <span class="dt">big.mark =</span> <span class="st">&quot; &quot;</span>))</span></code></pre></div>
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" width="691.2" style="display: block; margin: auto;" /></p>
-
 </div>
+</div>
+<div id="alluvial-diagrams" class="section level2 hasAnchor">
+<h2><span class="header-section-number">11.3</span> Alluvial diagrams<a href="multidimensional-categorical-variables.html#alluvial-diagrams" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Alluvial diagrams are usually used to represent the flow changes in network structure over time or between different levels.</p>
+<p>The following plot shows the essential components of alluvial plots used in the naming schemes and documentation (axis, alluvium, stratum, lode):</p>
+<center>
+<img src="images/alluvial_structure.png" style="width:75.0%" />
+</center>
+<div id="ggalluvial" class="section level3 hasAnchor">
+<h3><span class="header-section-number">11.3.1</span> ggalluvial<a href="multidimensional-categorical-variables.html#ggalluvial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="multidimensional-categorical-variables.html#cb119-1"></a><span class="kw">library</span>(ggalluvial)</span>
+<span id="cb119-2"><a href="multidimensional-categorical-variables.html#cb119-2"></a>df2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Class1 =</span> <span class="kw">c</span>(<span class="st">&quot;Stats&quot;</span>, <span class="st">&quot;Math&quot;</span>, <span class="st">&quot;Stats&quot;</span>, <span class="st">&quot;Math&quot;</span>, <span class="st">&quot;Stats&quot;</span>, <span class="st">&quot;Math&quot;</span>, <span class="st">&quot;Stats&quot;</span>, <span class="st">&quot;Math&quot;</span>),</span>
+<span id="cb119-3"><a href="multidimensional-categorical-variables.html#cb119-3"></a>                 <span class="dt">Class2 =</span> <span class="kw">c</span>(<span class="st">&quot;French&quot;</span>, <span class="st">&quot;French&quot;</span>, <span class="st">&quot;Art&quot;</span>, <span class="st">&quot;Art&quot;</span>, <span class="st">&quot;French&quot;</span>, <span class="st">&quot;French&quot;</span>, <span class="st">&quot;Art&quot;</span>, <span class="st">&quot;Art&quot;</span>),</span>
+<span id="cb119-4"><a href="multidimensional-categorical-variables.html#cb119-4"></a>                 <span class="dt">Class3 =</span> <span class="kw">c</span>(<span class="st">&quot;Gym&quot;</span>, <span class="st">&quot;Gym&quot;</span>, <span class="st">&quot;Gym&quot;</span>, <span class="st">&quot;Gym&quot;</span>, <span class="st">&quot;Lunch&quot;</span>, <span class="st">&quot;Lunch&quot;</span>, <span class="st">&quot;Lunch&quot;</span>, <span class="st">&quot;Lunch&quot;</span>),</span>
+<span id="cb119-5"><a href="multidimensional-categorical-variables.html#cb119-5"></a>                 <span class="dt">Freq =</span> <span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">3</span>, <span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">15</span>))</span>
+<span id="cb119-6"><a href="multidimensional-categorical-variables.html#cb119-6"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(<span class="dt">axis1 =</span> Class1, <span class="dt">axis2 =</span> Class2, <span class="dt">axis3 =</span> Class3, <span class="dt">y =</span> Freq)) <span class="op">+</span></span>
+<span id="cb119-7"><a href="multidimensional-categorical-variables.html#cb119-7"></a><span class="st">  </span><span class="kw">geom_alluvium</span>(<span class="dt">color=</span><span class="st">&#39;black&#39;</span>) <span class="op">+</span></span>
+<span id="cb119-8"><a href="multidimensional-categorical-variables.html#cb119-8"></a><span class="st">  </span><span class="kw">geom_stratum</span>() <span class="op">+</span></span>
+<span id="cb119-9"><a href="multidimensional-categorical-variables.html#cb119-9"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">stat =</span> <span class="st">&quot;stratum&quot;</span>, <span class="kw">aes</span>(<span class="dt">label =</span> <span class="kw">paste</span>(<span class="kw">after_stat</span>(stratum), <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="kw">after_stat</span>(count)))) <span class="op">+</span></span>
+<span id="cb119-10"><a href="multidimensional-categorical-variables.html#cb119-10"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="st">&quot;Class1&quot;</span>, <span class="st">&quot;Class2&quot;</span>, <span class="st">&quot;Class3&quot;</span>))</span></code></pre></div>
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>You can choose to color the alluvium by different variables, for example, the first variable <code>Class1</code> here:</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="multidimensional-categorical-variables.html#cb120-1"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(<span class="dt">axis1 =</span> Class1, <span class="dt">axis2 =</span> Class2, <span class="dt">axis3 =</span> Class3, <span class="dt">y =</span> Freq)) <span class="op">+</span></span>
+<span id="cb120-2"><a href="multidimensional-categorical-variables.html#cb120-2"></a><span class="st">  </span><span class="kw">geom_alluvium</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> Class1), <span class="dt">width =</span> <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb120-3"><a href="multidimensional-categorical-variables.html#cb120-3"></a><span class="st">  </span><span class="kw">geom_stratum</span>() <span class="op">+</span></span>
+<span id="cb120-4"><a href="multidimensional-categorical-variables.html#cb120-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">stat =</span> <span class="st">&quot;stratum&quot;</span>, <span class="kw">aes</span>(<span class="dt">label =</span> <span class="kw">paste</span>(<span class="kw">after_stat</span>(stratum), <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="kw">after_stat</span>(count)))) <span class="op">+</span></span>
+<span id="cb120-5"><a href="multidimensional-categorical-variables.html#cb120-5"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="st">&quot;Class1&quot;</span>, <span class="st">&quot;Class2&quot;</span>, <span class="st">&quot;Class3&quot;</span>))</span></code></pre></div>
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+</div>
+<div id="geom_flow" class="section level3 hasAnchor">
+<h3><span class="header-section-number">11.3.2</span> geom_flow<a href="multidimensional-categorical-variables.html#geom_flow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another way of plotting alluvial diagrams is using <code>geom_flow</code> rather than <code>geom_alluvium</code>:</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="multidimensional-categorical-variables.html#cb121-1"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(<span class="dt">axis1 =</span> Class1, <span class="dt">axis2 =</span> Class2, <span class="dt">axis3 =</span> Class3, <span class="dt">y =</span> Freq)) <span class="op">+</span></span>
+<span id="cb121-2"><a href="multidimensional-categorical-variables.html#cb121-2"></a><span class="st">  </span><span class="kw">geom_flow</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> Class1), <span class="dt">width =</span> <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb121-3"><a href="multidimensional-categorical-variables.html#cb121-3"></a><span class="st">  </span><span class="kw">geom_stratum</span>() <span class="op">+</span></span>
+<span id="cb121-4"><a href="multidimensional-categorical-variables.html#cb121-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">stat =</span> <span class="st">&quot;stratum&quot;</span>, <span class="kw">aes</span>(<span class="dt">label =</span> <span class="kw">paste</span>(<span class="kw">after_stat</span>(stratum), <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="kw">after_stat</span>(count)))) <span class="op">+</span></span>
+<span id="cb121-5"><a href="multidimensional-categorical-variables.html#cb121-5"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="st">&quot;Class1&quot;</span>, <span class="st">&quot;Class2&quot;</span>, <span class="st">&quot;Class3&quot;</span>))</span></code></pre></div>
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<p>After we use <code>geom_flow</code>, all Math students learning Art came together, which is also the same as Stats students. It makes the graph much clearer than <code>geom_alluvium</code> since there is less cross alluviums between each axises.</p>
+</div>
+</div>
+<div id="heat-map" class="section level2 hasAnchor">
+<h2><span class="header-section-number">11.4</span> Heat map<a href="multidimensional-categorical-variables.html#heat-map" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Besides what have been systematically introduced in <code>Chapter 9.2 Heatmaps</code>, this part demonstrated a special case of heat map when both x and y are categorical. Here the heat map can been seen as a clustered bar chart and a pre-defined theme is used to show the dense more clearly.</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="multidimensional-categorical-variables.html#cb122-1"></a><span class="kw">library</span>(vcdExtra)</span>
+<span id="cb122-2"><a href="multidimensional-categorical-variables.html#cb122-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb122-3"><a href="multidimensional-categorical-variables.html#cb122-3"></a>theme_heat &lt;-<span class="st"> </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
+<span id="cb122-4"><a href="multidimensional-categorical-variables.html#cb122-4"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.line =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb122-5"><a href="multidimensional-categorical-variables.html#cb122-5"></a>        <span class="dt">axis.ticks =</span> <span class="kw">element_blank</span>())</span>
+<span id="cb122-6"><a href="multidimensional-categorical-variables.html#cb122-6"></a>orderedclasses &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Farm&quot;</span>, <span class="st">&quot;LoM&quot;</span>, <span class="st">&quot;UpM&quot;</span>, <span class="st">&quot;LoNM&quot;</span>, <span class="st">&quot;UpNM&quot;</span>)</span>
+<span id="cb122-7"><a href="multidimensional-categorical-variables.html#cb122-7"></a>mydata &lt;-<span class="st"> </span>Yamaguchi87</span>
+<span id="cb122-8"><a href="multidimensional-categorical-variables.html#cb122-8"></a>mydata<span class="op">$</span>Son &lt;-<span class="st"> </span><span class="kw">factor</span>(mydata<span class="op">$</span>Son, <span class="dt">levels =</span> orderedclasses)</span>
+<span id="cb122-9"><a href="multidimensional-categorical-variables.html#cb122-9"></a>mydata<span class="op">$</span>Father &lt;-<span class="st"> </span><span class="kw">factor</span>(mydata<span class="op">$</span>Father,</span>
+<span id="cb122-10"><a href="multidimensional-categorical-variables.html#cb122-10"></a>                        <span class="dt">levels =</span> orderedclasses)</span>
+<span id="cb122-11"><a href="multidimensional-categorical-variables.html#cb122-11"></a>mydata3 &lt;-<span class="st"> </span>mydata <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(Country, Father) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb122-12"><a href="multidimensional-categorical-variables.html#cb122-12"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Total =</span> <span class="kw">sum</span>(Freq)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ungroup</span>()</span>
+<span id="cb122-13"><a href="multidimensional-categorical-variables.html#cb122-13"></a><span class="kw">ggplot</span>(mydata3, <span class="kw">aes</span>(<span class="dt">x =</span> Father, <span class="dt">y =</span> Son)) <span class="op">+</span></span>
+<span id="cb122-14"><a href="multidimensional-categorical-variables.html#cb122-14"></a><span class="st">  </span><span class="kw">geom_tile</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> (Freq<span class="op">/</span>Total)), <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span></span>
+<span id="cb122-15"><a href="multidimensional-categorical-variables.html#cb122-15"></a><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb122-16"><a href="multidimensional-categorical-variables.html#cb122-16"></a><span class="st">  </span><span class="kw">scale_fill_gradient2</span>(<span class="dt">low =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">mid =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb122-17"><a href="multidimensional-categorical-variables.html#cb122-17"></a>                        <span class="dt">high =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">midpoint =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb122-18"><a href="multidimensional-categorical-variables.html#cb122-18"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Country) <span class="op">+</span><span class="st"> </span>theme_heat</span></code></pre></div>
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" width="691.2" style="display: block; margin: auto;" /></p>
+
 </div>
 </div>
             </section>

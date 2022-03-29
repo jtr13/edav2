@@ -153,3 +153,89 @@ treemap::treemap(GNI2014,
 ```
 
 <img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" width="691.2" style="display: block; margin: auto;" />
+
+## Alluvial diagrams
+
+Alluvial diagrams are usually used to represent the flow changes in network structure over time or between different levels. 
+
+The following plot shows the essential components of alluvial plots used in the naming schemes and documentation (axis, alluvium, stratum, lode):
+
+<center>
+![](images/alluvial_structure.png){width=75%}
+</center>
+
+### ggalluvial
+
+
+```r
+library(ggalluvial)
+df2 <- data.frame(Class1 = c("Stats", "Math", "Stats", "Math", "Stats", "Math", "Stats", "Math"),
+                 Class2 = c("French", "French", "Art", "Art", "French", "French", "Art", "Art"),
+                 Class3 = c("Gym", "Gym", "Gym", "Gym", "Lunch", "Lunch", "Lunch", "Lunch"),
+                 Freq = c(20, 3, 40, 5, 10, 2, 5, 15))
+ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
+  geom_alluvium(color='black') +
+  geom_stratum() +
+  geom_text(stat = "stratum", aes(label = paste(after_stat(stratum), "\n", after_stat(count)))) +
+  scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
+```
+
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" width="460.8" style="display: block; margin: auto;" />
+
+You can choose to color the alluvium by different variables, for example, the first variable ``Class1`` here: 
+
+
+```r
+ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
+  geom_alluvium(aes(fill = Class1), width = 1/12) +
+  geom_stratum() +
+  geom_text(stat = "stratum", aes(label = paste(after_stat(stratum), "\n", after_stat(count)))) +
+  scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
+```
+
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" width="460.8" style="display: block; margin: auto;" />
+
+### geom_flow
+
+Another way of plotting alluvial diagrams is using ``geom_flow`` rather than ``geom_alluvium``:
+
+
+```r
+ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
+  geom_flow(aes(fill = Class1), width = 1/12) +
+  geom_stratum() +
+  geom_text(stat = "stratum", aes(label = paste(after_stat(stratum), "\n", after_stat(count)))) +
+  scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
+```
+
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" width="460.8" style="display: block; margin: auto;" />
+
+After we use ``geom_flow``, all Math students learning Art came together, which is also the same as Stats students. It makes the graph much clearer than ``geom_alluvium`` since there is less cross alluviums between each axises.
+
+## Heat map
+
+Besides what have been systematically introduced in ``Chapter 9.2 Heatmaps``, this part demonstrated a special case of heat map when both x and y are categorical. Here the heat map can been seen as a clustered bar chart and a pre-defined theme is used to show the dense more clearly.
+
+
+```r
+library(vcdExtra)
+library(dplyr)
+theme_heat <- theme_classic() +
+  theme(axis.line = element_blank(),
+        axis.ticks = element_blank())
+orderedclasses <- c("Farm", "LoM", "UpM", "LoNM", "UpNM")
+mydata <- Yamaguchi87
+mydata$Son <- factor(mydata$Son, levels = orderedclasses)
+mydata$Father <- factor(mydata$Father,
+                        levels = orderedclasses)
+mydata3 <- mydata %>% group_by(Country, Father) %>% 
+  mutate(Total = sum(Freq)) %>% ungroup()
+ggplot(mydata3, aes(x = Father, y = Son)) +
+  geom_tile(aes(fill = (Freq/Total)), color = "white") +
+  coord_fixed() + 
+  scale_fill_gradient2(low = "black", mid = "white",
+                        high = "red", midpoint = .2) +
+  facet_wrap(~Country) + theme_heat
+```
+
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" width="691.2" style="display: block; margin: auto;" />

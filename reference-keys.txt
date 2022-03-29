@@ -112,3 +112,7 @@ mosaic-plot-with-two-variables
 mosaic-plot-with-three-variablesbest-practice
 mosaic-plots-spine-plot
 mosaic-plot-tree-map
+alluvial-diagrams
+ggalluvial
+geom_flow
+heat-map
