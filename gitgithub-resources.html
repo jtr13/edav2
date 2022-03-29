@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Faceting | edav.info, 2nd edition</title>
+  <title>Chapter 5 git/GitHub resources | edav.info, 2nd edition</title>
   <meta name="description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Faceting | edav.info, 2nd edition" />
+  <meta property="og:title" content="Chapter 5 git/GitHub resources | edav.info, 2nd edition" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="github-repo" content="jtr13/edav2" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Faceting | edav.info, 2nd edition" />
+  <meta name="twitter:title" content="Chapter 5 git/GitHub resources | edav.info, 2nd edition" />
   
   <meta name="twitter:description" content="Supplemental resources for GR5293 and GR5702" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="learning-ggplot2.html"/>
-<link rel="next" href="unidimensional-continuous-variables.html"/>
+<link rel="prev" href="data-transformation.html"/>
+<link rel="next" href="learning-ggplot2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -297,65 +297,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="faceting-1" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 7</span> Faceting<a href="faceting-1.html#faceting-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we will introduce facets, which are usually used to combine continuous and categorical data.</p>
-<div id="faceting-on-one-variable" class="section level2 hasAnchor">
-<h2><span class="header-section-number">7.1</span> Faceting on one variable<a href="faceting-1.html#faceting-on-one-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Facet partitions a plot into a matrix of panels. Each panel shows a different subset of the data. By default, <code>facet_wrap</code> gives consistent scales, which is easier for comparison between different panels.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="faceting-1.html#cb59-1"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb59-2"><a href="faceting-1.html#cb59-2"></a>mycol =<span class="st"> &quot;#7192E3&quot;</span>  </span>
-<span id="cb59-3"><a href="faceting-1.html#cb59-3"></a><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Length, Sepal.Width)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb59-4"><a href="faceting-1.html#cb59-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> mycol) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb59-5"><a href="faceting-1.html#cb59-5"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Species) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb59-6"><a href="faceting-1.html#cb59-6"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">18</span>)</span></code></pre></div>
-<p><img src="faceting_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
-<p>Rather than faceting on factor level, we can have one panel for each numerical variable.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="faceting-1.html#cb60-1"></a><span class="kw">library</span>(pgmm) </span>
-<span id="cb60-2"><a href="faceting-1.html#cb60-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb60-3"><a href="faceting-1.html#cb60-3"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb60-4"><a href="faceting-1.html#cb60-4"></a><span class="kw">data</span>(wine)  </span>
-<span id="cb60-5"><a href="faceting-1.html#cb60-5"></a>tidywine &lt;-<span class="st"> </span>wine <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb60-6"><a href="faceting-1.html#cb60-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span>Type, <span class="dt">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>)  </span>
-<span id="cb60-7"><a href="faceting-1.html#cb60-7"></a>tidywine <span class="op">%&gt;%</span><span class="st">  </span></span>
-<span id="cb60-8"><a href="faceting-1.html#cb60-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(value)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb60-9"><a href="faceting-1.html#cb60-9"></a><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span><span class="st">  </span></span>
-<span id="cb60-10"><a href="faceting-1.html#cb60-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>variable) <span class="op">+</span><span class="st">   </span></span>
-<span id="cb60-11"><a href="faceting-1.html#cb60-11"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb60-12"><a href="faceting-1.html#cb60-12"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
-<p><img src="faceting_files/figure-html/unnamed-chunk-2-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>Axis scales can be made independent, by setting scales to <code>free</code>, <code>free_x</code>, or <code>free_y</code>.</p>
-<p>In this case, <code>scales = "free_x"</code> is a better option because the distribution of each numerical variable is more obvious.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="faceting-1.html#cb61-1"></a>tidywine  <span class="op">%&gt;%</span></span>
-<span id="cb61-2"><a href="faceting-1.html#cb61-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(value)) <span class="op">+</span></span>
-<span id="cb61-3"><a href="faceting-1.html#cb61-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></span>
-<span id="cb61-4"><a href="faceting-1.html#cb61-4"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>variable,<span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="op">+</span></span>
-<span id="cb61-5"><a href="faceting-1.html#cb61-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="op">+</span></span>
-<span id="cb61-6"><a href="faceting-1.html#cb61-6"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
-<p><img src="faceting_files/figure-html/unnamed-chunk-3-1.png" width="960" style="display: block; margin: auto;" /></p>
-</div>
-<div id="faceting-on-two-variables" class="section level2 hasAnchor">
-<h2><span class="header-section-number">7.2</span> Faceting on two variables<a href="faceting-1.html#faceting-on-two-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>facet_grid</code> can be used to split data-sets on two variables and plot them on the horizontal and/or vertical direction.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="faceting-1.html#cb62-1"></a>wine <span class="op">%&gt;%</span><span class="st">   </span></span>
-<span id="cb62-2"><a href="faceting-1.html#cb62-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Type =</span> <span class="kw">paste</span>(<span class="st">&quot;Type&quot;</span>, Type)) <span class="op">%&gt;%</span><span class="st">   </span></span>
-<span id="cb62-3"><a href="faceting-1.html#cb62-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">%&gt;%</span><span class="st">   </span></span>
-<span id="cb62-4"><a href="faceting-1.html#cb62-4"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span>Type, <span class="dt">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span></span>
-<span id="cb62-5"><a href="faceting-1.html#cb62-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(value)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb62-6"><a href="faceting-1.html#cb62-6"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> mycol, <span class="dt">fill =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb62-7"><a href="faceting-1.html#cb62-7"></a><span class="st">  </span><span class="kw">facet_grid</span>(Type <span class="op">~</span><span class="st"> </span>variable, <span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb62-8"><a href="faceting-1.html#cb62-8"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
-<p><img src="faceting_files/figure-html/unnamed-chunk-4-1.png" width="960" style="display: block; margin: auto;" /></p>
+<div id="gitgithub-resources" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 5</span> git/GitHub resources<a href="gitgithub-resources.html#gitgithub-resources" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Please see the git chapter in the first edition: <a href="https://jtr13.github.io/EDAV/github.html" class="uri">https://jtr13.github.io/EDAV/github.html</a></p>
 
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="learning-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="unidimensional-continuous-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="learning-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -386,7 +342,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jtr13/edav2/edit/main/faceting.Rmd",
+"link": "https://github.com/jtr13/edav2/edit/main/git_GitHub.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -394,7 +350,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/jtr13/edav2/blob/main/faceting.Rmd",
+"link": "https://github.com/jtr13/edav2/blob/main/git_GitHub.Rmd",
 "text": null
 },
 "download": null,

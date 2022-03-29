@@ -31,6 +31,7 @@ group_by-and-summarize
 slice_max-slice_min
 join
 cases-to-tables
+gitgithub-resources
 learning-ggplot2
 getting-started-1
 default-part-layer
