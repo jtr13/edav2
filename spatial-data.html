@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 git/GitHub resources | edav.info, 2nd edition</title>
+  <title>Chapter 13 Spatial data | edav.info, 2nd edition</title>
   <meta name="description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 git/GitHub resources | edav.info, 2nd edition" />
+  <meta property="og:title" content="Chapter 13 Spatial data | edav.info, 2nd edition" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="github-repo" content="jtr13/edav2" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 git/GitHub resources | edav.info, 2nd edition" />
+  <meta name="twitter:title" content="Chapter 13 Spatial data | edav.info, 2nd edition" />
   
   <meta name="twitter:description" content="Supplemental resources for GR5293 and GR5702" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-transformation.html"/>
-<link rel="next" href="learning-ggplot2.html"/>
+<link rel="prev" href="multidimensional-categorical-variables.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -304,21 +304,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gitgithub-resources" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 5</span> git/GitHub resources<a href="gitgithub-resources.html#gitgithub-resources" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Please see the git chapter in the first edition: <a href="https://jtr13.github.io/EDAV/github.html" class="uri">https://jtr13.github.io/EDAV/github.html</a></p>
+<div id="spatial-data" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 13</span> Spatial data<a href="spatial-data.html#spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The page is currently being updated, check back later.</p>
+<div id="introduction" class="section level2 hasAnchor">
+<h2><span class="header-section-number">13.1</span> Introduction<a href="spatial-data.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this chapter, we will take a glimpse into spatial analysis using R. There are an overwhelming number of R packages for analyzing and visualizing spatial data. In broad terms, spatial visualizations require a merging of non-spatial and spatial information. For example, if you wish to create a choropleth map of the murder rate by county in New York State, you need county level data on murder rates, and you also need geographic data for drawing the county boundaries, stored in what are called shape files.</p>
+<p>A rough divide exists between packages that don’t require you deal with shape files and those that do. The former work by taking care of the geographic data under the hood: you supply the data with a column for the location and the package takes care of figuring out how to draw those locations.</p>
+</div>
+<div id="packages" class="section level2 hasAnchor">
+<h2><span class="header-section-number">13.2</span> Packages<a href="spatial-data.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="choroplethr" class="section level3 hasAnchor">
+<h3><span class="header-section-number">13.2.1</span> <code>choroplethr</code><a href="spatial-data.html#choroplethr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Choropleth maps use color to indicate the value of a variable within a defined region, generally political boundaries. <code>choroplethr</code> is capable of drawing state and county level maps without using shape files.</p>
+<p>Consider the following example using <code>state.x77</code> showing the percentage of illiterate in each states. Note the process of data transformation, you need to exactly have a column named ‘region’ with the state names and a column named ‘value’.</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="spatial-data.html#cb123-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb123-2"><a href="spatial-data.html#cb123-2"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb123-3"><a href="spatial-data.html#cb123-3"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb123-4"><a href="spatial-data.html#cb123-4"></a><span class="kw">library</span>(choroplethr)</span>
+<span id="cb123-5"><a href="spatial-data.html#cb123-5"></a></span>
+<span id="cb123-6"><a href="spatial-data.html#cb123-6"></a><span class="co"># data frame must contain &quot;region&quot; and &quot;value&quot; columns</span></span>
+<span id="cb123-7"><a href="spatial-data.html#cb123-7"></a></span>
+<span id="cb123-8"><a href="spatial-data.html#cb123-8"></a>df_illiteracy &lt;-<span class="st"> </span>state.x77 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb123-9"><a href="spatial-data.html#cb123-9"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb123-10"><a href="spatial-data.html#cb123-10"></a><span class="st">  </span><span class="kw">transmute</span>(<span class="dt">region =</span> <span class="kw">tolower</span>(<span class="st">`</span><span class="dt">state</span><span class="st">`</span>), <span class="dt">value =</span> Illiteracy)</span>
+<span id="cb123-11"><a href="spatial-data.html#cb123-11"></a></span>
+<span id="cb123-12"><a href="spatial-data.html#cb123-12"></a><span class="kw">state_choropleth</span>(df_illiteracy,</span>
+<span id="cb123-13"><a href="spatial-data.html#cb123-13"></a>                 <span class="dt">title =</span> <span class="st">&quot;State Illiteracy Rates, 1977&quot;</span>,</span>
+<span id="cb123-14"><a href="spatial-data.html#cb123-14"></a>                 <span class="dt">legend =</span> <span class="st">&quot;Percent Illiterate&quot;</span>)</span></code></pre></div>
+<p><img src="spatial_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Plotting at county level is also possible. In the following example we show the population of counties in New York state in 2012.</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="spatial-data.html#cb124-1"></a><span class="kw">library</span>(choroplethrMaps)</span>
+<span id="cb124-2"><a href="spatial-data.html#cb124-2"></a><span class="kw">data</span>(county.regions)</span>
+<span id="cb124-3"><a href="spatial-data.html#cb124-3"></a><span class="kw">data</span>(df_pop_county) </span>
+<span id="cb124-4"><a href="spatial-data.html#cb124-4"></a></span>
+<span id="cb124-5"><a href="spatial-data.html#cb124-5"></a>ny_county_fips =<span class="st"> </span>county.regions <span class="op">%&gt;%</span></span>
+<span id="cb124-6"><a href="spatial-data.html#cb124-6"></a><span class="st">  </span><span class="kw">filter</span>(state.name <span class="op">==</span><span class="st"> &quot;new york&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb124-7"><a href="spatial-data.html#cb124-7"></a><span class="st">  </span><span class="kw">select</span>(region)</span>
+<span id="cb124-8"><a href="spatial-data.html#cb124-8"></a></span>
+<span id="cb124-9"><a href="spatial-data.html#cb124-9"></a><span class="kw">county_choropleth</span>(df_pop_county, </span>
+<span id="cb124-10"><a href="spatial-data.html#cb124-10"></a>                  <span class="dt">title =</span> <span class="st">&quot;Population of Counties in New York State in 2012&quot;</span>,</span>
+<span id="cb124-11"><a href="spatial-data.html#cb124-11"></a>                  <span class="dt">legend =</span> <span class="st">&quot;Population&quot;</span>,</span>
+<span id="cb124-12"><a href="spatial-data.html#cb124-12"></a>                  <span class="dt">county_zoom =</span> ny_county_fips<span class="op">$</span>region)</span></code></pre></div>
+<p><img src="spatial_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>We use <code>county_choropleth</code> to create a U.S map at county level and zoom into New York state. Note that <code>county_zoom</code> takes in fips codes of counties. For more reference, visit the <a href="https://www.rdocumentation.org/packages/choroplethr/versions/3.7.0">R documentation page</a>.</p>
+</div>
+<div id="ggmap" class="section level3 hasAnchor">
+<h3><span class="header-section-number">13.2.2</span> <code>ggmap</code><a href="spatial-data.html#ggmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>ggmap</code> is a great package to generate real-world maps. Moreover, it is compatible with <code>ggplot2</code> allowing you to easily add layers on top of the base map. There are two options in generating maps and we demonstrate one using stamenmap.</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="spatial-data.html#cb125-1"></a><span class="kw">library</span>(ggmap)</span>
+<span id="cb125-2"><a href="spatial-data.html#cb125-2"></a></span>
+<span id="cb125-3"><a href="spatial-data.html#cb125-3"></a>ny_map &lt;-<span class="st"> </span><span class="kw">get_stamenmap</span>(<span class="dt">bbox =</span> <span class="kw">c</span>(<span class="dt">left =</span> <span class="fl">-74.2591</span>, <span class="dt">bottom =</span> <span class="fl">40.4774</span>, </span>
+<span id="cb125-4"><a href="spatial-data.html#cb125-4"></a>                                 <span class="dt">right =</span> <span class="fl">-73.7002</span>, <span class="dt">top =</span> <span class="fl">40.9162</span>),</span>
+<span id="cb125-5"><a href="spatial-data.html#cb125-5"></a>                        <span class="dt">zoom =</span> <span class="dv">10</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner-lite&quot;</span>)</span>
+<span id="cb125-6"><a href="spatial-data.html#cb125-6"></a></span>
+<span id="cb125-7"><a href="spatial-data.html#cb125-7"></a><span class="kw">ggmap</span>(ny_map) <span class="op">+</span></span>
+<span id="cb125-8"><a href="spatial-data.html#cb125-8"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="op">-</span><span class="fl">73.9857</span>,<span class="dt">y=</span><span class="fl">40.7484</span>),<span class="dt">size=</span><span class="fl">0.8</span>,<span class="dt">color=</span><span class="st">&#39;blue&#39;</span>) <span class="op">+</span></span>
+<span id="cb125-9"><a href="spatial-data.html#cb125-9"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom=</span><span class="st">&quot;text&quot;</span>,<span class="dt">label=</span><span class="st">&quot;Empire State Building&quot;</span>,<span class="dt">x=</span><span class="op">-</span><span class="fl">73.9</span>, <span class="dt">y=</span><span class="fl">40.755</span>,<span class="dt">color=</span><span class="st">&#39;blue&#39;</span>,<span class="dt">size=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="spatial_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>A map of New York City is created, and we added the point representing Empire State Building. You can very simply add points using <code>geom_point</code> as long as you have the coordinates for the points. However, one clear drawback using stamenmap is that the map resolution is not satisfying and you will eventually find that the smaller zoom value creates blurry maps.</p>
+<p>For this reason, we encourage readers to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card).</p>
 
 </div>
-
-
-
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="learning-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="multidimensional-categorical-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -349,7 +405,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jtr13/edav2/edit/main/git_GitHub.Rmd",
+"link": "https://github.com/jtr13/edav2/edit/main/spatial.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -357,7 +413,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/jtr13/edav2/blob/main/git_GitHub.Rmd",
+"link": "https://github.com/jtr13/edav2/blob/main/spatial.Rmd",
 "text": null
 },
 "download": null,

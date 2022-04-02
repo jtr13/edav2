@@ -117,3 +117,8 @@ alluvial-diagrams
 ggalluvial
 geom_flow
 heat-map
+spatial-data
+introduction
+packages
+choroplethr
+ggmap
