@@ -363,7 +363,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb125-9"><a href="spatial-data.html#cb125-9"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom=</span><span class="st">&quot;text&quot;</span>,<span class="dt">label=</span><span class="st">&quot;Empire State Building&quot;</span>,<span class="dt">x=</span><span class="op">-</span><span class="fl">73.9</span>, <span class="dt">y=</span><span class="fl">40.755</span>,<span class="dt">color=</span><span class="st">&#39;blue&#39;</span>,<span class="dt">size=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A map of New York City is created, and we added the point representing Empire State Building. You can very simply add points using <code>geom_point</code> as long as you have the coordinates for the points. However, one clear drawback using stamenmap is that the map resolution is not satisfying and you will eventually find that the smaller zoom value creates blurry maps.</p>
-<p>For this reason, we encourage readers to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card).</p>
+<p>For this reason, we encourage readers to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card). After enabling the Google map APIs, register you API keys with <code>ggmap</code> using <code>register_google(key = "[your key]")</code> and you are all set. Now take a look at the an example using Google map API</p>
+<pre><code>ggmap(get_googlemap(center = c(lon = -74.006, lat = 40.7128),zoom = 14))</code></pre>
+<center>
+<img src="images/ggmap_google.png" style="width:70.0%" />
+</center>
+<p>You will see the map is at great resolution regardless of how you zoom in. For demonstration purpose, we provided a image of the map derived by running the code. For more details regarding the package usage, you can refer at <a href="https://github.com/dkahle/ggmap">ggmap GitHub page</a>.</p>
 
 </div>
 </div>
