@@ -51,7 +51,7 @@ county_choropleth(df_pop_county,
                   county_zoom = ny_county_fips$region)
 ```
 
-In the above example, we use `county_choropleth` to create a U.S map at county level and zoom into New York state. Note that `county_zoom` takes in fips codes of counties. For more reference, visit the [R documentation page](https://www.rdocumentation.org/packages/choroplethr/versions/3.7.0).
+We use `county_choropleth` to create a U.S map at county level and zoom into New York state. Note that `county_zoom` takes in fips codes of counties. For more reference, visit the [R documentation page](https://www.rdocumentation.org/packages/choroplethr/versions/3.7.0).
 
 
 ### `ggmap`
@@ -72,5 +72,5 @@ ggmap(ny_map) +
 
 A map of New York City is created, and we added the point representing Empire State Building. You can very simply add points using `geom_point` as long as you have the coordinates for the points. However, one clear drawback using stamenmap is that the map resolution is not satisfying and you will eventually find that the smaller zoom value creates blurry maps.
 
-For this reason, we encourage users to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card).
+For this reason, we encourage readers to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card).
 
