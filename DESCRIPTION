@@ -30,7 +30,8 @@ Imports:
     ggalluvial,
     choroplethrMaps,
     choroplethr,
-    ggmap
+    ggmap,
+    RColorBrewer
 Suggests:
     bookdown,
     bslib,
