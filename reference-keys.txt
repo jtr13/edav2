@@ -111,6 +111,7 @@ mosaic-plots
 mosaic-plot-with-one-variable
 mosaic-plot-with-two-variables
 mosaic-plot-with-three-variablesbest-practice
+mosaic-pairs-plot
 mosaic-plots-spine-plot
 mosaic-plot-tree-map
 alluvial-diagrams

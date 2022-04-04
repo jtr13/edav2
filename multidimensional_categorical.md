@@ -113,6 +113,18 @@ vcd::mosaic(Favorite ~ Age + Music, counts3,
 
 <img src="multidimensional_categorical_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" />
 
+### Mosaic pairs plot
+
+Use ``pairs`` method to plot a matrix of pairwise mosaic plots for class ``table``:
+
+
+```r
+pairs(table(cases[,2:4]), highlighting = 2)
+```
+
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" />
+
+
 ### Mosaic plots: spine plot
 
 Spine plot is a mosaic plot with straight, parallel cuts in one dimension (“spines”) and only one variable cutting in the other direction.
@@ -134,7 +146,7 @@ vcd::mosaic(food ~ sex + size, ally,
        highlighting_fill= RColorBrewer::brewer.pal(5, "Accent"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ### Mosaic plot: tree map
 
@@ -152,7 +164,7 @@ treemap::treemap(GNI2014,
        format.legend = list(scientific = FALSE, big.mark = " "))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" width="691.2" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" width="691.2" style="display: block; margin: auto;" />
 
 ## Alluvial diagrams
 
@@ -180,7 +192,7 @@ ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
   scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" width="460.8" style="display: block; margin: auto;" />
 
 You can choose to color the alluvium by different variables, for example, the first variable ``Class1`` here: 
 
@@ -193,7 +205,7 @@ ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
   scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ### geom_flow
 
@@ -208,7 +220,7 @@ ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
   scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" width="460.8" style="display: block; margin: auto;" />
 
 After we use ``geom_flow``, all Math students learning Art came together, which is also the same as Stats students. It makes the graph much clearer than ``geom_alluvium`` since there is less cross alluviums between each axises.
 
@@ -238,4 +250,4 @@ ggplot(mydata3, aes(x = Father, y = Son)) +
   facet_wrap(~Country) + theme_heat
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" width="691.2" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-14-1.png" width="691.2" style="display: block; margin: auto;" />
