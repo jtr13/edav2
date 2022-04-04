@@ -62,6 +62,81 @@ ggplot(counts3, aes(x = Favorite, y = Freq, fill = Music)) +
 
 <img src="multidimensional_categorical_files/figure-html/unnamed-chunk-4-1.png" width="384" style="display: block; margin: auto;" />
 
+
+## Chi square test of independence
+
+In this section, we would like to show how to use chi-square test to check the independence between two features.
+
+We will use the following example to answer: Are older Americans more interested in local news than younger Americans? The dataset is collected from [here](https://www.journalism.org/2019/08/14/methodology-local-news-demographics/).
+
+
+```r
+local <- data.frame(Age = c("18-29", "30-49", "50-64", "65+"),
+                        Freq = c(2851, 9967, 11163, 10911)) %>%
+  mutate(Followers = round(Freq*c(.15, .28, .38, .42)),
+         Nonfollowers = Freq - Followers) %>%
+  select(-Freq)
+knitr::kable(local[,1:2])
+```
+
+
+
+|Age   | Followers|
+|:-----|---------:|
+|18-29 |       428|
+|30-49 |      2791|
+|50-64 |      4242|
+|65+   |      4583|
+
+The chi-square hypothesis is set to be:
+
+Null hypothesis: Age and tendency to follow local news are independent
+
+Alternative hypothesis: Age and tendence to follow local news are NOT independent
+
+
+```r
+localmat <- as.matrix(local[,2:3])
+rownames(localmat) <- local$Age
+X <- chisq.test(localmat, correct = FALSE)
+X$observed
+```
+
+```
+##       Followers Nonfollowers
+## 18-29       428         2423
+## 30-49      2791         7176
+## 50-64      4242         6921
+## 65+        4583         6328
+```
+
+```r
+X$expected
+```
+
+```
+##       Followers Nonfollowers
+## 18-29  984.1065     1866.893
+## 30-49 3440.4032     6526.597
+## 50-64 3853.2378     7309.762
+## 65+   3766.2526     7144.747
+```
+
+```r
+X
+```
+
+```
+## 
+## 	Pearson's Chi-squared test
+## 
+## data:  localmat
+## X-squared = 997.48, df = 3, p-value < 2.2e-16
+```
+
+We compare observed to expected and then the p-value tells that age and tendency are independent features. We are good to move on to next stage on mosaic plots.
+
+
 ## Mosaic plots
 
 Mosaic plots are used for visualizing data from two or more qualitative variables to show their proportions or associations.
@@ -79,7 +154,7 @@ counts2 <- icecream %>%
 vcd::mosaic(~Age, direction = "v", counts2)
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ### Mosaic plot with two variables
 
@@ -89,7 +164,7 @@ vcd::mosaic(Favorite ~ Age, counts2, direction = c("v", "h"),
             highlighting_fill = icecreamcolors)
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-6-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ### Mosaic plot with three variables(Best practice)
 
@@ -111,7 +186,7 @@ vcd::mosaic(Favorite ~ Age + Music, counts3,
             highlighting_fill = icecreamcolors)
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ### Mosaic pairs plot
 
@@ -122,7 +197,7 @@ Use ``pairs`` method to plot a matrix of pairwise mosaic plots for class ``table
 pairs(table(cases[,2:4]), highlighting = 2)
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" width="460.8" style="display: block; margin: auto;" />
 
 
 ### Mosaic plots: spine plot
@@ -146,7 +221,7 @@ vcd::mosaic(food ~ sex + size, ally,
        highlighting_fill= RColorBrewer::brewer.pal(5, "Accent"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ### Mosaic plot: tree map
 
@@ -164,7 +239,7 @@ treemap::treemap(GNI2014,
        format.legend = list(scientific = FALSE, big.mark = " "))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" width="691.2" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" width="691.2" style="display: block; margin: auto;" />
 
 ## Alluvial diagrams
 
@@ -192,7 +267,7 @@ ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
   scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" width="460.8" style="display: block; margin: auto;" />
 
 You can choose to color the alluvium by different variables, for example, the first variable ``Class1`` here: 
 
@@ -205,7 +280,7 @@ ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
   scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-14-1.png" width="460.8" style="display: block; margin: auto;" />
 
 ### geom_flow
 
@@ -220,7 +295,7 @@ ggplot(df2, aes(axis1 = Class1, axis2 = Class2, axis3 = Class3, y = Freq)) +
   scale_x_discrete(limits = c("Class1", "Class2", "Class3"))
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" width="460.8" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-15-1.png" width="460.8" style="display: block; margin: auto;" />
 
 After we use ``geom_flow``, all Math students learning Art came together, which is also the same as Stats students. It makes the graph much clearer than ``geom_alluvium`` since there is less cross alluviums between each axises.
 
@@ -250,4 +325,4 @@ ggplot(mydata3, aes(x = Father, y = Son)) +
   facet_wrap(~Country) + theme_heat
 ```
 
-<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-14-1.png" width="691.2" style="display: block; margin: auto;" />
+<img src="multidimensional_categorical_files/figure-html/unnamed-chunk-16-1.png" width="691.2" style="display: block; margin: auto;" />

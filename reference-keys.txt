@@ -107,6 +107,7 @@ stacked-bar-chart
 grouped-bar-chart
 grouped-bar-chart-with-facets
 grouped-barchart-with-three-categorical-variables
+chi-square-test-of-independence
 mosaic-plots
 mosaic-plot-with-one-variable
 mosaic-plot-with-two-variables
