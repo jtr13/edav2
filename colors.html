@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Data transformation | edav.info, 2nd edition</title>
+  <title>Chapter 14 Colors | edav.info, 2nd edition</title>
   <meta name="description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Data transformation | edav.info, 2nd edition" />
+  <meta property="og:title" content="Chapter 14 Colors | edav.info, 2nd edition" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="github-repo" content="jtr13/edav2" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Data transformation | edav.info, 2nd edition" />
+  <meta name="twitter:title" content="Chapter 14 Colors | edav.info, 2nd edition" />
   
   <meta name="twitter:description" content="Supplemental resources for GR5293 and GR5702" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="working-with-factors.html"/>
-<link rel="next" href="gitgithub-resources.html"/>
+<link rel="prev" href="spatial-data.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -309,304 +309,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-transformation" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 4</span> Data transformation<a href="data-transformation.html#data-transformation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Plotting a graph is easy. You just need to find the right library with the right function. However, it is sometimes not so easy to get your data into the form desired to generate a graph. In this chapter, we will cover some basic techniques in tidying data with <code>ggplot2</code>.</p>
-<div id="what-is-tidy-data" class="section level2 hasAnchor">
-<h2><span class="header-section-number">4.1</span> What is tidy data?<a href="data-transformation.html#what-is-tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here’s the definition of Tidy Data given by Hadley Wickham:</p>
+<div id="colors" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 14</span> Colors<a href="colors.html#colors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>When evaluating the power and efficiency of a plot, color is always a key factor that sometimes speaks a language even louder than words. So in this chapter, you will be introduced with several widely-applied color schemes and get to know how to use proper colors to make better plots based on different features of your data.</p>
+<div id="rcolorbrewer" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.1</span> RColorBrewer<a href="colors.html#rcolorbrewer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>RColorBrewer</code> is an R package having built-in sensible color schemes ready-to-use for figures. Colors are grouped into three types: sequential, diverging, and qualitative.</p>
 <blockquote>
-<p>A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:</p>
-<ul>
-<li><p>Each variable forms a column.</p></li>
-<li><p>Each observation forms a row.</p></li>
-<li><p>Each observational unit forms a value in the table.</p></li>
-</ul>
-<p><em>See <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank">r4ds on tidy data</a> for more info.</em></p>
+<p>Sequential – Light colours for low data, dark for high data</p>
+<p>Diverging – Light colours for mid-range data, low and high use dark colours</p>
+<p>Qualitative(for categorical data) – Colours designed to give maximum visual difference between categories</p>
 </blockquote>
-<p><strong>What are the advantages of tidy data?</strong></p>
-<ul>
-<li><p>Uniformity : It is easier to learn the tools that work with the data because they have a consistent way of storing data.</p></li>
-<li><p>Most built-in R functions work with vectors of values. Thus, having variables as columns/vectors allows R’s vectorized nature to shine.</p></li>
-</ul>
-<p><strong>Take a look at the following data and can you tell whether this data is messy or not?</strong></p>
-<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
-<ul>
-<li>In this data set,all the variables are parameters of cars. This means that they are not different variables, but are values of a common variable.</li>
-</ul>
-<p>To transform the data, we use <code>pivot_longer</code>.</p>
-</div>
-<div id="pivot_longer" class="section level2 hasAnchor">
-<h2><span class="header-section-number">4.2</span> <code>pivot_longer</code><a href="data-transformation.html#pivot_longer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-transformation.html#cb22-1"></a>mtcars <span class="op">%&gt;%</span><span class="st">  </span></span>
-<span id="cb22-2"><a href="data-transformation.html#cb22-2"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;carname&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb22-3"><a href="data-transformation.html#cb22-3"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">!</span>carname, <span class="dt">names_to =</span> <span class="st">&quot;Parameters&quot;</span>,<span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb22-4"><a href="data-transformation.html#cb22-4"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 3
-##   carname   Parameters  value
-##   &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
-## 1 Mazda RX4 mpg         21   
-## 2 Mazda RX4 cyl          6   
-## 3 Mazda RX4 disp       160   
-## 4 Mazda RX4 hp         110   
-## 5 Mazda RX4 drat         3.9 
-## 6 Mazda RX4 wt           2.62</code></pre>
-<p>Follow the simple two steps:</p>
-<ul>
-<li><p>Identify the column you want to keep as is. In this case, we want all variables to match car names.</p></li>
-<li><p><strong>Additionally</strong>, notice that in the original data set, <code>carname</code> acts as the index of the data set. You would want to convert the index to a column using <code>rownames_to_column</code>.</p></li>
-<li><p>Create meaningful names for the two new columns. In our case, straightforwardly, column names go into <code>parameters</code> and corresponding values go into <code>value</code>.</p></li>
-</ul>
-</div>
-<div id="pivot_wider" class="section level2 hasAnchor">
-<h2><span class="header-section-number">4.3</span> <code>pivot_wider</code><a href="data-transformation.html#pivot_wider" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>pivot_wider</code> is just the opposite of <code>pivot_longer</code>. Using <code>pivot_wider</code>, we can transform our tidy data back into the messy form as all distinct values in <code>Parameters</code> will become column names.</p>
-<p><code>pivot_wider</code> is often used in the case such that one observation being recorded over multiple rows. Consider the following example:</p>
-<pre><code>## # A tibble: 4 × 3
-##   Country Type  Number
-##   &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;
-## 1 USA     Case       4
-## 2 USA     Death      3
-## 3 Canada  Case       2
-## 4 Canada  Death      1</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-transformation.html#cb25-1"></a>example <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> Type, <span class="dt">values_from =</span> Number)</span></code></pre></div>
-<pre><code>## # A tibble: 2 × 3
-##   Country  Case Death
-##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
-## 1 USA         4     3
-## 2 Canada      2     1</code></pre>
-<p>It would make much more sense if <code>Case</code> and <code>Death</code> are separate features.</p>
-<p>The main focus of this chapter is <code>pivot_longer</code> and <code>pivot_wider</code>. However, other fundamental functions in <code>dplyr</code> are also very important in manipulating your data set. In the following section, we will give an overview of the basics.</p>
-</div>
-<div id="basic-transformation-functions" class="section level2 hasAnchor">
-<h2><span class="header-section-number">4.4</span> Basic transformation functions<a href="data-transformation.html#basic-transformation-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For the following sections, we will use data set <code>biopsy</code> from <code>MASS</code> for demonstration purpose.</p>
-<pre><code>##        ID V1 V2 V3 V4 V5 V6 V7 V8 V9     class
-## 1 1000025  5  1  1  1  2  1  3  1  1    benign
-## 2 1002945  5  4  4  5  7 10  3  2  1    benign
-## 3 1015425  3  1  1  1  2  2  3  1  1    benign
-## 4 1016277  6  8  8  1  3  4  3  7  1    benign
-## 5 1017023  4  1  1  3  2  1  3  1  1    benign
-## 6 1017122  8 10 10  8  7 10  9  7  1 malignant</code></pre>
-<div id="rename" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.1</span> <code>rename</code><a href="data-transformation.html#rename" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Upon getting the data, we noticed that the names of the columns are very vague. After reading the documentation, we wanted to change the names of the column so that the viewer gets a sense of the values they’re referring to. We use <code>rename</code> to modify the column names.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-transformation.html#cb28-1"></a>biopsy_new &lt;-<span class="st"> </span><span class="kw">rename</span>(biopsy,</span>
-<span id="cb28-2"><a href="data-transformation.html#cb28-2"></a>       <span class="dt">thickness =</span> V1,<span class="dt">cell_size =</span> V2,</span>
-<span id="cb28-3"><a href="data-transformation.html#cb28-3"></a>       <span class="dt">cell_shape =</span> V3, <span class="dt">marg_adhesion =</span> V4,</span>
-<span id="cb28-4"><a href="data-transformation.html#cb28-4"></a>       <span class="dt">epithelial_cell_size =</span> V5, <span class="dt">bare_nuclei =</span> V6,</span>
-<span id="cb28-5"><a href="data-transformation.html#cb28-5"></a>       <span class="dt">chromatin =</span> V7, <span class="dt">norm_nucleoli =</span> V8, <span class="dt">mitoses =</span> V9)</span>
-<span id="cb28-6"><a href="data-transformation.html#cb28-6"></a></span>
-<span id="cb28-7"><a href="data-transformation.html#cb28-7"></a><span class="kw">head</span>(biopsy_new)</span></code></pre></div>
-<pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
-## 1 1000025         5         1          1             1                    2
-## 2 1002945         5         4          4             5                    7
-## 3 1015425         3         1          1             1                    2
-## 4 1016277         6         8          8             1                    3
-## 5 1017023         4         1          1             3                    2
-## 6 1017122         8        10         10             8                    7
-##   bare_nuclei chromatin norm_nucleoli mitoses     class
-## 1           1         3             1       1    benign
-## 2          10         3             2       1    benign
-## 3           2         3             1       1    benign
-## 4           4         3             7       1    benign
-## 5           1         3             1       1    benign
-## 6          10         9             7       1 malignant</code></pre>
-</div>
-<div id="select" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.2</span> <code>select</code><a href="data-transformation.html#select" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>select</code> is column-wise operation. Specifically, only the columns that are specified will be returned.</p>
-<p>In the biopsy data, we do not require the variables “chromatin” and “mitoses”. So, let’s drop them using a minus sign:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-transformation.html#cb30-1"></a><span class="co">#selecting all except the columns chromatin and mitoses</span></span>
-<span id="cb30-2"><a href="data-transformation.html#cb30-2"></a>biopsy_new &lt;-<span class="st"> </span>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>chromatin,<span class="op">-</span>mitoses)</span>
-<span id="cb30-3"><a href="data-transformation.html#cb30-3"></a></span>
-<span id="cb30-4"><a href="data-transformation.html#cb30-4"></a><span class="kw">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
-## 1 1000025         5         1          1             1                    2
-## 2 1002945         5         4          4             5                    7
-## 3 1015425         3         1          1             1                    2
-## 4 1016277         6         8          8             1                    3
-## 5 1017023         4         1          1             3                    2
-##   bare_nuclei norm_nucleoli  class
-## 1           1             1 benign
-## 2          10             2 benign
-## 3           2             1 benign
-## 4           4             7 benign
-## 5           1             1 benign</code></pre>
-</div>
-<div id="mutate" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.3</span> <code>mutate</code><a href="data-transformation.html#mutate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <strong>mutate</strong> function computes new variables from the already existing variables and adds them to the dataset. It gives information that the data already contained but was never displayed.</p>
-<p>The variable <code>bare_nucleus</code> contains the values from 1.00 to 10.00. If we wish to normalize the variable, we can use the mutate function:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-transformation.html#cb32-1"></a><span class="co">#normalize the bare nuclei values </span></span>
-<span id="cb32-2"><a href="data-transformation.html#cb32-2"></a>maximum_bare_nuclei&lt;-<span class="kw">max</span>(biopsy_new<span class="op">$</span>bare_nuclei,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)</span>
-<span id="cb32-3"><a href="data-transformation.html#cb32-3"></a>biopsy_new &lt;-<span class="st"> </span>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">bare_nuclei=</span>bare_nuclei<span class="op">/</span>maximum_bare_nuclei)</span>
-<span id="cb32-4"><a href="data-transformation.html#cb32-4"></a></span>
-<span id="cb32-5"><a href="data-transformation.html#cb32-5"></a><span class="kw">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
-## 1 1000025         5         1          1             1                    2
-## 2 1002945         5         4          4             5                    7
-## 3 1015425         3         1          1             1                    2
-## 4 1016277         6         8          8             1                    3
-## 5 1017023         4         1          1             3                    2
-##   bare_nuclei norm_nucleoli  class
-## 1         0.1             1 benign
-## 2         1.0             2 benign
-## 3         0.2             1 benign
-## 4         0.4             7 benign
-## 5         0.1             1 benign</code></pre>
-<p>In some situations, your new variable might involve conditions. You can consider using <code>case_when</code> combined with <code>mutate</code>.</p>
-</div>
-<div id="select-1" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.4</span> <code>select</code><a href="data-transformation.html#select-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Filter</strong> is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.</p>
-<p>For our example, say we only want the data of those tumor cells that have clump thickness greater than 6.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-transformation.html#cb34-1"></a>biopsy_new &lt;-<span class="st"> </span>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(thickness<span class="op">&gt;</span><span class="fl">5.5</span>)</span>
-<span id="cb34-2"><a href="data-transformation.html#cb34-2"></a></span>
-<span id="cb34-3"><a href="data-transformation.html#cb34-3"></a><span class="kw">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
-## 1 1016277         6         8          8             1                    3
-## 2 1017122         8        10         10             8                    7
-## 3 1044572         8         7          5            10                    7
-## 4 1047630         7         4          6             4                    6
-## 5 1050670        10         7          7             6                    4
-##   bare_nuclei norm_nucleoli     class
-## 1         0.4             7    benign
-## 2         1.0             7 malignant
-## 3         0.9             5 malignant
-## 4         0.1             3 malignant
-## 5         1.0             1 malignant</code></pre>
-<p>If you want to filter using multiple conditions, use logical operators: &amp;(And), |(Or).</p>
-</div>
-<div id="arrange" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.5</span> <code>arrange</code><a href="data-transformation.html#arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Arrange</strong> reorders the rows of the data based on their contents in the ascending order by default.</p>
-<p>Say in our example, the doctors would want to view the data in the order of the cell size of the tumor.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-transformation.html#cb36-1"></a><span class="co">#arrange in the order of V2:cell size</span></span>
-<span id="cb36-2"><a href="data-transformation.html#cb36-2"></a><span class="kw">head</span>(<span class="kw">arrange</span>(biopsy_new,cell_size))</span></code></pre></div>
-<pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
-## 1 1050718         6         1          1             1                    2
-## 2 1204898         6         1          1             1                    2
-## 3 1223967         6         1          3             1                    2
-## 4  543558         6         1          3             1                    4
-## 5   63375         9         1          2             6                    4
-## 6  752904        10         1          1             1                    2
-##   bare_nuclei norm_nucleoli     class
-## 1         0.1             1    benign
-## 2         0.1             1    benign
-## 3         0.1             1    benign
-## 4         0.5            10 malignant
-## 5         1.0             7 malignant
-## 6         1.0             4 malignant</code></pre>
-<p>In case you want your data in descending order, wrap your variable with <code>desc()</code>.</p>
-</div>
-<div id="group_by-and-summarize" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.6</span> <code>group_by</code> and <code>summarize</code><a href="data-transformation.html#group_by-and-summarize" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <strong>summarize</strong> function uses the data to create a new data frame with the summary statistics such as minimum, maximum, average, and so on. These statistical functions must be aggregate functions which take a vector of values as input and output a single value.</p>
-<p>The <strong>group_by</strong> function groups the data by the values of the variables. This, along with summarize, makes observations about groups of rows of the dataset.</p>
-<p>The doctors would want to see the maximum cell size and the thickness for each of the classes: benign and malignant. This can be done by grouping the data by class and finding the maximum of the required variables:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-transformation.html#cb38-1"></a>biopsy_grouped &lt;-<span class="st"> </span><span class="kw">group_by</span>(biopsy_new,class)</span>
-<span id="cb38-2"><a href="data-transformation.html#cb38-2"></a><span class="kw">summarize</span>(biopsy_grouped, <span class="kw">max</span>(thickness), <span class="kw">mean</span>(cell_size), <span class="kw">var</span>(norm_nucleoli))</span></code></pre></div>
-<pre><code>## # A tibble: 2 × 4
-##   class     `max(thickness)` `mean(cell_size)` `var(norm_nucleoli)`
-##   &lt;fct&gt;                &lt;int&gt;             &lt;dbl&gt;                &lt;dbl&gt;
-## 1 benign                   8              2.67                 5.93
-## 2 malignant               10              6.73                11.3</code></pre>
-</div>
-<div id="slice_max-slice_min" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.7</span> <code>slice_max</code> (<code>slice_min</code>)<a href="data-transformation.html#slice_max-slice_min" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <strong>slice_max</strong> function helps you to find the top n values of a specific column. Suppose we now want to see the top five biopsies with the biggest thickness. Notice in this case, since we have more than five rows with thickness 10, all of them are selected (for neatness, we only show first several rows).</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-transformation.html#cb40-1"></a>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb40-2"><a href="data-transformation.html#cb40-2"></a><span class="st">  </span><span class="kw">slice_max</span>(<span class="dt">order_by =</span> thickness,<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb40-3"><a href="data-transformation.html#cb40-3"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
-<pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
-## 1 1050670        10         7          7             6                    4
-## 2 1054593        10         5          5             3                    6
-## 3 1072179        10         7          7             3                    8
-## 4 1080185        10        10         10             8                    6
-## 5 1099510        10         4          3             1                    3
-## 6 1103608        10        10         10             4                    8
-##   bare_nuclei norm_nucleoli     class
-## 1         1.0             1 malignant
-## 2         0.7            10 malignant
-## 3         0.5             4 malignant
-## 4         0.1             9 malignant
-## 5         0.3             5 malignant
-## 6         0.1            10 malignant</code></pre>
-</div>
-<div id="join" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.8</span> join<a href="data-transformation.html#join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sometimes you will need to combine two data sets and this is when function join comes into play. There are four types of joins provided by <code>dplyr</code> and take a look at the following example.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-transformation.html#cb42-1"></a><span class="co"># Main dataset</span></span>
-<span id="cb42-2"><a href="data-transformation.html#cb42-2"></a>s77 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(state.x77) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb42-3"><a href="data-transformation.html#cb42-3"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb42-4"><a href="data-transformation.html#cb42-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(Illiteracy))</span>
-<span id="cb42-5"><a href="data-transformation.html#cb42-5"></a></span>
-<span id="cb42-6"><a href="data-transformation.html#cb42-6"></a><span class="kw">head</span>(s77)</span></code></pre></div>
-<pre><code>##        state Population Income Life.Exp Murder HS.Grad Frost   Area
-## 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708
-## 2     Alaska        365   6315    69.31   11.3    66.7   152 566432
-## 3    Arizona       2212   4530    70.55    7.8    58.1    15 113417
-## 4   Arkansas       2110   3378    70.66   10.1    39.9    65  51945
-## 5 California      21198   5114    71.71   10.3    62.6    20 156361
-## 6   Colorado       2541   4884    72.06    6.8    63.9   166 103766</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-transformation.html#cb44-1"></a><span class="co"># https://www.cookpolitical.com/2020-national-popular-vote-tracker</span></span>
-<span id="cb44-2"><a href="data-transformation.html#cb44-2"></a>partyinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv&quot;</span>)</span>
-<span id="cb44-3"><a href="data-transformation.html#cb44-3"></a>partyinfo &lt;-<span class="st"> </span>partyinfo <span class="op">%&gt;%</span></span>
-<span id="cb44-4"><a href="data-transformation.html#cb44-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(state, called)</span>
-<span id="cb44-5"><a href="data-transformation.html#cb44-5"></a></span>
-<span id="cb44-6"><a href="data-transformation.html#cb44-6"></a><span class="kw">head</span>(<span class="kw">left_join</span>(s77, partyinfo))</span></code></pre></div>
-<pre><code>##        state Population Income Life.Exp Murder HS.Grad Frost   Area called
-## 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708      R
-## 2     Alaska        365   6315    69.31   11.3    66.7   152 566432      R
-## 3    Arizona       2212   4530    70.55    7.8    58.1    15 113417      D
-## 4   Arkansas       2110   3378    70.66   10.1    39.9    65  51945      R
-## 5 California      21198   5114    71.71   10.3    62.6    20 156361      D
-## 6   Colorado       2541   4884    72.06    6.8    63.9   166 103766      D</code></pre>
-<p><strong>s77</strong> contains statistics of 50 states in the US and <strong>partyinfo</strong> holds information whether a state is democratic or republican. The two data sets are joined on common feature <code>state</code>. If you want to join on features with different names, specify using the argument <code>by</code>. For detailed explanations of differnet types of joins, refer to the <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">documentation</a>.</p>
-</div>
-<div id="cases-to-tables" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.4.9</span> Cases to tables<a href="data-transformation.html#cases-to-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When you want to perform a Chi-squared test or create a paired mosaic plot, your data has to follow a table format. For example, the following table is in the correct format. The columns are anxiety statues and rows are class years.</p>
-<pre><code>##   moderate normal severe
-## 1       11     34      2
-## 2       22     69      4
-## 3        8     41      5
-## 4       15     37      5</code></pre>
-<p>The following example demonstrates how you can convert cases to tables. Notice the starting data has a count for each of the categorical combinations.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-transformation.html#cb47-1"></a><span class="co"># watch out: summarise</span></span>
-<span id="cb47-2"><a href="data-transformation.html#cb47-2"></a>rebates &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://data.ny.gov/resource/thd2-fu8y.csv&quot;</span>)</span>
-<span id="cb47-3"><a href="data-transformation.html#cb47-3"></a>rebate_counts &lt;-<span class="st"> </span>rebates <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">group_by</span>(make, ev_type) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
-<span id="cb47-4"><a href="data-transformation.html#cb47-4"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">n</span>())</span>
-<span id="cb47-5"><a href="data-transformation.html#cb47-5"></a><span class="kw">head</span>(rebate_counts)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 3
-## # Groups:   make [3]
-##   make      ev_type  Freq
-##   &lt;chr&gt;     &lt;chr&gt;   &lt;int&gt;
-## 1 Audi      BEV         6
-## 2 Audi      PHEV        1
-## 3 BMW       BEV         1
-## 4 BMW       PHEV        9
-## 5 Chevrolet BEV        69
-## 6 Chevrolet PHEV       33</code></pre>
-<p>By using <code>xtabs</code>, we are able to transform our data into a table ready for Chi-squared test or paired mosaic plot.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-transformation.html#cb49-1"></a><span class="kw">head</span>(<span class="kw">xtabs</span>(Freq <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> rebate_counts))</span></code></pre></div>
-<pre><code>##            ev_type
-## make        BEV PHEV
-##   Audi        6    1
-##   BMW         1    9
-##   Chevrolet  69   33
-##   Chrysler    0   10
-##   Ford        1   27
-##   Honda       0   42</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="colors.html#cb135-1"></a><span class="kw">library</span>(RColorBrewer)</span>
+<span id="cb135-2"><a href="colors.html#cb135-2"></a><span class="kw">display.brewer.all</span>() </span></code></pre></div>
+<p><img src="colors_files/figure-html/unnamed-chunk-1-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Here is an example of plotting categorical data using <code>Dark2</code> pallete under qualitative group of RColorBrewer:</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="colors.html#cb136-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb136-2"><a href="colors.html#cb136-2"></a><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Petal.Length, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span></span>
+<span id="cb136-3"><a href="colors.html#cb136-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb136-4"><a href="colors.html#cb136-4"></a><span class="st">  </span><span class="kw">scale_colour_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
+<p><img src="colors_files/figure-html/unnamed-chunk-2-1.png" width="384" style="display: block; margin: auto;" /></p>
 
-</div>
 </div>
 </div>
             </section>
@@ -614,8 +337,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="working-with-factors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="gitgithub-resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="spatial-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -646,7 +369,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jtr13/edav2/edit/main/data_transformation.Rmd",
+"link": "https://github.com/jtr13/edav2/edit/main/colors.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -654,7 +377,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/jtr13/edav2/blob/main/data_transformation.Rmd",
+"link": "https://github.com/jtr13/edav2/blob/main/colors.Rmd",
 "text": null
 },
 "download": null,
