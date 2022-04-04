@@ -1,0 +1,3 @@
+# Color
+
+When evaluating the power and efficiency of a plot, color is always a key factor that sometimes speaks a language even louder than words. So in this chapter, you will be introduced with several widely-applied color schemes and get to know how to use proper colors to make better plots based on different features of your data.
