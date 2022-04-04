@@ -27,7 +27,10 @@ Imports:
     vcd,
     grid,
     treemap,
-    ggalluvial
+    ggalluvial,
+    choroplethrMaps,
+    choroplethr,
+    ggmap
 Suggests:
     bookdown,
     bslib,

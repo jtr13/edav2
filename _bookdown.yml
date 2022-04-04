@@ -15,6 +15,7 @@ rmd_files: [
 # Part: R resources
   'learning_R.Rmd', # must be first chapter of part
   'factors.Rmd',
+  # add data import chapter here
   'data_transformation.Rmd',
   'git_GitHub.Rmd',
 # Part: R graphics
@@ -25,6 +26,5 @@ rmd_files: [
   'two_continuous_var.Rmd',
   'multidimensional_continuous.Rmd',
   'multidimensional_categorical.Rmd',
-  'colors.Rmd',
   'spatial.Rmd'
 ]
