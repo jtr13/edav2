@@ -50,6 +50,40 @@ ggplot(counts3, aes(x = Favorite, y = Freq, fill = Music)) +
   facet_wrap(~Age)
 ```
 
+
+## Chi square test of independence
+
+In this section, we would like to show how to use chi-square test to check the independence between two features.
+
+We will use the following example to answer: Are older Americans more interested in local news than younger Americans? The dataset is collected from [here](https://www.journalism.org/2019/08/14/methodology-local-news-demographics/).
+
+```{r,fig.width=4.8, fig.height=3.6}
+local <- data.frame(Age = c("18-29", "30-49", "50-64", "65+"),
+                        Freq = c(2851, 9967, 11163, 10911)) %>%
+  mutate(Followers = round(Freq*c(.15, .28, .38, .42)),
+         Nonfollowers = Freq - Followers) %>%
+  select(-Freq)
+knitr::kable(local[,1:2])
+```
+
+The chi-square hypothesis is set to be:
+
+Null hypothesis: Age and tendency to follow local news are independent
+
+Alternative hypothesis: Age and tendence to follow local news are NOT independent
+
+```{r,fig.width=4.8, fig.height=3.6}
+localmat <- as.matrix(local[,2:3])
+rownames(localmat) <- local$Age
+X <- chisq.test(localmat, correct = FALSE)
+X$observed
+X$expected
+X
+```
+
+We compare observed to expected and then the p-value tells that age and tendency are independent features. We are good to move on to next stage on mosaic plots.
+
+
 ## Mosaic plots
 
 Mosaic plots are used for visualizing data from two or more qualitative variables to show their proportions or associations.
