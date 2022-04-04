@@ -24,5 +24,6 @@ rmd_files: [
   'uni_categorical_var.Rmd',
   'two_continuous_var.Rmd',
   'multidimensional_continuous.Rmd',
-  'multidimensional_categorical.Rmd'
+  'multidimensional_categorical.Rmd',
+  'color.Rmd'
 ]
