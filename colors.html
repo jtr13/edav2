@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-04-04" />
+<meta name="date" content="2022-04-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -288,6 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="colors.html"><a href="colors.html"><i class="fa fa-check"></i><b>14</b> Colors<span></span></a><ul>
 <li class="chapter" data-level="14.1" data-path="colors.html"><a href="colors.html#rcolorbrewer"><i class="fa fa-check"></i><b>14.1</b> RColorBrewer<span></span></a></li>
+<li class="chapter" data-level="14.2" data-path="colors.html"><a href="colors.html#perceptually-uniform-color-spaces-viridis"><i class="fa fa-check"></i><b>14.2</b> Perceptually uniform color spaces: Viridis<span></span></a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -317,18 +318,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>RColorBrewer</code> is an R package having built-in sensible color schemes ready-to-use for figures. Colors are grouped into three types: sequential, diverging, and qualitative.</p>
 <blockquote>
 <p>Sequential – Light colours for low data, dark for high data</p>
-<p>Diverging – Light colours for mid-range data, low and high use dark colours</p>
-<p>Qualitative(for categorical data) – Colours designed to give maximum visual difference between categories</p>
+<p>Qualitative(for categorical data) – Colours designed to give maximum visual difference between categories so great for non-ordered categorical data</p>
+<p>Diverging – Light colours for mid-range data, low and high use dark colours, great to seperate two extremes</p>
 </blockquote>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="colors.html#cb135-1"></a><span class="kw">library</span>(RColorBrewer)</span>
 <span id="cb135-2"><a href="colors.html#cb135-2"></a><span class="kw">display.brewer.all</span>() </span></code></pre></div>
-<p><img src="colors_files/figure-html/unnamed-chunk-1-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>Here is an example of plotting categorical data using <code>Dark2</code> pallete under qualitative group of RColorBrewer:</p>
+<p><img src="colors_files/figure-html/unnamed-chunk-1-1.png" width="921.6" style="display: block; margin: auto;" /></p>
+<p>Here is an example of plotting categorical data using <code>Dark2</code> pallets under qualitative group of RColorBrewer:</p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="colors.html#cb136-1"></a><span class="kw">library</span>(ggplot2)</span>
 <span id="cb136-2"><a href="colors.html#cb136-2"></a><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Petal.Length, Sepal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span></span>
 <span id="cb136-3"><a href="colors.html#cb136-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
 <span id="cb136-4"><a href="colors.html#cb136-4"></a><span class="st">  </span><span class="kw">scale_colour_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
-<p><img src="colors_files/figure-html/unnamed-chunk-2-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="colors_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Also, you can create your own sequential pallets.</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="colors.html#cb137-1"></a><span class="kw">ggplot</span>(faithfuld, <span class="kw">aes</span>(waiting, eruptions, <span class="dt">fill =</span> density)) <span class="op">+</span></span>
+<span id="cb137-2"><a href="colors.html#cb137-2"></a><span class="st">  </span><span class="kw">geom_raster</span>() <span class="op">+</span></span>
+<span id="cb137-3"><a href="colors.html#cb137-3"></a><span class="st">  </span><span class="kw">scale_fill_gradient</span>(<span class="dt">low =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="colors_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Or diverging pallets:</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="colors.html#cb138-1"></a><span class="kw">ggplot</span>(faithfuld, <span class="kw">aes</span>(waiting, eruptions, <span class="dt">fill =</span> density)) <span class="op">+</span></span>
+<span id="cb138-2"><a href="colors.html#cb138-2"></a><span class="st">  </span><span class="kw">geom_raster</span>() <span class="op">+</span></span>
+<span id="cb138-3"><a href="colors.html#cb138-3"></a><span class="st">  </span><span class="kw">scale_fill_gradient2</span>(<span class="dt">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="dt">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;red&quot;</span>,<span class="dt">midpoint =</span> <span class="fl">.02</span>)</span></code></pre></div>
+<p><img src="colors_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>For discrete data, using <code>scale_colour_manual</code> is a good choice. For discrete ordinal data, we can use another package (such as vcd)</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="colors.html#cb139-1"></a><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(mpg, wt)) <span class="op">+</span></span>
+<span id="cb139-2"><a href="colors.html#cb139-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> <span class="kw">factor</span>(cyl))) <span class="op">+</span></span>
+<span id="cb139-3"><a href="colors.html#cb139-3"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<p><img src="colors_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="colors.html#cb140-1"></a>colors&lt;-<span class="kw">brewer.pal</span>(<span class="dv">5</span>,<span class="st">&#39;Blues&#39;</span>)</span>
+<span id="cb140-2"><a href="colors.html#cb140-2"></a><span class="kw">barplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col=</span>colors)</span></code></pre></div>
+<p><img src="colors_files/figure-html/unnamed-chunk-5-2.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="perceptually-uniform-color-spaces-viridis" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.2</span> Perceptually uniform color spaces: Viridis<a href="colors.html#perceptually-uniform-color-spaces-viridis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>viridis</code> R package provides four palettes for use in R which are pretty, perceptually uniform and easy to read by those with colorblindness.</p>
+<p>The package contains eight color scales: <code>viridis</code>, the primary choice, and five alternatives with similar properties - <code>magma</code>, <code>plasma</code>, <code>inferno</code>, <code>civids</code>, <code>mako</code>, and <code>rocket</code> -, and a rainbow color map - <code>turbo</code>.</p>
+<center>
+<img src="images/Viridis.png" style="width:75.0%" />
+</center>
+<p>Perceived differences are proportional to scalar differences when using <code>viridis</code>. The following example shows <code>viridis</code>on continuous data using <code>scale_color_viridis_c</code>, use <code>scale_color_viridis_d()</code> for discrete data</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="colors.html#cb141-1"></a><span class="kw">library</span>(<span class="st">&quot;viridis&quot;</span>)</span>
+<span id="cb141-2"><a href="colors.html#cb141-2"></a><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Length, Sepal.Width))<span class="op">+</span></span>
+<span id="cb141-3"><a href="colors.html#cb141-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Sepal.Length)) <span class="op">+</span></span>
+<span id="cb141-4"><a href="colors.html#cb141-4"></a><span class="st">  </span><span class="kw">scale_color_viridis_c</span>()</span></code></pre></div>
+<p><img src="colors_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

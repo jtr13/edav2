@@ -126,3 +126,4 @@ choroplethr
 ggmap
 colors
 rcolorbrewer
+perceptually-uniform-color-spaces-viridis
