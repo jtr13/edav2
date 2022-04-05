@@ -27,6 +27,6 @@ rmd_files: [
   'multidimensional_continuous.Rmd',
   'multidimensional_categorical.Rmd',
   'colors.Rmd',
-  'timeseries.Rmd',
+  'time_series.Rmd',
   'spatial.Rmd'
 ]
