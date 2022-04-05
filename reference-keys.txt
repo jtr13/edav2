@@ -139,6 +139,8 @@ perceptually-uniform-color-spaces-viridis
 time-series
 dates
 basic-r-functions
+lubridate
+time-series-1
 multiple-time-series
 spatial-data
 introduction
