@@ -98,7 +98,7 @@ To plot the time series in a specific period of time, use ``filter()`` before ``
 
 ```{r,fig.width=6, fig.height=4}
 library(lubridate)
-df2010 <- df %>% filter(year(Week) == 2010)
+df2010 <- df2 %>% filter(year(Week) == 2010)
 ggplot(df2010, aes(Week, value, color = TYPE)) +
   geom_line() +
   ggtitle("U.S. Mortgage Rates")
