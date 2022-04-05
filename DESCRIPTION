@@ -31,7 +31,8 @@ Imports:
     choroplethrMaps,
     choroplethr,
     ggmap,
-    RColorBrewer
+    RColorBrewer,
+    viridis
 Suggests:
     bookdown,
     bslib,
