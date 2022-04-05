@@ -120,7 +120,9 @@ ggplot(data = iris) +
 
 - For more implementations and examples, one easiest way is referring to the ggplot2 Cheatsheets provided by R. Follow the steps shown below and you can find the cheat-sheets in your RStudio. 
 
+<center>
 ![](images/ggplotCheatsheet_1.png){width=75%}
+</center>
 
 The cheat-sheets clearly list the basic components of a ggplot where you can customize your unique plot by choosing different functions.
 
