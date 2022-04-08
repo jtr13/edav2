@@ -133,6 +133,12 @@ alluvial-diagrams
 ggalluvial
 geom_flow
 heat-map
+missing-data
+introduction
+row-column-missing-patterns
+colsums-rowsums
+heatmap
+patterns
 colors
 rcolorbrewer
 perceptually-uniform-color-spaces-viridis
@@ -143,7 +149,7 @@ lubridate
 time-series-1
 multiple-time-series
 spatial-data
-introduction
+introduction-1
 packages
 choroplethr
 ggmap
