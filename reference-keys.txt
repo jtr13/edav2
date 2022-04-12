@@ -155,6 +155,7 @@ basic-r-functions
 lubridate
 time-series-1
 multiple-time-series
+time-series-patterns
 spatial-data
 introduction-1
 packages

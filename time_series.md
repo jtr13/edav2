@@ -39,6 +39,8 @@ as.Date("Thursday, January 6, 2005", format = "%A, %B %d, %Y")
 ```
 ## [1] "2005-01-06"
 ```
+For a list of the conversion specifications available in R, see ``?strptime``.
+
 Here is a list of the conversion specifications for date format from [this post](https://michaeltoth.me/the-ultimate-opinionated-guide-to-base-r-date-format-functions.html)
 
 <center>
@@ -117,6 +119,8 @@ lubridate::week(today)
 
 For time-series data-sets, line plots are mostly used with time on the x-axis. Both base R graphics and ``ggplot2`` “know” how to work with a Date class variable, and label the axes properly:
 
+
+
 The data comes from the official [website](https://www.freddiemac.com/pmms).
 
 
@@ -177,3 +181,71 @@ ggplot(df2010, aes(Week, value, color = TYPE)) +
 ```
 
 <img src="time_series_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" />
+
+
+## Time series patterns
+
+Next, as an important part of time series analysis, we want to find the existing patterns of the data.
+We first starting from plotting the overall long-term trend:
+
+
+```r
+library (readr)
+urlfile="https://raw.githubusercontent.com/jtr13/data/master/ManchesterByTheSea.csv"
+data<-read_csv(url(urlfile))
+
+g <- ggplot(data, aes(Date, Gross)) +
+  geom_line() +
+  ggtitle("Manchester by the Sea", "Daily Gross (US$), United States") +
+  xlab("2016-2017")
+g
+```
+
+<img src="time_series_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" />
+
+Adding a smoother to the data, adjusting the smoothing parameter ``span =`` to find a proper smoother which is not overfitting/underfitting:
+
+
+```r
+g <- ggplot(data, aes(Date, Gross)) + geom_point()
+g + geom_smooth(method = "loess", span = .5, se = FALSE)
+```
+
+<img src="time_series_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" />
+
+Mark the pattern by high-lighting the data on very Saturday:
+
+
+```r
+g <- ggplot(data, aes(Date, Gross)) +
+  geom_line() +
+  ggtitle("Manchester by the Sea", "Daily Gross, United States")
+saturday <- data %>% filter(wday(Date) == 7) 
+g +
+  geom_point(data = saturday, aes(Date, Gross), color = "deeppink")
+```
+
+<img src="time_series_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" />
+
+Another way is to use facet to show the cyclical pattern:
+
+
+```r
+ggplot(data, aes(Date, Gross)) +  
+    geom_line(color = "grey30") + geom_point(size = 1) +  
+    facet_grid(.~wday(Date, label = TRUE)) +  
+    geom_smooth(se = FALSE)
+```
+
+<img src="time_series_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" />
+
+Also, basic R can plot the decomposed time series automatically. This method is used to study the trend, seasonal effect on data with at least 2 periods. For additive components, use ``type = "additive"``.
+
+
+```r
+tsData <- EuStockMarkets[, 2]
+decomposedRes <- decompose(tsData, type="mul")
+plot (decomposedRes)
+```
+
+<img src="time_series_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" />
