@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 16 Time series | edav.info, 2nd edition</title>
+  <title>Chapter 4 Data importation | edav.info, 2nd edition</title>
   <meta name="description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 16 Time series | edav.info, 2nd edition" />
+  <meta property="og:title" content="Chapter 4 Data importation | edav.info, 2nd edition" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="github-repo" content="jtr13/edav2" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 16 Time series | edav.info, 2nd edition" />
+  <meta name="twitter:title" content="Chapter 4 Data importation | edav.info, 2nd edition" />
   
   <meta name="twitter:description" content="Supplemental resources for GR5293 and GR5702" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="colors.html"/>
-<link rel="next" href="spatial-data.html"/>
+<link rel="prev" href="working-with-factors.html"/>
+<link rel="next" href="data-transformation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -370,94 +370,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="time-series" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 16</span> Time series<a href="time-series.html#time-series" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Time series, by definition, is a sequence of data point collected over a certain period of time. In this chapter, we will demonstrate several useful ways of plotting time-series data and how to processing <code>date</code> data type in R.</p>
-<div id="dates" class="section level2 hasAnchor">
-<h2><span class="header-section-number">16.1</span> Dates<a href="time-series.html#dates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Since time series analysis looks into how data is changing over time, the very first step is to transform the data into correct format.</p>
-<div id="basic-r-functions" class="section level3 hasAnchor">
-<h3><span class="header-section-number">16.1.1</span> Basic R functions<a href="time-series.html#basic-r-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You can convert character data to <code>Date</code> class with <code>as.Date()</code>:</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="time-series.html#cb157-1"></a>dchar &lt;-<span class="st"> &quot;2018-10-12&quot;</span></span>
-<span id="cb157-2"><a href="time-series.html#cb157-2"></a>ddate &lt;-<span class="st"> </span><span class="kw">as.Date</span>(dchar)</span>
-<span id="cb157-3"><a href="time-series.html#cb157-3"></a><span class="kw">class</span>(dchar)</span></code></pre></div>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="time-series.html#cb159-1"></a><span class="kw">class</span>(ddate)</span></code></pre></div>
-<pre><code>## [1] &quot;Date&quot;</code></pre>
-<p>You can also specifying the format by:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="time-series.html#cb161-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;Thursday, January 6, 2005&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%A, %B %d, %Y&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;2005-01-06&quot;</code></pre>
-<p>Here is a list of the conversion specifications for date format from <a href="https://michaeltoth.me/the-ultimate-opinionated-guide-to-base-r-date-format-functions.html">this post</a></p>
-<center>
-<img src="images/common_r_date_formats.png" style="width:75.0%" />
-</center>
-<p>Also, <code>Date</code> class supports calculation between dates:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="time-series.html#cb163-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-02&quot;</span>) <span class="op">-</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>)</span></code></pre></div>
-<pre><code>## Time difference of 305 days</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="time-series.html#cb165-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-12&quot;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-3-3&quot;</span>)</span></code></pre></div>
+<div id="data-importation" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 4</span> Data importation<a href="data-importation.html#data-importation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Data is the core to any analysis. In this chapter, we will talk about various ways to import data into R.</p>
+<div id="packages-with-built-in-data-set" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.1</span> Packages with built in data set<a href="data-importation.html#packages-with-built-in-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many of the packages in R have built in data sets. To gain access of the data, call the package and you can access them by the name of the data sets. For example, we can access the <code>ExerciseHours</code> data set from <code>Lock5withR</code></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-importation.html#cb21-1"></a><span class="kw">library</span>(Lock5withR)</span>
+<span id="cb21-2"><a href="data-importation.html#cb21-2"></a><span class="kw">head</span>(ExerciseHours)</span></code></pre></div>
+<pre><code>##   Year Gender Hand Exercise TV Pulse Pierces
+## 1    4      M    l       15  5    57       0
+## 2    2      M    l       20 14    70       0
+## 3    3      F    r        2  3    70       2
+## 4    1      F    l       10  5    66       3
+## 5    1      M    r        8  2    62       0
+## 6    1      M    r       14 14    62       0</code></pre>
+</div>
+<div id="data-from-web" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.2</span> Data from web<a href="data-importation.html#data-from-web" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="read-in-from-url" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.2.1</span> Read in from URL<a href="data-importation.html#read-in-from-url" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some of the data you found online might be files ended with ‘.csv’ or ‘.xls’. In this case, you can directly read them using the URL. For example,</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-importation.html#cb23-1"></a>X &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&quot;</span>,</span>
+<span id="cb23-2"><a href="data-importation.html#cb23-2"></a>              <span class="dt">header =</span> <span class="ot">FALSE</span>) <span class="co">#Read in iris data</span></span>
+<span id="cb23-3"><a href="data-importation.html#cb23-3"></a></span>
+<span id="cb23-4"><a href="data-importation.html#cb23-4"></a><span class="kw">head</span>(X)</span></code></pre></div>
+<pre><code>##    V1  V2  V3  V4          V5
+## 1 5.1 3.5 1.4 0.2 Iris-setosa
+## 2 4.9 3.0 1.4 0.2 Iris-setosa
+## 3 4.7 3.2 1.3 0.2 Iris-setosa
+## 4 4.6 3.1 1.5 0.2 Iris-setosa
+## 5 5.0 3.6 1.4 0.2 Iris-setosa
+## 6 5.4 3.9 1.7 0.4 Iris-setosa</code></pre>
+<p>Note that this is not a very stable way of reading data as the structure of the website might change, which will result in failure of reading the data.</p>
+</div>
+<div id="api-r-api-package" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.2.2</span> API / R API package<a href="data-importation.html#api-r-api-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some data sources provide APIs to access their data, for example CDC, Census, and Twitter. However, there is a learning curve in utilizing their APIs. <a href="https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html">Best practices for API packages</a> will help you to get a head start.</p>
+<p>The other option is to find packages that handles the API calls for you. For example:</p>
+<ul>
+<li><p>CDC data - package <a href="https://github.com/socdataR/wonderapi"><code>wonderapi</code></a></p></li>
+<li><p>Census data - package <a href="https://cran.r-project.org/web/packages/censusapi/vignettes/getting-started.html"><code>censusapi</code></a></p></li>
+<li><p>Twitter - package <a href="https://www.rdocumentation.org/packages/rtweet/versions/0.7.0"><code>rtweet</code></a></p></li>
+</ul>
+<p>A well-built client will save you a lot of time in retrieving data and should be your first resort.</p>
+</div>
+</div>
+<div id="web-scraping" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.3</span> Web scraping<a href="data-importation.html#web-scraping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Web scraping is mostly considered as the last resort in obtaining data. As we put it in the last section, meaning that you should always explore the possibilities above before turning to web scraping. When scarping, you should</p>
+<ul>
+<li><p>think and investigate legal issues</p></li>
+<li><p>think about ethical questions</p></li>
+<li><p>limit bandwidth use</p></li>
+<li><p>scrape only what you need</p></li>
+</ul>
+<p>To start, you will need to know some backgrounds about the structure of a html page. In a webpage, you can always right click -&gt; inspect to check on the structure. Also, as a sanity check, we recommend using package <code>robotstxt</code> to see if scarping is allowed on a certain webpage. You can simply feed in the URL into function <code>paths_allowed()</code>. We will use the CRAN page for package <code>forcats</code> for the scraping example.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-importation.html#cb25-1"></a><span class="kw">library</span>(robotstxt)</span>
+<span id="cb25-2"><a href="data-importation.html#cb25-2"></a><span class="kw">library</span>(rvest)</span>
+<span id="cb25-3"><a href="data-importation.html#cb25-3"></a><span class="kw">paths_allowed</span>(<span class="st">&#39;https://cran.r-project.org/web/packages/forcats/index.html&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-</div>
-<div id="lubridate" class="section level3 hasAnchor">
-<h3><span class="header-section-number">16.1.2</span> Lubridate<a href="time-series.html#lubridate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The tidyverse <code>lubridate</code> makes it easy to convert dates that are not in standard format with <code>ymd()</code>, <code>ydm()</code>, <code>mdy()</code>, <code>myd()</code>, <code>dmy()</code>, and <code>dym()</code> (among many other useful date-time functions):</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="time-series.html#cb167-1"></a>lubridate<span class="op">::</span><span class="kw">mdy</span>(<span class="st">&quot;April 13, 1907&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;1907-04-13&quot;</code></pre>
-<p>The <code>lubridate</code> package also provides additional functions to extract information from a date:</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="time-series.html#cb169-1"></a>today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
-<span id="cb169-2"><a href="time-series.html#cb169-2"></a>lubridate<span class="op">::</span><span class="kw">year</span>(today)</span></code></pre></div>
-<pre><code>## [1] 2022</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="time-series.html#cb171-1"></a>lubridate<span class="op">::</span><span class="kw">yday</span>(today)</span></code></pre></div>
-<pre><code>## [1] 95</code></pre>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="time-series.html#cb173-1"></a>lubridate<span class="op">::</span><span class="kw">month</span>(today, <span class="dt">label =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] Apr
-## 12 Levels: Jan &lt; Feb &lt; Mar &lt; Apr &lt; May &lt; Jun &lt; Jul &lt; Aug &lt; Sep &lt; ... &lt; Dec</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="time-series.html#cb175-1"></a>lubridate<span class="op">::</span><span class="kw">week</span>(today)</span></code></pre></div>
-<pre><code>## [1] 14</code></pre>
-</div>
-</div>
-<div id="time-series-1" class="section level2 hasAnchor">
-<h2><span class="header-section-number">16.2</span> Time series<a href="time-series.html#time-series-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For time-series data-sets, line plots are mostly used with time on the x-axis. Both base R graphics and <code>ggplot2</code> “know” how to work with a Date class variable, and label the axes properly:</p>
-<p>The data comes from the official <a href="https://www.freddiemac.com/pmms">website</a>.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="time-series.html#cb177-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb177-2"><a href="time-series.html#cb177-2"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb177-3"><a href="time-series.html#cb177-3"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb177-4"><a href="time-series.html#cb177-4"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb177-5"><a href="time-series.html#cb177-5"></a>df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/historicalweeklydata.xls&quot;</span>, </span>
-<span id="cb177-6"><a href="time-series.html#cb177-6"></a>    <span class="dt">col_types =</span> <span class="kw">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
-<span id="cb177-7"><a href="time-series.html#cb177-7"></a>        <span class="st">&quot;numeric&quot;</span>))</span>
-<span id="cb177-8"><a href="time-series.html#cb177-8"></a></span>
-<span id="cb177-9"><a href="time-series.html#cb177-9"></a><span class="kw">plot</span>(df<span class="op">$</span>Week, df<span class="op">$</span><span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>) <span class="co"># on the order of years</span></span></code></pre></div>
-<p><img src="time_series_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="time-series.html#cb178-1"></a>g&lt;-<span class="kw">ggplot</span>(df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Week <span class="op">&lt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2006-01-01&quot;</span>)), </span>
-<span id="cb178-2"><a href="time-series.html#cb178-2"></a>       <span class="kw">aes</span>(Week, <span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb178-3"><a href="time-series.html#cb178-3"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb178-4"><a href="time-series.html#cb178-4"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span>
-<span id="cb178-5"><a href="time-series.html#cb178-5"></a>g</span></code></pre></div>
-<p><img src="time_series_files/figure-html/unnamed-chunk-6-2.png" width="384" style="display: block; margin: auto;" /></p>
-<p>We can control the x-axis breaks, limits, and labels with <code>scale_x_date()</code>, and use <code>geom_vline()</code> with <code>annotate()</code> to mark specific events in a time series.</p>
-</div>
-<div id="multiple-time-series" class="section level2 hasAnchor">
-<h2><span class="header-section-number">16.3</span> Multiple time series<a href="time-series.html#multiple-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The following plot shows a multiple time series of U.S. Mortgage rates.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="time-series.html#cb179-1"></a>df2 &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span><span class="kw">c</span>(<span class="st">&quot;Week&quot;</span>), <span class="dt">names_to =</span> <span class="st">&quot;TYPE&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb179-2"><a href="time-series.html#cb179-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">TYPE =</span> forcats<span class="op">::</span><span class="kw">fct_reorder2</span>(TYPE, Week, value))<span class="co"># puts legend in correct order</span></span>
-<span id="cb179-3"><a href="time-series.html#cb179-3"></a></span>
-<span id="cb179-4"><a href="time-series.html#cb179-4"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
-<span id="cb179-5"><a href="time-series.html#cb179-5"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb179-6"><a href="time-series.html#cb179-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">labs</span> (<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;percent&quot;</span>) <span class="op">+</span></span>
-<span id="cb179-7"><a href="time-series.html#cb179-7"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>) <span class="op">+</span></span>
-<span id="cb179-8"><a href="time-series.html#cb179-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
-<p><img src="time_series_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>To plot the time series in a specific period of time, use <code>filter()</code> before <code>ggplot</code>:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="time-series.html#cb180-1"></a><span class="kw">library</span>(lubridate)</span>
-<span id="cb180-2"><a href="time-series.html#cb180-2"></a>df2010 &lt;-<span class="st"> </span>df2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">year</span>(Week) <span class="op">==</span><span class="st"> </span><span class="dv">2010</span>)</span>
-<span id="cb180-3"><a href="time-series.html#cb180-3"></a><span class="kw">ggplot</span>(df2010, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
-<span id="cb180-4"><a href="time-series.html#cb180-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb180-5"><a href="time-series.html#cb180-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>)</span></code></pre></div>
-<p><img src="time_series_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div id="rvest" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.3.1</span> <code>rvest</code><a href="data-importation.html#rvest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Package <code>rvest</code> is widely used for web scraping. In the following example, <code>read_html()</code> takes the target webpage URL and <code>html_table()</code> extracts all table element in the page.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-importation.html#cb27-1"></a>forcats_data &lt;-<span class="st"> </span><span class="kw">read_html</span>(<span class="st">&quot;https://cran.r-project.org/web/packages/forcats/index.html&quot;</span>) </span>
+<span id="cb27-2"><a href="data-importation.html#cb27-2"></a></span>
+<span id="cb27-3"><a href="data-importation.html#cb27-3"></a>forcats_table &lt;-<span class="st"> </span>forcats_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">html_table</span>()</span>
+<span id="cb27-4"><a href="data-importation.html#cb27-4"></a>forcats_table[[<span class="dv">1</span>]]</span></code></pre></div>
+<pre><code>## # A tibble: 13 × 2
+##    X1                X2                                                         
+##    &lt;chr&gt;             &lt;chr&gt;                                                      
+##  1 Version:          &quot;0.5.1&quot;                                                    
+##  2 Depends:          &quot;R (≥ 3.2)&quot;                                                
+##  3 Imports:          &quot;ellipsis, magrittr, rlang, tibble&quot;                        
+##  4 Suggests:         &quot;covr, dplyr, ggplot2, knitr, readr, rmarkdown, testthat&quot;  
+##  5 Published:        &quot;2021-01-27&quot;                                               
+##  6 Author:           &quot;Hadley Wickham [aut, cre],\n  RStudio [cph, fnd]&quot;         
+##  7 Maintainer:       &quot;Hadley Wickham  &lt;hadley at rstudio.com&gt;&quot;                  
+##  8 BugReports:       &quot;https://github.com/tidyverse/forcats/issues&quot;              
+##  9 License:          &quot;MIT + file LICENSE&quot;                                       
+## 10 URL:              &quot;https://forcats.tidyverse.org,\nhttps://github.com/tidyve…
+## 11 NeedsCompilation: &quot;no&quot;                                                       
+## 12 Materials:        &quot;README NEWS&quot;                                              
+## 13 CRAN checks:      &quot;forcats results&quot;</code></pre>
+<p>If you want contents that are not in the table format, you can use <code>html_nodes()</code> specifying specific html structure. Namely,</p>
+<ul>
+<li><p><code>h2</code> tag - <code>html_nodes("h2")</code></p></li>
+<li><p><code>id</code> attribute - <code>html_nodes("#XXX")</code></p></li>
+<li><p><code>class</code> attribute - <code>html_nodes(".XXX")</code></p></li>
+</ul>
 
+</div>
 </div>
 </div>
             </section>
@@ -465,8 +468,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="colors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="spatial-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="working-with-factors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-transformation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -497,7 +500,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jtr13/edav2/edit/main/time_series.Rmd",
+"link": "https://github.com/jtr13/edav2/edit/main/data_import.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -505,7 +508,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/jtr13/edav2/blob/main/time_series.Rmd",
+"link": "https://github.com/jtr13/edav2/blob/main/data_import.Rmd",
 "text": null
 },
 "download": null,

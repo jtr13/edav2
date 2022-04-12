@@ -17,6 +17,13 @@ reorder-the-factors
 dealing-wirh-nas
 summary-of-useful-functions
 continuous-to-categorical
+data-importation
+packages-with-built-in-data-set
+data-from-web
+read-in-from-url
+api-r-api-package
+web-scraping
+rvest
 data-transformation
 what-is-tidy-data
 pivot_longer
