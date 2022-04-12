@@ -156,6 +156,7 @@ lubridate
 time-series-1
 multiple-time-series
 time-series-patterns
+index
 spatial-data
 introduction-1
 packages

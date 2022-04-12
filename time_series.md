@@ -249,3 +249,36 @@ plot (decomposedRes)
 ```
 
 <img src="time_series_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" />
+
+## Index
+
+When making comparisons on multi-line plots, index is a way of scaling the data: Each value is divided by the first value for that group and multiplied by 100. 
+
+
+
+```r
+urlfile="https://raw.githubusercontent.com/jtr13/data/master/WA_Sales_Products_2012-14.csv"
+sale<-read_csv(url(urlfile))
+
+sale$Q <- as.numeric(substr(sale$Quarter, 2, 2))  
+# convert Q to end-of-quarter date 
+sale$Date <- as.Date(paste0(sale$Year, "-",as.character(sale$Q*3),"-30")) 
+
+Methoddata <- sale %>%
+  mutate(Revenue = Revenue/1000000) %>%
+  group_by(Date,`Order method type`) %>%
+  summarize(Revenue = sum(Revenue))  %>%
+  ungroup() %>%
+  group_by(`Order method type`) %>%
+  mutate(index = round(100*Revenue/Revenue[1], 2)) %>%
+  ungroup()
+  
+g <- ggplot(Methoddata, aes(Date, index,color = `Order method type`)) +
+  geom_line(aes(group = `Order method type`)) +
+  scale_x_date(limits = c(as.Date("2012-02-01"), as.Date("2014-12-31")), date_breaks = "6 months", date_labels = "%b %Y")
+g
+```
+
+<img src="time_series_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" />
+
+

@@ -343,6 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.2" data-path="time-series.html"><a href="time-series.html#time-series-1"><i class="fa fa-check"></i><b>16.2</b> Time series<span></span></a></li>
 <li class="chapter" data-level="16.3" data-path="time-series.html"><a href="time-series.html#multiple-time-series"><i class="fa fa-check"></i><b>16.3</b> Multiple time series<span></span></a></li>
 <li class="chapter" data-level="16.4" data-path="time-series.html"><a href="time-series.html#time-series-patterns"><i class="fa fa-check"></i><b>16.4</b> Time series patterns<span></span></a></li>
+<li class="chapter" data-level="16.5" data-path="time-series.html"><a href="time-series.html#index"><i class="fa fa-check"></i><b>16.5</b> Index<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>17</b> Spatial data<span></span></a><ul>
 <li class="chapter" data-level="17.1" data-path="spatial-data.html"><a href="spatial-data.html#introduction-1"><i class="fa fa-check"></i><b>17.1</b> Introduction<span></span></a></li>
@@ -385,49 +386,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">17.2.1</span> <code>choroplethr</code><a href="spatial-data.html#choroplethr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Choropleth maps use color to indicate the value of a variable within a defined region, generally political boundaries. <code>choroplethr</code> is capable of drawing state and county level maps without using shape files.</p>
 <p>Consider the following example using <code>state.x77</code> showing the percentage of illiterate in each states. Note the process of data transformation, you need to exactly have a column named ‘region’ with the state names and a column named ‘value’.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="spatial-data.html#cb186-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb186-2"><a href="spatial-data.html#cb186-2"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb186-3"><a href="spatial-data.html#cb186-3"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb186-4"><a href="spatial-data.html#cb186-4"></a><span class="kw">library</span>(choroplethr)</span>
-<span id="cb186-5"><a href="spatial-data.html#cb186-5"></a></span>
-<span id="cb186-6"><a href="spatial-data.html#cb186-6"></a><span class="co"># data frame must contain &quot;region&quot; and &quot;value&quot; columns</span></span>
-<span id="cb186-7"><a href="spatial-data.html#cb186-7"></a></span>
-<span id="cb186-8"><a href="spatial-data.html#cb186-8"></a>df_illiteracy &lt;-<span class="st"> </span>state.x77 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb186-9"><a href="spatial-data.html#cb186-9"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb186-10"><a href="spatial-data.html#cb186-10"></a><span class="st">  </span><span class="kw">transmute</span>(<span class="dt">region =</span> <span class="kw">tolower</span>(<span class="st">`</span><span class="dt">state</span><span class="st">`</span>), <span class="dt">value =</span> Illiteracy)</span>
-<span id="cb186-11"><a href="spatial-data.html#cb186-11"></a></span>
-<span id="cb186-12"><a href="spatial-data.html#cb186-12"></a><span class="kw">state_choropleth</span>(df_illiteracy,</span>
-<span id="cb186-13"><a href="spatial-data.html#cb186-13"></a>                 <span class="dt">title =</span> <span class="st">&quot;State Illiteracy Rates, 1977&quot;</span>,</span>
-<span id="cb186-14"><a href="spatial-data.html#cb186-14"></a>                 <span class="dt">legend =</span> <span class="st">&quot;Percent Illiterate&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="spatial-data.html#cb187-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb187-2"><a href="spatial-data.html#cb187-2"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb187-3"><a href="spatial-data.html#cb187-3"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb187-4"><a href="spatial-data.html#cb187-4"></a><span class="kw">library</span>(choroplethr)</span>
+<span id="cb187-5"><a href="spatial-data.html#cb187-5"></a></span>
+<span id="cb187-6"><a href="spatial-data.html#cb187-6"></a><span class="co"># data frame must contain &quot;region&quot; and &quot;value&quot; columns</span></span>
+<span id="cb187-7"><a href="spatial-data.html#cb187-7"></a></span>
+<span id="cb187-8"><a href="spatial-data.html#cb187-8"></a>df_illiteracy &lt;-<span class="st"> </span>state.x77 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb187-9"><a href="spatial-data.html#cb187-9"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb187-10"><a href="spatial-data.html#cb187-10"></a><span class="st">  </span><span class="kw">transmute</span>(<span class="dt">region =</span> <span class="kw">tolower</span>(<span class="st">`</span><span class="dt">state</span><span class="st">`</span>), <span class="dt">value =</span> Illiteracy)</span>
+<span id="cb187-11"><a href="spatial-data.html#cb187-11"></a></span>
+<span id="cb187-12"><a href="spatial-data.html#cb187-12"></a><span class="kw">state_choropleth</span>(df_illiteracy,</span>
+<span id="cb187-13"><a href="spatial-data.html#cb187-13"></a>                 <span class="dt">title =</span> <span class="st">&quot;State Illiteracy Rates, 1977&quot;</span>,</span>
+<span id="cb187-14"><a href="spatial-data.html#cb187-14"></a>                 <span class="dt">legend =</span> <span class="st">&quot;Percent Illiterate&quot;</span>)</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Plotting at county level is also possible. In the following example we show the population of counties in New York state in 2012.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="spatial-data.html#cb187-1"></a><span class="kw">library</span>(choroplethrMaps)</span>
-<span id="cb187-2"><a href="spatial-data.html#cb187-2"></a><span class="kw">data</span>(county.regions)</span>
-<span id="cb187-3"><a href="spatial-data.html#cb187-3"></a><span class="kw">data</span>(df_pop_county) </span>
-<span id="cb187-4"><a href="spatial-data.html#cb187-4"></a></span>
-<span id="cb187-5"><a href="spatial-data.html#cb187-5"></a>ny_county_fips =<span class="st"> </span>county.regions <span class="op">%&gt;%</span></span>
-<span id="cb187-6"><a href="spatial-data.html#cb187-6"></a><span class="st">  </span><span class="kw">filter</span>(state.name <span class="op">==</span><span class="st"> &quot;new york&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb187-7"><a href="spatial-data.html#cb187-7"></a><span class="st">  </span><span class="kw">select</span>(region)</span>
-<span id="cb187-8"><a href="spatial-data.html#cb187-8"></a></span>
-<span id="cb187-9"><a href="spatial-data.html#cb187-9"></a><span class="kw">county_choropleth</span>(df_pop_county, </span>
-<span id="cb187-10"><a href="spatial-data.html#cb187-10"></a>                  <span class="dt">title =</span> <span class="st">&quot;Population of Counties in New York State in 2012&quot;</span>,</span>
-<span id="cb187-11"><a href="spatial-data.html#cb187-11"></a>                  <span class="dt">legend =</span> <span class="st">&quot;Population&quot;</span>,</span>
-<span id="cb187-12"><a href="spatial-data.html#cb187-12"></a>                  <span class="dt">county_zoom =</span> ny_county_fips<span class="op">$</span>region)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="spatial-data.html#cb188-1"></a><span class="kw">library</span>(choroplethrMaps)</span>
+<span id="cb188-2"><a href="spatial-data.html#cb188-2"></a><span class="kw">data</span>(county.regions)</span>
+<span id="cb188-3"><a href="spatial-data.html#cb188-3"></a><span class="kw">data</span>(df_pop_county) </span>
+<span id="cb188-4"><a href="spatial-data.html#cb188-4"></a></span>
+<span id="cb188-5"><a href="spatial-data.html#cb188-5"></a>ny_county_fips =<span class="st"> </span>county.regions <span class="op">%&gt;%</span></span>
+<span id="cb188-6"><a href="spatial-data.html#cb188-6"></a><span class="st">  </span><span class="kw">filter</span>(state.name <span class="op">==</span><span class="st"> &quot;new york&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb188-7"><a href="spatial-data.html#cb188-7"></a><span class="st">  </span><span class="kw">select</span>(region)</span>
+<span id="cb188-8"><a href="spatial-data.html#cb188-8"></a></span>
+<span id="cb188-9"><a href="spatial-data.html#cb188-9"></a><span class="kw">county_choropleth</span>(df_pop_county, </span>
+<span id="cb188-10"><a href="spatial-data.html#cb188-10"></a>                  <span class="dt">title =</span> <span class="st">&quot;Population of Counties in New York State in 2012&quot;</span>,</span>
+<span id="cb188-11"><a href="spatial-data.html#cb188-11"></a>                  <span class="dt">legend =</span> <span class="st">&quot;Population&quot;</span>,</span>
+<span id="cb188-12"><a href="spatial-data.html#cb188-12"></a>                  <span class="dt">county_zoom =</span> ny_county_fips<span class="op">$</span>region)</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>We use <code>county_choropleth</code> to create a U.S map at county level and zoom into New York state. Note that <code>county_zoom</code> takes in fips codes of counties. For more reference, visit the <a href="https://www.rdocumentation.org/packages/choroplethr/versions/3.7.0">R documentation page</a>.</p>
 </div>
 <div id="ggmap" class="section level3 hasAnchor">
 <h3><span class="header-section-number">17.2.2</span> <code>ggmap</code><a href="spatial-data.html#ggmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ggmap</code> is a great package to generate real-world maps. Moreover, it is compatible with <code>ggplot2</code> allowing you to easily add layers on top of the base map. There are two options in generating maps and we demonstrate one using stamenmap.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="spatial-data.html#cb188-1"></a><span class="kw">library</span>(ggmap)</span>
-<span id="cb188-2"><a href="spatial-data.html#cb188-2"></a></span>
-<span id="cb188-3"><a href="spatial-data.html#cb188-3"></a>ny_map &lt;-<span class="st"> </span><span class="kw">get_stamenmap</span>(<span class="dt">bbox =</span> <span class="kw">c</span>(<span class="dt">left =</span> <span class="fl">-74.2591</span>, <span class="dt">bottom =</span> <span class="fl">40.4774</span>, </span>
-<span id="cb188-4"><a href="spatial-data.html#cb188-4"></a>                                 <span class="dt">right =</span> <span class="fl">-73.7002</span>, <span class="dt">top =</span> <span class="fl">40.9162</span>),</span>
-<span id="cb188-5"><a href="spatial-data.html#cb188-5"></a>                        <span class="dt">zoom =</span> <span class="dv">10</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner-lite&quot;</span>)</span>
-<span id="cb188-6"><a href="spatial-data.html#cb188-6"></a></span>
-<span id="cb188-7"><a href="spatial-data.html#cb188-7"></a><span class="kw">ggmap</span>(ny_map) <span class="op">+</span></span>
-<span id="cb188-8"><a href="spatial-data.html#cb188-8"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="op">-</span><span class="fl">73.9857</span>,<span class="dt">y=</span><span class="fl">40.7484</span>),<span class="dt">size=</span><span class="fl">0.8</span>,<span class="dt">color=</span><span class="st">&#39;blue&#39;</span>) <span class="op">+</span></span>
-<span id="cb188-9"><a href="spatial-data.html#cb188-9"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom=</span><span class="st">&quot;text&quot;</span>,<span class="dt">label=</span><span class="st">&quot;Empire State Building&quot;</span>,<span class="dt">x=</span><span class="op">-</span><span class="fl">73.9</span>, <span class="dt">y=</span><span class="fl">40.755</span>,<span class="dt">color=</span><span class="st">&#39;blue&#39;</span>,<span class="dt">size=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="spatial-data.html#cb189-1"></a><span class="kw">library</span>(ggmap)</span>
+<span id="cb189-2"><a href="spatial-data.html#cb189-2"></a></span>
+<span id="cb189-3"><a href="spatial-data.html#cb189-3"></a>ny_map &lt;-<span class="st"> </span><span class="kw">get_stamenmap</span>(<span class="dt">bbox =</span> <span class="kw">c</span>(<span class="dt">left =</span> <span class="fl">-74.2591</span>, <span class="dt">bottom =</span> <span class="fl">40.4774</span>, </span>
+<span id="cb189-4"><a href="spatial-data.html#cb189-4"></a>                                 <span class="dt">right =</span> <span class="fl">-73.7002</span>, <span class="dt">top =</span> <span class="fl">40.9162</span>),</span>
+<span id="cb189-5"><a href="spatial-data.html#cb189-5"></a>                        <span class="dt">zoom =</span> <span class="dv">10</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner-lite&quot;</span>)</span>
+<span id="cb189-6"><a href="spatial-data.html#cb189-6"></a></span>
+<span id="cb189-7"><a href="spatial-data.html#cb189-7"></a><span class="kw">ggmap</span>(ny_map) <span class="op">+</span></span>
+<span id="cb189-8"><a href="spatial-data.html#cb189-8"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="op">-</span><span class="fl">73.9857</span>,<span class="dt">y=</span><span class="fl">40.7484</span>),<span class="dt">size=</span><span class="fl">0.8</span>,<span class="dt">color=</span><span class="st">&#39;blue&#39;</span>) <span class="op">+</span></span>
+<span id="cb189-9"><a href="spatial-data.html#cb189-9"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom=</span><span class="st">&quot;text&quot;</span>,<span class="dt">label=</span><span class="st">&quot;Empire State Building&quot;</span>,<span class="dt">x=</span><span class="op">-</span><span class="fl">73.9</span>, <span class="dt">y=</span><span class="fl">40.755</span>,<span class="dt">color=</span><span class="st">&#39;blue&#39;</span>,<span class="dt">size=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A map of New York City is created, and we added the point representing Empire State Building. You can very simply add points using <code>geom_point</code> as long as you have the coordinates for the points. However, one clear drawback using stamenmap is that the map resolution is not satisfying and you will eventually find that the smaller zoom value creates blurry maps.</p>
 <p>For this reason, we encourage readers to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card). After enabling the Google map APIs, register you API keys with <code>ggmap</code> using <code>register_google(key = "[your key]")</code> and you are all set. Now take a look at the an example using Google map API</p>
