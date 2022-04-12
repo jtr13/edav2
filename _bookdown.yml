@@ -15,7 +15,7 @@ rmd_files: [
 # Part: R resources
   'learning_R.Rmd', # must be first chapter of part
   'factors.Rmd',
-  # add data import chapter here
+  'data_import.Rmd',
   'data_transformation.Rmd',
   'git_GitHub.Rmd',
 # Part: R graphics

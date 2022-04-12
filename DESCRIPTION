@@ -34,7 +34,8 @@ Imports:
     RColorBrewer,
     viridis,
     readxl,
-    lubridate
+    lubridate,
+    robotstxt
 Suggests:
     bookdown,
     bslib,
