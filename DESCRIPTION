@@ -35,7 +35,10 @@ Imports:
     viridis,
     readxl,
     lubridate,
-    robotstxt
+    robotstxt,
+    rvest,
+    sf,
+    tmap
 Suggests:
     bookdown,
     bslib,
