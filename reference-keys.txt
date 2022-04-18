@@ -162,3 +162,6 @@ introduction-1
 packages
 choroplethr
 ggmap
+shape-file
+sf
+tmap
