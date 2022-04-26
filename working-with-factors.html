@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-04-18" />
+<meta name="date" content="2022-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,7 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="working-with-factors.html"><a href="working-with-factors.html#recode-factor-levels"><i class="fa fa-check"></i><b>3.1</b> Recode factor levels</a></li>
 <li class="chapter" data-level="3.2" data-path="working-with-factors.html"><a href="working-with-factors.html#relevel-the-factor"><i class="fa fa-check"></i><b>3.2</b> Relevel the factor</a></li>
 <li class="chapter" data-level="3.3" data-path="working-with-factors.html"><a href="working-with-factors.html#reorder-the-factors"><i class="fa fa-check"></i><b>3.3</b> Reorder the factors</a></li>
-<li class="chapter" data-level="3.4" data-path="working-with-factors.html"><a href="working-with-factors.html#dealing-wirh-nas"><i class="fa fa-check"></i><b>3.4</b> Dealing wirh NAs</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-factors.html"><a href="working-with-factors.html#dealing-with-nas"><i class="fa fa-check"></i><b>3.4</b> Dealing with NAs</a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-factors.html"><a href="working-with-factors.html#summary-of-useful-functions"><i class="fa fa-check"></i><b>3.5</b> Summary of useful functions</a></li>
 <li class="chapter" data-level="3.6" data-path="working-with-factors.html"><a href="working-with-factors.html#continuous-to-categorical"><i class="fa fa-check"></i><b>3.6</b> Continuous to Categorical</a></li>
 </ul></li>
@@ -460,8 +460,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-9"><a href="working-with-factors.html#cb17-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;color&quot;</span>)</span></code></pre></div>
 <p><img src="factors_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
-<div id="dealing-wirh-nas" class="section level2 hasAnchor">
-<h2><span class="header-section-number">3.4</span> Dealing wirh NAs<a href="working-with-factors.html#dealing-wirh-nas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dealing-with-nas" class="section level2 hasAnchor">
+<h2><span class="header-section-number">3.4</span> Dealing with NAs<a href="working-with-factors.html#dealing-with-nas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For prominent NA bars which should not be eliminated, use <code>fct_explicit_na(x)</code>. And using <code>fct_rev(x)</code> to reverse the factor level <strong>doesn’t</strong> help.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="working-with-factors.html#cb18-1"></a><span class="kw">library</span>(dplyr)</span>
 <span id="cb18-2"><a href="working-with-factors.html#cb18-2"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">temperature =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;cold&quot;</span>, <span class="st">&quot;warm&quot;</span>, <span class="st">&quot;hot&quot;</span>, <span class="ot">NA</span>)), <span class="dt">count =</span> <span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">22</span>, <span class="dv">12</span>))</span>

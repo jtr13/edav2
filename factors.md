@@ -135,7 +135,7 @@ ggplot(pack1, aes(fct_reorder(color, count, .desc = TRUE), count)) +
 
 <img src="factors_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" />
 
-## Dealing wirh NAs
+## Dealing with NAs
 
 For prominent NA bars which should not be eliminated, use ``fct_explicit_na(x)``. And using ``fct_rev(x)`` to reverse the factor level **doesn't** help.
 

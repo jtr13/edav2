@@ -14,7 +14,7 @@ working-with-factors
 recode-factor-levels
 relevel-the-factor
 reorder-the-factors
-dealing-wirh-nas
+dealing-with-nas
 summary-of-useful-functions
 continuous-to-categorical
 data-importation
