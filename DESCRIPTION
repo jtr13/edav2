@@ -47,4 +47,5 @@ Suggests:
     xml2
 Remotes:
     hadley/emo,
-    jtr13/redav
+    jtr13/redav,
+    timelyportfolio/parcoords
