@@ -8,9 +8,27 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 
 (*r4ds* = [R for Data Science](https://r4ds.had.co.nz/) by Garrett Grolemund and Hadley Wickham, free online)
 
-1. [Install R](https://r4ds.had.co.nz/introduction.html#r){target="_blank"} (r4ds) – You need to have this installed but you won’t open the application since you’ll be working in RStudio. If you already installed R, make sure you’re current! The latest version of R (as of 2022-01-18) is R 4.1.2 “Bird Hippie” released on 2021/11/01.
+```{r, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE}
+# latest versions
+library(dplyr)
+r_latest_version <- xml2::read_html("https://cran.r-project.org/bin/macosx/") %>% 
+    rvest::html_node("body") %>% 
+    rvest::html_node("h2") %>% 
+    rvest::html_text()
 
-2. [Install RStudio](https://r4ds.had.co.nz/introduction.html#rstudio){target="_blank"} (r4ds) – Download the free, Desktop version for your OS. Working in this IDE will make working in R much more enjoyable. As with R, stay current. RStudio is constantly adding new features. The latest version (as of 2022-01-18) is RStudio 2021.09.2+382 (“Ghost Orchid”) release notes.
+rstudio_latest_version <- 
+    xml2::read_html("https://www.rstudio.com/products/rstudio/download/") %>% 
+    rvest::html_node("h3#download") %>% 
+    rvest::html_text() %>% 
+    stringr::str_extract_all("[0-9].") %>% 
+    unlist() %>% 
+    paste(collapse = "")
+```
+
+
+1. [Install R](https://r4ds.had.co.nz/introduction.html#r){target="_blank"} (*r4ds*) -- You need to have this installed but you won't open the application since you'll be working in RStudio. If you already installed R, make sure you're current! The latest version of R (as of `r Sys.Date()`) is `r r_latest_version`.
+
+2. [Install RStudio](https://r4ds.had.co.nz/introduction.html#rstudio){target="_blank"} (*r4ds*) -- Download the free, Desktop version for your OS. Working in this IDE will make working in R much more enjoyable. As with R, stay current. RStudio is constantly adding new features. The latest version (as of `r Sys.Date()`) is `r rstudio_latest_version`. 
 
 3. [Get comfortable with RStudio](https://b-rodrigues.github.io/modern_R/getting-to-know-rstudio.html){target="_blank"} -- In this chapter of Bruno Rodriguez's *Modern R with the Tidyverse*, you'll learn about panes, options, getting help, keyboard shortcuts, projects, add-ins, and packages. Be sure to try out:
 
