@@ -103,16 +103,16 @@ forcats_table[[1]]
 ## # A tibble: 13 × 2
 ##    X1                X2                                                         
 ##    <chr>             <chr>                                                      
-##  1 Version:          "0.5.1"                                                    
-##  2 Depends:          "R (≥ 3.2)"                                                
-##  3 Imports:          "ellipsis, magrittr, rlang, tibble"                        
-##  4 Suggests:         "covr, dplyr, ggplot2, knitr, readr, rmarkdown, testthat"  
-##  5 Published:        "2021-01-27"                                               
+##  1 Version:          "0.5.2"                                                    
+##  2 Depends:          "R (≥ 3.4)"                                                
+##  3 Imports:          "cli, ellipsis, glue, lifecycle, magrittr, rlang (≥ 1.0.0)…
+##  4 Suggests:         "covr, dplyr, ggplot2, knitr, readr, rmarkdown, testthat (…
+##  5 Published:        "2022-08-19"                                               
 ##  6 Author:           "Hadley Wickham [aut, cre],\n  RStudio [cph, fnd]"         
 ##  7 Maintainer:       "Hadley Wickham  <hadley at rstudio.com>"                  
 ##  8 BugReports:       "https://github.com/tidyverse/forcats/issues"              
 ##  9 License:          "MIT + file LICENSE"                                       
-## 10 URL:              "https://forcats.tidyverse.org,\nhttps://github.com/tidyve…
+## 10 URL:              "https://forcats.tidyverse.org/,\nhttps://github.com/tidyv…
 ## 11 NeedsCompilation: "no"                                                       
 ## 12 Materials:        "README NEWS"                                              
 ## 13 CRAN checks:      "forcats results"
