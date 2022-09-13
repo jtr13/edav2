@@ -173,6 +173,8 @@ ggplot(chickwts, aes(x=weight)) +
 
 Here as you can see, boxplots provide a ton of information for a single chart. Boxplots tell you whether the variable is normally distributed, or if the distribution is skewed in either direction. You can also easily spot the outliers, which always helps.
 
+[Make a boxplot interactively](https://jtr13.github.io/D3/Boxplot.html) (*created with D3*)
+
 ### Multiple boxplots
 
 Next, what if you want to compare the distributions between multiple classes? Here, you can create a multiple boxplot. But remember, your data frame needs to be tidy, that is you need to have a column with levels of the grouping variable. It can be be factor, character, or integer class.
