@@ -122,7 +122,8 @@ ggplot(USStates, aes(x = IQ, y = reorder(State, IQ))) +
 
 ### Example: How Much People in the Trump Administration Are Worth
 
-```{r}
+
+```{r fig.width = 6, fig.height=7}
 # create dot plot theme
 theme_dotplot <- 
   theme_bw(16) +
@@ -152,7 +153,9 @@ ggplot(df, aes(x = Assets, y = Name)) +
   xlab("Assets in Millions $") +
   ylab("") +
   theme_dotplot
+```
   
+```{r fig.width = 6, fig.height=8}  
   # create Panel column
 df$Panel <- rep(1:4, each = 9)
 df$Panel <- factor(df$Panel, levels = 1:4,
