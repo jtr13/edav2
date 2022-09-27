@@ -144,7 +144,7 @@ df <- read.csv("data/Assets.csv")
 # change units to millions
 df$Assets <- df$Assets / 1000000
 
-ggplot(df, aes(x = Assets, y = reorder(Name, Assets)) +
+ggplot(df, aes(x = Assets, y = reorder(Name, Assets))) +
   geom_point() +
   ggtitle("How Much People in the Trump\nAdministration Are Worth") +
   xlab("Assets in Millions $") +
