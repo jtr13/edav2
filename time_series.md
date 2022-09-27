@@ -95,7 +95,7 @@ lubridate::yday(today)
 ```
 
 ```
-## [1] 250
+## [1] 270
 ```
 
 ```r
@@ -112,7 +112,7 @@ lubridate::week(today)
 ```
 
 ```
-## [1] 36
+## [1] 39
 ```
 
 ## Time series

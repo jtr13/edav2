@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-09-13" />
+<meta name="date" content="2022-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -275,6 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-multiple-dots"><i class="fa fa-check"></i><b>10.2.1</b> Cleveland dot plot with multiple dots</a></li>
 <li class="chapter" data-level="10.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>10.2.2</b> Cleveland dot plot with facets</a></li>
+<li class="chapter" data-level="10.2.3" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#example-how-much-people-in-the-trump-administration-are-worth"><i class="fa fa-check"></i><b>10.2.3</b> Example: How Much People in the Trump Administration Are Worth</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a><ul>
@@ -473,6 +474,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb93-7"><a href="unidimensional-categorical-variables.html#cb93-7"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
 <span id="cb93-8"><a href="unidimensional-categorical-variables.html#cb93-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>(), <span class="dt">panel.grid.minor.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-7-1.png" width="432" style="display: block; margin: auto;" /></p>
+</div>
+<div id="example-how-much-people-in-the-trump-administration-are-worth" class="section level3 hasAnchor">
+<h3><span class="header-section-number">10.2.3</span> Example: How Much People in the Trump Administration Are Worth<a href="unidimensional-categorical-variables.html#example-how-much-people-in-the-trump-administration-are-worth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="unidimensional-categorical-variables.html#cb94-1"></a><span class="co"># create dot plot theme</span></span>
+<span id="cb94-2"><a href="unidimensional-categorical-variables.html#cb94-2"></a>theme_dotplot &lt;-<span class="st"> </span></span>
+<span id="cb94-3"><a href="unidimensional-categorical-variables.html#cb94-3"></a><span class="st">  </span><span class="kw">theme_bw</span>(<span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb94-4"><a href="unidimensional-categorical-variables.html#cb94-4"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.y =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="kw">rel</span>(.<span class="dv">8</span>)), <span class="dt">axis.ticks.y =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb94-5"><a href="unidimensional-categorical-variables.html#cb94-5"></a>        <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(), <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb94-6"><a href="unidimensional-categorical-variables.html#cb94-6"></a>        <span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;lightcyan2&quot;</span>),</span>
+<span id="cb94-7"><a href="unidimensional-categorical-variables.html#cb94-7"></a>        <span class="dt">panel.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;moccasin&quot;</span>),</span>
+<span id="cb94-8"><a href="unidimensional-categorical-variables.html#cb94-8"></a>        <span class="dt">panel.grid.major.x =</span> <span class="kw">element_line</span>(<span class="dt">size =</span> <span class="fl">0.5</span>),</span>
+<span id="cb94-9"><a href="unidimensional-categorical-variables.html#cb94-9"></a>        <span class="dt">panel.grid.major.y =</span> <span class="kw">element_line</span>(<span class="dt">size =</span> <span class="fl">0.5</span>, <span class="dt">color =</span> <span class="st">&quot;lightblue&quot;</span>),</span>
+<span id="cb94-10"><a href="unidimensional-categorical-variables.html#cb94-10"></a>        <span class="dt">panel.grid.minor.x =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb94-11"><a href="unidimensional-categorical-variables.html#cb94-11"></a>        <span class="dt">strip.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="kw">rel</span>(.<span class="dv">7</span>)), <span class="dt">legend.position =</span> <span class="st">&quot;top&quot;</span>)</span>
+<span id="cb94-12"><a href="unidimensional-categorical-variables.html#cb94-12"></a></span>
+<span id="cb94-13"><a href="unidimensional-categorical-variables.html#cb94-13"></a><span class="co"># data source:</span></span>
+<span id="cb94-14"><a href="unidimensional-categorical-variables.html#cb94-14"></a><span class="co"># NYT, How Much People in the Trump Administration Are Worth</span></span>
+<span id="cb94-15"><a href="unidimensional-categorical-variables.html#cb94-15"></a><span class="co"># https://www.nytimes.com/interactive/2017/04/01/us/politics/how-much-people-in-the-trump-administration-are-worth-financial-disclosure.html</span></span>
+<span id="cb94-16"><a href="unidimensional-categorical-variables.html#cb94-16"></a>df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/Assets.csv&quot;</span>)</span>
+<span id="cb94-17"><a href="unidimensional-categorical-variables.html#cb94-17"></a></span>
+<span id="cb94-18"><a href="unidimensional-categorical-variables.html#cb94-18"></a><span class="co"># change units to millions</span></span>
+<span id="cb94-19"><a href="unidimensional-categorical-variables.html#cb94-19"></a>df<span class="op">$</span>Assets &lt;-<span class="st"> </span>df<span class="op">$</span>Assets <span class="op">/</span><span class="st"> </span><span class="dv">1000000</span></span>
+<span id="cb94-20"><a href="unidimensional-categorical-variables.html#cb94-20"></a></span>
+<span id="cb94-21"><a href="unidimensional-categorical-variables.html#cb94-21"></a><span class="co"># sort names by assets</span></span>
+<span id="cb94-22"><a href="unidimensional-categorical-variables.html#cb94-22"></a>df<span class="op">$</span>Name &lt;-<span class="st"> </span><span class="kw">reorder</span>(df<span class="op">$</span>Name, df<span class="op">$</span>Assets)</span>
+<span id="cb94-23"><a href="unidimensional-categorical-variables.html#cb94-23"></a></span>
+<span id="cb94-24"><a href="unidimensional-categorical-variables.html#cb94-24"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> Assets, <span class="dt">y =</span> Name)) <span class="op">+</span></span>
+<span id="cb94-25"><a href="unidimensional-categorical-variables.html#cb94-25"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb94-26"><a href="unidimensional-categorical-variables.html#cb94-26"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;How Much People in the Trump</span><span class="ch">\n</span><span class="st">Administration Are Worth&quot;</span>) <span class="op">+</span></span>
+<span id="cb94-27"><a href="unidimensional-categorical-variables.html#cb94-27"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Assets in Millions $&quot;</span>) <span class="op">+</span></span>
+<span id="cb94-28"><a href="unidimensional-categorical-variables.html#cb94-28"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb94-29"><a href="unidimensional-categorical-variables.html#cb94-29"></a><span class="st">  </span>theme_dotplot</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="unidimensional-categorical-variables.html#cb95-1"></a>  <span class="co"># create Panel column</span></span>
+<span id="cb95-2"><a href="unidimensional-categorical-variables.html#cb95-2"></a>df<span class="op">$</span>Panel &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">each =</span> <span class="dv">9</span>)</span>
+<span id="cb95-3"><a href="unidimensional-categorical-variables.html#cb95-3"></a>df<span class="op">$</span>Panel &lt;-<span class="st"> </span><span class="kw">factor</span>(df<span class="op">$</span>Panel, <span class="dt">levels =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
+<span id="cb95-4"><a href="unidimensional-categorical-variables.html#cb95-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;$18 Million+&quot;</span>, <span class="st">&quot;$4 - 12 Million&quot;</span>, <span class="st">&quot;$1 - 3.5 Million&quot;</span>,</span>
+<span id="cb95-5"><a href="unidimensional-categorical-variables.html#cb95-5"></a>                              <span class="st">&quot;$66k - $604k&quot;</span>))</span>
+<span id="cb95-6"><a href="unidimensional-categorical-variables.html#cb95-6"></a></span>
+<span id="cb95-7"><a href="unidimensional-categorical-variables.html#cb95-7"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> Assets, <span class="dt">y =</span> Name)) <span class="op">+</span></span>
+<span id="cb95-8"><a href="unidimensional-categorical-variables.html#cb95-8"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb95-9"><a href="unidimensional-categorical-variables.html#cb95-9"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Panel, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span></span>
+<span id="cb95-10"><a href="unidimensional-categorical-variables.html#cb95-10"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;How Much People in the Trump</span><span class="ch">\n</span><span class="st">Administration Are Worth&quot;</span>) <span class="op">+</span></span>
+<span id="cb95-11"><a href="unidimensional-categorical-variables.html#cb95-11"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Assets in Millions $&quot;</span>) <span class="op">+</span></span>
+<span id="cb95-12"><a href="unidimensional-categorical-variables.html#cb95-12"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb95-13"><a href="unidimensional-categorical-variables.html#cb95-13"></a><span class="st">  </span>theme_dotplot</span></code></pre></div>
+<p><img src="uni_categorical_var_files/figure-html/unnamed-chunk-8-2.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

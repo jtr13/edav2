@@ -91,6 +91,7 @@ ordinal-data
 cleveland-dot-plot
 cleveland-dot-plot-with-multiple-dots
 cleveland-dot-plot-with-facets
+example-how-much-people-in-the-trump-administration-are-worth
 two-continuous-variables
 scatterplot
 basics-and-implications-2

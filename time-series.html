@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-09-13" />
+<meta name="date" content="2022-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -275,6 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-multiple-dots"><i class="fa fa-check"></i><b>10.2.1</b> Cleveland dot plot with multiple dots</a></li>
 <li class="chapter" data-level="10.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>10.2.2</b> Cleveland dot plot with facets</a></li>
+<li class="chapter" data-level="10.2.3" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#example-how-much-people-in-the-trump-administration-are-worth"><i class="fa fa-check"></i><b>10.2.3</b> Example: How Much People in the Trump Administration Are Worth</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a><ul>
@@ -385,14 +386,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="basic-r-functions" class="section level3 hasAnchor">
 <h3><span class="header-section-number">16.1.1</span> Basic R functions<a href="time-series.html#basic-r-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can convert character data to <code>Date</code> class with <code>as.Date()</code>:</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="time-series.html#cb157-1"></a>dchar &lt;-<span class="st"> &quot;2018-10-12&quot;</span></span>
-<span id="cb157-2"><a href="time-series.html#cb157-2"></a>ddate &lt;-<span class="st"> </span><span class="kw">as.Date</span>(dchar)</span>
-<span id="cb157-3"><a href="time-series.html#cb157-3"></a><span class="kw">class</span>(dchar)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="time-series.html#cb159-1"></a>dchar &lt;-<span class="st"> &quot;2018-10-12&quot;</span></span>
+<span id="cb159-2"><a href="time-series.html#cb159-2"></a>ddate &lt;-<span class="st"> </span><span class="kw">as.Date</span>(dchar)</span>
+<span id="cb159-3"><a href="time-series.html#cb159-3"></a><span class="kw">class</span>(dchar)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="time-series.html#cb159-1"></a><span class="kw">class</span>(ddate)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="time-series.html#cb161-1"></a><span class="kw">class</span>(ddate)</span></code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 <p>You can also specifying the format by:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="time-series.html#cb161-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;Thursday, January 6, 2005&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%A, %B %d, %Y&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="time-series.html#cb163-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;Thursday, January 6, 2005&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%A, %B %d, %Y&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2005-01-06&quot;</code></pre>
 <p>For a list of the conversion specifications available in R, see <code>?strptime</code>.</p>
 <p>Here is a list of the conversion specifications for date format from <a href="https://michaeltoth.me/the-ultimate-opinionated-guide-to-base-r-date-format-functions.html">this post</a></p>
@@ -400,132 +401,132 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="images/common_r_date_formats.png" style="width:75.0%" />
 </center>
 <p>Also, <code>Date</code> class supports calculation between dates:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="time-series.html#cb163-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-02&quot;</span>) <span class="op">-</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="time-series.html#cb165-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-02&quot;</span>) <span class="op">-</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>)</span></code></pre></div>
 <pre><code>## Time difference of 305 days</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="time-series.html#cb165-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-12&quot;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-3-3&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="time-series.html#cb167-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-12&quot;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-3-3&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="lubridate" class="section level3 hasAnchor">
 <h3><span class="header-section-number">16.1.2</span> Lubridate<a href="time-series.html#lubridate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The tidyverse <code>lubridate</code> makes it easy to convert dates that are not in standard format with <code>ymd()</code>, <code>ydm()</code>, <code>mdy()</code>, <code>myd()</code>, <code>dmy()</code>, and <code>dym()</code> (among many other useful date-time functions):</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="time-series.html#cb167-1"></a>lubridate<span class="op">::</span><span class="kw">mdy</span>(<span class="st">&quot;April 13, 1907&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="time-series.html#cb169-1"></a>lubridate<span class="op">::</span><span class="kw">mdy</span>(<span class="st">&quot;April 13, 1907&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;1907-04-13&quot;</code></pre>
 <p>The <code>lubridate</code> package also provides additional functions to extract information from a date:</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="time-series.html#cb169-1"></a>today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
-<span id="cb169-2"><a href="time-series.html#cb169-2"></a>lubridate<span class="op">::</span><span class="kw">year</span>(today)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="time-series.html#cb171-1"></a>today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
+<span id="cb171-2"><a href="time-series.html#cb171-2"></a>lubridate<span class="op">::</span><span class="kw">year</span>(today)</span></code></pre></div>
 <pre><code>## [1] 2022</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="time-series.html#cb171-1"></a>lubridate<span class="op">::</span><span class="kw">yday</span>(today)</span></code></pre></div>
-<pre><code>## [1] 250</code></pre>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="time-series.html#cb173-1"></a>lubridate<span class="op">::</span><span class="kw">month</span>(today, <span class="dt">label =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="time-series.html#cb173-1"></a>lubridate<span class="op">::</span><span class="kw">yday</span>(today)</span></code></pre></div>
+<pre><code>## [1] 270</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="time-series.html#cb175-1"></a>lubridate<span class="op">::</span><span class="kw">month</span>(today, <span class="dt">label =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] Sep
 ## 12 Levels: Jan &lt; Feb &lt; Mar &lt; Apr &lt; May &lt; Jun &lt; Jul &lt; Aug &lt; Sep &lt; ... &lt; Dec</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="time-series.html#cb175-1"></a>lubridate<span class="op">::</span><span class="kw">week</span>(today)</span></code></pre></div>
-<pre><code>## [1] 36</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="time-series.html#cb177-1"></a>lubridate<span class="op">::</span><span class="kw">week</span>(today)</span></code></pre></div>
+<pre><code>## [1] 39</code></pre>
 </div>
 </div>
 <div id="time-series-1" class="section level2 hasAnchor">
 <h2><span class="header-section-number">16.2</span> Time series<a href="time-series.html#time-series-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For time-series data-sets, line plots are mostly used with time on the x-axis. Both base R graphics and <code>ggplot2</code> “know” how to work with a Date class variable, and label the axes properly:</p>
 <p>The data comes from the official <a href="https://www.freddiemac.com/pmms">website</a>.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="time-series.html#cb177-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb177-2"><a href="time-series.html#cb177-2"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb177-3"><a href="time-series.html#cb177-3"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb177-4"><a href="time-series.html#cb177-4"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb177-5"><a href="time-series.html#cb177-5"></a>df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/historicalweeklydata.xls&quot;</span>, </span>
-<span id="cb177-6"><a href="time-series.html#cb177-6"></a>    <span class="dt">col_types =</span> <span class="kw">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
-<span id="cb177-7"><a href="time-series.html#cb177-7"></a>        <span class="st">&quot;numeric&quot;</span>))</span>
-<span id="cb177-8"><a href="time-series.html#cb177-8"></a></span>
-<span id="cb177-9"><a href="time-series.html#cb177-9"></a><span class="kw">plot</span>(df<span class="op">$</span>Week, df<span class="op">$</span><span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>) <span class="co"># on the order of years</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="time-series.html#cb179-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb179-2"><a href="time-series.html#cb179-2"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb179-3"><a href="time-series.html#cb179-3"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb179-4"><a href="time-series.html#cb179-4"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb179-5"><a href="time-series.html#cb179-5"></a>df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/historicalweeklydata.xls&quot;</span>, </span>
+<span id="cb179-6"><a href="time-series.html#cb179-6"></a>    <span class="dt">col_types =</span> <span class="kw">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
+<span id="cb179-7"><a href="time-series.html#cb179-7"></a>        <span class="st">&quot;numeric&quot;</span>))</span>
+<span id="cb179-8"><a href="time-series.html#cb179-8"></a></span>
+<span id="cb179-9"><a href="time-series.html#cb179-9"></a><span class="kw">plot</span>(df<span class="op">$</span>Week, df<span class="op">$</span><span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>) <span class="co"># on the order of years</span></span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="time-series.html#cb178-1"></a>g&lt;-<span class="kw">ggplot</span>(df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Week <span class="op">&lt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2006-01-01&quot;</span>)), </span>
-<span id="cb178-2"><a href="time-series.html#cb178-2"></a>       <span class="kw">aes</span>(Week, <span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb178-3"><a href="time-series.html#cb178-3"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb178-4"><a href="time-series.html#cb178-4"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span>
-<span id="cb178-5"><a href="time-series.html#cb178-5"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="time-series.html#cb180-1"></a>g&lt;-<span class="kw">ggplot</span>(df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Week <span class="op">&lt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2006-01-01&quot;</span>)), </span>
+<span id="cb180-2"><a href="time-series.html#cb180-2"></a>       <span class="kw">aes</span>(Week, <span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb180-3"><a href="time-series.html#cb180-3"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb180-4"><a href="time-series.html#cb180-4"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span>
+<span id="cb180-5"><a href="time-series.html#cb180-5"></a>g</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-6-2.png" width="384" style="display: block; margin: auto;" /></p>
 <p>We can control the x-axis breaks, limits, and labels with <code>scale_x_date()</code>, and use <code>geom_vline()</code> with <code>annotate()</code> to mark specific events in a time series.</p>
 </div>
 <div id="multiple-time-series" class="section level2 hasAnchor">
 <h2><span class="header-section-number">16.3</span> Multiple time series<a href="time-series.html#multiple-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The following plot shows a multiple time series of U.S. Mortgage rates.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="time-series.html#cb179-1"></a>df2 &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span><span class="kw">c</span>(<span class="st">&quot;Week&quot;</span>), <span class="dt">names_to =</span> <span class="st">&quot;TYPE&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb179-2"><a href="time-series.html#cb179-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">TYPE =</span> forcats<span class="op">::</span><span class="kw">fct_reorder2</span>(TYPE, Week, value))<span class="co"># puts legend in correct order</span></span>
-<span id="cb179-3"><a href="time-series.html#cb179-3"></a></span>
-<span id="cb179-4"><a href="time-series.html#cb179-4"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
-<span id="cb179-5"><a href="time-series.html#cb179-5"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb179-6"><a href="time-series.html#cb179-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">labs</span> (<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;percent&quot;</span>) <span class="op">+</span></span>
-<span id="cb179-7"><a href="time-series.html#cb179-7"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>) <span class="op">+</span></span>
-<span id="cb179-8"><a href="time-series.html#cb179-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="time-series.html#cb181-1"></a>df2 &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span><span class="kw">c</span>(<span class="st">&quot;Week&quot;</span>), <span class="dt">names_to =</span> <span class="st">&quot;TYPE&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb181-2"><a href="time-series.html#cb181-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">TYPE =</span> forcats<span class="op">::</span><span class="kw">fct_reorder2</span>(TYPE, Week, value))<span class="co"># puts legend in correct order</span></span>
+<span id="cb181-3"><a href="time-series.html#cb181-3"></a></span>
+<span id="cb181-4"><a href="time-series.html#cb181-4"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
+<span id="cb181-5"><a href="time-series.html#cb181-5"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb181-6"><a href="time-series.html#cb181-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">labs</span> (<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;percent&quot;</span>) <span class="op">+</span></span>
+<span id="cb181-7"><a href="time-series.html#cb181-7"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb181-8"><a href="time-series.html#cb181-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>To plot the time series in a specific period of time, use <code>filter()</code> before <code>ggplot</code>:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="time-series.html#cb180-1"></a><span class="kw">library</span>(lubridate)</span>
-<span id="cb180-2"><a href="time-series.html#cb180-2"></a>df2010 &lt;-<span class="st"> </span>df2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">year</span>(Week) <span class="op">==</span><span class="st"> </span><span class="dv">2010</span>)</span>
-<span id="cb180-3"><a href="time-series.html#cb180-3"></a><span class="kw">ggplot</span>(df2010, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
-<span id="cb180-4"><a href="time-series.html#cb180-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb180-5"><a href="time-series.html#cb180-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="time-series.html#cb182-1"></a><span class="kw">library</span>(lubridate)</span>
+<span id="cb182-2"><a href="time-series.html#cb182-2"></a>df2010 &lt;-<span class="st"> </span>df2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">year</span>(Week) <span class="op">==</span><span class="st"> </span><span class="dv">2010</span>)</span>
+<span id="cb182-3"><a href="time-series.html#cb182-3"></a><span class="kw">ggplot</span>(df2010, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
+<span id="cb182-4"><a href="time-series.html#cb182-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb182-5"><a href="time-series.html#cb182-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="time-series-patterns" class="section level2 hasAnchor">
 <h2><span class="header-section-number">16.4</span> Time series patterns<a href="time-series.html#time-series-patterns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Next, as an important part of time series analysis, we want to find the existing patterns of the data.
 We first starting from plotting the overall long-term trend:</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="time-series.html#cb181-1"></a><span class="kw">library</span> (readr)</span>
-<span id="cb181-2"><a href="time-series.html#cb181-2"></a>urlfile=<span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/ManchesterByTheSea.csv&quot;</span></span>
-<span id="cb181-3"><a href="time-series.html#cb181-3"></a>data&lt;-<span class="kw">read_csv</span>(<span class="kw">url</span>(urlfile))</span>
-<span id="cb181-4"><a href="time-series.html#cb181-4"></a></span>
-<span id="cb181-5"><a href="time-series.html#cb181-5"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span></span>
-<span id="cb181-6"><a href="time-series.html#cb181-6"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb181-7"><a href="time-series.html#cb181-7"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross (US$), United States&quot;</span>) <span class="op">+</span></span>
-<span id="cb181-8"><a href="time-series.html#cb181-8"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;2016-2017&quot;</span>)</span>
-<span id="cb181-9"><a href="time-series.html#cb181-9"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="time-series.html#cb183-1"></a><span class="kw">library</span> (readr)</span>
+<span id="cb183-2"><a href="time-series.html#cb183-2"></a>urlfile=<span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/ManchesterByTheSea.csv&quot;</span></span>
+<span id="cb183-3"><a href="time-series.html#cb183-3"></a>data&lt;-<span class="kw">read_csv</span>(<span class="kw">url</span>(urlfile))</span>
+<span id="cb183-4"><a href="time-series.html#cb183-4"></a></span>
+<span id="cb183-5"><a href="time-series.html#cb183-5"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span></span>
+<span id="cb183-6"><a href="time-series.html#cb183-6"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb183-7"><a href="time-series.html#cb183-7"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross (US$), United States&quot;</span>) <span class="op">+</span></span>
+<span id="cb183-8"><a href="time-series.html#cb183-8"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;2016-2017&quot;</span>)</span>
+<span id="cb183-9"><a href="time-series.html#cb183-9"></a>g</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Adding a smoother to the data, adjusting the smoothing parameter <code>span =</code> to find a proper smoother which is not overfitting/underfitting:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="time-series.html#cb182-1"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</span>
-<span id="cb182-2"><a href="time-series.html#cb182-2"></a>g <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">span =</span> <span class="fl">.5</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="time-series.html#cb184-1"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</span>
+<span id="cb184-2"><a href="time-series.html#cb184-2"></a>g <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">span =</span> <span class="fl">.5</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Mark the pattern by high-lighting the data on very Saturday:</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="time-series.html#cb183-1"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span></span>
-<span id="cb183-2"><a href="time-series.html#cb183-2"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb183-3"><a href="time-series.html#cb183-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross, United States&quot;</span>)</span>
-<span id="cb183-4"><a href="time-series.html#cb183-4"></a>saturday &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">wday</span>(Date) <span class="op">==</span><span class="st"> </span><span class="dv">7</span>) </span>
-<span id="cb183-5"><a href="time-series.html#cb183-5"></a>g <span class="op">+</span></span>
-<span id="cb183-6"><a href="time-series.html#cb183-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> saturday, <span class="kw">aes</span>(Date, Gross), <span class="dt">color =</span> <span class="st">&quot;deeppink&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="time-series.html#cb185-1"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span></span>
+<span id="cb185-2"><a href="time-series.html#cb185-2"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb185-3"><a href="time-series.html#cb185-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross, United States&quot;</span>)</span>
+<span id="cb185-4"><a href="time-series.html#cb185-4"></a>saturday &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">wday</span>(Date) <span class="op">==</span><span class="st"> </span><span class="dv">7</span>) </span>
+<span id="cb185-5"><a href="time-series.html#cb185-5"></a>g <span class="op">+</span></span>
+<span id="cb185-6"><a href="time-series.html#cb185-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> saturday, <span class="kw">aes</span>(Date, Gross), <span class="dt">color =</span> <span class="st">&quot;deeppink&quot;</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Another way is to use facet to show the cyclical pattern:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="time-series.html#cb184-1"></a><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb184-2"><a href="time-series.html#cb184-2"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;grey30&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb184-3"><a href="time-series.html#cb184-3"></a><span class="st">    </span><span class="kw">facet_grid</span>(.<span class="op">~</span><span class="kw">wday</span>(Date, <span class="dt">label =</span> <span class="ot">TRUE</span>)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb184-4"><a href="time-series.html#cb184-4"></a><span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="time-series.html#cb186-1"></a><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb186-2"><a href="time-series.html#cb186-2"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;grey30&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb186-3"><a href="time-series.html#cb186-3"></a><span class="st">    </span><span class="kw">facet_grid</span>(.<span class="op">~</span><span class="kw">wday</span>(Date, <span class="dt">label =</span> <span class="ot">TRUE</span>)) <span class="op">+</span><span class="st">  </span></span>
+<span id="cb186-4"><a href="time-series.html#cb186-4"></a><span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Also, basic R can plot the decomposed time series automatically. This method is used to study the trend, seasonal effect on data with at least 2 periods. For additive components, use <code>type = "additive"</code>.</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="time-series.html#cb185-1"></a>tsData &lt;-<span class="st"> </span>EuStockMarkets[, <span class="dv">2</span>]</span>
-<span id="cb185-2"><a href="time-series.html#cb185-2"></a>decomposedRes &lt;-<span class="st"> </span><span class="kw">decompose</span>(tsData, <span class="dt">type=</span><span class="st">&quot;mul&quot;</span>)</span>
-<span id="cb185-3"><a href="time-series.html#cb185-3"></a><span class="kw">plot</span> (decomposedRes)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="time-series.html#cb187-1"></a>tsData &lt;-<span class="st"> </span>EuStockMarkets[, <span class="dv">2</span>]</span>
+<span id="cb187-2"><a href="time-series.html#cb187-2"></a>decomposedRes &lt;-<span class="st"> </span><span class="kw">decompose</span>(tsData, <span class="dt">type=</span><span class="st">&quot;mul&quot;</span>)</span>
+<span id="cb187-3"><a href="time-series.html#cb187-3"></a><span class="kw">plot</span> (decomposedRes)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="index" class="section level2 hasAnchor">
 <h2><span class="header-section-number">16.5</span> Index<a href="time-series.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When making comparisons on multi-line plots, index is a way of scaling the data: Each value is divided by the first value for that group and multiplied by 100.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="time-series.html#cb186-1"></a>urlfile=<span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/WA_Sales_Products_2012-14.csv&quot;</span></span>
-<span id="cb186-2"><a href="time-series.html#cb186-2"></a>sale&lt;-<span class="kw">read_csv</span>(<span class="kw">url</span>(urlfile))</span>
-<span id="cb186-3"><a href="time-series.html#cb186-3"></a></span>
-<span id="cb186-4"><a href="time-series.html#cb186-4"></a>sale<span class="op">$</span>Q &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(sale<span class="op">$</span>Quarter, <span class="dv">2</span>, <span class="dv">2</span>))  </span>
-<span id="cb186-5"><a href="time-series.html#cb186-5"></a><span class="co"># convert Q to end-of-quarter date </span></span>
-<span id="cb186-6"><a href="time-series.html#cb186-6"></a>sale<span class="op">$</span>Date &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(sale<span class="op">$</span>Year, <span class="st">&quot;-&quot;</span>,<span class="kw">as.character</span>(sale<span class="op">$</span>Q<span class="op">*</span><span class="dv">3</span>),<span class="st">&quot;-30&quot;</span>)) </span>
-<span id="cb186-7"><a href="time-series.html#cb186-7"></a></span>
-<span id="cb186-8"><a href="time-series.html#cb186-8"></a>Methoddata &lt;-<span class="st"> </span>sale <span class="op">%&gt;%</span></span>
-<span id="cb186-9"><a href="time-series.html#cb186-9"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Revenue =</span> Revenue<span class="op">/</span><span class="dv">1000000</span>) <span class="op">%&gt;%</span></span>
-<span id="cb186-10"><a href="time-series.html#cb186-10"></a><span class="st">  </span><span class="kw">group_by</span>(Date,<span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>) <span class="op">%&gt;%</span></span>
-<span id="cb186-11"><a href="time-series.html#cb186-11"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Revenue =</span> <span class="kw">sum</span>(Revenue))  <span class="op">%&gt;%</span></span>
-<span id="cb186-12"><a href="time-series.html#cb186-12"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
-<span id="cb186-13"><a href="time-series.html#cb186-13"></a><span class="st">  </span><span class="kw">group_by</span>(<span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>) <span class="op">%&gt;%</span></span>
-<span id="cb186-14"><a href="time-series.html#cb186-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">index =</span> <span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>Revenue<span class="op">/</span>Revenue[<span class="dv">1</span>], <span class="dv">2</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb186-15"><a href="time-series.html#cb186-15"></a><span class="st">  </span><span class="kw">ungroup</span>()</span>
-<span id="cb186-16"><a href="time-series.html#cb186-16"></a>  </span>
-<span id="cb186-17"><a href="time-series.html#cb186-17"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(Methoddata, <span class="kw">aes</span>(Date, index,<span class="dt">color =</span> <span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>)) <span class="op">+</span></span>
-<span id="cb186-18"><a href="time-series.html#cb186-18"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>)) <span class="op">+</span></span>
-<span id="cb186-19"><a href="time-series.html#cb186-19"></a><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2012-02-01&quot;</span>), <span class="kw">as.Date</span>(<span class="st">&quot;2014-12-31&quot;</span>)), <span class="dt">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>, <span class="dt">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>)</span>
-<span id="cb186-20"><a href="time-series.html#cb186-20"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="time-series.html#cb188-1"></a>urlfile=<span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/WA_Sales_Products_2012-14.csv&quot;</span></span>
+<span id="cb188-2"><a href="time-series.html#cb188-2"></a>sale&lt;-<span class="kw">read_csv</span>(<span class="kw">url</span>(urlfile))</span>
+<span id="cb188-3"><a href="time-series.html#cb188-3"></a></span>
+<span id="cb188-4"><a href="time-series.html#cb188-4"></a>sale<span class="op">$</span>Q &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(sale<span class="op">$</span>Quarter, <span class="dv">2</span>, <span class="dv">2</span>))  </span>
+<span id="cb188-5"><a href="time-series.html#cb188-5"></a><span class="co"># convert Q to end-of-quarter date </span></span>
+<span id="cb188-6"><a href="time-series.html#cb188-6"></a>sale<span class="op">$</span>Date &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(sale<span class="op">$</span>Year, <span class="st">&quot;-&quot;</span>,<span class="kw">as.character</span>(sale<span class="op">$</span>Q<span class="op">*</span><span class="dv">3</span>),<span class="st">&quot;-30&quot;</span>)) </span>
+<span id="cb188-7"><a href="time-series.html#cb188-7"></a></span>
+<span id="cb188-8"><a href="time-series.html#cb188-8"></a>Methoddata &lt;-<span class="st"> </span>sale <span class="op">%&gt;%</span></span>
+<span id="cb188-9"><a href="time-series.html#cb188-9"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Revenue =</span> Revenue<span class="op">/</span><span class="dv">1000000</span>) <span class="op">%&gt;%</span></span>
+<span id="cb188-10"><a href="time-series.html#cb188-10"></a><span class="st">  </span><span class="kw">group_by</span>(Date,<span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>) <span class="op">%&gt;%</span></span>
+<span id="cb188-11"><a href="time-series.html#cb188-11"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Revenue =</span> <span class="kw">sum</span>(Revenue))  <span class="op">%&gt;%</span></span>
+<span id="cb188-12"><a href="time-series.html#cb188-12"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
+<span id="cb188-13"><a href="time-series.html#cb188-13"></a><span class="st">  </span><span class="kw">group_by</span>(<span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>) <span class="op">%&gt;%</span></span>
+<span id="cb188-14"><a href="time-series.html#cb188-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">index =</span> <span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>Revenue<span class="op">/</span>Revenue[<span class="dv">1</span>], <span class="dv">2</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb188-15"><a href="time-series.html#cb188-15"></a><span class="st">  </span><span class="kw">ungroup</span>()</span>
+<span id="cb188-16"><a href="time-series.html#cb188-16"></a>  </span>
+<span id="cb188-17"><a href="time-series.html#cb188-17"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(Methoddata, <span class="kw">aes</span>(Date, index,<span class="dt">color =</span> <span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>)) <span class="op">+</span></span>
+<span id="cb188-18"><a href="time-series.html#cb188-18"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>)) <span class="op">+</span></span>
+<span id="cb188-19"><a href="time-series.html#cb188-19"></a><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2012-02-01&quot;</span>), <span class="kw">as.Date</span>(<span class="st">&quot;2014-12-31&quot;</span>)), <span class="dt">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>, <span class="dt">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>)</span>
+<span id="cb188-20"><a href="time-series.html#cb188-20"></a>g</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
 
 </div>
