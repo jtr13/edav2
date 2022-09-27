@@ -162,10 +162,7 @@ df <- read.csv("data/Assets.csv")
 # change units to millions
 df$Assets <- df$Assets / 1000000
 
-# sort names by assets
-df$Name <- reorder(df$Name, df$Assets)
-
-ggplot(df, aes(x = Assets, y = Name)) +
+ggplot(df, aes(x = Assets, y = reorder(Name, Assets))) +
   geom_point() +
   ggtitle("How Much People in the Trump\nAdministration Are Worth") +
   xlab("Assets in Millions $") +
@@ -174,16 +171,16 @@ ggplot(df, aes(x = Assets, y = Name)) +
 ```
 
 <img src="uni_categorical_var_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" />
-  
+
 
 ```r
-  # create Panel column
-df$Panel <- rep(1:4, each = 9)
-df$Panel <- factor(df$Panel, levels = 1:4,
-                   labels = c("$18 Million+", "$4 - 12 Million", "$1 - 3.5 Million",
-                              "$66k - $604k"))
+# create Panel column
+df <- df |> 
+  mutate(Panel = cut(Assets, 4, breaks = fivenum(Assets),
+         labels = c("$66k - $604k", "$1 - 3.5 Million",
+                    "$4 - 12 Million", "$18 Million+"))) |> mutate(Panel = fct_rev(Panel))
 
-ggplot(df, aes(x = Assets, y = Name)) +
+ggplot(df, aes(x = Assets, y = reorder(Name, Assets))) +
   geom_point() +
   facet_wrap(~Panel, ncol = 1, scales = "free") +
   ggtitle("How Much People in the Trump\nAdministration Are Worth") +
