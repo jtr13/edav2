@@ -119,3 +119,54 @@ ggplot(USStates, aes(x = IQ, y = reorder(State, IQ))) +
   theme_linedraw() +
   theme(panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank())
 ```
+
+### Example: How Much People in the Trump Administration Are Worth
+
+```{r}
+# create dot plot theme
+theme_dotplot <- 
+  theme_bw(16) +
+  theme(axis.text.y = element_text(size = rel(.8)), axis.ticks.y = element_blank(),
+        axis.title.x = element_text(), axis.text = element_text(face = "bold"),
+        plot.background = element_rect(fill = "lightcyan2"),
+        panel.background = element_rect(fill = "moccasin"),
+        panel.grid.major.x = element_line(size = 0.5),
+        panel.grid.major.y = element_line(size = 0.5, color = "lightblue"),
+        panel.grid.minor.x = element_blank(),
+        strip.text = element_text(size = rel(.7)), legend.position = "top")
+
+# data source:
+# NYT, How Much People in the Trump Administration Are Worth
+# https://www.nytimes.com/interactive/2017/04/01/us/politics/how-much-people-in-the-trump-administration-are-worth-financial-disclosure.html
+df <- read.csv("data/Assets.csv")
+
+# change units to millions
+df$Assets <- df$Assets / 1000000
+
+# sort names by assets
+df$Name <- reorder(df$Name, df$Assets)
+
+ggplot(df, aes(x = Assets, y = Name)) +
+  geom_point() +
+  ggtitle("How Much People in the Trump\nAdministration Are Worth") +
+  xlab("Assets in Millions $") +
+  ylab("") +
+  theme_dotplot
+  
+  # create Panel column
+df$Panel <- rep(1:4, each = 9)
+df$Panel <- factor(df$Panel, levels = 1:4,
+                   labels = c("$18 Million+", "$4 - 12 Million", "$1 - 3.5 Million",
+                              "$66k - $604k"))
+
+ggplot(df, aes(x = Assets, y = Name)) +
+  geom_point() +
+  facet_wrap(~Panel, ncol = 1, scales = "free") +
+  ggtitle("How Much People in the Trump\nAdministration Are Worth") +
+  xlab("Assets in Millions $") +
+  ylab("") +
+  theme_dotplot
+```
+
+
+
