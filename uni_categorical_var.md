@@ -140,6 +140,7 @@ ggplot(USStates, aes(x = IQ, y = reorder(State, IQ))) +
 ### Example: How Much People in the Trump Administration Are Worth
 
 
+
 ```r
 # create dot plot theme
 theme_dotplot <- 
@@ -172,7 +173,8 @@ ggplot(df, aes(x = Assets, y = Name)) +
   theme_dotplot
 ```
 
-<img src="uni_categorical_var_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
+<img src="uni_categorical_var_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" />
+  
 
 ```r
   # create Panel column
@@ -190,7 +192,7 @@ ggplot(df, aes(x = Assets, y = Name)) +
   theme_dotplot
 ```
 
-<img src="uni_categorical_var_files/figure-html/unnamed-chunk-8-2.png" width="672" style="display: block; margin: auto;" />
+<img src="uni_categorical_var_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" />
 
 
 
