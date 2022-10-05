@@ -28,12 +28,12 @@ In some situations a scatter plot faces the problem of overplotting as there are
 library(dplyr)
 library(ggplot2movies)
 
-sample <- sample_n(movies,0.2*nrow(movies))
+sample <- slice_sample(movies, prop = 0.2)
 
 ggplot(sample,aes(x=votes,y=rating)) +
   geom_point() +
-  theme_classic() +
-  ggtitle("Votes vs. rating")
+  ggtitle("Votes vs. rating") +
+  theme_classic()
 ```
 
 To create better visuals, we can use:
