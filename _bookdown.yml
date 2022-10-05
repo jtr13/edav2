@@ -29,5 +29,6 @@ rmd_files: [
   'missing_data.Rmd',
   'colors.Rmd',
   'time_series.Rmd',
-  'spatial.Rmd'
+  'spatial.Rmd',
+  'cutting_room_floor.Rmd' # new part: Appendix
 ]
