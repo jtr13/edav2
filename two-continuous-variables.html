@@ -401,12 +401,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="two-continuous-variables.html#cb97-1"></a><span class="kw">library</span>(dplyr)</span>
 <span id="cb97-2"><a href="two-continuous-variables.html#cb97-2"></a><span class="kw">library</span>(ggplot2movies)</span>
 <span id="cb97-3"><a href="two-continuous-variables.html#cb97-3"></a></span>
-<span id="cb97-4"><a href="two-continuous-variables.html#cb97-4"></a>sample &lt;-<span class="st"> </span><span class="kw">slice_sample</span>(movies,<span class="dt">prop=</span><span class="fl">0.2</span>)</span>
+<span id="cb97-4"><a href="two-continuous-variables.html#cb97-4"></a>sample &lt;-<span class="st"> </span><span class="kw">slice_sample</span>(movies, <span class="dt">prop =</span> <span class="fl">0.2</span>)</span>
 <span id="cb97-5"><a href="two-continuous-variables.html#cb97-5"></a></span>
 <span id="cb97-6"><a href="two-continuous-variables.html#cb97-6"></a><span class="kw">ggplot</span>(sample,<span class="kw">aes</span>(<span class="dt">x=</span>votes,<span class="dt">y=</span>rating)) <span class="op">+</span></span>
 <span id="cb97-7"><a href="two-continuous-variables.html#cb97-7"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb97-8"><a href="two-continuous-variables.html#cb97-8"></a><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
-<span id="cb97-9"><a href="two-continuous-variables.html#cb97-9"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Votes vs. rating&quot;</span>)</span></code></pre></div>
+<span id="cb97-8"><a href="two-continuous-variables.html#cb97-8"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Votes vs. rating&quot;</span>) <span class="op">+</span></span>
+<span id="cb97-9"><a href="two-continuous-variables.html#cb97-9"></a><span class="st">  </span><span class="kw">theme_classic</span>()</span></code></pre></div>
 <p><img src="two_continuous_var_files/figure-html/unnamed-chunk-2-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <p>To create better visuals, we can use:</p>
 <ul>
