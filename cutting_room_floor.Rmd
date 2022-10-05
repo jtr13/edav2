@@ -7,7 +7,6 @@ It's worth remembering that most graphs end up on the proverbial cutting room fl
 ## Parallel coordinate plots
 
 ```{r}
-library(tidyverse)
 oedi_building <- read_csv("data/oedi_building.csv")
 oedi_building |>
   filter(str_detect(in.building_type, "Office")) |> 
