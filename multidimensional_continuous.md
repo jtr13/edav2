@@ -98,7 +98,7 @@ In the interactive graph, for each feature, you can create a square box to filte
 
 ### External resource
 
-Just like a static graph, there is a lot of things you can change in the interactive setting. Refer [R documentation](https://www.rdocumentation.org/packages/parcoords/versions/1.0.0/topics/parcoords) for more options. Unfortunately, the original develop blog of the library is unreachable currently.
+Just like a static graph, there is a lot of things you can change in the interactive setting. Refer to the [Introduction to `parcoords` vignette](https://timelyportfolio.github.io/parcoords/articles/introduction-to-parcoords-.html) for more options. Unfortunately, at the time of this writing [the original blog post about the library](https://buildingwidgets.com/blog/2015/1/30/week-04-interactive-parallel-coordinates-1) is not available.
 
 <br>
 
