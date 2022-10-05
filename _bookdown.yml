@@ -11,13 +11,23 @@ language:
 
 # Chapter ordering
 rmd_files: [
-  # Part: Introduction
   'index.Rmd', # must be first chapter
-  'learning_R.Rmd',
-  'learning_ggplot2.Rmd',
+# Part: R resources
+  'learning_R.Rmd', # must be first chapter of part
+  'factors.Rmd',
+  'data_import.Rmd',
+  'data_transformation.Rmd',
+  'git_GitHub.Rmd',
+# Part: R graphics
+  'learning_ggplot2.Rmd', # must be first chapter of part
+  'faceting.Rmd',
   'continuous_var.Rmd',
   'uni_categorical_var.Rmd',
-  'factors.Rmd',
-  'data_transformation.Rmd',
-  'two_continuous_var.Rmd'
+  'two_continuous_var.Rmd',
+  'multidimensional_continuous.Rmd',
+  'multidimensional_categorical.Rmd',
+  'missing_data.Rmd',
+  'colors.Rmd',
+  'time_series.Rmd',
+  'spatial.Rmd'
 ]

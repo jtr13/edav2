@@ -16,7 +16,29 @@ Imports:
     Lock5withR,
     GDAdata,
     ggplot2movies,
-    plotly
+    plotly,
+    hexbin,
+    pgmm,
+    GGally,
+    parcoords,
+    readr,
+    d3r,
+    redav,
+    vcd,
+    grid,
+    treemap,
+    ggalluvial,
+    choroplethrMaps,
+    choroplethr,
+    ggmap,
+    RColorBrewer,
+    viridis,
+    readxl,
+    lubridate,
+    robotstxt,
+    rvest,
+    sf,
+    tmap
 Suggests:
     bookdown,
     bslib,
@@ -24,4 +46,6 @@ Suggests:
     withr,
     xml2
 Remotes:
-    hadley/emo
+    hadley/emo,
+    jtr13/redav,
+    timelyportfolio/parcoords

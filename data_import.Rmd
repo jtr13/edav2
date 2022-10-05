@@ -1,0 +1,86 @@
+# Data importation
+
+Data is the core to any analysis. In this chapter, we will talk about various ways to import data into R.
+
+## Packages with built in data set
+
+Many of the packages in R have built in data sets. To gain access of the data, call the package and you can access them by the name of the data sets. For example, we can access the `ExerciseHours` data set from `Lock5withR`
+
+```{r}
+library(Lock5withR)
+head(ExerciseHours)
+```
+
+## Data from web
+
+### Read in from URL
+
+Some of the data you found online might be files ended with '.csv' or '.xls'. In this case, you can directly read them using the URL. For example, 
+
+```{r} 
+X <- read.csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data",
+              header = FALSE) #Read in iris data
+
+head(X)
+```
+
+Note that this is not a very stable way of reading data as the structure of the website might change, which will result in failure of reading the data.
+
+### API / R API package
+
+Some data sources provide APIs to access their data, for example CDC, Census, and Twitter. However, there is a learning curve in utilizing their APIs. [Best practices for API packages](https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html) will help you to get a head start.
+
+The other option is to find packages that handles the API calls for you. For example:
+
+* CDC data - package [`wonderapi`](https://github.com/socdataR/wonderapi)
+
+* Census data - package [`censusapi`](https://cran.r-project.org/web/packages/censusapi/vignettes/getting-started.html)
+
+* Twitter - package [`rtweet`](https://www.rdocumentation.org/packages/rtweet/versions/0.7.0)
+
+A well-built client will save you a lot of time in retrieving data and should be your first resort.
+
+## Web scraping
+
+Web scraping is mostly considered as the last resort in obtaining data. As we put it in the last section, meaning that you should always explore the possibilities above before turning to web scraping. When scarping, you should 
+
+* think and investigate legal issues
+
+* think about ethical questions
+
+* limit bandwidth use
+
+* scrape only what you need
+
+To start, you will need to know some backgrounds about the structure of a html page. In a webpage, you can always right click -> inspect to check on the structure. Also, as a sanity check, we recommend using package `robotstxt` to see if scarping is allowed on a certain webpage. You can simply feed in the URL into function `paths_allowed()`. We will use the CRAN page for package `forcats` for the scraping example.
+
+```{r}
+library(robotstxt)
+library(rvest)
+paths_allowed('https://cran.r-project.org/web/packages/forcats/index.html')
+```
+
+### `rvest`
+
+Package `rvest` is widely used for web scraping. In the following example, `read_html()` takes the target webpage URL and `html_table()` extracts all table element in the page.
+
+```{r}
+forcats_data <- read_html("https://cran.r-project.org/web/packages/forcats/index.html") 
+
+forcats_table <- forcats_data %>% html_table()
+forcats_table[[1]]
+```
+If you want contents that are not in the table format, you can use `html_nodes()` specifying specific html structure. Namely,
+
+* `h2` tag - `html_nodes("h2")`
+
+* `id` attribute - `html_nodes("#XXX")`
+
+* `class` attribute - `html_nodes(".XXX")`
+
+
+
+
+
+
+
