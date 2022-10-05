@@ -1,0 +1,132 @@
+University_name,Region,Founded_year,Motto,UK_rank,World_rank,CWUR_score,Minimum_IELTS_score,UG_average_fees_(in_pounds),PG_average_fees_(in_pounds),International_students,Student_satisfaction,Student_enrollment,Academic_staff,Control_type,Academic_Calender,Campus_setting,Estimated_cost_of_living_per_year_(in_pounds),Latitude,Longitude,Website
+University of Cambridge,East of England,1209,"From here, light and sacred draughts",1,4,94.1,6.5,21750,23187,20.20%,85.50%,"20,000-24,999","over-5,000",Public,Trimesters,Urban,12000,52.2054,0.1132,www.cam.ac.uk
+University of Oxford,South East England,1096,The Lord is my light,2,2,93.3,6.5,21770,19888,16.80%,86.50%,"25,000-29,999","over-5,000",Public,Trimesters,Urban,11500,51.7548,-1.2544,www.ox.ac.uk
+University of St Andrews,Scotland,1413,Ever to excel,3,86,75.8,6.5,17040,15440,40.40%,87.90%,"10,000-14,999","1,000-1,499",Public,Semesters,Suburban,12000,56.3417,-2.7943,www.st-andrews.ac.uk
+Imperial College London,London,1907,Knowledge is the adornment and safeguard of the Empire,4,8,86.6,6.5,23500,29900,41.40%,77.90%,"15,000-19,999","4,000-4,499",Public,Continuous,Urban,10700,51.4988,-0.1749,www.ic.ac.uk
+Loughborough University,East Midlands,1966,"With Truth, Knowledge and Labour",5,404,72.8,5.5,16400,16400,22.00%,85.80%,"15,000-19,999","1,500-1,999",Public,Semesters,Suburban,9398,52.765,-1.2321,www.lboro.ac.uk/
+London School of Economics and Political Science,London,1895,To know the causes of things,6,23,76.3,6.5,17040,24500,46.80%,68.50%,"10,000-14,999","1,500-1,999",Public,Semesters,Urban,12000,51.5144,-0.1165,www.lse.ac.uk
+Durham University,North East England,1832,Her foundations are upon the holy hills,7,70,76.3,5.5,14900,18000,17.20%,75.00%,"15,000-19,999","1,500-1,999",Public,Trimesters,Urban,8000,54.765,-1.5782,www.dur.ac.uk
+Lancaster University,North West England,1964,Truth lies open to all,8,130,76.1,5.5,14940,14200,29.60%,79.30%,"10,000-14,999","2,000-2,499",Public,Trimesters,Rural,8500,54.0104,-2.7877,www.lancs.ac.uk
+University College London,London,1826,Let all come who by merit most deserve reward,9,14,88,6.5,15660,17250,36.10%,75.40%,"40,000-44,999","over-5,000",Public,Other,Urban,11500,51.5246,-0.134,www.ucl.ac.uk
+University of Warwick,West Midlands,1965,Mind Moves matter,10,80,79.3,5.5,15820,24500,28.30%,79.20%,"25,000-29,999","2,500-2,999",Public,Trimesters,Suburban,9580,52.3793,-1.5615,www.warwick.ac.uk
+University of Bath,South West England,1966,Learn each field of study according to its kind,11,261,74.8,5.5,14300,15000,21.70%,81.80%,"15,000-19,999","1,000-1,499",Public,Semesters,Suburban,11000,51.3782,-2.3264,www.bath.ac.uk
+University of Exeter,South West England,1955,We follow the light,12,93,77.4,5.5,15500,15500,21.20%,80.10%,"25,000-29,999","2,500-2,999",Public,Semesters,Suburban,8400,50.7371,-3.5351,www.exeter.ac.uk
+University of Leeds,Yorkshire and the Humber,1904,And Knowledge Will Be Increased,13,133,81.6,5.5,13500,14000,11.80%,80.40%,"35,000-39,999","3,500-3,999",Public,Semesters,Urban,7000,53.8067,-1.555,www.leeds.ac.uk
+University of Birmingham,West Midlands,1900,"Through hard work, great heights are achieved",14,119,82.6,5.5,13860,14850,12.70%,77.90%,"35,000-39,999","4,000-4,499",Public,Continuous,Urban,9000,52.4508,-1.9305,www.bham.ac.uk
+University of Bristol,South West England,1909,Learning promotes one's innate power,15,69,82,5.5,15200,14800,14.90%,77.20%,"25,000-29,999","3,000-3,499",Public,Semesters,Urban,7000,51.4584,-2.603,www.bris.ac.uk
+University of Glasgow,Scotland,1451,"The Way, the Truth and the Life",16,76,80.7,5.5,14500,14500,20.80%,78.20%,"30,000-34,999","4,000-4,499",Public,Semesters,Urban,8000,55.8724,-4.29,www.gla.ac.uk
+Harper Adams University,Wales,2012,Useful and agreeable,17,2840,NA,4.5,8500,10000,5.10%,82.40%,"5,000-5,999",100-199,Public,Other,Rural,6000,52.779,-2.4277,www.harper-adams.ac.uk
+University of Manchester,North West England,1824,"Knowledge, wisdom, humanity",18,56,83.9,5.5,14500,14500,25.00%,77.20%,"40,000-44,999","over-5,000",Public,Semesters,Urban,9800,53.4668,-2.2339,www.manchester.ac.uk
+"Royal Holloway, University of London",South East England,1849,"To be, rather than to seem",19,129,73.8,5.5,13200,13900,27.40%,80.60%,"10,000-14,999","1,000-1,499",Public,Semesters,Suburban,7500,51.4257,-0.5631,www.rhul.ac.uk
+University of Southampton,South East England,1952,The Heights Yield to Endeavour,20,110,80.9,5.5,14660,15160,18.30%,78.60%,"20,000-24,999","2,500-2,999",Public,Semesters,Suburban,7200,50.9344,-1.3965,www.soton.ac.uk
+University of Nottingham,East Midlands,1948,A city is built on wisdom,21,143,80.4,5.5,14140,14420,18.20%,78.00%,"30,000-34,999","3,000-3,499",Public,Semesters,Suburban,9840,52.9388,-1.1981,www.nottingham.ac.uk
+University of York,Yorkshire and the Humber,1963,On the threshold of wisdom,22,128,76.4,5.5,17890,18240,23.00%,81.00%,"15,000-19,999","1,500-1,999",Public,Trimesters,Suburban,11789,53.9461,-1.0518,www.york.ac.uk
+University of East Anglia UEA,East of England,1963,Do different,23,149,77.1,5.5,14200,14200,20.20%,79.00%,"15,000-19,999","1,500-1,999",Public,Semesters,Suburban,9840,52.6221,1.2411,www.uea.ac.uk
+University of Dundee,Scotland,1967,My soul magnifies the Lord,24,185,76,5.5,12950,14875,13.90%,83.80%,"15,000-19,999","1,000-1,499",Public,Semesters,Urban,6500,56.4582,-2.9821,www.dundee.ac.uk
+University of Edinburgh,Scotland,1583,Seek and You Shall Find,25,24,85,5.5,15850,16500,28.00%,72.60%,"30,000-34,999","over-5,000",Public,Semesters,Urban,8500,55.9445,-3.1892,www.ed.ac.uk
+University of Sheffield,Yorkshire and the Humber,1905,To know the causes of things,26,97,79.9,5.5,14500,14500,21.50%,82.10%,"30,000-34,999","3,000-3,499",Public,NA,Urban,7200,53.3814,-1.4884,www.sheffield.ac.uk
+University of Aberdeen,Scotland,1495,The fear of the Lord is the beginning of wisdom,27,172,76.8,5.5,13000,13000,26.80%,81.10%,"10,000-14,999","1,000-1,499",Public,Semesters,Urban,8000,57.1648,-2.1015,www.abdn.ac.uk
+Newcastle University,North East England,1963,I look ahead,28,196,79.7,5.5,12680,12680,19.60%,78.70%,"25,000-29,999","3,000-3,499",Public,Semesters,Urban,8000,54.9792,-1.6147,www.newcastle.ac.uk
+University of Liverpool,North West England,1881,These days of peace foster learning,29,157,80.5,5.5,13850,16200,27.00%,80.00%,"25,000-29,999","3,000-3,499",Public,Semesters,Urban,7000,53.4048,-2.9653,www.liverpool.ac.uk/study/international/
+King's College London,London,1829,With Holiness and Wisdom,30,27,85.5,5.5,15600,17040,26.20%,72.50%,"30,000-34,999","over-5,000",Public,Semesters,Urban,10229,51.5115,-0.116,kcl.ac.uk
+Swansea University,Wales,1920,Technical skill is bereft without culture,31,422,73.4,4.5,13800,15050,15.40%,81.50%,"20,000-24,999","1,000-1,499",Public,Trimesters,Suburban,7500,51.6092,-3.98,www.swan.ac.uk
+University of Surrey,South East England,1966,Wonderful things happen here,32,342,74.2,5.5,13300,13300,24.40%,78.20%,"15,000-19,999","1,000-1,499",Public,Semesters,Suburban,10700,51.2431,-0.5895,www.surrey.ac.uk
+Heriot-Watt University,Scotland,1966,Leaders in ideas and solutions,33,314,72.2,5.5,13020,13420,20.30%,77.90%,"10,000-14,999",800-899,Public,NA,Suburban,8000,55.9112,-3.3217,www.hw.ac.uk
+Cardiff University,Wales,1997,"Truth, Unity and Concord",34,182,79.8,5.5,14000,14000,14.30%,77.50%,"30,000-34,999","3,000-3,499",Public,Semesters,Urban,10084,51.4866,-3.1789,www.cf.ac.uk
+Queen's University Belfast,Northern Ireland,1849,"For so much, what shall we give back?",35,200,75.7,5.5,13280,13430,8.70%,77.40%,"20,000-24,999","1,500-1,999",Public,Semesters,Urban,6000,54.5844,-5.934,www.qub.ac.uk
+University of Strathclyde,Scotland,1964,The Place of Useful Learning,36,384,74.3,5.5,14250,13850,13.20%,78.90%,"20,000-24,999","1,500-1,999",Public,Semesters,Urban,9000,55.8621,-4.2424,www.strath.ac.uk
+University of Essex,East of England,1964,"Thought the harder, heart the keener",37,403,71.7,5.5,12500,14450,30.20%,80.30%,"15,000-19,999","1,000-1,499",Public,Semesters,Suburban,8320,51.8777,0.9472,essex.ac.uk
+University of Sussex,South East England,1961,Be still and know,38,140,77.7,5.5,14450,14450,27.20%,76.40%,"15,000-19,999","2,000-2,499",Public,NA,NA,12500,50.8677,-0.0875,www.sussex.ac.uk
+University of Reading,South East England,1892,NA,38,164,77.7,5.5,14350,14165,18.90%,75.20%,"15,000-19,999","1,500-1,999",Public,Other,NA,8500,51.4414,-0.9418,www.reading.ac.uk
+Nottingham Trent University,East Midlands,1992,NA,40,607,69.6,4.5,12163,12117,6.60%,81.70%,"30,000-34,999","2,000-2,499",Public,Quarters,Urban,9398,52.9581,-1.1542,www.ntu.ac.uk
+University of Leicester,East Midlands,1957,So that they may have life,41,167,77.7,4.5,14000,13500,22.20%,78.00%,"15,000-19,999","1,500-1,999",Public,Semesters,Suburban,7650,52.6211,-1.1246,www2.le.ac.uk
+University for the Creative Arts,South East England,2005,NA,42,2030,NA,4.5,11870,12150,11.70%,78.00%,"6,000-6,999",300-399,Public,NA,NA,8990,51.2151,-0.8054,www.ucreative.co.uk
+Arts University Bournemouth,South West England,1885,"A place to shape and build your work; to learn, share, provoke and collaborate",43,3420,NA,4.5,12500,12500,13.60%,82.90%,"3,000-3,999",300-399,Public,NA,NA,6000,50.7417,-1.8977,aub.ac.uk
+"SOAS, University of London",London,1916,Knowledge is Power,44,672,68.5,5.5,16880,16880,38.60%,71.20%,"5,000-5,999",700-799,Public,NA,Urban,10229,51.5224,-0.1293,www.soas.ac.uk/
+Aberystwyth University,Wales,1872,A world without knowledge is no world at all,45,466,71,4.5,10500,11250,13.10%,86.10%,"7,000-7,999",700-799,Public,Semesters,Suburban,7771,52.4183,-4.0639,www.aber.ac.uk/
+Keele University,West Midlands,1962,Thanke God for All,46,729,70.6,5.5,12500,13500,15.70%,82.50%,"10,000-14,999",800-899,Public,Semesters,Rural,8000,53.003,-2.2721,www.keele.ac.uk
+University of Stirling,Scotland,1967,"By connecting, innovating and transforming, we believe our thinking can change the world",47,659,70.8,5.5,11275,11900,11.80%,75.60%,"10,000-14,999","1,000-1,499",Public,Semesters,Suburban,7000,56.1461,-3.9178,www.stir.ac.uk
+Aston University,West Midlands,1895,Forward,48,699,70.5,5.5,13500,13500,16.50%,77.30%,"10,000-14,999",800-899,Public,Trimesters,Urban,6000,52.4867,-1.8882,www.aston.ac.uk
+Queen Mary University of London,London,1989,With united power,49,98,79.9,5.5,13650,13950,23.30%,74.30%,"20,000-24,999","3,000-3,499",Public,Semesters,Urban,9500,51.5241,-0.0404,www.qmw.ac.uk
+Coventry University,West Midlands,1992,Skill and energy,50,611,69,4.5,10766,10689,27.10%,81.50%,"30,000-34,999","2,500-2,999",Public,Other,Urban,8097,52.4074,-1.5026,www.coventry.ac.uk
+University of Lincoln,East of England,1992,Excellence through study,51,877,68.4,4.5,12800,15700,9.40%,79.30%,"15,000-19,999","1,000-1,499",Public,Semesters,Urban,9415,53.2279,-0.5502,www.lincoln.ac.uk
+University of West London,London,1990,NA,52,2319,NA,4.5,10650,10995,17.20%,84.70%,"10,000-14,999","1,000-1,499",Public,Semesters,NA,10000,51.5069,-0.3032,www.uwl.ac.uk
+Staffordshire University,West Midlands,1992,Dare to know,53,1184,NA,4.5,10500,12500,3.00%,79.80%,"10,000-14,999",700-799,Public,Semesters,Suburban,8097,53.0091,-2.1761,www.staffs.ac.uk
+University of Kent,South East England,1965,Whose service is perfect freedom,54,416,72.5,5.5,12890,12890,20.40%,76.60%,"15,000-19,999","1,500-1,999",Public,Semesters,Suburban,8990,51.2967,1.063,www.kent.ac.uk/
+Edge Hill University,North East England,2006,"From knowledge, opportunity",55,1560,NA,4.5,11150,12000,1.40%,79.10%,"10,000-14,999","1,000-1,499",Public,Semesters,Rural,8000,53.5588,-2.8703,www.edgehill.ac.uk
+Leeds Arts University,Yorkshire and the Humber,1846,NA,56,153,NA,5.5,10500,10500,15.59%,79.00%,"2,000-2,999",400-499,Private,Semesters,Urban,8270,53.8088,-1.5516,www.leeds-art.ac.uk
+University of Portsmouth,South East England,1992,Let us follow the Light,56,531,71,4.5,11500,11500,16.60%,79.30%,"25,000-29,999","1,500-1,999",Public,Semesters,Urban,6500,50.7939,-1.0974,www.port.ac.uk
+University of the West of England,South West England,1992,"Light, Liberty, Learning",58,469,68.8,4.5,11250,11250,11.60%,83.10%,"25,000-29,999","1,500-1,999",Public,Semesters,Suburban,8217,51.5006,-2.5474,www.uwe.ac.uk
+University of Ulster,Northern Ireland,1968,NA,58,634,70.4,4.5,12495,12495,8.20%,80.30%,"20,000-24,999","1,000-1,499",Public,Semesters,Urban,6000,55.1498,-6.6752,www.ulst.ac.uk
+Liverpool Hope University,North West England,2005,Hope to all who need it,60,2103,NA,4.5,10800,10800,1.90%,79.30%,"5,000-5,999",300-399,Public,Trimesters,Suburban,7471,53.3908,-2.8923,www.hope.ac.uk
+University of Huddersfield,Yorkshire and the Humber,1992,"For You, But Not Yours",61,1111,68.1,4.5,12000,12500,14.20%,78.30%,"15,000-19,999",900-999,Public,Continuous,Urban,8270,53.6428,-1.7781,www.hud.ac.uk
+Manchester Metropolitan University,North West England,1992,"Many Arts, Many Skills",62,760,69.9,4.5,11150,11500,5.80%,78.90%,"30,000-34,999","2,500-2,999",Public,Semesters,NA,8000,53.4703,-2.2393,www.mmu.ac.uk
+Norwich University of the Arts,East of England,1845,NA,62,4300,NA,4.5,12500,13000,4.90%,77.70%,"2,000-2,999",200-299,Public,NA,Urban,9415,52.6302,1.2967,www.nua.ac.uk/
+Oxford Brookes University,South East England,1865,learning through doing,64,674,68.2,4.5,12400,12580,15.30%,77.00%,"15,000-19,999","1,000-1,499",Public,Semesters,Urban,8990,51.755,-1.2242,www.brookes.ac.uk
+Northumbria University,North East England,1992,The age of learning,65,803,71.1,4.5,11500,11500,10.50%,78.30%,"25,000-29,999","1,000-1,499",Public,Semesters,Urban,8000,54.9769,-1.6072,www.unn.ac.uk
+Sheffield Hallam University,Yorkshire and the Humber,1992,Learn and Serve,65,576,67.4,4.5,11500,12700,5.90%,81.10%,"30,000-34,999","2,000-2,499",Public,Semesters,Urban,8400,53.3785,-1.4663,www.shu.ac.uk
+St George's University of London,London,1733,NA,67,196,72.9,5.5,18630,16500,9.40%,71.90%,"4,000-4,999",500-599,Public,Semesters,Urban,10229,51.427,-0.1739,www.sgul.ac.uk
+"Goldsmiths, University of London",London,1904,Institute for Creative and Cultural Entrepreneurship,68,654,66.7,5.5,12710,12710,19.80%,72.00%,"10,000-14,999","1,000-1,499",Public,NA,Urban,8000,51.4743,-0.0354,www.gold.ac.uk
+University of Roehampton,London,2004,NA,69,1273,65.9,4.5,12000,12500,9.50%,77.20%,"10,000-14,999",500-599,Public,Semesters,Urban,9500,51.4581,-0.2445,www.roehampton.ac.uk
+Bangor University,Wales,1884,The Best Gift is Knowledge,70,542,71.9,5.5,12500,12500,14.40%,81.80%,"10,000-14,999","1,000-1,499",Public,Semesters,NA,7771,53.2295,-4.13,www.bangor.ac.uk
+University of Chichester,South East England,2005,"By teaching, we learn",71,2585,NA,4.5,10250,10250,2.40%,79.90%,"5,000-5,999",500-599,Public,NA,Suburban,8990,50.845,-0.7729,www.chiuni.ac.uk
+Falmouth University,South West England,2012,"Creative, Connected, Courageous",72,2943,NA,4.5,12000,12500,6.70%,76.50%,"6,000-6,999",300-399,Public,NA,NA,8217,50.1713,-5.1238,www.falmouth.ac.uk
+"City, University of London",London,1966,To Serve Mankind,73,301,71.1,4.5,13000,14000,35.30%,77.10%,"20,000-24,999","2,000-2,499",Public,NA,Urban,12000,51.528,-0.1025,www.city.ac.uk
+De Montfort University,East Midlands,1992,Excellence and Zeal,74,456,67.6,4.5,11750,12200,10.80%,80.00%,"25,000-29,999","1,500-1,999",Public,Continuous,NA,10000,52.6298,-1.1399,www.dmu.ac.uk/home.aspx
+University of Central Lancashire,North West England,1992,From the Earth to the Sun,75,804,68.2,4.5,11450,11950,8.50%,78.70%,"20,000-24,999","1,500-1,999",Public,Semesters,Urban,7500,53.7645,-2.7083,www.uclan.ac.uk
+Plymouth University,South West England,1856,Explore Dream Discover,76,4608,72.7,4.5,12250,13250,7.90%,79.90%,"1,000-1,999",100-199,Private,NA,NA,7500,50.3759,-4.1396,www.plym.ac.uk
+University of Hull,Yorkshire and the Humber,1954,Bearing the Torch,77,734,74,4.5,12300,12300,9.60%,77.10%,"15,000-19,999","1,000-1,499",Public,Semesters,Suburban,8000,53.7731,-0.367,www.hull.ac.uk
+Liverpool John Moores University,North West England,1992,Fortune Assists the Bold,78,691,71.3,4.5,11000,11000,4.70%,79.10%,"20,000-24,999","1,500-1,999",Public,Semesters,Urban,7471,53.4037,-2.9731,ljmu.ac.uk
+University of Chester,North West England,2005,"He that teacheth, on teaching",79,1579,NA,4.5,10800,11000,5.40%,79.10%,"10,000-14,999",600-699,Public,Other,Urban,7471,53.2003,-2.8998,www.chester.ac.uk
+University of the Arts London,London,1986,First among artists,79,459,NA,5.5,15950,17250,42.70%,70.10%,"15,000-19,999","2,000-2,499",Public,NA,NA,12000,51.5178,-0.1164,www.arts.ac.uk/
+York St John University,Yorkshire and the Humber,1841,They may have life and have it more abundantly,81,2643,NA,5.5,10000,10000,8.70%,79.90%,"6,000-6,999",300-399,Public,NA,Urban,8000,53.9663,-1.0829,www.yorksj.ac.uk/
+Queen Margaret University,Scotland,2007,NA,82,2494,NA,4.5,10700,11000,18.30%,76.50%,"5,000-5,999",200-299,Public,Semesters,Suburban,7500,55.9308,-3.0736,www.qmced.ac.uk
+Robert Gordon University,Scotland,1992,Make the best of all your abilities,83,1163,NA,4.5,10000,11500,14.90%,80.40%,"10,000-14,999",600-699,Public,Semesters,Suburban,7000,57.1189,-2.1379,www.rgu.ac.uk
+University of Greenwich,London,1890,"To learn, to do, to achieve",84,747,68.7,4,10850,11700,14.90%,78.40%,"15,000-19,999","1,000-1,499",Public,Semesters,Suburban,10229,51.483,-0.0064,www.gre.ac.uk
+"St Mary's University, Twickenham",London,1850,Show Thyself a Mother,85,2386,NA,4.5,11000,13000,4.20%,79.00%,"5,000-5,999",300-399,Private,NA,Suburban,8000,51.4363,-0.3345,www.stmarys.ac.uk
+London South Bank University,London,1892,Do it with thy Might,86,1040,NA,4.5,10500,10500,9.10%,77.90%,"15,000-19,999","1,000-1,499",Public,Semesters,Urban,9000,51.4981,-0.1024,www.sbu.ac.uk
+Teesside University,North East England,1992,Deeds Not Words,87,1341,NA,4.5,10750,10950,6.30%,79.50%,"15,000-19,999",700-799,Public,NA,Urban,8000,54.5707,-1.2353,www.tees.ac.uk
+University of Hertfordshire,East of England,1992,Seek Knowledge Throughout Life,88,604,69.5,4,11000,12000,14.00%,78.30%,"20,000-24,999","1,500-1,999",Public,Semesters,Suburban,9415,51.7615,-0.2483,www.herts.ac.uk
+Royal Agricultural University,South West England,2013,Caring for the Fields and the Beasts,89,4336,NA,5.5,10000,11000,7.20%,82.30%,"1,000-1,999",50-99,Public,Other,Rural,9400,51.7105,-1.995,www.rau.ac.uk
+Solent University,South East England,2004,Spark Your Imagination,89,1682,NA,4.5,10380,10930,13.30%,79.00%,"9,000-9,999",600-699,Public,Semesters,Urban,7500,50.9083,-1.4004,www.solent.ac.uk
+University of Derby,East Midlands,1992,Experience Teaches,91,1140,NA,4.5,10900,11440,8.00%,78.60%,"15,000-19,999","1,000-1,499",Public,Other,Urban,10500,52.9379,-1.4972,www.derby.ac.uk
+University of Buckingham,South East England,1973,Flying on our own Wings,92,2004,NA,4.5,17160,14140,50.50%,80.50%,"3,000-3,999",100-199,Private,NA,Rural,8000,51.9954,-0.9917,www.buckingham.ac.uk
+University of Worcester,West Midlands,2005,Inspire to Aspire,92,2346,NA,4.5,11120,11400,5.60%,82.80%,"10,000-14,999",900-999,Public,Semesters,Suburban,8097,52.198,-2.242,www.worcester.ac.uk
+Bournemouth University,South West England,1992,To learn is to change,94,782,68.9,4.5,13000,12750,8.70%,75.40%,"15,000-19,999",900-999,Public,NA,Urban,8217,50.7435,-1.8983,www.bournemouth.ac.uk
+University of Gloucestershire,South West England,2001,In Spirit and Truth,95,2073,NA,4.5,11500,11500,3.70%,78.00%,"8,000-8,999",600-699,Public,Semesters,Suburban,8217,51.8879,-2.0888,www.glos.ac.uk
+Birmingham City University,West Midlands,1992,Do what you are doing; attend to your business,96,573,NA,4.5,13500,14500,9.00%,77.30%,"25,000-29,999","1,500-1,999",Public,Semesters,Urban,6000,52.4833,-1.8848,www.bcu.ac.uk
+Glasgow Caledonian University,Scotland,1993,For the Common Weal,96,1284,67.2,4.5,10467,11133,8.10%,76.50%,"15,000-19,999",700-799,Public,Trimesters,Urban,8000,55.8668,-4.25,www.gcu.ac.uk
+University of Winchester,South East England,2005,Wisdom and Knowledge,98,2190,NA,4.5,11300,11650,6.10%,78.50%,"7,000-7,999",700-799,Public,Semesters,Suburban,10000,51.06,-1.3277,winchester.ac.uk
+Abertay University,Scotland,1994,Blessed is the one who finds wisdom,98,1066,NA,5.5,10700,11400,9.00%,81.30%,"4,000-4,999",200-299,Public,Semesters,Urban,6500,56.4633,-2.9739,www.abertay.ac.uk
+Brunel University London,London,1966,"To bring benefit to society through excellence in education, research and knowledge transfer",100,578,73.5,4.5,13500,13500,20.60%,73.40%,"10,000-14,999","1,000-1,499",Public,Trimesters,Suburban,7000,51.5321,-0.4727,www.brunel.ac.uk
+Edinburgh Napier University,Scotland,1992,"Without knowledge, everything is in vain",101,676,66.2,4.5,11250,12000,16.60%,75.90%,"10,000-14,999",800-899,Public,Trimesters,Urban,8000,55.9332,-3.2142,www.napier.ac.uk
+University of Wales Trinity Saint David,Wales,2010,NA,102,1855,NA,4.5,10000,11000,15.59%,78.60%,"10,000-14,999",700-799,Public,Semesters,Rural,7771,52.1144,-4.0754,www.uwtsd.ac.uk/
+Bishop Grosseteste University,East of England,1862,Not all things to oneself,102,4547,NA,5.5,10000,6000,15.59%,75.80%,"2,000-2,999",100-199,Public,NA,Urban,7500,53.2439,-0.5366,www.bishopg.ac.uk/
+Plymouth Marjon University,South West England,1923,Out of studies comes character,102,3916,NA,6,9250,9250,15.59%,82.70%,"2,000-2,999",50-99,Private,NA,NA,8217,50.4201,-4.11,www.marjon.ac.uk
+University of Bradford,Yorkshire and the Humber,1966,Give invention light,105,1392,68.6,4.5,12100,12650,14.90%,74.30%,"9,000-9,999",500-599,Public,Semesters,Urban,8270,53.7915,-1.7661,www.brad.ac.uk
+Kingston University,London,1992,Through learning we progress,106,817,67.4,4.5,11300,12500,14.50%,78.30%,"15,000-19,999","1,000-1,499",Public,Semesters,Urban,10229,51.4032,-0.3035,www.kingston.ac.uk/
+Middlesex University,London,1973,NA,107,537,67.5,4,11200,13000,20.70%,74.00%,"15,000-19,999","1,000-1,499",Public,Semesters,NA,9000,51.5897,-0.2293,www.mdx.ac.uk
+University of the West of Scotland,Scotland,1897,To achieve through hard work,108,1905,66.9,4.5,11000,11000,5.20%,78.00%,"15,000-19,999",600-699,Public,Trimesters,Urban,8000,55.7782,-4.1041,www.uws.ac.uk
+University of Sunderland,North East England,1992,Sweetly absorbing knowledge,109,1050,NA,4,8350,9600,25.10%,77.20%,"10,000-14,999",900-999,Public,Continuous,Urban,8000,54.9046,-1.3915,www.sunderland.ac.uk
+Bath Spa University,South West England,1975,NA,110,1334,NA,4.5,11300,11300,7.40%,72.20%,"7,000-7,999",600-699,Public,NA,Rural,8217,51.3749,-2.4394,www.bathspa.ac.uk
+University of Salford,North West England,1967,Let us seek higher things,111,680,67.7,4.5,11795,12000,11.10%,76.80%,"20,000-24,999","1,000-1,499",Public,Semesters,Urban,7471,53.4872,-2.2737,www.salford.ac.uk
+Cardiff Metropolitan University,Wales,2011,The most valuable possession is knowledge,112,1821,NA,4.5,10800,12500,18.00%,80.00%,"10,000-14,999",700-799,Public,Semesters,Urban,7500,51.496,-3.2121,www.cardiffmet.ac.uk
+Buckinghamshire New University,South East England,2007,By Art and Industry,113,2727,NA,4.5,9500,10600,7.60%,79.70%,"10,000-14,999",400-499,Public,Semesters,Suburban,8990,51.6279,-0.7533,bucks.ac.uk/
+University of South Wales,Wales,1841,Success Through Endeavour,114,1129,66.4,4.5,10100,10300,11.80%,79.50%,"20,000-24,999","1,000-1,499",Public,Trimesters,NA,7771,51.479,-3.1694,www.southwales.ac.uk/
+Newman University,West Midlands,1968,From the shadow to the truth,115,5253,NA,4.5,10500,10500,15.59%,81.20%,"2,000-2,999",100-199,Public,NA,Suburban,10000,52.433,-1.9936,www.newman.ac.uk/
+University of Northampton,East Midlands,2005,Let us not be ignorant,116,1198,NA,4,10700,10700,9.60%,73.90%,"10,000-14,999",800-899,Public,NA,Suburban,9000,52.2305,-0.887,www.northampton.ac.uk
+Leeds Trinity University,Yorkshire and the Humber,2012,Knowledge and Excellence,117,3200,NA,4.5,10750,11250,0.70%,74.80%,"3,000-3,999",100-199,Public,Semesters,Suburban,7500,53.8483,-1.6453,www.leedstrinity.ac.uk/
+Canterbury Christ Church University,South East England,2005,The truth shall set you free,118,1578,NA,4.5,11000,9500,5.70%,75.70%,"10,000-14,999",700-799,Public,Trimesters,Urban,8990,51.2795,1.0899,www.canterbury.ac.uk
+University of Westminster,London,1838,The Lord is our Strength,119,801,66.9,5.5,12000,14000,21.10%,75.10%,"15,000-19,999","1,500-1,999",Public,Semesters,Urban,10229,51.517,-0.1432,www.wmin.ac.uk
+Anglia Ruskin University,East of England,1858,Excellence through partnership,120,730,68.1,4,10500,10500,10.40%,79.00%,"20,000-24,999",900-999,Public,Semesters,Urban,9415,52.2033,0.1345,www.anglia.ac.uk
+University of Cumbria,North West England,2007,NA,121,2333,NA,4.5,10500,10500,1.50%,73.80%,"7,000-7,999",400-499,Public,NA,NA,6000,54.8909,-2.9222,www.cumbria.ac.uk
+University of Brighton,South East England,1992,NA,122,761,71.1,4.5,12660,12830,13.70%,75.80%,"20,000-24,999","1,500-1,999",Public,Continuous,NA,8990,50.8598,-0.0879,www.brighton.ac.uk
+Leeds Beckett University,Yorkshire and the Humber,1992,NA,123,657,66.1,4.5,9500,11500,5.70%,79.30%,"20,000-24,999","1,000-1,499",Public,Semesters,Urban,8270,53.8035,-1.548,www.lmu.ac.uk
+University of Wolverhampton,West Midlands,1992,Innovation and opportunity,124,864,66,4.5,10000,10000,15.59%,78.80%,"15,000-19,999",900-999,Public,Semesters,NA,8097,52.5876,-2.1273,www.wlv.ac.uk/
+University of Bolton,North West England,2004,Wisdom is over Morus,125,2100,NA,4.5,11250,11250,6.90%,82.10%,"6,000-6,999",300-399,Public,Semesters,Urban,5500,53.5742,-2.4362,www.bolton.ac.uk
+London Metropolitan University,London,1848,Knowledge in Abundance,126,1025,NA,4.5,11400,13500,12.40%,75.70%,"9,000-9,999",400-499,Public,Continuous,Urban,15000,51.5526,-0.1113,www.londonmet.ac.uk
+University of East London,London,1992,Science and fulfillment of vows,127,971,NA,4.5,10700,11700,6.90%,76.10%,"10,000-14,999",900-999,Public,Semesters,Suburban,10229,51.5076,0.0651,www.uel.ac.uk
+University of Bedfordshire,East of England,2006,NA,128,1281,NA,4.5,9750,9900,11.70%,77.40%,"10,000-14,999",500-599,Public,Semesters,Urban,9415,51.8779,-0.4093,www.beds.ac.uk
+University of Suffolk,East of England,2007,Honesty and diligence,129,4030,NA,4.5,9495,9495,2.50%,76.00%,"7,000-7,999",200-299,Public,NA,NA,9415,52.0523,1.1629,www.ucs.ac.uk/
+Wrexham Glyndwr University,Wales,2008,Confidence through Education,130,2397,NA,4.5,10250,10500,23.00%,74.30%,"5,000-5,999",200-299,Public,NA,Urban,7771,53.0526,-3.0062,www.glyndwr.ac.uk/
+Ravensbourne University London,London,1962,Designed for industry,131,2759,NA,5.5,9250,9250,15.59%,66.10%,"2,000-2,999",100-199,Public,Semesters,Urban,10229,51.5017,0.0055,www.ravensbourne.ac.uk
