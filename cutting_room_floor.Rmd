@@ -8,6 +8,7 @@ It's worth remembering that most graphs end up on the proverbial cutting room fl
 
 ```{r}
 library(dplyr)
+library(forcats)
 library(ggplot2)
 library(readr)
 library(stringr)
