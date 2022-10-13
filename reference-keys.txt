@@ -166,3 +166,5 @@ ggmap
 shape-file
 sf
 tmap
+cutting-room-floor
+parallel-coordinate-plots

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 GitHub/git Resources | edav.info, 2nd edition</title>
+  <title>Chapter 18 Cutting room floor | edav.info, 2nd edition</title>
   <meta name="description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 GitHub/git Resources | edav.info, 2nd edition" />
+  <meta property="og:title" content="Chapter 18 Cutting room floor | edav.info, 2nd edition" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Supplemental resources for GR5293 and GR5702" />
   <meta name="github-repo" content="jtr13/edav2" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 GitHub/git Resources | edav.info, 2nd edition" />
+  <meta name="twitter:title" content="Chapter 18 Cutting room floor | edav.info, 2nd edition" />
   
   <meta name="twitter:description" content="Supplemental resources for GR5293 and GR5702" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-transformation.html"/>
-<link rel="next" href="learning-ggplot2.html"/>
+<link rel="prev" href="spatial-data.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -381,291 +381,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="github" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 6</span> GitHub/git Resources<a href="github.html#github" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.1</span> Overview<a href="github.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This section describes workflows for working with GitHub/git and advice on how to collaborate in teams on large coding projects. GitHub is super useful and powerful, but people also find it quite annoying and <a href="https://xkcd.com/1597/" target="_blank">difficult to understand</a>. Rather than trying to master the whole system, we suggest beginning with some basic workflows, as outlined below. You can derive great benefits from it without being an expert.</p>
-</div>
-<div id="first-things-first" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.2</span> First things first<a href="github.html#first-things-first" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li><p><em>Install Git</em>. To do so, follow the instructions in the <a href="https://happygitwithr.com/install-git.html" target="_blank">Install Git</a> chapter of <em>Happy Git with R</em>.</p></li>
-<li><p><em>Tell git your name and email address.</em> <a href="https://happygitwithr.com/hello-git.html" target="_blank">Introduce yourself to Git</a> in <em>Happy Git</em> explains it all.</p></li>
-<li><p><em>Set up a personal access token.</em> See <a href="https://happygitwithr.com/https-pat.html" target="_blank">Personal access token for HTTPS</a>.</p></li>
-<li><p>(Optional) <em>Check that your setup works.</em> See <a href="https://happygitwithr.com/rstudio-git-github.html" target="_blank">Connect RStudio to Git and GitHub</a>. To be clear, you don’t have to do any connecting – the steps in this chapter check that it’s all working properly.</p></li>
-</ol>
-</div>
-<div id="usage" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.3</span> Usage<a href="github.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Choose the right section based on what you’re trying to accomplish:</p>
-<ul>
-<li><p>If you are working by yourself and just getting started: <a href="github.html#the-no-branch-workflow">the no branch workflow</a>.</p></li>
-<li><p>If you are working by yourself and want to learn how to use branches, <em>or are a collaborator (i.e. have write access) to another repo</em>: <a href="github.html#your-repo-with-branching">your repo with branching</a>.</p></li>
-<li><p>If you are not a collaborator (that is, don’t have write access to a repository) but wish to contribute to a project for the first time: <a href="github.html#st-pr-on-another-repo-with-branching">1st PR on another repo with branching</a>.</p></li>
-<li><p>If you are not a collaborator but wish to contribute to the same project again: <a href="github.html#nd-nth-pr-on-another-repo-with-branching">2nd-nth PR on another repo with branching</a>.</p></li>
-</ul>
-</div>
-<div id="the-no-branch-workflow" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.4</span> The no branch workflow<a href="github.html#the-no-branch-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To get comfortable with Git, start with this basic workflow in which you will be pulling from and pushing to <em>your</em> repo on GitHub. Just you, no collaboration:</p>
-<center>
-<img src="images/git/no-branch.png" />
-</center>
-<p>The <a href="https://happygitwithr.com/rstudio-git-github.html" target="_blank">Connect RStudio to Git and GitHub</a> chapter of <em>Happy Git</em> will get you set up: you will create a repo on GitHub, clone the repo into an RStudio project, and practice making changes.
-Once you’re set up, your local workflow will be <strong>pull, work, commit/push</strong>.</p>
-<p><strong>PULL</strong> Each time you open RStudio and switch to the project, you will pull down any changes made to the repo on GitHub by clicking the <strong>Down Arrow</strong> in the Git pane of RStudio. You may think that no changes have been made to GitHub and there’s nothing to pull, but you may forget the typos that you fixed online, so it’s good practice to always start by pulling changes just in case.</p>
-<p><strong>WORK</strong> Do your stuff. Make changes to files. Add new files. Keep an eye on the Git panel in RStudio; it will show you which files were changes.</p>
-<p><strong>COMMIT/PUSH</strong> When you’re done working, you’ll want to think about what to do with the files that have changed. I like to keep the Git panel clear, so when I’m done I do one of three things with each file: 1) click “Staged” to get it ready for a sendoff to GitHub, 2) delete it if it’s not needed, 3) add it to <code>.gitignore</code> if it’s a file I want to keep locally but not send to GitHub. (Keep in mind that files in .gitignore are not backed up unless you have another backup system.) If I have a file that belongs somewhere else, I will move it there, so the only files left are the ones to send to GitHub.</p>
-<p>The next step is to click the <strong>Commit</strong> button and enter a commit message that meaningful describes what was done. Finally clicking the <strong>Up Arrow</strong> will send the commit to GitHub.</p>
-<p>It’s not considered good practice to commit too often, but as a beginner, it’s useful to do so to learn how it all works.</p>
-</div>
-<div id="your-repo-with-branching" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.5</span> Your repo with branching<a href="github.html#your-repo-with-branching" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-Once you’ve comfortable with the workflow described above, you’re ready to start branching.
-<center>
-<img src="images/git/your-repo.jpeg" />
-</center>
-<p>If it’s <em>your</em> repo–or you have write access to someone else’s repo–begin by cloning the repo as in the workflow above. For emphasis: if you have write access to someone else’s repo, you should still <em>clone</em> the repo, not <em>fork</em> it. The repo will be referred to as “origin” even though you’re not the owner; origin simply means the repo from which the project was cloned. Next, continue with <a href="github.html#step-4-branch">step 4</a> below, or follow the steps in <a href="https://github.com/jtr13/EDAV/blob/master/pdfs/BranchingYourRepo.pdf" target="_blank">these slides</a>, which provide step-by-step detail on creating a branch, doing work on the branch and then submitting a pull request to merge the changes into origin/master.</p>
-<p>At any point, you can check the remotes (in this case, GitHub repositories) that are linked to your project with <code>git remote -v</code>. If your GitHub username is <code>person1</code> and you have write access to a repo called <code>finalproject</code> created by <code>person2</code>, your remotes will look like this:</p>
-<pre><code>$ git remote -v
-origin  https://github.com/person2/finalproject.git(fetch)
-origin  https://github.com/person2/finalproject.git(push)</code></pre>
-</div>
-<div id="st-pr-on-another-repo-with-branching" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.6</span> 1st PR on another repo with branching<a href="github.html#st-pr-on-another-repo-with-branching" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<center>
-<img src="images/git/pull-request-1.png" />
-</center>
-<div id="step-1-fork-the-upstream-repo-once" class="section level3 unnumbered hasAnchor">
-<h3>Step 1: Fork the upstream repo (once)<a href="github.html#step-1-fork-the-upstream-repo-once" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><em>Skip this step if you are syncing with a repo that you have write access to, whether it’s your own or someone else’s.</em>
-Let’s say you want to contribute to EDAV! Fork <a href="https://github.com/jtr13/EDAV" target="_blank">our GitHub repo</a> and then on your own GitHub page, you will see a forked <strong>EDAV</strong> repo under the repositories section. Note, from now on, the term <strong>upstream repository</strong> refers to the original repo of the project that you forked and the term <strong>origin repository</strong> refers to the repo that you created or forked on GitHub. From your respective, both <strong>upstream</strong> and <strong>origin</strong> are remote repositories.</p>
-<center>
-<img src="images/git/fork.png" />
-<em>A fork of jtr13/EDAV</em>
-</center>
-</div>
-<div id="step-2-clone-origin-and-create-a-local-repository-once" class="section level3 unnumbered hasAnchor">
-<h3>Step 2: Clone origin and create a local repository (once)<a href="github.html#step-2-clone-origin-and-create-a-local-repository-once" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A <strong>local repository</strong> is the repo that resides on your computer. In order to be able to work locally, we need to create a local copy of the remote reposiotry. (For this to work you must first follow the instructions in <a href="github.html#first-things-first">First things first</a> section.)</p>
-<p>On your GitHub repo page, copy the url of the <strong>origin</strong> repo by clicking on the green Code button and then the clipboard icon. It should look like this: <code>https://github.com/jtr13/EDAV.git</code> Then switch to RStudio, and click <strong>File</strong> -&gt; <strong>New Project</strong> -&gt; <strong>Version Control</strong> -&gt; <strong>Git</strong>. Now you can paste in the url of the <strong>origin</strong> repo and click <strong>Create Project</strong> to create a local repository. It is best to choose a location that is outside of other version control systems such as Dropbox to avoid conflicts.</p>
-</div>
-<div id="step-3-configure-remote-that-points-to-the-upstream-repository-once" class="section level3 unnumbered hasAnchor">
-<h3>Step 3: Configure remote that points to the upstream repository (once)<a href="github.html#step-3-configure-remote-that-points-to-the-upstream-repository-once" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><em>Skip this step if you’re syncing with a repo that you have write access to.</em>
-The purpose of this step is to specify the location of the upstream repository, that is, the original project, not your copy of it.</p>
-<p>To complete this step, type in the following at the command line:</p>
-<p><code>$ git remote add upstream &lt;upstream repo url&gt;</code></p>
-<p>Source: <a href="https://help.github.com/en/articles/configuring-a-remote-for-a-fork" target="_blank">Configuring a remote for a fork</a></p>
-<p>Once the upstream remote is added, you will have two remotes: origin and upstream. For example, the remotes for my (<code>jtr13</code>) local forcats repository are:</p>
-<pre><code>$ git remote -v
-origin  https://github.com/jtr13/forcats.git (fetch)
-origin  https://github.com/jtr13/forcats.git (push)
-upstream        https://github.com/tidyverse/forcats (fetch)
-upstream        https://github.com/tidyverse/forcats (push)</code></pre>
-<p>(Although four options are listed, that is, fetching or pushing from either remote, as the diagram above indicates, we will only <em>fetch</em> from upsteam and <em>push</em> to origin.)</p>
-</div>
-<div id="step-4-branch" class="section level3 unnumbered hasAnchor">
-<h3>Step 4: Branch<a href="github.html#step-4-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>With this workflow, all new work is done on a branch, so it’s important to remember to create a new branch before you begin working. Once the work is complete, a pull request is submitted and if all goes well the new code will be merged into the master branch of the project on GitHub.</p>
-<p>When you’re ready to start working on something new, create a new branch. <strong>Do not reuse a merged branch.</strong> Each “fix” should get its own branch and be deleted after it’s been merged.</p>
-<p>To create a branch, click on the button shown below:</p>
-<p><br></p>
-<center>
-<img src="images/git/newbranch.png" />
-</center>
-<p><br></p>
-<p>Give your new branch a meaningful name. For example, if you intend to add a faceting example to the histogram chapter, you might call your branch <code>add_hist_facet</code>. Leave the “Sync branch with remote” box checked. Thereby you will not only create a local branch but also a remote branch on origin, and the local branch will be set up to track the remote branch. In short, they will be linked and git will take note of any changes on the other.</p>
-</div>
-<div id="step-5-work-commit-and-push" class="section level3 unnumbered hasAnchor">
-<h3>Step 5: Work, commit and push<a href="github.html#step-5-work-commit-and-push" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When you create a branch following the method in Step 4, you will be automatically switched to the new branch. You can switch branches by clicking on the branch dropdown box to the right of the new branch button. However, be careful doing so. Work that isn’t committed, even if it is saved, doesn’t belong to a branch so it will move with you as you change branches. This makes it easy to accidentally be on the wrong branch. Check that you are in the right place and as you work keep an eye on changed files in the Git pane.</p>
-<center>
-<img src="images/git/gitpane.png" />
-</center>
-<p><br></p>
-<p>Recall that there are three steps to moving saved work from your working directory to GitHub, represented by the git commands: <code>add</code>, <code>commit</code>, and <code>push</code>.</p>
-<p><br></p>
-<center>
-<img src="images/git/add-commit-push.png" />
-</center>
-<p><br></p>
-<p>In RStudio, to <strong>add</strong>, you simply click the checkbox for each file you have modified in the “staged” column on the left of the Git pane. To <strong>commit</strong>, you just click on the <strong>commit</strong> button under the Git tab. Entering a commit message is mandatory; choose a meaningful description of the code changes. Finally, to push changes to GitHub, click on the <strong>push</strong> button, which is represented by an upward pointing arrow. You can combine multiple commits into one “push”.</p>
-<p>It is not considered good practice to commit too enough because all the commits are entered into the commit history and it’s hard to find what you need if you commit your work every five minutes. (As you’re starting out, though, I wouldn’t be concerned about this. It’s more important to use the commands frequently to gain experience.)</p>
-<p>The <a href="https://happygitwithr.com/repeated-amend.html" target="_blank">Repeated Amend chapter of Happy Git with R</a> describes one approach to dealing with the how-often-should-I-commit dilemma.</p>
-</div>
-<div id="step-6-submit-a-pull-request" class="section level3 unnumbered hasAnchor">
-<h3>Step 6: Submit a pull request<a href="github.html#step-6-submit-a-pull-request" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Now you are able to see the branch you have created on the GitHub page. The next step is to submit a pull request and the process is very similar to the process described in the <a href="https://jtr13.github.io/EDAV/contribute.html">GitHub only walkthrough</a> from the first version of edav.info, beginning with step 6.</p>
-</div>
-<div id="step-7-merge-the-pull-request" class="section level3 unnumbered hasAnchor">
-<h3>Step 7: Merge the pull request<a href="github.html#step-7-merge-the-pull-request" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you submitted a PR to another project, you are not the one who will be merging the pull request, so there’s nothing for you to do here.</p>
-<p>If it is your project, and it is your job to do so, be aware that there are many methods to merge a request. The most direct simple and direct is to <a href="https://help.github.com/en/articles/merging-a-pull-request#merging-a-pull-request-on-github" target="_blank">merge the PR on GitHub</a>. This method works well for merging fixed typos and the like. If you want to be able to test code, you may want to check out the PR locally, test it, and perhaps even make edits to it before merging.</p>
-<p>Best practices in this area are evolving. My current recommendation is to use the <code>usethis</code> package, which makes complex tasks very simple. <a href="https://github.com/jtr13/usethis_demos/blob/master/how_to1.md" target="_blank">“How to edit a pull request locally”</a> explains how to do so.</p>
-<p>Another great resource is <a href="https://happygitwithr.com/pr-extend.html" target="_blank">“Explore and extend a pull request”</a> in <em>Happy Git with R</em>. This chapter describes two official GitHub versions of merging a pull request, as well as a workflow in development using <code>git2r</code>.</p>
-</div>
-</div>
-<div id="nd-nth-pr-on-another-repo-with-branching" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.7</span> 2nd-<em>n</em>th PR on another repo with branching<a href="github.html#nd-nth-pr-on-another-repo-with-branching" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<center>
-<img src="images/git/pull-request-2.png" />
-</center>
-<p>After the first pull request, the process changes a little. We no longer need to fork and clone the repo. What we do need to do though is make sure that our local copy of the repository is up to date with the GitHub version. There is some other cleanup we need to do, so after the first pull request, we’ll replace steps #1 - #3 above with the following:</p>
-<div id="step-1-sync" class="section level3 unnumbered hasAnchor">
-<h3>Step 1: Sync<a href="github.html#step-1-sync" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>How you sync depends on whether you are syncing with your own repo (“origin”) or someone else’s repo (“upstream”). This should be done at the beginning of every work session.</p>
-<p><strong>Your repo</strong></p>
-<p>Switch to the master branch (important!), then click the pull button (down arrow) in the Git pane in RStudio. Or you can type the following in the Terminal:</p>
-<p><code>$ git checkout master</code><br />
-<code>$ git pull</code></p>
-<p>There are no reminders that you’re behind, so it’s up to you. Make it a habit.</p>
-<p><strong>Someone else’s repo</strong></p>
-<p>If you’re working on someone else’s repo, make sure you’ve <a href="github.html#step-3-configure-remote-that-points-to-the-upstream-repository-once" target="_blank">configured an upstream remote</a>.
-Then do the following to update your fork:</p>
-<p><code>$ git fetch upstream</code></p>
-<p><code>$ git checkout master</code></p>
-<p><code>$ git merge upstream/master</code></p>
-<p>Source: <a href="https://help.github.com/en/articles/syncing-a-fork" target="_blank">Syncing a fork</a></p>
-<p>Note that these commands bring in changes directly from the upstream repo.</p>
-</div>
-<div id="step-2-delete-the-old-branch" class="section level3 unnumbered hasAnchor">
-<h3>Step 2: Delete the old branch<a href="github.html#step-2-delete-the-old-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If your previous pull request was merged, it’s good practice to delete the associated branch since the upstream already contains all the changes you have made. To fully delete a branch you will need to 1) delete the local branch, 2) delete the remote branch, 3) stop tracking the branch:</p>
-<ol style="list-style-type: decimal">
-<li>One way to delete the remote branch is to do so on GitHub. Navigate to the closed pull request on the upstream repo. If your branch has been merged, the pull request dialogue will display the following message: “You’re all set—the <code>&lt;branchname&gt;</code> branch can be safely deleted.” Simply click on the Delete branch button next to the message.</li>
-</ol>
-<p>If you prefer to work in the terminal, you can delete the remote branch with:</p>
-<p><code>$ git push origin --delete &lt;branchname&gt;</code></p>
-<ol start="2" style="list-style-type: decimal">
-<li>To delete the local branch, switch to the master branch in RStudio and then type the following in the terminal:</li>
-</ol>
-<p><code>$ git branch -d branchname</code></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Take note that git doesn’t stop tracking the remote branch even though it’s gone in both places! To stop tracking deleted branches use the following:</li>
-</ol>
-<p><code>$ git fetch -p</code></p>
-<p>Otherwise you will still see the deleted branches listed in RStudio’s Git pane, and they will still appear when you look at all of your branches with</p>
-<p><code>$ git branch -a</code> (* = checked out branch)</p>
-<p>Speaking of which, be aware that the Git pane doesn’t tend to update in real time, so you’ll likely still see branches listed that have been deleted. Be careful not to switch to them, or you will inadvertently recreate them. (Deleted branches have a habit of coming back.) Clicking on master (even though you’re already on master) appears to trigger an update of the dropdown list. If that doesn’t work, switching out of the project and back in will do so, if you want to be sure that the branches you deleted are really gone.</p>
-</div>
-<div id="step-3-update-your-fork-on-github" class="section level3 unnumbered hasAnchor">
-<h3>Step 3: Update your fork on GitHub<a href="github.html#step-3-update-your-fork-on-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Skip this step if there’s no upstream repo.</p>
-<p>Yes, it’s odd, but once you’ve forked and cloned the project repo, the copy on GitHub becomes fairly irrelevant. However it’s not a bad idea to keep it up to date, if for no other reason than it’s disturbing to see messages like the following in your Git pane:</p>
-<p><br></p>
-<center>
-<img src="images/git/your-branch-ahead.png" />
-</center>
-<p><br></p>
-<p>Thankfully, your fork on GitHub can be updated easily by clicking the green up arrow or entering <code>git push</code> in the Terminal.</p>
-</div>
-<div id="steps-4-7-see-above" class="section level3 unnumbered hasAnchor">
-<h3>Steps 4-7: See above<a href="github.html#steps-4-7-see-above" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Now we’re ready to repeat the branch, work, commit, push, submit a pull request workflow. To do so, follow <a href="github.html#step-4-branch">Steps 4-7 above</a>.</p>
-</div>
-</div>
-<div id="fixing-mistakes" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.8</span> Fixing mistakes<a href="github.html#fixing-mistakes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Fixing things generally involves returning to an earlier point in git history. To do so we need a way of referring to the point we want to return to. There are <a href="https://git-scm.com/docs/gitrevisions" target="_blank">multiple ways</a> of referring to the past. Most of the examples below use <code>HEAD</code> (the last commit) or <code>HEAD~1</code> (the parent of the last commit, a.k.a. the 2nd to last commit).</p>
-<p>If you are <a href="github.html#st-pr-on-another-repo-with-branching">contributing to someone else’s repo</a> and things on your end get hopelessly messed up, the easiest way out is to start over. First be sure to keep a local copy of the files you need in a new folder, then <a href="https://help.github.com/en/github/administering-a-repository/deleting-a-repository" target="_blank">delete your fork on GitHub</a>, delete the local clone, fork again on GitHub, clone again to get a fresh local copy, and add the files you need back into the project. This is a variation of the <a href="https://happygitwithr.com/burn.html" target="_blank">“Burn it all down”</a> described in <em>Happy Git with R</em>.</p>
-<div id="forgot-to-branch" class="section level3 hasAnchor">
-<h3><span class="header-section-number">6.8.1</span> Forgot to branch<a href="github.html#forgot-to-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p><strong>if you didn’t commit anything yet</strong>: <br> Just create the new branch and your work will be moved there, as <a href="https://stackoverflow.com/a/1394804/5314416" target="_blank">changes in the working directory do not belong to a branch until they are committed</a>.</p></li>
-<li><p><strong>if you committed but didn’t push to GitHub</strong>: <br> Undo the last commit with <code>git reset --soft HEAD~1</code> (i.e. return to the parent commit). <code>--soft</code> means your changes won’t be erased. Then create the new branch. (Your work will move to it, see above.)</p></li>
-<li><p><strong>if you committed and pushed to GitHub</strong>: <br> Undo the last commit with <code>git reset --soft HEAD~1</code>, push to GitHub (you will need to use <code>git push --force</code> since the push will cause origin to lose commits, then create the new branch. (Your work will move to it, see above.) <br> Note: Be very, very careful with <code>--force</code> as it is a dangerous tool. However, since the stakes are lower if you are force pushing to a fork, as would be the case if you are <a href="github.html#st-pr-on-another-repo-with-branching">contributing to someone else’s repo</a>, it’s ok to use it in this particular case.</p></li>
-</ul>
-</div>
-<div id="undoing-stuff" class="section level3 hasAnchor">
-<h3><span class="header-section-number">6.8.2</span> Undoing stuff<a href="github.html#undoing-stuff" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>Undo the last commit: <code>git reset --soft HEAD~1</code> <br> (Fun fact: <a href="https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git" target="_blank">“How do I undo the most recent local commits in Git?”</a> has the second highest number of votes of any question on Stack Overflow, and over 8 million views.)</p></li>
-<li><p>Undo changes since the last commit: <code>git reset --hard HEAD</code></p></li>
-<li><p>Undo changes in one file since the last commit:<br><code>git checkout -- [filename]</code> <a href="https://stackoverflow.com/questions/692246/undo-working-copy-modifications-of-one-file-in-git" target="_blank">SO link</a></p></li>
-<li><p>Undo deleted branch: Look for the SHA (hash) returned when you deleted the branch. Then:<br><code>git checkout -b &lt;branch-name&gt; &lt;SHA&gt;</code> <br> <a href="https://stackoverflow.com/a/39038276/5314416" target="_blank">SO link</a></p></li>
-<li><p>Remove all new, untracked files: <code>git clean -f</code></p></li>
-<li><p>Remove all new, untracked files, including in new subdirectories: <code>git clean -f -d</code></p></li>
-</ul>
-</div>
-<div id="random" class="section level3 hasAnchor">
-<h3><span class="header-section-number">6.8.3</span> Random<a href="github.html#random" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>Make local the same as origin:<br><code>git fetch origin</code><br><code>git reset --hard origin/master</code> <a href="https://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head" target="_blank">SO link</a></p></li>
-<li><p>Add back a file that was deleted but still exists on another branch:<br><code>git checkout otherbranch myfile.txt</code> <a href="https://stackoverflow.com/questions/307579/how-do-i-copy-a-version-of-a-single-file-from-one-git-branch-to-another" taraget="_blank">SO link</a></p></li>
-<li><p>Get rid of a file on GitHub that was added to <code>.gitignore</code> but is still there:<br><code>git rm --cached [filename]</code><br>(then commit and push changes to GitHub) <a href="https://stackoverflow.com/a/1143800/5314416" target="_blank">SO link</a></p></li>
-<li><p>Completely remove a folder from git history (use with caution) <a href="https://stackoverflow.com/a/32886427/5314416">SO link</a></p></li>
-</ul>
-</div>
-</div>
-<div id="troubleshooting-1" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.9</span> Troubleshooting<a href="github.html#troubleshooting-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="deleting-a-branch-isnt-working" class="section level3 hasAnchor">
-<h3><span class="header-section-number">6.9.1</span> Deleting a branch isn’t working<a href="github.html#deleting-a-branch-isnt-working" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>Make sure you’re not on the branch you’re trying to delete.</p></li>
-<li><p>Note that if you try to delete a branch that hasn’t been fully merged, you’ll get a warning, or perhaps an error depending on what’s transpired. It’s possible that it just <em>thinks</em> it hasn’t been merged even though it has, since you’re not up to date. This can be remedied with <code>git pull</code>. In other cases, you’ll need to follow the instructions to use <code>-D</code> instead of <code>-d</code>, for example, if you decide to abandon and delete a branch without submitting a pull request.</p></li>
-<li><p>If you have trouble getting rid of branches, rest assured, that you’re not alone. <a href="https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely" target="_blank">How do I delete a Git branch locally and remotely?</a> is the <strong><a href="https://stackoverflow.com/questions?sort=votes" target="_blank">third most asked question</a></strong> on StackOverflow!</p></li>
-</ul>
-</div>
-</div>
-<div id="other-resources" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.10</span> Other resources<a href="github.html#other-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="getting-help" class="section level3 unnumbered hasAnchor">
-<h3>Getting Help<a href="github.html#getting-help" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you’re lost, these might help.</p>
-<ul>
-<li><p><a href="https://guides.github.com/" target="_blank">GitHub Guides</a>: This is a phenomenal collection of short articles from GitHub to help you learn about the fundamentals around their product. They are so great, we have already listed their Hello World article. Here are some other important ones:</p>
-<ul>
-<li><p><a href="https://guides.github.com/introduction/flow/" target="_blank">Understanding the GitHub Flow</a>: Explains how working with GitHub generally goes.</p></li>
-<li><p><a href="https://guides.github.com/introduction/git-handbook/" target="_blank">Git Handbook</a>: Explains what version control is.</p></li>
-</ul></li>
-<li><p><a href="https://help.github.com/" target="_blank">GitHub Help</a>: This is the yellow-pages of GitHub. Ask a question and it will try to <em>push</em> you in the right direction. <a href="https://getyarn.io/yarn-clip/6e7f4795-b65b-4fad-b1fb-c5c9161a95fa" target="_blank">Get it?</a></p></li>
-</ul>
-</div>
-<div id="branching-out" class="section level3 unnumbered hasAnchor">
-<h3>Branching out<a href="github.html#branching-out" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>GitHub is super social. Learn how to <em>git</em> involved! <a href="https://getyarn.io/yarn-clip/c5de0e9e-6122-48f9-87ed-337aeb2e9ae4" target="_blank"><i class="far fa-smile"></i></a></p>
-<ul>
-<li><p><a href="https://opensource.guide/how-to-contribute/" target="_blank">Open Source Guide</a>: Info on how to contribute to open source projects. Great links to the GitHub skills involved as well as good GitHub etiquette to adopt.</p></li>
-<li><p><a href="https://guides.github.com/activities/forking/" target="_blank">Forking Projects</a>: Quick read from GitHub on how to fork a repository so you can contribute to it.</p></li>
-<li><p><a href="https://guides.github.com/features/issues/" target="_blank">Mastering Issues</a>: On what Issues are in GitHub and how they can help get things done.</p></li>
-<li><p><a href="contribute.html">Our Page on Contributing</a>: You can contribute to <em>edav.info/</em> with your new-found GitHub skills! Checkout our page on how to contribute through pull requests and/or issues.</p></li>
-</ul>
-</div>
-<div id="more-resources" class="section level3 unnumbered hasAnchor">
-<h3>More Resources<a href="github.html#more-resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To hit the ground running, checkout <a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a>. This application will teach you how to use GitHub with hands-on courses using actual repos. Its the perfect way to understand what using GitHub looks like.</p>
-<p>For the <a href="https://getyarn.io/yarn-clip/64bbb001-ed8a-450a-8826-b939f653b969" target="_blank">nerds in the room</a>…</p>
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=3m7BgIvC-uQ" target="_blank">Git For Ages 4 And Up</a>: There’s a lot going on under the hood. This talk will help explain how it all works…with kids toys!</p></li>
-<li><p><a href="https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs" target="_blank">Make pretty git logs</a>: Always remember <a href="https://i.stack.imgur.com/ElVkf.jpg" target="_blank">(A DOG)</a>. Also, this alias command is nice to have around:</p>
-<ul>
-<li><code>git config --global alias.adog "log --all --decorate --oneline --graph"</code></li>
-</ul></li>
-<li><p><a href="https://stackoverflow.com/questions/4298960/git-add-and-commit-in-one-command" target="_blank"><code>add</code> and <code>commit</code> with one command</a>: Another (even more) helpful alias command:</p>
-<ul>
-<li><code>git config --global alias.add-commit '!git add -A &amp;&amp; git commit'</code></li>
-</ul></li>
-<li><p><a href="https://github.com/jimeh/git-aware-prompt" target="_blank">Git Aware Prompt</a>: An excellent add-on to the Terminal that informs you which branch you have checked out. Someone also made <a href="https://github.com/udondan/git-aware-prompt" target="_blank">an even spiffier version</a> where it will inform you of your git status using helpful emojis.</p></li>
-<li><p><a href="https://popgen.nescent.org/CONTRIBUTING_WITH_GIT2R.html" target="_blank">Contributing with git2r</a>, on the <a href="https://popgen.nescent.org/index.html" target="_blank">Population Genetics in R</a> provides helpful information on using git commands within R through the git2r package. In particular it explains how to create a GITHUB_PAT and then set the <code>credential</code> parameter in certain functions to find the PAT. (Note though that the site was created in 2015 and as of February 2019 has not been updated.)</p></li>
-<li><p><strong>Want a little reading as well?</strong>: <a href="https://try.github.io/" target="_blank">Resources to learn Git</a> is a simple site split into two main sections: <em>Learn by reading</em> and <em>Learn by doing</em>. Take your pick. <i class= "far fa-smile"></i></p></li>
-</ul>
+<div id="cutting-room-floor" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 18</span> Cutting room floor<a href="cutting-room-floor.html#cutting-room-floor" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>It’s worth remembering that most graphs end up on the proverbial cutting room floor. Some graph types in particular are truly hit or miss: parallel coordinate plots are at the top of the list in this category. I’m including some of the “misses” here so you’ll realize you’re not alone if you create a graph that does not show anything worthwhile.</p>
+<div id="parallel-coordinate-plots" class="section level2 hasAnchor">
+<h2><span class="header-section-number">18.1</span> Parallel coordinate plots<a href="cutting-room-floor.html#parallel-coordinate-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="cutting-room-floor.html#cb198-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb198-2"><a href="cutting-room-floor.html#cb198-2"></a><span class="kw">library</span>(forcats)</span>
+<span id="cb198-3"><a href="cutting-room-floor.html#cb198-3"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb198-4"><a href="cutting-room-floor.html#cb198-4"></a><span class="kw">library</span>(readr)</span>
+<span id="cb198-5"><a href="cutting-room-floor.html#cb198-5"></a><span class="kw">library</span>(stringr)</span>
+<span id="cb198-6"><a href="cutting-room-floor.html#cb198-6"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb198-7"><a href="cutting-room-floor.html#cb198-7"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb198-8"><a href="cutting-room-floor.html#cb198-8"></a></span>
+<span id="cb198-9"><a href="cutting-room-floor.html#cb198-9"></a>oedi_building &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/oedi_building.csv&quot;</span>)</span>
+<span id="cb198-10"><a href="cutting-room-floor.html#cb198-10"></a>oedi_building <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb198-11"><a href="cutting-room-floor.html#cb198-11"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(in.building_type, <span class="st">&quot;Office&quot;</span>)) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb198-12"><a href="cutting-room-floor.html#cb198-12"></a><span class="st">  </span>GGally<span class="op">::</span><span class="kw">ggparcoord</span>(<span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">groupColumn =</span> <span class="dv">5</span>, </span>
+<span id="cb198-13"><a href="cutting-room-floor.html#cb198-13"></a>                     <span class="dt">alphaLines =</span> <span class="fl">.5</span>, <span class="dt">splineFactor =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p><img src="cutting_room_floor_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="cutting-room-floor.html#cb199-1"></a>oedi_building <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb199-2"><a href="cutting-room-floor.html#cb199-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">c</span>(<span class="kw">starts_with</span>(<span class="st">&quot;in.week&quot;</span>)), in.heating_fuel) <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb199-3"><a href="cutting-room-floor.html#cb199-3"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;ID&quot;</span>) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb199-4"><a href="cutting-room-floor.html#cb199-4"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;in.week&quot;</span>),</span>
+<span id="cb199-5"><a href="cutting-room-floor.html#cb199-5"></a>               <span class="dt">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb199-6"><a href="cutting-room-floor.html#cb199-6"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> variable, <span class="dt">y =</span> value, <span class="dt">group =</span> ID, <span class="dt">color =</span> in.heating_fuel)) <span class="op">+</span></span>
+<span id="cb199-7"><a href="cutting-room-floor.html#cb199-7"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">lwd =</span> <span class="fl">.1</span>) <span class="op">+</span></span>
+<span id="cb199-8"><a href="cutting-room-floor.html#cb199-8"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb199-9"><a href="cutting-room-floor.html#cb199-9"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
+<p><img src="cutting_room_floor_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="cutting-room-floor.html#cb200-1"></a><span class="co"># https://collegescorecard.ed.gov/data</span></span>
+<span id="cb200-2"><a href="cutting-room-floor.html#cb200-2"></a>df &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/college_scorecard.csv&quot;</span>)</span>
+<span id="cb200-3"><a href="cutting-room-floor.html#cb200-3"></a></span>
+<span id="cb200-4"><a href="cutting-room-floor.html#cb200-4"></a>df <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb200-5"><a href="cutting-room-floor.html#cb200-5"></a><span class="st">  </span><span class="kw">na.omit</span>() <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb200-6"><a href="cutting-room-floor.html#cb200-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">COMP_ORIG_YR4_RT =</span> <span class="kw">as.numeric</span>(COMP_ORIG_YR4_RT)) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb200-7"><a href="cutting-room-floor.html#cb200-7"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">WOMENONLY =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(WOMENONLY), <span class="st">`</span><span class="dt">Women only</span><span class="st">`</span> =<span class="st"> &quot;0&quot;</span>, <span class="st">`</span><span class="dt">Not women only</span><span class="st">`</span> =<span class="st"> &quot;1&quot;</span>)) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb200-8"><a href="cutting-room-floor.html#cb200-8"></a>GGally<span class="op">::</span><span class="kw">ggparcoord</span>(<span class="dt">columns =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">alphaLines =</span> <span class="fl">.5</span>,</span>
+<span id="cb200-9"><a href="cutting-room-floor.html#cb200-9"></a>                   <span class="dt">scale =</span> <span class="st">&quot;globalminmax&quot;</span>, <span class="dt">groupColumn =</span> <span class="dv">5</span>) <span class="op">+</span></span>
+<span id="cb200-10"><a href="cutting-room-floor.html#cb200-10"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb200-11"><a href="cutting-room-floor.html#cb200-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, <span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="cutting_room_floor_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="cutting-room-floor.html#cb201-1"></a>uk &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/uk_universities.csv&quot;</span>,</span>
+<span id="cb201-2"><a href="cutting-room-floor.html#cb201-2"></a>               <span class="dt">col_types =</span> <span class="st">&quot;ccdcddddddnncccccdddc&quot;</span>)</span>
+<span id="cb201-3"><a href="cutting-room-floor.html#cb201-3"></a>uk <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb201-4"><a href="cutting-room-floor.html#cb201-4"></a><span class="st">  </span>GGally<span class="op">::</span><span class="kw">ggparcoord</span>(<span class="dt">columns =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span><span class="op">:</span><span class="dv">12</span>),</span>
+<span id="cb201-5"><a href="cutting-room-floor.html#cb201-5"></a>                     <span class="dt">alphaLines =</span> <span class="fl">.5</span>, <span class="dt">groupColumn =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb201-6"><a href="cutting-room-floor.html#cb201-6"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
+<p><img src="cutting_room_floor_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="cutting-room-floor.html#cb202-1"></a><span class="co"># https://www.strava.com/clubs/537620/leaderboard </span></span>
+<span id="cb202-2"><a href="cutting-room-floor.html#cb202-2"></a>run &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/leaderboard.csv&quot;</span>, <span class="dt">na =</span> <span class="st">&quot;--&quot;</span>)</span>
+<span id="cb202-3"><a href="cutting-room-floor.html#cb202-3"></a></span>
+<span id="cb202-4"><a href="cutting-room-floor.html#cb202-4"></a>run<span class="op">$</span>Longest &lt;-<span class="st"> </span><span class="kw">parse_number</span>(run<span class="op">$</span>Longest)</span>
+<span id="cb202-5"><a href="cutting-room-floor.html#cb202-5"></a>run<span class="op">$</span>Distance &lt;-<span class="st"> </span><span class="kw">parse_number</span>(run<span class="op">$</span>Distance)</span>
+<span id="cb202-6"><a href="cutting-room-floor.html#cb202-6"></a>run<span class="op">$</span>Pace &lt;-<span class="st"> </span><span class="kw">parse_number</span>(run<span class="op">$</span><span class="st">`</span><span class="dt">Avg. Pace</span><span class="st">`</span>)</span>
+<span id="cb202-7"><a href="cutting-room-floor.html#cb202-7"></a>run<span class="op">$</span>Gain &lt;-<span class="st"> </span><span class="kw">parse_number</span>(run<span class="op">$</span><span class="st">`</span><span class="dt">Elev. Gain</span><span class="st">`</span>)</span>
+<span id="cb202-8"><a href="cutting-room-floor.html#cb202-8"></a></span>
+<span id="cb202-9"><a href="cutting-room-floor.html#cb202-9"></a>run <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb202-10"><a href="cutting-room-floor.html#cb202-10"></a><span class="st">  </span><span class="kw">filter</span>(Distance <span class="op">&lt;</span><span class="st"> </span><span class="dv">1000</span>, Rank <span class="op">&lt;=</span><span class="st"> </span><span class="dv">50</span>) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb202-11"><a href="cutting-room-floor.html#cb202-11"></a><span class="st">  </span><span class="kw">select</span>(Athlete, Distance, Runs, Longest, Pace, Gain) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb202-12"><a href="cutting-room-floor.html#cb202-12"></a><span class="st">  </span>parcoords<span class="op">::</span><span class="kw">parcoords</span>(<span class="dt">rownames =</span> F,</span>
+<span id="cb202-13"><a href="cutting-room-floor.html#cb202-13"></a>                       <span class="dt">reorderable =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb202-14"><a href="cutting-room-floor.html#cb202-14"></a>                       <span class="dt">brushMode =</span> <span class="st">&quot;1D-axes&quot;</span>)</span></code></pre></div>
+<div class="parcoords html-widget" height="480" id="htmlwidget-6084d13e8e6f93bc9057" style="width:672px;height:480px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="672"></div>
+<script type="application/json" data-for="htmlwidget-6084d13e8e6f93bc9057">{"x":{"data":{"names":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49"],"Athlete":["Falaris F.","willow d.","Evelyn S.","Jose Alberto G.","Michael D.","Setiadi ..","Karan P.","Mohinder S.","Guy S.","Rusty T.","Natalie U.","VICKY  S.","Ăbhïšhëk Sïňğh P.","Evelyn M.","Jopan K.","Brian C.","大胃 L.","Mahetzin B.","Seth K.","Hướng T.","Russian ! V.","APRIL L.","Alvin&Ultan  .","Ade O.","Sam L.","Aldwyn k.","Jeff L.","Parkri 2.","Amal A.","Desi W.","Yen-Chiao H.","Richard K.","Duch L.","Emilee R.","Pete A.","Pagan M.","Kenny A.","Corey M.","Stéphane L.","Shanmukha S.","Peter M.","Robby P.","John W.","Rachael L.","Tim B.","Magdalena S.","Kristoffer M.","Dakotah L.","Thavee N."],"Distance":[112.4,89.2,86.4,85.1,78.8,69.7,69.4,69.1,68.1,67.6,65.3,64.6,64.4,63.5,61.1,60.4,60.2,59.7,58.7,58.5,57.5,57.3,57.2,57.1,56.7,55.5,54.7,54.5,54,53.5,53.1,52.3,52,52,52,51.5,50.8,50.7,50.5,50.4,50.3,50.2,50,49.8,49.6,49.5,48.5,48.3,48.3],"Runs":[4,4,2,6,2,4,3,6,6,2,2,3,3,2,4,5,4,2,3,3,5,4,4,2,6,8,3,10,2,4,3,1,3,4,4,4,8,5,4,3,2,3,3,2,4,2,3,3,1],"Longest":[42.4,32.2,43.4,14.9,40.4,43.1,30.3,20.1,21.9,64.4,43.5,22.2,21.5,32.1,20.8,20.1,15.1,29.9,26.1,26.3,24.9,19.7,43.9,29.1,17.8,12.3,42.4,10.1,29.2,19.3,18,52.3,26.7,24.3,18.1,29.5,13.7,13.7,14.1,21.7,25.2,22.5,33.5,27,17.7,24.8,30.2,24.1,48.3],"Pace":[5,6,12,7,5,7,8,8,6,6,11,6,6,7,7,5,5,6,4,4,8,4,5,10,4,8,7,5,8,4,5,5,6,4,4,4,5,4,5,5,5,4,5,6,4,6,4,4,7],"Gain":[228,996,454,101,171,783,null,412,248,1489,338,39,null,225,42,326,300,270,428,312,528,381,249,361,387,277,null,495,2378,109,83,963,49,328,348,717,379,310,513,314,626,319,736,1484,305,304,12,119,380]},"options":{"rownames":false,"brushMode":"1D-axes","brushPredicate":"AND","reorderable":true,"margin":{"top":50,"bottom":50,"left":100,"right":50},"mode":false,"bundlingStrength":0.5,"smoothness":0},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="cutting-room-floor.html#cb203-1"></a><span class="kw">library</span>(parcoords)</span>
+<span id="cb203-2"><a href="cutting-room-floor.html#cb203-2"></a>uk <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb203-3"><a href="cutting-room-floor.html#cb203-3"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Region, <span class="st">&quot;England&quot;</span>)) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb203-4"><a href="cutting-room-floor.html#cb203-4"></a><span class="st">  </span><span class="kw">select</span>(University_name, UK_rank, <span class="dt">UGfees =</span> <span class="st">`</span><span class="dt">UG_average_fees_(in_pounds)</span><span class="st">`</span>,</span>
+<span id="cb203-5"><a href="cutting-room-floor.html#cb203-5"></a>         <span class="dt">PGfees =</span> <span class="st">`</span><span class="dt">PG_average_fees_(in_pounds)</span><span class="st">`</span>,</span>
+<span id="cb203-6"><a href="cutting-room-floor.html#cb203-6"></a>         International_students, </span>
+<span id="cb203-7"><a href="cutting-room-floor.html#cb203-7"></a>         Student_satisfaction,</span>
+<span id="cb203-8"><a href="cutting-room-floor.html#cb203-8"></a>         <span class="dt">COL =</span> <span class="st">`</span><span class="dt">Estimated_cost_of_living_per_year_(in_pounds)</span><span class="st">`</span>,</span>
+<span id="cb203-9"><a href="cutting-room-floor.html#cb203-9"></a>         Campus_setting) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
+<span id="cb203-10"><a href="cutting-room-floor.html#cb203-10"></a><span class="st"> </span><span class="kw">parcoords</span>(<span class="dt">rownames =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb203-11"><a href="cutting-room-floor.html#cb203-11"></a>           <span class="dt">reorderable =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb203-12"><a href="cutting-room-floor.html#cb203-12"></a>           <span class="dt">brushMode =</span> <span class="st">&quot;1D-axes&quot;</span>,</span>
+<span id="cb203-13"><a href="cutting-room-floor.html#cb203-13"></a>           <span class="dt">color =</span> <span class="kw">list</span>(<span class="dt">colorBy =</span> <span class="st">&quot;Campus_setting&quot;</span>,</span>
+<span id="cb203-14"><a href="cutting-room-floor.html#cb203-14"></a>                         <span class="dt">colorScale =</span> <span class="st">&quot;scaleOrdinal&quot;</span>,</span>
+<span id="cb203-15"><a href="cutting-room-floor.html#cb203-15"></a>                         <span class="dt">colorScheme =</span> <span class="st">&quot;schemeCategory10&quot;</span>),</span>
+<span id="cb203-16"><a href="cutting-room-floor.html#cb203-16"></a>           <span class="dt">withD3 =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb203-17"><a href="cutting-room-floor.html#cb203-17"></a>           <span class="dt">width =</span> <span class="dv">770</span>,</span>
+<span id="cb203-18"><a href="cutting-room-floor.html#cb203-18"></a>           <span class="dt">height =</span> <span class="dv">600</span>)</span></code></pre></div>
+<div class="parcoords html-widget" height="600" id="htmlwidget-5414bcf04a0c2b13f1d5" style="width:770px;height:600px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="770"></div>
+<script type="application/json" data-for="htmlwidget-5414bcf04a0c2b13f1d5">{"x":{"data":{"names":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56"],"University_name":["University of Cambridge","University of Oxford","Durham University","Lancaster University","University of Bath","University of Exeter","University of Bristol","University of Manchester","Royal Holloway, University of London","University of Southampton","University of East Anglia UEA","Newcastle University","University of Liverpool","University of Surrey","University of Essex","University of Sussex","University of Reading","University for the Creative Arts","Arts University Bournemouth","University of Lincoln","University of Kent","Edge Hill University","University of Portsmouth","University of the West of England","Liverpool Hope University","Manchester Metropolitan University","Norwich University of the Arts","Oxford Brookes University","Northumbria University","University of Chichester","Falmouth University","University of Central Lancashire","Plymouth University","Liverpool John Moores University","University of Chester","Teesside University","University of Hertfordshire","Royal Agricultural University","Solent University","University of Buckingham","Bournemouth University","University of Gloucestershire","University of Winchester","Bishop Grosseteste University","Plymouth Marjon University","University of Sunderland","Bath Spa University","University of Salford","Buckinghamshire New University","Canterbury Christ Church University","Anglia Ruskin University","University of Cumbria","University of Brighton","University of Bolton","University of Bedfordshire","University of Suffolk"],"UK_rank":[1,2,7,8,11,12,15,18,19,20,23,28,29,32,37,38,38,42,43,51,54,55,56,58,60,62,62,64,65,71,72,75,76,78,79,87,88,89,89,92,94,95,98,102,102,109,110,111,113,118,120,121,122,125,128,129],"UGfees":[21750,21770,14900,14940,14300,15500,15200,14500,13200,14660,14200,12680,13850,13300,12500,14450,14350,11870,12500,12800,12890,11150,11500,11250,10800,11150,12500,12400,11500,10250,12000,11450,12250,11000,10800,10750,11000,10000,10380,17160,13000,11500,11300,10000,9250,8350,11300,11795,9500,11000,10500,10500,12660,11250,9750,9495],"PGfees":[23187,19888,18000,14200,15000,15500,14800,14500,13900,15160,14200,12680,16200,13300,14450,14450,14165,12150,12500,15700,12890,12000,11500,11250,10800,11500,13000,12580,11500,10250,12500,11950,13250,11000,11000,10950,12000,11000,10930,14140,12750,11500,11650,6000,9250,9600,11300,12000,10600,9500,10500,10500,12830,11250,9900,9495],"International_students":[20.2,16.8,17.2,29.6,21.7,21.2,14.9,25,27.4,18.3,20.2,19.6,27,24.4,30.2,27.2,18.9,11.7,13.6,9.4,20.4,1.4,16.6,11.6,1.9,5.8,4.9,15.3,10.5,2.4,6.7,8.5,7.9,4.7,5.4,6.3,14,7.2,13.3,50.5,8.7,3.7,6.1,15.59,15.59,25.1,7.4,11.1,7.6,5.7,10.4,1.5,13.7,6.9,11.7,2.5],"Student_satisfaction":[85.5,86.5,75,79.3,81.8,80.1,77.2,77.2,80.6,78.6,79,78.7,80,78.2,80.3,76.4,75.2,78,82.9,79.3,76.6,79.1,79.3,83.1,79.3,78.9,77.7,77,78.3,79.9,76.5,78.7,79.9,79.1,79.1,79.5,78.3,82.3,79,80.5,75.4,78,78.5,75.8,82.7,77.2,72.2,76.8,79.7,75.7,79,73.8,75.8,82.1,77.4,76],"COL":[12000,11500,8000,8500,11000,8400,7000,9800,7500,7200,9840,8000,7000,10700,8320,12500,8500,8990,6000,9415,8990,8000,6500,8217,7471,8000,9415,8990,8000,8990,8217,7500,7500,7471,7471,8000,9415,9400,7500,8000,8217,8217,10000,7500,8217,8000,8217,7471,8990,8990,9415,6000,8990,5500,9415,9415],"Campus_setting":["Urban","Urban","Urban","Rural","Suburban","Suburban","Urban","Urban","Suburban","Suburban","Suburban","Urban","Urban","Suburban","Suburban",null,null,null,null,"Urban","Suburban","Rural","Urban","Suburban","Suburban",null,"Urban","Urban","Urban","Suburban",null,"Urban",null,"Urban","Urban","Urban","Suburban","Rural","Urban","Rural","Urban","Suburban","Suburban","Urban",null,"Urban","Rural","Urban","Suburban","Urban","Urban",null,null,"Urban","Urban",null]},"options":{"rownames":false,"color":{"colorBy":"Campus_setting","colorScale":"scaleOrdinal","colorScheme":"schemeCategory10"},"brushMode":"1D-axes","brushPredicate":"AND","reorderable":true,"margin":{"top":50,"bottom":50,"left":100,"right":50},"mode":false,"bundlingStrength":0.5,"smoothness":0,"width":770,"height":600},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script>
 
 </div>
 </div>
-</div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="learning-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="spatial-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -696,7 +505,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jtr13/edav2/edit/main/git_GitHub.Rmd",
+"link": "https://github.com/jtr13/edav2/edit/main/cutting_room_floor.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -704,7 +513,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/jtr13/edav2/blob/main/git_GitHub.Rmd",
+"link": "https://github.com/jtr13/edav2/blob/main/cutting_room_floor.Rmd",
 "text": null
 },
 "download": null,
