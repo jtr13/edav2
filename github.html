@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-10-13" />
+<meta name="date" content="2022-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="github.html"><a href="github.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
 <li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html#first-things-first"><i class="fa fa-check"></i><b>6.2</b> First things first</a></li>
 <li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html#usage"><i class="fa fa-check"></i><b>6.3</b> Usage</a></li>
-<li class="chapter" data-level="6.4" data-path="github.html"><a href="github.html#the-no-branch-workflow"><i class="fa fa-check"></i><b>6.4</b> The no branch workflow</a></li>
+<li class="chapter" data-level="6.4" data-path="github.html"><a href="github.html#the-no-branch-besides-main-workflow"><i class="fa fa-check"></i><b>6.4</b> The no branch (besides main) workflow</a></li>
 <li class="chapter" data-level="6.5" data-path="github.html"><a href="github.html#your-repo-with-branching"><i class="fa fa-check"></i><b>6.5</b> Your repo with branching</a></li>
 <li class="chapter" data-level="6.6" data-path="github.html"><a href="github.html#st-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.6</b> 1st PR on another repo with branching</a><ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-1-fork-the-upstream-repo-once"><i class="fa fa-check"></i>Step 1: Fork the upstream repo (once)</a></li>
@@ -385,7 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 6</span> GitHub/git Resources<a href="github.html#github" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="overview" class="section level2 hasAnchor">
 <h2><span class="header-section-number">6.1</span> Overview<a href="github.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This section describes workflows for working with GitHub/git and advice on how to collaborate in teams on large coding projects. GitHub is super useful and powerful, but people also find it quite annoying and <a href="https://xkcd.com/1597/" target="_blank">difficult to understand</a>. Rather than trying to master the whole system, we suggest beginning with some basic workflows, as outlined below. You can derive great benefits from it without being an expert.</p>
+<p>This section describes workflows for working with GitHub/git and advice on how to collaborate in teams on large coding projects. GitHub is super useful and powerful, but people also find it quite annoying and <a href="https://xkcd.com/1597/" target="_blank">difficult to understand</a>. We suggest taking it one step at a time, beginning with the basic workflows outlined below. You can derive great benefits from it without being an expert.</p>
 </div>
 <div id="first-things-first" class="section level2 hasAnchor">
 <h2><span class="header-section-number">6.2</span> First things first<a href="github.html#first-things-first" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -400,14 +400,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.3</span> Usage<a href="github.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Choose the right section based on what you’re trying to accomplish:</p>
 <ul>
-<li><p>If you are working by yourself and just getting started: <a href="github.html#the-no-branch-workflow">the no branch workflow</a>.</p></li>
+<li><p>If you are working by yourself and just getting started: <a href="#the-no-branch-workflow">the no branch workflow</a>.</p></li>
 <li><p>If you are working by yourself and want to learn how to use branches, <em>or are a collaborator (i.e. have write access) to another repo</em>: <a href="github.html#your-repo-with-branching">your repo with branching</a>.</p></li>
 <li><p>If you are not a collaborator (that is, don’t have write access to a repository) but wish to contribute to a project for the first time: <a href="github.html#st-pr-on-another-repo-with-branching">1st PR on another repo with branching</a>.</p></li>
 <li><p>If you are not a collaborator but wish to contribute to the same project again: <a href="github.html#nd-nth-pr-on-another-repo-with-branching">2nd-nth PR on another repo with branching</a>.</p></li>
 </ul>
 </div>
-<div id="the-no-branch-workflow" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.4</span> The no branch workflow<a href="github.html#the-no-branch-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-no-branch-besides-main-workflow" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.4</span> The no branch (besides main) workflow<a href="github.html#the-no-branch-besides-main-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To get comfortable with Git, start with this basic workflow in which you will be pulling from and pushing to <em>your</em> repo on GitHub. Just you, no collaboration:</p>
 <center>
 <img src="images/git/no-branch.png" />
@@ -426,7 +426,7 @@ Once you’ve comfortable with the workflow described above, you’re ready to s
 <center>
 <img src="images/git/your-repo.jpeg" />
 </center>
-<p>If it’s <em>your</em> repo–or you have write access to someone else’s repo–begin by cloning the repo as in the workflow above. For emphasis: if you have write access to someone else’s repo, you should still <em>clone</em> the repo, not <em>fork</em> it. The repo will be referred to as “origin” even though you’re not the owner; origin simply means the repo from which the project was cloned. Next, continue with <a href="github.html#step-4-branch">step 4</a> below, or follow the steps in <a href="https://github.com/jtr13/EDAV/blob/master/pdfs/BranchingYourRepo.pdf" target="_blank">these slides</a>, which provide step-by-step detail on creating a branch, doing work on the branch and then submitting a pull request to merge the changes into origin/master.</p>
+<p>If it’s <em>your</em> repo–or you have write access to someone else’s repo–begin by cloning the repo as in the workflow above. For emphasis: if you have write access to someone else’s repo, you should still <em>clone</em> the repo, not <em>fork</em> it. The repo will be referred to as “origin” even though you’re not the owner; origin simply means the repo from which the project was cloned. Next, continue with <a href="github.html#step-4-branch">step 4</a> below, or follow the steps in <a href="https://github.com/jtr13/EDAV/blob/master/pdfs/BranchingYourRepo.pdf" target="_blank">these slides</a>, which provide step-by-step detail on creating a branch, doing work on the branch and then submitting a pull request to merge the changes into origin/main.</p>
 <p>At any point, you can check the remotes (in this case, GitHub repositories) that are linked to your project with <code>git remote -v</code>. If your GitHub username is <code>person1</code> and you have write access to a repo called <code>finalproject</code> created by <code>person2</code>, your remotes will look like this:</p>
 <pre><code>$ git remote -v
 origin  https://github.com/person2/finalproject.git(fetch)
@@ -468,7 +468,7 @@ upstream        https://github.com/tidyverse/forcats (push)</code></pre>
 </div>
 <div id="step-4-branch" class="section level3 unnumbered hasAnchor">
 <h3>Step 4: Branch<a href="github.html#step-4-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>With this workflow, all new work is done on a branch, so it’s important to remember to create a new branch before you begin working. Once the work is complete, a pull request is submitted and if all goes well the new code will be merged into the master branch of the project on GitHub.</p>
+<p>With this workflow, all new work is done on a branch, so it’s important to remember to create a new branch before you begin working. Once the work is complete, a pull request is submitted and if all goes well the new code will be merged into the main branch of the project on GitHub.</p>
 <p>When you’re ready to start working on something new, create a new branch. <strong>Do not reuse a merged branch.</strong> Each “fix” should get its own branch and be deleted after it’s been merged.</p>
 <p>To create a branch, click on the button shown below:</p>
 <p><br></p>
@@ -517,18 +517,18 @@ upstream        https://github.com/tidyverse/forcats (push)</code></pre>
 <h3>Step 1: Sync<a href="github.html#step-1-sync" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>How you sync depends on whether you are syncing with your own repo (“origin”) or someone else’s repo (“upstream”). This should be done at the beginning of every work session.</p>
 <p><strong>Your repo</strong></p>
-<p>Switch to the master branch (important!), then click the pull button (down arrow) in the Git pane in RStudio. Or you can type the following in the Terminal:</p>
-<p><code>$ git checkout master</code><br />
+<p>Switch to the main branch (important!), then click the pull button (down arrow) in the Git pane in RStudio. Or you can type the following in the Terminal:</p>
+<p><code>$ git checkout main</code><br />
 <code>$ git pull</code></p>
 <p>There are no reminders that you’re behind, so it’s up to you. Make it a habit.</p>
 <p><strong>Someone else’s repo</strong></p>
-<p>If you’re working on someone else’s repo, make sure you’ve <a href="github.html#step-3-configure-remote-that-points-to-the-upstream-repository-once" target="_blank">configured an upstream remote</a>.
-Then do the following to update your fork:</p>
+<p>If you’re working on someone else’s repo, make sure you’ve <a href="github.html#step-3-configure-remote-that-points-to-the-upstream-repository-once" target="_blank">configured an upstream remote</a>.</p>
+<p>Then do the following to update your fork:</p>
 <p><code>$ git fetch upstream</code></p>
-<p><code>$ git checkout master</code></p>
-<p><code>$ git merge upstream/master</code></p>
+<p><code>$ git checkout main</code></p>
+<p><code>$ git merge upstream/main</code></p>
 <p>Source: <a href="https://help.github.com/en/articles/syncing-a-fork" target="_blank">Syncing a fork</a></p>
-<p>Note that these commands bring in changes directly from the upstream repo.</p>
+<p>Note that these commands bring in changes directly from the upstream repo. If you are working on a branch and want to sync, check out that branch rather than main and fetch / merge. Switching branches can be performed by clicking on the appropriate branch in RStudio instead of <code>git checkout</code>.</p>
 </div>
 <div id="step-2-delete-the-old-branch" class="section level3 unnumbered hasAnchor">
 <h3>Step 2: Delete the old branch<a href="github.html#step-2-delete-the-old-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -539,7 +539,7 @@ Then do the following to update your fork:</p>
 <p>If you prefer to work in the terminal, you can delete the remote branch with:</p>
 <p><code>$ git push origin --delete &lt;branchname&gt;</code></p>
 <ol start="2" style="list-style-type: decimal">
-<li>To delete the local branch, switch to the master branch in RStudio and then type the following in the terminal:</li>
+<li>To delete the local branch, switch to the main branch in RStudio and then type the following in the terminal:</li>
 </ol>
 <p><code>$ git branch -d branchname</code></p>
 <ol start="3" style="list-style-type: decimal">
@@ -548,7 +548,7 @@ Then do the following to update your fork:</p>
 <p><code>$ git fetch -p</code></p>
 <p>Otherwise you will still see the deleted branches listed in RStudio’s Git pane, and they will still appear when you look at all of your branches with</p>
 <p><code>$ git branch -a</code> (* = checked out branch)</p>
-<p>Speaking of which, be aware that the Git pane doesn’t tend to update in real time, so you’ll likely still see branches listed that have been deleted. Be careful not to switch to them, or you will inadvertently recreate them. (Deleted branches have a habit of coming back.) Clicking on master (even though you’re already on master) appears to trigger an update of the dropdown list. If that doesn’t work, switching out of the project and back in will do so, if you want to be sure that the branches you deleted are really gone.</p>
+<p>Speaking of which, be aware that the Git pane doesn’t tend to update in real time, so you’ll likely still see branches listed that have been deleted. Be careful not to switch to them, or you will inadvertently recreate them. (Deleted branches have a habit of coming back.) Clicking on main (even though you’re already on main) appears to trigger an update of the dropdown list. If that doesn’t work, switching out of the project and back in will do so, if you want to be sure that the branches you deleted are really gone.</p>
 </div>
 <div id="step-3-update-your-fork-on-github" class="section level3 unnumbered hasAnchor">
 <h3>Step 3: Update your fork on GitHub<a href="github.html#step-3-update-your-fork-on-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -592,7 +592,7 @@ Then do the following to update your fork:</p>
 <div id="random" class="section level3 hasAnchor">
 <h3><span class="header-section-number">6.8.3</span> Random<a href="github.html#random" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><p>Make local the same as origin:<br><code>git fetch origin</code><br><code>git reset --hard origin/master</code> <a href="https://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head" target="_blank">SO link</a></p></li>
+<li><p>Make local the same as origin:<br><code>git fetch origin</code><br><code>git reset --hard origin/main</code> <a href="https://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head" target="_blank">SO link</a></p></li>
 <li><p>Add back a file that was deleted but still exists on another branch:<br><code>git checkout otherbranch myfile.txt</code> <a href="https://stackoverflow.com/questions/307579/how-do-i-copy-a-version-of-a-single-file-from-one-git-branch-to-another" taraget="_blank">SO link</a></p></li>
 <li><p>Get rid of a file on GitHub that was added to <code>.gitignore</code> but is still there:<br><code>git rm --cached [filename]</code><br>(then commit and push changes to GitHub) <a href="https://stackoverflow.com/a/1143800/5314416" target="_blank">SO link</a></p></li>
 <li><p>Completely remove a folder from git history (use with caution) <a href="https://stackoverflow.com/a/32886427/5314416">SO link</a></p></li>

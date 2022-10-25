@@ -42,7 +42,7 @@ github
 overview
 first-things-first
 usage
-the-no-branch-workflow
+the-no-branch-besides-main-workflow
 your-repo-with-branching
 st-pr-on-another-repo-with-branching
 nd-nth-pr-on-another-repo-with-branching
