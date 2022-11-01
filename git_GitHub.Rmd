@@ -28,7 +28,7 @@ Choose the right section based on what you're trying to accomplish:
 To get comfortable with Git, start with this basic workflow in which you will be pulling from and pushing to *your* repo on GitHub. Just you, no collaboration:
 
 <center>
-![](images/git/no-branch.png)
+![](images/git/no-branch.png){width=250px}
 </center>
 
 The [Connect RStudio to Git and GitHub](https://happygitwithr.com/rstudio-git-github.html){target="_blank"} chapter of *Happy Git* will get you set up: you will create a repo on GitHub, clone the repo into an RStudio project, and practice making changes.
@@ -69,7 +69,7 @@ origin  https://github.com/person2/finalproject.git(push)
 Let's say you want to contribute to edav.info! Fork [our GitHub repo](https://github.com/jtr13/edav2){target="_blank"} and then on your own GitHub page, you will see a forked **edav2** repo under the repositories section. Note, from now on, the term **upstream repository** refers to the original repo of the project that you forked and the term **origin repository** refers to the repo that you created or forked on GitHub. From your respective, both **upstream** and **origin** are remote repositories.
 
 <center>
-![](images/git/fork.png)
+![](images/git/fork.png){width=200px}
 *A fork of tidyverse/forcats*
 </center>
 
