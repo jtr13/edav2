@@ -2,7 +2,7 @@
 
 ## Overview
 
-This section describes workflows for working with GitHub/git and advice on how to collaborate in teams on large coding projects.  GitHub is super useful and powerful, but people also find it quite annoying and [difficult to understand](https://xkcd.com/1597/){target="_blank"}. Rather than trying to master the whole system, we suggest beginning with some basic workflows, as outlined below.  You can derive great benefits from it without being an expert.
+This section describes workflows for working with GitHub/git and advice on how to collaborate in teams on large coding projects.  GitHub is super useful and powerful, but people also find it quite annoying and [difficult to understand](https://xkcd.com/1597/){target="_blank"}. We suggest taking it one step at a time, beginning with the basic workflows outlined below. You can derive great benefits from it without being an expert.
  
 ## First things first
 1. *Install Git*. To do so, follow the instructions in the [Install Git](https://happygitwithr.com/install-git.html){target="_blank"} chapter of *Happy Git with R*.
@@ -24,7 +24,7 @@ Choose the right section based on what you're trying to accomplish:
 
 * If you are not a collaborator but wish to contribute to the same project again: [2nd-nth PR on another repo with branching](#nd-nth-pr-on-another-repo-with-branching).
 
-## The no branch workflow
+## The no branch (besides main) workflow
 To get comfortable with Git, start with this basic workflow in which you will be pulling from and pushing to *your* repo on GitHub. Just you, no collaboration:
 
 <center>
@@ -50,7 +50,7 @@ Once you've comfortable with the workflow described above, you're ready to start
 ![](images/git/your-repo.jpeg)
 </center>
 
-If it's *your* repo--or you have write access to someone else's repo--begin by cloning the repo as in the workflow above. For emphasis: if you have write access to someone else's repo, you should still *clone* the repo, not *fork* it. The repo will be referred to as "origin" even though you're not the owner; origin simply means the repo from which the project was cloned. Next, continue with [step 4](#step-4-branch) below, or follow the steps in [these slides](https://github.com/jtr13/EDAV/blob/master/pdfs/BranchingYourRepo.pdf){target="_blank"}, which provide step-by-step detail on creating a branch, doing work on the branch and then submitting a pull request to merge the changes into origin/master.
+If it's *your* repo--or you have write access to someone else's repo--begin by cloning the repo as in the workflow above. For emphasis: if you have write access to someone else's repo, you should still *clone* the repo, not *fork* it. The repo will be referred to as "origin" even though you're not the owner; origin simply means the repo from which the project was cloned. Next, continue with [step 4](#step-4-branch) below, or follow the steps in [these slides](https://github.com/jtr13/EDAV/blob/master/pdfs/BranchingYourRepo.pdf){target="_blank"}, which provide step-by-step detail on creating a branch, doing work on the branch and then submitting a pull request to merge the changes into origin/main.
 
 At any point, you can check the remotes (in this case, GitHub repositories) that are linked to your project with `git remote -v`. If your GitHub username is `person1` and you have write access to a repo called `finalproject` created by `person2`, your remotes will look like this:
 
@@ -66,11 +66,11 @@ origin  https://github.com/person2/finalproject.git(push)
 </center>
 ### Step 1: Fork the upstream repo (once) {-}
 *Skip this step if you are syncing with a repo that you have write access to, whether it's your own or someone else's.*
-Let's say you want to contribute to EDAV! Fork [our GitHub repo](https://github.com/jtr13/EDAV){target="_blank"} and then on your own GitHub page, you will see a forked **EDAV** repo under the repositories section. Note, from now on, the term **upstream repository** refers to the original repo of the project that you forked and the term **origin repository** refers to the repo that you created or forked on GitHub. From your respective, both **upstream** and **origin** are remote repositories.
+Let's say you want to contribute to edav.info! Fork [our GitHub repo](https://github.com/jtr13/edav2){target="_blank"} and then on your own GitHub page, you will see a forked **edav2** repo under the repositories section. Note, from now on, the term **upstream repository** refers to the original repo of the project that you forked and the term **origin repository** refers to the repo that you created or forked on GitHub. From your respective, both **upstream** and **origin** are remote repositories.
 
 <center>
 ![](images/git/fork.png)
-*A fork of jtr13/EDAV*
+*A fork of tidyverse/forcats*
 </center>
 
 ### Step 2: Clone origin and create a local repository (once) {-}
@@ -102,7 +102,7 @@ upstream        https://github.com/tidyverse/forcats (push)
 (Although four options are listed, that is, fetching or pushing from either remote, as the diagram above indicates, we will only *fetch* from upsteam and *push* to origin.)
 
 ### Step 4: Branch {-}
-With this workflow, all new work is done on a branch, so it's important to remember to create a new branch before you begin working. Once the work is complete, a pull request is submitted and if all goes well the new code will be merged into the master branch of the project on GitHub.
+With this workflow, all new work is done on a branch, so it's important to remember to create a new branch before you begin working. Once the work is complete, a pull request is submitted and if all goes well the new code will be merged into the main branch of the project on GitHub.
 
 When you're ready to start working on something new, create a new branch. **Do not reuse a merged branch.** Each "fix" should get its own branch and be deleted after it's been merged.
 
@@ -172,9 +172,9 @@ How you sync depends on whether you are syncing with your own repo ("origin") or
 
 **Your repo**
 
-Switch to the master branch (important!), then click the pull button (down arrow) in the Git pane in RStudio. Or you can type the following in the Terminal:
+Switch to the main branch (important!), then click the pull button (down arrow) in the Git pane in RStudio. Or you can type the following in the Terminal:
 
-`$ git checkout master`  
+`$ git checkout main`  
 `$ git pull`
 
 There are no reminders that you're behind, so it's up to you. Make it a habit.
@@ -182,17 +182,18 @@ There are no reminders that you're behind, so it's up to you. Make it a habit.
 **Someone else's repo**
 
 If you're working on someone else's repo, make sure you've [configured an upstream remote](#step-3-configure-remote-that-points-to-the-upstream-repository-once){target="_blank"}.
+
 Then do the following to update your fork:
 
 `$ git fetch upstream`
 
-`$ git checkout master`
+`$ git checkout main`
 
-`$ git merge upstream/master`
+`$ git merge upstream/main`
 
 Source: [Syncing a fork](https://help.github.com/en/articles/syncing-a-fork){target="_blank"}
 
-Note that these commands bring in changes directly from the upstream repo. 
+Note that these commands bring in changes directly from the upstream repo. If you are working on a branch and want to sync, check out that branch rather than main and fetch / merge. Switching branches can be performed by clicking on the appropriate branch in RStudio instead of `git checkout`.
 
 ### Step 2: Delete the old branch {-}
 If your previous pull request was merged, it's good practice to delete the associated branch since the upstream already contains all the changes you have made. To fully delete a branch you will need to 1) delete the local branch, 2) delete the remote branch, 3) stop tracking the branch:
@@ -203,7 +204,7 @@ If you prefer to work in the terminal, you can delete the remote branch with:
 
 `$ git push origin --delete <branchname>`
 
-2. To delete the local branch, switch to the master branch in RStudio and then type the following in the terminal:
+2. To delete the local branch, switch to the main branch in RStudio and then type the following in the terminal:
 
 `$ git branch -d branchname`
 
@@ -215,7 +216,7 @@ Otherwise you will still see the deleted branches listed in RStudio's Git pane, 
 
 `$ git branch -a`  (* = checked out branch)
 
-Speaking of which, be aware that the Git pane doesn't tend to update in real time, so you'll likely still see branches listed that have been deleted. Be careful not to switch to them, or you will inadvertently recreate them. (Deleted branches have a habit of coming back.) Clicking on master (even though you're already on master) appears to trigger an update of the dropdown list. If that doesn't work, switching out of the project and back in will do so, if you want to be sure that the branches you deleted are really gone.
+Speaking of which, be aware that the Git pane doesn't tend to update in real time, so you'll likely still see branches listed that have been deleted. Be careful not to switch to them, or you will inadvertently recreate them. (Deleted branches have a habit of coming back.) Clicking on main (even though you're already on main) appears to trigger an update of the dropdown list. If that doesn't work, switching out of the project and back in will do so, if you want to be sure that the branches you deleted are really gone.
 
 ### Step 3: Update your fork on GitHub {-}
 
@@ -266,7 +267,7 @@ If you are [contributing to someone else's repo](#st-pr-on-another-repo-with-bra
  
 ### Random 
  
- - Make local the same as origin:<br>`git fetch origin`<br>`git reset --hard origin/master`   [SO link](https://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head){target="_blank"}
+ - Make local the same as origin:<br>`git fetch origin`<br>`git reset --hard origin/main`   [SO link](https://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head){target="_blank"}
  
  - Add back a file that was deleted but still exists on another branch:<br>`git checkout otherbranch myfile.txt` [SO link](https://stackoverflow.com/questions/307579/how-do-i-copy-a-version-of-a-single-file-from-one-git-branch-to-another){taraget="_blank"}
  
