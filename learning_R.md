@@ -11,9 +11,9 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 
 
 
-1. [Install R](https://r4ds.had.co.nz/introduction.html#r){target="_blank"} (*r4ds*) -- You need to have this installed but you won't open the application since you'll be working in RStudio. If you already installed R, make sure you're current! The latest version of R (as of 2022-11-01) is R 4.2.2 "Innocent and Trusting" released on 2022/10/31. (Use `> R.version` to check what you have.)
+1. [Install R](https://r4ds.had.co.nz/introduction.html#r){target="_blank"} (*r4ds*) -- You need to have this installed but you won't open the application since you'll be working in RStudio. If you already installed R, make sure you're current! The latest version of R (as of 2022-11-13) is R 4.2.2 "Innocent and Trusting" released on 2022/10/31. (Use `> R.version` to check what you have.)
 
-2. [Install RStudio](https://r4ds.had.co.nz/introduction.html#rstudio){target="_blank"} (*r4ds*) -- Download the free, Desktop version for your OS. Working in this IDE will make working in R much more enjoyable. As with R, stay current. RStudio is constantly adding new features. The latest version (as of 2022-11-01) is 2022.07.2+576. (Click the **RStudio** menu, then "About RStudio" to see what version you have.)
+2. [Install RStudio](https://r4ds.had.co.nz/introduction.html#rstudio){target="_blank"} (*r4ds*) -- Download the free, Desktop version for your OS. Working in this IDE will make working in R much more enjoyable. As with R, stay current. RStudio is constantly adding new features. The latest version (as of 2022-11-13) is 2022.07.2+576. (Click the **RStudio** menu, then "About RStudio" to see what version you have.)
 
 3. [Get comfortable with RStudio](https://b-rodrigues.github.io/modern_R/getting-to-know-rstudio.html){target="_blank"} -- In this chapter of Bruno Rodriguez's *Modern R with the Tidyverse*, you'll learn about panes, options, getting help, keyboard shortcuts, projects, add-ins, and packages. Be sure to try out:
 

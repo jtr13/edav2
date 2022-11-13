@@ -392,16 +392,11 @@ head(rebate_counts)
 ```
 
 ```
-## # A tibble: 6 × 3
-## # Groups:   make [3]
-##   make      ev_type  Freq
-##   <chr>     <chr>   <int>
-## 1 Audi      BEV         6
-## 2 Audi      PHEV        1
-## 3 BMW       BEV         1
-## 4 BMW       PHEV        9
-## 5 Chevrolet BEV        73
-## 6 Chevrolet PHEV       33
+## # A tibble: 1 × 3
+## # Groups:   make [1]
+##   make  ev_type  Freq
+##   <lgl> <lgl>   <int>
+## 1 NA    NA       1000
 ```
 
 By using `xtabs`, we are able to transform our data into a table ready for Chi-squared test or paired mosaic plot.
@@ -412,14 +407,7 @@ head(xtabs(Freq ~ ., data = rebate_counts))
 ```
 
 ```
-##            ev_type
-## make        BEV PHEV
-##   Audi        6    1
-##   BMW         1    9
-##   Chevrolet  73   33
-##   Chrysler    0   10
-##   Ford        1   27
-##   Honda       0   42
+## < table of extent 0 x 0 >
 ```
 
 
