@@ -264,6 +264,8 @@ If you are [contributing to someone else's repo](#st-pr-on-another-repo-with-bra
  - Remove all new, untracked files: `git clean -f`
  
  - Remove all new, untracked files, including in new subdirectories: `git clean -f -d`
+
+ - Revert to a previous commit [Using Git — how to go back to a previous commit](https://medium.com/swlh/using-git-how-to-go-back-to-a-previous-commit-8579ccc8180f){target="_blank"}
  
 ### Random 
  
