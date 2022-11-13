@@ -12,15 +12,20 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 # latest versions
 library(dplyr)
 r_latest_version <- xml2::read_html("https://cran.r-project.org/bin/macosx/") %>% 
-    rvest::html_node("body") %>% 
-    rvest::html_node("h2") %>% 
+    rvest::html_element("body") %>% 
+    rvest::html_element("h2") %>% 
     rvest::html_text()
 
-rstudio_latest_version <- 
-    xml2::read_html("https://www.rstudio.com/products/rstudio/download/") %>% 
-    rvest::html_node("h3#download") %>% 
-    rvest::html_text() %>% 
-    stringr::str_remove("RStudio Desktop ")
+spans <- xml2::read_html("https://posit.co/download/rstudio-desktop/" |>
+    rvest::html_element(".mt-\\[40px\\].body-md-regular") |>
+    rvest::html_elements("span") |>
+    rvest::html_text() |>
+    stringr::str_extract("Version: .*")
+
+rstudio_latest_version <- spans[!is.na(spans)] |>
+    stringr::str_extract("[0-9.\\+]+")
+
+    
 ```
 
 
