@@ -21,11 +21,9 @@ spans <- xml2::read_html("https://posit.co/download/rstudio-desktop/" |>
     rvest::html_elements("span") |>
     rvest::html_text() |>
     stringr::str_extract("Version: .*")
-
+    
 rstudio_latest_version <- spans[!is.na(spans)] |>
     stringr::str_extract("[0-9.\\+]+")
-
-    
 ```
 
 
