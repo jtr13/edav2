@@ -11,12 +11,12 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, cache=FALSE}
 # latest versions
 library(dplyr)
-r_latest_version <- xml2::read_html("https://cran.r-project.org/bin/macosx/") %>% 
-    rvest::html_element("body") %>% 
-    rvest::html_element("h2") %>% 
+r_latest_version <- xml2::read_html("https://cran.r-project.org/bin/macosx/") |>
+    rvest::html_element("body") |> 
+    rvest::html_element("h2") |>
     rvest::html_text()
 
-spans <- xml2::read_html("https://posit.co/download/rstudio-desktop/" |>
+spans <- xml2::read_html("https://posit.co/download/rstudio-desktop/") |>
     rvest::html_element(".mt-\\[40px\\].body-md-regular") |>
     rvest::html_elements("span") |>
     rvest::html_text() |>
