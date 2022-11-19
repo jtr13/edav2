@@ -9,7 +9,7 @@ This section describes workflows for working with GitHub/git and advice on how t
 
 2. *Tell git your name and email address.* [Introduce yourself to Git](https://happygitwithr.com/hello-git.html){target="_blank"} in *Happy Git* explains it all.
 
-3. *Set up a personal access token.* See [Personal access token for HTTPS](https://happygitwithr.com/https-pat.html){target="_blank"}.
+3. *Set up a personal access token.* See [Personal access token for HTTPS](https://happygitwithr.com/https-pat.html){target="_blank"}. *You will be given a choice of "Beta" or "classic". Choose classic.)*
 
 4. (Optional) *Check that your setup works.* See [Connect RStudio to Git and GitHub](https://happygitwithr.com/rstudio-git-github.html){target="_blank"}. To be clear, you don't have to do any connecting -- the steps in this chapter check that it's all working properly.
 
