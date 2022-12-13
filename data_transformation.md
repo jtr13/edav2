@@ -210,9 +210,9 @@ head(biopsy_new,5)
 
 In some situations, your new variable might involve conditions. You can consider using `case_when` combined with `mutate`.
 
-### `select`
+### `filter`
 
-**Filter** is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.
+**filter** is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.
 
 For our example, say we only want the data of those tumor cells that have clump thickness greater than 6.
 
@@ -392,11 +392,16 @@ head(rebate_counts)
 ```
 
 ```
-## # A tibble: 1 × 3
-## # Groups:   make [1]
-##   make  ev_type  Freq
-##   <lgl> <lgl>   <int>
-## 1 NA    NA       1000
+## # A tibble: 6 × 3
+## # Groups:   make [3]
+##   make      ev_type  Freq
+##   <chr>     <chr>   <int>
+## 1 Audi      BEV         6
+## 2 Audi      PHEV        1
+## 3 BMW       BEV         1
+## 4 BMW       PHEV        8
+## 5 Chevrolet BEV        72
+## 6 Chevrolet PHEV       33
 ```
 
 By using `xtabs`, we are able to transform our data into a table ready for Chi-squared test or paired mosaic plot.
@@ -407,7 +412,14 @@ head(xtabs(Freq ~ ., data = rebate_counts))
 ```
 
 ```
-## < table of extent 0 x 0 >
+##            ev_type
+## make        BEV PHEV
+##   Audi        6    1
+##   BMW         1    8
+##   Chevrolet  72   33
+##   Chrysler    0   11
+##   Ford        1   28
+##   Honda       0   45
 ```
 
 

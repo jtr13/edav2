@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-11-19" />
+<meta name="date" content="2022-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -66,18 +65,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -97,13 +96,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +115,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -148,13 +147,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a></li>
 <li class="part"><span><b>I R resources</b></span></li>
-<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a><ul>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#top-10-essentials-checklist"><i class="fa fa-check"></i><b>2.1</b> Top 10 essentials checklist</a></li>
-<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#troubleshooting"><i class="fa fa-check"></i><b>2.2</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#troubleshooting"><i class="fa fa-check"></i><b>2.2</b> Troubleshooting</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="getting-started.html"><a href="getting-started.html#document-doesnt-knit"><i class="fa fa-check"></i><b>2.2.1</b> Document doesn’t knit</a></li>
 <li class="chapter" data-level="2.2.2" data-path="getting-started.html"><a href="getting-started.html#functions-stop-working"><i class="fa fa-check"></i><b>2.2.2</b> Functions stop working</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#tips-tricks"><i class="fa fa-check"></i><b>2.3</b> Tips &amp; tricks</a><ul>
+<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#tips-tricks"><i class="fa fa-check"></i><b>2.3</b> Tips &amp; tricks</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="getting-started.html"><a href="getting-started.html#knitr"><i class="fa fa-check"></i><b>2.3.1</b> knitr</a></li>
 <li class="chapter" data-level="2.3.2" data-path="getting-started.html"><a href="getting-started.html#sizing-figures"><i class="fa fa-check"></i><b>2.3.2</b> Sizing figures</a></li>
 <li class="chapter" data-level="2.3.3" data-path="getting-started.html"><a href="getting-started.html#r-studio-keyborad-shortcuts"><i class="fa fa-check"></i><b>2.3.3</b> R studio keyborad shortcuts</a></li>
@@ -162,7 +164,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.5" data-path="getting-started.html"><a href="getting-started.html#adding-figures-and-links"><i class="fa fa-check"></i><b>2.3.5</b> Adding figures and links</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>3</b> Working with factors</a><ul>
+<li class="chapter" data-level="3" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>3</b> Working with factors</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="working-with-factors.html"><a href="working-with-factors.html#recode-factor-levels"><i class="fa fa-check"></i><b>3.1</b> Recode factor levels</a></li>
 <li class="chapter" data-level="3.2" data-path="working-with-factors.html"><a href="working-with-factors.html#relevel-the-factor"><i class="fa fa-check"></i><b>3.2</b> Relevel the factor</a></li>
 <li class="chapter" data-level="3.3" data-path="working-with-factors.html"><a href="working-with-factors.html#reorder-the-factors"><i class="fa fa-check"></i><b>3.3</b> Reorder the factors</a></li>
@@ -170,25 +173,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="working-with-factors.html"><a href="working-with-factors.html#summary-of-useful-functions"><i class="fa fa-check"></i><b>3.5</b> Summary of useful functions</a></li>
 <li class="chapter" data-level="3.6" data-path="working-with-factors.html"><a href="working-with-factors.html#continuous-to-categorical"><i class="fa fa-check"></i><b>3.6</b> Continuous to Categorical</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-importation.html"><a href="data-importation.html"><i class="fa fa-check"></i><b>4</b> Data importation</a><ul>
+<li class="chapter" data-level="4" data-path="data-importation.html"><a href="data-importation.html"><i class="fa fa-check"></i><b>4</b> Data importation</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="data-importation.html"><a href="data-importation.html#packages-with-built-in-data-set"><i class="fa fa-check"></i><b>4.1</b> Packages with built in data set</a></li>
-<li class="chapter" data-level="4.2" data-path="data-importation.html"><a href="data-importation.html#data-from-web"><i class="fa fa-check"></i><b>4.2</b> Data from web</a><ul>
+<li class="chapter" data-level="4.2" data-path="data-importation.html"><a href="data-importation.html#data-from-web"><i class="fa fa-check"></i><b>4.2</b> Data from web</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="data-importation.html"><a href="data-importation.html#read-in-from-url"><i class="fa fa-check"></i><b>4.2.1</b> Read in from URL</a></li>
 <li class="chapter" data-level="4.2.2" data-path="data-importation.html"><a href="data-importation.html#api-r-api-package"><i class="fa fa-check"></i><b>4.2.2</b> API / R API package</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="data-importation.html"><a href="data-importation.html#web-scraping"><i class="fa fa-check"></i><b>4.3</b> Web scraping</a><ul>
+<li class="chapter" data-level="4.3" data-path="data-importation.html"><a href="data-importation.html#web-scraping"><i class="fa fa-check"></i><b>4.3</b> Web scraping</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="data-importation.html"><a href="data-importation.html#rvest"><i class="fa fa-check"></i><b>4.3.1</b> <code>rvest</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>5</b> Data transformation</a><ul>
+<li class="chapter" data-level="5" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>5</b> Data transformation</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="data-transformation.html"><a href="data-transformation.html#what-is-tidy-data"><i class="fa fa-check"></i><b>5.1</b> What is tidy data?</a></li>
 <li class="chapter" data-level="5.2" data-path="data-transformation.html"><a href="data-transformation.html#pivot_longer"><i class="fa fa-check"></i><b>5.2</b> <code>pivot_longer</code></a></li>
 <li class="chapter" data-level="5.3" data-path="data-transformation.html"><a href="data-transformation.html#pivot_wider"><i class="fa fa-check"></i><b>5.3</b> <code>pivot_wider</code></a></li>
-<li class="chapter" data-level="5.4" data-path="data-transformation.html"><a href="data-transformation.html#basic-transformation-functions"><i class="fa fa-check"></i><b>5.4</b> Basic transformation functions</a><ul>
+<li class="chapter" data-level="5.4" data-path="data-transformation.html"><a href="data-transformation.html#basic-transformation-functions"><i class="fa fa-check"></i><b>5.4</b> Basic transformation functions</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="data-transformation.html"><a href="data-transformation.html#rename"><i class="fa fa-check"></i><b>5.4.1</b> <code>rename</code></a></li>
 <li class="chapter" data-level="5.4.2" data-path="data-transformation.html"><a href="data-transformation.html#select"><i class="fa fa-check"></i><b>5.4.2</b> <code>select</code></a></li>
 <li class="chapter" data-level="5.4.3" data-path="data-transformation.html"><a href="data-transformation.html#mutate"><i class="fa fa-check"></i><b>5.4.3</b> <code>mutate</code></a></li>
-<li class="chapter" data-level="5.4.4" data-path="data-transformation.html"><a href="data-transformation.html#select-1"><i class="fa fa-check"></i><b>5.4.4</b> <code>select</code></a></li>
+<li class="chapter" data-level="5.4.4" data-path="data-transformation.html"><a href="data-transformation.html#filter"><i class="fa fa-check"></i><b>5.4.4</b> <code>filter</code></a></li>
 <li class="chapter" data-level="5.4.5" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>5.4.5</b> <code>arrange</code></a></li>
 <li class="chapter" data-level="5.4.6" data-path="data-transformation.html"><a href="data-transformation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>5.4.6</b> <code>group_by</code> and <code>summarize</code></a></li>
 <li class="chapter" data-level="5.4.7" data-path="data-transformation.html"><a href="data-transformation.html#slice_max-slice_min"><i class="fa fa-check"></i><b>5.4.7</b> <code>slice_max</code> (<code>slice_min</code>)</a></li>
@@ -196,13 +204,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.9" data-path="data-transformation.html"><a href="data-transformation.html#cases-to-tables"><i class="fa fa-check"></i><b>5.4.9</b> Cases to tables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub/git Resources</a><ul>
+<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub/git Resources</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="github.html"><a href="github.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
 <li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html#first-things-first"><i class="fa fa-check"></i><b>6.2</b> First things first</a></li>
 <li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html#usage"><i class="fa fa-check"></i><b>6.3</b> Usage</a></li>
 <li class="chapter" data-level="6.4" data-path="github.html"><a href="github.html#the-no-branch-besides-main-workflow"><i class="fa fa-check"></i><b>6.4</b> The no branch (besides main) workflow</a></li>
 <li class="chapter" data-level="6.5" data-path="github.html"><a href="github.html#your-repo-with-branching"><i class="fa fa-check"></i><b>6.5</b> Your repo with branching</a></li>
-<li class="chapter" data-level="6.6" data-path="github.html"><a href="github.html#st-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.6</b> 1st PR on another repo with branching</a><ul>
+<li class="chapter" data-level="6.6" data-path="github.html"><a href="github.html#st-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.6</b> 1st PR on another repo with branching</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-1-fork-the-upstream-repo-once"><i class="fa fa-check"></i>Step 1: Fork the upstream repo (once)</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-2-clone-origin-and-create-a-local-repository-once"><i class="fa fa-check"></i>Step 2: Clone origin and create a local repository (once)</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-3-configure-remote-that-points-to-the-upstream-repository-once"><i class="fa fa-check"></i>Step 3: Configure remote that points to the upstream repository (once)</a></li>
@@ -211,31 +221,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-6-submit-a-pull-request"><i class="fa fa-check"></i>Step 6: Submit a pull request</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-7-merge-the-pull-request"><i class="fa fa-check"></i>Step 7: Merge the pull request</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="github.html"><a href="github.html#nd-nth-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.7</b> 2nd-<em>n</em>th PR on another repo with branching</a><ul>
+<li class="chapter" data-level="6.7" data-path="github.html"><a href="github.html#nd-nth-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.7</b> 2nd-<em>n</em>th PR on another repo with branching</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-1-sync"><i class="fa fa-check"></i>Step 1: Sync</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-2-delete-the-old-branch"><i class="fa fa-check"></i>Step 2: Delete the old branch</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-3-update-your-fork-on-github"><i class="fa fa-check"></i>Step 3: Update your fork on GitHub</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#steps-4-7-see-above"><i class="fa fa-check"></i>Steps 4-7: See above</a></li>
 </ul></li>
-<li class="chapter" data-level="6.8" data-path="github.html"><a href="github.html#fixing-mistakes"><i class="fa fa-check"></i><b>6.8</b> Fixing mistakes</a><ul>
+<li class="chapter" data-level="6.8" data-path="github.html"><a href="github.html#fixing-mistakes"><i class="fa fa-check"></i><b>6.8</b> Fixing mistakes</a>
+<ul>
 <li class="chapter" data-level="6.8.1" data-path="github.html"><a href="github.html#forgot-to-branch"><i class="fa fa-check"></i><b>6.8.1</b> Forgot to branch</a></li>
 <li class="chapter" data-level="6.8.2" data-path="github.html"><a href="github.html#undoing-stuff"><i class="fa fa-check"></i><b>6.8.2</b> Undoing stuff</a></li>
 <li class="chapter" data-level="6.8.3" data-path="github.html"><a href="github.html#random"><i class="fa fa-check"></i><b>6.8.3</b> Random</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="github.html"><a href="github.html#troubleshooting-1"><i class="fa fa-check"></i><b>6.9</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="6.9" data-path="github.html"><a href="github.html#troubleshooting-1"><i class="fa fa-check"></i><b>6.9</b> Troubleshooting</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="github.html"><a href="github.html#deleting-a-branch-isnt-working"><i class="fa fa-check"></i><b>6.9.1</b> Deleting a branch isn’t working</a></li>
 </ul></li>
-<li class="chapter" data-level="6.10" data-path="github.html"><a href="github.html#other-resources"><i class="fa fa-check"></i><b>6.10</b> Other resources</a><ul>
+<li class="chapter" data-level="6.10" data-path="github.html"><a href="github.html#other-resources"><i class="fa fa-check"></i><b>6.10</b> Other resources</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#getting-help"><i class="fa fa-check"></i>Getting Help</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#branching-out"><i class="fa fa-check"></i>Branching out</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#more-resources"><i class="fa fa-check"></i>More Resources</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II R graphics</b></span></li>
-<li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a><ul>
+<li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#getting-started-1"><i class="fa fa-check"></i><b>7.1</b> <strong>Getting started</strong></a></li>
 <li class="chapter" data-level="7.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#default-part-layer"><i class="fa fa-check"></i><b>7.2</b> <strong>Default part: layer</strong></a></li>
-<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a><ul>
+<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment"><i class="fa fa-check"></i><b>7.3.1</b> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
 <li class="chapter" data-level="7.3.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#scale"><i class="fa fa-check"></i><b>7.3.2</b> <strong>Scale</strong></a></li>
 <li class="chapter" data-level="7.3.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#coordinate-system"><i class="fa fa-check"></i><b>7.3.3</b> <strong>Coordinate system</strong></a></li>
@@ -244,73 +260,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#resources-for-ggplot2"><i class="fa fa-check"></i><b>7.4</b> <strong>Resources for ggplot2</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a><ul>
+<li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="faceting-1.html"><a href="faceting-1.html#faceting-on-one-variable"><i class="fa fa-check"></i><b>8.1</b> Faceting on one variable</a></li>
 <li class="chapter" data-level="8.2" data-path="faceting-1.html"><a href="faceting-1.html#faceting-on-two-variables"><i class="fa fa-check"></i><b>8.2</b> Faceting on two variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>9</b> Unidimensional continuous variables</a><ul>
-<li class="chapter" data-level="9.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#histogram"><i class="fa fa-check"></i><b>9.1</b> Histogram</a><ul>
+<li class="chapter" data-level="9" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>9</b> Unidimensional continuous variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#histogram"><i class="fa fa-check"></i><b>9.1</b> Histogram</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#basics-and-implications"><i class="fa fa-check"></i><b>9.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="9.1.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#types-of-histograms"><i class="fa fa-check"></i><b>9.1.2</b> Types of histograms</a></li>
 <li class="chapter" data-level="9.1.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#parameters-for-geom_histogram"><i class="fa fa-check"></i><b>9.1.3</b> Parameters for geom_histogram</a></li>
 <li class="chapter" data-level="9.1.4" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#interactive-histograms-with-ggvis"><i class="fa fa-check"></i><b>9.1.4</b> Interactive histograms with <code>ggvis</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#boxplots"><i class="fa fa-check"></i><b>9.2</b> Boxplots</a><ul>
+<li class="chapter" data-level="9.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#boxplots"><i class="fa fa-check"></i><b>9.2</b> Boxplots</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#single-boxplot"><i class="fa fa-check"></i><b>9.2.1</b> Single boxplot</a></li>
 <li class="chapter" data-level="9.2.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#multiple-boxplots"><i class="fa fa-check"></i><b>9.2.2</b> Multiple boxplots</a></li>
 <li class="chapter" data-level="9.2.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#additional-resources"><i class="fa fa-check"></i><b>9.2.3</b> Additional resources</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#ridgeline-plot"><i class="fa fa-check"></i><b>9.3</b> Ridgeline plot</a><ul>
+<li class="chapter" data-level="9.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#ridgeline-plot"><i class="fa fa-check"></i><b>9.3</b> Ridgeline plot</a>
+<ul>
 <li class="chapter" data-level="9.3.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#basics-and-implications-1"><i class="fa fa-check"></i><b>9.3.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="9.3.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#create-better-visuals"><i class="fa fa-check"></i><b>9.3.2</b> Create better visuals</a></li>
 <li class="chapter" data-level="9.3.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#additional-resources-1"><i class="fa fa-check"></i><b>9.3.3</b> Additional resources</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#normal-distribution"><i class="fa fa-check"></i><b>9.4</b> Normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>10</b> Unidimensional categorical variables</a><ul>
-<li class="chapter" data-level="10.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#bar-plot"><i class="fa fa-check"></i><b>10.1</b> Bar plot</a><ul>
+<li class="chapter" data-level="10" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>10</b> Unidimensional categorical variables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#bar-plot"><i class="fa fa-check"></i><b>10.1</b> Bar plot</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#nominal-data"><i class="fa fa-check"></i><b>10.1.1</b> Nominal data</a></li>
 <li class="chapter" data-level="10.1.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#ordinal-data"><i class="fa fa-check"></i><b>10.1.2</b> Ordinal data</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a><ul>
+<li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-multiple-dots"><i class="fa fa-check"></i><b>10.2.1</b> Cleveland dot plot with multiple dots</a></li>
 <li class="chapter" data-level="10.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>10.2.2</b> Cleveland dot plot with facets</a></li>
 <li class="chapter" data-level="10.2.3" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#example-how-much-people-in-the-trump-administration-are-worth"><i class="fa fa-check"></i><b>10.2.3</b> Example: How Much People in the Trump Administration Are Worth</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a><ul>
-<li class="chapter" data-level="11.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#scatterplot"><i class="fa fa-check"></i><b>11.1</b> Scatterplot</a><ul>
+<li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#scatterplot"><i class="fa fa-check"></i><b>11.1</b> Scatterplot</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-2"><i class="fa fa-check"></i><b>11.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="11.1.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#overplotting"><i class="fa fa-check"></i><b>11.1.2</b> Overplotting</a></li>
 <li class="chapter" data-level="11.1.3" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#interactive-scatterplot"><i class="fa fa-check"></i><b>11.1.3</b> Interactive scatterplot</a></li>
 <li class="chapter" data-level="11.1.4" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications"><i class="fa fa-check"></i><b>11.1.4</b> Modifications</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#heatmaps"><i class="fa fa-check"></i><b>11.2</b> Heatmaps</a><ul>
+<li class="chapter" data-level="11.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#heatmaps"><i class="fa fa-check"></i><b>11.2</b> Heatmaps</a>
+<ul>
 <li class="chapter" data-level="11.2.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-3"><i class="fa fa-check"></i><b>11.2.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="11.2.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications-1"><i class="fa fa-check"></i><b>11.2.2</b> Modifications</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>12</b> Multidimensional continuous variables</a><ul>
-<li class="chapter" data-level="12.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1</b> Parallel coordinate plot</a><ul>
+<li class="chapter" data-level="12" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>12</b> Multidimensional continuous variables</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1</b> Parallel coordinate plot</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#basics-and-implications-4"><i class="fa fa-check"></i><b>12.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="12.1.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#modifications-2"><i class="fa fa-check"></i><b>12.1.2</b> Modifications</a></li>
 <li class="chapter" data-level="12.1.3" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#interactive-parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1.3</b> Interactive parallel coordinate plot</a></li>
 <li class="chapter" data-level="12.1.4" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#external-resource"><i class="fa fa-check"></i><b>12.1.4</b> External resource</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#biplot"><i class="fa fa-check"></i><b>12.2</b> Biplot</a><ul>
+<li class="chapter" data-level="12.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#biplot"><i class="fa fa-check"></i><b>12.2</b> Biplot</a>
+<ul>
 <li class="chapter" data-level="12.2.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>12.2.1</b> Principal components analysis (PCA)</a></li>
 <li class="chapter" data-level="12.2.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#draw-a-biplot"><i class="fa fa-check"></i><b>12.2.2</b> Draw a biplot</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>13</b> Multidimensional categorical variables</a><ul>
-<li class="chapter" data-level="13.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#barcharts"><i class="fa fa-check"></i><b>13.1</b> Barcharts</a><ul>
+<li class="chapter" data-level="13" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>13</b> Multidimensional categorical variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#barcharts"><i class="fa fa-check"></i><b>13.1</b> Barcharts</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#stacked-bar-chart"><i class="fa fa-check"></i><b>13.1.1</b> Stacked bar chart</a></li>
 <li class="chapter" data-level="13.1.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-bar-chart"><i class="fa fa-check"></i><b>13.1.2</b> Grouped bar chart</a></li>
 <li class="chapter" data-level="13.1.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-bar-chart-with-facets"><i class="fa fa-check"></i><b>13.1.3</b> Grouped bar chart with facets</a></li>
 <li class="chapter" data-level="13.1.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-barchart-with-three-categorical-variables"><i class="fa fa-check"></i><b>13.1.4</b> Grouped barchart with three categorical variables</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>13.2</b> Chi square test of independence</a></li>
-<li class="chapter" data-level="13.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots"><i class="fa fa-check"></i><b>13.3</b> Mosaic plots</a><ul>
+<li class="chapter" data-level="13.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots"><i class="fa fa-check"></i><b>13.3</b> Mosaic plots</a>
+<ul>
 <li class="chapter" data-level="13.3.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-one-variable"><i class="fa fa-check"></i><b>13.3.1</b> Mosaic plot with one variable</a></li>
 <li class="chapter" data-level="13.3.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-two-variables"><i class="fa fa-check"></i><b>13.3.2</b> Mosaic plot with two variables</a></li>
 <li class="chapter" data-level="13.3.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-three-variablesbest-practice"><i class="fa fa-check"></i><b>13.3.3</b> Mosaic plot with three variables(Best practice)</a></li>
@@ -318,26 +351,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3.5" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots-spine-plot"><i class="fa fa-check"></i><b>13.3.5</b> Mosaic plots: spine plot</a></li>
 <li class="chapter" data-level="13.3.6" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-tree-map"><i class="fa fa-check"></i><b>13.3.6</b> Mosaic plot: tree map</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#alluvial-diagrams"><i class="fa fa-check"></i><b>13.4</b> Alluvial diagrams</a><ul>
+<li class="chapter" data-level="13.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#alluvial-diagrams"><i class="fa fa-check"></i><b>13.4</b> Alluvial diagrams</a>
+<ul>
 <li class="chapter" data-level="13.4.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#ggalluvial"><i class="fa fa-check"></i><b>13.4.1</b> ggalluvial</a></li>
 <li class="chapter" data-level="13.4.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#geom_flow"><i class="fa fa-check"></i><b>13.4.2</b> geom_flow</a></li>
 </ul></li>
 <li class="chapter" data-level="13.5" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#heat-map"><i class="fa fa-check"></i><b>13.5</b> Heat map</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="missing-data.html"><a href="missing-data.html"><i class="fa fa-check"></i><b>14</b> Missing data</a><ul>
+<li class="chapter" data-level="14" data-path="missing-data.html"><a href="missing-data.html"><i class="fa fa-check"></i><b>14</b> Missing data</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="missing-data.html"><a href="missing-data.html#introduction"><i class="fa fa-check"></i><b>14.1</b> Introduction</a></li>
-<li class="chapter" data-level="14.2" data-path="missing-data.html"><a href="missing-data.html#row-column-missing-patterns"><i class="fa fa-check"></i><b>14.2</b> Row / Column missing patterns</a><ul>
+<li class="chapter" data-level="14.2" data-path="missing-data.html"><a href="missing-data.html#row-column-missing-patterns"><i class="fa fa-check"></i><b>14.2</b> Row / Column missing patterns</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="missing-data.html"><a href="missing-data.html#colsums-rowsums"><i class="fa fa-check"></i><b>14.2.1</b> colSums() / rowSums()</a></li>
 <li class="chapter" data-level="14.2.2" data-path="missing-data.html"><a href="missing-data.html#heatmap"><i class="fa fa-check"></i><b>14.2.2</b> Heatmap</a></li>
 <li class="chapter" data-level="14.2.3" data-path="missing-data.html"><a href="missing-data.html#patterns"><i class="fa fa-check"></i><b>14.2.3</b> Patterns</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="colors.html"><a href="colors.html"><i class="fa fa-check"></i><b>15</b> Colors</a><ul>
+<li class="chapter" data-level="15" data-path="colors.html"><a href="colors.html"><i class="fa fa-check"></i><b>15</b> Colors</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="colors.html"><a href="colors.html#rcolorbrewer"><i class="fa fa-check"></i><b>15.1</b> RColorBrewer</a></li>
 <li class="chapter" data-level="15.2" data-path="colors.html"><a href="colors.html#perceptually-uniform-color-spaces-viridis"><i class="fa fa-check"></i><b>15.2</b> Perceptually uniform color spaces: Viridis</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>16</b> Time series</a><ul>
-<li class="chapter" data-level="16.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>16.1</b> Dates</a><ul>
+<li class="chapter" data-level="16" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>16</b> Time series</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>16.1</b> Dates</a>
+<ul>
 <li class="chapter" data-level="16.1.1" data-path="time-series.html"><a href="time-series.html#basic-r-functions"><i class="fa fa-check"></i><b>16.1.1</b> Basic R functions</a></li>
 <li class="chapter" data-level="16.1.2" data-path="time-series.html"><a href="time-series.html#lubridate"><i class="fa fa-check"></i><b>16.1.2</b> Lubridate</a></li>
 </ul></li>
@@ -346,19 +385,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4" data-path="time-series.html"><a href="time-series.html#time-series-patterns"><i class="fa fa-check"></i><b>16.4</b> Time series patterns</a></li>
 <li class="chapter" data-level="16.5" data-path="time-series.html"><a href="time-series.html#index"><i class="fa fa-check"></i><b>16.5</b> Index</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>17</b> Spatial data</a><ul>
+<li class="chapter" data-level="17" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>17</b> Spatial data</a>
+<ul>
 <li class="chapter" data-level="17.1" data-path="spatial-data.html"><a href="spatial-data.html#introduction-1"><i class="fa fa-check"></i><b>17.1</b> Introduction</a></li>
-<li class="chapter" data-level="17.2" data-path="spatial-data.html"><a href="spatial-data.html#packages"><i class="fa fa-check"></i><b>17.2</b> Packages</a><ul>
+<li class="chapter" data-level="17.2" data-path="spatial-data.html"><a href="spatial-data.html#packages"><i class="fa fa-check"></i><b>17.2</b> Packages</a>
+<ul>
 <li class="chapter" data-level="17.2.1" data-path="spatial-data.html"><a href="spatial-data.html#choroplethr"><i class="fa fa-check"></i><b>17.2.1</b> <code>choroplethr</code></a></li>
 <li class="chapter" data-level="17.2.2" data-path="spatial-data.html"><a href="spatial-data.html#ggmap"><i class="fa fa-check"></i><b>17.2.2</b> <code>ggmap</code></a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="spatial-data.html"><a href="spatial-data.html#shape-file"><i class="fa fa-check"></i><b>17.3</b> Shape file</a><ul>
+<li class="chapter" data-level="17.3" data-path="spatial-data.html"><a href="spatial-data.html#shape-file"><i class="fa fa-check"></i><b>17.3</b> Shape file</a>
+<ul>
 <li class="chapter" data-level="17.3.1" data-path="spatial-data.html"><a href="spatial-data.html#sf"><i class="fa fa-check"></i><b>17.3.1</b> <code>sf</code></a></li>
 <li class="chapter" data-level="17.3.2" data-path="spatial-data.html"><a href="spatial-data.html#tmap"><i class="fa fa-check"></i><b>17.3.2</b> <code>tmap</code></a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Appendix</b></span></li>
-<li class="chapter" data-level="18" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html"><i class="fa fa-check"></i><b>18</b> Cutting room floor</a><ul>
+<li class="chapter" data-level="18" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html"><i class="fa fa-check"></i><b>18</b> Cutting room floor</a>
+<ul>
 <li class="chapter" data-level="18.1" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html#parallel-coordinate-plots"><i class="fa fa-check"></i><b>18.1</b> Parallel coordinate plots</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -381,34 +424,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="multidimensional-continuous-variables" class="section level1 hasAnchor">
+<div id="multidimensional-continuous-variables" class="section level1 hasAnchor" number="12">
 <h1><span class="header-section-number">Chapter 12</span> Multidimensional continuous variables<a href="multidimensional-continuous-variables.html#multidimensional-continuous-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter, we will look at techniques that explore the relationships between multiple continuous variables.</p>
-<div id="parallel-coordinate-plot" class="section level2 hasAnchor">
+<div id="parallel-coordinate-plot" class="section level2 hasAnchor" number="12.1">
 <h2><span class="header-section-number">12.1</span> Parallel coordinate plot<a href="multidimensional-continuous-variables.html#parallel-coordinate-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="basics-and-implications-4" class="section level3 hasAnchor">
+<div id="basics-and-implications-4" class="section level3 hasAnchor" number="12.1.1">
 <h3><span class="header-section-number">12.1.1</span> Basics and implications<a href="multidimensional-continuous-variables.html#basics-and-implications-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For the following example, we use the famous <code>iris</code> data set. After installing <code>GGally</code>, we use <code>ggparcoord</code> to create the plot simply by specifying the columns we want.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="multidimensional-continuous-variables.html#cb108-1"></a><span class="kw">library</span>(GGally)</span>
-<span id="cb108-2"><a href="multidimensional-continuous-variables.html#cb108-2"></a></span>
-<span id="cb108-3"><a href="multidimensional-continuous-variables.html#cb108-3"></a><span class="kw">ggparcoord</span>(iris, <span class="dt">columns=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, </span>
-<span id="cb108-4"><a href="multidimensional-continuous-variables.html#cb108-4"></a>           <span class="dt">title =</span> <span class="st">&quot;Parallel coordinate plot for Iris flowers&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="multidimensional-continuous-variables.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb108-2"><a href="multidimensional-continuous-variables.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-3"><a href="multidimensional-continuous-variables.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggparcoord</span>(iris, <span class="at">columns=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, </span>
+<span id="cb108-4"><a href="multidimensional-continuous-variables.html#cb108-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">title =</span> <span class="st">&quot;Parallel coordinate plot for Iris flowers&quot;</span>)</span></code></pre></div>
 <p><img src="multidimensional_continuous_files/figure-html/unnamed-chunk-1-1.png" width="460.8" style="display: block; margin: auto;" />
 Generally, parallel coordinate plots are used to infer relationships between multiple continuous variables - we mostly use them to detect a general trend that our data follows, and also the specific cases that are outliers.</p>
 <p>Please keep in mind that parallel coordinate plots are not the ideal graph to use when there are just categorical variables involved. We can include a few categorical variables for the sake of clustering, but using a lot of categorical variables results in overlapping profiles, which makes it difficult to interpret.</p>
 </div>
-<div id="modifications-2" class="section level3 hasAnchor">
+<div id="modifications-2" class="section level3 hasAnchor" number="12.1.2">
 <h3><span class="header-section-number">12.1.2</span> Modifications<a href="multidimensional-continuous-variables.html#modifications-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The default parallel coordinate plot might be messy and hard to interpret. The following techniques will help to create better visuals and convey clearer trends.</p>
-<div id="grouping" class="section level4 hasAnchor">
+<div id="grouping" class="section level4 hasAnchor" number="12.1.2.1">
 <h4><span class="header-section-number">12.1.2.1</span> Grouping<a href="multidimensional-continuous-variables.html#grouping" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Generally, you use grouping when you want to observe a pattern by group of a categorical variable. To do this, we set groupColumn to the desired categorical variable.</p>
 </div>
-<div id="alpha" class="section level4 hasAnchor">
+<div id="alpha" class="section level4 hasAnchor" number="12.1.2.2">
 <h4><span class="header-section-number">12.1.2.2</span> Alpha<a href="multidimensional-continuous-variables.html#alpha" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In practice, parallel coordinate plots are not going to be used for very small datasets. Your data will likely have thousands and thousands of cases, and sometimes it can get very difficult to observe anything when there are many overlaps. We set the alphaLines between zero and one, and it reduces the opacity of all lines.</p>
 </div>
-<div id="scales" class="section level4 hasAnchor">
+<div id="scales" class="section level4 hasAnchor" number="12.1.2.3">
 <h4><span class="header-section-number">12.1.2.3</span> Scales<a href="multidimensional-continuous-variables.html#scales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Sometimes the value in your variables have very different range and it is necessary to rescale them to make comparisons. By default, <code>ggparcoord</code> standardize your data.</p>
 <p>The following are some other scaling options:</p>
@@ -419,58 +462,58 @@ Generally, parallel coordinate plots are used to infer relationships between mul
 <li><strong>globalminmax</strong>: no scaling, original values taken.</li>
 </ol>
 </div>
-<div id="splines" class="section level4 hasAnchor">
+<div id="splines" class="section level4 hasAnchor" number="12.1.2.4">
 <h4><span class="header-section-number">12.1.2.4</span> Splines<a href="multidimensional-continuous-variables.html#splines" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Generally, we use splines if we have a column where there are a lot of repeating values, which adds a lot of noise. The case lines become more and more curved when we set a higher spline factor, which removes noise and makes for easier observations of trends. It can be set using the splineFactor attribute.</p>
 </div>
-<div id="reordering" class="section level4 hasAnchor">
+<div id="reordering" class="section level4 hasAnchor" number="12.1.2.5">
 <h4><span class="header-section-number">12.1.2.5</span> Reordering<a href="multidimensional-continuous-variables.html#reordering" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You can reorder your columns in any way you want. Simply put the order in a vector. For example:</p>
 <pre><code>columns = c(1,3,4,2,5)</code></pre>
 </div>
-<div id="application" class="section level4 hasAnchor">
+<div id="application" class="section level4 hasAnchor" number="12.1.2.6">
 <h4><span class="header-section-number">12.1.2.6</span> Application<a href="multidimensional-continuous-variables.html#application" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Consider the following example, we apply grouping, alpha tuning, scaling and splines on the <code>iris</code> data set. Compare the two plot and the modified graph is noticeably easier to interpret.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="multidimensional-continuous-variables.html#cb110-1"></a><span class="kw">ggparcoord</span>(iris, <span class="dt">columns=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">groupColumn=</span><span class="dv">5</span>, <span class="dt">alpha=</span><span class="fl">0.5</span>, <span class="dt">scale=</span><span class="st">&#39;uniminmax&#39;</span>,<span class="dt">splineFactor=</span><span class="dv">10</span>,</span>
-<span id="cb110-2"><a href="multidimensional-continuous-variables.html#cb110-2"></a>           <span class="dt">title =</span> <span class="st">&quot;Modified parallel coordinate plot for Iris flowers&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="multidimensional-continuous-variables.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggparcoord</span>(iris, <span class="at">columns=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">groupColumn=</span><span class="dv">5</span>, <span class="at">alpha=</span><span class="fl">0.5</span>, <span class="at">scale=</span><span class="st">&#39;uniminmax&#39;</span>,<span class="at">splineFactor=</span><span class="dv">10</span>,</span>
+<span id="cb110-2"><a href="multidimensional-continuous-variables.html#cb110-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">title =</span> <span class="st">&quot;Modified parallel coordinate plot for Iris flowers&quot;</span>)</span></code></pre></div>
 <p><img src="multidimensional_continuous_files/figure-html/unnamed-chunk-2-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="interactive-parallel-coordinate-plot" class="section level3 hasAnchor">
+<div id="interactive-parallel-coordinate-plot" class="section level3 hasAnchor" number="12.1.3">
 <h3><span class="header-section-number">12.1.3</span> Interactive parallel coordinate plot<a href="multidimensional-continuous-variables.html#interactive-parallel-coordinate-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Package <code>parcoords</code> can help us in creating interactive parallel coordinate plots. The following example is created using New York State crime data.</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="multidimensional-continuous-variables.html#cb111-1"></a>df_a <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb111-2"><a href="multidimensional-continuous-variables.html#cb111-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(<span class="st">&quot;Year&quot;</span>,<span class="st">&quot;Months Reported&quot;</span>,<span class="st">&quot;Index Total&quot;</span>,<span class="st">&quot;Violent Total&quot;</span>,<span class="st">&quot;Property Total&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb111-3"><a href="multidimensional-continuous-variables.html#cb111-3"></a><span class="st">  </span><span class="kw">arrange</span>(df_a) <span class="op">%&gt;%</span></span>
-<span id="cb111-4"><a href="multidimensional-continuous-variables.html#cb111-4"></a><span class="st">  </span><span class="kw">parcoords</span>(<span class="dt">rownames =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb111-5"><a href="multidimensional-continuous-variables.html#cb111-5"></a>            <span class="dt">brushMode =</span> <span class="st">&quot;1D-axes&quot;</span>,</span>
-<span id="cb111-6"><a href="multidimensional-continuous-variables.html#cb111-6"></a>            <span class="dt">color =</span> <span class="kw">list</span>(<span class="dt">colorBy =</span> <span class="st">&quot;Region&quot;</span>,</span>
-<span id="cb111-7"><a href="multidimensional-continuous-variables.html#cb111-7"></a>                         <span class="dt">colorScale =</span> <span class="st">&quot;scaleOrdinal&quot;</span>,</span>
-<span id="cb111-8"><a href="multidimensional-continuous-variables.html#cb111-8"></a>                         <span class="dt">colorScheme =</span> <span class="st">&quot;schemeCategory10&quot;</span>),</span>
-<span id="cb111-9"><a href="multidimensional-continuous-variables.html#cb111-9"></a>            <span class="dt">alpha =</span> <span class="fl">0.5</span>,</span>
-<span id="cb111-10"><a href="multidimensional-continuous-variables.html#cb111-10"></a>            <span class="dt">withD3 =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb111-11"><a href="multidimensional-continuous-variables.html#cb111-11"></a>            <span class="dt">width =</span> <span class="dv">770</span>,</span>
-<span id="cb111-12"><a href="multidimensional-continuous-variables.html#cb111-12"></a>            <span class="dt">height =</span> <span class="dv">600</span>)</span></code></pre></div>
-<div class="parcoords html-widget" height="600" id="htmlwidget-a0f931b5b93b9710e7fa" style="width:770px;height:600px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="770"></div>
-<script type="application/json" data-for="htmlwidget-a0f931b5b93b9710e7fa">{"x":{"data":{"names":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62"],"County":["Albany","Allegany","Bronx","Broome","Cattaraugus","Cayuga","Chautauqua","Chemung","Chenango","Clinton","Columbia","Cortland","Delaware","Dutchess","Erie","Essex","Franklin","Fulton","Genesee","Greene","Hamilton","Herkimer","Jefferson","Kings","Lewis","Livingston","Madison","Monroe","Montgomery","Nassau","New York","Niagara","Oneida","Onondaga","Ontario","Orange","Orleans","Oswego","Otsego","Putnam","Queens","Rensselaer","Richmond","Rockland","Saratoga","Schenectady","Schoharie","Schuyler","Seneca","St Lawrence","Steuben","Suffolk","Sullivan","Tioga","Tompkins","Ulster","Warren","Washington","Wayne","Westchester","Wyoming","Yates"],"Region":["Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC"],"Murder":[38,6,111,10,2,4,2,4,2,2,2,2,2,18,138,0,0,2,0,0,0,2,6,175,0,0,4,100,2,46,84,32,26,64,4,18,0,0,0,0,78,24,20,18,8,12,0,0,2,2,6,66,8,0,0,14,0,0,2,48,0,2],"Rape":[218,76,523,252,76,136,166,64,104,118,54,80,58,186,384,66,64,62,68,50,8,80,148,701,28,56,82,456,22,108,430,194,224,362,146,260,42,158,60,18,515,136,84,100,160,82,24,8,54,100,112,342,90,38,94,130,100,94,120,224,36,16],"Robbery":[430,6,3519,156,12,36,72,56,14,6,22,10,2,176,1814,10,14,22,30,4,0,14,44,3816,0,10,20,1090,22,1046,3053,282,182,566,24,228,14,42,14,4,2549,178,245,114,38,216,8,4,2,14,12,632,34,4,78,48,4,8,36,790,4,2],"Aggravated Assault":[1568,58,8976,902,162,250,556,220,106,132,108,102,74,776,5042,44,80,140,108,330,6,116,358,9898,20,36,162,2916,92,2452,5697,810,684,2246,162,834,72,190,76,52,6487,572,998,450,244,812,54,8,52,158,104,1600,162,76,166,260,50,72,184,2106,50,12],"Burglary":[1446,172,2230,1338,274,334,1084,262,292,246,188,258,192,492,5362,98,230,280,202,116,14,254,514,4099,88,142,242,4546,180,1950,4449,1136,966,2984,374,872,164,476,160,86,2842,794,286,444,512,800,62,18,58,324,328,2254,250,142,462,406,158,96,352,1636,72,48],"Larceny":[10338,430,18728,7268,1112,1706,3838,2266,1002,1724,1026,1238,560,5520,26772,386,860,1338,1156,576,58,1288,2904,29306,146,860,1334,20288,1152,17482,32568,6332,6428,11888,2232,7088,582,2508,916,578,22431,4326,3163,4148,3350,5294,458,60,676,1622,1072,28868,1090,566,3370,2792,1144,416,1888,14326,428,358],"Motor Vehicle Theft":[862,56,2130,434,112,124,154,134,50,52,48,34,40,298,3916,20,56,72,90,24,6,46,136,2943,16,28,62,2780,62,1404,1395,746,416,1856,86,398,54,226,48,58,2544,342,246,206,146,490,24,0,32,42,92,2532,70,38,84,140,28,46,102,1484,18,4]},"options":{"rownames":false,"color":{"colorBy":"Region","colorScale":"scaleOrdinal","colorScheme":"schemeCategory10"},"brushMode":"1D-axes","brushPredicate":"AND","reorderable":false,"margin":{"top":50,"bottom":50,"left":100,"right":50},"alpha":0.5,"mode":false,"bundlingStrength":0.5,"smoothness":0,"width":770,"height":600},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="multidimensional-continuous-variables.html#cb111-1" aria-hidden="true" tabindex="-1"></a>df_a <span class="sc">%&gt;%</span> </span>
+<span id="cb111-2"><a href="multidimensional-continuous-variables.html#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">&quot;Year&quot;</span>,<span class="st">&quot;Months Reported&quot;</span>,<span class="st">&quot;Index Total&quot;</span>,<span class="st">&quot;Violent Total&quot;</span>,<span class="st">&quot;Property Total&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb111-3"><a href="multidimensional-continuous-variables.html#cb111-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(df_a) <span class="sc">%&gt;%</span></span>
+<span id="cb111-4"><a href="multidimensional-continuous-variables.html#cb111-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">parcoords</span>(<span class="at">rownames =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb111-5"><a href="multidimensional-continuous-variables.html#cb111-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">brushMode =</span> <span class="st">&quot;1D-axes&quot;</span>,</span>
+<span id="cb111-6"><a href="multidimensional-continuous-variables.html#cb111-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="fu">list</span>(<span class="at">colorBy =</span> <span class="st">&quot;Region&quot;</span>,</span>
+<span id="cb111-7"><a href="multidimensional-continuous-variables.html#cb111-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">colorScale =</span> <span class="st">&quot;scaleOrdinal&quot;</span>,</span>
+<span id="cb111-8"><a href="multidimensional-continuous-variables.html#cb111-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">colorScheme =</span> <span class="st">&quot;schemeCategory10&quot;</span>),</span>
+<span id="cb111-9"><a href="multidimensional-continuous-variables.html#cb111-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb111-10"><a href="multidimensional-continuous-variables.html#cb111-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">withD3 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb111-11"><a href="multidimensional-continuous-variables.html#cb111-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">width =</span> <span class="dv">770</span>,</span>
+<span id="cb111-12"><a href="multidimensional-continuous-variables.html#cb111-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">height =</span> <span class="dv">600</span>)</span></code></pre></div>
+<div class="parcoords html-widget" height="600" id="htmlwidget-8966fa933a300be983d7" style="width:770px;height:600px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="770"></div>
+<script type="application/json" data-for="htmlwidget-8966fa933a300be983d7">{"x":{"data":{"names":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62"],"County":["Albany","Allegany","Bronx","Broome","Cattaraugus","Cayuga","Chautauqua","Chemung","Chenango","Clinton","Columbia","Cortland","Delaware","Dutchess","Erie","Essex","Franklin","Fulton","Genesee","Greene","Hamilton","Herkimer","Jefferson","Kings","Lewis","Livingston","Madison","Monroe","Montgomery","Nassau","New York","Niagara","Oneida","Onondaga","Ontario","Orange","Orleans","Oswego","Otsego","Putnam","Queens","Rensselaer","Richmond","Rockland","Saratoga","Schenectady","Schoharie","Schuyler","Seneca","St Lawrence","Steuben","Suffolk","Sullivan","Tioga","Tompkins","Ulster","Warren","Washington","Wayne","Westchester","Wyoming","Yates"],"Region":["Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC"],"Murder":[38,6,111,10,2,4,2,4,2,2,2,2,2,18,138,0,0,2,0,0,0,2,6,175,0,0,4,100,2,46,84,32,26,64,4,18,0,0,0,0,78,24,20,18,8,12,0,0,2,2,6,66,8,0,0,14,0,0,2,48,0,2],"Rape":[218,76,523,252,76,136,166,64,104,118,54,80,58,186,384,66,64,62,68,50,8,80,148,701,28,56,82,456,22,108,430,194,224,362,146,260,42,158,60,18,515,136,84,100,160,82,24,8,54,100,112,342,90,38,94,130,100,94,120,224,36,16],"Robbery":[430,6,3519,156,12,36,72,56,14,6,22,10,2,176,1814,10,14,22,30,4,0,14,44,3816,0,10,20,1090,22,1046,3053,282,182,566,24,228,14,42,14,4,2549,178,245,114,38,216,8,4,2,14,12,632,34,4,78,48,4,8,36,790,4,2],"Aggravated Assault":[1568,58,8976,902,162,250,556,220,106,132,108,102,74,776,5042,44,80,140,108,330,6,116,358,9898,20,36,162,2916,92,2452,5697,810,684,2246,162,834,72,190,76,52,6487,572,998,450,244,812,54,8,52,158,104,1600,162,76,166,260,50,72,184,2106,50,12],"Burglary":[1446,172,2230,1338,274,334,1084,262,292,246,188,258,192,492,5362,98,230,280,202,116,14,254,514,4099,88,142,242,4546,180,1950,4449,1136,966,2984,374,872,164,476,160,86,2842,794,286,444,512,800,62,18,58,324,328,2254,250,142,462,406,158,96,352,1636,72,48],"Larceny":[10338,430,18728,7268,1112,1706,3838,2266,1002,1724,1026,1238,560,5520,26772,386,860,1338,1156,576,58,1288,2904,29306,146,860,1334,20288,1152,17482,32568,6332,6428,11888,2232,7088,582,2508,916,578,22431,4326,3163,4148,3350,5294,458,60,676,1622,1072,28868,1090,566,3370,2792,1144,416,1888,14326,428,358],"Motor Vehicle Theft":[862,56,2130,434,112,124,154,134,50,52,48,34,40,298,3916,20,56,72,90,24,6,46,136,2943,16,28,62,2780,62,1404,1395,746,416,1856,86,398,54,226,48,58,2544,342,246,206,146,490,24,0,32,42,92,2532,70,38,84,140,28,46,102,1484,18,4]},"options":{"rownames":false,"color":{"colorBy":"Region","colorScale":"scaleOrdinal","colorScheme":"schemeCategory10"},"brushMode":"1D-axes","brushPredicate":"AND","reorderable":false,"margin":{"top":50,"bottom":50,"left":100,"right":50},"alpha":0.5,"mode":false,"bundlingStrength":0.5,"smoothness":0,"width":770,"height":600},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script>
 <p>In the interactive graph, for each feature, you can create a square box to filter for observations. For example, you can look at a certain county, or you can filter for all counties that are in New York City (Region=NYC). Overall, the interactive plot is more flexible for analysis.</p>
 </div>
-<div id="external-resource" class="section level3 hasAnchor">
+<div id="external-resource" class="section level3 hasAnchor" number="12.1.4">
 <h3><span class="header-section-number">12.1.4</span> External resource<a href="multidimensional-continuous-variables.html#external-resource" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Just like a static graph, there is a lot of things you can change in the interactive setting. Refer to the <a href="https://timelyportfolio.github.io/parcoords/articles/introduction-to-parcoords-.html">Introduction to <code>parcoords</code> vignette</a> for more options. Unfortunately, at the time of this writing <a href="https://buildingwidgets.com/blog/2015/1/30/week-04-interactive-parallel-coordinates-1">the original blog post about the library</a> is not available.</p>
 <p><br></p>
 </div>
 </div>
-<div id="biplot" class="section level2 hasAnchor">
+<div id="biplot" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> Biplot<a href="multidimensional-continuous-variables.html#biplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the following chapter, we will introduce biplot. We will talk briefly on how to create a biplot and how to interpret it.</p>
-<div id="principal-components-analysis-pca" class="section level3 hasAnchor">
+<div id="principal-components-analysis-pca" class="section level3 hasAnchor" number="12.2.1">
 <h3><span class="header-section-number">12.2.1</span> Principal components analysis (PCA)<a href="multidimensional-continuous-variables.html#principal-components-analysis-pca" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We first introduce PCA as the existence of biplot is built up on it. Given a data set with multiple variables, the goal of PCA is to reduce dimensionality by finding a few linear combinations of the variables that capture most of the variance. Consider the following example using rating of countries.</p>
 <p>As a common technique, we first standardize each variable to have mean of 0 and variance of 1</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="multidimensional-continuous-variables.html#cb112-1"></a>scaled_ratings &lt;-<span class="st"> </span>ratings <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb112-2"><a href="multidimensional-continuous-variables.html#cb112-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="kw">where</span>(is.numeric), <span class="op">~</span><span class="kw">round</span>((.x<span class="op">-</span><span class="kw">mean</span>(.x))<span class="op">/</span><span class="kw">sd</span>(.x), <span class="dv">2</span>)))</span>
-<span id="cb112-3"><a href="multidimensional-continuous-variables.html#cb112-3"></a>scaled_ratings</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="multidimensional-continuous-variables.html#cb112-1" aria-hidden="true" tabindex="-1"></a>scaled_ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb112-2"><a href="multidimensional-continuous-variables.html#cb112-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span><span class="fu">round</span>((.x<span class="sc">-</span><span class="fu">mean</span>(.x))<span class="sc">/</span><span class="fu">sd</span>(.x), <span class="dv">2</span>)))</span>
+<span id="cb112-3"><a href="multidimensional-continuous-variables.html#cb112-3" aria-hidden="true" tabindex="-1"></a>scaled_ratings</span></code></pre></div>
 <pre><code>## # A tibble: 13 × 7
 ##    country     living_standard climate  food security hospitality infrastructure
 ##    &lt;chr&gt;                 &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;
@@ -488,17 +531,17 @@ Generally, parallel coordinate plots are used to infer relationships between mul
 ## 12 Mexico                -1.64   -0.31 -0.44     -1         -0.34          -0.77
 ## 13 SouthAfrica           -0.63   -0.76 -0.44     -0.5       -0.34          -0.77</code></pre>
 <p>To apply PCA, we use function <code>prcomp()</code>. <code>summary()</code> will then be used to show result.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="multidimensional-continuous-variables.html#cb114-1"></a>pca &lt;-<span class="st"> </span><span class="kw">prcomp</span>(ratings[,<span class="dv">2</span><span class="op">:</span><span class="dv">7</span>], <span class="dt">scale. =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb114-2"><a href="multidimensional-continuous-variables.html#cb114-2"></a><span class="kw">summary</span>(pca)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="multidimensional-continuous-variables.html#cb114-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(ratings[,<span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>], <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb114-2"><a href="multidimensional-continuous-variables.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
 <pre><code>## Importance of components:
 ##                          PC1    PC2     PC3     PC4     PC5     PC6
 ## Standard deviation     1.854 1.4497 0.43959 0.39052 0.27517 0.19778
 ## Proportion of Variance 0.573 0.3503 0.03221 0.02542 0.01262 0.00652
 ## Cumulative Proportion  0.573 0.9232 0.95544 0.98086 0.99348 1.00000</code></pre>
 <p>As we can see that the first two principal components capture 92.3% of the total variance.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="multidimensional-continuous-variables.html#cb116-1"></a>mat_round &lt;-<span class="st"> </span><span class="cf">function</span>(matrix, <span class="dt">n =</span> <span class="dv">3</span>) <span class="kw">apply</span>(matrix, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="kw">round</span>(x, n))</span>
-<span id="cb116-2"><a href="multidimensional-continuous-variables.html#cb116-2"></a></span>
-<span id="cb116-3"><a href="multidimensional-continuous-variables.html#cb116-3"></a><span class="kw">mat_round</span>(pca<span class="op">$</span>rotation)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="multidimensional-continuous-variables.html#cb116-1" aria-hidden="true" tabindex="-1"></a>mat_round <span class="ot">&lt;-</span> <span class="cf">function</span>(matrix, <span class="at">n =</span> <span class="dv">3</span>) <span class="fu">apply</span>(matrix, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">round</span>(x, n))</span>
+<span id="cb116-2"><a href="multidimensional-continuous-variables.html#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-3"><a href="multidimensional-continuous-variables.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mat_round</span>(pca<span class="sc">$</span>rotation)</span></code></pre></div>
 <pre><code>##                    PC1    PC2    PC3    PC4    PC5    PC6
 ## living_standard -0.429  0.364  0.112 -0.673  0.466 -0.028
 ## climate          0.270  0.585 -0.210  0.036 -0.149 -0.719
@@ -508,29 +551,29 @@ Generally, parallel coordinate plots are used to infer relationships between mul
 ## infrastructure  -0.484  0.252 -0.297 -0.121 -0.731  0.256</code></pre>
 <p>We are also able to see the specific linear combination of variables for each principal component.</p>
 </div>
-<div id="draw-a-biplot" class="section level3 hasAnchor">
+<div id="draw-a-biplot" class="section level3 hasAnchor" number="12.2.2">
 <h3><span class="header-section-number">12.2.2</span> Draw a biplot<a href="multidimensional-continuous-variables.html#draw-a-biplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To draw a biplot, we suggest using <code>draw_biplot</code> from <code>redav</code> package. You can install the package using <code>remotes::install_github("jtr13/redav")</code>. Note that the function will apply PCA and draw the plot.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="multidimensional-continuous-variables.html#cb118-1"></a><span class="kw">library</span>(redav)</span>
-<span id="cb118-2"><a href="multidimensional-continuous-variables.html#cb118-2"></a><span class="kw">draw_biplot</span>(ratings,<span class="dt">arrows=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="multidimensional-continuous-variables.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redav)</span>
+<span id="cb118-2"><a href="multidimensional-continuous-variables.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings,<span class="at">arrows=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="multidimensional_continuous_files/figure-html/unnamed-chunk-9-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <p>The above biplot is set to be without arrows. We can rougly identify clusters from the graph. By running some clustering algorithm like <code>k-means</code>, you will be able to see it clearer.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="multidimensional-continuous-variables.html#cb119-1"></a>scores &lt;-<span class="st"> </span>pca<span class="op">$</span>x[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
-<span id="cb119-2"><a href="multidimensional-continuous-variables.html#cb119-2"></a>k &lt;-<span class="st"> </span><span class="kw">kmeans</span>(scores, <span class="dt">centers =</span> <span class="dv">6</span>)</span>
-<span id="cb119-3"><a href="multidimensional-continuous-variables.html#cb119-3"></a>scores &lt;-<span class="st"> </span><span class="kw">data.frame</span>(scores) <span class="op">%&gt;%</span></span>
-<span id="cb119-4"><a href="multidimensional-continuous-variables.html#cb119-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cluster =</span> <span class="kw">factor</span>(k<span class="op">$</span>cluster), <span class="dt">country =</span> ratings<span class="op">$</span>country)</span>
-<span id="cb119-5"><a href="multidimensional-continuous-variables.html#cb119-5"></a>g4 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(scores, <span class="kw">aes</span>(PC1, PC2, <span class="dt">color =</span> cluster, <span class="dt">label =</span> country)) <span class="op">+</span></span>
-<span id="cb119-6"><a href="multidimensional-continuous-variables.html#cb119-6"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb119-7"><a href="multidimensional-continuous-variables.html#cb119-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
-<span id="cb119-8"><a href="multidimensional-continuous-variables.html#cb119-8"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color=</span><span class="st">&quot;none&quot;</span>)</span>
-<span id="cb119-9"><a href="multidimensional-continuous-variables.html#cb119-9"></a>g4</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="multidimensional-continuous-variables.html#cb119-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb119-2"><a href="multidimensional-continuous-variables.html#cb119-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(scores, <span class="at">centers =</span> <span class="dv">6</span>)</span>
+<span id="cb119-3"><a href="multidimensional-continuous-variables.html#cb119-3" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(scores) <span class="sc">%&gt;%</span></span>
+<span id="cb119-4"><a href="multidimensional-continuous-variables.html#cb119-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cluster =</span> <span class="fu">factor</span>(k<span class="sc">$</span>cluster), <span class="at">country =</span> ratings<span class="sc">$</span>country)</span>
+<span id="cb119-5"><a href="multidimensional-continuous-variables.html#cb119-5" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(scores, <span class="fu">aes</span>(PC1, PC2, <span class="at">color =</span> cluster, <span class="at">label =</span> country)) <span class="sc">+</span></span>
+<span id="cb119-6"><a href="multidimensional-continuous-variables.html#cb119-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb119-7"><a href="multidimensional-continuous-variables.html#cb119-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">nudge_y =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb119-8"><a href="multidimensional-continuous-variables.html#cb119-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color=</span><span class="st">&quot;none&quot;</span>)</span>
+<span id="cb119-9"><a href="multidimensional-continuous-variables.html#cb119-9" aria-hidden="true" tabindex="-1"></a>g4</span></code></pre></div>
 <p><img src="multidimensional_continuous_files/figure-html/unnamed-chunk-10-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 <p>Now for a standard bibplot:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="multidimensional-continuous-variables.html#cb120-1"></a><span class="kw">draw_biplot</span>(ratings)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="multidimensional-continuous-variables.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings)</span></code></pre></div>
 <p><img src="multidimensional_continuous_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>To interpret the graph, you could imagine a perpendicular line from a certain point(country) to a feature arrow you are concerned. The further the intersection is on the arrow line, the higher the score. Take Spain for example, it has high score on all variables except hospitality as the imaginary line would land on the negative axis.</p>
 <p>You can also add calibrated axis, which will help you better compare a certain variable among countries.</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="multidimensional-continuous-variables.html#cb121-1"></a><span class="kw">draw_biplot</span>(ratings,<span class="st">&quot;living_standard&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="multidimensional-continuous-variables.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings,<span class="st">&quot;living_standard&quot;</span>)</span></code></pre></div>
 <p><img src="multidimensional_continuous_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>You see in this case, a projection line is added. We can clearly see that France has the highest living standard rating and Nigeria has the lowest rating.</p>
 

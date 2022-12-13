@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-11-19" />
+<meta name="date" content="2022-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -66,18 +65,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -97,13 +96,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +115,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -148,13 +147,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a></li>
 <li class="part"><span><b>I R resources</b></span></li>
-<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a><ul>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#top-10-essentials-checklist"><i class="fa fa-check"></i><b>2.1</b> Top 10 essentials checklist</a></li>
-<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#troubleshooting"><i class="fa fa-check"></i><b>2.2</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#troubleshooting"><i class="fa fa-check"></i><b>2.2</b> Troubleshooting</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="getting-started.html"><a href="getting-started.html#document-doesnt-knit"><i class="fa fa-check"></i><b>2.2.1</b> Document doesn’t knit</a></li>
 <li class="chapter" data-level="2.2.2" data-path="getting-started.html"><a href="getting-started.html#functions-stop-working"><i class="fa fa-check"></i><b>2.2.2</b> Functions stop working</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#tips-tricks"><i class="fa fa-check"></i><b>2.3</b> Tips &amp; tricks</a><ul>
+<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#tips-tricks"><i class="fa fa-check"></i><b>2.3</b> Tips &amp; tricks</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="getting-started.html"><a href="getting-started.html#knitr"><i class="fa fa-check"></i><b>2.3.1</b> knitr</a></li>
 <li class="chapter" data-level="2.3.2" data-path="getting-started.html"><a href="getting-started.html#sizing-figures"><i class="fa fa-check"></i><b>2.3.2</b> Sizing figures</a></li>
 <li class="chapter" data-level="2.3.3" data-path="getting-started.html"><a href="getting-started.html#r-studio-keyborad-shortcuts"><i class="fa fa-check"></i><b>2.3.3</b> R studio keyborad shortcuts</a></li>
@@ -162,7 +164,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.5" data-path="getting-started.html"><a href="getting-started.html#adding-figures-and-links"><i class="fa fa-check"></i><b>2.3.5</b> Adding figures and links</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>3</b> Working with factors</a><ul>
+<li class="chapter" data-level="3" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>3</b> Working with factors</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="working-with-factors.html"><a href="working-with-factors.html#recode-factor-levels"><i class="fa fa-check"></i><b>3.1</b> Recode factor levels</a></li>
 <li class="chapter" data-level="3.2" data-path="working-with-factors.html"><a href="working-with-factors.html#relevel-the-factor"><i class="fa fa-check"></i><b>3.2</b> Relevel the factor</a></li>
 <li class="chapter" data-level="3.3" data-path="working-with-factors.html"><a href="working-with-factors.html#reorder-the-factors"><i class="fa fa-check"></i><b>3.3</b> Reorder the factors</a></li>
@@ -170,25 +173,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="working-with-factors.html"><a href="working-with-factors.html#summary-of-useful-functions"><i class="fa fa-check"></i><b>3.5</b> Summary of useful functions</a></li>
 <li class="chapter" data-level="3.6" data-path="working-with-factors.html"><a href="working-with-factors.html#continuous-to-categorical"><i class="fa fa-check"></i><b>3.6</b> Continuous to Categorical</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-importation.html"><a href="data-importation.html"><i class="fa fa-check"></i><b>4</b> Data importation</a><ul>
+<li class="chapter" data-level="4" data-path="data-importation.html"><a href="data-importation.html"><i class="fa fa-check"></i><b>4</b> Data importation</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="data-importation.html"><a href="data-importation.html#packages-with-built-in-data-set"><i class="fa fa-check"></i><b>4.1</b> Packages with built in data set</a></li>
-<li class="chapter" data-level="4.2" data-path="data-importation.html"><a href="data-importation.html#data-from-web"><i class="fa fa-check"></i><b>4.2</b> Data from web</a><ul>
+<li class="chapter" data-level="4.2" data-path="data-importation.html"><a href="data-importation.html#data-from-web"><i class="fa fa-check"></i><b>4.2</b> Data from web</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="data-importation.html"><a href="data-importation.html#read-in-from-url"><i class="fa fa-check"></i><b>4.2.1</b> Read in from URL</a></li>
 <li class="chapter" data-level="4.2.2" data-path="data-importation.html"><a href="data-importation.html#api-r-api-package"><i class="fa fa-check"></i><b>4.2.2</b> API / R API package</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="data-importation.html"><a href="data-importation.html#web-scraping"><i class="fa fa-check"></i><b>4.3</b> Web scraping</a><ul>
+<li class="chapter" data-level="4.3" data-path="data-importation.html"><a href="data-importation.html#web-scraping"><i class="fa fa-check"></i><b>4.3</b> Web scraping</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="data-importation.html"><a href="data-importation.html#rvest"><i class="fa fa-check"></i><b>4.3.1</b> <code>rvest</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>5</b> Data transformation</a><ul>
+<li class="chapter" data-level="5" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>5</b> Data transformation</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="data-transformation.html"><a href="data-transformation.html#what-is-tidy-data"><i class="fa fa-check"></i><b>5.1</b> What is tidy data?</a></li>
 <li class="chapter" data-level="5.2" data-path="data-transformation.html"><a href="data-transformation.html#pivot_longer"><i class="fa fa-check"></i><b>5.2</b> <code>pivot_longer</code></a></li>
 <li class="chapter" data-level="5.3" data-path="data-transformation.html"><a href="data-transformation.html#pivot_wider"><i class="fa fa-check"></i><b>5.3</b> <code>pivot_wider</code></a></li>
-<li class="chapter" data-level="5.4" data-path="data-transformation.html"><a href="data-transformation.html#basic-transformation-functions"><i class="fa fa-check"></i><b>5.4</b> Basic transformation functions</a><ul>
+<li class="chapter" data-level="5.4" data-path="data-transformation.html"><a href="data-transformation.html#basic-transformation-functions"><i class="fa fa-check"></i><b>5.4</b> Basic transformation functions</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="data-transformation.html"><a href="data-transformation.html#rename"><i class="fa fa-check"></i><b>5.4.1</b> <code>rename</code></a></li>
 <li class="chapter" data-level="5.4.2" data-path="data-transformation.html"><a href="data-transformation.html#select"><i class="fa fa-check"></i><b>5.4.2</b> <code>select</code></a></li>
 <li class="chapter" data-level="5.4.3" data-path="data-transformation.html"><a href="data-transformation.html#mutate"><i class="fa fa-check"></i><b>5.4.3</b> <code>mutate</code></a></li>
-<li class="chapter" data-level="5.4.4" data-path="data-transformation.html"><a href="data-transformation.html#select-1"><i class="fa fa-check"></i><b>5.4.4</b> <code>select</code></a></li>
+<li class="chapter" data-level="5.4.4" data-path="data-transformation.html"><a href="data-transformation.html#filter"><i class="fa fa-check"></i><b>5.4.4</b> <code>filter</code></a></li>
 <li class="chapter" data-level="5.4.5" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>5.4.5</b> <code>arrange</code></a></li>
 <li class="chapter" data-level="5.4.6" data-path="data-transformation.html"><a href="data-transformation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>5.4.6</b> <code>group_by</code> and <code>summarize</code></a></li>
 <li class="chapter" data-level="5.4.7" data-path="data-transformation.html"><a href="data-transformation.html#slice_max-slice_min"><i class="fa fa-check"></i><b>5.4.7</b> <code>slice_max</code> (<code>slice_min</code>)</a></li>
@@ -196,13 +204,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.9" data-path="data-transformation.html"><a href="data-transformation.html#cases-to-tables"><i class="fa fa-check"></i><b>5.4.9</b> Cases to tables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub/git Resources</a><ul>
+<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub/git Resources</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="github.html"><a href="github.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
 <li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html#first-things-first"><i class="fa fa-check"></i><b>6.2</b> First things first</a></li>
 <li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html#usage"><i class="fa fa-check"></i><b>6.3</b> Usage</a></li>
 <li class="chapter" data-level="6.4" data-path="github.html"><a href="github.html#the-no-branch-besides-main-workflow"><i class="fa fa-check"></i><b>6.4</b> The no branch (besides main) workflow</a></li>
 <li class="chapter" data-level="6.5" data-path="github.html"><a href="github.html#your-repo-with-branching"><i class="fa fa-check"></i><b>6.5</b> Your repo with branching</a></li>
-<li class="chapter" data-level="6.6" data-path="github.html"><a href="github.html#st-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.6</b> 1st PR on another repo with branching</a><ul>
+<li class="chapter" data-level="6.6" data-path="github.html"><a href="github.html#st-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.6</b> 1st PR on another repo with branching</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-1-fork-the-upstream-repo-once"><i class="fa fa-check"></i>Step 1: Fork the upstream repo (once)</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-2-clone-origin-and-create-a-local-repository-once"><i class="fa fa-check"></i>Step 2: Clone origin and create a local repository (once)</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-3-configure-remote-that-points-to-the-upstream-repository-once"><i class="fa fa-check"></i>Step 3: Configure remote that points to the upstream repository (once)</a></li>
@@ -211,31 +221,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-6-submit-a-pull-request"><i class="fa fa-check"></i>Step 6: Submit a pull request</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-7-merge-the-pull-request"><i class="fa fa-check"></i>Step 7: Merge the pull request</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="github.html"><a href="github.html#nd-nth-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.7</b> 2nd-<em>n</em>th PR on another repo with branching</a><ul>
+<li class="chapter" data-level="6.7" data-path="github.html"><a href="github.html#nd-nth-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.7</b> 2nd-<em>n</em>th PR on another repo with branching</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-1-sync"><i class="fa fa-check"></i>Step 1: Sync</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-2-delete-the-old-branch"><i class="fa fa-check"></i>Step 2: Delete the old branch</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-3-update-your-fork-on-github"><i class="fa fa-check"></i>Step 3: Update your fork on GitHub</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#steps-4-7-see-above"><i class="fa fa-check"></i>Steps 4-7: See above</a></li>
 </ul></li>
-<li class="chapter" data-level="6.8" data-path="github.html"><a href="github.html#fixing-mistakes"><i class="fa fa-check"></i><b>6.8</b> Fixing mistakes</a><ul>
+<li class="chapter" data-level="6.8" data-path="github.html"><a href="github.html#fixing-mistakes"><i class="fa fa-check"></i><b>6.8</b> Fixing mistakes</a>
+<ul>
 <li class="chapter" data-level="6.8.1" data-path="github.html"><a href="github.html#forgot-to-branch"><i class="fa fa-check"></i><b>6.8.1</b> Forgot to branch</a></li>
 <li class="chapter" data-level="6.8.2" data-path="github.html"><a href="github.html#undoing-stuff"><i class="fa fa-check"></i><b>6.8.2</b> Undoing stuff</a></li>
 <li class="chapter" data-level="6.8.3" data-path="github.html"><a href="github.html#random"><i class="fa fa-check"></i><b>6.8.3</b> Random</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="github.html"><a href="github.html#troubleshooting-1"><i class="fa fa-check"></i><b>6.9</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="6.9" data-path="github.html"><a href="github.html#troubleshooting-1"><i class="fa fa-check"></i><b>6.9</b> Troubleshooting</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="github.html"><a href="github.html#deleting-a-branch-isnt-working"><i class="fa fa-check"></i><b>6.9.1</b> Deleting a branch isn’t working</a></li>
 </ul></li>
-<li class="chapter" data-level="6.10" data-path="github.html"><a href="github.html#other-resources"><i class="fa fa-check"></i><b>6.10</b> Other resources</a><ul>
+<li class="chapter" data-level="6.10" data-path="github.html"><a href="github.html#other-resources"><i class="fa fa-check"></i><b>6.10</b> Other resources</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#getting-help"><i class="fa fa-check"></i>Getting Help</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#branching-out"><i class="fa fa-check"></i>Branching out</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#more-resources"><i class="fa fa-check"></i>More Resources</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II R graphics</b></span></li>
-<li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a><ul>
+<li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#getting-started-1"><i class="fa fa-check"></i><b>7.1</b> <strong>Getting started</strong></a></li>
 <li class="chapter" data-level="7.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#default-part-layer"><i class="fa fa-check"></i><b>7.2</b> <strong>Default part: layer</strong></a></li>
-<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a><ul>
+<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment"><i class="fa fa-check"></i><b>7.3.1</b> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
 <li class="chapter" data-level="7.3.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#scale"><i class="fa fa-check"></i><b>7.3.2</b> <strong>Scale</strong></a></li>
 <li class="chapter" data-level="7.3.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#coordinate-system"><i class="fa fa-check"></i><b>7.3.3</b> <strong>Coordinate system</strong></a></li>
@@ -244,73 +260,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#resources-for-ggplot2"><i class="fa fa-check"></i><b>7.4</b> <strong>Resources for ggplot2</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a><ul>
+<li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="faceting-1.html"><a href="faceting-1.html#faceting-on-one-variable"><i class="fa fa-check"></i><b>8.1</b> Faceting on one variable</a></li>
 <li class="chapter" data-level="8.2" data-path="faceting-1.html"><a href="faceting-1.html#faceting-on-two-variables"><i class="fa fa-check"></i><b>8.2</b> Faceting on two variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>9</b> Unidimensional continuous variables</a><ul>
-<li class="chapter" data-level="9.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#histogram"><i class="fa fa-check"></i><b>9.1</b> Histogram</a><ul>
+<li class="chapter" data-level="9" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>9</b> Unidimensional continuous variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#histogram"><i class="fa fa-check"></i><b>9.1</b> Histogram</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#basics-and-implications"><i class="fa fa-check"></i><b>9.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="9.1.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#types-of-histograms"><i class="fa fa-check"></i><b>9.1.2</b> Types of histograms</a></li>
 <li class="chapter" data-level="9.1.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#parameters-for-geom_histogram"><i class="fa fa-check"></i><b>9.1.3</b> Parameters for geom_histogram</a></li>
 <li class="chapter" data-level="9.1.4" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#interactive-histograms-with-ggvis"><i class="fa fa-check"></i><b>9.1.4</b> Interactive histograms with <code>ggvis</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#boxplots"><i class="fa fa-check"></i><b>9.2</b> Boxplots</a><ul>
+<li class="chapter" data-level="9.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#boxplots"><i class="fa fa-check"></i><b>9.2</b> Boxplots</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#single-boxplot"><i class="fa fa-check"></i><b>9.2.1</b> Single boxplot</a></li>
 <li class="chapter" data-level="9.2.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#multiple-boxplots"><i class="fa fa-check"></i><b>9.2.2</b> Multiple boxplots</a></li>
 <li class="chapter" data-level="9.2.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#additional-resources"><i class="fa fa-check"></i><b>9.2.3</b> Additional resources</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#ridgeline-plot"><i class="fa fa-check"></i><b>9.3</b> Ridgeline plot</a><ul>
+<li class="chapter" data-level="9.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#ridgeline-plot"><i class="fa fa-check"></i><b>9.3</b> Ridgeline plot</a>
+<ul>
 <li class="chapter" data-level="9.3.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#basics-and-implications-1"><i class="fa fa-check"></i><b>9.3.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="9.3.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#create-better-visuals"><i class="fa fa-check"></i><b>9.3.2</b> Create better visuals</a></li>
 <li class="chapter" data-level="9.3.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#additional-resources-1"><i class="fa fa-check"></i><b>9.3.3</b> Additional resources</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#normal-distribution"><i class="fa fa-check"></i><b>9.4</b> Normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>10</b> Unidimensional categorical variables</a><ul>
-<li class="chapter" data-level="10.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#bar-plot"><i class="fa fa-check"></i><b>10.1</b> Bar plot</a><ul>
+<li class="chapter" data-level="10" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>10</b> Unidimensional categorical variables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#bar-plot"><i class="fa fa-check"></i><b>10.1</b> Bar plot</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#nominal-data"><i class="fa fa-check"></i><b>10.1.1</b> Nominal data</a></li>
 <li class="chapter" data-level="10.1.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#ordinal-data"><i class="fa fa-check"></i><b>10.1.2</b> Ordinal data</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a><ul>
+<li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-multiple-dots"><i class="fa fa-check"></i><b>10.2.1</b> Cleveland dot plot with multiple dots</a></li>
 <li class="chapter" data-level="10.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>10.2.2</b> Cleveland dot plot with facets</a></li>
 <li class="chapter" data-level="10.2.3" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#example-how-much-people-in-the-trump-administration-are-worth"><i class="fa fa-check"></i><b>10.2.3</b> Example: How Much People in the Trump Administration Are Worth</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a><ul>
-<li class="chapter" data-level="11.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#scatterplot"><i class="fa fa-check"></i><b>11.1</b> Scatterplot</a><ul>
+<li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#scatterplot"><i class="fa fa-check"></i><b>11.1</b> Scatterplot</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-2"><i class="fa fa-check"></i><b>11.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="11.1.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#overplotting"><i class="fa fa-check"></i><b>11.1.2</b> Overplotting</a></li>
 <li class="chapter" data-level="11.1.3" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#interactive-scatterplot"><i class="fa fa-check"></i><b>11.1.3</b> Interactive scatterplot</a></li>
 <li class="chapter" data-level="11.1.4" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications"><i class="fa fa-check"></i><b>11.1.4</b> Modifications</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#heatmaps"><i class="fa fa-check"></i><b>11.2</b> Heatmaps</a><ul>
+<li class="chapter" data-level="11.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#heatmaps"><i class="fa fa-check"></i><b>11.2</b> Heatmaps</a>
+<ul>
 <li class="chapter" data-level="11.2.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-3"><i class="fa fa-check"></i><b>11.2.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="11.2.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications-1"><i class="fa fa-check"></i><b>11.2.2</b> Modifications</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>12</b> Multidimensional continuous variables</a><ul>
-<li class="chapter" data-level="12.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1</b> Parallel coordinate plot</a><ul>
+<li class="chapter" data-level="12" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>12</b> Multidimensional continuous variables</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1</b> Parallel coordinate plot</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#basics-and-implications-4"><i class="fa fa-check"></i><b>12.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="12.1.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#modifications-2"><i class="fa fa-check"></i><b>12.1.2</b> Modifications</a></li>
 <li class="chapter" data-level="12.1.3" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#interactive-parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1.3</b> Interactive parallel coordinate plot</a></li>
 <li class="chapter" data-level="12.1.4" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#external-resource"><i class="fa fa-check"></i><b>12.1.4</b> External resource</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#biplot"><i class="fa fa-check"></i><b>12.2</b> Biplot</a><ul>
+<li class="chapter" data-level="12.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#biplot"><i class="fa fa-check"></i><b>12.2</b> Biplot</a>
+<ul>
 <li class="chapter" data-level="12.2.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>12.2.1</b> Principal components analysis (PCA)</a></li>
 <li class="chapter" data-level="12.2.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#draw-a-biplot"><i class="fa fa-check"></i><b>12.2.2</b> Draw a biplot</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>13</b> Multidimensional categorical variables</a><ul>
-<li class="chapter" data-level="13.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#barcharts"><i class="fa fa-check"></i><b>13.1</b> Barcharts</a><ul>
+<li class="chapter" data-level="13" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>13</b> Multidimensional categorical variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#barcharts"><i class="fa fa-check"></i><b>13.1</b> Barcharts</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#stacked-bar-chart"><i class="fa fa-check"></i><b>13.1.1</b> Stacked bar chart</a></li>
 <li class="chapter" data-level="13.1.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-bar-chart"><i class="fa fa-check"></i><b>13.1.2</b> Grouped bar chart</a></li>
 <li class="chapter" data-level="13.1.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-bar-chart-with-facets"><i class="fa fa-check"></i><b>13.1.3</b> Grouped bar chart with facets</a></li>
 <li class="chapter" data-level="13.1.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-barchart-with-three-categorical-variables"><i class="fa fa-check"></i><b>13.1.4</b> Grouped barchart with three categorical variables</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>13.2</b> Chi square test of independence</a></li>
-<li class="chapter" data-level="13.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots"><i class="fa fa-check"></i><b>13.3</b> Mosaic plots</a><ul>
+<li class="chapter" data-level="13.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots"><i class="fa fa-check"></i><b>13.3</b> Mosaic plots</a>
+<ul>
 <li class="chapter" data-level="13.3.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-one-variable"><i class="fa fa-check"></i><b>13.3.1</b> Mosaic plot with one variable</a></li>
 <li class="chapter" data-level="13.3.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-two-variables"><i class="fa fa-check"></i><b>13.3.2</b> Mosaic plot with two variables</a></li>
 <li class="chapter" data-level="13.3.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-three-variablesbest-practice"><i class="fa fa-check"></i><b>13.3.3</b> Mosaic plot with three variables(Best practice)</a></li>
@@ -318,26 +351,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3.5" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots-spine-plot"><i class="fa fa-check"></i><b>13.3.5</b> Mosaic plots: spine plot</a></li>
 <li class="chapter" data-level="13.3.6" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-tree-map"><i class="fa fa-check"></i><b>13.3.6</b> Mosaic plot: tree map</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#alluvial-diagrams"><i class="fa fa-check"></i><b>13.4</b> Alluvial diagrams</a><ul>
+<li class="chapter" data-level="13.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#alluvial-diagrams"><i class="fa fa-check"></i><b>13.4</b> Alluvial diagrams</a>
+<ul>
 <li class="chapter" data-level="13.4.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#ggalluvial"><i class="fa fa-check"></i><b>13.4.1</b> ggalluvial</a></li>
 <li class="chapter" data-level="13.4.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#geom_flow"><i class="fa fa-check"></i><b>13.4.2</b> geom_flow</a></li>
 </ul></li>
 <li class="chapter" data-level="13.5" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#heat-map"><i class="fa fa-check"></i><b>13.5</b> Heat map</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="missing-data.html"><a href="missing-data.html"><i class="fa fa-check"></i><b>14</b> Missing data</a><ul>
+<li class="chapter" data-level="14" data-path="missing-data.html"><a href="missing-data.html"><i class="fa fa-check"></i><b>14</b> Missing data</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="missing-data.html"><a href="missing-data.html#introduction"><i class="fa fa-check"></i><b>14.1</b> Introduction</a></li>
-<li class="chapter" data-level="14.2" data-path="missing-data.html"><a href="missing-data.html#row-column-missing-patterns"><i class="fa fa-check"></i><b>14.2</b> Row / Column missing patterns</a><ul>
+<li class="chapter" data-level="14.2" data-path="missing-data.html"><a href="missing-data.html#row-column-missing-patterns"><i class="fa fa-check"></i><b>14.2</b> Row / Column missing patterns</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="missing-data.html"><a href="missing-data.html#colsums-rowsums"><i class="fa fa-check"></i><b>14.2.1</b> colSums() / rowSums()</a></li>
 <li class="chapter" data-level="14.2.2" data-path="missing-data.html"><a href="missing-data.html#heatmap"><i class="fa fa-check"></i><b>14.2.2</b> Heatmap</a></li>
 <li class="chapter" data-level="14.2.3" data-path="missing-data.html"><a href="missing-data.html#patterns"><i class="fa fa-check"></i><b>14.2.3</b> Patterns</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="colors.html"><a href="colors.html"><i class="fa fa-check"></i><b>15</b> Colors</a><ul>
+<li class="chapter" data-level="15" data-path="colors.html"><a href="colors.html"><i class="fa fa-check"></i><b>15</b> Colors</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="colors.html"><a href="colors.html#rcolorbrewer"><i class="fa fa-check"></i><b>15.1</b> RColorBrewer</a></li>
 <li class="chapter" data-level="15.2" data-path="colors.html"><a href="colors.html#perceptually-uniform-color-spaces-viridis"><i class="fa fa-check"></i><b>15.2</b> Perceptually uniform color spaces: Viridis</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>16</b> Time series</a><ul>
-<li class="chapter" data-level="16.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>16.1</b> Dates</a><ul>
+<li class="chapter" data-level="16" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>16</b> Time series</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>16.1</b> Dates</a>
+<ul>
 <li class="chapter" data-level="16.1.1" data-path="time-series.html"><a href="time-series.html#basic-r-functions"><i class="fa fa-check"></i><b>16.1.1</b> Basic R functions</a></li>
 <li class="chapter" data-level="16.1.2" data-path="time-series.html"><a href="time-series.html#lubridate"><i class="fa fa-check"></i><b>16.1.2</b> Lubridate</a></li>
 </ul></li>
@@ -346,19 +385,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4" data-path="time-series.html"><a href="time-series.html#time-series-patterns"><i class="fa fa-check"></i><b>16.4</b> Time series patterns</a></li>
 <li class="chapter" data-level="16.5" data-path="time-series.html"><a href="time-series.html#index"><i class="fa fa-check"></i><b>16.5</b> Index</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>17</b> Spatial data</a><ul>
+<li class="chapter" data-level="17" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>17</b> Spatial data</a>
+<ul>
 <li class="chapter" data-level="17.1" data-path="spatial-data.html"><a href="spatial-data.html#introduction-1"><i class="fa fa-check"></i><b>17.1</b> Introduction</a></li>
-<li class="chapter" data-level="17.2" data-path="spatial-data.html"><a href="spatial-data.html#packages"><i class="fa fa-check"></i><b>17.2</b> Packages</a><ul>
+<li class="chapter" data-level="17.2" data-path="spatial-data.html"><a href="spatial-data.html#packages"><i class="fa fa-check"></i><b>17.2</b> Packages</a>
+<ul>
 <li class="chapter" data-level="17.2.1" data-path="spatial-data.html"><a href="spatial-data.html#choroplethr"><i class="fa fa-check"></i><b>17.2.1</b> <code>choroplethr</code></a></li>
 <li class="chapter" data-level="17.2.2" data-path="spatial-data.html"><a href="spatial-data.html#ggmap"><i class="fa fa-check"></i><b>17.2.2</b> <code>ggmap</code></a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="spatial-data.html"><a href="spatial-data.html#shape-file"><i class="fa fa-check"></i><b>17.3</b> Shape file</a><ul>
+<li class="chapter" data-level="17.3" data-path="spatial-data.html"><a href="spatial-data.html#shape-file"><i class="fa fa-check"></i><b>17.3</b> Shape file</a>
+<ul>
 <li class="chapter" data-level="17.3.1" data-path="spatial-data.html"><a href="spatial-data.html#sf"><i class="fa fa-check"></i><b>17.3.1</b> <code>sf</code></a></li>
 <li class="chapter" data-level="17.3.2" data-path="spatial-data.html"><a href="spatial-data.html#tmap"><i class="fa fa-check"></i><b>17.3.2</b> <code>tmap</code></a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Appendix</b></span></li>
-<li class="chapter" data-level="18" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html"><i class="fa fa-check"></i><b>18</b> Cutting room floor</a><ul>
+<li class="chapter" data-level="18" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html"><i class="fa fa-check"></i><b>18</b> Cutting room floor</a>
+<ul>
 <li class="chapter" data-level="18.1" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html#parallel-coordinate-plots"><i class="fa fa-check"></i><b>18.1</b> Parallel coordinate plots</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -381,23 +424,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="time-series" class="section level1 hasAnchor">
+<div id="time-series" class="section level1 hasAnchor" number="16">
 <h1><span class="header-section-number">Chapter 16</span> Time series<a href="time-series.html#time-series" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Time series, by definition, is a sequence of data point collected over a certain period of time. In this chapter, we will demonstrate several useful ways of plotting time-series data and how to processing <code>date</code> data type in R.</p>
-<div id="dates" class="section level2 hasAnchor">
+<div id="dates" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> Dates<a href="time-series.html#dates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since time series analysis looks into how data is changing over time, the very first step is to transform the data into correct format.</p>
-<div id="basic-r-functions" class="section level3 hasAnchor">
+<div id="basic-r-functions" class="section level3 hasAnchor" number="16.1.1">
 <h3><span class="header-section-number">16.1.1</span> Basic R functions<a href="time-series.html#basic-r-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can convert character data to <code>Date</code> class with <code>as.Date()</code>:</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="time-series.html#cb159-1"></a>dchar &lt;-<span class="st"> &quot;2018-10-12&quot;</span></span>
-<span id="cb159-2"><a href="time-series.html#cb159-2"></a>ddate &lt;-<span class="st"> </span><span class="kw">as.Date</span>(dchar)</span>
-<span id="cb159-3"><a href="time-series.html#cb159-3"></a><span class="kw">class</span>(dchar)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="time-series.html#cb159-1" aria-hidden="true" tabindex="-1"></a>dchar <span class="ot">&lt;-</span> <span class="st">&quot;2018-10-12&quot;</span></span>
+<span id="cb159-2"><a href="time-series.html#cb159-2" aria-hidden="true" tabindex="-1"></a>ddate <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(dchar)</span>
+<span id="cb159-3"><a href="time-series.html#cb159-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dchar)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="time-series.html#cb161-1"></a><span class="kw">class</span>(ddate)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="time-series.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ddate)</span></code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 <p>You can also specifying the format by:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="time-series.html#cb163-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;Thursday, January 6, 2005&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%A, %B %d, %Y&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="time-series.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="st">&quot;Thursday, January 6, 2005&quot;</span>, <span class="at">format =</span> <span class="st">&quot;%A, %B %d, %Y&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2005-01-06&quot;</code></pre>
 <p>For a list of the conversion specifications available in R, see <code>?strptime</code>.</p>
 <p>Here is a list of the conversion specifications for date format from <a href="https://michaeltoth.me/the-ultimate-opinionated-guide-to-base-r-date-format-functions.html">this post</a></p>
@@ -405,132 +448,132 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="images/common_r_date_formats.png" style="width:75.0%" />
 </center>
 <p>Also, <code>Date</code> class supports calculation between dates:</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="time-series.html#cb165-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-02&quot;</span>) <span class="op">-</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="time-series.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="st">&quot;2017-11-02&quot;</span>) <span class="sc">-</span> <span class="fu">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>)</span></code></pre></div>
 <pre><code>## Time difference of 305 days</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="time-series.html#cb167-1"></a><span class="kw">as.Date</span>(<span class="st">&quot;2017-11-12&quot;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2017-3-3&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="time-series.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="st">&quot;2017-11-12&quot;</span>) <span class="sc">&gt;</span> <span class="fu">as.Date</span>(<span class="st">&quot;2017-3-3&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
-<div id="lubridate" class="section level3 hasAnchor">
+<div id="lubridate" class="section level3 hasAnchor" number="16.1.2">
 <h3><span class="header-section-number">16.1.2</span> Lubridate<a href="time-series.html#lubridate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The tidyverse <code>lubridate</code> makes it easy to convert dates that are not in standard format with <code>ymd()</code>, <code>ydm()</code>, <code>mdy()</code>, <code>myd()</code>, <code>dmy()</code>, and <code>dym()</code> (among many other useful date-time functions):</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="time-series.html#cb169-1"></a>lubridate<span class="op">::</span><span class="kw">mdy</span>(<span class="st">&quot;April 13, 1907&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="time-series.html#cb169-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">mdy</span>(<span class="st">&quot;April 13, 1907&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;1907-04-13&quot;</code></pre>
 <p>The <code>lubridate</code> package also provides additional functions to extract information from a date:</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="time-series.html#cb171-1"></a>today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
-<span id="cb171-2"><a href="time-series.html#cb171-2"></a>lubridate<span class="op">::</span><span class="kw">year</span>(today)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="time-series.html#cb171-1" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb171-2"><a href="time-series.html#cb171-2" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">year</span>(today)</span></code></pre></div>
 <pre><code>## [1] 2022</code></pre>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="time-series.html#cb173-1"></a>lubridate<span class="op">::</span><span class="kw">yday</span>(today)</span></code></pre></div>
-<pre><code>## [1] 317</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="time-series.html#cb175-1"></a>lubridate<span class="op">::</span><span class="kw">month</span>(today, <span class="dt">label =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] Nov
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="time-series.html#cb173-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">yday</span>(today)</span></code></pre></div>
+<pre><code>## [1] 347</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="time-series.html#cb175-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">month</span>(today, <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] Dec
 ## 12 Levels: Jan &lt; Feb &lt; Mar &lt; Apr &lt; May &lt; Jun &lt; Jul &lt; Aug &lt; Sep &lt; ... &lt; Dec</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="time-series.html#cb177-1"></a>lubridate<span class="op">::</span><span class="kw">week</span>(today)</span></code></pre></div>
-<pre><code>## [1] 46</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="time-series.html#cb177-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">week</span>(today)</span></code></pre></div>
+<pre><code>## [1] 50</code></pre>
 </div>
 </div>
-<div id="time-series-1" class="section level2 hasAnchor">
+<div id="time-series-1" class="section level2 hasAnchor" number="16.2">
 <h2><span class="header-section-number">16.2</span> Time series<a href="time-series.html#time-series-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For time-series data-sets, line plots are mostly used with time on the x-axis. Both base R graphics and <code>ggplot2</code> “know” how to work with a Date class variable, and label the axes properly:</p>
 <p>The data comes from the official <a href="https://www.freddiemac.com/pmms">website</a>.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="time-series.html#cb179-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb179-2"><a href="time-series.html#cb179-2"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb179-3"><a href="time-series.html#cb179-3"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb179-4"><a href="time-series.html#cb179-4"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb179-5"><a href="time-series.html#cb179-5"></a>df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/historicalweeklydata.xls&quot;</span>, </span>
-<span id="cb179-6"><a href="time-series.html#cb179-6"></a>    <span class="dt">col_types =</span> <span class="kw">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
-<span id="cb179-7"><a href="time-series.html#cb179-7"></a>        <span class="st">&quot;numeric&quot;</span>))</span>
-<span id="cb179-8"><a href="time-series.html#cb179-8"></a></span>
-<span id="cb179-9"><a href="time-series.html#cb179-9"></a><span class="kw">plot</span>(df<span class="op">$</span>Week, df<span class="op">$</span><span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>) <span class="co"># on the order of years</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="time-series.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb179-2"><a href="time-series.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb179-3"><a href="time-series.html#cb179-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb179-4"><a href="time-series.html#cb179-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb179-5"><a href="time-series.html#cb179-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/historicalweeklydata.xls&quot;</span>, </span>
+<span id="cb179-6"><a href="time-series.html#cb179-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, </span>
+<span id="cb179-7"><a href="time-series.html#cb179-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>))</span>
+<span id="cb179-8"><a href="time-series.html#cb179-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb179-9"><a href="time-series.html#cb179-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>Week, df<span class="sc">$</span><span class="st">`</span><span class="at">30 yr FRM</span><span class="st">`</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>) <span class="co"># on the order of years</span></span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="time-series.html#cb180-1"></a>g&lt;-<span class="kw">ggplot</span>(df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Week <span class="op">&lt;</span><span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2006-01-01&quot;</span>)), </span>
-<span id="cb180-2"><a href="time-series.html#cb180-2"></a>       <span class="kw">aes</span>(Week, <span class="st">`</span><span class="dt">30 yr FRM</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb180-3"><a href="time-series.html#cb180-3"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb180-4"><a href="time-series.html#cb180-4"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">14</span>)</span>
-<span id="cb180-5"><a href="time-series.html#cb180-5"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="time-series.html#cb180-1" aria-hidden="true" tabindex="-1"></a>g<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Week <span class="sc">&lt;</span> <span class="fu">as.Date</span>(<span class="st">&quot;2006-01-01&quot;</span>)), </span>
+<span id="cb180-2"><a href="time-series.html#cb180-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(Week, <span class="st">`</span><span class="at">30 yr FRM</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb180-3"><a href="time-series.html#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb180-4"><a href="time-series.html#cb180-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">14</span>)</span>
+<span id="cb180-5"><a href="time-series.html#cb180-5" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-6-2.png" width="384" style="display: block; margin: auto;" /></p>
 <p>We can control the x-axis breaks, limits, and labels with <code>scale_x_date()</code>, and use <code>geom_vline()</code> with <code>annotate()</code> to mark specific events in a time series.</p>
 </div>
-<div id="multiple-time-series" class="section level2 hasAnchor">
+<div id="multiple-time-series" class="section level2 hasAnchor" number="16.3">
 <h2><span class="header-section-number">16.3</span> Multiple time series<a href="time-series.html#multiple-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The following plot shows a multiple time series of U.S. Mortgage rates.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="time-series.html#cb181-1"></a>df2 &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span><span class="kw">c</span>(<span class="st">&quot;Week&quot;</span>), <span class="dt">names_to =</span> <span class="st">&quot;TYPE&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb181-2"><a href="time-series.html#cb181-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">TYPE =</span> forcats<span class="op">::</span><span class="kw">fct_reorder2</span>(TYPE, Week, value))<span class="co"># puts legend in correct order</span></span>
-<span id="cb181-3"><a href="time-series.html#cb181-3"></a></span>
-<span id="cb181-4"><a href="time-series.html#cb181-4"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
-<span id="cb181-5"><a href="time-series.html#cb181-5"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb181-6"><a href="time-series.html#cb181-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">labs</span> (<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;percent&quot;</span>) <span class="op">+</span></span>
-<span id="cb181-7"><a href="time-series.html#cb181-7"></a><span class="st">  </span><span class="kw">theme_grey</span>(<span class="dv">16</span>) <span class="op">+</span></span>
-<span id="cb181-8"><a href="time-series.html#cb181-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="time-series.html#cb181-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="st">&quot;Week&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;TYPE&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb181-2"><a href="time-series.html#cb181-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TYPE =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder2</span>(TYPE, Week, value))<span class="co"># puts legend in correct order</span></span>
+<span id="cb181-3"><a href="time-series.html#cb181-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-4"><a href="time-series.html#cb181-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(Week, value, <span class="at">color =</span> TYPE)) <span class="sc">+</span></span>
+<span id="cb181-5"><a href="time-series.html#cb181-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb181-6"><a href="time-series.html#cb181-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>) <span class="sc">+</span>  <span class="fu">labs</span> (<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;percent&quot;</span>) <span class="sc">+</span></span>
+<span id="cb181-7"><a href="time-series.html#cb181-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb181-8"><a href="time-series.html#cb181-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>To plot the time series in a specific period of time, use <code>filter()</code> before <code>ggplot</code>:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="time-series.html#cb182-1"></a><span class="kw">library</span>(lubridate)</span>
-<span id="cb182-2"><a href="time-series.html#cb182-2"></a>df2010 &lt;-<span class="st"> </span>df2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">year</span>(Week) <span class="op">==</span><span class="st"> </span><span class="dv">2010</span>)</span>
-<span id="cb182-3"><a href="time-series.html#cb182-3"></a><span class="kw">ggplot</span>(df2010, <span class="kw">aes</span>(Week, value, <span class="dt">color =</span> TYPE)) <span class="op">+</span></span>
-<span id="cb182-4"><a href="time-series.html#cb182-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb182-5"><a href="time-series.html#cb182-5"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="time-series.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb182-2"><a href="time-series.html#cb182-2" aria-hidden="true" tabindex="-1"></a>df2010 <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">year</span>(Week) <span class="sc">==</span> <span class="dv">2010</span>)</span>
+<span id="cb182-3"><a href="time-series.html#cb182-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2010, <span class="fu">aes</span>(Week, value, <span class="at">color =</span> TYPE)) <span class="sc">+</span></span>
+<span id="cb182-4"><a href="time-series.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb182-5"><a href="time-series.html#cb182-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;U.S. Mortgage Rates&quot;</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
-<div id="time-series-patterns" class="section level2 hasAnchor">
+<div id="time-series-patterns" class="section level2 hasAnchor" number="16.4">
 <h2><span class="header-section-number">16.4</span> Time series patterns<a href="time-series.html#time-series-patterns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Next, as an important part of time series analysis, we want to find the existing patterns of the data.
 We first starting from plotting the overall long-term trend:</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="time-series.html#cb183-1"></a><span class="kw">library</span> (readr)</span>
-<span id="cb183-2"><a href="time-series.html#cb183-2"></a>urlfile=<span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/ManchesterByTheSea.csv&quot;</span></span>
-<span id="cb183-3"><a href="time-series.html#cb183-3"></a>data&lt;-<span class="kw">read_csv</span>(<span class="kw">url</span>(urlfile))</span>
-<span id="cb183-4"><a href="time-series.html#cb183-4"></a></span>
-<span id="cb183-5"><a href="time-series.html#cb183-5"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span></span>
-<span id="cb183-6"><a href="time-series.html#cb183-6"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb183-7"><a href="time-series.html#cb183-7"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross (US$), United States&quot;</span>) <span class="op">+</span></span>
-<span id="cb183-8"><a href="time-series.html#cb183-8"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;2016-2017&quot;</span>)</span>
-<span id="cb183-9"><a href="time-series.html#cb183-9"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="time-series.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (readr)</span>
+<span id="cb183-2"><a href="time-series.html#cb183-2" aria-hidden="true" tabindex="-1"></a>urlfile<span class="ot">=</span><span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/ManchesterByTheSea.csv&quot;</span></span>
+<span id="cb183-3"><a href="time-series.html#cb183-3" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="fu">url</span>(urlfile))</span>
+<span id="cb183-4"><a href="time-series.html#cb183-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb183-5"><a href="time-series.html#cb183-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(Date, Gross)) <span class="sc">+</span></span>
+<span id="cb183-6"><a href="time-series.html#cb183-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb183-7"><a href="time-series.html#cb183-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross (US$), United States&quot;</span>) <span class="sc">+</span></span>
+<span id="cb183-8"><a href="time-series.html#cb183-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;2016-2017&quot;</span>)</span>
+<span id="cb183-9"><a href="time-series.html#cb183-9" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Adding a smoother to the data, adjusting the smoothing parameter <code>span =</code> to find a proper smoother which is not overfitting/underfitting:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="time-series.html#cb184-1"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</span>
-<span id="cb184-2"><a href="time-series.html#cb184-2"></a>g <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">span =</span> <span class="fl">.5</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="time-series.html#cb184-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(Date, Gross)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb184-2"><a href="time-series.html#cb184-2" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="at">span =</span> .<span class="dv">5</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Mark the pattern by high-lighting the data on very Saturday:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="time-series.html#cb185-1"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span></span>
-<span id="cb185-2"><a href="time-series.html#cb185-2"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb185-3"><a href="time-series.html#cb185-3"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross, United States&quot;</span>)</span>
-<span id="cb185-4"><a href="time-series.html#cb185-4"></a>saturday &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">wday</span>(Date) <span class="op">==</span><span class="st"> </span><span class="dv">7</span>) </span>
-<span id="cb185-5"><a href="time-series.html#cb185-5"></a>g <span class="op">+</span></span>
-<span id="cb185-6"><a href="time-series.html#cb185-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> saturday, <span class="kw">aes</span>(Date, Gross), <span class="dt">color =</span> <span class="st">&quot;deeppink&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="time-series.html#cb185-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(Date, Gross)) <span class="sc">+</span></span>
+<span id="cb185-2"><a href="time-series.html#cb185-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb185-3"><a href="time-series.html#cb185-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Manchester by the Sea&quot;</span>, <span class="st">&quot;Daily Gross, United States&quot;</span>)</span>
+<span id="cb185-4"><a href="time-series.html#cb185-4" aria-hidden="true" tabindex="-1"></a>saturday <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">wday</span>(Date) <span class="sc">==</span> <span class="dv">7</span>) </span>
+<span id="cb185-5"><a href="time-series.html#cb185-5" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span></span>
+<span id="cb185-6"><a href="time-series.html#cb185-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> saturday, <span class="fu">aes</span>(Date, Gross), <span class="at">color =</span> <span class="st">&quot;deeppink&quot;</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Another way is to use facet to show the cyclical pattern:</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="time-series.html#cb186-1"></a><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(Date, Gross)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb186-2"><a href="time-series.html#cb186-2"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="st">&quot;grey30&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb186-3"><a href="time-series.html#cb186-3"></a><span class="st">    </span><span class="kw">facet_grid</span>(.<span class="op">~</span><span class="kw">wday</span>(Date, <span class="dt">label =</span> <span class="ot">TRUE</span>)) <span class="op">+</span><span class="st">  </span></span>
-<span id="cb186-4"><a href="time-series.html#cb186-4"></a><span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="time-series.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(Date, Gross)) <span class="sc">+</span>  </span>
+<span id="cb186-2"><a href="time-series.html#cb186-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;grey30&quot;</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  </span>
+<span id="cb186-3"><a href="time-series.html#cb186-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="fu">wday</span>(Date, <span class="at">label =</span> <span class="cn">TRUE</span>)) <span class="sc">+</span>  </span>
+<span id="cb186-4"><a href="time-series.html#cb186-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Also, basic R can plot the decomposed time series automatically. This method is used to study the trend, seasonal effect on data with at least 2 periods. For additive components, use <code>type = "additive"</code>.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="time-series.html#cb187-1"></a>tsData &lt;-<span class="st"> </span>EuStockMarkets[, <span class="dv">2</span>]</span>
-<span id="cb187-2"><a href="time-series.html#cb187-2"></a>decomposedRes &lt;-<span class="st"> </span><span class="kw">decompose</span>(tsData, <span class="dt">type=</span><span class="st">&quot;mul&quot;</span>)</span>
-<span id="cb187-3"><a href="time-series.html#cb187-3"></a><span class="kw">plot</span> (decomposedRes)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="time-series.html#cb187-1" aria-hidden="true" tabindex="-1"></a>tsData <span class="ot">&lt;-</span> EuStockMarkets[, <span class="dv">2</span>]</span>
+<span id="cb187-2"><a href="time-series.html#cb187-2" aria-hidden="true" tabindex="-1"></a>decomposedRes <span class="ot">&lt;-</span> <span class="fu">decompose</span>(tsData, <span class="at">type=</span><span class="st">&quot;mul&quot;</span>)</span>
+<span id="cb187-3"><a href="time-series.html#cb187-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (decomposedRes)</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
-<div id="index" class="section level2 hasAnchor">
+<div id="index" class="section level2 hasAnchor" number="16.5">
 <h2><span class="header-section-number">16.5</span> Index<a href="time-series.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When making comparisons on multi-line plots, index is a way of scaling the data: Each value is divided by the first value for that group and multiplied by 100.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="time-series.html#cb188-1"></a>urlfile=<span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/WA_Sales_Products_2012-14.csv&quot;</span></span>
-<span id="cb188-2"><a href="time-series.html#cb188-2"></a>sale&lt;-<span class="kw">read_csv</span>(<span class="kw">url</span>(urlfile))</span>
-<span id="cb188-3"><a href="time-series.html#cb188-3"></a></span>
-<span id="cb188-4"><a href="time-series.html#cb188-4"></a>sale<span class="op">$</span>Q &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(sale<span class="op">$</span>Quarter, <span class="dv">2</span>, <span class="dv">2</span>))  </span>
-<span id="cb188-5"><a href="time-series.html#cb188-5"></a><span class="co"># convert Q to end-of-quarter date </span></span>
-<span id="cb188-6"><a href="time-series.html#cb188-6"></a>sale<span class="op">$</span>Date &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(sale<span class="op">$</span>Year, <span class="st">&quot;-&quot;</span>,<span class="kw">as.character</span>(sale<span class="op">$</span>Q<span class="op">*</span><span class="dv">3</span>),<span class="st">&quot;-30&quot;</span>)) </span>
-<span id="cb188-7"><a href="time-series.html#cb188-7"></a></span>
-<span id="cb188-8"><a href="time-series.html#cb188-8"></a>Methoddata &lt;-<span class="st"> </span>sale <span class="op">%&gt;%</span></span>
-<span id="cb188-9"><a href="time-series.html#cb188-9"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Revenue =</span> Revenue<span class="op">/</span><span class="dv">1000000</span>) <span class="op">%&gt;%</span></span>
-<span id="cb188-10"><a href="time-series.html#cb188-10"></a><span class="st">  </span><span class="kw">group_by</span>(Date,<span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>) <span class="op">%&gt;%</span></span>
-<span id="cb188-11"><a href="time-series.html#cb188-11"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Revenue =</span> <span class="kw">sum</span>(Revenue))  <span class="op">%&gt;%</span></span>
-<span id="cb188-12"><a href="time-series.html#cb188-12"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
-<span id="cb188-13"><a href="time-series.html#cb188-13"></a><span class="st">  </span><span class="kw">group_by</span>(<span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>) <span class="op">%&gt;%</span></span>
-<span id="cb188-14"><a href="time-series.html#cb188-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">index =</span> <span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>Revenue<span class="op">/</span>Revenue[<span class="dv">1</span>], <span class="dv">2</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb188-15"><a href="time-series.html#cb188-15"></a><span class="st">  </span><span class="kw">ungroup</span>()</span>
-<span id="cb188-16"><a href="time-series.html#cb188-16"></a>  </span>
-<span id="cb188-17"><a href="time-series.html#cb188-17"></a>g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(Methoddata, <span class="kw">aes</span>(Date, index,<span class="dt">color =</span> <span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>)) <span class="op">+</span></span>
-<span id="cb188-18"><a href="time-series.html#cb188-18"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="st">`</span><span class="dt">Order method type</span><span class="st">`</span>)) <span class="op">+</span></span>
-<span id="cb188-19"><a href="time-series.html#cb188-19"></a><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2012-02-01&quot;</span>), <span class="kw">as.Date</span>(<span class="st">&quot;2014-12-31&quot;</span>)), <span class="dt">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>, <span class="dt">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>)</span>
-<span id="cb188-20"><a href="time-series.html#cb188-20"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="time-series.html#cb188-1" aria-hidden="true" tabindex="-1"></a>urlfile<span class="ot">=</span><span class="st">&quot;https://raw.githubusercontent.com/jtr13/data/master/WA_Sales_Products_2012-14.csv&quot;</span></span>
+<span id="cb188-2"><a href="time-series.html#cb188-2" aria-hidden="true" tabindex="-1"></a>sale<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="fu">url</span>(urlfile))</span>
+<span id="cb188-3"><a href="time-series.html#cb188-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-4"><a href="time-series.html#cb188-4" aria-hidden="true" tabindex="-1"></a>sale<span class="sc">$</span>Q <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">substr</span>(sale<span class="sc">$</span>Quarter, <span class="dv">2</span>, <span class="dv">2</span>))  </span>
+<span id="cb188-5"><a href="time-series.html#cb188-5" aria-hidden="true" tabindex="-1"></a><span class="co"># convert Q to end-of-quarter date </span></span>
+<span id="cb188-6"><a href="time-series.html#cb188-6" aria-hidden="true" tabindex="-1"></a>sale<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(sale<span class="sc">$</span>Year, <span class="st">&quot;-&quot;</span>,<span class="fu">as.character</span>(sale<span class="sc">$</span>Q<span class="sc">*</span><span class="dv">3</span>),<span class="st">&quot;-30&quot;</span>)) </span>
+<span id="cb188-7"><a href="time-series.html#cb188-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-8"><a href="time-series.html#cb188-8" aria-hidden="true" tabindex="-1"></a>Methoddata <span class="ot">&lt;-</span> sale <span class="sc">%&gt;%</span></span>
+<span id="cb188-9"><a href="time-series.html#cb188-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Revenue =</span> Revenue<span class="sc">/</span><span class="dv">1000000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb188-10"><a href="time-series.html#cb188-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Date,<span class="st">`</span><span class="at">Order method type</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb188-11"><a href="time-series.html#cb188-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Revenue =</span> <span class="fu">sum</span>(Revenue))  <span class="sc">%&gt;%</span></span>
+<span id="cb188-12"><a href="time-series.html#cb188-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb188-13"><a href="time-series.html#cb188-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Order method type</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb188-14"><a href="time-series.html#cb188-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">index =</span> <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>Revenue<span class="sc">/</span>Revenue[<span class="dv">1</span>], <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb188-15"><a href="time-series.html#cb188-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb188-16"><a href="time-series.html#cb188-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb188-17"><a href="time-series.html#cb188-17" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Methoddata, <span class="fu">aes</span>(Date, index,<span class="at">color =</span> <span class="st">`</span><span class="at">Order method type</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb188-18"><a href="time-series.html#cb188-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> <span class="st">`</span><span class="at">Order method type</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb188-19"><a href="time-series.html#cb188-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2012-02-01&quot;</span>), <span class="fu">as.Date</span>(<span class="st">&quot;2014-12-31&quot;</span>)), <span class="at">date_breaks =</span> <span class="st">&quot;6 months&quot;</span>, <span class="at">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>)</span>
+<span id="cb188-20"><a href="time-series.html#cb188-20" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
 <p><img src="time_series_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
 
 </div>

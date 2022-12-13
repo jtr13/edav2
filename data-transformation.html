@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2022-11-19" />
+<meta name="date" content="2022-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -66,18 +65,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -97,13 +96,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -116,7 +115,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -148,13 +147,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a></li>
 <li class="part"><span><b>I R resources</b></span></li>
-<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a><ul>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#top-10-essentials-checklist"><i class="fa fa-check"></i><b>2.1</b> Top 10 essentials checklist</a></li>
-<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#troubleshooting"><i class="fa fa-check"></i><b>2.2</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#troubleshooting"><i class="fa fa-check"></i><b>2.2</b> Troubleshooting</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="getting-started.html"><a href="getting-started.html#document-doesnt-knit"><i class="fa fa-check"></i><b>2.2.1</b> Document doesn’t knit</a></li>
 <li class="chapter" data-level="2.2.2" data-path="getting-started.html"><a href="getting-started.html#functions-stop-working"><i class="fa fa-check"></i><b>2.2.2</b> Functions stop working</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#tips-tricks"><i class="fa fa-check"></i><b>2.3</b> Tips &amp; tricks</a><ul>
+<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#tips-tricks"><i class="fa fa-check"></i><b>2.3</b> Tips &amp; tricks</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="getting-started.html"><a href="getting-started.html#knitr"><i class="fa fa-check"></i><b>2.3.1</b> knitr</a></li>
 <li class="chapter" data-level="2.3.2" data-path="getting-started.html"><a href="getting-started.html#sizing-figures"><i class="fa fa-check"></i><b>2.3.2</b> Sizing figures</a></li>
 <li class="chapter" data-level="2.3.3" data-path="getting-started.html"><a href="getting-started.html#r-studio-keyborad-shortcuts"><i class="fa fa-check"></i><b>2.3.3</b> R studio keyborad shortcuts</a></li>
@@ -162,7 +164,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.5" data-path="getting-started.html"><a href="getting-started.html#adding-figures-and-links"><i class="fa fa-check"></i><b>2.3.5</b> Adding figures and links</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>3</b> Working with factors</a><ul>
+<li class="chapter" data-level="3" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>3</b> Working with factors</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="working-with-factors.html"><a href="working-with-factors.html#recode-factor-levels"><i class="fa fa-check"></i><b>3.1</b> Recode factor levels</a></li>
 <li class="chapter" data-level="3.2" data-path="working-with-factors.html"><a href="working-with-factors.html#relevel-the-factor"><i class="fa fa-check"></i><b>3.2</b> Relevel the factor</a></li>
 <li class="chapter" data-level="3.3" data-path="working-with-factors.html"><a href="working-with-factors.html#reorder-the-factors"><i class="fa fa-check"></i><b>3.3</b> Reorder the factors</a></li>
@@ -170,25 +173,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="working-with-factors.html"><a href="working-with-factors.html#summary-of-useful-functions"><i class="fa fa-check"></i><b>3.5</b> Summary of useful functions</a></li>
 <li class="chapter" data-level="3.6" data-path="working-with-factors.html"><a href="working-with-factors.html#continuous-to-categorical"><i class="fa fa-check"></i><b>3.6</b> Continuous to Categorical</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-importation.html"><a href="data-importation.html"><i class="fa fa-check"></i><b>4</b> Data importation</a><ul>
+<li class="chapter" data-level="4" data-path="data-importation.html"><a href="data-importation.html"><i class="fa fa-check"></i><b>4</b> Data importation</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="data-importation.html"><a href="data-importation.html#packages-with-built-in-data-set"><i class="fa fa-check"></i><b>4.1</b> Packages with built in data set</a></li>
-<li class="chapter" data-level="4.2" data-path="data-importation.html"><a href="data-importation.html#data-from-web"><i class="fa fa-check"></i><b>4.2</b> Data from web</a><ul>
+<li class="chapter" data-level="4.2" data-path="data-importation.html"><a href="data-importation.html#data-from-web"><i class="fa fa-check"></i><b>4.2</b> Data from web</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="data-importation.html"><a href="data-importation.html#read-in-from-url"><i class="fa fa-check"></i><b>4.2.1</b> Read in from URL</a></li>
 <li class="chapter" data-level="4.2.2" data-path="data-importation.html"><a href="data-importation.html#api-r-api-package"><i class="fa fa-check"></i><b>4.2.2</b> API / R API package</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="data-importation.html"><a href="data-importation.html#web-scraping"><i class="fa fa-check"></i><b>4.3</b> Web scraping</a><ul>
+<li class="chapter" data-level="4.3" data-path="data-importation.html"><a href="data-importation.html#web-scraping"><i class="fa fa-check"></i><b>4.3</b> Web scraping</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="data-importation.html"><a href="data-importation.html#rvest"><i class="fa fa-check"></i><b>4.3.1</b> <code>rvest</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>5</b> Data transformation</a><ul>
+<li class="chapter" data-level="5" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>5</b> Data transformation</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="data-transformation.html"><a href="data-transformation.html#what-is-tidy-data"><i class="fa fa-check"></i><b>5.1</b> What is tidy data?</a></li>
 <li class="chapter" data-level="5.2" data-path="data-transformation.html"><a href="data-transformation.html#pivot_longer"><i class="fa fa-check"></i><b>5.2</b> <code>pivot_longer</code></a></li>
 <li class="chapter" data-level="5.3" data-path="data-transformation.html"><a href="data-transformation.html#pivot_wider"><i class="fa fa-check"></i><b>5.3</b> <code>pivot_wider</code></a></li>
-<li class="chapter" data-level="5.4" data-path="data-transformation.html"><a href="data-transformation.html#basic-transformation-functions"><i class="fa fa-check"></i><b>5.4</b> Basic transformation functions</a><ul>
+<li class="chapter" data-level="5.4" data-path="data-transformation.html"><a href="data-transformation.html#basic-transformation-functions"><i class="fa fa-check"></i><b>5.4</b> Basic transformation functions</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="data-transformation.html"><a href="data-transformation.html#rename"><i class="fa fa-check"></i><b>5.4.1</b> <code>rename</code></a></li>
 <li class="chapter" data-level="5.4.2" data-path="data-transformation.html"><a href="data-transformation.html#select"><i class="fa fa-check"></i><b>5.4.2</b> <code>select</code></a></li>
 <li class="chapter" data-level="5.4.3" data-path="data-transformation.html"><a href="data-transformation.html#mutate"><i class="fa fa-check"></i><b>5.4.3</b> <code>mutate</code></a></li>
-<li class="chapter" data-level="5.4.4" data-path="data-transformation.html"><a href="data-transformation.html#select-1"><i class="fa fa-check"></i><b>5.4.4</b> <code>select</code></a></li>
+<li class="chapter" data-level="5.4.4" data-path="data-transformation.html"><a href="data-transformation.html#filter"><i class="fa fa-check"></i><b>5.4.4</b> <code>filter</code></a></li>
 <li class="chapter" data-level="5.4.5" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>5.4.5</b> <code>arrange</code></a></li>
 <li class="chapter" data-level="5.4.6" data-path="data-transformation.html"><a href="data-transformation.html#group_by-and-summarize"><i class="fa fa-check"></i><b>5.4.6</b> <code>group_by</code> and <code>summarize</code></a></li>
 <li class="chapter" data-level="5.4.7" data-path="data-transformation.html"><a href="data-transformation.html#slice_max-slice_min"><i class="fa fa-check"></i><b>5.4.7</b> <code>slice_max</code> (<code>slice_min</code>)</a></li>
@@ -196,13 +204,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.9" data-path="data-transformation.html"><a href="data-transformation.html#cases-to-tables"><i class="fa fa-check"></i><b>5.4.9</b> Cases to tables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub/git Resources</a><ul>
+<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub/git Resources</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="github.html"><a href="github.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
 <li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html#first-things-first"><i class="fa fa-check"></i><b>6.2</b> First things first</a></li>
 <li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html#usage"><i class="fa fa-check"></i><b>6.3</b> Usage</a></li>
 <li class="chapter" data-level="6.4" data-path="github.html"><a href="github.html#the-no-branch-besides-main-workflow"><i class="fa fa-check"></i><b>6.4</b> The no branch (besides main) workflow</a></li>
 <li class="chapter" data-level="6.5" data-path="github.html"><a href="github.html#your-repo-with-branching"><i class="fa fa-check"></i><b>6.5</b> Your repo with branching</a></li>
-<li class="chapter" data-level="6.6" data-path="github.html"><a href="github.html#st-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.6</b> 1st PR on another repo with branching</a><ul>
+<li class="chapter" data-level="6.6" data-path="github.html"><a href="github.html#st-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.6</b> 1st PR on another repo with branching</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-1-fork-the-upstream-repo-once"><i class="fa fa-check"></i>Step 1: Fork the upstream repo (once)</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-2-clone-origin-and-create-a-local-repository-once"><i class="fa fa-check"></i>Step 2: Clone origin and create a local repository (once)</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-3-configure-remote-that-points-to-the-upstream-repository-once"><i class="fa fa-check"></i>Step 3: Configure remote that points to the upstream repository (once)</a></li>
@@ -211,31 +221,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-6-submit-a-pull-request"><i class="fa fa-check"></i>Step 6: Submit a pull request</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-7-merge-the-pull-request"><i class="fa fa-check"></i>Step 7: Merge the pull request</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="github.html"><a href="github.html#nd-nth-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.7</b> 2nd-<em>n</em>th PR on another repo with branching</a><ul>
+<li class="chapter" data-level="6.7" data-path="github.html"><a href="github.html#nd-nth-pr-on-another-repo-with-branching"><i class="fa fa-check"></i><b>6.7</b> 2nd-<em>n</em>th PR on another repo with branching</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-1-sync"><i class="fa fa-check"></i>Step 1: Sync</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-2-delete-the-old-branch"><i class="fa fa-check"></i>Step 2: Delete the old branch</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#step-3-update-your-fork-on-github"><i class="fa fa-check"></i>Step 3: Update your fork on GitHub</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#steps-4-7-see-above"><i class="fa fa-check"></i>Steps 4-7: See above</a></li>
 </ul></li>
-<li class="chapter" data-level="6.8" data-path="github.html"><a href="github.html#fixing-mistakes"><i class="fa fa-check"></i><b>6.8</b> Fixing mistakes</a><ul>
+<li class="chapter" data-level="6.8" data-path="github.html"><a href="github.html#fixing-mistakes"><i class="fa fa-check"></i><b>6.8</b> Fixing mistakes</a>
+<ul>
 <li class="chapter" data-level="6.8.1" data-path="github.html"><a href="github.html#forgot-to-branch"><i class="fa fa-check"></i><b>6.8.1</b> Forgot to branch</a></li>
 <li class="chapter" data-level="6.8.2" data-path="github.html"><a href="github.html#undoing-stuff"><i class="fa fa-check"></i><b>6.8.2</b> Undoing stuff</a></li>
 <li class="chapter" data-level="6.8.3" data-path="github.html"><a href="github.html#random"><i class="fa fa-check"></i><b>6.8.3</b> Random</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="github.html"><a href="github.html#troubleshooting-1"><i class="fa fa-check"></i><b>6.9</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="6.9" data-path="github.html"><a href="github.html#troubleshooting-1"><i class="fa fa-check"></i><b>6.9</b> Troubleshooting</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="github.html"><a href="github.html#deleting-a-branch-isnt-working"><i class="fa fa-check"></i><b>6.9.1</b> Deleting a branch isn’t working</a></li>
 </ul></li>
-<li class="chapter" data-level="6.10" data-path="github.html"><a href="github.html#other-resources"><i class="fa fa-check"></i><b>6.10</b> Other resources</a><ul>
+<li class="chapter" data-level="6.10" data-path="github.html"><a href="github.html#other-resources"><i class="fa fa-check"></i><b>6.10</b> Other resources</a>
+<ul>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#getting-help"><i class="fa fa-check"></i>Getting Help</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#branching-out"><i class="fa fa-check"></i>Branching out</a></li>
 <li class="chapter" data-level="" data-path="github.html"><a href="github.html#more-resources"><i class="fa fa-check"></i>More Resources</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II R graphics</b></span></li>
-<li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a><ul>
+<li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#getting-started-1"><i class="fa fa-check"></i><b>7.1</b> <strong>Getting started</strong></a></li>
 <li class="chapter" data-level="7.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#default-part-layer"><i class="fa fa-check"></i><b>7.2</b> <strong>Default part: layer</strong></a></li>
-<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a><ul>
+<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment"><i class="fa fa-check"></i><b>7.3.1</b> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
 <li class="chapter" data-level="7.3.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#scale"><i class="fa fa-check"></i><b>7.3.2</b> <strong>Scale</strong></a></li>
 <li class="chapter" data-level="7.3.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#coordinate-system"><i class="fa fa-check"></i><b>7.3.3</b> <strong>Coordinate system</strong></a></li>
@@ -244,73 +260,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#resources-for-ggplot2"><i class="fa fa-check"></i><b>7.4</b> <strong>Resources for ggplot2</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a><ul>
+<li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="faceting-1.html"><a href="faceting-1.html#faceting-on-one-variable"><i class="fa fa-check"></i><b>8.1</b> Faceting on one variable</a></li>
 <li class="chapter" data-level="8.2" data-path="faceting-1.html"><a href="faceting-1.html#faceting-on-two-variables"><i class="fa fa-check"></i><b>8.2</b> Faceting on two variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>9</b> Unidimensional continuous variables</a><ul>
-<li class="chapter" data-level="9.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#histogram"><i class="fa fa-check"></i><b>9.1</b> Histogram</a><ul>
+<li class="chapter" data-level="9" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>9</b> Unidimensional continuous variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#histogram"><i class="fa fa-check"></i><b>9.1</b> Histogram</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#basics-and-implications"><i class="fa fa-check"></i><b>9.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="9.1.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#types-of-histograms"><i class="fa fa-check"></i><b>9.1.2</b> Types of histograms</a></li>
 <li class="chapter" data-level="9.1.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#parameters-for-geom_histogram"><i class="fa fa-check"></i><b>9.1.3</b> Parameters for geom_histogram</a></li>
 <li class="chapter" data-level="9.1.4" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#interactive-histograms-with-ggvis"><i class="fa fa-check"></i><b>9.1.4</b> Interactive histograms with <code>ggvis</code></a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#boxplots"><i class="fa fa-check"></i><b>9.2</b> Boxplots</a><ul>
+<li class="chapter" data-level="9.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#boxplots"><i class="fa fa-check"></i><b>9.2</b> Boxplots</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#single-boxplot"><i class="fa fa-check"></i><b>9.2.1</b> Single boxplot</a></li>
 <li class="chapter" data-level="9.2.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#multiple-boxplots"><i class="fa fa-check"></i><b>9.2.2</b> Multiple boxplots</a></li>
 <li class="chapter" data-level="9.2.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#additional-resources"><i class="fa fa-check"></i><b>9.2.3</b> Additional resources</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#ridgeline-plot"><i class="fa fa-check"></i><b>9.3</b> Ridgeline plot</a><ul>
+<li class="chapter" data-level="9.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#ridgeline-plot"><i class="fa fa-check"></i><b>9.3</b> Ridgeline plot</a>
+<ul>
 <li class="chapter" data-level="9.3.1" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#basics-and-implications-1"><i class="fa fa-check"></i><b>9.3.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="9.3.2" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#create-better-visuals"><i class="fa fa-check"></i><b>9.3.2</b> Create better visuals</a></li>
 <li class="chapter" data-level="9.3.3" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#additional-resources-1"><i class="fa fa-check"></i><b>9.3.3</b> Additional resources</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="unidimensional-continuous-variables.html"><a href="unidimensional-continuous-variables.html#normal-distribution"><i class="fa fa-check"></i><b>9.4</b> Normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>10</b> Unidimensional categorical variables</a><ul>
-<li class="chapter" data-level="10.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#bar-plot"><i class="fa fa-check"></i><b>10.1</b> Bar plot</a><ul>
+<li class="chapter" data-level="10" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>10</b> Unidimensional categorical variables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#bar-plot"><i class="fa fa-check"></i><b>10.1</b> Bar plot</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#nominal-data"><i class="fa fa-check"></i><b>10.1.1</b> Nominal data</a></li>
 <li class="chapter" data-level="10.1.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#ordinal-data"><i class="fa fa-check"></i><b>10.1.2</b> Ordinal data</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a><ul>
+<li class="chapter" data-level="10.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot"><i class="fa fa-check"></i><b>10.2</b> Cleveland dot plot</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-multiple-dots"><i class="fa fa-check"></i><b>10.2.1</b> Cleveland dot plot with multiple dots</a></li>
 <li class="chapter" data-level="10.2.2" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#cleveland-dot-plot-with-facets"><i class="fa fa-check"></i><b>10.2.2</b> Cleveland dot plot with facets</a></li>
 <li class="chapter" data-level="10.2.3" data-path="unidimensional-categorical-variables.html"><a href="unidimensional-categorical-variables.html#example-how-much-people-in-the-trump-administration-are-worth"><i class="fa fa-check"></i><b>10.2.3</b> Example: How Much People in the Trump Administration Are Worth</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a><ul>
-<li class="chapter" data-level="11.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#scatterplot"><i class="fa fa-check"></i><b>11.1</b> Scatterplot</a><ul>
+<li class="chapter" data-level="11" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html"><i class="fa fa-check"></i><b>11</b> Two continuous variables</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#scatterplot"><i class="fa fa-check"></i><b>11.1</b> Scatterplot</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-2"><i class="fa fa-check"></i><b>11.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="11.1.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#overplotting"><i class="fa fa-check"></i><b>11.1.2</b> Overplotting</a></li>
 <li class="chapter" data-level="11.1.3" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#interactive-scatterplot"><i class="fa fa-check"></i><b>11.1.3</b> Interactive scatterplot</a></li>
 <li class="chapter" data-level="11.1.4" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications"><i class="fa fa-check"></i><b>11.1.4</b> Modifications</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#heatmaps"><i class="fa fa-check"></i><b>11.2</b> Heatmaps</a><ul>
+<li class="chapter" data-level="11.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#heatmaps"><i class="fa fa-check"></i><b>11.2</b> Heatmaps</a>
+<ul>
 <li class="chapter" data-level="11.2.1" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#basics-and-implications-3"><i class="fa fa-check"></i><b>11.2.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="11.2.2" data-path="two-continuous-variables.html"><a href="two-continuous-variables.html#modifications-1"><i class="fa fa-check"></i><b>11.2.2</b> Modifications</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>12</b> Multidimensional continuous variables</a><ul>
-<li class="chapter" data-level="12.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1</b> Parallel coordinate plot</a><ul>
+<li class="chapter" data-level="12" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html"><i class="fa fa-check"></i><b>12</b> Multidimensional continuous variables</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1</b> Parallel coordinate plot</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#basics-and-implications-4"><i class="fa fa-check"></i><b>12.1.1</b> Basics and implications</a></li>
 <li class="chapter" data-level="12.1.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#modifications-2"><i class="fa fa-check"></i><b>12.1.2</b> Modifications</a></li>
 <li class="chapter" data-level="12.1.3" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#interactive-parallel-coordinate-plot"><i class="fa fa-check"></i><b>12.1.3</b> Interactive parallel coordinate plot</a></li>
 <li class="chapter" data-level="12.1.4" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#external-resource"><i class="fa fa-check"></i><b>12.1.4</b> External resource</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#biplot"><i class="fa fa-check"></i><b>12.2</b> Biplot</a><ul>
+<li class="chapter" data-level="12.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#biplot"><i class="fa fa-check"></i><b>12.2</b> Biplot</a>
+<ul>
 <li class="chapter" data-level="12.2.1" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#principal-components-analysis-pca"><i class="fa fa-check"></i><b>12.2.1</b> Principal components analysis (PCA)</a></li>
 <li class="chapter" data-level="12.2.2" data-path="multidimensional-continuous-variables.html"><a href="multidimensional-continuous-variables.html#draw-a-biplot"><i class="fa fa-check"></i><b>12.2.2</b> Draw a biplot</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>13</b> Multidimensional categorical variables</a><ul>
-<li class="chapter" data-level="13.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#barcharts"><i class="fa fa-check"></i><b>13.1</b> Barcharts</a><ul>
+<li class="chapter" data-level="13" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html"><i class="fa fa-check"></i><b>13</b> Multidimensional categorical variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#barcharts"><i class="fa fa-check"></i><b>13.1</b> Barcharts</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#stacked-bar-chart"><i class="fa fa-check"></i><b>13.1.1</b> Stacked bar chart</a></li>
 <li class="chapter" data-level="13.1.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-bar-chart"><i class="fa fa-check"></i><b>13.1.2</b> Grouped bar chart</a></li>
 <li class="chapter" data-level="13.1.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-bar-chart-with-facets"><i class="fa fa-check"></i><b>13.1.3</b> Grouped bar chart with facets</a></li>
 <li class="chapter" data-level="13.1.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#grouped-barchart-with-three-categorical-variables"><i class="fa fa-check"></i><b>13.1.4</b> Grouped barchart with three categorical variables</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>13.2</b> Chi square test of independence</a></li>
-<li class="chapter" data-level="13.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots"><i class="fa fa-check"></i><b>13.3</b> Mosaic plots</a><ul>
+<li class="chapter" data-level="13.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots"><i class="fa fa-check"></i><b>13.3</b> Mosaic plots</a>
+<ul>
 <li class="chapter" data-level="13.3.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-one-variable"><i class="fa fa-check"></i><b>13.3.1</b> Mosaic plot with one variable</a></li>
 <li class="chapter" data-level="13.3.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-two-variables"><i class="fa fa-check"></i><b>13.3.2</b> Mosaic plot with two variables</a></li>
 <li class="chapter" data-level="13.3.3" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-with-three-variablesbest-practice"><i class="fa fa-check"></i><b>13.3.3</b> Mosaic plot with three variables(Best practice)</a></li>
@@ -318,26 +351,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3.5" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plots-spine-plot"><i class="fa fa-check"></i><b>13.3.5</b> Mosaic plots: spine plot</a></li>
 <li class="chapter" data-level="13.3.6" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#mosaic-plot-tree-map"><i class="fa fa-check"></i><b>13.3.6</b> Mosaic plot: tree map</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#alluvial-diagrams"><i class="fa fa-check"></i><b>13.4</b> Alluvial diagrams</a><ul>
+<li class="chapter" data-level="13.4" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#alluvial-diagrams"><i class="fa fa-check"></i><b>13.4</b> Alluvial diagrams</a>
+<ul>
 <li class="chapter" data-level="13.4.1" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#ggalluvial"><i class="fa fa-check"></i><b>13.4.1</b> ggalluvial</a></li>
 <li class="chapter" data-level="13.4.2" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#geom_flow"><i class="fa fa-check"></i><b>13.4.2</b> geom_flow</a></li>
 </ul></li>
 <li class="chapter" data-level="13.5" data-path="multidimensional-categorical-variables.html"><a href="multidimensional-categorical-variables.html#heat-map"><i class="fa fa-check"></i><b>13.5</b> Heat map</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="missing-data.html"><a href="missing-data.html"><i class="fa fa-check"></i><b>14</b> Missing data</a><ul>
+<li class="chapter" data-level="14" data-path="missing-data.html"><a href="missing-data.html"><i class="fa fa-check"></i><b>14</b> Missing data</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="missing-data.html"><a href="missing-data.html#introduction"><i class="fa fa-check"></i><b>14.1</b> Introduction</a></li>
-<li class="chapter" data-level="14.2" data-path="missing-data.html"><a href="missing-data.html#row-column-missing-patterns"><i class="fa fa-check"></i><b>14.2</b> Row / Column missing patterns</a><ul>
+<li class="chapter" data-level="14.2" data-path="missing-data.html"><a href="missing-data.html#row-column-missing-patterns"><i class="fa fa-check"></i><b>14.2</b> Row / Column missing patterns</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="missing-data.html"><a href="missing-data.html#colsums-rowsums"><i class="fa fa-check"></i><b>14.2.1</b> colSums() / rowSums()</a></li>
 <li class="chapter" data-level="14.2.2" data-path="missing-data.html"><a href="missing-data.html#heatmap"><i class="fa fa-check"></i><b>14.2.2</b> Heatmap</a></li>
 <li class="chapter" data-level="14.2.3" data-path="missing-data.html"><a href="missing-data.html#patterns"><i class="fa fa-check"></i><b>14.2.3</b> Patterns</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="colors.html"><a href="colors.html"><i class="fa fa-check"></i><b>15</b> Colors</a><ul>
+<li class="chapter" data-level="15" data-path="colors.html"><a href="colors.html"><i class="fa fa-check"></i><b>15</b> Colors</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="colors.html"><a href="colors.html#rcolorbrewer"><i class="fa fa-check"></i><b>15.1</b> RColorBrewer</a></li>
 <li class="chapter" data-level="15.2" data-path="colors.html"><a href="colors.html#perceptually-uniform-color-spaces-viridis"><i class="fa fa-check"></i><b>15.2</b> Perceptually uniform color spaces: Viridis</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>16</b> Time series</a><ul>
-<li class="chapter" data-level="16.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>16.1</b> Dates</a><ul>
+<li class="chapter" data-level="16" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>16</b> Time series</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="time-series.html"><a href="time-series.html#dates"><i class="fa fa-check"></i><b>16.1</b> Dates</a>
+<ul>
 <li class="chapter" data-level="16.1.1" data-path="time-series.html"><a href="time-series.html#basic-r-functions"><i class="fa fa-check"></i><b>16.1.1</b> Basic R functions</a></li>
 <li class="chapter" data-level="16.1.2" data-path="time-series.html"><a href="time-series.html#lubridate"><i class="fa fa-check"></i><b>16.1.2</b> Lubridate</a></li>
 </ul></li>
@@ -346,19 +385,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4" data-path="time-series.html"><a href="time-series.html#time-series-patterns"><i class="fa fa-check"></i><b>16.4</b> Time series patterns</a></li>
 <li class="chapter" data-level="16.5" data-path="time-series.html"><a href="time-series.html#index"><i class="fa fa-check"></i><b>16.5</b> Index</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>17</b> Spatial data</a><ul>
+<li class="chapter" data-level="17" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>17</b> Spatial data</a>
+<ul>
 <li class="chapter" data-level="17.1" data-path="spatial-data.html"><a href="spatial-data.html#introduction-1"><i class="fa fa-check"></i><b>17.1</b> Introduction</a></li>
-<li class="chapter" data-level="17.2" data-path="spatial-data.html"><a href="spatial-data.html#packages"><i class="fa fa-check"></i><b>17.2</b> Packages</a><ul>
+<li class="chapter" data-level="17.2" data-path="spatial-data.html"><a href="spatial-data.html#packages"><i class="fa fa-check"></i><b>17.2</b> Packages</a>
+<ul>
 <li class="chapter" data-level="17.2.1" data-path="spatial-data.html"><a href="spatial-data.html#choroplethr"><i class="fa fa-check"></i><b>17.2.1</b> <code>choroplethr</code></a></li>
 <li class="chapter" data-level="17.2.2" data-path="spatial-data.html"><a href="spatial-data.html#ggmap"><i class="fa fa-check"></i><b>17.2.2</b> <code>ggmap</code></a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="spatial-data.html"><a href="spatial-data.html#shape-file"><i class="fa fa-check"></i><b>17.3</b> Shape file</a><ul>
+<li class="chapter" data-level="17.3" data-path="spatial-data.html"><a href="spatial-data.html#shape-file"><i class="fa fa-check"></i><b>17.3</b> Shape file</a>
+<ul>
 <li class="chapter" data-level="17.3.1" data-path="spatial-data.html"><a href="spatial-data.html#sf"><i class="fa fa-check"></i><b>17.3.1</b> <code>sf</code></a></li>
 <li class="chapter" data-level="17.3.2" data-path="spatial-data.html"><a href="spatial-data.html#tmap"><i class="fa fa-check"></i><b>17.3.2</b> <code>tmap</code></a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Appendix</b></span></li>
-<li class="chapter" data-level="18" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html"><i class="fa fa-check"></i><b>18</b> Cutting room floor</a><ul>
+<li class="chapter" data-level="18" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html"><i class="fa fa-check"></i><b>18</b> Cutting room floor</a>
+<ul>
 <li class="chapter" data-level="18.1" data-path="cutting-room-floor.html"><a href="cutting-room-floor.html#parallel-coordinate-plots"><i class="fa fa-check"></i><b>18.1</b> Parallel coordinate plots</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -381,10 +424,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-transformation" class="section level1 hasAnchor">
+<div id="data-transformation" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Data transformation<a href="data-transformation.html#data-transformation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Plotting a graph is easy. You just need to find the right library with the right function. However, it is sometimes not so easy to get your data into the form desired to generate a graph. In this chapter, we will cover some basic techniques in tidying data with <code>ggplot2</code>.</p>
-<div id="what-is-tidy-data" class="section level2 hasAnchor">
+<div id="what-is-tidy-data" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> What is tidy data?<a href="data-transformation.html#what-is-tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here’s the definition of Tidy Data given by Hadley Wickham:</p>
 <blockquote>
@@ -414,12 +457,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>To transform the data, we use <code>pivot_longer</code>.</p>
 </div>
-<div id="pivot_longer" class="section level2 hasAnchor">
+<div id="pivot_longer" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> <code>pivot_longer</code><a href="data-transformation.html#pivot_longer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-transformation.html#cb30-1"></a>mtcars <span class="op">%&gt;%</span><span class="st">  </span></span>
-<span id="cb30-2"><a href="data-transformation.html#cb30-2"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;carname&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb30-3"><a href="data-transformation.html#cb30-3"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">!</span>carname, <span class="dt">names_to =</span> <span class="st">&quot;Parameters&quot;</span>,<span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb30-4"><a href="data-transformation.html#cb30-4"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-transformation.html#cb30-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span>  </span>
+<span id="cb30-2"><a href="data-transformation.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">&quot;carname&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="data-transformation.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">!</span>carname, <span class="at">names_to =</span> <span class="st">&quot;Parameters&quot;</span>,<span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="data-transformation.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   carname   Parameters  value
 ##   &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
@@ -436,7 +479,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Create meaningful names for the two new columns. In our case, straightforwardly, column names go into <code>parameters</code> and corresponding values go into <code>value</code>.</p></li>
 </ul>
 </div>
-<div id="pivot_wider" class="section level2 hasAnchor">
+<div id="pivot_wider" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> <code>pivot_wider</code><a href="data-transformation.html#pivot_wider" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>pivot_wider</code> is just the opposite of <code>pivot_longer</code>. Using <code>pivot_wider</code>, we can transform our tidy data back into the messy form as all distinct values in <code>Parameters</code> will become column names.</p>
 <p><code>pivot_wider</code> is often used in the case such that one observation being recorded over multiple rows. Consider the following example:</p>
@@ -447,7 +490,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 USA     Death      3
 ## 3 Canada  Case       2
 ## 4 Canada  Death      1</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-transformation.html#cb33-1"></a>example <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> Type, <span class="dt">values_from =</span> Number)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-transformation.html#cb33-1" aria-hidden="true" tabindex="-1"></a>example <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Type, <span class="at">values_from =</span> Number)</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   Country  Case Death
 ##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -456,7 +499,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It would make much more sense if <code>Case</code> and <code>Death</code> are separate features.</p>
 <p>The main focus of this chapter is <code>pivot_longer</code> and <code>pivot_wider</code>. However, other fundamental functions in <code>dplyr</code> are also very important in manipulating your data set. In the following section, we will give an overview of the basics.</p>
 </div>
-<div id="basic-transformation-functions" class="section level2 hasAnchor">
+<div id="basic-transformation-functions" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Basic transformation functions<a href="data-transformation.html#basic-transformation-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the following sections, we will use data set <code>biopsy</code> from <code>MASS</code> for demonstration purpose.</p>
 <pre><code>##        ID V1 V2 V3 V4 V5 V6 V7 V8 V9     class
@@ -466,16 +509,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 1016277  6  8  8  1  3  4  3  7  1    benign
 ## 5 1017023  4  1  1  3  2  1  3  1  1    benign
 ## 6 1017122  8 10 10  8  7 10  9  7  1 malignant</code></pre>
-<div id="rename" class="section level3 hasAnchor">
+<div id="rename" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> <code>rename</code><a href="data-transformation.html#rename" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Upon getting the data, we noticed that the names of the columns are very vague. After reading the documentation, we wanted to change the names of the column so that the viewer gets a sense of the values they’re referring to. We use <code>rename</code> to modify the column names.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-transformation.html#cb36-1"></a>biopsy_new &lt;-<span class="st"> </span><span class="kw">rename</span>(biopsy,</span>
-<span id="cb36-2"><a href="data-transformation.html#cb36-2"></a>       <span class="dt">thickness =</span> V1,<span class="dt">cell_size =</span> V2,</span>
-<span id="cb36-3"><a href="data-transformation.html#cb36-3"></a>       <span class="dt">cell_shape =</span> V3, <span class="dt">marg_adhesion =</span> V4,</span>
-<span id="cb36-4"><a href="data-transformation.html#cb36-4"></a>       <span class="dt">epithelial_cell_size =</span> V5, <span class="dt">bare_nuclei =</span> V6,</span>
-<span id="cb36-5"><a href="data-transformation.html#cb36-5"></a>       <span class="dt">chromatin =</span> V7, <span class="dt">norm_nucleoli =</span> V8, <span class="dt">mitoses =</span> V9)</span>
-<span id="cb36-6"><a href="data-transformation.html#cb36-6"></a></span>
-<span id="cb36-7"><a href="data-transformation.html#cb36-7"></a><span class="kw">head</span>(biopsy_new)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-transformation.html#cb36-1" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> <span class="fu">rename</span>(biopsy,</span>
+<span id="cb36-2"><a href="data-transformation.html#cb36-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">thickness =</span> V1,<span class="at">cell_size =</span> V2,</span>
+<span id="cb36-3"><a href="data-transformation.html#cb36-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">cell_shape =</span> V3, <span class="at">marg_adhesion =</span> V4,</span>
+<span id="cb36-4"><a href="data-transformation.html#cb36-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">epithelial_cell_size =</span> V5, <span class="at">bare_nuclei =</span> V6,</span>
+<span id="cb36-5"><a href="data-transformation.html#cb36-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">chromatin =</span> V7, <span class="at">norm_nucleoli =</span> V8, <span class="at">mitoses =</span> V9)</span>
+<span id="cb36-6"><a href="data-transformation.html#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="data-transformation.html#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new)</span></code></pre></div>
 <pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 ## 1 1000025         5         1          1             1                    2
 ## 2 1002945         5         4          4             5                    7
@@ -491,14 +534,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5           1         3             1       1    benign
 ## 6          10         9             7       1 malignant</code></pre>
 </div>
-<div id="select" class="section level3 hasAnchor">
+<div id="select" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> <code>select</code><a href="data-transformation.html#select" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>select</code> is column-wise operation. Specifically, only the columns that are specified will be returned.</p>
 <p>In the biopsy data, we do not require the variables “chromatin” and “mitoses”. So, let’s drop them using a minus sign:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-transformation.html#cb38-1"></a><span class="co">#selecting all except the columns chromatin and mitoses</span></span>
-<span id="cb38-2"><a href="data-transformation.html#cb38-2"></a>biopsy_new &lt;-<span class="st"> </span>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>chromatin,<span class="op">-</span>mitoses)</span>
-<span id="cb38-3"><a href="data-transformation.html#cb38-3"></a></span>
-<span id="cb38-4"><a href="data-transformation.html#cb38-4"></a><span class="kw">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-transformation.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#selecting all except the columns chromatin and mitoses</span></span>
+<span id="cb38-2"><a href="data-transformation.html#cb38-2" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> biopsy_new <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>chromatin,<span class="sc">-</span>mitoses)</span>
+<span id="cb38-3"><a href="data-transformation.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="data-transformation.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 ## 1 1000025         5         1          1             1                    2
 ## 2 1002945         5         4          4             5                    7
@@ -512,15 +555,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4           4             7 benign
 ## 5           1             1 benign</code></pre>
 </div>
-<div id="mutate" class="section level3 hasAnchor">
+<div id="mutate" class="section level3 hasAnchor" number="5.4.3">
 <h3><span class="header-section-number">5.4.3</span> <code>mutate</code><a href="data-transformation.html#mutate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>mutate</strong> function computes new variables from the already existing variables and adds them to the dataset. It gives information that the data already contained but was never displayed.</p>
 <p>The variable <code>bare_nucleus</code> contains the values from 1.00 to 10.00. If we wish to normalize the variable, we can use the mutate function:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-transformation.html#cb40-1"></a><span class="co">#normalize the bare nuclei values </span></span>
-<span id="cb40-2"><a href="data-transformation.html#cb40-2"></a>maximum_bare_nuclei&lt;-<span class="kw">max</span>(biopsy_new<span class="op">$</span>bare_nuclei,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)</span>
-<span id="cb40-3"><a href="data-transformation.html#cb40-3"></a>biopsy_new &lt;-<span class="st"> </span>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">bare_nuclei=</span>bare_nuclei<span class="op">/</span>maximum_bare_nuclei)</span>
-<span id="cb40-4"><a href="data-transformation.html#cb40-4"></a></span>
-<span id="cb40-5"><a href="data-transformation.html#cb40-5"></a><span class="kw">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-transformation.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#normalize the bare nuclei values </span></span>
+<span id="cb40-2"><a href="data-transformation.html#cb40-2" aria-hidden="true" tabindex="-1"></a>maximum_bare_nuclei<span class="ot">&lt;-</span><span class="fu">max</span>(biopsy_new<span class="sc">$</span>bare_nuclei,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb40-3"><a href="data-transformation.html#cb40-3" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> biopsy_new <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bare_nuclei=</span>bare_nuclei<span class="sc">/</span>maximum_bare_nuclei)</span>
+<span id="cb40-4"><a href="data-transformation.html#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="data-transformation.html#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 ## 1 1000025         5         1          1             1                    2
 ## 2 1002945         5         4          4             5                    7
@@ -535,13 +578,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5         0.1             1 benign</code></pre>
 <p>In some situations, your new variable might involve conditions. You can consider using <code>case_when</code> combined with <code>mutate</code>.</p>
 </div>
-<div id="select-1" class="section level3 hasAnchor">
-<h3><span class="header-section-number">5.4.4</span> <code>select</code><a href="data-transformation.html#select-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Filter</strong> is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.</p>
+<div id="filter" class="section level3 hasAnchor" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> <code>filter</code><a href="data-transformation.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>filter</strong> is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.</p>
 <p>For our example, say we only want the data of those tumor cells that have clump thickness greater than 6.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-transformation.html#cb42-1"></a>biopsy_new &lt;-<span class="st"> </span>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(thickness<span class="op">&gt;</span><span class="fl">5.5</span>)</span>
-<span id="cb42-2"><a href="data-transformation.html#cb42-2"></a></span>
-<span id="cb42-3"><a href="data-transformation.html#cb42-3"></a><span class="kw">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-transformation.html#cb42-1" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> biopsy_new <span class="sc">%&gt;%</span> <span class="fu">filter</span>(thickness<span class="sc">&gt;</span><span class="fl">5.5</span>)</span>
+<span id="cb42-2"><a href="data-transformation.html#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="data-transformation.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new,<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 ## 1 1016277         6         8          8             1                    3
 ## 2 1017122         8        10         10             8                    7
@@ -556,12 +599,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5         1.0             1 malignant</code></pre>
 <p>If you want to filter using multiple conditions, use logical operators: &amp;(And), |(Or).</p>
 </div>
-<div id="arrange" class="section level3 hasAnchor">
+<div id="arrange" class="section level3 hasAnchor" number="5.4.5">
 <h3><span class="header-section-number">5.4.5</span> <code>arrange</code><a href="data-transformation.html#arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Arrange</strong> reorders the rows of the data based on their contents in the ascending order by default.</p>
 <p>Say in our example, the doctors would want to view the data in the order of the cell size of the tumor.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-transformation.html#cb44-1"></a><span class="co">#arrange in the order of V2:cell size</span></span>
-<span id="cb44-2"><a href="data-transformation.html#cb44-2"></a><span class="kw">head</span>(<span class="kw">arrange</span>(biopsy_new,cell_size))</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-transformation.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#arrange in the order of V2:cell size</span></span>
+<span id="cb44-2"><a href="data-transformation.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">arrange</span>(biopsy_new,cell_size))</span></code></pre></div>
 <pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 ## 1 1050718         6         1          1             1                    2
 ## 2 1204898         6         1          1             1                    2
@@ -578,25 +621,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6         1.0             4 malignant</code></pre>
 <p>In case you want your data in descending order, wrap your variable with <code>desc()</code>.</p>
 </div>
-<div id="group_by-and-summarize" class="section level3 hasAnchor">
+<div id="group_by-and-summarize" class="section level3 hasAnchor" number="5.4.6">
 <h3><span class="header-section-number">5.4.6</span> <code>group_by</code> and <code>summarize</code><a href="data-transformation.html#group_by-and-summarize" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>summarize</strong> function uses the data to create a new data frame with the summary statistics such as minimum, maximum, average, and so on. These statistical functions must be aggregate functions which take a vector of values as input and output a single value.</p>
 <p>The <strong>group_by</strong> function groups the data by the values of the variables. This, along with summarize, makes observations about groups of rows of the dataset.</p>
 <p>The doctors would want to see the maximum cell size and the thickness for each of the classes: benign and malignant. This can be done by grouping the data by class and finding the maximum of the required variables:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-transformation.html#cb46-1"></a>biopsy_grouped &lt;-<span class="st"> </span><span class="kw">group_by</span>(biopsy_new,class)</span>
-<span id="cb46-2"><a href="data-transformation.html#cb46-2"></a><span class="kw">summarize</span>(biopsy_grouped, <span class="kw">max</span>(thickness), <span class="kw">mean</span>(cell_size), <span class="kw">var</span>(norm_nucleoli))</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-transformation.html#cb46-1" aria-hidden="true" tabindex="-1"></a>biopsy_grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(biopsy_new,class)</span>
+<span id="cb46-2"><a href="data-transformation.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(biopsy_grouped, <span class="fu">max</span>(thickness), <span class="fu">mean</span>(cell_size), <span class="fu">var</span>(norm_nucleoli))</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 4
 ##   class     `max(thickness)` `mean(cell_size)` `var(norm_nucleoli)`
 ##   &lt;fct&gt;                &lt;int&gt;             &lt;dbl&gt;                &lt;dbl&gt;
 ## 1 benign                   8              2.67                 5.93
 ## 2 malignant               10              6.73                11.3</code></pre>
 </div>
-<div id="slice_max-slice_min" class="section level3 hasAnchor">
+<div id="slice_max-slice_min" class="section level3 hasAnchor" number="5.4.7">
 <h3><span class="header-section-number">5.4.7</span> <code>slice_max</code> (<code>slice_min</code>)<a href="data-transformation.html#slice_max-slice_min" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>slice_max</strong> function helps you to find the top n values of a specific column. Suppose we now want to see the top five biopsies with the biggest thickness. Notice in this case, since we have more than five rows with thickness 10, all of them are selected (for neatness, we only show first several rows).</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-transformation.html#cb48-1"></a>biopsy_new <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-2"><a href="data-transformation.html#cb48-2"></a><span class="st">  </span><span class="kw">slice_max</span>(<span class="dt">order_by =</span> thickness,<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-3"><a href="data-transformation.html#cb48-3"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-transformation.html#cb48-1" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="sc">%&gt;%</span> </span>
+<span id="cb48-2"><a href="data-transformation.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> thickness,<span class="at">n=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-3"><a href="data-transformation.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##        ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 ## 1 1050670        10         7          7             6                    4
 ## 2 1054593        10         5          5             3                    6
@@ -612,15 +655,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5         0.3             5 malignant
 ## 6         0.1            10 malignant</code></pre>
 </div>
-<div id="join" class="section level3 hasAnchor">
+<div id="join" class="section level3 hasAnchor" number="5.4.8">
 <h3><span class="header-section-number">5.4.8</span> join<a href="data-transformation.html#join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sometimes you will need to combine two data sets and this is when function join comes into play. There are four types of joins provided by <code>dplyr</code> and take a look at the following example.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-transformation.html#cb50-1"></a><span class="co"># Main dataset</span></span>
-<span id="cb50-2"><a href="data-transformation.html#cb50-2"></a>s77 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(state.x77) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb50-3"><a href="data-transformation.html#cb50-3"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb50-4"><a href="data-transformation.html#cb50-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(Illiteracy))</span>
-<span id="cb50-5"><a href="data-transformation.html#cb50-5"></a></span>
-<span id="cb50-6"><a href="data-transformation.html#cb50-6"></a><span class="kw">head</span>(s77)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-transformation.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Main dataset</span></span>
+<span id="cb50-2"><a href="data-transformation.html#cb50-2" aria-hidden="true" tabindex="-1"></a>s77 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(state.x77) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="data-transformation.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb50-4"><a href="data-transformation.html#cb50-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Illiteracy))</span>
+<span id="cb50-5"><a href="data-transformation.html#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="data-transformation.html#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(s77)</span></code></pre></div>
 <pre><code>##        state Population Income Life.Exp Murder HS.Grad Frost   Area
 ## 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708
 ## 2     Alaska        365   6315    69.31   11.3    66.7   152 566432
@@ -628,12 +671,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4   Arkansas       2110   3378    70.66   10.1    39.9    65  51945
 ## 5 California      21198   5114    71.71   10.3    62.6    20 156361
 ## 6   Colorado       2541   4884    72.06    6.8    63.9   166 103766</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-transformation.html#cb52-1"></a><span class="co"># https://www.cookpolitical.com/2020-national-popular-vote-tracker</span></span>
-<span id="cb52-2"><a href="data-transformation.html#cb52-2"></a>partyinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv&quot;</span>)</span>
-<span id="cb52-3"><a href="data-transformation.html#cb52-3"></a>partyinfo &lt;-<span class="st"> </span>partyinfo <span class="op">%&gt;%</span></span>
-<span id="cb52-4"><a href="data-transformation.html#cb52-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(state, called)</span>
-<span id="cb52-5"><a href="data-transformation.html#cb52-5"></a></span>
-<span id="cb52-6"><a href="data-transformation.html#cb52-6"></a><span class="kw">head</span>(<span class="kw">left_join</span>(s77, partyinfo))</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-transformation.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.cookpolitical.com/2020-national-popular-vote-tracker</span></span>
+<span id="cb52-2"><a href="data-transformation.html#cb52-2" aria-hidden="true" tabindex="-1"></a>partyinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv&quot;</span>)</span>
+<span id="cb52-3"><a href="data-transformation.html#cb52-3" aria-hidden="true" tabindex="-1"></a>partyinfo <span class="ot">&lt;-</span> partyinfo <span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a href="data-transformation.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(state, called)</span>
+<span id="cb52-5"><a href="data-transformation.html#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="data-transformation.html#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">left_join</span>(s77, partyinfo))</span></code></pre></div>
 <pre><code>##        state Population Income Life.Exp Murder HS.Grad Frost   Area called
 ## 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708      R
 ## 2     Alaska        365   6315    69.31   11.3    66.7   152 566432      R
@@ -643,7 +686,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6   Colorado       2541   4884    72.06    6.8    63.9   166 103766      D</code></pre>
 <p><strong>s77</strong> contains statistics of 50 states in the US and <strong>partyinfo</strong> holds information whether a state is democratic or republican. The two data sets are joined on common feature <code>state</code>. If you want to join on features with different names, specify using the argument <code>by</code>. For detailed explanations of differnet types of joins, refer to the <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">documentation</a>.</p>
 </div>
-<div id="cases-to-tables" class="section level3 hasAnchor">
+<div id="cases-to-tables" class="section level3 hasAnchor" number="5.4.9">
 <h3><span class="header-section-number">5.4.9</span> Cases to tables<a href="data-transformation.html#cases-to-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When you want to perform a Chi-squared test or create a paired mosaic plot, your data has to follow a table format. For example, the following table is in the correct format. The columns are anxiety statues and rows are class years.</p>
 <pre><code>##   moderate normal severe
@@ -652,19 +695,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3        8     41      5
 ## 4       15     37      5</code></pre>
 <p>The following example demonstrates how you can convert cases to tables. Notice the starting data has a count for each of the categorical combinations.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-transformation.html#cb55-1"></a><span class="co"># watch out: summarise</span></span>
-<span id="cb55-2"><a href="data-transformation.html#cb55-2"></a>rebates &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://data.ny.gov/resource/thd2-fu8y.csv&quot;</span>)</span>
-<span id="cb55-3"><a href="data-transformation.html#cb55-3"></a>rebate_counts &lt;-<span class="st"> </span>rebates <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">group_by</span>(make, ev_type) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span></span>
-<span id="cb55-4"><a href="data-transformation.html#cb55-4"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Freq =</span> <span class="kw">n</span>())</span>
-<span id="cb55-5"><a href="data-transformation.html#cb55-5"></a><span class="kw">head</span>(rebate_counts)</span></code></pre></div>
-<pre><code>## # A tibble: 1 × 3
-## # Groups:   make [1]
-##   make  ev_type  Freq
-##   &lt;lgl&gt; &lt;lgl&gt;   &lt;int&gt;
-## 1 NA    NA       1000</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-transformation.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># watch out: summarise</span></span>
+<span id="cb55-2"><a href="data-transformation.html#cb55-2" aria-hidden="true" tabindex="-1"></a>rebates <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://data.ny.gov/resource/thd2-fu8y.csv&quot;</span>)</span>
+<span id="cb55-3"><a href="data-transformation.html#cb55-3" aria-hidden="true" tabindex="-1"></a>rebate_counts <span class="ot">&lt;-</span> rebates <span class="sc">|&gt;</span> <span class="fu">group_by</span>(make, ev_type) <span class="sc">|&gt;</span> </span>
+<span id="cb55-4"><a href="data-transformation.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Freq =</span> <span class="fu">n</span>())</span>
+<span id="cb55-5"><a href="data-transformation.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rebate_counts)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+## # Groups:   make [3]
+##   make      ev_type  Freq
+##   &lt;chr&gt;     &lt;chr&gt;   &lt;int&gt;
+## 1 Audi      BEV         6
+## 2 Audi      PHEV        1
+## 3 BMW       BEV         1
+## 4 BMW       PHEV        8
+## 5 Chevrolet BEV        72
+## 6 Chevrolet PHEV       33</code></pre>
 <p>By using <code>xtabs</code>, we are able to transform our data into a table ready for Chi-squared test or paired mosaic plot.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-transformation.html#cb57-1"></a><span class="kw">head</span>(<span class="kw">xtabs</span>(Freq <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> rebate_counts))</span></code></pre></div>
-<pre><code>## &lt; table of extent 0 x 0 &gt;</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-transformation.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">xtabs</span>(Freq <span class="sc">~</span> ., <span class="at">data =</span> rebate_counts))</span></code></pre></div>
+<pre><code>##            ev_type
+## make        BEV PHEV
+##   Audi        6    1
+##   BMW         1    8
+##   Chevrolet  72   33
+##   Chrysler    0   11
+##   Ford        1   28
+##   Honda       0   45</code></pre>
 
 </div>
 </div>

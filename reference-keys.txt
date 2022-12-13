@@ -32,7 +32,7 @@ basic-transformation-functions
 rename
 select
 mutate
-select-1
+filter
 arrange
 group_by-and-summarize
 slice_max-slice_min

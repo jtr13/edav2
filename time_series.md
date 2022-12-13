@@ -95,7 +95,7 @@ lubridate::yday(today)
 ```
 
 ```
-## [1] 317
+## [1] 347
 ```
 
 ```r
@@ -103,7 +103,7 @@ lubridate::month(today, label = TRUE)
 ```
 
 ```
-## [1] Nov
+## [1] Dec
 ## 12 Levels: Jan < Feb < Mar < Apr < May < Jun < Jul < Aug < Sep < ... < Dec
 ```
 
@@ -112,7 +112,7 @@ lubridate::week(today)
 ```
 
 ```
-## [1] 46
+## [1] 50
 ```
 
 ## Time series
