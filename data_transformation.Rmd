@@ -128,9 +128,9 @@ head(biopsy_new,5)
 
 In some situations, your new variable might involve conditions. You can consider using `case_when` combined with `mutate`.
 
-### `select`
+### `filter`
 
-**Filter** is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.
+**filter** is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.
 
 For our example, say we only want the data of those tumor cells that have clump thickness greater than 6.
 
