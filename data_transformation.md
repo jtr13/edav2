@@ -400,7 +400,7 @@ head(rebate_counts)
 ## 2 Audi      PHEV        1
 ## 3 BMW       BEV         1
 ## 4 BMW       PHEV        8
-## 5 Chevrolet BEV        72
+## 5 Chevrolet BEV        71
 ## 6 Chevrolet PHEV       33
 ```
 
@@ -416,7 +416,7 @@ head(xtabs(Freq ~ ., data = rebate_counts))
 ## make        BEV PHEV
 ##   Audi        6    1
 ##   BMW         1    8
-##   Chevrolet  72   33
+##   Chevrolet  71   33
 ##   Chrysler    0   11
 ##   Ford        1   28
 ##   Honda       0   45

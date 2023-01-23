@@ -63,6 +63,7 @@ coordinate-system
 faceting
 labels
 resources-for-ggplot2
+required-aesthetic-mappings
 faceting-1
 faceting-on-one-variable
 faceting-on-two-variables

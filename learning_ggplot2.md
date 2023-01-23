@@ -152,3 +152,18 @@ The cheat-sheets clearly list the basic components of a ggplot where you can cus
 1. [ggplot2: Elegant Graphics](https://ggplot2-book.org/)
 
 2. [ggformat](https://github.com/jtr13/ggformat)
+
+## Required aesthetic mappings
+
+`geom_bar(x `_or_` y)`
+`geom_boxplot(x `_or_` y)`
+`geom_col(x, y)`
+`geom_density(x` _or_ `y)`
+`geom_histogram(x` _or_ `y)`
+`geom_line(x, y)`
+`geom_point(x, y)`
+
+_list in progress_
+
+
+ 
