@@ -278,9 +278,9 @@ There are many ways to draw a normal curve and we introduce one here:
 
 ```r
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(aes(y = after_stat(density)),color = "blue",fill = "lightblue",binwidth = 0.5) +
-  stat_function(fun = dnorm, col = "red",args = list(mean(finches$Depth),sd(finches$Depth))) +
-  ggtitle("Normal curve overlaid")
+  geom_histogram(aes(y = after_stat(density)), color = "blue", fill = "lightblue", binwidth = 0.5) +
+  geom_function(fun = dnorm, col = "red", args = list(mean(finches$Depth), sd(finches$Depth)), lwd = 1) +
+  labs(title = "Normal curve overlaid")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-15-1.png" width="460.8" style="display: block; margin: auto;" />
