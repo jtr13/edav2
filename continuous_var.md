@@ -51,7 +51,7 @@ ggplot(finches, aes(x = Depth)) +
 
 ```r
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(aes(y=cumsum(..count..)),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
+  geom_histogram(aes(y = cumsum(after_stat(count))), color="blue", fill="lightblue", binwidth = 0.5, boundary = 6) +
   ggtitle("Cumulative frequency histogram") +
   xlab("Cumulative frequency")
 ```
@@ -63,7 +63,7 @@ ggplot(finches, aes(x = Depth)) +
 
 ```r
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
+  geom_histogram(aes(y = after_stat(density)), color = "blue", fill = "lightblue", binwidth = 0.5, boundary = 6) +
   ggtitle("Density histogram")
 ```
 
@@ -79,12 +79,12 @@ Be mindful of the boundaries of the bins and whether a point will fall into the 
 
 ```r
 p1 <- ggplot(df, aes(x)) +
-  geom_histogram(color="blue",fill="lightblue", 
-                 binwidth = 5, center = 52.5, closed="left")  +
+  geom_histogram(color = "blue", fill = "lightblue", 
+                 binwidth = 5, center = 52.5, closed = "left")  +
   ggtitle("Left closed graph")
 
 p2 <- ggplot(df, aes(x)) +
-  geom_histogram(color="blue",fill="lightblue", 
+  geom_histogram(color = "blue", fill = "lightblue", 
                  binwidth = 5, center = 52.5, closed="right")  +
   ggtitle("Right closed graph")
 
@@ -100,7 +100,7 @@ grid.arrange(p1, p2, ncol = 2)
 ```r
 #Default / Only adding some styles to make graph consistent
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue") +
+  geom_histogram(color = "blue", fill = "lightblue") +
   ggtitle("Default with pop-up about bin number")
 ```
 
@@ -113,12 +113,12 @@ We see that the graph is not ideal with some gaps. There are two ways to modify 
 ```r
 # using binwidth
 p3 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5, boundary = 6) +
+  geom_histogram(color = "blue", fill = "lightblue", binwidth = 0.5, boundary = 6) +
   ggtitle("Changed binwidth value")
 
 # using bins
 p4 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",bins = 15, boundary = 6) +
+  geom_histogram(color="blue", fill = "lightblue", bins = 15, boundary = 6) +
   ggtitle("Changed bin value")
 
 # format plot layout
@@ -136,11 +136,11 @@ Consider this comparison
 
 ```r
 p5 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5) +
+  geom_histogram(color = "blue", fill = "lightblue", binwidth = 0.5) +
   ggtitle("Without alignment")
 
 p6 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",bins = 15, boundary = 6) +
+  geom_histogram(color = "blue", fill = "lightblue", bins = 15, boundary = 6) +
   ggtitle("With alignment")
 
 grid.arrange(p5, p6, ncol = 2)
@@ -164,7 +164,7 @@ A boxplot is one of the simplest ways of representing a distribution of a contin
 
 
 ```r
-ggplot(chickwts, aes(x=weight)) +
+ggplot(chickwts, aes(x = weight)) +
   geom_boxplot() +
   ggtitle("Boxplot of chicken weights")
 ```
@@ -183,10 +183,10 @@ The following example still use the ``chickwts`` dataset. We compare the distrib
 
 
 ```r
-ggplot(chickwts, aes(x=reorder(feed, -weight, median),y=weight)) +
+ggplot(chickwts, aes(x = reorder(feed, -weight, median),y = weight)) +
   geom_boxplot() +
   ggtitle("Multiple boxplots of chicken weights according to feed type") +
-  labs(y="Weight", x="Feed Type")
+  labs(y = "Weight", x = "Feed Type")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" />
@@ -197,11 +197,11 @@ Often you want boxplots to be horizontal. Super easy to do in ``ggplot2``: just 
 
 
 ```r
-ggplot(chickwts, aes(x=reorder(feed, weight, median),y=weight)) +
+ggplot(chickwts, aes(x = reorder(feed, weight, median),y = weight)) +
   geom_boxplot() +
   coord_flip() +
   ggtitle("Multiple boxplots of chicken weights according to feed type") +
-  labs(y="Weight", x="Feed Type")
+  labs(y = "Weight", x = "Feed Type")
 ```
 
 <img src="continuous_var_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" />
@@ -278,8 +278,8 @@ There are many ways to draw a normal curve and we introduce one here:
 
 ```r
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(aes(y=..density..),color="blue",fill="lightblue",binwidth = 0.5) +
-  stat_function(fun=dnorm, col = "red",args=list(mean(finches$Depth),sd(finches$Depth))) +
+  geom_histogram(aes(y = after_stat(density)),color = "blue",fill = "lightblue",binwidth = 0.5) +
+  stat_function(fun = dnorm, col = "red",args = list(mean(finches$Depth),sd(finches$Depth))) +
   ggtitle("Normal curve overlaid")
 ```
 
