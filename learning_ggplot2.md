@@ -4,7 +4,7 @@
 
 ## **Getting started**
 
-Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: ``ggplot2`` with it's basic grammar and functions. To start, install ``ggplot2`` in the console or in R chunk.
+Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: `ggplot2` with it's basic grammar and functions. To start, install `ggplot2` in the console or in R chunk.
 
 ```
 install.packages('ggplot2')
@@ -13,7 +13,7 @@ install.packages('ggplot2')
 
 ## **Default part: layer**
 
-For many R beginners, the question is always like: why is ggplot? One remarkable feature of ``ggplot2`` is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding ``ggplot2`` functions to meet your needs based on your data. 
+For many R beginners, the question is always like: why is ggplot? One remarkable feature of `ggplot2` is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding `ggplot2` functions to meet your needs based on your data. 
 
 By definition of the grammar of graphics, the most important features are data and mapping in the layers and that's where we are getting started.
 
@@ -48,7 +48,7 @@ The following picture shows the order of ggplot functions:
 ![](images/codingOrder.png){width=60%}
 </center>
 
-For more function order suggestions and auto-correction when writing your own ``ggplot2`` functions, please refer to [ggformat](https://github.com/jtr13/ggformat) addin created by Joyce.
+For more function order suggestions and auto-correction when writing your own `ggplot2` functions, please refer to [ggformat](https://github.com/jtr13/ggformat) addin created by Joyce.
 
 
 ### **Geometric object, statistical transformation and position adjustment**
@@ -59,9 +59,9 @@ For more function order suggestions and auto-correction when writing your own ``
 
 Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.
 
-Geometric objects ``geoms`` control the type of plot you create. Different types of plot have different aesthetics features. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing ``geoms`` and use ``help`` function to check what aesthetics can be modified to achieve your desired effects.
+Geometric objects `geoms` control the type of plot you create. Different types of plot have different aesthetics features. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing `geoms` and use `help` function to check what aesthetics can be modified to achieve your desired effects.
 
-A statistical transformation ``stat`` transforms the data. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.
+A statistical transformation `stat` transforms the data. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.
 
 
 ```r
@@ -94,7 +94,7 @@ ggplot(data = iris) +
 
 ### **Coordinate system**
 
-A coordinate system ``coord`` maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one ``coord``
+A coordinate system `coord` maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one `coord``
 
 
 ```r
@@ -155,15 +155,61 @@ The cheat-sheets clearly list the basic components of a ggplot where you can cus
 
 ## Required aesthetic mappings
 
-`geom_bar(x `_or_` y)`
-`geom_boxplot(x `_or_` y)`
-`geom_col(x, y)`
-`geom_density(x` _or_ `y)`
-`geom_histogram(x` _or_ `y)`
-`geom_line(x, y)`
-`geom_point(x, y)`
 
-_list in progress_
-
+|GEOM                   |REQUIRED MAPPINGS                            |
+|:----------------------|:--------------------------------------------|
+|geom_abline            |NA                                           |
+|geom_area              |x and y                                      |
+|geom_bar               |x or y                                       |
+|geom_bin_2d            |x and y                                      |
+|geom_bin2d             |x and y                                      |
+|geom_blank             |NA                                           |
+|geom_boxplot           |x or y                                       |
+|geom_col               |x and y                                      |
+|geom_contour           |x, y, and z                                  |
+|geom_contour_filled    |x, y, and z                                  |
+|geom_count             |x and y                                      |
+|geom_crossbar          |x, y, ymin, and ymax or x, y, xmin, and xmax |
+|geom_curve             |x, y, xend, and yend                         |
+|geom_density           |x or y                                       |
+|geom_density_2d        |x and y                                      |
+|geom_density_2d_filled |x and y                                      |
+|geom_density2d         |x and y                                      |
+|geom_density2d_filled  |x and y                                      |
+|geom_dotplot           |x                                            |
+|geom_errorbar          |x, ymin, and ymax or y, xmin, and xmax       |
+|geom_errorbarh         |xmin, xmax, and y                            |
+|geom_freqpoly          |x or y                                       |
+|geom_function          |NA                                           |
+|geom_hex               |x and y                                      |
+|geom_histogram         |x or y                                       |
+|geom_hline             |yintercept                                   |
+|geom_jitter            |x and y                                      |
+|geom_label             |x, y, and label                              |
+|geom_line              |x and y                                      |
+|geom_linerange         |x, ymin, and ymax or y, xmin, and xmax       |
+|geom_map               |NA                                           |
+|geom_path              |x and y                                      |
+|geom_point             |x and y                                      |
+|geom_pointrange        |x, y, ymin, and ymax or x, y, xmin, and xmax |
+|geom_polygon           |x and y                                      |
+|geom_qq                |sample                                       |
+|geom_qq_line           |sample                                       |
+|geom_quantile          |x and y                                      |
+|geom_raster            |x and y                                      |
+|geom_rect              |xmin, xmax, ymin, and ymax                   |
+|geom_ribbon            |x, ymin, and ymax or y, xmin, and xmax       |
+|geom_rug               |NA                                           |
+|geom_segment           |x, y, xend, and yend                         |
+|geom_sf                |geometry                                     |
+|geom_sf_label          |geometry                                     |
+|geom_sf_text           |geometry                                     |
+|geom_smooth            |x and y                                      |
+|geom_spoke             |x, y, angle, and radius                      |
+|geom_step              |x and y                                      |
+|geom_text              |x, y, and label                              |
+|geom_tile              |x and y                                      |
+|geom_violin            |x and y                                      |
+|geom_vline             |xintercept                                   |
 
  

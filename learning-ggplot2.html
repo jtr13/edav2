@@ -484,7 +484,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="coordinate-system" class="section level3 hasAnchor" number="7.3.3">
 <h3><span class="header-section-number">7.3.3</span> <strong>Coordinate system</strong><a href="learning-ggplot2.html#coordinate-system" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one <code>coord</code></p>
+<p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one `coord``</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="learning-ggplot2.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
 <span id="cb66-2"><a href="learning-ggplot2.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="sc">+</span></span>
 <span id="cb66-3"><a href="learning-ggplot2.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>()</span></code></pre></div>
@@ -527,14 +527,228 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="required-aesthetic-mappings" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> Required aesthetic mappings<a href="learning-ggplot2.html#required-aesthetic-mappings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>geom_bar(x</code><em>or</em><code>y)</code>
-<code>geom_boxplot(x</code><em>or</em><code>y)</code>
-<code>geom_col(x, y)</code>
-<code>geom_density(x</code> <em>or</em> <code>y)</code>
-<code>geom_histogram(x</code> <em>or</em> <code>y)</code>
-<code>geom_line(x, y)</code>
-<code>geom_point(x, y)</code></p>
-<p><em>list in progress</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">GEOM</th>
+<th align="left">REQUIRED MAPPINGS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">geom_abline</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">geom_area</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_bar</td>
+<td align="left">x or y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_bin_2d</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_bin2d</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_blank</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_boxplot</td>
+<td align="left">x or y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_col</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_contour</td>
+<td align="left">x, y, and z</td>
+</tr>
+<tr class="even">
+<td align="left">geom_contour_filled</td>
+<td align="left">x, y, and z</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_count</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_crossbar</td>
+<td align="left">x, y, ymin, and ymax or x, y, xmin, and xmax</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_curve</td>
+<td align="left">x, y, xend, and yend</td>
+</tr>
+<tr class="even">
+<td align="left">geom_density</td>
+<td align="left">x or y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_density_2d</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_density_2d_filled</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_density2d</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_density2d_filled</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_dotplot</td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">geom_errorbar</td>
+<td align="left">x, ymin, and ymax or y, xmin, and xmax</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_errorbarh</td>
+<td align="left">xmin, xmax, and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_freqpoly</td>
+<td align="left">x or y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_function</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">geom_hex</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_histogram</td>
+<td align="left">x or y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_hline</td>
+<td align="left">yintercept</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_jitter</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_label</td>
+<td align="left">x, y, and label</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_line</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_linerange</td>
+<td align="left">x, ymin, and ymax or y, xmin, and xmax</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_map</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">geom_path</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_point</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_pointrange</td>
+<td align="left">x, y, ymin, and ymax or x, y, xmin, and xmax</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_polygon</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_qq</td>
+<td align="left">sample</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_qq_line</td>
+<td align="left">sample</td>
+</tr>
+<tr class="even">
+<td align="left">geom_quantile</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_raster</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_rect</td>
+<td align="left">xmin, xmax, ymin, and ymax</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_ribbon</td>
+<td align="left">x, ymin, and ymax or y, xmin, and xmax</td>
+</tr>
+<tr class="even">
+<td align="left">geom_rug</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_segment</td>
+<td align="left">x, y, xend, and yend</td>
+</tr>
+<tr class="even">
+<td align="left">geom_sf</td>
+<td align="left">geometry</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_sf_label</td>
+<td align="left">geometry</td>
+</tr>
+<tr class="even">
+<td align="left">geom_sf_text</td>
+<td align="left">geometry</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_smooth</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_spoke</td>
+<td align="left">x, y, angle, and radius</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_step</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_text</td>
+<td align="left">x, y, and label</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_tile</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="even">
+<td align="left">geom_violin</td>
+<td align="left">x and y</td>
+</tr>
+<tr class="odd">
+<td align="left">geom_vline</td>
+<td align="left">xintercept</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
