@@ -49,10 +49,10 @@ ggplot(cases, aes(x = Age)) +
 
 
 ```r
-counts3 <- cases %>%
-  group_by(Age, Favorite, Music) %>%
-  summarize(Freq = n()) %>%
-  ungroup() %>%
+counts3 <- cases |>
+  group_by(Age, Favorite, Music) |>
+  summarize(Freq = n()) |>
+  ungroup() |>
   complete(Age, Favorite, Music, fill = list(Freq = 0))
 
 ggplot(counts3, aes(x = Favorite, y = Freq, fill = Music)) +
@@ -72,9 +72,9 @@ We will use the following example to answer: Are older Americans more interested
 
 ```r
 local <- data.frame(Age = c("18-29", "30-49", "50-64", "65+"),
-                        Freq = c(2851, 9967, 11163, 10911)) %>%
+                        Freq = c(2851, 9967, 11163, 10911)) |>
   mutate(Followers = round(Freq*c(.15, .28, .38, .42)),
-         Nonfollowers = Freq - Followers) %>%
+         Nonfollowers = Freq - Followers) |>
   select(-Freq)
 knitr::kable(local[,1:2])
 ```
@@ -148,8 +148,8 @@ Mosaic plots are used for visualizing data from two or more qualitative variable
 library(grid)
 icecream <- read.csv("data/MusicIcecream.csv")
 icecreamcolors <- c("#ff99ff", "#cc9966") 
-counts2 <- icecream %>%
-  group_by(Age, Favorite) %>%
+counts2 <- icecream |>
+  group_by(Age, Favorite) |>
   summarize(Freq = sum(Freq))
 vcd::mosaic(~Age, direction = "v", counts2)
 ```
@@ -208,10 +208,10 @@ Spine plot is a mosaic plot with straight, parallel cuts in one dimension (“sp
 ```r
 library(vcdExtra)
 library(forcats)
-foodorder <- Alligator %>% group_by(food) %>% summarize(Freq = sum(count)) %>% 
-  arrange(Freq) %>% pull(food)
-ally <- Alligator %>% 
-  rename(Freq = count) %>% 
+foodorder <- Alligator |> group_by(food) |> summarize(Freq = sum(count)) |> 
+  arrange(Freq) |> pull(food)
+ally <- Alligator |> 
+  rename(Freq = count) |> 
   mutate(size = fct_relevel(size, "small"),
          food = factor(food, levels = foodorder),
          food = fct_relevel(food, "other"))
@@ -315,8 +315,8 @@ mydata <- Yamaguchi87
 mydata$Son <- factor(mydata$Son, levels = orderedclasses)
 mydata$Father <- factor(mydata$Father,
                         levels = orderedclasses)
-mydata3 <- mydata %>% group_by(Country, Father) %>% 
-  mutate(Total = sum(Freq)) %>% ungroup()
+mydata3 <- mydata |> group_by(Country, Father) |> 
+  mutate(Total = sum(Freq)) |> ungroup()
 ggplot(mydata3, aes(x = Father, y = Son)) +
   geom_tile(aes(fill = (Freq/Total)), color = "white") +
   coord_fixed() + 
