@@ -11,7 +11,7 @@ Welcome to the world of EDAV! As you have already known, we will mainly use R th
 
 
 
-1. [Install R](https://r4ds.had.co.nz/introduction.html#r){target="_blank"} (*r4ds*) -- You need to have this installed but you won't open the application since you'll be working in RStudio. If you already installed R, make sure you're current! The latest version of R (as of 2023-11-11) is R 4.3.2 "Eye Holes" released on 2023/10/31. (Use `> R.version` to check what you have.)
+1. [Install R](https://r4ds.had.co.nz/introduction.html#r){target="_blank"} (*r4ds*) -- You need to have this installed but you won't open the application since you'll be working in RStudio. If you already installed R, make sure you're current! The latest version of R (as of 2023-11-17) is R 4.3.2 "Eye Holes" released on 2023/10/31. (Use `> R.version` to check what you have.)
 
 2. [Install RStudio](https://r4ds.had.co.nz/introduction.html#rstudio){target="_blank"} (*r4ds*) -- Download the free, Desktop version for your OS. Working in this IDE will make working in R much more enjoyable. As with R, stay current. RStudio is constantly adding new features. The latest version (as of `2023-09-17`) is `2023.06.2+561`. (Click the **RStudio** menu, then "About RStudio" to see what version you have.)
 

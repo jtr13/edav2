@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2023-11-11" />
+<meta name="date" content="2023-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -253,17 +253,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#getting-started-1"><i class="fa fa-check"></i><b>7.1</b> <strong>Getting started</strong></a></li>
-<li class="chapter" data-level="7.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#default-part-layer"><i class="fa fa-check"></i><b>7.2</b> <strong>Default part: layer</strong></a></li>
-<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a>
+<li class="chapter" data-level="7.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#grammar-of-graphics"><i class="fa fa-check"></i><b>7.2</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#data-layers"><i class="fa fa-check"></i><b>7.3</b> Data layers</a></li>
+<li class="chapter" data-level="7.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.4</b> <strong>Customized parts</strong></a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment"><i class="fa fa-check"></i><b>7.3.1</b> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
-<li class="chapter" data-level="7.3.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#scale"><i class="fa fa-check"></i><b>7.3.2</b> <strong>Scale</strong></a></li>
-<li class="chapter" data-level="7.3.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#coordinate-system"><i class="fa fa-check"></i><b>7.3.3</b> <strong>Coordinate system</strong></a></li>
-<li class="chapter" data-level="7.3.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#faceting"><i class="fa fa-check"></i><b>7.3.4</b> <strong>Faceting</strong></a></li>
-<li class="chapter" data-level="7.3.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#labels"><i class="fa fa-check"></i><b>7.3.5</b> <strong>Labels</strong></a></li>
+<li class="chapter" data-level="7.4.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment"><i class="fa fa-check"></i><b>7.4.1</b> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
+<li class="chapter" data-level="7.4.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#scale"><i class="fa fa-check"></i><b>7.4.2</b> <strong>Scale</strong></a></li>
+<li class="chapter" data-level="7.4.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#coordinate-system"><i class="fa fa-check"></i><b>7.4.3</b> <strong>Coordinate system</strong></a></li>
+<li class="chapter" data-level="7.4.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#faceting"><i class="fa fa-check"></i><b>7.4.4</b> <strong>Faceting</strong></a></li>
+<li class="chapter" data-level="7.4.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#labels"><i class="fa fa-check"></i><b>7.4.5</b> <strong>Labels</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#resources-for-ggplot2"><i class="fa fa-check"></i><b>7.4</b> <strong>Resources for ggplot2</strong></a></li>
-<li class="chapter" data-level="7.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#required-aesthetic-mappings"><i class="fa fa-check"></i><b>7.5</b> Required aesthetic mappings</a></li>
+<li class="chapter" data-level="7.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#resources-for-ggplot2"><i class="fa fa-check"></i><b>7.5</b> <strong>Resources for ggplot2</strong></a></li>
+<li class="chapter" data-level="7.6" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#required-aesthetic-mappings"><i class="fa fa-check"></i><b>7.6</b> Required aesthetic mappings</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a>
 <ul>
@@ -435,48 +436,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="faceting-on-one-variable" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Faceting on one variable<a href="faceting-1.html#faceting-on-one-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Facet partitions a plot into a matrix of panels. Each panel shows a different subset of the data. By default, <code>facet_wrap</code> gives consistent scales, which is easier for comparison between different panels.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="faceting-1.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb69-2"><a href="faceting-1.html#cb69-2" aria-hidden="true" tabindex="-1"></a>mycol <span class="ot">=</span> <span class="st">&quot;#7192E3&quot;</span>  </span>
-<span id="cb69-3"><a href="faceting-1.html#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width)) <span class="sc">+</span>  </span>
-<span id="cb69-4"><a href="faceting-1.html#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> mycol) <span class="sc">+</span>  </span>
-<span id="cb69-5"><a href="faceting-1.html#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species) <span class="sc">+</span>  </span>
-<span id="cb69-6"><a href="faceting-1.html#cb69-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">18</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="faceting-1.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb72-2"><a href="faceting-1.html#cb72-2" aria-hidden="true" tabindex="-1"></a>mycol <span class="ot">=</span> <span class="st">&quot;#7192E3&quot;</span>  </span>
+<span id="cb72-3"><a href="faceting-1.html#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width)) <span class="sc">+</span>  </span>
+<span id="cb72-4"><a href="faceting-1.html#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> mycol) <span class="sc">+</span>  </span>
+<span id="cb72-5"><a href="faceting-1.html#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species) <span class="sc">+</span>  </span>
+<span id="cb72-6"><a href="faceting-1.html#cb72-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">18</span>)</span></code></pre></div>
 <p><img src="faceting_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Rather than faceting on factor level, we can have one panel for each numerical variable.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="faceting-1.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pgmm) </span>
-<span id="cb70-2"><a href="faceting-1.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb70-3"><a href="faceting-1.html#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb70-4"><a href="faceting-1.html#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(wine)  </span>
-<span id="cb70-5"><a href="faceting-1.html#cb70-5" aria-hidden="true" tabindex="-1"></a>tidywine <span class="ot">&lt;-</span> wine <span class="sc">%&gt;%</span> </span>
-<span id="cb70-6"><a href="faceting-1.html#cb70-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Type, <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>)  </span>
-<span id="cb70-7"><a href="faceting-1.html#cb70-7" aria-hidden="true" tabindex="-1"></a>tidywine <span class="sc">%&gt;%</span>  </span>
-<span id="cb70-8"><a href="faceting-1.html#cb70-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value)) <span class="sc">+</span>  </span>
-<span id="cb70-9"><a href="faceting-1.html#cb70-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span>  </span>
-<span id="cb70-10"><a href="faceting-1.html#cb70-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable) <span class="sc">+</span>   </span>
-<span id="cb70-11"><a href="faceting-1.html#cb70-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="sc">+</span>  </span>
-<span id="cb70-12"><a href="faceting-1.html#cb70-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="faceting-1.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pgmm) </span>
+<span id="cb73-2"><a href="faceting-1.html#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb73-3"><a href="faceting-1.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb73-4"><a href="faceting-1.html#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(wine)  </span>
+<span id="cb73-5"><a href="faceting-1.html#cb73-5" aria-hidden="true" tabindex="-1"></a>tidywine <span class="ot">&lt;-</span> wine <span class="sc">%&gt;%</span> </span>
+<span id="cb73-6"><a href="faceting-1.html#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Type, <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>)  </span>
+<span id="cb73-7"><a href="faceting-1.html#cb73-7" aria-hidden="true" tabindex="-1"></a>tidywine <span class="sc">%&gt;%</span>  </span>
+<span id="cb73-8"><a href="faceting-1.html#cb73-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value)) <span class="sc">+</span>  </span>
+<span id="cb73-9"><a href="faceting-1.html#cb73-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span>  </span>
+<span id="cb73-10"><a href="faceting-1.html#cb73-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable) <span class="sc">+</span>   </span>
+<span id="cb73-11"><a href="faceting-1.html#cb73-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="sc">+</span>  </span>
+<span id="cb73-12"><a href="faceting-1.html#cb73-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
 <p><img src="faceting_files/figure-html/unnamed-chunk-2-1.png" width="960" style="display: block; margin: auto;" /></p>
 <p>Axis scales can be made independent, by setting scales to <code>free</code>, <code>free_x</code>, or <code>free_y</code>.</p>
 <p>In this case, <code>scales = "free_x"</code> is a better option because the distribution of each numerical variable is more obvious.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="faceting-1.html#cb71-1" aria-hidden="true" tabindex="-1"></a>tidywine  <span class="sc">%&gt;%</span></span>
-<span id="cb71-2"><a href="faceting-1.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value)) <span class="sc">+</span></span>
-<span id="cb71-3"><a href="faceting-1.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb71-4"><a href="faceting-1.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable,<span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span></span>
-<span id="cb71-5"><a href="faceting-1.html#cb71-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="sc">+</span></span>
-<span id="cb71-6"><a href="faceting-1.html#cb71-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="faceting-1.html#cb74-1" aria-hidden="true" tabindex="-1"></a>tidywine  <span class="sc">%&gt;%</span></span>
+<span id="cb74-2"><a href="faceting-1.html#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value)) <span class="sc">+</span></span>
+<span id="cb74-3"><a href="faceting-1.html#cb74-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb74-4"><a href="faceting-1.html#cb74-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable,<span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb74-5"><a href="faceting-1.html#cb74-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Consistent scales&quot;</span>) <span class="sc">+</span></span>
+<span id="cb74-6"><a href="faceting-1.html#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
 <p><img src="faceting_files/figure-html/unnamed-chunk-3-1.png" width="960" style="display: block; margin: auto;" /></p>
 </div>
 <div id="faceting-on-two-variables" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Faceting on two variables<a href="faceting-1.html#faceting-on-two-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>facet_grid</code> can be used to split data-sets on two variables and plot them on the horizontal and/or vertical direction.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="faceting-1.html#cb72-1" aria-hidden="true" tabindex="-1"></a>wine <span class="sc">%&gt;%</span>   </span>
-<span id="cb72-2"><a href="faceting-1.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Type =</span> <span class="fu">paste</span>(<span class="st">&quot;Type&quot;</span>, Type)) <span class="sc">%&gt;%</span>   </span>
-<span id="cb72-3"><a href="faceting-1.html#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span>   </span>
-<span id="cb72-4"><a href="faceting-1.html#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Type, <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb72-5"><a href="faceting-1.html#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value)) <span class="sc">+</span>  </span>
-<span id="cb72-6"><a href="faceting-1.html#cb72-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> mycol, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span>  </span>
-<span id="cb72-7"><a href="faceting-1.html#cb72-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Type <span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span>  </span>
-<span id="cb72-8"><a href="faceting-1.html#cb72-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="faceting-1.html#cb75-1" aria-hidden="true" tabindex="-1"></a>wine <span class="sc">%&gt;%</span>   </span>
+<span id="cb75-2"><a href="faceting-1.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Type =</span> <span class="fu">paste</span>(<span class="st">&quot;Type&quot;</span>, Type)) <span class="sc">%&gt;%</span>   </span>
+<span id="cb75-3"><a href="faceting-1.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span>   </span>
+<span id="cb75-4"><a href="faceting-1.html#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Type, <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb75-5"><a href="faceting-1.html#cb75-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value)) <span class="sc">+</span>  </span>
+<span id="cb75-6"><a href="faceting-1.html#cb75-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> mycol, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span>  </span>
+<span id="cb75-7"><a href="faceting-1.html#cb75-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Type <span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span>  </span>
+<span id="cb75-8"><a href="faceting-1.html#cb75-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>(<span class="dv">14</span>)</span></code></pre></div>
 <p><img src="faceting_files/figure-html/unnamed-chunk-4-1.png" width="960" style="display: block; margin: auto;" /></p>
 
 </div>

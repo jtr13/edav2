@@ -55,7 +55,8 @@ deleting-a-branch-isnt-working
 other-resources
 learning-ggplot2
 getting-started-1
-default-part-layer
+grammar-of-graphics
+data-layers
 customized-parts
 geometric-object-statistical-transformation-and-position-adjustment
 scale

@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2023-11-11" />
+<meta name="date" content="2023-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -253,17 +253,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Learning ggplot2</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#getting-started-1"><i class="fa fa-check"></i><b>7.1</b> <strong>Getting started</strong></a></li>
-<li class="chapter" data-level="7.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#default-part-layer"><i class="fa fa-check"></i><b>7.2</b> <strong>Default part: layer</strong></a></li>
-<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.3</b> <strong>Customized parts</strong></a>
+<li class="chapter" data-level="7.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#grammar-of-graphics"><i class="fa fa-check"></i><b>7.2</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="7.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#data-layers"><i class="fa fa-check"></i><b>7.3</b> Data layers</a></li>
+<li class="chapter" data-level="7.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#customized-parts"><i class="fa fa-check"></i><b>7.4</b> <strong>Customized parts</strong></a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment"><i class="fa fa-check"></i><b>7.3.1</b> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
-<li class="chapter" data-level="7.3.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#scale"><i class="fa fa-check"></i><b>7.3.2</b> <strong>Scale</strong></a></li>
-<li class="chapter" data-level="7.3.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#coordinate-system"><i class="fa fa-check"></i><b>7.3.3</b> <strong>Coordinate system</strong></a></li>
-<li class="chapter" data-level="7.3.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#faceting"><i class="fa fa-check"></i><b>7.3.4</b> <strong>Faceting</strong></a></li>
-<li class="chapter" data-level="7.3.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#labels"><i class="fa fa-check"></i><b>7.3.5</b> <strong>Labels</strong></a></li>
+<li class="chapter" data-level="7.4.1" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment"><i class="fa fa-check"></i><b>7.4.1</b> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
+<li class="chapter" data-level="7.4.2" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#scale"><i class="fa fa-check"></i><b>7.4.2</b> <strong>Scale</strong></a></li>
+<li class="chapter" data-level="7.4.3" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#coordinate-system"><i class="fa fa-check"></i><b>7.4.3</b> <strong>Coordinate system</strong></a></li>
+<li class="chapter" data-level="7.4.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#faceting"><i class="fa fa-check"></i><b>7.4.4</b> <strong>Faceting</strong></a></li>
+<li class="chapter" data-level="7.4.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#labels"><i class="fa fa-check"></i><b>7.4.5</b> <strong>Labels</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#resources-for-ggplot2"><i class="fa fa-check"></i><b>7.4</b> <strong>Resources for ggplot2</strong></a></li>
-<li class="chapter" data-level="7.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#required-aesthetic-mappings"><i class="fa fa-check"></i><b>7.5</b> Required aesthetic mappings</a></li>
+<li class="chapter" data-level="7.5" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#resources-for-ggplot2"><i class="fa fa-check"></i><b>7.5</b> <strong>Resources for ggplot2</strong></a></li>
+<li class="chapter" data-level="7.6" data-path="learning-ggplot2.html"><a href="learning-ggplot2.html#required-aesthetic-mappings"><i class="fa fa-check"></i><b>7.6</b> Required aesthetic mappings</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="faceting-1.html"><a href="faceting-1.html"><i class="fa fa-check"></i><b>8</b> Faceting</a>
 <ul>
@@ -433,83 +434,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Learning ggplot2<a href="learning-ggplot2.html#learning-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="getting-started-1" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> <strong>Getting started</strong><a href="learning-ggplot2.html#getting-started-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: <code>ggplot2</code> with it’s basic grammar and functions. To start, install <code>ggplot2</code> in the console or in R chunk.</p>
-<pre><code>install.packages(&#39;ggplot2&#39;)</code></pre>
+<p>Make sure you have installed the <strong>tidyverse</strong> collection of packages with:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="learning-ggplot2.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>To use <strong>ggplot2</strong> you can either call the library with</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="learning-ggplot2.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>to load all <strong>tidyverse</strong> packages or:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="learning-ggplot2.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>for the <strong>ggplot2</strong> package only.</p>
 </div>
-<div id="default-part-layer" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> <strong>Default part: layer</strong><a href="learning-ggplot2.html#default-part-layer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For many R beginners, the question is always like: why is ggplot? One remarkable feature of <code>ggplot2</code> is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding <code>ggplot2</code> functions to meet your needs based on your data.</p>
-<p>By definition of the grammar of graphics, the most important features are data and mapping in the layers and that’s where we are getting started.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="learning-ggplot2.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb62-2"><a href="learning-ggplot2.html#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-3"><a href="learning-ggplot2.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co">#Data part</span></span>
-<span id="cb62-4"><a href="learning-ggplot2.html#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Sepal.Length, Sepal.Width))  <span class="co">#Mapping part</span></span></code></pre></div>
-<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div id="grammar-of-graphics" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Grammar of Graphics<a href="learning-ggplot2.html#grammar-of-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Unlike many graphics software packages, <strong>ggplot2</strong> has an underlying grammar which enables you to create graphs by combining different basic components or building blocks. Therefore you are not limited by a list of premade charts but can design your own unique graphics given your data and research goals.</p>
+<p>The underlying grammar is called the Grammar of Graphics based on <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448">a book by Leland Wilkinson</a> with the same title. (That is what the “gg” in <strong>ggplot2</strong> stands for.)</p>
+<p>As implemented in <strong>ggplot2</strong> the five basic components of graphs are 1) layers, 2) scales, 3) coordinate system, 4) faceting system, and 5) theme.</p>
+<p>The layers contain the data; everything else in a sense helps us to view and interpret the data. Plots contain one or more layers.</p>
+</div>
+<div id="data-layers" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Data layers<a href="learning-ggplot2.html#data-layers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="learning-ggplot2.html#cb64-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/layers.png&quot;</span>)</span></code></pre></div>
+<p><img src="images/layers.png" width="680" style="display: block; margin: auto;" /></p>
+<p>Data layers are made up of: 1) data, 2) a geom, 3) aesthetic mappings, 4) stat, and 5) position. The first three are required; the second two are optional and will rarely need to be changed from the default settings. So, let’s focus on data, geom and aesthetic mappings. Data refers simply to the data frame you are working with. Note that <strong>ggplot2</strong> requires a <code>data.frame</code> or <code>tibble</code>. You cannot plot with other data structures such as vectors, matrices, or lists.</p>
+<p>Geom stands for geometric object, which you can think of as the shape in which the data will appear in your graph. Common geoms are point,
+bar, boxplot, line, histogram, and density. Each geom has a certain number of required pieces of information. For example, to draw a point, you need two pieces of information, an x and a y. These pieces of information are called aesthetic mappings. Let’s say we want to create a scatterplot. We start by recognizing that our graph will contain points so the geom we need is <code>geom_point()</code>. Next we have to</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="learning-ggplot2.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb65-2"><a href="learning-ggplot2.html#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="learning-ggplot2.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co">#Data part</span></span>
+<span id="cb65-4"><a href="learning-ggplot2.html#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width))  <span class="co">#Mapping part</span></span></code></pre></div>
+<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>The most important part of all plots is data, which includes the information you want to visualize. Based on that, the next step is to decide its mapping, which determine how the data’s variable are mapped to aesthetic attributes on a graphic. Since data is independent from the other elements, you can always add several layers of data into the same ggplot while keeping the other components the same.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="learning-ggplot2.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co">#Data part</span></span>
-<span id="cb63-2"><a href="learning-ggplot2.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Petal.Length, Petal.Width)) <span class="sc">+</span>  <span class="co">#layer 1 with mapping </span></span>
-<span id="cb63-3"><a href="learning-ggplot2.html#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Sepal.Length, Sepal.Width), <span class="at">color=</span><span class="st">&#39;red&#39;</span>)  <span class="co">#layer 2 with a different mapping</span></span></code></pre></div>
-<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="learning-ggplot2.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co">#Data part</span></span>
+<span id="cb66-2"><a href="learning-ggplot2.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Petal.Length, Petal.Width)) <span class="sc">+</span>  <span class="co">#layer 1 with mapping </span></span>
+<span id="cb66-3"><a href="learning-ggplot2.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Sepal.Length, Sepal.Width), <span class="at">color=</span><span class="st">&#39;red&#39;</span>)  <span class="co">#layer 2 with a different mapping</span></span></code></pre></div>
+<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="customized-parts" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> <strong>Customized parts</strong><a href="learning-ggplot2.html#customized-parts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="customized-parts" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> <strong>Customized parts</strong><a href="learning-ggplot2.html#customized-parts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The following picture shows the order of ggplot functions:</p>
 <center>
 <img src="images/codingOrder.png" style="width:60.0%" />
 </center>
-<p>For more function order suggestions and auto-correction when writing your own <code>ggplot2</code> functions, please refer to <a href="https://github.com/jtr13/ggformat">ggformat</a> addin created by Joyce.</p>
-<div id="geometric-object-statistical-transformation-and-position-adjustment" class="section level3 hasAnchor" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> <strong>Geometric object, statistical transformation and position adjustment</strong><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<center>
-<img src="images/layers.png" />
-</center>
-<p>Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.</p>
-<p>Geometric objects <code>geoms</code> control the type of plot you create. Different types of plot have different aesthetics features. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
+<p>For more function order suggestions and auto-correction when writing your own <strong>ggplot2</strong> functions, please refer to <a href="https://github.com/jtr13/ggformat">ggformat</a> addin created by Joyce.</p>
+<div id="geometric-object-statistical-transformation-and-position-adjustment" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> <strong>Geometric object, statistical transformation and position adjustment</strong><a href="learning-ggplot2.html#geometric-object-statistical-transformation-and-position-adjustment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Geometric object, statistical transformation and position adjustment are components that can be customized in each layer.</p>
+<p>Geometric objects, called <code>geoms</code>, control graphical elements representing the data–think shapes. Different types of plot have different aesthetics features. For example, a point <code>geom</code> has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
 <p>A statistical transformation <code>stat</code> transforms the data. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="learning-ggplot2.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb64-2"><a href="learning-ggplot2.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>)</span></code></pre></div>
-<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="learning-ggplot2.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
+<span id="cb67-2"><a href="learning-ggplot2.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>)</span></code></pre></div>
+<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
-<div id="scale" class="section level3 hasAnchor" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> <strong>Scale</strong><a href="learning-ggplot2.html#scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="scale" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> <strong>Scale</strong><a href="learning-ggplot2.html#scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <center>
 <img src="images/scale.png" style="width:50.0%" />
 </center>
 <p>A scale controls how data is mapped to aesthetic attributes, so one scale for one layer.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="learning-ggplot2.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb65-2"><a href="learning-ggplot2.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="sc">+</span></span>
-<span id="cb65-3"><a href="learning-ggplot2.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb65-4"><a href="learning-ggplot2.html#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))</span></code></pre></div>
-<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="460.8" style="display: block; margin: auto;" /></p>
-</div>
-<div id="coordinate-system" class="section level3 hasAnchor" number="7.3.3">
-<h3><span class="header-section-number">7.3.3</span> <strong>Coordinate system</strong><a href="learning-ggplot2.html#coordinate-system" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one `coord``</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="learning-ggplot2.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb66-2"><a href="learning-ggplot2.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="sc">+</span></span>
-<span id="cb66-3"><a href="learning-ggplot2.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>()</span></code></pre></div>
-<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="460.8" style="display: block; margin: auto;" /></p>
-</div>
-<div id="faceting" class="section level3 hasAnchor" number="7.3.4">
-<h3><span class="header-section-number">7.3.4</span> <strong>Faceting</strong><a href="learning-ggplot2.html#faceting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Faceting can be used to split the data up into subsets of the entire dataset.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="learning-ggplot2.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb67-2"><a href="learning-ggplot2.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>) <span class="sc">+</span></span>
-<span id="cb67-3"><a href="learning-ggplot2.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(iris<span class="sc">$</span>Species)</span></code></pre></div>
-<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="460.8" style="display: block; margin: auto;" /></p>
-</div>
-<div id="labels" class="section level3 hasAnchor" number="7.3.5">
-<h3><span class="header-section-number">7.3.5</span> <strong>Labels</strong><a href="learning-ggplot2.html#labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers’ of the background knowledge of your data.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="learning-ggplot2.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
 <span id="cb68-2"><a href="learning-ggplot2.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="sc">+</span></span>
-<span id="cb68-3"><a href="learning-ggplot2.html#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Stacked petal length of different species&#39;</span>) <span class="sc">+</span></span>
-<span id="cb68-4"><a href="learning-ggplot2.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Length of Petal&#39;</span>)</span></code></pre></div>
-<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+<span id="cb68-3"><a href="learning-ggplot2.html#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb68-4"><a href="learning-ggplot2.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))</span></code></pre></div>
+<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-8-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+</div>
+<div id="coordinate-system" class="section level3 hasAnchor" number="7.4.3">
+<h3><span class="header-section-number">7.4.3</span> <strong>Coordinate system</strong><a href="learning-ggplot2.html#coordinate-system" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one `coord``</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="learning-ggplot2.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
+<span id="cb69-2"><a href="learning-ggplot2.html#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="sc">+</span></span>
+<span id="cb69-3"><a href="learning-ggplot2.html#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>()</span></code></pre></div>
+<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+</div>
+<div id="faceting" class="section level3 hasAnchor" number="7.4.4">
+<h3><span class="header-section-number">7.4.4</span> <strong>Faceting</strong><a href="learning-ggplot2.html#faceting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Faceting can be used to split the data up into subsets of the entire dataset.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="learning-ggplot2.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
+<span id="cb70-2"><a href="learning-ggplot2.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>) <span class="sc">+</span></span>
+<span id="cb70-3"><a href="learning-ggplot2.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(iris<span class="sc">$</span>Species)</span></code></pre></div>
+<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-10-1.png" width="460.8" style="display: block; margin: auto;" /></p>
+</div>
+<div id="labels" class="section level3 hasAnchor" number="7.4.5">
+<h3><span class="header-section-number">7.4.5</span> <strong>Labels</strong><a href="learning-ggplot2.html#labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers’ of the background knowledge of your data.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="learning-ggplot2.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
+<span id="cb71-2"><a href="learning-ggplot2.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">&#39;bin&#39;</span>,<span class="at">position =</span> <span class="st">&#39;stack&#39;</span>) <span class="sc">+</span></span>
+<span id="cb71-3"><a href="learning-ggplot2.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Stacked petal length of different species&#39;</span>) <span class="sc">+</span></span>
+<span id="cb71-4"><a href="learning-ggplot2.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Length of Petal&#39;</span>)</span></code></pre></div>
+<p><img src="learning_ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="460.8" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="resources-for-ggplot2" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> <strong>Resources for ggplot2</strong><a href="learning-ggplot2.html#resources-for-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="resources-for-ggplot2" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> <strong>Resources for ggplot2</strong><a href="learning-ggplot2.html#resources-for-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>For more implementations and examples, one easiest way is referring to the ggplot2 Cheatsheets provided by R. Follow the steps shown below and you can find the cheat-sheets in your RStudio.</li>
 </ul>
@@ -525,8 +538,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><a href="https://github.com/jtr13/ggformat">ggformat</a></p></li>
 </ol>
 </div>
-<div id="required-aesthetic-mappings" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Required aesthetic mappings<a href="learning-ggplot2.html#required-aesthetic-mappings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="required-aesthetic-mappings" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Required aesthetic mappings<a href="learning-ggplot2.html#required-aesthetic-mappings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
 <thead>
 <tr class="header">
