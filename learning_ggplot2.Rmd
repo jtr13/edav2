@@ -4,24 +4,53 @@
 
 ## **Getting started**
 
-Hopefully, most of you already have experiences in plotting basic R graphics. In this Chapter, you will be briefly introduced one of the most powerful plotting packages in R: `ggplot2` with it's basic grammar and functions. To start, install `ggplot2` in the console or in R chunk.
+Make sure you have installed the **tidyverse** collection of packages with:
 
+```{r, eval=FALSE}
+install.packages("tidyverse")
 ```
-install.packages('ggplot2')
+
+To use **ggplot2** you can either call the library with
+
+```{r, eval = FALSE}
+library(tidyverse)
 ```
 
+to load all **tidyverse** packages or:
 
-## **Default part: layer**
+```{r, eval = FALSE}
+library(ggplot2)
+```
 
-For many R beginners, the question is always like: why is ggplot? One remarkable feature of `ggplot2` is having an underlying grammar which enables you to compose graphs by combining different components. You can easily create novel graphics by adding `ggplot2` functions to meet your needs based on your data. 
+for the **ggplot2** package only.
 
-By definition of the grammar of graphics, the most important features are data and mapping in the layers and that's where we are getting started.
+## Grammar of Graphics
+
+Unlike many graphics software packages, **ggplot2** has an underlying grammar which enables you to create graphs by combining different basic components or building blocks. Therefore you are not limited by a list of premade charts but can design your own unique graphics given your data and research goals.
+
+The underlying grammar is called the Grammar of Graphics based on [a book by Leland Wilkinson](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448) with the same title. (That is what the "gg" in **ggplot2** stands for.)
+
+As implemented in **ggplot2** the five basic components of graphs are 1) layers, 2) scales, 3) coordinate system, 4) faceting system, and 5) theme.
+
+The layers contain the data; everything else in a sense helps us to view and interpret the data. Plots contain one or more layers.
+
+## Data layers
+
+```{r, fig.align='center'}
+knitr::include_graphics("images/layers.png")
+```
+
+Data layers are made up of: 1) data, 2) a geom, 3) aesthetic mappings, 4) stat, and 5) position. The first three are required; the second two are optional and will rarely need to be changed from the default settings. So, let's focus on data, geom and aesthetic mappings. Data refers simply to the data frame you are working with. Note that **ggplot2** requires a `data.frame` or `tibble`. You cannot plot with other data structures such as vectors, matrices, or lists.
+
+Geom stands for geometric object, which you can think of as the shape in which the data will appear in your graph. Common geoms are point, 
+bar, boxplot, line, histogram, and density. Each geom has a certain number of required pieces of information. For example, to draw a point, you need two pieces of information, an x and a y. These pieces of information are called aesthetic mappings. Let's say we want to create a scatterplot. We start by recognizing that our graph will contain points so the geom we need is `geom_point()`. Next we have to 
+
 
 ```{r,fig.width=4, fig.height=3}
 library(ggplot2)
 
 ggplot(data = iris) +  #Data part
-  geom_point(aes(Sepal.Length, Sepal.Width))  #Mapping part
+  geom_point(aes(x = Sepal.Length, y = Sepal.Width))  #Mapping part
 ```
 
 The most important part of all plots is data, which includes the information you want to visualize. Based on that, the next step is to decide its mapping, which determine how the data's variable are mapped to aesthetic attributes on a graphic. Since data is independent from the other elements, you can always add several layers of data into the same ggplot while keeping the other components the same.
@@ -42,18 +71,14 @@ The following picture shows the order of ggplot functions:
 ![](images/codingOrder.png){width=60%}
 </center>
 
-For more function order suggestions and auto-correction when writing your own `ggplot2` functions, please refer to [ggformat](https://github.com/jtr13/ggformat) addin created by Joyce.
+For more function order suggestions and auto-correction when writing your own **ggplot2** functions, please refer to [ggformat](https://github.com/jtr13/ggformat) addin created by Joyce.
 
 
 ### **Geometric object, statistical transformation and position adjustment**
 
-<center>
-![](images/layers.png)
-</center>
+Geometric object, statistical transformation and position adjustment are components that can be customized in each layer.
 
-Geometric object, Statistical transformation and Position adjustment are components that can be customized in each layer.
-
-Geometric objects `geoms` control the type of plot you create. Different types of plot have different aesthetics features. For example, a point geom has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing `geoms` and use `help` function to check what aesthetics can be modified to achieve your desired effects.
+Geometric objects, called `geoms`, control graphical elements representing the data--think shapes. Different types of plot have different aesthetics features. For example, a point `geom` has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing `geoms` and use `help` function to check what aesthetics can be modified to achieve your desired effects.
 
 A statistical transformation `stat` transforms the data. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.
 
