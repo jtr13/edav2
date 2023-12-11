@@ -12,9 +12,9 @@ We will start with an easy example.
 library(ggplot2)
 library(gridExtra)
 
-#Example data
+# Example data
 x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
-#Stored as a dataframe
+# Stored as a dataframe
 df <- data.frame(x)
 
 ggplot(df, aes(x)) +
@@ -39,7 +39,7 @@ finches <- Sleuth3::case0201
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5,boundary = 6) +
+  geom_histogram(color = "blue", fill = "lightblue", binwidth = 0.5, boundary = 6) +
   ggtitle("Frequency histogram")
 ```
 
@@ -47,7 +47,7 @@ ggplot(finches, aes(x = Depth)) +
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(aes(y = cumsum(after_stat(count))), color="blue", fill="lightblue", binwidth = 0.5, boundary = 6) +
+  geom_histogram(aes(y = cumsum(after_stat(count))), color = "blue", fill = "lightblue", binwidth = 0.5, boundary = 6) +
   ggtitle("Cumulative frequency histogram") +
   xlab("Cumulative frequency")
 ```
@@ -69,13 +69,17 @@ Be mindful of the boundaries of the bins and whether a point will fall into the 
 
 ```{r,fig.width=8, fig.height=3.6}
 p1 <- ggplot(df, aes(x)) +
-  geom_histogram(color = "blue", fill = "lightblue", 
-                 binwidth = 5, center = 52.5, closed = "left")  +
+  geom_histogram(
+    color = "blue", fill = "lightblue",
+    binwidth = 5, center = 52.5, closed = "left"
+  ) +
   ggtitle("Left closed graph")
 
 p2 <- ggplot(df, aes(x)) +
-  geom_histogram(color = "blue", fill = "lightblue", 
-                 binwidth = 5, center = 52.5, closed="right")  +
+  geom_histogram(
+    color = "blue", fill = "lightblue",
+    binwidth = 5, center = 52.5, closed = "right"
+  ) +
   ggtitle("Right closed graph")
 
 grid.arrange(p1, p2, ncol = 2)
@@ -85,7 +89,7 @@ grid.arrange(p1, p2, ncol = 2)
 #### Bin numbers
 
 ```{r,fig.width=4.8, fig.height=3.6}
-#Default / Only adding some styles to make graph consistent
+# Default / Only adding some styles to make graph consistent
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(color = "blue", fill = "lightblue") +
   ggtitle("Default with pop-up about bin number")
@@ -102,7 +106,7 @@ p3 <- ggplot(finches, aes(x = Depth)) +
 
 # using bins
 p4 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue", fill = "lightblue", bins = 15, boundary = 6) +
+  geom_histogram(color = "blue", fill = "lightblue", bins = 15, boundary = 6) +
   ggtitle("Changed bin value")
 
 # format plot layout
@@ -158,7 +162,7 @@ Next, what if you want to compare the distributions between multiple classes? He
 The following example still use the ``chickwts`` dataset. We compare the distributions of ``weight`` between different ``feed``(which is a column with six factor levels).
 
 ```{r,fig.width=6, fig.height=4.5}
-ggplot(chickwts, aes(x = reorder(feed, -weight, median),y = weight)) +
+ggplot(chickwts, aes(x = reorder(feed, -weight, median), y = weight)) +
   geom_boxplot() +
   ggtitle("Multiple boxplots of chicken weights according to feed type") +
   labs(y = "Weight", x = "Feed Type")
@@ -169,7 +173,7 @@ ggplot(chickwts, aes(x = reorder(feed, -weight, median),y = weight)) +
 Often you want boxplots to be horizontal. Super easy to do in ``ggplot2``: just tack on ``+ coord_flip()`` and remove the ``-`` from the reordering so that the factor level with the highest median will be on top:
 
 ```{r,fig.width=6, fig.height=4.5}
-ggplot(chickwts, aes(x = reorder(feed, weight, median),y = weight)) +
+ggplot(chickwts, aes(x = reorder(feed, weight, median), y = weight)) +
   geom_boxplot() +
   coord_flip() +
   ggtitle("Multiple boxplots of chicken weights according to feed type") +
@@ -203,11 +207,10 @@ library(forcats)
 
 world <- read.csv("countries2012.csv")
 
-ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP, median))) +
   geom_density_ridges(fill = "blue") +
   ggtitle("2012 continental GDP") +
   ylab("Continent")
-
 ```
 
 `ggridge` uses two main geoms to plot the ridgeline density plots: `geom_density_ridges` and `geom_ridgeline`. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.
@@ -215,8 +218,8 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
 ### Create better visuals
 
 ```{r,fig.width=4.8, fig.height=3.6}
-ggplot(world, aes(x = GDP, y = reorder(CONTINENT, GDP,median))) +
-  geom_density_ridges(fill = "blue",alpha = .5, scale = 1.2) +
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, GDP, median))) +
+  geom_density_ridges(fill = "blue", alpha = .5, scale = 1.2) +
   ggtitle("2012 continental GDP") +
   ylab("Continent")
 ```
@@ -255,3 +258,17 @@ In some situations you might want to draw separate normal curves after faceting 
 
 As first glance, a normal curve appears in all of the plots. However, if you look closely, all the normal curves are actually the same one and generated on the whole dataset. In such situation, we suggest drawing each graph separately and combine them.
 
+
+<br>
+
+## Quantile-Quantile plots
+
+A Q-Q plot (Quantile-Quantile plot) is used to visually assess whether a dataset follows a specific distribution. Let's create an example using a Q-Q plot to check if a dataset follows a normal distribution.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles")
+```
