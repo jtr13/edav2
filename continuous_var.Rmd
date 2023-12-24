@@ -293,7 +293,7 @@ x = (# of data points smaller than the chosen data point) / (size of dataset - 1
 
 To plot a good Q-Q plot of some sorted data, we follow a very systematic process.
 1. Calculate the quantile % for each of our sorted datapoint. Ex: The first data point would be 0% Quantile regardless of size of our data.
-2. Find all the x% quantile of a normal distribution that were observed in our sorted data. (Generally, we use normal data with 0 as median and 1 as standard deviation, also known as Z-distribution)
+2. Find all the x% quantile (we computed x for each point in step 1) of a normal distribution that were observed in our sorted data. (Generally, we use normal data with 0 as median and 1 as standard deviation, also known as Z-distribution)
 3. Plot the theoretical quantiles vs our data point quantiles.
 4. Draw a `y = x` line suggesting a hypothetical scenario where our data is normal and so we would observe the same quantiles.
 
@@ -317,3 +317,88 @@ ggplot(qq_data, aes(x = Theoretical, y = Data)) +
   labs(x = "Theoretical Quantiles", y = "Sorted Data Quantiles", title = "Q-Q Plot")
 ```
 
+### Types of Q-Q plots
+
+Now that we understand what was actually happening in a Q-Q plot, we can take a look at commonly observed Q-Q plots.
+
+#### Normally Distributed
+
+We can say our data is normally distributed if it follows the `y = x` line.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles") +
+  coord_fixed()
+```
+
+#### Right Skew
+
+Using our intuition, a right skewed data would mean we have outliers to end of our data. Implying we would observe deviations towards the end of distribution. Now if we remember how we plotted the quantiles, we know that the ourliers (the big values) would be given an x% quantile in the normal distribution which would be less than the outlier. Suggesting `y > x`. Hence we would observe data points to the left of normal line towards the end of the distribution in the Q-Q plot.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+max_val <- max(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(50, mean = max_val + 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles") +
+  coord_fixed()
+```
+
+
+#### Left Skew
+
+Using our intuition, a left skewed data would mean we have outliers at the beginning of our data. Implying the quantiles we observe at the beginning are smaller than same quantile points for normal distribution. Suggesting `y < x`. Hence we would observe data points to the right of the normal line at the start of the distribution in the Q-Q plot.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+min_val <- min(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(50, mean = min_val - 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles") +
+  coord_fixed()
+```
+
+
+#### Fat Tails
+
+This plot essentially means we have outliers on both sides.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+max_val <- max(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(25, mean = max_val + 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+min_val <- min(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(25, mean = min_val - 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles") +
+  coord_fixed()
+```
+
+What's so fascinating about this comparison is it describes t-distribution quantiles vs normal quantiles. This comparision has great significance in inferential statistics.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rt(1000, df = 3))
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Normal Quantiles", y = "t-distribution Quantiles") +
+  coord_fixed()
+```
