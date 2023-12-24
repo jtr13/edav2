@@ -12,9 +12,9 @@ We will start with an easy example.
 library(ggplot2)
 library(gridExtra)
 
-#Example data
+# Example data
 x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
-#Stored as a dataframe
+# Stored as a dataframe
 df <- data.frame(x)
 
 ggplot(df, aes(x)) +
@@ -39,7 +39,7 @@ finches <- Sleuth3::case0201
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue",fill="lightblue",binwidth = 0.5,boundary = 6) +
+  geom_histogram(color = "blue", fill = "lightblue", binwidth = 0.5, boundary = 6) +
   ggtitle("Frequency histogram")
 ```
 
@@ -47,7 +47,7 @@ ggplot(finches, aes(x = Depth)) +
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(finches, aes(x = Depth)) +
-  geom_histogram(aes(y = cumsum(after_stat(count))), color="blue", fill="lightblue", binwidth = 0.5, boundary = 6) +
+  geom_histogram(aes(y = cumsum(after_stat(count))), color = "blue", fill = "lightblue", binwidth = 0.5, boundary = 6) +
   ggtitle("Cumulative frequency histogram") +
   xlab("Cumulative frequency")
 ```
@@ -69,13 +69,17 @@ Be mindful of the boundaries of the bins and whether a point will fall into the 
 
 ```{r,fig.width=8, fig.height=3.6}
 p1 <- ggplot(df, aes(x)) +
-  geom_histogram(color = "blue", fill = "lightblue", 
-                 binwidth = 5, center = 52.5, closed = "left")  +
+  geom_histogram(
+    color = "blue", fill = "lightblue",
+    binwidth = 5, center = 52.5, closed = "left"
+  ) +
   ggtitle("Left closed graph")
 
 p2 <- ggplot(df, aes(x)) +
-  geom_histogram(color = "blue", fill = "lightblue", 
-                 binwidth = 5, center = 52.5, closed="right")  +
+  geom_histogram(
+    color = "blue", fill = "lightblue",
+    binwidth = 5, center = 52.5, closed = "right"
+  ) +
   ggtitle("Right closed graph")
 
 grid.arrange(p1, p2, ncol = 2)
@@ -85,7 +89,7 @@ grid.arrange(p1, p2, ncol = 2)
 #### Bin numbers
 
 ```{r,fig.width=4.8, fig.height=3.6}
-#Default / Only adding some styles to make graph consistent
+# Default / Only adding some styles to make graph consistent
 ggplot(finches, aes(x = Depth)) +
   geom_histogram(color = "blue", fill = "lightblue") +
   ggtitle("Default with pop-up about bin number")
@@ -102,7 +106,7 @@ p3 <- ggplot(finches, aes(x = Depth)) +
 
 # using bins
 p4 <- ggplot(finches, aes(x = Depth)) +
-  geom_histogram(color="blue", fill = "lightblue", bins = 15, boundary = 6) +
+  geom_histogram(color = "blue", fill = "lightblue", bins = 15, boundary = 6) +
   ggtitle("Changed bin value")
 
 # format plot layout
@@ -158,7 +162,7 @@ Next, what if you want to compare the distributions between multiple classes? He
 The following example still use the ``chickwts`` dataset. We compare the distributions of ``weight`` between different ``feed``(which is a column with six factor levels).
 
 ```{r,fig.width=6, fig.height=4.5}
-ggplot(chickwts, aes(x = reorder(feed, -weight, median),y = weight)) +
+ggplot(chickwts, aes(x = reorder(feed, -weight, median), y = weight)) +
   geom_boxplot() +
   ggtitle("Multiple boxplots of chicken weights according to feed type") +
   labs(y = "Weight", x = "Feed Type")
@@ -169,7 +173,7 @@ ggplot(chickwts, aes(x = reorder(feed, -weight, median),y = weight)) +
 Often you want boxplots to be horizontal. Super easy to do in ``ggplot2``: just tack on ``+ coord_flip()`` and remove the ``-`` from the reordering so that the factor level with the highest median will be on top:
 
 ```{r,fig.width=6, fig.height=4.5}
-ggplot(chickwts, aes(x = reorder(feed, weight, median),y = weight)) +
+ggplot(chickwts, aes(x = reorder(feed, weight, median), y = weight)) +
   geom_boxplot() +
   coord_flip() +
   ggtitle("Multiple boxplots of chicken weights according to feed type") +
@@ -203,11 +207,10 @@ library(forcats)
 
 world <- read.csv("countries2012.csv")
 
-ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP, median))) +
   geom_density_ridges(fill = "blue") +
   ggtitle("2012 continental GDP") +
   ylab("Continent")
-
 ```
 
 `ggridge` uses two main geoms to plot the ridgeline density plots: `geom_density_ridges` and `geom_ridgeline`. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.
@@ -215,8 +218,8 @@ ggplot(world, aes(x = GDP, y = reorder(CONTINENT, -GDP,median))) +
 ### Create better visuals
 
 ```{r,fig.width=4.8, fig.height=3.6}
-ggplot(world, aes(x = GDP, y = reorder(CONTINENT, GDP,median))) +
-  geom_density_ridges(fill = "blue",alpha = .5, scale = 1.2) +
+ggplot(world, aes(x = GDP, y = reorder(CONTINENT, GDP, median))) +
+  geom_density_ridges(fill = "blue", alpha = .5, scale = 1.2) +
   ggtitle("2012 continental GDP") +
   ylab("Continent")
 ```
@@ -255,3 +258,145 @@ In some situations you might want to draw separate normal curves after faceting 
 
 As first glance, a normal curve appears in all of the plots. However, if you look closely, all the normal curves are actually the same one and generated on the whole dataset. In such situation, we suggest drawing each graph separately and combine them.
 
+
+<br>
+
+## Quantile-Quantile plots
+
+A Q-Q plot (Quantile-Quantile plot) is used to visually assess whether a dataset follows a specific distribution. Let's create an example Q-Q plot to check if a dataset follows a normal distribution.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles")
+```
+
+Compared to a normal curve, we can better distinguish the strictness of normality here as we are comparing the distribution to a straight line.
+
+### Intuition for Q-Q plots
+
+The name describes the nature of the plot. We create a scatter plot of quantiles of one univariate data __vs__ the quantiles of another. Since statistical analysis involves comparing a distribution to known and researched distribution, the x axis quantiles is often a theoretical normal or a theoretical t-distribution. In this course, we use normal distribution to compare our data.
+
+**Quantile** is a data point that splits the sorted data sample into a proportion. In descriptive statistics we use Quartiles, which in actuality are themselves Quantiles:
+
+- 1st Quartile == 0.25 Quantile == 25% Quantile
+- 2nd Quartile == 0.50 Quantile == 50% Quantile (Median)
+- 3rd Quartile == 0.75 Quantile == 75% Quantile
+
+General Formula for x% Quantile given sorted data:
+```
+x = (# of data points smaller than the chosen data point) / (size of dataset - 1)
+```
+
+To plot a good Q-Q plot of some sorted data, we follow a very systematic process.
+
+1. Calculate the quantile % for each of our sorted datapoint. Ex: The first data point would be 0% Quantile regardless of the size of our data.
+2. Find all the x% quantile (we computed x for each point in step 1) of a normal distribution that were observed in our sorted data. (Generally, we use normal data with 0 as median and 1 as standard deviation, also known as Z-distribution)
+3. Plot the theoretical quantiles vs our data point quantiles.
+4. Draw a `y = x` line suggesting a hypothetical scenario where our data is normal and so we would observe the same quantiles on both axes.
+
+```{r,fig.width=4.8, fig.height=3.6}
+# Sample sorted data
+sorted_data <- sort(rnorm(1000))
+
+# Step 1: Calculate the quantile % for each sorted data point
+n <- length(sorted_data)
+quantiles <- seq(0, 1, length.out = n)
+
+# Step 2: Find quantiles of a normal distribution
+theoretical_quantiles <- qnorm(quantiles)
+
+qq_data <- data.frame(Theoretical = theoretical_quantiles, Data = sorted_data)
+
+# Step 3 & 4: Create Scatter plot of your quantiles
+ggplot(qq_data, aes(x = Theoretical, y = Data)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+  labs(x = "Theoretical Quantiles", y = "Sorted Data Quantiles", title = "Q-Q Plot")
+```
+
+Note that we transpose our sorted data around 0 to standardize Q-Q plot axes.
+
+### Types of Q-Q plots
+
+Now that we understand what was actually happening in a Q-Q plot, we can take a look at commonly observed Q-Q plots.
+
+#### Normally Distributed
+
+We can say our data is normally distributed if it follows the `y = x` line.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles")
+```
+
+#### Right Skew
+
+Using our intuition, a right skewed data would mean we have outliers (very large values compared to median) to end of our data. Implying we would observe deviations towards the end of distribution. Now if we remember how we plotted the quantiles, we know that the outliers (the big values) would be given an x% quantile in the normal distribution which would be less than the outlier. Suggesting `y > x`. Hence we would observe data points above the normal line towards the end of the distribution in the Q-Q plot.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+max_val <- max(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(50, mean = max_val + 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles")
+```
+
+
+#### Left Skew
+
+Using our intuition, a left skewed data would mean we have outliers (very small values compared to median) at the beginning of our data. Implying the quantiles we observe at the beginning are smaller than same quantile points for normal distribution. Suggesting `y < x`. Hence we would observe data points below the normal line at the start of the distribution in the Q-Q plot.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+min_val <- min(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(50, mean = min_val - 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles")
+```
+
+
+#### Fat Tails
+
+This plot essentially means we have outliers on both sides.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(1000))
+max_val <- max(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(25, mean = max_val + 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+min_val <- min(sample_data$Values)
+additional_values <- data.frame(Values = rnorm(25, mean = min_val - 1, sd = 1))
+sample_data <- rbind(sample_data, additional_values)
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles")
+```
+
+What's so fascinating about this comparison is it describes t-distribution quantiles vs normal quantiles. This comparision has great significance in inferential statistics.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rt(1000, df = 3))
+
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Normal Quantiles", y = "t-distribution Quantiles")
+```
