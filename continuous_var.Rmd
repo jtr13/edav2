@@ -279,20 +279,41 @@ Compared to a normal curve, we can better distinguish the strictness of normalit
 
 ### Intuition for Q-Q plots
 
-The name describes the nature of the plot. We create a scatter plot of quantiles of one univariate data __vs__ the quantiles of another. Since statistical analysis involves comparing a distribution to known and researched distributions, the x axis quantiles is often a theoretical normal or a theoretical t-distribution. In this course, we use normal distribution to compare our data.
+The name describes the nature of the plot. We create a scatter plot of quantiles of one univariate data __vs__ the quantiles of another. Since statistical analysis involves comparing a distribution to known and researched distribution, the x axis quantiles is often a theoretical normal or a theoretical t-distribution. In this course, we use normal distribution to compare our data.
 
-**Quantile** is a data point that splits the data into equal parts. In descriptive statistics we use:
-- First Quartile == 25th percentile
-- Second Quantile == 50th percentile (Median)
-- Third Quartile == 75th percentile
+**Quantile** is a data point that splits the sorted data sample into a proportion. In descriptive statistics we use Quartiles, which in actuality are themselves Quantiles:
+- 1st Quartile == 0.25 Quantile == 25% Quantile
+- 2nd Quartile == 0.50 Quantile == 50% Quantile (Median)
+- 3rd Quartile == 0.75 Quantile == 75% Quantile
 
-Plotting only these quantiles would make a _bad_ Q-Q plot.
+General Formula for x% Quantile given sorted data:
+```
+x = (# of data points smaller than the chosen data point) / (size of dataset - 1)
+```
+
+To plot a good Q-Q plot of some sorted data, we follow a very systematic process.
+1. Calculate the quantile % for each of our sorted datapoint. Ex: The first data point would be 0% Quantile regardless of size of our data.
+2. Find all the x% quantile of a normal distribution that were observed in our sorted data. (Generally, we use normal data with 0 as median and 1 as standard deviation, also known as Z-distribution)
+3. Plot the theoretical quantiles vs our data point quantiles.
+4. Draw a `y = x` line suggesting a hypothetical scenario where our data is normal and so we would observe the same quantiles.
 
 ```{r,fig.width=4.8, fig.height=3.6}
-sample_data <- data.frame(Values = rnorm(5))
-ggplot(sample_data, aes(sample = Values)) +
-  geom_qq() +
-  geom_qq_line(color = "red") +
-  labs(title = "Q-Q Plot for Known Quantiles", x = "Theoretical Quantiles", y = "Sample Quantiles")
+# Sample sorted data
+sorted_data <- sort(rnorm(1000))
+
+# Step 1: Calculate the quantile % for each sorted data point
+n <- length(sorted_data)
+quantiles <- seq(0, 1, length.out = n)
+
+# Step 2: Find quantiles of a normal distribution
+theoretical_quantiles <- qnorm(quantiles)
+
+qq_data <- data.frame(Theoretical = theoretical_quantiles, Data = sorted_data)
+
+# Step 3 & 4: Create Scatter plot of your quantiles
+ggplot(qq_data, aes(x = Theoretical, y = Data)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+  labs(x = "Theoretical Quantiles", y = "Sorted Data Quantiles", title = "Q-Q Plot")
 ```
 
