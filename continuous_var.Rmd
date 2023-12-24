@@ -267,8 +267,32 @@ A Q-Q plot (Quantile-Quantile plot) is used to visually assess whether a dataset
 
 ```{r,fig.width=4.8, fig.height=3.6}
 sample_data <- data.frame(Values = rnorm(1000))
+
 ggplot(sample_data, aes(sample = Values)) +
   geom_qq() +
   geom_qq_line(color = "red") +
-  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles")
+  labs(title = "Q-Q Plot for Normal Distribution", x = "Theoretical Quantiles", y = "Sample Quantiles") +
+  coord_fixed()
 ```
+
+Compared to a normal curve, we can better distinguish the strictness of normality here as we are comparing the distribution to a straight line.
+
+### Intuition for Q-Q plots
+
+The name describes the nature of the plot. We create a scatter plot of quantiles of one univariate data __vs__ the quantiles of another. Since statistical analysis involves comparing a distribution to known and researched distributions, the x axis quantiles is often a theoretical normal or a theoretical t-distribution. In this course, we use normal distribution to compare our data.
+
+**Quantile** is a data point that splits the data into equal parts. In descriptive statistics we use:
+- First Quartile == 25th percentile
+- Second Quantile == 50th percentile (Median)
+- Third Quartile == 75th percentile
+
+Plotting only these quantiles would make a _bad_ Q-Q plot.
+
+```{r,fig.width=4.8, fig.height=3.6}
+sample_data <- data.frame(Values = rnorm(5))
+ggplot(sample_data, aes(sample = Values)) +
+  geom_qq() +
+  geom_qq_line(color = "red") +
+  labs(title = "Q-Q Plot for Known Quantiles", x = "Theoretical Quantiles", y = "Sample Quantiles")
+```
+
