@@ -1,7 +1,7 @@
 ---
 title: "edav.info, 2nd edition"
 author: "Joyce Robbins"
-date: "2024-01-13"
+date: "2024-01-20"
 site: bookdown::bookdown_site
 github-repo: jtr13/edav2
 description: "Supplemental resources for GR5293 and GR5702"
