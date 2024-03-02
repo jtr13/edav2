@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -66,7 +66,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -444,49 +444,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">17.2.1</span> <code>choroplethr</code><a href="spatial-data.html#choroplethr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Choropleth maps use color to indicate the value of a variable within a defined region, generally political boundaries. <code>choroplethr</code> is capable of drawing state and county level maps without using shape files.</p>
 <p>Consider the following example using <code>state.x77</code> showing the percentage of illiterate in each states. Note the process of data transformation, you need to exactly have a column named ‘region’ with the state names and a column named ‘value’.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="spatial-data.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb192-2"><a href="spatial-data.html#cb192-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb192-3"><a href="spatial-data.html#cb192-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb192-4"><a href="spatial-data.html#cb192-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb192-5"><a href="spatial-data.html#cb192-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(choroplethr)</span>
-<span id="cb192-6"><a href="spatial-data.html#cb192-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-7"><a href="spatial-data.html#cb192-7" aria-hidden="true" tabindex="-1"></a><span class="co"># data frame must contain &quot;region&quot; and &quot;value&quot; columns</span></span>
-<span id="cb192-8"><a href="spatial-data.html#cb192-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-9"><a href="spatial-data.html#cb192-9" aria-hidden="true" tabindex="-1"></a>df_illiteracy <span class="ot">&lt;-</span> state.x77 <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb192-10"><a href="spatial-data.html#cb192-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb192-11"><a href="spatial-data.html#cb192-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">region =</span> <span class="fu">tolower</span>(<span class="st">`</span><span class="at">state</span><span class="st">`</span>), <span class="at">value =</span> Illiteracy)</span>
-<span id="cb192-12"><a href="spatial-data.html#cb192-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-13"><a href="spatial-data.html#cb192-13" aria-hidden="true" tabindex="-1"></a><span class="fu">state_choropleth</span>(df_illiteracy,</span>
-<span id="cb192-14"><a href="spatial-data.html#cb192-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">title =</span> <span class="st">&quot;State Illiteracy Rates, 1977&quot;</span>,</span>
-<span id="cb192-15"><a href="spatial-data.html#cb192-15" aria-hidden="true" tabindex="-1"></a>                 <span class="at">legend =</span> <span class="st">&quot;Percent Illiterate&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="spatial-data.html#cb192-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb192-2"><a href="spatial-data.html#cb192-2" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb192-3"><a href="spatial-data.html#cb192-3" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb192-4"><a href="spatial-data.html#cb192-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb192-5"><a href="spatial-data.html#cb192-5" tabindex="-1"></a><span class="fu">library</span>(choroplethr)</span>
+<span id="cb192-6"><a href="spatial-data.html#cb192-6" tabindex="-1"></a></span>
+<span id="cb192-7"><a href="spatial-data.html#cb192-7" tabindex="-1"></a><span class="co"># data frame must contain &quot;region&quot; and &quot;value&quot; columns</span></span>
+<span id="cb192-8"><a href="spatial-data.html#cb192-8" tabindex="-1"></a></span>
+<span id="cb192-9"><a href="spatial-data.html#cb192-9" tabindex="-1"></a>df_illiteracy <span class="ot">&lt;-</span> state.x77 <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb192-10"><a href="spatial-data.html#cb192-10" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">&quot;state&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb192-11"><a href="spatial-data.html#cb192-11" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">region =</span> <span class="fu">tolower</span>(<span class="st">`</span><span class="at">state</span><span class="st">`</span>), <span class="at">value =</span> Illiteracy)</span>
+<span id="cb192-12"><a href="spatial-data.html#cb192-12" tabindex="-1"></a></span>
+<span id="cb192-13"><a href="spatial-data.html#cb192-13" tabindex="-1"></a><span class="fu">state_choropleth</span>(df_illiteracy,</span>
+<span id="cb192-14"><a href="spatial-data.html#cb192-14" tabindex="-1"></a>                 <span class="at">title =</span> <span class="st">&quot;State Illiteracy Rates, 1977&quot;</span>,</span>
+<span id="cb192-15"><a href="spatial-data.html#cb192-15" tabindex="-1"></a>                 <span class="at">legend =</span> <span class="st">&quot;Percent Illiterate&quot;</span>)</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Plotting at county level is also possible. In the following example we show the population of counties in New York state in 2012.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="spatial-data.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(choroplethrMaps)</span>
-<span id="cb193-2"><a href="spatial-data.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(county.regions)</span>
-<span id="cb193-3"><a href="spatial-data.html#cb193-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(df_pop_county) </span>
-<span id="cb193-4"><a href="spatial-data.html#cb193-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-5"><a href="spatial-data.html#cb193-5" aria-hidden="true" tabindex="-1"></a>ny_county_fips <span class="ot">=</span> county.regions <span class="sc">%&gt;%</span></span>
-<span id="cb193-6"><a href="spatial-data.html#cb193-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state.name <span class="sc">==</span> <span class="st">&quot;new york&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb193-7"><a href="spatial-data.html#cb193-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(region)</span>
-<span id="cb193-8"><a href="spatial-data.html#cb193-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-9"><a href="spatial-data.html#cb193-9" aria-hidden="true" tabindex="-1"></a><span class="fu">county_choropleth</span>(df_pop_county, </span>
-<span id="cb193-10"><a href="spatial-data.html#cb193-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">title =</span> <span class="st">&quot;Population of Counties in New York State in 2012&quot;</span>,</span>
-<span id="cb193-11"><a href="spatial-data.html#cb193-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">legend =</span> <span class="st">&quot;Population&quot;</span>,</span>
-<span id="cb193-12"><a href="spatial-data.html#cb193-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">county_zoom =</span> ny_county_fips<span class="sc">$</span>region)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="spatial-data.html#cb193-1" tabindex="-1"></a><span class="fu">library</span>(choroplethrMaps)</span>
+<span id="cb193-2"><a href="spatial-data.html#cb193-2" tabindex="-1"></a><span class="fu">data</span>(county.regions)</span>
+<span id="cb193-3"><a href="spatial-data.html#cb193-3" tabindex="-1"></a><span class="fu">data</span>(df_pop_county) </span>
+<span id="cb193-4"><a href="spatial-data.html#cb193-4" tabindex="-1"></a></span>
+<span id="cb193-5"><a href="spatial-data.html#cb193-5" tabindex="-1"></a>ny_county_fips <span class="ot">=</span> county.regions <span class="sc">%&gt;%</span></span>
+<span id="cb193-6"><a href="spatial-data.html#cb193-6" tabindex="-1"></a>  <span class="fu">filter</span>(state.name <span class="sc">==</span> <span class="st">&quot;new york&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb193-7"><a href="spatial-data.html#cb193-7" tabindex="-1"></a>  <span class="fu">select</span>(region)</span>
+<span id="cb193-8"><a href="spatial-data.html#cb193-8" tabindex="-1"></a></span>
+<span id="cb193-9"><a href="spatial-data.html#cb193-9" tabindex="-1"></a><span class="fu">county_choropleth</span>(df_pop_county, </span>
+<span id="cb193-10"><a href="spatial-data.html#cb193-10" tabindex="-1"></a>                  <span class="at">title =</span> <span class="st">&quot;Population of Counties in New York State in 2012&quot;</span>,</span>
+<span id="cb193-11"><a href="spatial-data.html#cb193-11" tabindex="-1"></a>                  <span class="at">legend =</span> <span class="st">&quot;Population&quot;</span>,</span>
+<span id="cb193-12"><a href="spatial-data.html#cb193-12" tabindex="-1"></a>                  <span class="at">county_zoom =</span> ny_county_fips<span class="sc">$</span>region)</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>We use <code>county_choropleth</code> to create a U.S map at county level and zoom into New York state. Note that <code>county_zoom</code> takes in fips codes of counties. For more reference, visit the <a href="https://www.rdocumentation.org/packages/choroplethr/versions/3.7.0">R documentation page</a>.</p>
 </div>
 <div id="ggmap" class="section level3 hasAnchor" number="17.2.2">
 <h3><span class="header-section-number">17.2.2</span> <code>ggmap</code><a href="spatial-data.html#ggmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ggmap</code> is a great package to generate real-world maps. Moreover, it is compatible with <code>ggplot2</code> allowing you to easily add layers on top of the base map. There are two options in generating maps and we demonstrate one using stamenmap.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="spatial-data.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span>
-<span id="cb194-2"><a href="spatial-data.html#cb194-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb194-3"><a href="spatial-data.html#cb194-3" aria-hidden="true" tabindex="-1"></a>ny_map <span class="ot">&lt;-</span> <span class="fu">get_stamenmap</span>(<span class="at">bbox =</span> <span class="fu">c</span>(<span class="at">left =</span> <span class="sc">-</span><span class="fl">74.2591</span>, <span class="at">bottom =</span> <span class="fl">40.4774</span>, </span>
-<span id="cb194-4"><a href="spatial-data.html#cb194-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">right =</span> <span class="sc">-</span><span class="fl">73.7002</span>, <span class="at">top =</span> <span class="fl">40.9162</span>),</span>
-<span id="cb194-5"><a href="spatial-data.html#cb194-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">zoom =</span> <span class="dv">10</span>, <span class="at">maptype =</span> <span class="st">&quot;toner-lite&quot;</span>)</span>
-<span id="cb194-6"><a href="spatial-data.html#cb194-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb194-7"><a href="spatial-data.html#cb194-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(ny_map) <span class="sc">+</span></span>
-<span id="cb194-8"><a href="spatial-data.html#cb194-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">73.9857</span>,<span class="at">y=</span><span class="fl">40.7484</span>),<span class="at">size=</span><span class="fl">0.8</span>,<span class="at">color=</span><span class="st">&#39;blue&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="spatial-data.html#cb194-1" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span>
+<span id="cb194-2"><a href="spatial-data.html#cb194-2" tabindex="-1"></a></span>
+<span id="cb194-3"><a href="spatial-data.html#cb194-3" tabindex="-1"></a>ny_map <span class="ot">&lt;-</span> <span class="fu">get_stamenmap</span>(<span class="at">bbox =</span> <span class="fu">c</span>(<span class="at">left =</span> <span class="sc">-</span><span class="fl">74.2591</span>, <span class="at">bottom =</span> <span class="fl">40.4774</span>, </span>
+<span id="cb194-4"><a href="spatial-data.html#cb194-4" tabindex="-1"></a>                                 <span class="at">right =</span> <span class="sc">-</span><span class="fl">73.7002</span>, <span class="at">top =</span> <span class="fl">40.9162</span>),</span>
+<span id="cb194-5"><a href="spatial-data.html#cb194-5" tabindex="-1"></a>                        <span class="at">zoom =</span> <span class="dv">10</span>, <span class="at">maptype =</span> <span class="st">&quot;toner-lite&quot;</span>)</span>
+<span id="cb194-6"><a href="spatial-data.html#cb194-6" tabindex="-1"></a></span>
+<span id="cb194-7"><a href="spatial-data.html#cb194-7" tabindex="-1"></a><span class="fu">ggmap</span>(ny_map) <span class="sc">+</span></span>
+<span id="cb194-8"><a href="spatial-data.html#cb194-8" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">73.9857</span>,<span class="at">y=</span><span class="fl">40.7484</span>),<span class="at">size=</span><span class="fl">0.8</span>,<span class="at">color=</span><span class="st">&#39;blue&#39;</span>) </span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A map of New York City is created, and you will see a blue point representing Empire State Building. You can very simply add points using <code>geom_point</code> as long as you have the coordinates for the points. However, one clear drawback using stamenmap is that the map resolution is not satisfying and you will eventually find that the smaller zoom value creates blurry maps.</p>
 <p>For this reason, we encourage readers to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card). After enabling the Google map APIs, register you API keys with <code>ggmap</code> using <code>register_google(key = "[your key]")</code> and you are all set. Now take a look at the an example using Google map API</p>
@@ -503,11 +503,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sf" class="section level3 hasAnchor" number="17.3.1">
 <h3><span class="header-section-number">17.3.1</span> <code>sf</code><a href="spatial-data.html#sf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We use <code>sf</code> library to read in shape files. One of the first thing to remember is that one shape file contains a set of files and all of them required for the shape file to run properly. However, when reading the file, we only need to use the one ending with <code>.shp</code>. For example</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="spatial-data.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb196-2"><a href="spatial-data.html#cb196-2" aria-hidden="true" tabindex="-1"></a>ny_police <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">&#39;nyc_police/nypp.shp&#39;</span>,<span class="at">quiet=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb196-3"><a href="spatial-data.html#cb196-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Precinct =</span> <span class="fu">as.character</span>(Precinct))</span>
-<span id="cb196-4"><a href="spatial-data.html#cb196-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-5"><a href="spatial-data.html#cb196-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ny_police)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="spatial-data.html#cb196-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb196-2"><a href="spatial-data.html#cb196-2" tabindex="-1"></a>ny_police <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">&#39;nyc_police/nypp.shp&#39;</span>,<span class="at">quiet=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb196-3"><a href="spatial-data.html#cb196-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Precinct =</span> <span class="fu">as.character</span>(Precinct))</span>
+<span id="cb196-4"><a href="spatial-data.html#cb196-4" tabindex="-1"></a></span>
+<span id="cb196-5"><a href="spatial-data.html#cb196-5" tabindex="-1"></a><span class="fu">head</span>(ny_police)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 3 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
@@ -522,29 +522,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6       10   40281.97   27266581 MULTIPOLYGON (((983866 2172...</code></pre>
 <p>You can see that the object looks like a data set, except with a long column called geometry. The geometry column contains spatial information and is the key to map generation.</p>
 <p>To simply see the shape, we can use <code>st_geometry()</code> to extract spatial information and feed into <code>plot()</code></p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="spatial-data.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(ny_police))</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="spatial-data.html#cb198-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(ny_police))</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-5-1.png" width="960" style="display: block; margin: auto;" /></p>
 <p>We get a map of New York City divided by police precinct. Note that if you directly feed in <code>ny_police</code> into <code>plot()</code>, you will get mulitiply maps drawn from each column. It might not create you desired maps and when you are dealing with large shape files, it will be extremely slow.</p>
 </div>
 <div id="tmap" class="section level3 hasAnchor" number="17.3.2">
 <h3><span class="header-section-number">17.3.2</span> <code>tmap</code><a href="spatial-data.html#tmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Only generating the map is not particularly meaningful. We want to combine data with the map to convey some meaningful findings. Since we are using police precinct, it is only natural to use crime data.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="spatial-data.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb199-2"><a href="spatial-data.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb199-3"><a href="spatial-data.html#cb199-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-4"><a href="spatial-data.html#cb199-4" aria-hidden="true" tabindex="-1"></a>ny_crime <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="st">&#39;data/felony.xls&#39;</span>, <span class="at">skip =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb199-5"><a href="spatial-data.html#cb199-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Precinct =</span> PCT, <span class="at">Crime =</span> CRIME) <span class="sc">%&gt;%</span> </span>
-<span id="cb199-6"><a href="spatial-data.html#cb199-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill</span>(Precinct) <span class="sc">%&gt;%</span> </span>
-<span id="cb199-7"><a href="spatial-data.html#cb199-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Crime <span class="sc">==</span> <span class="st">&quot;TOTAL SEVEN MAJOR FELONY OFFENSES&quot;</span>)</span>
-<span id="cb199-8"><a href="spatial-data.html#cb199-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-9"><a href="spatial-data.html#cb199-9" aria-hidden="true" tabindex="-1"></a>ny_crime <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ny_police, ny_crime)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="spatial-data.html#cb199-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb199-2"><a href="spatial-data.html#cb199-2" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb199-3"><a href="spatial-data.html#cb199-3" tabindex="-1"></a></span>
+<span id="cb199-4"><a href="spatial-data.html#cb199-4" tabindex="-1"></a>ny_crime <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="st">&#39;data/felony.xls&#39;</span>, <span class="at">skip =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb199-5"><a href="spatial-data.html#cb199-5" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Precinct =</span> PCT, <span class="at">Crime =</span> CRIME) <span class="sc">%&gt;%</span> </span>
+<span id="cb199-6"><a href="spatial-data.html#cb199-6" tabindex="-1"></a>  <span class="fu">fill</span>(Precinct) <span class="sc">%&gt;%</span> </span>
+<span id="cb199-7"><a href="spatial-data.html#cb199-7" tabindex="-1"></a>  <span class="fu">filter</span>(Crime <span class="sc">==</span> <span class="st">&quot;TOTAL SEVEN MAJOR FELONY OFFENSES&quot;</span>)</span>
+<span id="cb199-8"><a href="spatial-data.html#cb199-8" tabindex="-1"></a></span>
+<span id="cb199-9"><a href="spatial-data.html#cb199-9" tabindex="-1"></a>ny_crime <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ny_police, ny_crime)</span></code></pre></div>
 <p>We read in the felony data for nyc in 2021 and joined it with the <code>sf</code> object. Then, we create map using <code>tmap</code> package. Notice that in <code>tm_polygons()</code>, we specify the column to be <code>2021</code>.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="spatial-data.html#cb200-1" aria-hidden="true" tabindex="-1"></a>ny_crime <span class="sc">%&gt;%</span> </span>
-<span id="cb200-2"><a href="spatial-data.html#cb200-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>() <span class="sc">+</span> </span>
-<span id="cb200-3"><a href="spatial-data.html#cb200-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;2021&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Blues&quot;</span>, <span class="at">title=</span><span class="st">&quot;&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb200-4"><a href="spatial-data.html#cb200-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_text</span>(<span class="st">&quot;Precinct&quot;</span>, <span class="at">size =</span> .<span class="dv">65</span>) <span class="sc">+</span></span>
-<span id="cb200-5"><a href="spatial-data.html#cb200-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="st">&quot;Major Felony Offenses in 2021 by</span><span class="sc">\n</span><span class="st">NYC Police Precinct&quot;</span>,</span>
-<span id="cb200-6"><a href="spatial-data.html#cb200-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">title.size =</span> .<span class="dv">95</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="spatial-data.html#cb200-1" tabindex="-1"></a>ny_crime <span class="sc">%&gt;%</span> </span>
+<span id="cb200-2"><a href="spatial-data.html#cb200-2" tabindex="-1"></a>  <span class="fu">tm_shape</span>() <span class="sc">+</span> </span>
+<span id="cb200-3"><a href="spatial-data.html#cb200-3" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;2021&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Blues&quot;</span>, <span class="at">title=</span><span class="st">&quot;&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb200-4"><a href="spatial-data.html#cb200-4" tabindex="-1"></a>  <span class="fu">tm_text</span>(<span class="st">&quot;Precinct&quot;</span>, <span class="at">size =</span> .<span class="dv">65</span>) <span class="sc">+</span></span>
+<span id="cb200-5"><a href="spatial-data.html#cb200-5" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="st">&quot;Major Felony Offenses in 2021 by</span><span class="sc">\n</span><span class="st">NYC Police Precinct&quot;</span>,</span>
+<span id="cb200-6"><a href="spatial-data.html#cb200-6" tabindex="-1"></a>            <span class="at">title.size =</span> .<span class="dv">95</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="spatial_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>For more usage, you can refer at <a href="https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html">tmap:get started!</a></p>
 

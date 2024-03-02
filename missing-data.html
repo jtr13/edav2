@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -66,7 +66,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -444,27 +444,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Are there correlations between missing rows / columns? (If a value is missing in one column it is likely to be missing in another column.)</p></li>
 </ul>
 <p>We will explore these two problems using <code>mtcars</code> with artificially generated missing values.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="missing-data.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb146-2"><a href="missing-data.html#cb146-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb146-3"><a href="missing-data.html#cb146-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb146-4"><a href="missing-data.html#cb146-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb146-5"><a href="missing-data.html#cb146-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
-<span id="cb146-6"><a href="missing-data.html#cb146-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb146-7"><a href="missing-data.html#cb146-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">5702</span>)</span>
-<span id="cb146-8"><a href="missing-data.html#cb146-8" aria-hidden="true" tabindex="-1"></a>mycars <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb146-9"><a href="missing-data.html#cb146-9" aria-hidden="true" tabindex="-1"></a>mycars[,<span class="st">&quot;gear&quot;</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb146-10"><a href="missing-data.html#cb146-10" aria-hidden="true" tabindex="-1"></a>mycars[<span class="dv">10</span><span class="sc">:</span><span class="dv">20</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb146-11"><a href="missing-data.html#cb146-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) mycars[<span class="fu">sample</span>(<span class="dv">32</span>,<span class="dv">1</span>), <span class="fu">sample</span>(<span class="dv">11</span>,<span class="dv">1</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="missing-data.html#cb146-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb146-2"><a href="missing-data.html#cb146-2" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb146-3"><a href="missing-data.html#cb146-3" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb146-4"><a href="missing-data.html#cb146-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb146-5"><a href="missing-data.html#cb146-5" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb146-6"><a href="missing-data.html#cb146-6" tabindex="-1"></a></span>
+<span id="cb146-7"><a href="missing-data.html#cb146-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">5702</span>)</span>
+<span id="cb146-8"><a href="missing-data.html#cb146-8" tabindex="-1"></a>mycars <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb146-9"><a href="missing-data.html#cb146-9" tabindex="-1"></a>mycars[,<span class="st">&quot;gear&quot;</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb146-10"><a href="missing-data.html#cb146-10" tabindex="-1"></a>mycars[<span class="dv">10</span><span class="sc">:</span><span class="dv">20</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb146-11"><a href="missing-data.html#cb146-11" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) mycars[<span class="fu">sample</span>(<span class="dv">32</span>,<span class="dv">1</span>), <span class="fu">sample</span>(<span class="dv">11</span>,<span class="dv">1</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
 <div id="colsums-rowsums" class="section level3 hasAnchor" number="14.2.1">
 <h3><span class="header-section-number">14.2.1</span> colSums() / rowSums()<a href="missing-data.html#colsums-rowsums" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The most straightforward way to check missing values is using <code>is.na()</code> wrapped in <code>colSums()</code> / <code>rowSums()</code>. You will be able to observe the number of missing values column or row-wise.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="missing-data.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(mycars)) <span class="sc">%&gt;%</span></span>
-<span id="cb147-2"><a href="missing-data.html#cb147-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sort</span>(<span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="missing-data.html#cb147-1" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(mycars)) <span class="sc">%&gt;%</span></span>
+<span id="cb147-2"><a href="missing-data.html#cb147-2" tabindex="-1"></a>  <span class="fu">sort</span>(<span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## gear disp   hp drat   am  cyl qsec   vs  mpg   wt carb 
 ##   32   12   12   11    3    1    1    1    0    0    0</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="missing-data.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Show only the head</span></span>
-<span id="cb149-2"><a href="missing-data.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">head</span>(mycars))) <span class="sc">%&gt;%</span></span>
-<span id="cb149-3"><a href="missing-data.html#cb149-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sort</span>(<span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="missing-data.html#cb149-1" tabindex="-1"></a><span class="co">#Show only the head</span></span>
+<span id="cb149-2"><a href="missing-data.html#cb149-2" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">head</span>(mycars))) <span class="sc">%&gt;%</span></span>
+<span id="cb149-3"><a href="missing-data.html#cb149-3" tabindex="-1"></a>  <span class="fu">sort</span>(<span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##         Mazda RX4     Mazda RX4 Wag        Datsun 710    Hornet 4 Drive 
 ##                 1                 1                 1                 1 
 ## Hornet Sportabout           Valiant 
@@ -473,26 +473,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="heatmap" class="section level3 hasAnchor" number="14.2.2">
 <h3><span class="header-section-number">14.2.2</span> Heatmap<a href="missing-data.html#heatmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A graph can be more informative than plain numbers. If there are not a lot of rows or columns, we can use heatmaps to visualize the missing values.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="missing-data.html#cb151-1" aria-hidden="true" tabindex="-1"></a>tidycars <span class="ot">&lt;-</span> mycars <span class="sc">%&gt;%</span> </span>
-<span id="cb151-2"><a href="missing-data.html#cb151-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames_to_column</span>(<span class="st">&quot;id&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb151-3"><a href="missing-data.html#cb151-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gather</span>(key, value, <span class="sc">-</span>id) <span class="sc">%&gt;%</span> </span>
-<span id="cb151-4"><a href="missing-data.html#cb151-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">missing =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(value), <span class="st">&quot;yes&quot;</span>, <span class="st">&quot;no&quot;</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="missing-data.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tidycars, <span class="fu">aes</span>(<span class="at">x =</span> key, <span class="at">y =</span> <span class="fu">fct_rev</span>(id), <span class="at">fill =</span> missing)) <span class="sc">+</span></span>
-<span id="cb152-2"><a href="missing-data.html#cb152-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb152-3"><a href="missing-data.html#cb152-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;mtcars with NAs added&quot;</span>) <span class="sc">+</span></span>
-<span id="cb152-4"><a href="missing-data.html#cb152-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb152-5"><a href="missing-data.html#cb152-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span> <span class="co"># discrete scale</span></span>
-<span id="cb152-6"><a href="missing-data.html#cb152-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="missing-data.html#cb151-1" tabindex="-1"></a>tidycars <span class="ot">&lt;-</span> mycars <span class="sc">%&gt;%</span> </span>
+<span id="cb151-2"><a href="missing-data.html#cb151-2" tabindex="-1"></a>    <span class="fu">rownames_to_column</span>(<span class="st">&quot;id&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb151-3"><a href="missing-data.html#cb151-3" tabindex="-1"></a>    <span class="fu">gather</span>(key, value, <span class="sc">-</span>id) <span class="sc">%&gt;%</span> </span>
+<span id="cb151-4"><a href="missing-data.html#cb151-4" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">missing =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(value), <span class="st">&quot;yes&quot;</span>, <span class="st">&quot;no&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="missing-data.html#cb152-1" tabindex="-1"></a><span class="fu">ggplot</span>(tidycars, <span class="fu">aes</span>(<span class="at">x =</span> key, <span class="at">y =</span> <span class="fu">fct_rev</span>(id), <span class="at">fill =</span> missing)) <span class="sc">+</span></span>
+<span id="cb152-2"><a href="missing-data.html#cb152-2" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb152-3"><a href="missing-data.html#cb152-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;mtcars with NAs added&quot;</span>) <span class="sc">+</span></span>
+<span id="cb152-4"><a href="missing-data.html#cb152-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb152-5"><a href="missing-data.html#cb152-5" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span> <span class="co"># discrete scale</span></span>
+<span id="cb152-6"><a href="missing-data.html#cb152-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="missing_data_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
 In the above example, we can clearly see where the missing values are for both rows and columns.</p>
 <p>Now, to add more information to the graph, consider the following example:</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="missing-data.html#cb153-1" aria-hidden="true" tabindex="-1"></a>tidycars <span class="ot">&lt;-</span> tidycars <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(key) <span class="sc">%&gt;%</span> </span>
-<span id="cb153-2"><a href="missing-data.html#cb153-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Std =</span> (value<span class="sc">-</span><span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))<span class="sc">/</span><span class="fu">sd</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
-<span id="cb153-3"><a href="missing-data.html#cb153-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb153-4"><a href="missing-data.html#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tidycars, <span class="fu">aes</span>(<span class="at">x =</span> key, <span class="at">y =</span> <span class="fu">fct_rev</span>(id), <span class="at">fill =</span> Std)) <span class="sc">+</span></span>
-<span id="cb153-5"><a href="missing-data.html#cb153-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb153-6"><a href="missing-data.html#cb153-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb153-7"><a href="missing-data.html#cb153-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span><span class="st">&quot;yellow&quot;</span>, <span class="at">na.value =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="missing-data.html#cb153-1" tabindex="-1"></a>tidycars <span class="ot">&lt;-</span> tidycars <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(key) <span class="sc">%&gt;%</span> </span>
+<span id="cb153-2"><a href="missing-data.html#cb153-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Std =</span> (value<span class="sc">-</span><span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))<span class="sc">/</span><span class="fu">sd</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb153-3"><a href="missing-data.html#cb153-3" tabindex="-1"></a></span>
+<span id="cb153-4"><a href="missing-data.html#cb153-4" tabindex="-1"></a><span class="fu">ggplot</span>(tidycars, <span class="fu">aes</span>(<span class="at">x =</span> key, <span class="at">y =</span> <span class="fu">fct_rev</span>(id), <span class="at">fill =</span> Std)) <span class="sc">+</span></span>
+<span id="cb153-5"><a href="missing-data.html#cb153-5" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb153-6"><a href="missing-data.html#cb153-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb153-7"><a href="missing-data.html#cb153-7" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span><span class="st">&quot;yellow&quot;</span>, <span class="at">na.value =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="missing_data_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>In this graph, black represents missing values. The color scale from purple to yellow represents the magnitude of the values.</p>
 </div>
@@ -501,8 +501,8 @@ In the above example, we can clearly see where the missing values are for both r
 <p>Other than the actual location of missing values, we can also explore the missing patterns. A Missing pattern refer to the combination of columns missing. The following picture should be a great demonstration of the concept.</p>
 <p><img src="images/missing_pattern.png" /></p>
 <p>To explore the patterns, we use <code>plot_missing()</code> from <code>redav</code>.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="missing-data.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redav)</span>
-<span id="cb154-2"><a href="missing-data.html#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_missing</span>(mycars, <span class="at">percent =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="missing-data.html#cb154-1" tabindex="-1"></a><span class="fu">library</span>(redav)</span>
+<span id="cb154-2"><a href="missing-data.html#cb154-2" tabindex="-1"></a><span class="fu">plot_missing</span>(mycars, <span class="at">percent =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="missing_data_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Notice that there are three parts in the aggregated graph. The top part shows the number of missing values in each column. The middle part presents the missing patterns and the right part shows the counts for each missing patterns. You can also show the percentage in the top/right graphs by setting <code>percentage = True</code>.</p>
 

@@ -23,7 +23,7 @@
 <meta name="author" content="Joyce Robbins" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -66,7 +66,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -441,32 +441,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Qualitative(for categorical data) – Colours designed to give maximum visual difference between categories so great for non-ordered categorical data</p>
 <p>Diverging – Light colours for mid-range data, low and high use dark colours, great to seperate two extremes</p>
 </blockquote>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="colors.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
-<span id="cb155-2"><a href="colors.html#cb155-2" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="colors.html#cb155-1" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb155-2"><a href="colors.html#cb155-2" tabindex="-1"></a><span class="fu">display.brewer.all</span>() </span></code></pre></div>
 <p><img src="colors_files/figure-html/unnamed-chunk-1-1.png" width="921.6" style="display: block; margin: auto;" /></p>
 <p>Here is an example of plotting categorical data using <code>Dark2</code> pallets under qualitative group of RColorBrewer:</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="colors.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb156-2"><a href="colors.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Petal.Length, Sepal.Length, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
-<span id="cb156-3"><a href="colors.html#cb156-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb156-4"><a href="colors.html#cb156-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="colors.html#cb156-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb156-2"><a href="colors.html#cb156-2" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Petal.Length, Sepal.Length, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb156-3"><a href="colors.html#cb156-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb156-4"><a href="colors.html#cb156-4" tabindex="-1"></a>  <span class="fu">scale_colour_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
 <p><img src="colors_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Also, you can create your own sequential pallets.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="colors.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(faithfuld, <span class="fu">aes</span>(waiting, eruptions, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
-<span id="cb157-2"><a href="colors.html#cb157-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>() <span class="sc">+</span></span>
-<span id="cb157-3"><a href="colors.html#cb157-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="colors.html#cb157-1" tabindex="-1"></a><span class="fu">ggplot</span>(faithfuld, <span class="fu">aes</span>(waiting, eruptions, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
+<span id="cb157-2"><a href="colors.html#cb157-2" tabindex="-1"></a>  <span class="fu">geom_raster</span>() <span class="sc">+</span></span>
+<span id="cb157-3"><a href="colors.html#cb157-3" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="colors_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Or diverging pallets:</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="colors.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(faithfuld, <span class="fu">aes</span>(waiting, eruptions, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
-<span id="cb158-2"><a href="colors.html#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>() <span class="sc">+</span></span>
-<span id="cb158-3"><a href="colors.html#cb158-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>,<span class="at">midpoint =</span> .<span class="dv">02</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="colors.html#cb158-1" tabindex="-1"></a><span class="fu">ggplot</span>(faithfuld, <span class="fu">aes</span>(waiting, eruptions, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
+<span id="cb158-2"><a href="colors.html#cb158-2" tabindex="-1"></a>  <span class="fu">geom_raster</span>() <span class="sc">+</span></span>
+<span id="cb158-3"><a href="colors.html#cb158-3" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>,<span class="at">midpoint =</span> .<span class="dv">02</span>)</span></code></pre></div>
 <p><img src="colors_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>For discrete data, using <code>scale_colour_manual</code> is a good choice. For discrete ordinal data, we can use another package (such as vcd)</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="colors.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span></span>
-<span id="cb159-2"><a href="colors.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
-<span id="cb159-3"><a href="colors.html#cb159-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="colors.html#cb159-1" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, wt)) <span class="sc">+</span></span>
+<span id="cb159-2"><a href="colors.html#cb159-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
+<span id="cb159-3"><a href="colors.html#cb159-3" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
 <p><img src="colors_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="colors.html#cb160-1" aria-hidden="true" tabindex="-1"></a>colors<span class="ot">&lt;-</span><span class="fu">brewer.pal</span>(<span class="dv">5</span>,<span class="st">&#39;Blues&#39;</span>)</span>
-<span id="cb160-2"><a href="colors.html#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">col=</span>colors)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="colors.html#cb160-1" tabindex="-1"></a>colors<span class="ot">&lt;-</span><span class="fu">brewer.pal</span>(<span class="dv">5</span>,<span class="st">&#39;Blues&#39;</span>)</span>
+<span id="cb160-2"><a href="colors.html#cb160-2" tabindex="-1"></a><span class="fu">barplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">col=</span>colors)</span></code></pre></div>
 <p><img src="colors_files/figure-html/unnamed-chunk-5-2.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="perceptually-uniform-color-spaces-viridis" class="section level2 hasAnchor" number="15.2">
@@ -477,10 +477,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="images/Viridis.png" style="width:75.0%" />
 </center>
 <p>Perceived differences are proportional to scalar differences when using <code>viridis</code>. The following example shows <code>viridis</code>on continuous data using <code>scale_color_viridis_c</code>, use <code>scale_color_viridis_d()</code> for discrete data</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="colors.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridis&quot;</span>)</span>
-<span id="cb161-2"><a href="colors.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width))<span class="sc">+</span></span>
-<span id="cb161-3"><a href="colors.html#cb161-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Sepal.Length)) <span class="sc">+</span></span>
-<span id="cb161-4"><a href="colors.html#cb161-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="colors.html#cb161-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridis&quot;</span>)</span>
+<span id="cb161-2"><a href="colors.html#cb161-2" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width))<span class="sc">+</span></span>
+<span id="cb161-3"><a href="colors.html#cb161-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Sepal.Length)) <span class="sc">+</span></span>
+<span id="cb161-4"><a href="colors.html#cb161-4" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>()</span></code></pre></div>
 <p><img src="colors_files/figure-html/unnamed-chunk-6-1.png" width="384" style="display: block; margin: auto;" /></p>
 
 </div>
