@@ -57,14 +57,15 @@ We use `county_choropleth` to create a U.S map at county level and zoom into New
 
 ### `ggmap`
 
-`ggmap` is a great package to generate real-world maps. Moreover, it is compatible with `ggplot2` allowing you to easily add layers on top of the base map. There are two options in generating maps and we demonstrate one using stamenmap.
+`ggmap` is a great package to generate real-world maps. Moreover, it is compatible with `ggplot2` allowing you to easily add layers on top of the base map. There are two options in generating maps and we demonstrate one using stamenmap. (This now requires an API key... to be updated.)
 
-```{r}
+```{r, eval=FALSE}
+# eval=FALSE for now...
 library(ggmap)
 
-ny_map <- get_stamenmap(bbox = c(left = -74.2591, bottom = 40.4774, 
+ny_map <- get_stadiamap(bbox = c(left = -74.2591, bottom = 40.4774, 
                                  right = -73.7002, top = 40.9162),
-                        zoom = 10, maptype = "toner-lite")
+                        zoom = 10, maptype = "stamen_toner_lite")
 
 ggmap(ny_map) +
   geom_point(aes(x=-73.9857,y=40.7484),size=0.8,color='blue') 

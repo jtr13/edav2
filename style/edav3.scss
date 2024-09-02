@@ -1,0 +1,50 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$border-color-left: #80abd7!default;
+$background-color: #e6eef7 !default;
+$headings-color: #3379be;
+$link-color: #3379be;
+$code-color: #3379be;
+
+$font-family-sans-serif: "Lato", sans-serif;
+
+/*-- scss:rules --*/
+
+text, circle {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+p code:not(.sourceCode), td code:not(.sourceCode),
+li code:not(.sourceCode) {
+  font-weight: bold;
+  background-color: white;
+}
+
+.big {
+  font-size: 1.1rem;
+}
+
+.footnotes {
+  font-size: .85rem;
+}
+
+// https://stackoverflow.com/questions/74647399/define-a-new-callout-in-quarto
+
+div.callout-tip.callout {
+  border-left-color: $border-color-left;
+}
+
+div.callout-tip.callout-style-default>.callout-header {
+  background-color: $background-color;
+}
+
+button {
+  font-size: .85rem;
+  margin: 10px;
+}
+
