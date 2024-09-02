@@ -1,12 +1,3 @@
----
-title: "edav.info, 2nd edition"
-author: "Joyce Robbins"
-date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-github-repo: jtr13/edav2
-description: "Supplemental dataviz resources"
----
-
 # Welcome!
 
 This is the brand new start of edav.info 2.0!
