@@ -4,7 +4,7 @@ author: "Joyce Robbins"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 github-repo: jtr13/edav2
-description: "Supplemental resources for GR5293 and GR5702"
+description: "Supplemental dataviz resources"
 ---
 
 # Welcome!
