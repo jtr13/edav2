@@ -48,4 +48,5 @@ Suggests:
 Remotes:
     hadley/emo,
     jtr13/redav,
+    rpruim/Lock5withR
     timelyportfolio/parcoords
