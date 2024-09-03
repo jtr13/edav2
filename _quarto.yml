@@ -32,7 +32,7 @@ book:
 format:
   html:
     theme: [default, style/edav3.scss]
-    code-link: true
+    code-link: false
     highlight-style: style/joyce.theme
     callout-icon: false
     
