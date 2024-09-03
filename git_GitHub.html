@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; GitHub/git Resources – edav.info v2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./learning_ggplot2.html" rel="next">
+<link href="./data_transformation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git_GitHub.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">GitHub/git Resources</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">edav.info v2</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jtr13/edav2" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./learning_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(PART) R resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with factors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data importation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data transformation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./git_GitHub.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">GitHub/git Resources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./learning_ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(PART) R graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faceting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Faceting</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./continuous_var.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Unidimensional continuous variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uni_categorical_var.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unidimensional categorical variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./two_continuous_var.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Two continuous variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multidimensional_continuous.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multidimensional continuous variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multidimensional_categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multidimensional categorical variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Missing data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Colors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./time_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Time series</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./spatial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spatial data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cutting_room_floor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(PART) Appendix</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">5.1</span> Overview</a></li>
+  <li><a href="#first-things-first" id="toc-first-things-first" class="nav-link" data-scroll-target="#first-things-first"><span class="header-section-number">5.2</span> First things first</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage"><span class="header-section-number">5.3</span> Usage</a></li>
+  <li><a href="#the-no-branch-besides-main-workflow" id="toc-the-no-branch-besides-main-workflow" class="nav-link" data-scroll-target="#the-no-branch-besides-main-workflow"><span class="header-section-number">5.4</span> The no branch (besides main) workflow</a></li>
+  <li><a href="#your-repo-with-branching" id="toc-your-repo-with-branching" class="nav-link" data-scroll-target="#your-repo-with-branching"><span class="header-section-number">5.5</span> Your repo with branching</a></li>
+  <li><a href="#st-pr-on-another-repo-with-branching" id="toc-st-pr-on-another-repo-with-branching" class="nav-link" data-scroll-target="#st-pr-on-another-repo-with-branching"><span class="header-section-number">5.6</span> 1st PR on another repo with branching</a>
+  <ul class="collapse">
+  <li><a href="#step-1-fork-the-upstream-repo-once" id="toc-step-1-fork-the-upstream-repo-once" class="nav-link" data-scroll-target="#step-1-fork-the-upstream-repo-once">Step 1: Fork the upstream repo (once)</a></li>
+  <li><a href="#step-2-clone-origin-and-create-a-local-repository-once" id="toc-step-2-clone-origin-and-create-a-local-repository-once" class="nav-link" data-scroll-target="#step-2-clone-origin-and-create-a-local-repository-once">Step 2: Clone origin and create a local repository (once)</a></li>
+  <li><a href="#step-3-configure-remote-that-points-to-the-upstream-repository-once" id="toc-step-3-configure-remote-that-points-to-the-upstream-repository-once" class="nav-link" data-scroll-target="#step-3-configure-remote-that-points-to-the-upstream-repository-once">Step 3: Configure remote that points to the upstream repository (once)</a></li>
+  <li><a href="#step-4-branch" id="toc-step-4-branch" class="nav-link" data-scroll-target="#step-4-branch">Step 4: Branch</a></li>
+  <li><a href="#step-5-work-commit-and-push" id="toc-step-5-work-commit-and-push" class="nav-link" data-scroll-target="#step-5-work-commit-and-push">Step 5: Work, commit and push</a></li>
+  <li><a href="#step-6-submit-a-pull-request" id="toc-step-6-submit-a-pull-request" class="nav-link" data-scroll-target="#step-6-submit-a-pull-request">Step 6: Submit a pull request</a></li>
+  <li><a href="#step-7-merge-the-pull-request" id="toc-step-7-merge-the-pull-request" class="nav-link" data-scroll-target="#step-7-merge-the-pull-request">Step 7: Merge the pull request</a></li>
+  </ul></li>
+  <li><a href="#nd-nth-pr-on-another-repo-with-branching" id="toc-nd-nth-pr-on-another-repo-with-branching" class="nav-link" data-scroll-target="#nd-nth-pr-on-another-repo-with-branching"><span class="header-section-number">5.7</span> 2nd-<em>n</em>th PR on another repo with branching</a>
+  <ul class="collapse">
+  <li><a href="#step-1-sync" id="toc-step-1-sync" class="nav-link" data-scroll-target="#step-1-sync">Step 1: Sync</a></li>
+  <li><a href="#step-2-delete-the-old-branch" id="toc-step-2-delete-the-old-branch" class="nav-link" data-scroll-target="#step-2-delete-the-old-branch">Step 2: Delete the old branch</a></li>
+  <li><a href="#step-3-update-your-fork-on-github" id="toc-step-3-update-your-fork-on-github" class="nav-link" data-scroll-target="#step-3-update-your-fork-on-github">Step 3: Update your fork on GitHub</a></li>
+  <li><a href="#steps-4-7-see-above" id="toc-steps-4-7-see-above" class="nav-link" data-scroll-target="#steps-4-7-see-above">Steps 4-7: See above</a></li>
+  </ul></li>
+  <li><a href="#fixing-mistakes" id="toc-fixing-mistakes" class="nav-link" data-scroll-target="#fixing-mistakes"><span class="header-section-number">5.8</span> Fixing mistakes</a>
+  <ul class="collapse">
+  <li><a href="#forgot-to-branch" id="toc-forgot-to-branch" class="nav-link" data-scroll-target="#forgot-to-branch"><span class="header-section-number">5.8.1</span> Forgot to branch</a></li>
+  <li><a href="#undoing-stuff" id="toc-undoing-stuff" class="nav-link" data-scroll-target="#undoing-stuff"><span class="header-section-number">5.8.2</span> Undoing stuff</a></li>
+  <li><a href="#random" id="toc-random" class="nav-link" data-scroll-target="#random"><span class="header-section-number">5.8.3</span> Random</a></li>
+  </ul></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">5.9</span> Troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#deleting-a-branch-isnt-working" id="toc-deleting-a-branch-isnt-working" class="nav-link" data-scroll-target="#deleting-a-branch-isnt-working"><span class="header-section-number">5.9.1</span> Deleting a branch isn’t working</a></li>
+  </ul></li>
+  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources"><span class="header-section-number">5.10</span> Other resources</a>
+  <ul class="collapse">
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  <li><a href="#branching-out" id="toc-branching-out" class="nav-link" data-scroll-target="#branching-out">Branching out</a></li>
+  <li><a href="#more-resources" id="toc-more-resources" class="nav-link" data-scroll-target="#more-resources">More Resources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/git_GitHub.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/git_GitHub.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="github" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">GitHub/git Resources</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">5.1</span> Overview</h2>
+<p>This section describes workflows for working with GitHub/git and advice on how to collaborate in teams on large coding projects. GitHub is super useful and powerful, but people also find it quite annoying and <a href="https://xkcd.com/1597/" target="_blank">difficult to understand</a>. We suggest taking it one step at a time, beginning with the basic workflows outlined below. You can derive great benefits from it without being an expert.</p>
+</section>
+<section id="first-things-first" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="first-things-first"><span class="header-section-number">5.2</span> First things first</h2>
+<ol type="1">
+<li><p><em>Install Git</em>. To do so, follow the instructions in the <a href="https://happygitwithr.com/install-git.html" target="_blank">Install Git</a> chapter of <em>Happy Git with R</em>.</p></li>
+<li><p><em>Tell git your name and email address.</em> <a href="https://happygitwithr.com/hello-git.html" target="_blank">Introduce yourself to Git</a> in <em>Happy Git</em> explains it all.</p></li>
+<li><p><em>Set up a personal access token.</em> See <a href="https://happygitwithr.com/https-pat.html" target="_blank">Personal access token for HTTPS</a>. <em>(When you create the token, you will be given a choice of “Beta” or “classic”. Choose classic.)</em></p></li>
+<li><p>(Optional) <em>Check that your setup works.</em> See <a href="https://happygitwithr.com/rstudio-git-github.html" target="_blank">Connect RStudio to Git and GitHub</a>. To be clear, you don’t have to do any connecting – the steps in this chapter check that it’s all working properly.</p></li>
+</ol>
+</section>
+<section id="usage" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="usage"><span class="header-section-number">5.3</span> Usage</h2>
+<p>Choose the right section based on what you’re trying to accomplish:</p>
+<ul>
+<li><p>If you are working by yourself and just getting started: <a href="#the-no-branch-workflow">the no branch workflow</a>.</p></li>
+<li><p>If you are working by yourself and want to learn how to use branches, <em>or are a collaborator (i.e.&nbsp;have write access) to another repo</em>: <a href="#your-repo-with-branching">your repo with branching</a>.</p></li>
+<li><p>If you are not a collaborator (that is, don’t have write access to a repository) but wish to contribute to a project for the first time: <a href="#st-pr-on-another-repo-with-branching">1st PR on another repo with branching</a>.</p></li>
+<li><p>If you are not a collaborator but wish to contribute to the same project again: <a href="#nd-nth-pr-on-another-repo-with-branching">2nd-nth PR on another repo with branching</a>.</p></li>
+</ul>
+</section>
+<section id="the-no-branch-besides-main-workflow" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="the-no-branch-besides-main-workflow"><span class="header-section-number">5.4</span> The no branch (besides main) workflow</h2>
+<p>To get comfortable with Git, start with this basic workflow in which you will be pulling from and pushing to <em>your</em> repo on GitHub. Just you, no collaboration:</p>
+<center>
+<img src="images/git/no-branch.png" class="img-fluid" width="250">
+</center>
+<p>The <a href="https://happygitwithr.com/rstudio-git-github.html" target="_blank">Connect RStudio to Git and GitHub</a> chapter of <em>Happy Git</em> will get you set up: you will create a repo on GitHub, clone the repo into an RStudio project, and practice making changes. Once you’re set up, your local workflow will be <strong>pull, work, commit/push</strong>.</p>
+<p><strong>PULL</strong> Each time you open RStudio and switch to the project, you will pull down any changes made to the repo on GitHub by clicking the <strong>Down Arrow</strong> in the Git pane of RStudio. You may think that no changes have been made to GitHub and there’s nothing to pull, but you may forget the typos that you fixed online, so it’s good practice to always start by pulling changes just in case.</p>
+<p><strong>WORK</strong> Do your stuff. Make changes to files. Add new files. Keep an eye on the Git panel in RStudio; it will show you which files were changes.</p>
+<p><strong>COMMIT/PUSH</strong> When you’re done working, you’ll want to think about what to do with the files that have changed. I like to keep the Git panel clear, so when I’m done I do one of three things with each file: 1) click “Staged” to get it ready for a sendoff to GitHub, 2) delete it if it’s not needed, 3) add it to <code>.gitignore</code> if it’s a file I want to keep locally but not send to GitHub. (Keep in mind that files in .gitignore are not backed up unless you have another backup system.) If I have a file that belongs somewhere else, I will move it there, so the only files left are the ones to send to GitHub.</p>
+<p>The next step is to click the <strong>Commit</strong> button and enter a commit message that meaningful describes what was done. Finally clicking the <strong>Up Arrow</strong> will send the commit to GitHub.</p>
+<p>It’s not considered good practice to commit too often, but as a beginner, it’s useful to do so to learn how it all works.</p>
+</section>
+<section id="your-repo-with-branching" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="your-repo-with-branching"><span class="header-section-number">5.5</span> Your repo with branching</h2>
+Once you’ve comfortable with the workflow described above, you’re ready to start branching.
+<center>
+<img src="images/git/your-repo.jpeg" class="img-fluid">
+</center>
+<p>If it’s <em>your</em> repo–or you have write access to someone else’s repo–begin by cloning the repo as in the workflow above. For emphasis: if you have write access to someone else’s repo, you should still <em>clone</em> the repo, not <em>fork</em> it. The repo will be referred to as “origin” even though you’re not the owner; origin simply means the repo from which the project was cloned. Next, continue with <a href="#step-4-branch">step 4</a> below, or follow the steps in <a href="https://github.com/jtr13/EDAV/blob/master/pdfs/BranchingYourRepo.pdf" target="_blank">these slides</a>, which provide step-by-step detail on creating a branch, doing work on the branch and then submitting a pull request to merge the changes into origin/main.</p>
+<p>At any point, you can check the remotes (in this case, GitHub repositories) that are linked to your project with <code>git remote -v</code>. If your GitHub username is <code>person1</code> and you have write access to a repo called <code>finalproject</code> created by <code>person2</code>, your remotes will look like this:</p>
+<pre><code>$ git remote -v
+origin  https://github.com/person2/finalproject.git(fetch)
+origin  https://github.com/person2/finalproject.git(push)</code></pre>
+</section>
+<section id="st-pr-on-another-repo-with-branching" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="st-pr-on-another-repo-with-branching"><span class="header-section-number">5.6</span> 1st PR on another repo with branching</h2>
+<center>
+<img src="images/git/pull-request-1.png" class="img-fluid">
+</center>
+<section id="step-1-fork-the-upstream-repo-once" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-1-fork-the-upstream-repo-once">Step 1: Fork the upstream repo (once)</h3>
+<p><em>Skip this step if you are syncing with a repo that you have write access to, whether it’s your own or someone else’s.</em> Let’s say you want to contribute to edav.info! Fork <a href="https://github.com/jtr13/edav2" target="_blank">our GitHub repo</a> and then on your own GitHub page, you will see a forked <strong>edav2</strong> repo under the repositories section. Note, from now on, the term <strong>upstream repository</strong> refers to the original repo of the project that you forked and the term <strong>origin repository</strong> refers to the repo that you created or forked on GitHub. From your respective, both <strong>upstream</strong> and <strong>origin</strong> are remote repositories.</p>
+<center>
+<img src="images/git/fork.png" class="img-fluid" width="200"> <em>A fork of tidyverse/forcats</em>
+</center>
+</section>
+<section id="step-2-clone-origin-and-create-a-local-repository-once" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-2-clone-origin-and-create-a-local-repository-once">Step 2: Clone origin and create a local repository (once)</h3>
+<p>A <strong>local repository</strong> is the repo that resides on your computer. In order to be able to work locally, we need to create a local copy of the remote reposiotry. (For this to work you must first follow the instructions in <a href="#first-things-first">First things first</a> section.)</p>
+<p>On your GitHub repo page, copy the url of the <strong>origin</strong> repo by clicking on the green Code button and then the clipboard icon. It should look like this: <code>https://github.com/jtr13/EDAV.git</code> Then switch to RStudio, and click <strong>File</strong> -&gt; <strong>New Project</strong> -&gt; <strong>Version Control</strong> -&gt; <strong>Git</strong>. Now you can paste in the url of the <strong>origin</strong> repo and click <strong>Create Project</strong> to create a local repository. It is best to choose a location that is outside of other version control systems such as Dropbox to avoid conflicts.</p>
+</section>
+<section id="step-3-configure-remote-that-points-to-the-upstream-repository-once" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-3-configure-remote-that-points-to-the-upstream-repository-once">Step 3: Configure remote that points to the upstream repository (once)</h3>
+<p><em>Skip this step if you’re syncing with a repo that you have write access to.</em> The purpose of this step is to specify the location of the upstream repository, that is, the original project, not your copy of it.</p>
+<p>To complete this step, type in the following at the command line:</p>
+<p><code>$ git remote add upstream &lt;upstream repo url&gt;</code></p>
+<p>Source: <a href="https://help.github.com/en/articles/configuring-a-remote-for-a-fork" target="_blank">Configuring a remote for a fork</a></p>
+<p>Once the upstream remote is added, you will have two remotes: origin and upstream. For example, the remotes for my (<code>jtr13</code>) local forcats repository are:</p>
+<pre><code>$ git remote -v
+origin  https://github.com/jtr13/forcats.git (fetch)
+origin  https://github.com/jtr13/forcats.git (push)
+upstream        https://github.com/tidyverse/forcats (fetch)
+upstream        https://github.com/tidyverse/forcats (push)</code></pre>
+<p>(Although four options are listed, that is, fetching or pushing from either remote, as the diagram above indicates, we will only <em>fetch</em> from upsteam and <em>push</em> to origin.)</p>
+</section>
+<section id="step-4-branch" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-4-branch">Step 4: Branch</h3>
+<p>With this workflow, all new work is done on a branch, so it’s important to remember to create a new branch before you begin working. Once the work is complete, a pull request is submitted and if all goes well the new code will be merged into the main branch of the project on GitHub.</p>
+<p>When you’re ready to start working on something new, create a new branch. <strong>Do not reuse a merged branch.</strong> Each “fix” should get its own branch and be deleted after it’s been merged.</p>
+<p>To create a branch, click on the button shown below:</p>
+<p><br></p>
+<center>
+<img src="images/git/newbranch.png" class="img-fluid">
+</center>
+<p><br></p>
+<p>Give your new branch a meaningful name. For example, if you intend to add a faceting example to the histogram chapter, you might call your branch <code>add_hist_facet</code>. Leave the “Sync branch with remote” box checked. Thereby you will not only create a local branch but also a remote branch on origin, and the local branch will be set up to track the remote branch. In short, they will be linked and git will take note of any changes on the other.</p>
+</section>
+<section id="step-5-work-commit-and-push" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-5-work-commit-and-push">Step 5: Work, commit and push</h3>
+<p>When you create a branch following the method in Step 4, you will be automatically switched to the new branch. You can switch branches by clicking on the branch dropdown box to the right of the new branch button. However, be careful doing so. Work that isn’t committed, even if it is saved, doesn’t belong to a branch so it will move with you as you change branches. This makes it easy to accidentally be on the wrong branch. Check that you are in the right place and as you work keep an eye on changed files in the Git pane.</p>
+<center>
+<img src="images/git/gitpane.png" class="img-fluid">
+</center>
+<p><br></p>
+<p>Recall that there are three steps to moving saved work from your working directory to GitHub, represented by the git commands: <code>add</code>, <code>commit</code>, and <code>push</code>.</p>
+<p><br></p>
+<center>
+<img src="images/git/add-commit-push.png" class="img-fluid">
+</center>
+<p><br></p>
+<p>In RStudio, to <strong>add</strong>, you simply click the checkbox for each file you have modified in the “staged” column on the left of the Git pane. To <strong>commit</strong>, you just click on the <strong>commit</strong> button under the Git tab. Entering a commit message is mandatory; choose a meaningful description of the code changes. Finally, to push changes to GitHub, click on the <strong>push</strong> button, which is represented by an upward pointing arrow. You can combine multiple commits into one “push”.</p>
+<p>It is not considered good practice to commit too enough because all the commits are entered into the commit history and it’s hard to find what you need if you commit your work every five minutes. (As you’re starting out, though, I wouldn’t be concerned about this. It’s more important to use the commands frequently to gain experience.)</p>
+<p>The <a href="https://happygitwithr.com/repeated-amend.html" target="_blank">Repeated Amend chapter of Happy Git with R</a> describes one approach to dealing with the how-often-should-I-commit dilemma.</p>
+</section>
+<section id="step-6-submit-a-pull-request" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-6-submit-a-pull-request">Step 6: Submit a pull request</h3>
+<p>Now you are able to see the branch you have created on the GitHub page. The next step is to submit a pull request and the process is very similar to the process described in the <a href="https://jtr13.github.io/EDAV/contribute.html">GitHub only walkthrough</a> from the first version of edav.info, beginning with step 6.</p>
+</section>
+<section id="step-7-merge-the-pull-request" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-7-merge-the-pull-request">Step 7: Merge the pull request</h3>
+<p>If you submitted a PR to another project, you are not the one who will be merging the pull request, so there’s nothing for you to do here.</p>
+<p>If it is your project, and it is your job to do so, be aware that there are many methods to merge a request. The most direct simple and direct is to <a href="https://help.github.com/en/articles/merging-a-pull-request#merging-a-pull-request-on-github" target="_blank">merge the PR on GitHub</a>. This method works well for merging fixed typos and the like. If you want to be able to test code, you may want to check out the PR locally, test it, and perhaps even make edits to it before merging.</p>
+<p>Best practices in this area are evolving. My current recommendation is to use the <code>usethis</code> package, which makes complex tasks very simple. <a href="https://github.com/jtr13/usethis_demos/blob/master/how_to1.md" target="_blank">“How to edit a pull request locally”</a> explains how to do so.</p>
+<p>Another great resource is <a href="https://happygitwithr.com/pr-extend.html" target="_blank">“Explore and extend a pull request”</a> in <em>Happy Git with R</em>. This chapter describes two official GitHub versions of merging a pull request, as well as a workflow in development using <code>git2r</code>.</p>
+</section>
+</section>
+<section id="nd-nth-pr-on-another-repo-with-branching" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="nd-nth-pr-on-another-repo-with-branching"><span class="header-section-number">5.7</span> 2nd-<em>n</em>th PR on another repo with branching</h2>
+<center>
+<img src="images/git/pull-request-2.png" class="img-fluid">
+</center>
+<p>After the first pull request, the process changes a little. We no longer need to fork and clone the repo. What we do need to do though is make sure that our local copy of the repository is up to date with the GitHub version. There is some other cleanup we need to do, so after the first pull request, we’ll replace steps #1 - #3 above with the following:</p>
+<section id="step-1-sync" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-1-sync">Step 1: Sync</h3>
+<p>How you sync depends on whether you are syncing with your own repo (“origin”) or someone else’s repo (“upstream”). This should be done at the beginning of every work session.</p>
+<p><strong>Your repo</strong></p>
+<p>Switch to the main branch (important!), then click the pull button (down arrow) in the Git pane in RStudio. Or you can type the following in the Terminal:</p>
+<p><code>$ git checkout main</code><br>
+<code>$ git pull</code></p>
+<p>There are no reminders that you’re behind, so it’s up to you. Make it a habit.</p>
+<p><strong>Someone else’s repo</strong></p>
+<p>If you’re working on someone else’s repo, make sure you’ve <a href="#step-3-configure-remote-that-points-to-the-upstream-repository-once" target="_blank">configured an upstream remote</a>.</p>
+<p>Then do the following to update your fork:</p>
+<p><code>$ git fetch upstream</code></p>
+<p><code>$ git checkout main</code></p>
+<p><code>$ git merge upstream/main</code></p>
+<p>Source: <a href="https://help.github.com/en/articles/syncing-a-fork" target="_blank">Syncing a fork</a></p>
+<p>Note that these commands bring in changes directly from the upstream repo. If you are working on a branch and want to sync, check out that branch rather than main and fetch / merge. Switching branches can be performed by clicking on the appropriate branch in RStudio instead of <code>git checkout</code>.</p>
+</section>
+<section id="step-2-delete-the-old-branch" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-2-delete-the-old-branch">Step 2: Delete the old branch</h3>
+<p>If your previous pull request was merged, it’s good practice to delete the associated branch since the upstream already contains all the changes you have made. To fully delete a branch you will need to 1) delete the local branch, 2) delete the remote branch, 3) stop tracking the branch:</p>
+<ol type="1">
+<li>One way to delete the remote branch is to do so on GitHub. Navigate to the closed pull request on the upstream repo. If your branch has been merged, the pull request dialogue will display the following message: “You’re all set—the <code>&lt;branchname&gt;</code> branch can be safely deleted.” Simply click on the Delete branch button next to the message.</li>
+</ol>
+<p>If you prefer to work in the terminal, you can delete the remote branch with:</p>
+<p><code>$ git push origin --delete &lt;branchname&gt;</code></p>
+<ol start="2" type="1">
+<li>To delete the local branch, switch to the main branch in RStudio and then type the following in the terminal:</li>
+</ol>
+<p><code>$ git branch -d branchname</code></p>
+<ol start="3" type="1">
+<li>Take note that git doesn’t stop tracking the remote branch even though it’s gone in both places! To stop tracking deleted branches use the following:</li>
+</ol>
+<p><code>$ git fetch -p</code></p>
+<p>Otherwise you will still see the deleted branches listed in RStudio’s Git pane, and they will still appear when you look at all of your branches with</p>
+<p><code>$ git branch -a</code> (* = checked out branch)</p>
+<p>Speaking of which, be aware that the Git pane doesn’t tend to update in real time, so you’ll likely still see branches listed that have been deleted. Be careful not to switch to them, or you will inadvertently recreate them. (Deleted branches have a habit of coming back.) Clicking on main (even though you’re already on main) appears to trigger an update of the dropdown list. If that doesn’t work, switching out of the project and back in will do so, if you want to be sure that the branches you deleted are really gone.</p>
+</section>
+<section id="step-3-update-your-fork-on-github" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-3-update-your-fork-on-github">Step 3: Update your fork on GitHub</h3>
+<p>Skip this step if there’s no upstream repo.</p>
+<p>Yes, it’s odd, but once you’ve forked and cloned the project repo, the copy on GitHub becomes fairly irrelevant. However it’s not a bad idea to keep it up to date, if for no other reason than it’s disturbing to see messages like the following in your Git pane:</p>
+<p><br></p>
+<center>
+<img src="images/git/your-branch-ahead.png" class="img-fluid">
+</center>
+<p><br></p>
+<p>Thankfully, your fork on GitHub can be updated easily by clicking the green up arrow or entering <code>git push</code> in the Terminal.</p>
+</section>
+<section id="steps-4-7-see-above" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="steps-4-7-see-above">Steps 4-7: See above</h3>
+<p>Now we’re ready to repeat the branch, work, commit, push, submit a pull request workflow. To do so, follow <a href="#step-4-branch">Steps 4-7 above</a>.</p>
+</section>
+</section>
+<section id="fixing-mistakes" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="fixing-mistakes"><span class="header-section-number">5.8</span> Fixing mistakes</h2>
+<p>Fixing things generally involves returning to an earlier point in git history. To do so we need a way of referring to the point we want to return to. There are <a href="https://git-scm.com/docs/gitrevisions" target="_blank">multiple ways</a> of referring to the past. Most of the examples below use <code>HEAD</code> (the last commit) or <code>HEAD~1</code> (the parent of the last commit, a.k.a. the 2nd to last commit).</p>
+<p>If you are <a href="#st-pr-on-another-repo-with-branching">contributing to someone else’s repo</a> and things on your end get hopelessly messed up, the easiest way out is to start over. First be sure to keep a local copy of the files you need in a new folder, then <a href="https://help.github.com/en/github/administering-a-repository/deleting-a-repository" target="_blank">delete your fork on GitHub</a>, delete the local clone, fork again on GitHub, clone again to get a fresh local copy, and add the files you need back into the project. This is a variation of the <a href="https://happygitwithr.com/burn.html" target="_blank">“Burn it all down”</a> described in <em>Happy Git with R</em>.</p>
+<section id="forgot-to-branch" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="forgot-to-branch"><span class="header-section-number">5.8.1</span> Forgot to branch</h3>
+<ul>
+<li><p><strong>if you didn’t commit anything yet</strong>: <br> Just create the new branch and your work will be moved there, as <a href="https://stackoverflow.com/a/1394804/5314416" target="_blank">changes in the working directory do not belong to a branch until they are committed</a>.</p></li>
+<li><p><strong>if you committed but didn’t push to GitHub</strong>: <br> Undo the last commit with <code>git reset --soft HEAD~1</code> (i.e.&nbsp;return to the parent commit). <code>--soft</code> means your changes won’t be erased. Then create the new branch. (Your work will move to it, see above.)</p></li>
+<li><p><strong>if you committed and pushed to GitHub</strong>: <br> Undo the last commit with <code>git reset --soft HEAD~1</code>, push to GitHub (you will need to use <code>git push --force</code> since the push will cause origin to lose commits, then create the new branch. (Your work will move to it, see above.) <br> Note: Be very, very careful with <code>--force</code> as it is a dangerous tool. However, since the stakes are lower if you are force pushing to a fork, as would be the case if you are <a href="#st-pr-on-another-repo-with-branching">contributing to someone else’s repo</a>, it’s ok to use it in this particular case.</p></li>
+</ul>
+</section>
+<section id="undoing-stuff" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="undoing-stuff"><span class="header-section-number">5.8.2</span> Undoing stuff</h3>
+<ul>
+<li><p>Undo the last commit: <code>git reset --soft HEAD~1</code> <br> (Fun fact: <a href="https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git" target="_blank">“How do I undo the most recent local commits in Git?”</a> has the second highest number of votes of any question on Stack Overflow, and over 8 million views.)</p></li>
+<li><p>Undo changes since the last commit: <code>git reset --hard HEAD</code></p></li>
+<li><p>Undo changes in one file since the last commit:<br><code>git checkout -- [filename]</code> <a href="https://stackoverflow.com/questions/692246/undo-working-copy-modifications-of-one-file-in-git" target="_blank">SO link</a></p></li>
+<li><p>Undo deleted branch: Look for the SHA (hash) returned when you deleted the branch. Then:<br><code>git checkout -b &lt;branch-name&gt; &lt;SHA&gt;</code> <br> <a href="https://stackoverflow.com/a/39038276/5314416" target="_blank">SO link</a></p></li>
+<li><p>Remove all new, untracked files: <code>git clean -f</code></p></li>
+<li><p>Remove all new, untracked files, including in new subdirectories: <code>git clean -f -d</code></p></li>
+<li><p>Revert to a previous commit <a href="https://medium.com/swlh/using-git-how-to-go-back-to-a-previous-commit-8579ccc8180f" target="_blank">Using Git — how to go back to a previous commit</a></p></li>
+</ul>
+</section>
+<section id="random" class="level3" data-number="5.8.3">
+<h3 data-number="5.8.3" class="anchored" data-anchor-id="random"><span class="header-section-number">5.8.3</span> Random</h3>
+<ul>
+<li><p>Make local the same as origin:<br><code>git fetch origin</code><br><code>git reset --hard origin/main</code> <a href="https://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head" target="_blank">SO link</a></p></li>
+<li><p>Add back a file that was deleted but still exists on another branch:<br><code>git checkout otherbranch myfile.txt</code> <a href="https://stackoverflow.com/questions/307579/how-do-i-copy-a-version-of-a-single-file-from-one-git-branch-to-another" data-taraget="_blank">SO link</a></p></li>
+<li><p>Get rid of a file on GitHub that was added to <code>.gitignore</code> but is still there:<br><code>git rm --cached [filename]</code><br>(then commit and push changes to GitHub) <a href="https://stackoverflow.com/a/1143800/5314416" target="_blank">SO link</a></p></li>
+<li><p>Completely remove a folder from git history (use with caution) <a href="https://stackoverflow.com/a/32886427/5314416">SO link</a></p></li>
+</ul>
+</section>
+</section>
+<section id="troubleshooting" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">5.9</span> Troubleshooting</h2>
+<section id="deleting-a-branch-isnt-working" class="level3" data-number="5.9.1">
+<h3 data-number="5.9.1" class="anchored" data-anchor-id="deleting-a-branch-isnt-working"><span class="header-section-number">5.9.1</span> Deleting a branch isn’t working</h3>
+<ul>
+<li><p>Make sure you’re not on the branch you’re trying to delete.</p></li>
+<li><p>Note that if you try to delete a branch that hasn’t been fully merged, you’ll get a warning, or perhaps an error depending on what’s transpired. It’s possible that it just <em>thinks</em> it hasn’t been merged even though it has, since you’re not up to date. This can be remedied with <code>git pull</code>. In other cases, you’ll need to follow the instructions to use <code>-D</code> instead of <code>-d</code>, for example, if you decide to abandon and delete a branch without submitting a pull request.</p></li>
+<li><p>If you have trouble getting rid of branches, rest assured, that you’re not alone. <a href="https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely" target="_blank">How do I delete a Git branch locally and remotely?</a> is the <strong><a href="https://stackoverflow.com/questions?sort=votes" target="_blank">third most asked question</a></strong> on StackOverflow!</p></li>
+</ul>
+</section>
+</section>
+<section id="other-resources" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="other-resources"><span class="header-section-number">5.10</span> Other resources</h2>
+<section id="getting-help" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="getting-help">Getting Help</h3>
+<p>If you’re lost, these might help.</p>
+<ul>
+<li><p><a href="https://guides.github.com/" target="_blank">GitHub Guides</a>: This is a phenomenal collection of short articles from GitHub to help you learn about the fundamentals around their product. They are so great, we have already listed their Hello World article. Here are some other important ones:</p>
+<ul>
+<li><p><a href="https://guides.github.com/introduction/flow/" target="_blank">Understanding the GitHub Flow</a>: Explains how working with GitHub generally goes.</p></li>
+<li><p><a href="https://guides.github.com/introduction/git-handbook/" target="_blank">Git Handbook</a>: Explains what version control is.</p></li>
+</ul></li>
+<li><p><a href="https://help.github.com/" target="_blank">GitHub Help</a>: This is the yellow-pages of GitHub. Ask a question and it will try to <em>push</em> you in the right direction. <a href="https://getyarn.io/yarn-clip/6e7f4795-b65b-4fad-b1fb-c5c9161a95fa" target="_blank">Get it?</a></p></li>
+</ul>
+</section>
+<section id="branching-out" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="branching-out">Branching out</h3>
+<p>GitHub is super social. Learn how to <em>git</em> involved! <a href="https://getyarn.io/yarn-clip/c5de0e9e-6122-48f9-87ed-337aeb2e9ae4" target="_blank"><i class="far fa-smile"></i></a></p>
+<ul>
+<li><p><a href="https://opensource.guide/how-to-contribute/" target="_blank">Open Source Guide</a>: Info on how to contribute to open source projects. Great links to the GitHub skills involved as well as good GitHub etiquette to adopt.</p></li>
+<li><p><a href="https://guides.github.com/activities/forking/" target="_blank">Forking Projects</a>: Quick read from GitHub on how to fork a repository so you can contribute to it.</p></li>
+<li><p><a href="https://guides.github.com/features/issues/" target="_blank">Mastering Issues</a>: On what Issues are in GitHub and how they can help get things done.</p></li>
+<li><p><a href="contribute.html">Our Page on Contributing</a>: You can contribute to <em>edav.info/</em> with your new-found GitHub skills! Checkout our page on how to contribute through pull requests and/or issues.</p></li>
+</ul>
+</section>
+<section id="more-resources" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="more-resources">More Resources</h3>
+<p>To hit the ground running, checkout <a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a>. This application will teach you how to use GitHub with hands-on courses using actual repos. Its the perfect way to understand what using GitHub looks like.</p>
+<p>For the <a href="https://getyarn.io/yarn-clip/64bbb001-ed8a-450a-8826-b939f653b969" target="_blank">nerds in the room</a>…</p>
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=3m7BgIvC-uQ" target="_blank">Git For Ages 4 And Up</a>: There’s a lot going on under the hood. This talk will help explain how it all works…with kids toys!</p></li>
+<li><p><a href="https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs" target="_blank">Make pretty git logs</a>: Always remember <a href="https://i.stack.imgur.com/ElVkf.jpg" target="_blank">(A DOG)</a>. Also, this alias command is nice to have around:</p>
+<ul>
+<li><code>git config --global alias.adog "log --all --decorate --oneline --graph"</code></li>
+</ul></li>
+<li><p><a href="https://stackoverflow.com/questions/4298960/git-add-and-commit-in-one-command" target="_blank"><code>add</code> and <code>commit</code> with one command</a>: Another (even more) helpful alias command:</p>
+<ul>
+<li><code>git config --global alias.add-commit '!git add -A &amp;&amp; git commit'</code></li>
+</ul></li>
+<li><p><a href="https://github.com/jimeh/git-aware-prompt" target="_blank">Git Aware Prompt</a>: An excellent add-on to the Terminal that informs you which branch you have checked out. Someone also made <a href="https://github.com/udondan/git-aware-prompt" target="_blank">an even spiffier version</a> where it will inform you of your git status using helpful emojis.</p></li>
+<li><p><a href="https://popgen.nescent.org/CONTRIBUTING_WITH_GIT2R.html" target="_blank">Contributing with git2r</a>, on the <a href="https://popgen.nescent.org/index.html" target="_blank">Population Genetics in R</a> provides helpful information on using git commands within R through the git2r package. In particular it explains how to create a GITHUB_PAT and then set the <code>credential</code> parameter in certain functions to find the PAT. (Note though that the site was created in 2015 and as of February 2019 has not been updated.)</p></li>
+<li><p><strong>Want a little reading as well?</strong>: <a href="https://try.github.io/" target="_blank">Resources to learn Git</a> is a simple site split into two main sections: <em>Learn by reading</em> and <em>Learn by doing</em>. Take your pick. <i class="far fa-smile"></i></p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/jtr13\.github\.io\/edav2");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./data_transformation.html" class="pagination-link" aria-label="Data transformation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data transformation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./learning_ggplot2.html" class="pagination-link" aria-label="(PART) R graphics">
+        <span class="nav-page-text">(PART) R graphics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/git_GitHub.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/git_GitHub.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
