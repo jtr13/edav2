@@ -5,7 +5,7 @@ book:
   title: "edav.info v2"
   author: "Joyce Robbins"
   date: today
-  site-url: https://jtr13.github.io/edav2
+  site-url: https://edav.info
   repo-url: https://github.com/jtr13/edav2
   repo-branch: main
   repo-actions: [source, edit, issue]
