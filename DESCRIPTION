@@ -40,7 +40,6 @@ Imports:
     vcdExtra,
     viridis
 Suggests:
-    bookdown,
     bslib,
     downlit,
     withr,
