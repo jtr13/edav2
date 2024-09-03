@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>3&nbsp; Data importation – edav.info v2</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -70,7 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,11 +102,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -112,9 +122,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -129,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
@@ -238,34 +252,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#packages-with-built-in-data-set" id="toc-packages-with-built-in-data-set" class="nav-link active" data-scroll-target="#packages-with-built-in-data-set"><span class="header-section-number">3.1</span> Packages with built in data set</a></li>
-  <li>
-<a href="#data-from-web" id="toc-data-from-web" class="nav-link" data-scroll-target="#data-from-web"><span class="header-section-number">3.2</span> Data from web</a>
+  <li><a href="#packages-with-built-in-data-set" id="toc-packages-with-built-in-data-set" class="nav-link active" data-scroll-target="#packages-with-built-in-data-set"><span class="header-section-number">3.1</span> Packages with built in data set</a></li>
+  <li><a href="#data-from-web" id="toc-data-from-web" class="nav-link" data-scroll-target="#data-from-web"><span class="header-section-number">3.2</span> Data from web</a>
   <ul class="collapse">
-<li><a href="#read-in-from-url" id="toc-read-in-from-url" class="nav-link" data-scroll-target="#read-in-from-url"><span class="header-section-number">3.2.1</span> Read in from URL</a></li>
+  <li><a href="#read-in-from-url" id="toc-read-in-from-url" class="nav-link" data-scroll-target="#read-in-from-url"><span class="header-section-number">3.2.1</span> Read in from URL</a></li>
   <li><a href="#api-r-api-package" id="toc-api-r-api-package" class="nav-link" data-scroll-target="#api-r-api-package"><span class="header-section-number">3.2.2</span> API / R API package</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping"><span class="header-section-number">3.3</span> Web scraping</a>
+  </ul></li>
+  <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping"><span class="header-section-number">3.3</span> Web scraping</a>
   <ul class="collapse">
-<li><a href="#rvest" id="toc-rvest" class="nav-link" data-scroll-target="#rvest"><span class="header-section-number">3.3.1</span> <code>rvest</code></a></li>
+  <li><a href="#rvest" id="toc-rvest" class="nav-link" data-scroll-target="#rvest"><span class="header-section-number">3.3.1</span> <code>rvest</code></a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/data_import.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/data_import.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/data_import.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/data_import.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data importation</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data importation</span></h1>
 </div>
 
 
@@ -279,13 +293,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Data is the core to any analysis. In this chapter, we will talk about various ways to import data into R.</p>
-<section id="packages-with-built-in-data-set" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="packages-with-built-in-data-set">
-<span class="header-section-number">3.1</span> Packages with built in data set</h2>
+</header>
+
+
+<p>Data is the core to any analysis. In this chapter, we will talk about various ways to import data into R.</p>
+<section id="packages-with-built-in-data-set" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="packages-with-built-in-data-set"><span class="header-section-number">3.1</span> Packages with built in data set</h2>
 <p>Many of the packages in R have built in data sets. To gain access of the data, call the package and you can access them by the name of the data sets. For example, we can access the <code>ExerciseHours</code> data set from <code>Lock5withR</code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">Lock5withR</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ExerciseHours</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Lock5withR)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ExerciseHours)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Year Gender Hand Exercise TV Pulse Pierces
 1    4      M    l       15  5    57       0
@@ -296,16 +313,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 6    1      M    r       14 14    62       0</code></pre>
 </div>
 </div>
-</section><section id="data-from-web" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="data-from-web">
-<span class="header-section-number">3.2</span> Data from web</h2>
-<section id="read-in-from-url" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="read-in-from-url">
-<span class="header-section-number">3.2.1</span> Read in from URL</h3>
+</section>
+<section id="data-from-web" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="data-from-web"><span class="header-section-number">3.2</span> Data from web</h2>
+<section id="read-in-from-url" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="read-in-from-url"><span class="header-section-number">3.2.1</span> Read in from URL</h3>
 <p>Some of the data you found online might be files ended with ‘.csv’ or ‘.xls’. In this case, you can directly read them using the URL. For example,</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"</span>,</span>
-<span>              header <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="co">#Read in iris data</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">header =</span> <span class="cn">FALSE</span>) <span class="co">#Read in iris data</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   V1  V2  V3  V4          V5
 1 5.1 3.5 1.4 0.2 Iris-setosa
@@ -317,8 +335,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Note that this is not a very stable way of reading data as the structure of the website might change, which will result in failure of reading the data.</p>
-</section><section id="api-r-api-package" class="level3" data-number="3.2.2"><h3 data-number="3.2.2" class="anchored" data-anchor-id="api-r-api-package">
-<span class="header-section-number">3.2.2</span> API / R API package</h3>
+</section>
+<section id="api-r-api-package" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="api-r-api-package"><span class="header-section-number">3.2.2</span> API / R API package</h3>
 <p>Some data sources provide APIs to access their data, for example CDC, Census, and Twitter. However, there is a learning curve in utilizing their APIs. <a href="https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html">Best practices for API packages</a> will help you to get a head start.</p>
 <p>The other option is to find packages that handles the API calls for you. For example:</p>
 <ul>
@@ -327,8 +346,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Twitter - package <a href="https://www.rdocumentation.org/packages/rtweet/versions/0.7.0"><code>rtweet</code></a></p></li>
 </ul>
 <p>A well-built client will save you a lot of time in retrieving data and should be your first resort.</p>
-</section></section><section id="web-scraping" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="web-scraping">
-<span class="header-section-number">3.3</span> Web scraping</h2>
+</section>
+</section>
+<section id="web-scraping" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="web-scraping"><span class="header-section-number">3.3</span> Web scraping</h2>
 <p>Web scraping is mostly considered as the last resort in obtaining data. As we put it in the last section, meaning that you should always explore the possibilities above before turning to web scraping. When scarping, you should</p>
 <ul>
 <li><p>think and investigate legal issues</p></li>
@@ -336,24 +357,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>limit bandwidth use</p></li>
 <li><p>scrape only what you need</p></li>
 </ul>
-<p>To start, you will need to know some backgrounds about the structure of a html page. In a webpage, you can always right click -&gt; inspect to check on the structure. Also, as a sanity check, we recommend using package <code>robotstxt</code> to see if scarping is allowed on a certain webpage. You can simply feed in the URL into function <code><a href="https://docs.ropensci.org/robotstxt/reference/paths_allowed.html">paths_allowed()</a></code>. We will use the CRAN page for package <code>forcats</code> for the scraping example.</p>
+<p>To start, you will need to know some backgrounds about the structure of a html page. In a webpage, you can always right click -&gt; inspect to check on the structure. Also, as a sanity check, we recommend using package <code>robotstxt</code> to see if scarping is allowed on a certain webpage. You can simply feed in the URL into function <code>paths_allowed()</code>. We will use the CRAN page for package <code>forcats</code> for the scraping example.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/robotstxt/">robotstxt</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://docs.ropensci.org/robotstxt/reference/paths_allowed.html">paths_allowed</a></span><span class="op">(</span><span class="st">'https://cran.r-project.org/web/packages/forcats/index.html'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robotstxt)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paths_allowed</span>(<span class="st">'https://cran.r-project.org/web/packages/forcats/index.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<section id="rvest" class="level3" data-number="3.3.1"><h3 data-number="3.3.1" class="anchored" data-anchor-id="rvest">
-<span class="header-section-number">3.3.1</span> <code>rvest</code>
-</h3>
-<p>Package <code>rvest</code> is widely used for web scraping. In the following example, <code><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html()</a></code> takes the target webpage URL and <code><a href="https://rvest.tidyverse.org/reference/html_table.html">html_table()</a></code> extracts all table element in the page.</p>
+<section id="rvest" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="rvest"><span class="header-section-number">3.3.1</span> <code>rvest</code></h3>
+<p>Package <code>rvest</code> is widely used for web scraping. In the following example, <code>read_html()</code> takes the target webpage URL and <code>html_table()</code> extracts all table element in the page.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forcats_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="st">"https://cran.r-project.org/web/packages/forcats/index.html"</span><span class="op">)</span> </span>
-<span></span>
-<span><span class="va">forcats_table</span> <span class="op">&lt;-</span> <span class="va">forcats_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_table.html">html_table</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">forcats_table</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>forcats_data <span class="ot">&lt;-</span> <span class="fu">read_html</span>(<span class="st">"https://cran.r-project.org/web/packages/forcats/index.html"</span>) </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>forcats_table <span class="ot">&lt;-</span> forcats_data <span class="sc">%&gt;%</span> <span class="fu">html_table</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>forcats_table[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 14 × 2
    X1                X2                                                         
@@ -374,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 14 CRAN&nbsp;checks:      "forcats results"                                          </code></pre>
 </div>
 </div>
-<p>If you want contents that are not in the table format, you can use <code><a href="https://rvest.tidyverse.org/reference/rename.html">html_nodes()</a></code> specifying specific html structure. Namely,</p>
+<p>If you want contents that are not in the table format, you can use <code>html_nodes()</code> specifying specific html structure. Namely,</p>
 <ul>
 <li><p><code>h2</code> tag - <code>html_nodes("h2")</code></p></li>
 <li><p><code>id</code> attribute - <code>html_nodes("#XXX")</code></p></li>
@@ -382,7 +402,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -801,7 +825,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./factors.html" class="pagination-link" aria-label="Working with factors">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with factors</span></span>
       </a>          
@@ -813,6 +839,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>11&nbsp; Multidimensional categorical variables – edav.info v2</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -70,7 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,11 +102,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -112,9 +122,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -129,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
@@ -238,49 +252,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#barcharts" id="toc-barcharts" class="nav-link active" data-scroll-target="#barcharts"><span class="header-section-number">11.1</span> Barcharts</a>
+  <li><a href="#barcharts" id="toc-barcharts" class="nav-link active" data-scroll-target="#barcharts"><span class="header-section-number">11.1</span> Barcharts</a>
   <ul class="collapse">
-<li><a href="#stacked-bar-chart" id="toc-stacked-bar-chart" class="nav-link" data-scroll-target="#stacked-bar-chart"><span class="header-section-number">11.1.1</span> Stacked bar chart</a></li>
+  <li><a href="#stacked-bar-chart" id="toc-stacked-bar-chart" class="nav-link" data-scroll-target="#stacked-bar-chart"><span class="header-section-number">11.1.1</span> Stacked bar chart</a></li>
   <li><a href="#grouped-bar-chart" id="toc-grouped-bar-chart" class="nav-link" data-scroll-target="#grouped-bar-chart"><span class="header-section-number">11.1.2</span> Grouped bar chart</a></li>
   <li><a href="#grouped-bar-chart-with-facets" id="toc-grouped-bar-chart-with-facets" class="nav-link" data-scroll-target="#grouped-bar-chart-with-facets"><span class="header-section-number">11.1.3</span> Grouped bar chart with facets</a></li>
   <li><a href="#grouped-barchart-with-three-categorical-variables" id="toc-grouped-barchart-with-three-categorical-variables" class="nav-link" data-scroll-target="#grouped-barchart-with-three-categorical-variables"><span class="header-section-number">11.1.4</span> Grouped barchart with three categorical variables</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="header-section-number">11.2</span> Chi square test of independence</a></li>
-  <li>
-<a href="#mosaic-plots" id="toc-mosaic-plots" class="nav-link" data-scroll-target="#mosaic-plots"><span class="header-section-number">11.3</span> Mosaic plots</a>
+  <li><a href="#mosaic-plots" id="toc-mosaic-plots" class="nav-link" data-scroll-target="#mosaic-plots"><span class="header-section-number">11.3</span> Mosaic plots</a>
   <ul class="collapse">
-<li><a href="#mosaic-plot-with-one-variable" id="toc-mosaic-plot-with-one-variable" class="nav-link" data-scroll-target="#mosaic-plot-with-one-variable"><span class="header-section-number">11.3.1</span> Mosaic plot with one variable</a></li>
+  <li><a href="#mosaic-plot-with-one-variable" id="toc-mosaic-plot-with-one-variable" class="nav-link" data-scroll-target="#mosaic-plot-with-one-variable"><span class="header-section-number">11.3.1</span> Mosaic plot with one variable</a></li>
   <li><a href="#mosaic-plot-with-two-variables" id="toc-mosaic-plot-with-two-variables" class="nav-link" data-scroll-target="#mosaic-plot-with-two-variables"><span class="header-section-number">11.3.2</span> Mosaic plot with two variables</a></li>
   <li><a href="#mosaic-plot-with-three-variablesbest-practice" id="toc-mosaic-plot-with-three-variablesbest-practice" class="nav-link" data-scroll-target="#mosaic-plot-with-three-variablesbest-practice"><span class="header-section-number">11.3.3</span> Mosaic plot with three variables(Best practice)</a></li>
   <li><a href="#mosaic-pairs-plot" id="toc-mosaic-pairs-plot" class="nav-link" data-scroll-target="#mosaic-pairs-plot"><span class="header-section-number">11.3.4</span> Mosaic pairs plot</a></li>
   <li><a href="#mosaic-plots-spine-plot" id="toc-mosaic-plots-spine-plot" class="nav-link" data-scroll-target="#mosaic-plots-spine-plot"><span class="header-section-number">11.3.5</span> Mosaic plots: spine plot</a></li>
   <li><a href="#mosaic-plot-tree-map" id="toc-mosaic-plot-tree-map" class="nav-link" data-scroll-target="#mosaic-plot-tree-map"><span class="header-section-number">11.3.6</span> Mosaic plot: tree map</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#alluvial-diagrams" id="toc-alluvial-diagrams" class="nav-link" data-scroll-target="#alluvial-diagrams"><span class="header-section-number">11.4</span> Alluvial diagrams</a>
+  </ul></li>
+  <li><a href="#alluvial-diagrams" id="toc-alluvial-diagrams" class="nav-link" data-scroll-target="#alluvial-diagrams"><span class="header-section-number">11.4</span> Alluvial diagrams</a>
   <ul class="collapse">
-<li><a href="#ggalluvial" id="toc-ggalluvial" class="nav-link" data-scroll-target="#ggalluvial"><span class="header-section-number">11.4.1</span> ggalluvial</a></li>
+  <li><a href="#ggalluvial" id="toc-ggalluvial" class="nav-link" data-scroll-target="#ggalluvial"><span class="header-section-number">11.4.1</span> ggalluvial</a></li>
   <li><a href="#geom_flow" id="toc-geom_flow" class="nav-link" data-scroll-target="#geom_flow"><span class="header-section-number">11.4.2</span> geom_flow</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#heat-map" id="toc-heat-map" class="nav-link" data-scroll-target="#heat-map"><span class="header-section-number">11.5</span> Heat map</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/multidimensional_categorical.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/multidimensional_categorical.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/multidimensional_categorical.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/multidimensional_categorical.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multidimensional categorical variables</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multidimensional categorical variables</span></h1>
 </div>
 
 
@@ -294,90 +306,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>In this chapter, we will focus on multivariate categorical data. Here, it is noteworthy that multivariate plot is not the same as multiple variable plot, where the former is used for analysis with multiple outcomes.</p>
-<section id="barcharts" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="barcharts">
-<span class="header-section-number">11.1</span> Barcharts</h2>
+</header>
+
+
+<p>In this chapter, we will focus on multivariate categorical data. Here, it is noteworthy that multivariate plot is not the same as multiple variable plot, where the former is used for analysis with multiple outcomes.</p>
+<section id="barcharts" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="barcharts"><span class="header-section-number">11.1</span> Barcharts</h2>
 <p>Bar chats are used to display the frequency of multidimensional categorical variables. In the next few plots you will be shown different kinds of bar charts.</p>
-<section id="stacked-bar-chart" class="level3" data-number="11.1.1"><h3 data-number="11.1.1" class="anchored" data-anchor-id="stacked-bar-chart">
-<span class="header-section-number">11.1.1</span> Stacked bar chart</h3>
+<section id="stacked-bar-chart" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="stacked-bar-chart"><span class="header-section-number">11.1.1</span> Stacked bar chart</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span><span class="va">cases</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/icecream.csv"</span><span class="op">)</span></span>
-<span><span class="va">icecreamcolors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#ff99ff"</span>, <span class="st">"#cc9966"</span><span class="op">)</span> <span class="co"># pink, coffee</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">cases</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Age</span>, fill <span class="op">=</span> <span class="va">Favorite</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">icecreamcolors</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cases <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/icecream.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>icecreamcolors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#ff99ff"</span>, <span class="st">"#cc9966"</span>) <span class="co"># pink, coffee</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cases, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">fill =</span> Favorite)) <span class="sc">+</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> icecreamcolors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="grouped-bar-chart" class="level3" data-number="11.1.2"><h3 data-number="11.1.2" class="anchored" data-anchor-id="grouped-bar-chart">
-<span class="header-section-number">11.1.2</span> Grouped bar chart</h3>
+</section>
+<section id="grouped-bar-chart" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="grouped-bar-chart"><span class="header-section-number">11.1.2</span> Grouped bar chart</h3>
 <p>Use <code>position = "dodge"</code> to create grouped bar chart</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">cases</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Age</span>, fill <span class="op">=</span> <span class="va">Favorite</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">icecreamcolors</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cases, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">fill =</span> Favorite)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> icecreamcolors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="grouped-bar-chart-with-facets" class="level3" data-number="11.1.3"><h3 data-number="11.1.3" class="anchored" data-anchor-id="grouped-bar-chart-with-facets">
-<span class="header-section-number">11.1.3</span> Grouped bar chart with facets</h3>
+</section>
+<section id="grouped-bar-chart-with-facets" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="grouped-bar-chart-with-facets"><span class="header-section-number">11.1.3</span> Grouped bar chart with facets</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">cases</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Age</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Favorite</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cases, <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Favorite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="grouped-barchart-with-three-categorical-variables" class="level3" data-number="11.1.4"><h3 data-number="11.1.4" class="anchored" data-anchor-id="grouped-barchart-with-three-categorical-variables">
-<span class="header-section-number">11.1.4</span> Grouped barchart with three categorical variables</h3>
+</section>
+<section id="grouped-barchart-with-three-categorical-variables" class="level3" data-number="11.1.4">
+<h3 data-number="11.1.4" class="anchored" data-anchor-id="grouped-barchart-with-three-categorical-variables"><span class="header-section-number">11.1.4</span> Grouped barchart with three categorical variables</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">counts3</span> <span class="op">&lt;-</span> <span class="va">cases</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Age</span>, <span class="va">Favorite</span>, <span class="va">Music</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>Freq <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">Age</span>, <span class="va">Favorite</span>, <span class="va">Music</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Freq <span class="op">=</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">counts3</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Favorite</span>, y <span class="op">=</span> <span class="va">Freq</span>, fill <span class="op">=</span> <span class="va">Music</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>counts3 <span class="ot">&lt;-</span> cases <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Age, Favorite, Music) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Freq =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(Age, Favorite, Music, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">Freq =</span> <span class="dv">0</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(counts3, <span class="fu">aes</span>(<span class="at">x =</span> Favorite, <span class="at">y =</span> Freq, <span class="at">fill =</span> Music)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section></section><section id="chi-square-test-of-independence" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="chi-square-test-of-independence">
-<span class="header-section-number">11.2</span> Chi square test of independence</h2>
+</section>
+</section>
+<section id="chi-square-test-of-independence" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="chi-square-test-of-independence"><span class="header-section-number">11.2</span> Chi square test of independence</h2>
 <p>In this section, we would like to show how to use chi-square test to check the independence between two features.</p>
 <p>We will use the following example to answer: Are older Americans more interested in local news than younger Americans? The dataset is collected from <a href="https://www.journalism.org/2019/08/14/methodology-local-news-demographics/">here</a>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">local</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>Age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"18-29"</span>, <span class="st">"30-49"</span>, <span class="st">"50-64"</span>, <span class="st">"65+"</span><span class="op">)</span>,</span>
-<span>                        Freq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2851</span>, <span class="fl">9967</span>, <span class="fl">11163</span>, <span class="fl">10911</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Followers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.15</span>, <span class="fl">.28</span>, <span class="fl">.38</span>, <span class="fl">.42</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>         Nonfollowers <span class="op">=</span> <span class="va">Freq</span> <span class="op">-</span> <span class="va">Followers</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Freq</span><span class="op">)</span></span>
-<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">local</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>local <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Age =</span> <span class="fu">c</span>(<span class="st">"18-29"</span>, <span class="st">"30-49"</span>, <span class="st">"50-64"</span>, <span class="st">"65+"</span>),</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Freq =</span> <span class="fu">c</span>(<span class="dv">2851</span>, <span class="dv">9967</span>, <span class="dv">11163</span>, <span class="dv">10911</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Followers =</span> <span class="fu">round</span>(Freq<span class="sc">*</span><span class="fu">c</span>(.<span class="dv">15</span>, .<span class="dv">28</span>, .<span class="dv">38</span>, .<span class="dv">42</span>)),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">Nonfollowers =</span> Freq <span class="sc">-</span> Followers) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Freq)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(local[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">Age</th>
 <th style="text-align: right;">Followers</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">18-29</td>
@@ -403,10 +429,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Null hypothesis: Age and tendency to follow local news are independent</p>
 <p>Alternative hypothesis: Age and tendence to follow local news are NOT independent</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">localmat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="va">local</span><span class="op">[</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">localmat</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">local</span><span class="op">$</span><span class="va">Age</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">localmat</span>, correct <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="va">X</span><span class="op">$</span><span class="va">observed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>localmat <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(local[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(localmat) <span class="ot">&lt;-</span> local<span class="sc">$</span>Age</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(localmat, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>X<span class="sc">$</span>observed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Followers Nonfollowers
 18-29       428         2423
@@ -414,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 50-64      4242         6921
 65+        4583         6328</code></pre>
 </div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">X</span><span class="op">$</span><span class="va">expected</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>X<span class="sc">$</span>expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Followers Nonfollowers
 18-29  984.1065     1866.893
@@ -422,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 50-64 3853.2378     7309.762
 65+   3766.2526     7144.747</code></pre>
 </div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">X</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -432,40 +458,45 @@ X-squared = 997.48, df = 3, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>We compare observed to expected and then the p-value tells that age and tendency are independent features. We are good to move on to next stage on mosaic plots.</p>
-</section><section id="mosaic-plots" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="mosaic-plots">
-<span class="header-section-number">11.3</span> Mosaic plots</h2>
+</section>
+<section id="mosaic-plots" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="mosaic-plots"><span class="header-section-number">11.3</span> Mosaic plots</h2>
 <p>Mosaic plots are used for visualizing data from two or more qualitative variables to show their proportions or associations.</p>
-<section id="mosaic-plot-with-one-variable" class="level3" data-number="11.3.1"><h3 data-number="11.3.1" class="anchored" data-anchor-id="mosaic-plot-with-one-variable">
-<span class="header-section-number">11.3.1</span> Mosaic plot with one variable</h3>
+<section id="mosaic-plot-with-one-variable" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="mosaic-plot-with-one-variable"><span class="header-section-number">11.3.1</span> Mosaic plot with one variable</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">grid</span><span class="op">)</span></span>
-<span><span class="va">icecream</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/MusicIcecream.csv"</span><span class="op">)</span></span>
-<span><span class="va">icecreamcolors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#ff99ff"</span>, <span class="st">"#cc9966"</span><span class="op">)</span> </span>
-<span><span class="va">counts2</span> <span class="op">&lt;-</span> <span class="va">icecream</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Age</span>, <span class="va">Favorite</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>Freq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu">vcd</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/vcd/man/mosaic.html">mosaic</a></span><span class="op">(</span><span class="op">~</span><span class="va">Age</span>, direction <span class="op">=</span> <span class="st">"v"</span>, <span class="va">counts2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>icecream <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/MusicIcecream.csv"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>icecreamcolors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#ff99ff"</span>, <span class="st">"#cc9966"</span>) </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>counts2 <span class="ot">&lt;-</span> icecream <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Age, Favorite) <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Freq))</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>vcd<span class="sc">::</span><span class="fu">mosaic</span>(<span class="sc">~</span>Age, <span class="at">direction =</span> <span class="st">"v"</span>, counts2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="mosaic-plot-with-two-variables" class="level3" data-number="11.3.2"><h3 data-number="11.3.2" class="anchored" data-anchor-id="mosaic-plot-with-two-variables">
-<span class="header-section-number">11.3.2</span> Mosaic plot with two variables</h3>
+</section>
+<section id="mosaic-plot-with-two-variables" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="mosaic-plot-with-two-variables"><span class="header-section-number">11.3.2</span> Mosaic plot with two variables</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vcd</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/vcd/man/mosaic.html">mosaic</a></span><span class="op">(</span><span class="va">Favorite</span> <span class="op">~</span> <span class="va">Age</span>, <span class="va">counts2</span>, direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"v"</span>, <span class="st">"h"</span><span class="op">)</span>,</span>
-<span>            highlighting_fill <span class="op">=</span> <span class="va">icecreamcolors</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>vcd<span class="sc">::</span><span class="fu">mosaic</span>(Favorite <span class="sc">~</span> Age, counts2, <span class="at">direction =</span> <span class="fu">c</span>(<span class="st">"v"</span>, <span class="st">"h"</span>),</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">highlighting_fill =</span> icecreamcolors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="mosaic-plot-with-three-variablesbest-practice" class="level3" data-number="11.3.3"><h3 data-number="11.3.3" class="anchored" data-anchor-id="mosaic-plot-with-three-variablesbest-practice">
-<span class="header-section-number">11.3.3</span> Mosaic plot with three variables(Best practice)</h3>
+</section>
+<section id="mosaic-plot-with-three-variablesbest-practice" class="level3" data-number="11.3.3">
+<h3 data-number="11.3.3" class="anchored" data-anchor-id="mosaic-plot-with-three-variablesbest-practice"><span class="header-section-number">11.3.3</span> Mosaic plot with three variables(Best practice)</h3>
 <p>Here’s some criteria of best practice of mosaic plots :</p>
 <blockquote class="blockquote">
 <p>Dependent variables is split last and split horizontally</p>
@@ -474,161 +505,180 @@ X-squared = 997.48, df = 3, p-value &lt; 2.2e-16</code></pre>
 <p>Most important level of dependent variable is closest to the x-axis and darkest (or most noticable shade)</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vcd</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/vcd/man/mosaic.html">mosaic</a></span><span class="op">(</span><span class="va">Favorite</span> <span class="op">~</span> <span class="va">Age</span> <span class="op">+</span> <span class="va">Music</span>, <span class="va">counts3</span>,</span>
-<span>            direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"v"</span>, <span class="st">"v"</span>, <span class="st">"h"</span><span class="op">)</span>,</span>
-<span>            highlighting_fill <span class="op">=</span> <span class="va">icecreamcolors</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vcd<span class="sc">::</span><span class="fu">mosaic</span>(Favorite <span class="sc">~</span> Age <span class="sc">+</span> Music, counts3,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">direction =</span> <span class="fu">c</span>(<span class="st">"v"</span>, <span class="st">"v"</span>, <span class="st">"h"</span>),</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">highlighting_fill =</span> icecreamcolors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="mosaic-pairs-plot" class="level3" data-number="11.3.4"><h3 data-number="11.3.4" class="anchored" data-anchor-id="mosaic-pairs-plot">
-<span class="header-section-number">11.3.4</span> Mosaic pairs plot</h3>
+</section>
+<section id="mosaic-pairs-plot" class="level3" data-number="11.3.4">
+<h3 data-number="11.3.4" class="anchored" data-anchor-id="mosaic-pairs-plot"><span class="header-section-number">11.3.4</span> Mosaic pairs plot</h3>
 <p>Use <code>pairs</code> method to plot a matrix of pairwise mosaic plots for class <code>table</code>:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html">pairs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">cases</span><span class="op">[</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>, highlighting <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(<span class="fu">table</span>(cases[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]), <span class="at">highlighting =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="mosaic-plots-spine-plot" class="level3" data-number="11.3.5"><h3 data-number="11.3.5" class="anchored" data-anchor-id="mosaic-plots-spine-plot">
-<span class="header-section-number">11.3.5</span> Mosaic plots: spine plot</h3>
+</section>
+<section id="mosaic-plots-spine-plot" class="level3" data-number="11.3.5">
+<h3 data-number="11.3.5" class="anchored" data-anchor-id="mosaic-plots-spine-plot"><span class="header-section-number">11.3.5</span> Mosaic plots: spine plot</h3>
 <p>Spine plot is a mosaic plot with straight, parallel cuts in one dimension (“spines”) and only one variable cutting in the other direction.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://friendly.github.io/vcdExtra/">vcdExtra</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://forcats.tidyverse.org/">forcats</a></span><span class="op">)</span></span>
-<span><span class="va">foodorder</span> <span class="op">&lt;-</span> <span class="va">Alligator</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">food</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>Freq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">food</span><span class="op">)</span></span>
-<span><span class="va">ally</span> <span class="op">&lt;-</span> <span class="va">Alligator</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>Freq <span class="op">=</span> <span class="va">count</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">size</span>, <span class="st">"small"</span><span class="op">)</span>,</span>
-<span>         food <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">food</span>, levels <span class="op">=</span> <span class="va">foodorder</span><span class="op">)</span>,</span>
-<span>         food <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">food</span>, <span class="st">"other"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">vcd</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/vcd/man/mosaic.html">mosaic</a></span><span class="op">(</span><span class="va">food</span> <span class="op">~</span> <span class="va">sex</span> <span class="op">+</span> <span class="va">size</span>, <span class="va">ally</span>,</span>
-<span>       direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"v"</span>, <span class="st">"v"</span>, <span class="st">"h"</span><span class="op">)</span>,</span>
-<span>       highlighting_fill<span class="op">=</span> <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="fl">5</span>, <span class="st">"Accent"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcdExtra)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>foodorder <span class="ot">&lt;-</span> Alligator <span class="sc">|&gt;</span> <span class="fu">group_by</span>(food) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(count)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Freq) <span class="sc">|&gt;</span> <span class="fu">pull</span>(food)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>ally <span class="ot">&lt;-</span> Alligator <span class="sc">|&gt;</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Freq =</span> count) <span class="sc">|&gt;</span> </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">size =</span> <span class="fu">fct_relevel</span>(size, <span class="st">"small"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">food =</span> <span class="fu">factor</span>(food, <span class="at">levels =</span> foodorder),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">food =</span> <span class="fu">fct_relevel</span>(food, <span class="st">"other"</span>))</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>vcd<span class="sc">::</span><span class="fu">mosaic</span>(food <span class="sc">~</span> sex <span class="sc">+</span> size, ally,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">direction =</span> <span class="fu">c</span>(<span class="st">"v"</span>, <span class="st">"v"</span>, <span class="st">"h"</span>),</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">highlighting_fill=</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="dv">5</span>, <span class="st">"Accent"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="mosaic-plot-tree-map" class="level3" data-number="11.3.6"><h3 data-number="11.3.6" class="anchored" data-anchor-id="mosaic-plot-tree-map">
-<span class="header-section-number">11.3.6</span> Mosaic plot: tree map</h3>
+</section>
+<section id="mosaic-plot-tree-map" class="level3" data-number="11.3.6">
+<h3 data-number="11.3.6" class="anchored" data-anchor-id="mosaic-plot-tree-map"><span class="header-section-number">11.3.6</span> Mosaic plot: tree map</h3>
 <p>Treemap is a filled rectangular plot representing hierarchical data (fill color does not necessarily represent frequency count)</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">treemap</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">GNI2014</span><span class="op">)</span></span>
-<span><span class="fu">treemap</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/treemap/man/treemap.html">treemap</a></span><span class="op">(</span><span class="va">GNI2014</span>,</span>
-<span>       index<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"continent"</span>, <span class="st">"iso3"</span><span class="op">)</span>,</span>
-<span>       vSize<span class="op">=</span><span class="st">"population"</span>,</span>
-<span>       vColor<span class="op">=</span><span class="st">"GNI"</span>,</span>
-<span>       type<span class="op">=</span><span class="st">"value"</span>,</span>
-<span>       format.legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>scientific <span class="op">=</span> <span class="cn">FALSE</span>, big.mark <span class="op">=</span> <span class="st">" "</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(treemap)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(GNI2014)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>treemap<span class="sc">::</span><span class="fu">treemap</span>(GNI2014,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">index=</span><span class="fu">c</span>(<span class="st">"continent"</span>, <span class="st">"iso3"</span>),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">vSize=</span><span class="st">"population"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">vColor=</span><span class="st">"GNI"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">type=</span><span class="st">"value"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">format.legend =</span> <span class="fu">list</span>(<span class="at">scientific =</span> <span class="cn">FALSE</span>, <span class="at">big.mark =</span> <span class="st">" "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section></section><section id="alluvial-diagrams" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="alluvial-diagrams">
-<span class="header-section-number">11.4</span> Alluvial diagrams</h2>
+</section>
+</section>
+<section id="alluvial-diagrams" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="alluvial-diagrams"><span class="header-section-number">11.4</span> Alluvial diagrams</h2>
 <p>Alluvial diagrams are usually used to represent the flow changes in network structure over time or between different levels.</p>
 <p>The following plot shows the essential components of alluvial plots used in the naming schemes and documentation (axis, alluvium, stratum, lode):</p>
 <center>
 <img src="images/alluvial_structure.png" class="img-fluid" style="width:75.0%">
 </center>
-<section id="ggalluvial" class="level3" data-number="11.4.1"><h3 data-number="11.4.1" class="anchored" data-anchor-id="ggalluvial">
-<span class="header-section-number">11.4.1</span> ggalluvial</h3>
+<section id="ggalluvial" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="ggalluvial"><span class="header-section-number">11.4.1</span> ggalluvial</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://corybrunson.github.io/ggalluvial/">ggalluvial</a></span><span class="op">)</span></span>
-<span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>Class1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span><span class="op">)</span>,</span>
-<span>                 Class2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span>, <span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span><span class="op">)</span>,</span>
-<span>                 Class3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span><span class="op">)</span>,</span>
-<span>                 Freq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">3</span>, <span class="fl">40</span>, <span class="fl">5</span>, <span class="fl">10</span>, <span class="fl">2</span>, <span class="fl">5</span>, <span class="fl">15</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>axis1 <span class="op">=</span> <span class="va">Class1</span>, axis2 <span class="op">=</span> <span class="va">Class2</span>, axis3 <span class="op">=</span> <span class="va">Class3</span>, y <span class="op">=</span> <span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_alluvium.html">geom_alluvium</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">'black'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_stratum.html">geom_stratum</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"stratum"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">stratum</span><span class="op">)</span>, <span class="st">"\n"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalluvial)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Class1 =</span> <span class="fu">c</span>(<span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>),</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Class2 =</span> <span class="fu">c</span>(<span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span>, <span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span>),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Class3 =</span> <span class="fu">c</span>(<span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Freq =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">3</span>, <span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">15</span>))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="at">color=</span><span class="st">'black'</span>) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>You can choose to color the alluvium by different variables, for example, the first variable <code>Class1</code> here:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>axis1 <span class="op">=</span> <span class="va">Class1</span>, axis2 <span class="op">=</span> <span class="va">Class2</span>, axis3 <span class="op">=</span> <span class="va">Class3</span>, y <span class="op">=</span> <span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_alluvium.html">geom_alluvium</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Class1</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">12</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_stratum.html">geom_stratum</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"stratum"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">stratum</span><span class="op">)</span>, <span class="st">"\n"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Class1), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="geom_flow" class="level3" data-number="11.4.2"><h3 data-number="11.4.2" class="anchored" data-anchor-id="geom_flow">
-<span class="header-section-number">11.4.2</span> geom_flow</h3>
+</section>
+<section id="geom_flow" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="geom_flow"><span class="header-section-number">11.4.2</span> geom_flow</h3>
 <p>Another way of plotting alluvial diagrams is using <code>geom_flow</code> rather than <code>geom_alluvium</code>:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>axis1 <span class="op">=</span> <span class="va">Class1</span>, axis2 <span class="op">=</span> <span class="va">Class2</span>, axis3 <span class="op">=</span> <span class="va">Class3</span>, y <span class="op">=</span> <span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_flow.html">geom_flow</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Class1</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">12</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_stratum.html">geom_stratum</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"stratum"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">stratum</span><span class="op">)</span>, <span class="st">"\n"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_flow</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Class1), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>After we use <code>geom_flow</code>, all Math students learning Art came together, which is also the same as Stats students. It makes the graph much clearer than <code>geom_alluvium</code> since there is less cross alluviums between each axises.</p>
-</section></section><section id="heat-map" class="level2" data-number="11.5"><h2 data-number="11.5" class="anchored" data-anchor-id="heat-map">
-<span class="header-section-number">11.5</span> Heat map</h2>
+</section>
+</section>
+<section id="heat-map" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="heat-map"><span class="header-section-number">11.5</span> Heat map</h2>
 <p>Besides what have been systematically introduced in <code>Chapter 9.2 Heatmaps</code>, this part demonstrated a special case of heat map when both x and y are categorical. Here the heat map can been seen as a clustered bar chart and a pre-defined theme is used to show the dense more clearly.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://friendly.github.io/vcdExtra/">vcdExtra</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="va">theme_heat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.line <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>        axis.ticks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">orderedclasses</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Farm"</span>, <span class="st">"LoM"</span>, <span class="st">"UpM"</span>, <span class="st">"LoNM"</span>, <span class="st">"UpNM"</span><span class="op">)</span></span>
-<span><span class="va">mydata</span> <span class="op">&lt;-</span> <span class="va">Yamaguchi87</span></span>
-<span><span class="va">mydata</span><span class="op">$</span><span class="va">Son</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">mydata</span><span class="op">$</span><span class="va">Son</span>, levels <span class="op">=</span> <span class="va">orderedclasses</span><span class="op">)</span></span>
-<span><span class="va">mydata</span><span class="op">$</span><span class="va">Father</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">mydata</span><span class="op">$</span><span class="va">Father</span>,</span>
-<span>                        levels <span class="op">=</span> <span class="va">orderedclasses</span><span class="op">)</span></span>
-<span><span class="va">mydata3</span> <span class="op">&lt;-</span> <span class="va">mydata</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Country</span>, <span class="va">Father</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Total <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mydata3</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Father</span>, y <span class="op">=</span> <span class="va">Son</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="op">(</span><span class="va">Freq</span><span class="op">/</span><span class="va">Total</span><span class="op">)</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_fixed</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient2</a></span><span class="op">(</span>low <span class="op">=</span> <span class="st">"black"</span>, mid <span class="op">=</span> <span class="st">"white"</span>,</span>
-<span>                        high <span class="op">=</span> <span class="st">"red"</span>, midpoint <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Country</span><span class="op">)</span> <span class="op">+</span> <span class="va">theme_heat</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcdExtra)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>theme_heat <span class="ot">&lt;-</span> <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>orderedclasses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Farm"</span>, <span class="st">"LoM"</span>, <span class="st">"UpM"</span>, <span class="st">"LoNM"</span>, <span class="st">"UpNM"</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> Yamaguchi87</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>mydata<span class="sc">$</span>Son <span class="ot">&lt;-</span> <span class="fu">factor</span>(mydata<span class="sc">$</span>Son, <span class="at">levels =</span> orderedclasses)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>mydata<span class="sc">$</span>Father <span class="ot">&lt;-</span> <span class="fu">factor</span>(mydata<span class="sc">$</span>Father,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> orderedclasses)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>mydata3 <span class="ot">&lt;-</span> mydata <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Country, Father) <span class="sc">|&gt;</span> </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Freq)) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mydata3, <span class="fu">aes</span>(<span class="at">x =</span> Father, <span class="at">y =</span> Son)) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> (Freq<span class="sc">/</span>Total)), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span> </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"black"</span>, <span class="at">mid =</span> <span class="st">"white"</span>,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">midpoint =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country) <span class="sc">+</span> theme_heat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1047,7 +1097,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./multidimensional_continuous.html" class="pagination-link" aria-label="Multidimensional continuous variables">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multidimensional continuous variables</span></span>
       </a>          
@@ -1059,6 +1111,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

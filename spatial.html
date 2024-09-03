@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>15&nbsp; Spatial data – edav.info v2</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -70,7 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,11 +102,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -112,9 +122,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -129,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
@@ -238,35 +252,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">15.1</span> Introduction</a></li>
-  <li>
-<a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">15.2</span> Packages</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">15.1</span> Introduction</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">15.2</span> Packages</a>
   <ul class="collapse">
-<li><a href="#choroplethr" id="toc-choroplethr" class="nav-link" data-scroll-target="#choroplethr"><span class="header-section-number">15.2.1</span> <code>choroplethr</code></a></li>
+  <li><a href="#choroplethr" id="toc-choroplethr" class="nav-link" data-scroll-target="#choroplethr"><span class="header-section-number">15.2.1</span> <code>choroplethr</code></a></li>
   <li><a href="#ggmap" id="toc-ggmap" class="nav-link" data-scroll-target="#ggmap"><span class="header-section-number">15.2.2</span> <code>ggmap</code></a></li>
-  </ul>
-</li>
-  <li>
-<a href="#shape-file" id="toc-shape-file" class="nav-link" data-scroll-target="#shape-file"><span class="header-section-number">15.3</span> Shape file</a>
+  </ul></li>
+  <li><a href="#shape-file" id="toc-shape-file" class="nav-link" data-scroll-target="#shape-file"><span class="header-section-number">15.3</span> Shape file</a>
   <ul class="collapse">
-<li><a href="#sf" id="toc-sf" class="nav-link" data-scroll-target="#sf"><span class="header-section-number">15.3.1</span> <code>sf</code></a></li>
+  <li><a href="#sf" id="toc-sf" class="nav-link" data-scroll-target="#sf"><span class="header-section-number">15.3.1</span> <code>sf</code></a></li>
   <li><a href="#tmap" id="toc-tmap" class="nav-link" data-scroll-target="#tmap"><span class="header-section-number">15.3.2</span> <code>tmap</code></a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/spatial.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/spatial.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/spatial.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/spatial.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spatial data</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spatial data</span></h1>
 </div>
 
 
@@ -280,77 +294,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>The page is currently being updated, check back later.</p>
-<section id="introduction" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">15.1</span> Introduction</h2>
+</header>
+
+
+<p>The page is currently being updated, check back later.</p>
+<section id="introduction" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">15.1</span> Introduction</h2>
 <p>In this chapter, we will take a glimpse into spatial analysis using R. There are an overwhelming number of R packages for analyzing and visualizing spatial data. In broad terms, spatial visualizations require a merging of non-spatial and spatial information. For example, if you wish to create a choropleth map of the murder rate by county in New York State, you need county level data on murder rates, and you also need geographic data for drawing the county boundaries, stored in what are called shape files.</p>
 <p>A rough divide exists between packages that don’t require you deal with shape files and those that do. The former work by taking care of the geographic data under the hood: you supply the data with a column for the location and the package takes care of figuring out how to draw those locations.</p>
-</section><section id="packages" class="level2" data-number="15.2"><h2 data-number="15.2" class="anchored" data-anchor-id="packages">
-<span class="header-section-number">15.2</span> Packages</h2>
-<section id="choroplethr" class="level3" data-number="15.2.1"><h3 data-number="15.2.1" class="anchored" data-anchor-id="choroplethr">
-<span class="header-section-number">15.2.1</span> <code>choroplethr</code>
-</h3>
+</section>
+<section id="packages" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="packages"><span class="header-section-number">15.2</span> Packages</h2>
+<section id="choroplethr" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="choroplethr"><span class="header-section-number">15.2.1</span> <code>choroplethr</code></h3>
 <p>Choropleth maps use color to indicate the value of a variable within a defined region, generally political boundaries. <code>choroplethr</code> is capable of drawing state and county level maps without using shape files.</p>
 <p>Consider the following example using <code>state.x77</code> showing the percentage of illiterate in each states. Note the process of data transformation, you need to exactly have a column named ‘region’ with the state names and a column named ‘value’.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">choroplethr</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># data frame must contain "region" and "value" columns</span></span>
-<span></span>
-<span><span class="va">df_illiteracy</span> <span class="op">&lt;-</span> <span class="va">state.x77</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames_to_column</a></span><span class="op">(</span><span class="st">"state"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op">(</span>region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">`state`</span><span class="op">)</span>, value <span class="op">=</span> <span class="va">Illiteracy</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/choroplethr/man/state_choropleth.html">state_choropleth</a></span><span class="op">(</span><span class="va">df_illiteracy</span>,</span>
-<span>                 title <span class="op">=</span> <span class="st">"State Illiteracy Rates, 1977"</span>,</span>
-<span>                 legend <span class="op">=</span> <span class="st">"Percent Illiterate"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(choroplethr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># data frame must contain "region" and "value" columns</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df_illiteracy <span class="ot">&lt;-</span> state.x77 <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"state"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">region =</span> <span class="fu">tolower</span>(<span class="st">`</span><span class="at">state</span><span class="st">`</span>), <span class="at">value =</span> Illiteracy)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">state_choropleth</span>(df_illiteracy,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">title =</span> <span class="st">"State Illiteracy Rates, 1977"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                 <span class="at">legend =</span> <span class="st">"Percent Illiterate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="spatial_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="spatial_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Plotting at county level is also possible. In the following example we show the population of counties in New York state in 2012.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.arilamstein.com/open-source">choroplethrMaps</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">county.regions</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">df_pop_county</span><span class="op">)</span> </span>
-<span></span>
-<span><span class="va">ny_county_fips</span> <span class="op">=</span> <span class="va">county.regions</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">state.name</span> <span class="op">==</span> <span class="st">"new york"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">region</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/choroplethr/man/county_choropleth.html">county_choropleth</a></span><span class="op">(</span><span class="va">df_pop_county</span>, </span>
-<span>                  title <span class="op">=</span> <span class="st">"Population of Counties in New York State in 2012"</span>,</span>
-<span>                  legend <span class="op">=</span> <span class="st">"Population"</span>,</span>
-<span>                  county_zoom <span class="op">=</span> <span class="va">ny_county_fips</span><span class="op">$</span><span class="va">region</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(choroplethrMaps)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(county.regions)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(df_pop_county) </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ny_county_fips <span class="ot">=</span> county.regions <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state.name <span class="sc">==</span> <span class="st">"new york"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(region)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">county_choropleth</span>(df_pop_county, </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">title =</span> <span class="st">"Population of Counties in New York State in 2012"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">legend =</span> <span class="st">"Population"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">county_zoom =</span> ny_county_fips<span class="sc">$</span>region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="spatial_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="spatial_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We use <code>county_choropleth</code> to create a U.S map at county level and zoom into New York state. Note that <code>county_zoom</code> takes in fips codes of counties. For more reference, visit the <a href="https://www.rdocumentation.org/packages/choroplethr/versions/3.7.0">R documentation page</a>.</p>
-</section><section id="ggmap" class="level3" data-number="15.2.2"><h3 data-number="15.2.2" class="anchored" data-anchor-id="ggmap">
-<span class="header-section-number">15.2.2</span> <code>ggmap</code>
-</h3>
+</section>
+<section id="ggmap" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="ggmap"><span class="header-section-number">15.2.2</span> <code>ggmap</code></h3>
 <p><code>ggmap</code> is a great package to generate real-world maps. Moreover, it is compatible with <code>ggplot2</code> allowing you to easily add layers on top of the base map. There are two options in generating maps and we demonstrate one using stamenmap. (This now requires an API key… to be updated.)</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># eval=FALSE for now...</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dkahle/ggmap">ggmap</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">ny_map</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ggmap/man/get_stadiamap.html">get_stadiamap</a></span><span class="op">(</span>bbox <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">74.2591</span>, bottom <span class="op">=</span> <span class="fl">40.4774</span>, </span>
-<span>                                 right <span class="op">=</span> <span class="op">-</span><span class="fl">73.7002</span>, top <span class="op">=</span> <span class="fl">40.9162</span><span class="op">)</span>,</span>
-<span>                        zoom <span class="op">=</span> <span class="fl">10</span>, maptype <span class="op">=</span> <span class="st">"stamen_toner_lite"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/ggmap/man/ggmap.html">ggmap</a></span><span class="op">(</span><span class="va">ny_map</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="op">-</span><span class="fl">73.9857</span>,y<span class="op">=</span><span class="fl">40.7484</span><span class="op">)</span>,size<span class="op">=</span><span class="fl">0.8</span>,color<span class="op">=</span><span class="st">'blue'</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eval=FALSE for now...</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ny_map <span class="ot">&lt;-</span> <span class="fu">get_stadiamap</span>(<span class="at">bbox =</span> <span class="fu">c</span>(<span class="at">left =</span> <span class="sc">-</span><span class="fl">74.2591</span>, <span class="at">bottom =</span> <span class="fl">40.4774</span>, </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">right =</span> <span class="sc">-</span><span class="fl">73.7002</span>, <span class="at">top =</span> <span class="fl">40.9162</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">zoom =</span> <span class="dv">10</span>, <span class="at">maptype =</span> <span class="st">"stamen_toner_lite"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(ny_map) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">73.9857</span>,<span class="at">y=</span><span class="fl">40.7484</span>),<span class="at">size=</span><span class="fl">0.8</span>,<span class="at">color=</span><span class="st">'blue'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A map of New York City is created, and you will see a blue point representing Empire State Building. You can very simply add points using <code>geom_point</code> as long as you have the coordinates for the points. However, one clear drawback using stamenmap is that the map resolution is not satisfying and you will eventually find that the smaller zoom value creates blurry maps.</p>
 <p>For this reason, we encourage readers to try the option using Google maps. You will need to set up a Google Cloud account (requires credit card). After enabling the Google map APIs, register you API keys with <code>ggmap</code> using <code>register_google(key = "[your key]")</code> and you are all set. Now take a look at the an example using Google map API</p>
@@ -359,19 +378,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <img src="images/ggmap_google.png" class="img-fluid" style="width:70.0%">
 </center>
 <p>You will see the map is at great resolution regardless of how you zoom in. For demonstration purpose, we provided a image of the map derived by running the code. For more details regarding the package usage, you can refer at <a href="https://github.com/dkahle/ggmap">ggmap GitHub page</a>.</p>
-</section></section><section id="shape-file" class="level2" data-number="15.3"><h2 data-number="15.3" class="anchored" data-anchor-id="shape-file">
-<span class="header-section-number">15.3</span> Shape file</h2>
+</section>
+</section>
+<section id="shape-file" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="shape-file"><span class="header-section-number">15.3</span> Shape file</h2>
 <p>There are cases such that no existing packages can directly create your desired map. For example, what if we want to create a map of highways in New York State. In such case, we will resort to shape files. In the following example, we use the shape file of police precinct in New York City.</p>
-<section id="sf" class="level3" data-number="15.3.1"><h3 data-number="15.3.1" class="anchored" data-anchor-id="sf">
-<span class="header-section-number">15.3.1</span> <code>sf</code>
-</h3>
+<section id="sf" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="sf"><span class="header-section-number">15.3.1</span> <code>sf</code></h3>
 <p>We use <code>sf</code> library to read in shape files. One of the first thing to remember is that one shape file contains a set of files and all of them required for the shape file to run properly. However, when reading the file, we only need to use the one ending with <code>.shp</code>. For example</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/">sf</a></span><span class="op">)</span></span>
-<span><span class="va">ny_police</span> <span class="op">=</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html">st_read</a></span><span class="op">(</span><span class="st">'nyc_police/nypp.shp'</span>,quiet<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Precinct <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">Precinct</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ny_police</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ny_police <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">'nyc_police/nypp.shp'</span>,<span class="at">quiet=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Precinct =</span> <span class="fu">as.character</span>(Precinct))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ny_police)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 6 features and 3 fields
 Geometry type: MULTIPOLYGON
@@ -388,43 +408,45 @@ Projected CRS: NAD83 / New York Long Island (ftUS)
 </div>
 </div>
 <p>You can see that the object looks like a data set, except with a long column called geometry. The geometry column contains spatial information and is the key to map generation.</p>
-<p>To simply see the shape, we can use <code><a href="https://r-spatial.github.io/sf/reference/st_geometry.html">st_geometry()</a></code> to extract spatial information and feed into <code><a href="https://rdrr.io/pkg/acs/man/plot-methods.html">plot()</a></code></p>
+<p>To simply see the shape, we can use <code>st_geometry()</code> to extract spatial information and feed into <code>plot()</code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/acs/man/plot-methods.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_geometry.html">st_geometry</a></span><span class="op">(</span><span class="va">ny_police</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(ny_police))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="spatial_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="spatial_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>We get a map of New York City divided by police precinct. Note that if you directly feed in <code>ny_police</code> into <code><a href="https://rdrr.io/pkg/acs/man/plot-methods.html">plot()</a></code>, you will get mulitiply maps drawn from each column. It might not create you desired maps and when you are dealing with large shape files, it will be extremely slow.</p>
-</section><section id="tmap" class="level3" data-number="15.3.2"><h3 data-number="15.3.2" class="anchored" data-anchor-id="tmap">
-<span class="header-section-number">15.3.2</span> <code>tmap</code>
-</h3>
+<p>We get a map of New York City divided by police precinct. Note that if you directly feed in <code>ny_police</code> into <code>plot()</code>, you will get mulitiply maps drawn from each column. It might not create you desired maps and when you are dealing with large shape files, it will be extremely slow.</p>
+</section>
+<section id="tmap" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="tmap"><span class="header-section-number">15.3.2</span> <code>tmap</code></h3>
 <p>Only generating the map is not particularly meaningful. We want to combine data with the map to convey some meaningful findings. Since we are using police precinct, it is only natural to use crime data.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-tmap.github.io/tmap/">tmap</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">ny_crime</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_xls</a></span><span class="op">(</span><span class="st">'data/felony.xls'</span>, skip <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>Precinct <span class="op">=</span> <span class="va">PCT</span>, Crime <span class="op">=</span> <span class="va">CRIME</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/fill.html">fill</a></span><span class="op">(</span><span class="va">Precinct</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Crime</span> <span class="op">==</span> <span class="st">"TOTAL SEVEN MAJOR FELONY OFFENSES"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">ny_crime</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">ny_police</span>, <span class="va">ny_crime</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>ny_crime <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="st">'data/felony.xls'</span>, <span class="at">skip =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Precinct =</span> PCT, <span class="at">Crime =</span> CRIME) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill</span>(Precinct) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Crime <span class="sc">==</span> <span class="st">"TOTAL SEVEN MAJOR FELONY OFFENSES"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ny_crime <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ny_police, ny_crime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We read in the felony data for nyc in 2021 and joined it with the <code>sf</code> object. Then, we create map using <code>tmap</code> package. Notice that in <code><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_polygons()</a></code>, we specify the column to be <code>2021</code>.</p>
+<p>We read in the felony data for nyc in 2021 and joined it with the <code>sf</code> object. Then, we create map using <code>tmap</code> package. Notice that in <code>tm_polygons()</code>, we specify the column to be <code>2021</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ny_crime</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_polygons</a></span><span class="op">(</span><span class="st">"2021"</span>, palette <span class="op">=</span> <span class="st">"Blues"</span>, title<span class="op">=</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_text.html">tm_text</a></span><span class="op">(</span><span class="st">"Precinct"</span>, size <span class="op">=</span> <span class="fl">.65</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_layout.html">tm_layout</a></span><span class="op">(</span><span class="st">"Major Felony Offenses in 2021 by\nNYC Police Precinct"</span>,</span>
-<span>            title.size <span class="op">=</span> <span class="fl">.95</span>, frame <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ny_crime <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>() <span class="sc">+</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">"2021"</span>, <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="at">title=</span><span class="st">""</span>) <span class="sc">+</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_text</span>(<span class="st">"Precinct"</span>, <span class="at">size =</span> .<span class="dv">65</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="st">"Major Felony Offenses in 2021 by</span><span class="sc">\n</span><span class="st">NYC Police Precinct"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">title.size =</span> .<span class="dv">95</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="spatial_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="spatial_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -432,7 +454,11 @@ Projected CRS: NAD83 / New York Long Island (ftUS)
 <p>For more usage, you can refer at <a href="https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html">tmap:get started!</a></p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -851,7 +877,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./time_series.html" class="pagination-link" aria-label="Time series">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Time series</span></span>
       </a>          
@@ -863,6 +891,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>7&nbsp; Unidimensional continuous variables – edav.info v2</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -70,7 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,11 +102,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -112,9 +122,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -129,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
@@ -238,46 +252,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#histogram" id="toc-histogram" class="nav-link active" data-scroll-target="#histogram"><span class="header-section-number">7.1</span> Histogram</a>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link active" data-scroll-target="#histogram"><span class="header-section-number">7.1</span> Histogram</a>
   <ul class="collapse">
-<li><a href="#basics-and-implications" id="toc-basics-and-implications" class="nav-link" data-scroll-target="#basics-and-implications"><span class="header-section-number">7.1.1</span> Basics and implications</a></li>
+  <li><a href="#basics-and-implications" id="toc-basics-and-implications" class="nav-link" data-scroll-target="#basics-and-implications"><span class="header-section-number">7.1.1</span> Basics and implications</a></li>
   <li><a href="#types-of-histograms" id="toc-types-of-histograms" class="nav-link" data-scroll-target="#types-of-histograms"><span class="header-section-number">7.1.2</span> Types of histograms</a></li>
   <li><a href="#parameters-for-geom_histogram" id="toc-parameters-for-geom_histogram" class="nav-link" data-scroll-target="#parameters-for-geom_histogram"><span class="header-section-number">7.1.3</span> Parameters for geom_histogram</a></li>
   <li><a href="#interactive-histograms-with-ggvis" id="toc-interactive-histograms-with-ggvis" class="nav-link" data-scroll-target="#interactive-histograms-with-ggvis"><span class="header-section-number">7.1.4</span> Interactive histograms with <code>ggvis</code></a></li>
-  </ul>
-</li>
-  <li>
-<a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots"><span class="header-section-number">7.2</span> Boxplots</a>
+  </ul></li>
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots"><span class="header-section-number">7.2</span> Boxplots</a>
   <ul class="collapse">
-<li><a href="#single-boxplot" id="toc-single-boxplot" class="nav-link" data-scroll-target="#single-boxplot"><span class="header-section-number">7.2.1</span> Single boxplot</a></li>
+  <li><a href="#single-boxplot" id="toc-single-boxplot" class="nav-link" data-scroll-target="#single-boxplot"><span class="header-section-number">7.2.1</span> Single boxplot</a></li>
   <li><a href="#multiple-boxplots" id="toc-multiple-boxplots" class="nav-link" data-scroll-target="#multiple-boxplots"><span class="header-section-number">7.2.2</span> Multiple boxplots</a></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">7.2.3</span> Additional resources</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#ridgeline-plot" id="toc-ridgeline-plot" class="nav-link" data-scroll-target="#ridgeline-plot"><span class="header-section-number">7.3</span> Ridgeline plot</a>
+  </ul></li>
+  <li><a href="#ridgeline-plot" id="toc-ridgeline-plot" class="nav-link" data-scroll-target="#ridgeline-plot"><span class="header-section-number">7.3</span> Ridgeline plot</a>
   <ul class="collapse">
-<li><a href="#basics-and-implications-1" id="toc-basics-and-implications-1" class="nav-link" data-scroll-target="#basics-and-implications-1"><span class="header-section-number">7.3.1</span> Basics and implications</a></li>
+  <li><a href="#basics-and-implications-1" id="toc-basics-and-implications-1" class="nav-link" data-scroll-target="#basics-and-implications-1"><span class="header-section-number">7.3.1</span> Basics and implications</a></li>
   <li><a href="#create-better-visuals" id="toc-create-better-visuals" class="nav-link" data-scroll-target="#create-better-visuals"><span class="header-section-number">7.3.2</span> Create better visuals</a></li>
   <li><a href="#additional-resources-1" id="toc-additional-resources-1" class="nav-link" data-scroll-target="#additional-resources-1"><span class="header-section-number">7.3.3</span> Additional resources</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">7.4</span> Normal distribution</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/continuous_var.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/continuous_var.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/continuous_var.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/continuous_var.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Unidimensional continuous variables</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Unidimensional continuous variables</span></h1>
 </div>
 
 
@@ -291,46 +303,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>In this chapter, we will demonstrate graphs with unidimensional continuous variables only using <code>ggplot2</code>.</p>
-<section id="histogram" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="histogram">
-<span class="header-section-number">7.1</span> Histogram</h2>
-<section id="basics-and-implications" class="level3" data-number="7.1.1"><h3 data-number="7.1.1" class="anchored" data-anchor-id="basics-and-implications">
-<span class="header-section-number">7.1.1</span> Basics and implications</h3>
+</header>
+
+
+<p>In this chapter, we will demonstrate graphs with unidimensional continuous variables only using <code>ggplot2</code>.</p>
+<section id="histogram" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">7.1</span> Histogram</h2>
+<section id="basics-and-implications" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="basics-and-implications"><span class="header-section-number">7.1.1</span> Basics and implications</h3>
 <p>We will start with an easy example.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">#Example data</span></span>
-<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">51</span>, <span class="fl">53</span>, <span class="fl">55</span>, <span class="fl">56</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="fl">65</span>, <span class="fl">68</span><span class="op">)</span></span>
-<span><span class="co">#Stored as a dataframe</span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Histogram of x with ggplot2"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightBlue"</span>, binwidth <span class="op">=</span> <span class="fl">5</span>, center <span class="op">=</span> <span class="fl">52.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Example data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">51</span>, <span class="dv">53</span>, <span class="dv">55</span>, <span class="dv">56</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">65</span>, <span class="dv">68</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Stored as a dataframe</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x)) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Histogram of x with ggplot2"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightBlue"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">center =</span> <span class="fl">52.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>In this example, we used <code>geom_histogram</code> to create a histogram on variable <code>x</code>. We can see that it is quick to make and does not need much pre-processing. Moreover, Histograms show data’s empirical distribution within a set of intervals and we suggest using it as a one of the first steps to understand your data.</p>
 <p><em>Note:</em> as shown above, ggplot expects a dataframe, so make sure you do not throw a vector into ggplot.</p>
-</section><section id="types-of-histograms" class="level3" data-number="7.1.2"><h3 data-number="7.1.2" class="anchored" data-anchor-id="types-of-histograms">
-<span class="header-section-number">7.1.2</span> Types of histograms</h3>
+</section>
+<section id="types-of-histograms" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="types-of-histograms"><span class="header-section-number">7.1.2</span> Types of histograms</h3>
 <p>The y-scale of histograms can be represented in a variety of ways to express different results:</p>
 <ol type="1">
 <li>Frequency or count: y = number of values that fall in each bin</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"blue"</span>,fill<span class="op">=</span><span class="st">"lightblue"</span>,binwidth <span class="op">=</span> <span class="fl">0.5</span>,boundary <span class="op">=</span> <span class="fl">6</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Frequency histogram"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">"blue"</span>,<span class="at">fill=</span><span class="st">"lightblue"</span>,<span class="at">binwidth =</span> <span class="fl">0.5</span>,<span class="at">boundary =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Frequency histogram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -339,13 +357,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Cumulative frequency: y = total number of values &lt;= (or &lt;) right boundary of bin</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html">cumsum</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, color<span class="op">=</span><span class="st">"blue"</span>, fill<span class="op">=</span><span class="st">"lightblue"</span>, binwidth <span class="op">=</span> <span class="fl">0.5</span>, boundary <span class="op">=</span> <span class="fl">6</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Cumulative frequency histogram"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Cumulative frequency"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">cumsum</span>(<span class="fu">after_stat</span>(count))), <span class="at">color=</span><span class="st">"blue"</span>, <span class="at">fill=</span><span class="st">"lightblue"</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">boundary =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Cumulative frequency histogram"</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Cumulative frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -354,132 +373,146 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Density: y = relative frequency / binwidth</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, binwidth <span class="op">=</span> <span class="fl">0.5</span>, boundary <span class="op">=</span> <span class="fl">6</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Density histogram"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">boundary =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Density histogram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="parameters-for-geom_histogram" class="level3" data-number="7.1.3"><h3 data-number="7.1.3" class="anchored" data-anchor-id="parameters-for-geom_histogram">
-<span class="header-section-number">7.1.3</span> Parameters for geom_histogram</h3>
-<section id="bin-boundaries" class="level4" data-number="7.1.3.1"><h4 data-number="7.1.3.1" class="anchored" data-anchor-id="bin-boundaries">
-<span class="header-section-number">7.1.3.1</span> Bin boundaries</h4>
+</section>
+<section id="parameters-for-geom_histogram" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="parameters-for-geom_histogram"><span class="header-section-number">7.1.3</span> Parameters for geom_histogram</h3>
+<section id="bin-boundaries" class="level4" data-number="7.1.3.1">
+<h4 data-number="7.1.3.1" class="anchored" data-anchor-id="bin-boundaries"><span class="header-section-number">7.1.3.1</span> Bin boundaries</h4>
 <p>Be mindful of the boundaries of the bins and whether a point will fall into the left or right bin if it is on a boundary. You can use the parameter <code>closed</code> to control the intervals.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, </span>
-<span>                 binwidth <span class="op">=</span> <span class="fl">5</span>, center <span class="op">=</span> <span class="fl">52.5</span>, closed <span class="op">=</span> <span class="st">"left"</span><span class="op">)</span>  <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Left closed graph"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, </span>
-<span>                 binwidth <span class="op">=</span> <span class="fl">5</span>, center <span class="op">=</span> <span class="fl">52.5</span>, closed<span class="op">=</span><span class="st">"right"</span><span class="op">)</span>  <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Right closed graph"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">center =</span> <span class="fl">52.5</span>, <span class="at">closed =</span> <span class="st">"left"</span>)  <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Left closed graph"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">center =</span> <span class="fl">52.5</span>, <span class="at">closed=</span><span class="st">"right"</span>)  <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Right closed graph"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="bin-numbers" class="level4" data-number="7.1.3.2"><h4 data-number="7.1.3.2" class="anchored" data-anchor-id="bin-numbers">
-<span class="header-section-number">7.1.3.2</span> Bin numbers</h4>
+</section>
+<section id="bin-numbers" class="level4" data-number="7.1.3.2">
+<h4 data-number="7.1.3.2" class="anchored" data-anchor-id="bin-numbers"><span class="header-section-number">7.1.3.2</span> Bin numbers</h4>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#Default / Only adding some styles to make graph consistent</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Default with pop-up about bin number"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Default / Only adding some styles to make graph consistent</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Default with pop-up about bin number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We start by passing no parameters into <code>geom_histogram</code> and you will notice a pop-up saying that the default number of bins is 30. We see that the graph is not ideal with some gaps. There are two ways to modify the number of bins: specify the width explicitly with <strong>binwidth</strong> or provide the desired number of bins with <strong>bins</strong>. Consider the following modifications:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># using binwidth</span></span>
-<span><span class="va">p3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, binwidth <span class="op">=</span> <span class="fl">0.5</span>, boundary <span class="op">=</span> <span class="fl">6</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Changed binwidth value"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># using bins</span></span>
-<span><span class="va">p4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, bins <span class="op">=</span> <span class="fl">15</span>, boundary <span class="op">=</span> <span class="fl">6</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Changed bin value"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># format plot layout</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">p3</span>, <span class="va">p4</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using binwidth</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">boundary =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Changed binwidth value"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># using bins</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">bins =</span> <span class="dv">15</span>, <span class="at">boundary =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Changed bin value"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># format plot layout</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p3, p4, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><em>Note:</em> There is no gold standard on the number of bins, so try different numbers to generate best results.</p>
-</section><section id="bin-alignment" class="level4" data-number="7.1.3.3"><h4 data-number="7.1.3.3" class="anchored" data-anchor-id="bin-alignment">
-<span class="header-section-number">7.1.3.3</span> Bin alignment</h4>
+</section>
+<section id="bin-alignment" class="level4" data-number="7.1.3.3">
+<h4 data-number="7.1.3.3" class="anchored" data-anchor-id="bin-alignment"><span class="header-section-number">7.1.3.3</span> Bin alignment</h4>
 <p>Consider this comparison</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, binwidth <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Without alignment"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">p6</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, bins <span class="op">=</span> <span class="fl">15</span>, boundary <span class="op">=</span> <span class="fl">6</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"With alignment"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">p5</span>, <span class="va">p6</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Without alignment"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>p6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">bins =</span> <span class="dv">15</span>, <span class="at">boundary =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"With alignment"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p5, p6, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Notice that the boundary of bins does not start at an axis and the only difference in the code is the removal of <code>boundry</code>. To control the position of bins, we can use either parameter <code>center</code> or <code>boundary</code>. You can use <code>boundary</code> to specify the endpoint of any bin or <code>center</code> to specify the center of any bin and ggplot2 will be able to calculate where to place the rest of the bins. (Also, notice that when the boundary was changed, the number of bins got smaller by one. This is because by default the bins are centered and go over/under the range of the data.) In the above example, we specify <code>boundary</code> to be 6. We can see the first bin starts at 6 and the position of other bins are calculated based on the binwidth 0.5.</p>
-</section></section><section id="interactive-histograms-with-ggvis" class="level3" data-number="7.1.4"><h3 data-number="7.1.4" class="anchored" data-anchor-id="interactive-histograms-with-ggvis">
-<span class="header-section-number">7.1.4</span> Interactive histograms with <code>ggvis</code>
-</h3>
+</section>
+</section>
+<section id="interactive-histograms-with-ggvis" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="interactive-histograms-with-ggvis"><span class="header-section-number">7.1.4</span> Interactive histograms with <code>ggvis</code></h3>
 <p>The <code>ggvis</code> package is not currently in development, but does certain things very well, such as adjusting parameters of a histogram interactively while coding. If you are interested, refer <a href="https://ggvis.rstudio.com/ggvis-basics.html">here</a>.</p>
 <p><br></p>
-</section></section><section id="boxplots" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="boxplots">
-<span class="header-section-number">7.2</span> Boxplots</h2>
-<section id="single-boxplot" class="level3" data-number="7.2.1"><h3 data-number="7.2.1" class="anchored" data-anchor-id="single-boxplot">
-<span class="header-section-number">7.2.1</span> Single boxplot</h3>
+</section>
+</section>
+<section id="boxplots" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">7.2</span> Boxplots</h2>
+<section id="single-boxplot" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="single-boxplot"><span class="header-section-number">7.2.1</span> Single boxplot</h3>
 <p>A boxplot is one of the simplest ways of representing a distribution of a continuous variable (<strong>Never</strong> use boxplots for categorical data). It consists of two parts: box and whiskers. Let’s starting with a simple example: single boxplot.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">chickwts</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Boxplot of chicken weights"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chickwts, <span class="fu">aes</span>(<span class="at">x =</span> weight)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Boxplot of chicken weights"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Here as you can see, boxplots provide a ton of information for a single chart. Boxplots tell you whether the variable is normally distributed, or if the distribution is skewed in either direction. You can also easily spot the outliers, which always helps.</p>
 <p><a href="https://jtr13.github.io/D3/Boxplot.html">Make a boxplot interactively</a> (<em>created with D3</em>)</p>
-</section><section id="multiple-boxplots" class="level3" data-number="7.2.2"><h3 data-number="7.2.2" class="anchored" data-anchor-id="multiple-boxplots">
-<span class="header-section-number">7.2.2</span> Multiple boxplots</h3>
+</section>
+<section id="multiple-boxplots" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="multiple-boxplots"><span class="header-section-number">7.2.2</span> Multiple boxplots</h3>
 <p>Next, what if you want to compare the distributions between multiple classes? Here, you can create a multiple boxplot. But remember, your data frame needs to be tidy, that is you need to have a column with levels of the grouping variable. It can be be factor, character, or integer class.</p>
 <p>The following example still use the <code>chickwts</code> dataset. We compare the distributions of <code>weight</code> between different <code>feed</code>(which is a column with six factor levels).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">chickwts</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">feed</span>, <span class="op">-</span><span class="va">weight</span>, <span class="va">median</span><span class="op">)</span>,y <span class="op">=</span> <span class="va">weight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Multiple boxplots of chicken weights according to feed type"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Weight"</span>, x <span class="op">=</span> <span class="st">"Feed Type"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chickwts, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(feed, <span class="sc">-</span>weight, median),<span class="at">y =</span> weight)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Multiple boxplots of chicken weights according to feed type"</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Weight"</span>, <span class="at">x =</span> <span class="st">"Feed Type"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -487,92 +520,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Note.</strong> Usually in a boxplot, the boxes should be reordered so that there will be a decreasing order of the class medians from left to right.</p>
 <p>Often you want boxplots to be horizontal. Super easy to do in <code>ggplot2</code>: just tack on <code>+ coord_flip()</code> and remove the <code>-</code> from the reordering so that the factor level with the highest median will be on top:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">chickwts</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">feed</span>, <span class="va">weight</span>, <span class="va">median</span><span class="op">)</span>,y <span class="op">=</span> <span class="va">weight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Multiple boxplots of chicken weights according to feed type"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Weight"</span>, x <span class="op">=</span> <span class="st">"Feed Type"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chickwts, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(feed, weight, median),<span class="at">y =</span> weight)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Multiple boxplots of chicken weights according to feed type"</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Weight"</span>, <span class="at">x =</span> <span class="st">"Feed Type"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="additional-resources" class="level3" data-number="7.2.3"><h3 data-number="7.2.3" class="anchored" data-anchor-id="additional-resources">
-<span class="header-section-number">7.2.3</span> Additional resources</h3>
+</section>
+<section id="additional-resources" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">7.2.3</span> Additional resources</h3>
 <ul>
 <li>Tukey, John W. 1977. <a href="https://clio.columbia.edu/catalog/136422" target="_blank"><em>Exploratory Data Analysis.</em></a> Addison-Wesley. (Chapter 2): the primary source in which boxplots are first presented.</li>
-<li>
-<a href="http://t-redactyl.io/blog/2016/04/creating-plots-in-r-using-ggplot2-part-10-boxplots.html" target="_blank">Article on boxplots with ggplot2</a>: An excellent collection of code examples on how to make boxplots with <code>ggplot2</code>. Covers layering, working with legends, faceting, formatting, and more. If you want a boxplot to look a certain way, this article will help.</li>
-<li>
-<a href="https://plot.ly/ggplot2/box-plots/" target="_blank">Boxplots with plotly package</a>: boxplot examples using the <code>plotly</code> package. These allow for a little interactivity on hover, which might better explain the underlying statistics of your plot.</li>
-<li>
-<a href="http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization" target="_blank">ggplot2 Boxplot: Quick Start Guide</a>: Article from <a href="http://www.sthda.com/english/" target="_blank">STHDA</a> on making boxplots using ggplot2. Excellent starting point for getting immediate results and custom formatting.</li>
-<li>
-<a href="http://vita.had.co.nz/papers/boxplots.pdf" target="_blank">Hadley Wickhan and Lisa Stryjewski on boxplots</a>: good for understanding basics of more complex boxplots and some of the history behind them.</li>
+<li><a href="http://t-redactyl.io/blog/2016/04/creating-plots-in-r-using-ggplot2-part-10-boxplots.html" target="_blank">Article on boxplots with ggplot2</a>: An excellent collection of code examples on how to make boxplots with <code>ggplot2</code>. Covers layering, working with legends, faceting, formatting, and more. If you want a boxplot to look a certain way, this article will help.</li>
+<li><a href="https://plot.ly/ggplot2/box-plots/" target="_blank">Boxplots with plotly package</a>: boxplot examples using the <code>plotly</code> package. These allow for a little interactivity on hover, which might better explain the underlying statistics of your plot.</li>
+<li><a href="http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization" target="_blank">ggplot2 Boxplot: Quick Start Guide</a>: Article from <a href="http://www.sthda.com/english/" target="_blank">STHDA</a> on making boxplots using ggplot2. Excellent starting point for getting immediate results and custom formatting.</li>
+<li><a href="http://vita.had.co.nz/papers/boxplots.pdf" target="_blank">Hadley Wickhan and Lisa Stryjewski on boxplots</a>: good for understanding basics of more complex boxplots and some of the history behind them.</li>
 </ul>
 <p><br></p>
-</section></section><section id="ridgeline-plot" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="ridgeline-plot">
-<span class="header-section-number">7.3</span> Ridgeline plot</h2>
-<section id="basics-and-implications-1" class="level3" data-number="7.3.1"><h3 data-number="7.3.1" class="anchored" data-anchor-id="basics-and-implications-1">
-<span class="header-section-number">7.3.1</span> Basics and implications</h3>
+</section>
+</section>
+<section id="ridgeline-plot" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="ridgeline-plot"><span class="header-section-number">7.3</span> Ridgeline plot</h2>
+<section id="basics-and-implications-1" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="basics-and-implications-1"><span class="header-section-number">7.3.1</span> Basics and implications</h3>
 <p>Ridgeline plots can be used when a number of data segments have to be plotted on the same horizontal scale. It is presented with slight overlap. Ridgeline plots are very useful to visualize the distribution of a categorical variable over time or space.</p>
 <p>A good example using ridgeline plots will be a great example is visualizing the distribution of salary over different departments in a company.</p>
 <p>Consider the following example:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/ggridges/">ggridges</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://forcats.tidyverse.org/">forcats</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">world</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"countries2012.csv"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">world</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">GDP</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">CONTINENT</span>, <span class="op">-</span><span class="va">GDP</span>,<span class="va">median</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://wilkelab.org/ggridges/reference/geom_density_ridges.html">geom_density_ridges</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"2012 continental GDP"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Continent"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"countries2012.csv"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(world, <span class="fu">aes</span>(<span class="at">x =</span> GDP, <span class="at">y =</span> <span class="fu">reorder</span>(CONTINENT, <span class="sc">-</span>GDP,median))) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2012 continental GDP"</span>) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Continent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>ggridge</code> uses two main geoms to plot the ridgeline density plots: <code>geom_density_ridges</code> and <code>geom_ridgeline</code>. They are used to plot the densities of categorical variable factors and see their distribution over a continuous scale.</p>
-</section><section id="create-better-visuals" class="level3" data-number="7.3.2"><h3 data-number="7.3.2" class="anchored" data-anchor-id="create-better-visuals">
-<span class="header-section-number">7.3.2</span> Create better visuals</h3>
+</section>
+<section id="create-better-visuals" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="create-better-visuals"><span class="header-section-number">7.3.2</span> Create better visuals</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">world</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">GDP</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">CONTINENT</span>, <span class="va">GDP</span>,<span class="va">median</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://wilkelab.org/ggridges/reference/geom_density_ridges.html">geom_density_ridges</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"blue"</span>,alpha <span class="op">=</span> <span class="fl">.5</span>, scale <span class="op">=</span> <span class="fl">1.2</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"2012 continental GDP"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Continent"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(world, <span class="fu">aes</span>(<span class="at">x =</span> GDP, <span class="at">y =</span> <span class="fu">reorder</span>(CONTINENT, GDP,median))) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">fill =</span> <span class="st">"blue"</span>,<span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">scale =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2012 continental GDP"</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Continent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>In this example, we added parameter <code>scale</code> and <code>alpha</code> to control overlaps between ridges. Scale defines how much the peak of the lower curve touches the curve above and <code>alpha</code> controls transparency. Note that the curves are ordered from lowest median GDP on the bottom (Africa) to highest on the top (Europe).</p>
-</section><section id="additional-resources-1" class="level3" data-number="7.3.3"><h3 data-number="7.3.3" class="anchored" data-anchor-id="additional-resources-1">
-<span class="header-section-number">7.3.3</span> Additional resources</h3>
+</section>
+<section id="additional-resources-1" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="additional-resources-1"><span class="header-section-number">7.3.3</span> Additional resources</h3>
 <ul>
 <li><p><a href="https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html" target="_blank">Introduction to ggridges</a>: An excellent collection of code examples on how to make ridgeline plots with <code>ggplot2</code>. Covers every parameter of ggridges and how to modify them for better visualization. If you want a ridgeline plot to look a certain way, this article will help.</p></li>
 <li><p><a href="https://rdrr.io/cran/ggridges/man/geom_density_ridges.html" target="_blank">Article on ridgeline plots with ggplot2</a>: Few examples using different examples. Great for starting with ridgeline plots.</p></li>
 <li><p><a href="https://blog.revolutionanalytics.com/2017/07/joyplots.html" target="_blank">History of Ridgeline plots</a>: To refer to the theory of ridgeline plots.</p></li>
 </ul>
 <p><br></p>
-</section></section><section id="normal-distribution" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="normal-distribution">
-<span class="header-section-number">7.4</span> Normal distribution</h2>
+</section>
+</section>
+<section id="normal-distribution" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="normal-distribution"><span class="header-section-number">7.4</span> Normal distribution</h2>
 <p>When encountering data that seems to be normally distributed, you may want to overlay a normal curve.</p>
 <p>There are many ways to draw a normal curve and we introduce one here:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finches</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, binwidth <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_function.html">geom_function</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="va">dnorm</span>, col <span class="op">=</span> <span class="st">"red"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">finches</span><span class="op">$</span><span class="va">Depth</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">finches</span><span class="op">$</span><span class="va">Depth</span><span class="op">)</span><span class="op">)</span>, lwd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Normal curve overlaid"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(finches, <span class="fu">aes</span>(<span class="at">x =</span> Depth)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> dnorm, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">args =</span> <span class="fu">list</span>(<span class="fu">mean</span>(finches<span class="sc">$</span>Depth), <span class="fu">sd</span>(finches<span class="sc">$</span>Depth)), <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Normal curve overlaid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="continuous_var_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<figure class="figure">
+<p><img src="continuous_var_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -584,7 +624,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As first glance, a normal curve appears in all of the plots. However, if you look closely, all the normal curves are actually the same one and generated on the whole dataset. In such situation, we suggest drawing each graph separately and combine them.</p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1003,7 +1046,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./faceting.html" class="pagination-link" aria-label="Faceting">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Faceting</span></span>
       </a>          
@@ -1015,6 +1060,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

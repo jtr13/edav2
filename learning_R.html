@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>(PART) R resources – edav.info v2</title>
 <style>
 code{white-space: pre-wrap;}
@@ -18,6 +21,7 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -36,7 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -63,11 +68,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -78,9 +88,13 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -95,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
@@ -204,40 +218,40 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
-<li><a href="#top-10-essentials-checklist" id="toc-top-10-essentials-checklist" class="nav-link" data-scroll-target="#top-10-essentials-checklist">Top 10 essentials checklist</a></li>
-  <li>
-<a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
+  <li><a href="#top-10-essentials-checklist" id="toc-top-10-essentials-checklist" class="nav-link" data-scroll-target="#top-10-essentials-checklist">Top 10 essentials checklist</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
   <ul class="collapse">
-<li><a href="#document-doesnt-knit" id="toc-document-doesnt-knit" class="nav-link" data-scroll-target="#document-doesnt-knit">Document doesn’t knit</a></li>
+  <li><a href="#document-doesnt-knit" id="toc-document-doesnt-knit" class="nav-link" data-scroll-target="#document-doesnt-knit">Document doesn’t knit</a></li>
   <li><a href="#functions-stop-working" id="toc-functions-stop-working" class="nav-link" data-scroll-target="#functions-stop-working">Functions stop working</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#tips-tricks" id="toc-tips-tricks" class="nav-link" data-scroll-target="#tips-tricks">Tips &amp; tricks</a>
+  </ul></li>
+  <li><a href="#tips-tricks" id="toc-tips-tricks" class="nav-link" data-scroll-target="#tips-tricks">Tips &amp; tricks</a>
   <ul class="collapse">
-<li><a href="#knitr" id="toc-knitr" class="nav-link" data-scroll-target="#knitr">knitr</a></li>
+  <li><a href="#knitr" id="toc-knitr" class="nav-link" data-scroll-target="#knitr">knitr</a></li>
   <li><a href="#sizing-figures" id="toc-sizing-figures" class="nav-link" data-scroll-target="#sizing-figures">Sizing figures</a></li>
   <li><a href="#r-studio-keyborad-shortcuts" id="toc-r-studio-keyborad-shortcuts" class="nav-link" data-scroll-target="#r-studio-keyborad-shortcuts">R studio keyborad shortcuts</a></li>
   <li><a href="#viewing-plots-in-plot-window" id="toc-viewing-plots-in-plot-window" class="nav-link" data-scroll-target="#viewing-plots-in-plot-window">Viewing plots in plot window</a></li>
   <li><a href="#adding-figures-and-links" id="toc-adding-figures-and-links" class="nav-link" data-scroll-target="#adding-figures-and-links">Adding figures and links</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
-</li>
-  </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/learning_R.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/learning_R.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/learning_R.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/learning_R.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">(PART) R resources</h1>
 </div>
 
@@ -252,24 +266,25 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="getting-started" class="level1"><h1>Getting started</h1>
+</header>
+
+
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
 <p>Welcome to the world of EDAV! As you have already known, we will mainly use R through out the course. In an effort to get everyone on the same page, here is a checklist of essentials so you can get up and running. The best resources are scattered in different places online, so bear with links to various sites depending on the topic.</p>
-<section id="top-10-essentials-checklist" class="level2"><h2 class="anchored" data-anchor-id="top-10-essentials-checklist">Top 10 essentials checklist</h2>
+<section id="top-10-essentials-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-essentials-checklist">Top 10 essentials checklist</h2>
 <p>(<em>r4ds</em> = <a href="https://r4ds.had.co.nz/">R for Data Science</a> by Garrett Grolemund and Hadley Wickham, free online)</p>
 <ol type="1">
 <li><p><a href="https://r4ds.had.co.nz/introduction.html#r" target="_blank">Install R</a> (<em>r4ds</em>) – You need to have this installed but you won’t open the application since you’ll be working in RStudio. If you already installed R, make sure you’re current! The latest version of R (as of 2024-09-03) is R 4.4.1 “Race for Your Life” released on 2024/06/14. (Use <code>&gt; R.version</code> to check what you have.)</p></li>
 <li><p><a href="https://r4ds.had.co.nz/introduction.html#rstudio" target="_blank">Install RStudio</a> (<em>r4ds</em>) – Download the free, Desktop version for your OS. Working in this IDE will make working in R much more enjoyable. As with R, stay current. RStudio is constantly adding new features. The latest version (as of <code>2023-09-17</code>) is <code>2023.06.2+561</code>. (Click the <strong>RStudio</strong> menu, then “About RStudio” to see what version you have.)</p></li>
-<li>
-<p><a href="https://b-rodrigues.github.io/modern_R/getting-to-know-rstudio.html" target="_blank">Get comfortable with RStudio</a> – In this chapter of Bruno Rodriguez’s <em>Modern R with the Tidyverse</em>, you’ll learn about panes, options, getting help, keyboard shortcuts, projects, add-ins, and packages. Be sure to try out:</p>
+<li><p><a href="https://b-rodrigues.github.io/modern_R/getting-to-know-rstudio.html" target="_blank">Get comfortable with RStudio</a> – In this chapter of Bruno Rodriguez’s <em>Modern R with the Tidyverse</em>, you’ll learn about panes, options, getting help, keyboard shortcuts, projects, add-ins, and packages. Be sure to try out:</p>
 <ul>
 <li>Do some math in the console</li>
-<li>Create an Quarto file (<code>.qmd</code>) and render it to <code>.html</code>
-</li>
-<li>Install some packages like <code>tidyverse</code> or <code>MASS</code>
-</li>
+<li>Create an Quarto file (<code>.qmd</code>) and render it to <code>.html</code></li>
+<li>Install some packages like <code>tidyverse</code> or <code>MASS</code></li>
 </ul>
-<p>Another great option for learning the IDE: Watch <a href="https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/" target="_blank">Writing Code in RStudio</a> (<em>RStudio webinar</em>)</p>
-</li>
+<p>Another great option for learning the IDE: Watch <a href="https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/" target="_blank">Writing Code in RStudio</a> (<em>RStudio webinar</em>)</p></li>
 <li><p>Learn <a href="https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html" target="_blank">“R Nuts and Bolts”</a> – Roger Peng’s chapter in <em>R Programming</em> will give you a solid foundation in the basic building blocks of R. It’s worth making the investing in understanding how R objects work now so they don’t cause you problems later. Focus on <strong>vectors</strong> and especially <strong>data frames</strong>; matrices and lists don’t come up often in data visualization. Get familiar with R classes: <strong>integer, numeric, character,</strong> and <strong>logical</strong>. Understand how <strong>factors</strong> work; they are very important for graphing.</p></li>
 <li><p><a href="https://r4ds.had.co.nz/introduction.html#the-tidyverse" target="_blank">Tidy up</a> (<em>r4ds</em>) – Install the tidyverse, and get familiar with what it is. <em>We will discuss differences between base R and the tidyverse in class.</em></p></li>
 <li><p><a href="https://r4ds.had.co.nz/data-visualisation.html" target="_blank">Learn ggplot2 basics</a> (<em>r4ds</em>) – In class we will study the grammar of graphics on which <strong>ggplot2</strong> is based, but it will help to familiarize yourself with the syntax in advance. Avail yourself of the “Data Visualization with ggplot2” cheatsheet by clicking “Help” “Cheatsheets…” within RStudio.</p></li>
@@ -277,25 +292,34 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Update: <em>RStudio</em> has introduced <a href="https://quarto.org/docs/computations/r.html" target="_blank">Quarto</a>, which they call “a multi-language, next generation version of R Markdown.” It is a separate application which must be installed independently. The syntax of Quarto is very similar to that of RMarkdown. Early adopters are welcome to try it out. Follow the installation instructions and tutorials on the <a href="https://quarto.org/docs/get-started/" target="_blank">get started</a> page. A <a href="https://www.youtube.com/watch?v=yvi5uXQMvu4" target="_blank">“Welcome to Quarto Workshop!”</a> is available on YouTube, but it is <em>long</em>.</p>
 <ol start="8" type="1">
-<li><p><a href="https://r4ds.had.co.nz/workflow-projects.html" target="_blank">Use RStudio projects</a> (<em>r4ds</em>) – If you haven’t already, drink the Kool-Aid. Make each problem set a separate project. You will never have to worry about <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> or <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> again because everything will just be in the right places. Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsmanagingpart1-2" target="_blank">“Projects in RStudio”</a>. If you run into a situation in which you must change the filepaths used to read files depending on whether you are running the code in the Console or knitting the document, it is likely due to having .Rmd files stored in subfolders of the project. The <a href="https://here.r-lib.org/">here package</a> will eliminate the need for you to repeatedly make these changes by creating relative paths from the project root, that just work. This is a small but powerful tool; once you start using it there’s no going back.</p></li>
-<li><p><a href="https://r4ds.had.co.nz/transform.html" target="_blank">Learn the basic dplyr verbs</a> for data manipulation (<em>r4ds</em>) – Concentrate on the main verbs: <strong><code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code></strong> (rows), <strong><code>select()</code></strong> (columns), <strong><code>mutate()</code></strong>, <strong><code>arrange()</code></strong> (rows), <strong><code>group_by()</code></strong>, and <strong><code>summarize()</code></strong>. Learn <a href="https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/">the native R pipe <strong><code>|&gt;</code></strong> operator</a>. It is very similar to the <strong>magrittr</strong> pipe <strong><code>%&gt;%</code></strong> which you can see in action in the post <a href="https://www.r-bloggers.com/2014/02/how-dplyr-replaced-my-most-common-r-idioms/">“How dplyr replaced my most common R idioms”</a>, which provides a detailed comparison of base R vs.&nbsp;dplyr data transformation.</p></li>
+<li><p><a href="https://r4ds.had.co.nz/workflow-projects.html" target="_blank">Use RStudio projects</a> (<em>r4ds</em>) – If you haven’t already, drink the Kool-Aid. Make each problem set a separate project. You will never have to worry about <code>getwd()</code> or <code>setwd()</code> again because everything will just be in the right places. Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsmanagingpart1-2" target="_blank">“Projects in RStudio”</a>. If you run into a situation in which you must change the filepaths used to read files depending on whether you are running the code in the Console or knitting the document, it is likely due to having .Rmd files stored in subfolders of the project. The <a href="https://here.r-lib.org/">here package</a> will eliminate the need for you to repeatedly make these changes by creating relative paths from the project root, that just work. This is a small but powerful tool; once you start using it there’s no going back.</p></li>
+<li><p><a href="https://r4ds.had.co.nz/transform.html" target="_blank">Learn the basic dplyr verbs</a> for data manipulation (<em>r4ds</em>) – Concentrate on the main verbs: <strong><code>filter()</code></strong> (rows), <strong><code>select()</code></strong> (columns), <strong><code>mutate()</code></strong>, <strong><code>arrange()</code></strong> (rows), <strong><code>group_by()</code></strong>, and <strong><code>summarize()</code></strong>. Learn <a href="https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/">the native R pipe <strong><code>|&gt;</code></strong> operator</a>. It is very similar to the <strong>magrittr</strong> pipe <strong><code>%&gt;%</code></strong> which you can see in action in the post <a href="https://www.r-bloggers.com/2014/02/how-dplyr-replaced-my-most-common-r-idioms/">“How dplyr replaced my most common R idioms”</a>, which provides a detailed comparison of base R vs.&nbsp;dplyr data transformation.</p></li>
 <li><p>Know how to <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank">tidy your data</a> – The <strong><code>pivot_longer()</code></strong> function from the <strong>tidyr</strong> package – successor to <strong><code>gather()</code></strong> – will help you get your data in the right form for plotting. More on this in class. Check out these <a href="https://github.com/gadenbuie/tidyexplain" target="_blank">super cool animations</a>, which follow a data frame as it is transformed by <code>tidyr</code> functions.</p></li>
 </ol>
 <p><br></p>
-</section><section id="troubleshooting" class="level2"><h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
-<section id="document-doesnt-knit" class="level3"><h3 class="anchored" data-anchor-id="document-doesnt-knit">Document doesn’t knit</h3>
+</section>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
+<section id="document-doesnt-knit" class="level3">
+<h3 class="anchored" data-anchor-id="document-doesnt-knit">Document doesn’t knit</h3>
 <p>Normally an error message will display in the <code>R Markdown section</code> pointing to some lines with specific reasons. Try Googling as your first option and if not finding a solution, leave a post on ed discussion.</p>
-</section><section id="functions-stop-working" class="level3"><h3 class="anchored" data-anchor-id="functions-stop-working">Functions stop working</h3>
+</section>
+<section id="functions-stop-working" class="level3">
+<h3 class="anchored" data-anchor-id="functions-stop-working">Functions stop working</h3>
 <p>Strange behavior from functions that previously worked are often caused by function conflicts. This can happen if you have two packages loaded with the same function names. To indicate the proper package, namespace it. Conflicts commonly occur with <code>select</code> and <code>filter</code> and <code>map</code>. If you intend the tidyverse ones use:</p>
-<p><code><a href="https://dplyr.tidyverse.org/reference/select.html">dplyr::select</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/filter.html">dplyr::filter</a></code> and <code><a href="https://purrr.tidyverse.org/reference/map.html">purrr::map</a></code>.</p>
+<p><code>dplyr::select</code>, <code>dplyr::filter</code> and <code>purrr::map</code>.</p>
 <p>Some other culprits:</p>
-<p><code><a href="https://dplyr.tidyverse.org/reference/summarise.html">dplyr::summarise()</a></code> and <code>vcdExtra::summarise()</code></p>
-<p><code>ggmosaic::mosaic()</code> and <code><a href="https://rdrr.io/pkg/vcd/man/mosaic.html">vcd::mosaic()</a></code></p>
-<p><code><a href="https://rstudio.github.io/leaflet/reference/addLegend.html">leaflet::addLegend()</a></code> and <code>xts::addLegend()</code></p>
-<p><code><a href="https://dplyr.tidyverse.org/reference/select.html">dplyr::select</a></code> and <code><a href="https://rdrr.io/pkg/MASS/man/lm.ridge.html">MASS::select</a></code></p>
+<p><code>dplyr::summarise()</code> and <code>vcdExtra::summarise()</code></p>
+<p><code>ggmosaic::mosaic()</code> and <code>vcd::mosaic()</code></p>
+<p><code>leaflet::addLegend()</code> and <code>xts::addLegend()</code></p>
+<p><code>dplyr::select</code> and <code>MASS::select</code></p>
 <p><br></p>
-</section></section><section id="tips-tricks" class="level2"><h2 class="anchored" data-anchor-id="tips-tricks">Tips &amp; tricks</h2>
-<section id="knitr" class="level3"><h3 class="anchored" data-anchor-id="knitr">knitr</h3>
+</section>
+</section>
+<section id="tips-tricks" class="level2">
+<h2 class="anchored" data-anchor-id="tips-tricks">Tips &amp; tricks</h2>
+<section id="knitr" class="level3">
+<h3 class="anchored" data-anchor-id="knitr">knitr</h3>
 <p>Upon creating a new R markdown file, you should always notice a section like this:</p>
 <pre><code>{r setup, include=False}
 knitr::opts_chunk$set(echo = TRUE)</code></pre>
@@ -305,7 +329,9 @@ knitr::opts_chunk$set(echo = TRUE)</code></pre>
 <p><code>warning=FALSE</code> - Suppress warnings</p>
 <p><code>message=FALSE</code> – Suppress messages, especially useful when loading packages</p>
 <p><code>cache=TRUE</code> – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.</p>
-</section><section id="sizing-figures" class="level3"><h3 class="anchored" data-anchor-id="sizing-figures">Sizing figures</h3>
+</section>
+<section id="sizing-figures" class="level3">
+<h3 class="anchored" data-anchor-id="sizing-figures">Sizing figures</h3>
 <p>Always use chunk options to size figures. You can set a default size in the YAML at the beginning of the .Rmd file as so:</p>
 <pre><code>output:
   pdf_document:
@@ -315,7 +341,9 @@ knitr::opts_chunk$set(echo = TRUE)</code></pre>
 <p>Then as needed override one or more defaults in particular chunks:</p>
 <p><code>{r, fig.width=4, fig.height=2}</code></p>
 <p>Figure related chunk options include <code>fig.width</code>, <code>fig.height</code>, <code>fig.asp</code>, and <code>fig.align</code>; there are <a href="https://yihui.name/knitr/options/#plots" target="_blank">many more</a>.</p>
-</section><section id="r-studio-keyborad-shortcuts" class="level3"><h3 class="anchored" data-anchor-id="r-studio-keyborad-shortcuts">R studio keyborad shortcuts</h3>
+</section>
+<section id="r-studio-keyborad-shortcuts" class="level3">
+<h3 class="anchored" data-anchor-id="r-studio-keyborad-shortcuts">R studio keyborad shortcuts</h3>
 <p><strong>Insert R chunk</strong> - option-command-i (Mac) - ctrl+alt+I (Windows)</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -336,9 +364,13 @@ knitr::opts_chunk$set(echo = TRUE)</code></pre>
 <li>shift-command(ctrl)-K Mac/Windows</li>
 </ul>
 <p>For more shortcuts, refer <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">here</a></p>
-</section><section id="viewing-plots-in-plot-window" class="level3"><h3 class="anchored" data-anchor-id="viewing-plots-in-plot-window">Viewing plots in plot window</h3>
+</section>
+<section id="viewing-plots-in-plot-window" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-plots-in-plot-window">Viewing plots in plot window</h3>
 <p>Would you like your plots to appear in the plot window instead of below each chunk in the <code>.Rmd</code> file? Click ⚙️ and then <i class="fas fa-check"></i> <strong>Chunk Output in Console</strong>.</p>
-</section><section id="adding-figures-and-links" class="level3"><h3 class="anchored" data-anchor-id="adding-figures-and-links">Adding figures and links</h3>
+</section>
+<section id="adding-figures-and-links" class="level3">
+<h3 class="anchored" data-anchor-id="adding-figures-and-links">Adding figures and links</h3>
 <pre><code>Add images
 ![DESCRIPTION HERE](PATH HERE)
 
@@ -347,7 +379,12 @@ Add links: The text in the content column will act as a hyperlink
 <p><strong>Note:</strong> Do not use these in r chunks as they will not work.</p>
 
 
-</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -766,7 +803,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link" aria-label="Welcome!">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span>
       </a>          
@@ -778,6 +817,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

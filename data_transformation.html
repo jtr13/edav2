@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>4&nbsp; Data transformation – edav.info v2</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -70,7 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,11 +102,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -112,9 +122,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -129,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
@@ -238,20 +252,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#what-is-tidy-data" id="toc-what-is-tidy-data" class="nav-link active" data-scroll-target="#what-is-tidy-data"><span class="header-section-number">4.1</span> What is tidy data?</a></li>
+  <li><a href="#what-is-tidy-data" id="toc-what-is-tidy-data" class="nav-link active" data-scroll-target="#what-is-tidy-data"><span class="header-section-number">4.1</span> What is tidy data?</a></li>
   <li><a href="#pivot_longer" id="toc-pivot_longer" class="nav-link" data-scroll-target="#pivot_longer"><span class="header-section-number">4.2</span> <code>pivot_longer</code></a></li>
   <li><a href="#pivot_wider" id="toc-pivot_wider" class="nav-link" data-scroll-target="#pivot_wider"><span class="header-section-number">4.3</span> <code>pivot_wider</code></a></li>
-  <li>
-<a href="#basic-transformation-functions" id="toc-basic-transformation-functions" class="nav-link" data-scroll-target="#basic-transformation-functions"><span class="header-section-number">4.4</span> Basic transformation functions</a>
+  <li><a href="#basic-transformation-functions" id="toc-basic-transformation-functions" class="nav-link" data-scroll-target="#basic-transformation-functions"><span class="header-section-number">4.4</span> Basic transformation functions</a>
   <ul class="collapse">
-<li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="header-section-number">4.4.1</span> <code>rename</code></a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="header-section-number">4.4.1</span> <code>rename</code></a></li>
   <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">4.4.2</span> <code>select</code></a></li>
   <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">4.4.3</span> <code>mutate</code></a></li>
   <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">4.4.4</span> <code>filter</code></a></li>
@@ -260,15 +275,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#slice_max-slice_min" id="toc-slice_max-slice_min" class="nav-link" data-scroll-target="#slice_max-slice_min"><span class="header-section-number">4.4.7</span> <code>slice_max</code> (<code>slice_min</code>)</a></li>
   <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join"><span class="header-section-number">4.4.8</span> join</a></li>
   <li><a href="#cases-to-tables" id="toc-cases-to-tables" class="nav-link" data-scroll-target="#cases-to-tables"><span class="header-section-number">4.4.9</span> Cases to tables</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/data_transformation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/data_transformation.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/data_transformation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/data_transformation.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data transformation</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data transformation</span></h1>
 </div>
 
 
@@ -282,9 +298,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Plotting a graph is easy. You just need to find the right library with the right function. However, it is sometimes not so easy to get your data into the form desired to generate a graph. In this chapter, we will cover some basic techniques in tidying data with <code>ggplot2</code>.</p>
-<section id="what-is-tidy-data" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="what-is-tidy-data">
-<span class="header-section-number">4.1</span> What is tidy data?</h2>
+</header>
+
+
+<p>Plotting a graph is easy. You just need to find the right library with the right function. However, it is sometimes not so easy to get your data into the form desired to generate a graph. In this chapter, we will cover some basic techniques in tidying data with <code>ggplot2</code>.</p>
+<section id="what-is-tidy-data" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="what-is-tidy-data"><span class="header-section-number">4.1</span> What is tidy data?</h2>
 <p>Here’s the definition of Tidy Data given by Hadley Wickham:</p>
 <blockquote class="blockquote">
 <p>A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:</p>
@@ -316,14 +335,14 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <li>In this data set,all the variables are parameters of cars. This means that they are not different variables, but are values of a common variable.</li>
 </ul>
 <p>To transform the data, we use <code>pivot_longer</code>.</p>
-</section><section id="pivot_longer" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="pivot_longer">
-<span class="header-section-number">4.2</span> <code>pivot_longer</code>
-</h2>
+</section>
+<section id="pivot_longer" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="pivot_longer"><span class="header-section-number">4.2</span> <code>pivot_longer</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mtcars</span> <span class="op">%&gt;%</span>  </span>
-<span>  <span class="fu">rownames_to_column</span><span class="op">(</span><span class="st">"carname"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="op">!</span><span class="va">carname</span>, names_to <span class="op">=</span> <span class="st">"Parameters"</span>,values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span>  </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"carname"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">!</span>carname, <span class="at">names_to =</span> <span class="st">"Parameters"</span>,<span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   carname   Parameters  value
@@ -341,9 +360,10 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <li><p>Identify the column you want to keep as is. In this case, we want all variables to match car names.</p></li>
 <li><p><strong>Additionally</strong>, notice that in the original data set, <code>carname</code> acts as the index of the data set. You would want to convert the index to a column using <code>rownames_to_column</code>.</p></li>
 <li><p>Create meaningful names for the two new columns. In our case, straightforwardly, column names go into <code>parameters</code> and corresponding values go into <code>value</code>.</p></li>
-</ul></section><section id="pivot_wider" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="pivot_wider">
-<span class="header-section-number">4.3</span> <code>pivot_wider</code>
-</h2>
+</ul>
+</section>
+<section id="pivot_wider" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="pivot_wider"><span class="header-section-number">4.3</span> <code>pivot_wider</code></h2>
 <p><code>pivot_wider</code> is just the opposite of <code>pivot_longer</code>. Using <code>pivot_wider</code>, we can transform our tidy data back into the messy form as all distinct values in <code>Parameters</code> will become column names.</p>
 <p><code>pivot_wider</code> is often used in the case such that one observation being recorded over multiple rows. Consider the following example:</p>
 <div class="cell" data-layout-align="center">
@@ -358,7 +378,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">example</span> <span class="op">%&gt;%</span> <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">Type</span>, values_from <span class="op">=</span> <span class="va">Number</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>example <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Type, <span class="at">values_from =</span> Number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   Country  Case Death
@@ -369,8 +389,9 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 <p>It would make much more sense if <code>Case</code> and <code>Death</code> are separate features.</p>
 <p>The main focus of this chapter is <code>pivot_longer</code> and <code>pivot_wider</code>. However, other fundamental functions in <code>dplyr</code> are also very important in manipulating your data set. In the following section, we will give an overview of the basics.</p>
-</section><section id="basic-transformation-functions" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="basic-transformation-functions">
-<span class="header-section-number">4.4</span> Basic transformation functions</h2>
+</section>
+<section id="basic-transformation-functions" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="basic-transformation-functions"><span class="header-section-number">4.4</span> Basic transformation functions</h2>
 <p>For the following sections, we will use data set <code>biopsy</code> from <code>MASS</code> for demonstration purpose.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -383,18 +404,17 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 6 1017122  8 10 10  8  7 10  9  7  1 malignant</code></pre>
 </div>
 </div>
-<section id="rename" class="level3" data-number="4.4.1"><h3 data-number="4.4.1" class="anchored" data-anchor-id="rename">
-<span class="header-section-number">4.4.1</span> <code>rename</code>
-</h3>
+<section id="rename" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="rename"><span class="header-section-number">4.4.1</span> <code>rename</code></h3>
 <p>Upon getting the data, we noticed that the names of the columns are very vague. After reading the documentation, we wanted to change the names of the column so that the viewer gets a sense of the values they’re referring to. We use <code>rename</code> to modify the column names.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">biopsy_new</span> <span class="op">&lt;-</span> <span class="fu">rename</span><span class="op">(</span><span class="va">biopsy</span>,</span>
-<span>       thickness <span class="op">=</span> <span class="va">V1</span>,cell_size <span class="op">=</span> <span class="va">V2</span>,</span>
-<span>       cell_shape <span class="op">=</span> <span class="va">V3</span>, marg_adhesion <span class="op">=</span> <span class="va">V4</span>,</span>
-<span>       epithelial_cell_size <span class="op">=</span> <span class="va">V5</span>, bare_nuclei <span class="op">=</span> <span class="va">V6</span>,</span>
-<span>       chromatin <span class="op">=</span> <span class="va">V7</span>, norm_nucleoli <span class="op">=</span> <span class="va">V8</span>, mitoses <span class="op">=</span> <span class="va">V9</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">biopsy_new</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> <span class="fu">rename</span>(biopsy,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">thickness =</span> V1,<span class="at">cell_size =</span> V2,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">cell_shape =</span> V3, <span class="at">marg_adhesion =</span> V4,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">epithelial_cell_size =</span> V5, <span class="at">bare_nuclei =</span> V6,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">chromatin =</span> V7, <span class="at">norm_nucleoli =</span> V8, <span class="at">mitoses =</span> V9)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 1 1000025         5         1          1             1                    2
@@ -412,16 +432,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 6          10         9             7       1 malignant</code></pre>
 </div>
 </div>
-</section><section id="select" class="level3" data-number="4.4.2"><h3 data-number="4.4.2" class="anchored" data-anchor-id="select">
-<span class="header-section-number">4.4.2</span> <code>select</code>
-</h3>
+</section>
+<section id="select" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="select"><span class="header-section-number">4.4.2</span> <code>select</code></h3>
 <p><code>select</code> is column-wise operation. Specifically, only the columns that are specified will be returned.</p>
 <p>In the biopsy data, we do not require the variables “chromatin” and “mitoses”. So, let’s drop them using a minus sign:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#selecting all except the columns chromatin and mitoses</span></span>
-<span><span class="va">biopsy_new</span> <span class="op">&lt;-</span> <span class="va">biopsy_new</span> <span class="op">%&gt;%</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">chromatin</span>,<span class="op">-</span><span class="va">mitoses</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">biopsy_new</span>,<span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#selecting all except the columns chromatin and mitoses</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> biopsy_new <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>chromatin,<span class="sc">-</span>mitoses)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 1 1000025         5         1          1             1                    2
@@ -437,17 +457,17 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 5           1             1 benign</code></pre>
 </div>
 </div>
-</section><section id="mutate" class="level3" data-number="4.4.3"><h3 data-number="4.4.3" class="anchored" data-anchor-id="mutate">
-<span class="header-section-number">4.4.3</span> <code>mutate</code>
-</h3>
+</section>
+<section id="mutate" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="mutate"><span class="header-section-number">4.4.3</span> <code>mutate</code></h3>
 <p>The <strong>mutate</strong> function computes new variables from the already existing variables and adds them to the dataset. It gives information that the data already contained but was never displayed.</p>
 <p>The variable <code>bare_nucleus</code> contains the values from 1.00 to 10.00. If we wish to normalize the variable, we can use the mutate function:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#normalize the bare nuclei values </span></span>
-<span><span class="va">maximum_bare_nuclei</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">biopsy_new</span><span class="op">$</span><span class="va">bare_nuclei</span>,na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="va">biopsy_new</span> <span class="op">&lt;-</span> <span class="va">biopsy_new</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>bare_nuclei<span class="op">=</span><span class="va">bare_nuclei</span><span class="op">/</span><span class="va">maximum_bare_nuclei</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">biopsy_new</span>,<span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#normalize the bare nuclei values </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>maximum_bare_nuclei<span class="ot">&lt;-</span><span class="fu">max</span>(biopsy_new<span class="sc">$</span>bare_nuclei,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> biopsy_new <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bare_nuclei=</span>bare_nuclei<span class="sc">/</span>maximum_bare_nuclei)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 1 1000025         5         1          1             1                    2
@@ -464,15 +484,15 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 <p>In some situations, your new variable might involve conditions. You can consider using <code>case_when</code> combined with <code>mutate</code>.</p>
-</section><section id="filter" class="level3" data-number="4.4.4"><h3 data-number="4.4.4" class="anchored" data-anchor-id="filter">
-<span class="header-section-number">4.4.4</span> <code>filter</code>
-</h3>
+</section>
+<section id="filter" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="filter"><span class="header-section-number">4.4.4</span> <code>filter</code></h3>
 <p><strong>filter</strong> is a row-wise operation. It returns a modified copy that contains only certain rows. This function filters rows based on conditions supplied in its argument. The filter function takes the data frame as the first argument. The next argument contains one or more logical tests. The rows/observations that pass these logical tests are returned in the result of the filter function.</p>
 <p>For our example, say we only want the data of those tumor cells that have clump thickness greater than 6.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">biopsy_new</span> <span class="op">&lt;-</span> <span class="va">biopsy_new</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">thickness</span><span class="op">&gt;</span><span class="fl">5.5</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">biopsy_new</span>,<span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="ot">&lt;-</span> biopsy_new <span class="sc">%&gt;%</span> <span class="fu">filter</span>(thickness<span class="sc">&gt;</span><span class="fl">5.5</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biopsy_new,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 1 1016277         6         8          8             1                    3
@@ -489,14 +509,14 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 <p>If you want to filter using multiple conditions, use logical operators: &amp;(And), |(Or).</p>
-</section><section id="arrange" class="level3" data-number="4.4.5"><h3 data-number="4.4.5" class="anchored" data-anchor-id="arrange">
-<span class="header-section-number">4.4.5</span> <code>arrange</code>
-</h3>
+</section>
+<section id="arrange" class="level3" data-number="4.4.5">
+<h3 data-number="4.4.5" class="anchored" data-anchor-id="arrange"><span class="header-section-number">4.4.5</span> <code>arrange</code></h3>
 <p><strong>Arrange</strong> reorders the rows of the data based on their contents in the ascending order by default.</p>
 <p>Say in our example, the doctors would want to view the data in the order of the cell size of the tumor.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#arrange in the order of V2:cell size</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu">arrange</span><span class="op">(</span><span class="va">biopsy_new</span>,<span class="va">cell_size</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#arrange in the order of V2:cell size</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">arrange</span>(biopsy_new,cell_size))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 1 1050718         6         1          1             1                    2
@@ -515,15 +535,15 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 <p>In case you want your data in descending order, wrap your variable with <code>desc()</code>.</p>
-</section><section id="group_by-and-summarize" class="level3" data-number="4.4.6"><h3 data-number="4.4.6" class="anchored" data-anchor-id="group_by-and-summarize">
-<span class="header-section-number">4.4.6</span> <code>group_by</code> and <code>summarize</code>
-</h3>
+</section>
+<section id="group_by-and-summarize" class="level3" data-number="4.4.6">
+<h3 data-number="4.4.6" class="anchored" data-anchor-id="group_by-and-summarize"><span class="header-section-number">4.4.6</span> <code>group_by</code> and <code>summarize</code></h3>
 <p>The <strong>summarize</strong> function uses the data to create a new data frame with the summary statistics such as minimum, maximum, average, and so on. These statistical functions must be aggregate functions which take a vector of values as input and output a single value.</p>
 <p>The <strong>group_by</strong> function groups the data by the values of the variables. This, along with summarize, makes observations about groups of rows of the dataset.</p>
 <p>The doctors would want to see the maximum cell size and the thickness for each of the classes: benign and malignant. This can be done by grouping the data by class and finding the maximum of the required variables:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">biopsy_grouped</span> <span class="op">&lt;-</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">biopsy_new</span>,<span class="va">class</span><span class="op">)</span></span>
-<span><span class="fu">summarize</span><span class="op">(</span><span class="va">biopsy_grouped</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">thickness</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">cell_size</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">norm_nucleoli</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>biopsy_grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(biopsy_new,class)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(biopsy_grouped, <span class="fu">max</span>(thickness), <span class="fu">mean</span>(cell_size), <span class="fu">var</span>(norm_nucleoli))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
   class     `max(thickness)` `mean(cell_size)` `var(norm_nucleoli)`
@@ -532,13 +552,14 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 2 malignant               10              6.73                11.3 </code></pre>
 </div>
 </div>
-</section><section id="slice_max-slice_min" class="level3" data-number="4.4.7"><h3 data-number="4.4.7" class="anchored" data-anchor-id="slice_max-slice_min">
-<span class="header-section-number">4.4.7</span> <code>slice_max</code> (<code>slice_min</code>)</h3>
+</section>
+<section id="slice_max-slice_min" class="level3" data-number="4.4.7">
+<h3 data-number="4.4.7" class="anchored" data-anchor-id="slice_max-slice_min"><span class="header-section-number">4.4.7</span> <code>slice_max</code> (<code>slice_min</code>)</h3>
 <p>The <strong>slice_max</strong> function helps you to find the top n values of a specific column. Suppose we now want to see the top five biopsies with the biggest thickness. Notice in this case, since we have more than five rows with thickness 10, all of them are selected (for neatness, we only show first several rows).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">biopsy_new</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">slice_max</span><span class="op">(</span>order_by <span class="op">=</span> <span class="va">thickness</span>,n<span class="op">=</span><span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>biopsy_new <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> thickness,<span class="at">n=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ID thickness cell_size cell_shape marg_adhesion epithelial_cell_size
 1 1050670        10         7          7             6                    4
@@ -556,16 +577,17 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 6         0.1            10 malignant</code></pre>
 </div>
 </div>
-</section><section id="join" class="level3" data-number="4.4.8"><h3 data-number="4.4.8" class="anchored" data-anchor-id="join">
-<span class="header-section-number">4.4.8</span> join</h3>
+</section>
+<section id="join" class="level3" data-number="4.4.8">
+<h3 data-number="4.4.8" class="anchored" data-anchor-id="join"><span class="header-section-number">4.4.8</span> join</h3>
 <p>Sometimes you will need to combine two data sets and this is when function join comes into play. There are four types of joins provided by <code>dplyr</code> and take a look at the following example.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Main dataset</span></span>
-<span><span class="va">s77</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">state.x77</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">rownames_to_column</span><span class="op">(</span><span class="st">"state"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Illiteracy</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">s77</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Main dataset</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>s77 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(state.x77) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"state"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Illiteracy))</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(s77)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       state Population Income Life.Exp Murder HS.Grad Frost   Area
 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708
@@ -577,12 +599,12 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># https://www.cookpolitical.com/2020-national-popular-vote-tracker</span></span>
-<span><span class="va">partyinfo</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv"</span><span class="op">)</span></span>
-<span><span class="va">partyinfo</span> <span class="op">&lt;-</span> <span class="va">partyinfo</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">state</span>, <span class="va">called</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu">left_join</span><span class="op">(</span><span class="va">s77</span>, <span class="va">partyinfo</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.cookpolitical.com/2020-national-popular-vote-tracker</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>partyinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>partyinfo <span class="ot">&lt;-</span> partyinfo <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(state, called)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">left_join</span>(s77, partyinfo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       state Population Income Life.Exp Murder HS.Grad Frost   Area called
 1    Alabama       3615   3624    69.05   15.1    41.3    20  50708      R
@@ -594,8 +616,9 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 <p><strong>s77</strong> contains statistics of 50 states in the US and <strong>partyinfo</strong> holds information whether a state is democratic or republican. The two data sets are joined on common feature <code>state</code>. If you want to join on features with different names, specify using the argument <code>by</code>. For detailed explanations of differnet types of joins, refer to the <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">documentation</a>.</p>
-</section><section id="cases-to-tables" class="level3" data-number="4.4.9"><h3 data-number="4.4.9" class="anchored" data-anchor-id="cases-to-tables">
-<span class="header-section-number">4.4.9</span> Cases to tables</h3>
+</section>
+<section id="cases-to-tables" class="level3" data-number="4.4.9">
+<h3 data-number="4.4.9" class="anchored" data-anchor-id="cases-to-tables"><span class="header-section-number">4.4.9</span> Cases to tables</h3>
 <p>When you want to perform a Chi-squared test or create a paired mosaic plot, your data has to follow a table format. For example, the following table is in the correct format. The columns are anxiety statues and rows are class years.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -608,11 +631,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 <p>The following example demonstrates how you can convert cases to tables. Notice the starting data has a count for each of the categorical combinations.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># watch out: summarise</span></span>
-<span><span class="va">rebates</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://data.ny.gov/resource/thd2-fu8y.csv"</span><span class="op">)</span></span>
-<span><span class="va">rebate_counts</span> <span class="op">&lt;-</span> <span class="va">rebates</span> <span class="op">|&gt;</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">make</span>, <span class="va">ev_type</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">summarize</span><span class="op">(</span>Freq <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rebate_counts</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># watch out: summarise</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>rebates <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://data.ny.gov/resource/thd2-fu8y.csv"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>rebate_counts <span class="ot">&lt;-</span> rebates <span class="sc">|&gt;</span> <span class="fu">group_by</span>(make, ev_type) <span class="sc">|&gt;</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Freq =</span> <span class="fu">n</span>())</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rebate_counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
 # Groups:   make [3]
@@ -628,7 +651,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 <p>By using <code>xtabs</code>, we are able to transform our data into a table ready for Chi-squared test or paired mosaic plot.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html">xtabs</a></span><span class="op">(</span><span class="va">Freq</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">rebate_counts</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">xtabs</span>(Freq <span class="sc">~</span> ., <span class="at">data =</span> rebate_counts))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           ev_type
 make        BEV PHEV
@@ -642,7 +665,11 @@ make        BEV PHEV
 </div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1061,7 +1088,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./data_import.html" class="pagination-link" aria-label="Data importation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data importation</span></span>
       </a>          
@@ -1073,6 +1102,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
