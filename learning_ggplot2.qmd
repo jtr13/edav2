@@ -1,5 +1,3 @@
-# (PART) R graphics {-}
-
 # Learning ggplot2
 
 ## **Getting started**
@@ -49,16 +47,16 @@ bar, boxplot, line, histogram, and density. Each geom has a certain number of re
 ```{r,fig.width=4, fig.height=3}
 library(ggplot2)
 
-ggplot(data = iris) +  #Data part
-  geom_point(aes(x = Sepal.Length, y = Sepal.Width))  #Mapping part
+ggplot(data = iris) +  # Data part
+  geom_point(aes(x = Sepal.Length, y = Sepal.Width))  # Mapping part
 ```
 
 The most important part of all plots is data, which includes the information you want to visualize. Based on that, the next step is to decide its mapping, which determine how the data's variable are mapped to aesthetic attributes on a graphic. Since data is independent from the other elements, you can always add several layers of data into the same ggplot while keeping the other components the same.
 
 ```{r,fig.width=4, fig.height=3}
-ggplot(data = iris) +  #Data part
-  geom_point(aes(Petal.Length, Petal.Width)) +  #layer 1 with mapping 
-  geom_point(aes(Sepal.Length, Sepal.Width), color='red')  #layer 2 with a different mapping
+ggplot(data = iris) +  # Data part
+  geom_point(aes(Petal.Length, Petal.Width)) +  # layer 1 with mapping 
+  geom_point(aes(Sepal.Length, Sepal.Width), color = 'red')  # layer 2 with a different mapping
 ```
 
 
@@ -84,7 +82,8 @@ A statistical transformation `stat` transforms the data. And Position adjustment
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) +
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack')
+  geom_histogram(mapping = aes(x = Petal.Length, fill = Species),
+                 stat = 'bin',position = 'stack')
 ```
 
 
@@ -98,7 +97,8 @@ A scale controls how data is mapped to aesthetic attributes, so one scale for on
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) +
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
+  geom_histogram(mapping = aes(x = Petal.Length, fill = Species),
+                 stat = 'bin', position = 'stack') +
   scale_x_continuous(limits = c(0, 10)) +
   scale_y_continuous(limits = c(0, 50))
 ```
@@ -111,7 +111,8 @@ A coordinate system `coord` maps the position of objects onto the plane of the p
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) +
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
+  geom_histogram(mapping = aes(x = Petal.Length, fill = Species),
+                 stat = 'bin', position = 'stack') +
   coord_polar()
 ```
 
@@ -122,8 +123,8 @@ Faceting can be used to split the data up into subsets of the entire dataset.
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) +
-  geom_histogram(mapping=aes(x=Petal.Length), stat = 'bin') +
-  facet_wrap(iris$Species)
+  geom_histogram(mapping = aes(x = Petal.Length), stat = 'bin') +
+  facet_wrap(~Species)
 ```
 
 
@@ -133,7 +134,7 @@ Labels include titles, labels for x,y axis and annotates. Good graphics also nee
 
 ```{r,fig.width=4.8, fig.height=3.6}
 ggplot(data = iris) +
-  geom_histogram(mapping=aes(x=Petal.Length, fill=Species), stat = 'bin',position = 'stack') +
+  geom_histogram(mapping = aes(x = Petal.Length, fill = Species), stat = 'bin',position = 'stack') +
   ggtitle('Stacked petal length of different species') +
   xlab('Length of Petal')
 ```

@@ -41,7 +41,7 @@ Imports:
     viridis
 Suggests:
     bslib,
-    downlit,
+    rmarkdown,
     withr,
     xml2
 Remotes:

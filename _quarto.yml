@@ -11,28 +11,35 @@ book:
   repo-actions: [source, edit, issue]
   chapters:
     - index.qmd
-    - learning_R.qmd
-    - factors.qmd
-    - data_import.qmd
-    - data_transformation.qmd
-    - git_GitHub.qmd
-    - learning_ggplot2.qmd
-    - faceting.qmd
-    - continuous_var.qmd
-    - uni_categorical_var.qmd
-    - two_continuous_var.qmd
-    - multidimensional_continuous.qmd
-    - multidimensional_categorical.qmd
-    - missing_data.qmd
-    - colors.qmd
-    - time_series.qmd
-    - spatial.qmd
-    - cutting_room_floor.qmd 
+    - part: R_resources.qmd
+      chapters:
+      - learning_R.qmd
+      - factors.qmd
+      - data_import.qmd
+      - data_transformation.qmd
+      - git_GitHub.qmd
+      
+    - part: R_graphics.qmd
+      chapters:
+      - learning_ggplot2.qmd
+      - faceting.qmd
+      - continuous_var.qmd
+      - uni_categorical_var.qmd
+      - two_continuous_var.qmd
+      - multidimensional_continuous.qmd
+      - multidimensional_categorical.qmd
+      - missing_data.qmd
+      - colors.qmd
+      - time_series.qmd
+      - spatial.qmd
+      
+    - part: appendix.qmd  
+      chapters:
+      - cutting_room_floor.qmd 
 
 format:
   html:
     theme: [default, style/edav3.scss]
-    code-link: true
     highlight-style: style/joyce.theme
     callout-icon: false
     

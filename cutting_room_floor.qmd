@@ -1,5 +1,3 @@
-# (PART) Appendix {.unnumbered}
-
 # Cutting room floor
 
 It's worth remembering that most graphs end up on the proverbial cutting room floor. Some graph types in particular are truly hit or miss: parallel coordinate plots are at the top of the list in this category. I'm including some of the "misses" here so you'll realize you're not alone if you create a graph that does not show anything worthwhile.
