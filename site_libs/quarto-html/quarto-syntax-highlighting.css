@@ -25,7 +25,7 @@
   --quarto-hl-an-color: #ca60ca;
   --quarto-hl-cv-color: #0095ff;
   --quarto-hl-re-color: #0057ae;
-  --quarto-hl-in-color: #d2d2d2;
+  --quarto-hl-in-color: #3379be;
   --quarto-hl-wa-color: #d2d2d2;
   --quarto-hl-al-color: #bf0303;
   --quarto-hl-er-color: #bf0303;
@@ -165,7 +165,8 @@ code span.re {
 }
 
 code span.in {
-  color: #d2d2d2;
+  color: #3379be;
+  font-weight: bold;
 }
 
 code span.wa {

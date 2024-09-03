@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -263,16 +297,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#top-10-essentials-checklist" id="toc-top-10-essentials-checklist" class="nav-link active" data-scroll-target="#top-10-essentials-checklist"><span class="header-section-number">2.1</span> Top 10 essentials checklist</a></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">2.2</span> Troubleshooting</a>
   <ul class="collapse">
-  <li><a href="#document-doesnt-knit" id="toc-document-doesnt-knit" class="nav-link" data-scroll-target="#document-doesnt-knit"><span class="header-section-number">2.2.1</span> Document doesn’t knit</a></li>
-  <li><a href="#functions-stop-working" id="toc-functions-stop-working" class="nav-link" data-scroll-target="#functions-stop-working"><span class="header-section-number">2.2.2</span> Functions stop working</a></li>
+  <li><a href="#functions-stop-working" id="toc-functions-stop-working" class="nav-link" data-scroll-target="#functions-stop-working"><span class="header-section-number">2.2.1</span> Functions stop working</a></li>
   </ul></li>
   <li><a href="#tips-tricks" id="toc-tips-tricks" class="nav-link" data-scroll-target="#tips-tricks"><span class="header-section-number">2.3</span> Tips &amp; tricks</a>
   <ul class="collapse">
-  <li><a href="#knitr" id="toc-knitr" class="nav-link" data-scroll-target="#knitr"><span class="header-section-number">2.3.1</span> knitr</a></li>
-  <li><a href="#sizing-figures" id="toc-sizing-figures" class="nav-link" data-scroll-target="#sizing-figures"><span class="header-section-number">2.3.2</span> Sizing figures</a></li>
-  <li><a href="#r-studio-keyborad-shortcuts" id="toc-r-studio-keyborad-shortcuts" class="nav-link" data-scroll-target="#r-studio-keyborad-shortcuts"><span class="header-section-number">2.3.3</span> R studio keyborad shortcuts</a></li>
-  <li><a href="#viewing-plots-in-plot-window" id="toc-viewing-plots-in-plot-window" class="nav-link" data-scroll-target="#viewing-plots-in-plot-window"><span class="header-section-number">2.3.4</span> Viewing plots in plot window</a></li>
-  <li><a href="#adding-figures-and-links" id="toc-adding-figures-and-links" class="nav-link" data-scroll-target="#adding-figures-and-links"><span class="header-section-number">2.3.5</span> Adding figures and links</a></li>
+  <li><a href="#sizing-figures" id="toc-sizing-figures" class="nav-link" data-scroll-target="#sizing-figures"><span class="header-section-number">2.3.1</span> Sizing figures</a></li>
+  <li><a href="#rstudio-keyborad-shortcuts" id="toc-rstudio-keyborad-shortcuts" class="nav-link" data-scroll-target="#rstudio-keyborad-shortcuts"><span class="header-section-number">2.3.2</span> RStudio keyborad shortcuts</a></li>
+  <li><a href="#viewing-plots-in-plot-window" id="toc-viewing-plots-in-plot-window" class="nav-link" data-scroll-target="#viewing-plots-in-plot-window"><span class="header-section-number">2.3.3</span> Viewing plots in plot window</a></li>
+  <li><a href="#adding-figures-and-links" id="toc-adding-figures-and-links" class="nav-link" data-scroll-target="#adding-figures-and-links"><span class="header-section-number">2.3.4</span> Adding figures and links</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/learning_R.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/learning_R.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -319,18 +351,14 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://quarto.org/docs/computations/r.html" target="_blank">Learn some Quarto</a>, a new tool from Posit (formerly RStudio) that they describe as “a multi-language, next generation version of R Markdown.” The syntax of Quarto is very similar to that of RMarkdown, but is a separate application, not an R package. Current versions of RStudio ship with Quarto, so you don’t need to install it. An in-depth (read: long) <a href="https://www.youtube.com/watch?v=yvi5uXQMvu4" target="_blank">“Welcome to Quarto Workshop!”</a> is available on YouTube.</p></li>
 <li><p><a href="https://r4ds.had.co.nz/workflow-projects.html" target="_blank">Use RStudio projects</a> (<em>r4ds</em>) – If you haven’t already, drink the Kool-Aid. Make each problem set a separate project. You will never have to worry about <code>getwd()</code> or <code>setwd()</code> again because everything will just be in the right places. Or watch the webinar: <a href="https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsmanagingpart1-2" target="_blank">“Projects in RStudio”</a>. If you run into a situation in which you must change the filepaths used to read files depending on whether you are running the code in the Console or knitting the document, it is likely due to having .Rmd files stored in subfolders of the project. The <a href="https://here.r-lib.org/">here package</a> will eliminate the need for you to repeatedly make these changes by creating relative paths from the project root, that just work. This is a small but powerful tool; once you start using it there’s no going back.</p></li>
 <li><p><a href="https://r4ds.had.co.nz/transform.html" target="_blank">Learn the basic dplyr verbs</a> for data manipulation (<em>r4ds</em>) – Concentrate on the main verbs: <strong><code>filter()</code></strong> (rows), <strong><code>select()</code></strong> (columns), <strong><code>mutate()</code></strong>, <strong><code>arrange()</code></strong> (rows), <strong><code>group_by()</code></strong>, and <strong><code>summarize()</code></strong>. Learn <a href="https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/">the native R pipe <strong><code>|&gt;</code></strong> operator</a>. It is very similar to the <strong>magrittr</strong> pipe <strong><code>%&gt;%</code></strong> which you can see in action in the post <a href="https://www.r-bloggers.com/2014/02/how-dplyr-replaced-my-most-common-r-idioms/">“How dplyr replaced my most common R idioms”</a>, which provides a detailed comparison of base R vs.&nbsp;dplyr data transformation.</p></li>
-<li><p>Know how to <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank">tidy your data</a> – The <strong><code>pivot_longer()</code></strong> function from the <strong>tidyr</strong> package – successor to <strong><code>gather()</code></strong> – will help you get your data in the right form for plotting. More on this in class. Check out these <a href="https://github.com/gadenbuie/tidyexplain" target="_blank">super cool animations</a>, which follow a data frame as it is transformed by <code>tidyr</code> functions.</p></li>
+<li><p>Know how to <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank">tidy your data</a> – The <strong><code>pivot_longer()</code></strong> function from the <strong>tidyr</strong> package – successor to <strong><code>gather()</code></strong> – will help you get your data in the right form for plotting. More on this in class. Check out these <a href="https://github.com/gadenbuie/tidyexplain?tab=readme-ov-file#semi-join" target="_blank">super cool animations</a>, which follow a data frame as it is transformed by <code>tidyr</code> functions.</p></li>
 </ol>
 <p><br></p>
 </section>
 <section id="troubleshooting" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">2.2</span> Troubleshooting</h2>
-<section id="document-doesnt-knit" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="document-doesnt-knit"><span class="header-section-number">2.2.1</span> Document doesn’t knit</h3>
-<p>Normally an error message will display in the <code>R Markdown section</code> pointing to some lines with specific reasons. Try Googling as your first option and if not finding a solution, leave a post on ed discussion.</p>
-</section>
-<section id="functions-stop-working" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="functions-stop-working"><span class="header-section-number">2.2.2</span> Functions stop working</h3>
+<section id="functions-stop-working" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="functions-stop-working"><span class="header-section-number">2.2.1</span> Functions stop working</h3>
 <p>Strange behavior from functions that previously worked are often caused by function conflicts. This can happen if you have two packages loaded with the same function names. To indicate the proper package, namespace it. Conflicts commonly occur with <code>select</code> and <code>filter</code> and <code>map</code>. If you intend the tidyverse ones use:</p>
 <p><code>dplyr::select</code>, <code>dplyr::filter</code> and <code>purrr::map</code>.</p>
 <p>Some other culprits:</p>
@@ -343,32 +371,25 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tips-tricks" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="tips-tricks"><span class="header-section-number">2.3</span> Tips &amp; tricks</h2>
-<section id="knitr" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="knitr"><span class="header-section-number">2.3.1</span> knitr</h3>
-<p>Upon creating a new R markdown file, you should always notice a section like this:</p>
-<pre><code>{r setup, include=False}
-knitr::opts_chunk$set(echo = TRUE)</code></pre>
-<p>The chunk options refer to the first line and you can add some of the following options:</p>
-<pre><code>{r setup, include=False, warning=False, message=False, cache=True}
-knitr::opts_chunk$set(echo = TRUE)</code></pre>
-<p><code>warning=FALSE</code> - Suppress warnings</p>
-<p><code>message=FALSE</code> – Suppress messages, especially useful when loading packages</p>
-<p><code>cache=TRUE</code> – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.</p>
-</section>
-<section id="sizing-figures" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="sizing-figures"><span class="header-section-number">2.3.2</span> Sizing figures</h3>
-<p>Always use chunk options to size figures. You can set a default size in the YAML at the beginning of the .Rmd file as so:</p>
-<pre><code>output:
-  pdf_document:
-    fig_height: 3
-    fig_width: 5</code></pre>
-<p>Another method is to click the gear ⚙️ next to the Knit button, then <strong>Output Options…</strong>, and finally the <strong>Figures</strong> tab.</p>
+<section id="sizing-figures" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="sizing-figures"><span class="header-section-number">2.3.1</span> Sizing figures</h3>
+<p>Always use chunk options to size figures. You can set a default size in the YAML at the beginning of the .qmd file as so:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig-height</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">out-width</span><span class="kw">:</span><span class="at"> 60%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then as needed override one or more defaults in particular chunks:</p>
-<p><code>{r, fig.width=4, fig.height=2}</code></p>
-<p>Figure related chunk options include <code>fig.width</code>, <code>fig.height</code>, <code>fig.asp</code>, and <code>fig.align</code>; there are <a href="https://yihui.name/knitr/options/#plots" target="_blank">many more</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 4</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="r-studio-keyborad-shortcuts" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="r-studio-keyborad-shortcuts"><span class="header-section-number">2.3.3</span> R studio keyborad shortcuts</h3>
+<section id="rstudio-keyborad-shortcuts" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="rstudio-keyborad-shortcuts"><span class="header-section-number">2.3.2</span> RStudio keyborad shortcuts</h3>
 <p><strong>Insert R chunk</strong> - option-command-i (Mac) - ctrl+alt+I (Windows)</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -376,7 +397,7 @@ knitr::opts_chunk$set(echo = TRUE)</code></pre>
 ```</code></pre>
 </div>
 </div>
-<p><strong>Insert <code>%&gt;%</code></strong> (“the pipe”):</p>
+<p><strong>Insert <code>|&gt;</code></strong> (“the pipe”):</p>
 <ul>
 <li>shift-command(ctrl)-M Mac/Windows</li>
 </ul>
@@ -384,18 +405,14 @@ knitr::opts_chunk$set(echo = TRUE)</code></pre>
 <ul>
 <li>shift-command(ctrl)-C Mac/Windows</li>
 </ul>
-<p><strong>Knit Document</strong></p>
-<ul>
-<li>shift-command(ctrl)-K Mac/Windows</li>
-</ul>
 <p>For more shortcuts, refer <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">here</a></p>
 </section>
-<section id="viewing-plots-in-plot-window" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="viewing-plots-in-plot-window"><span class="header-section-number">2.3.4</span> Viewing plots in plot window</h3>
-<p>Would you like your plots to appear in the plot window instead of below each chunk in the <code>.Rmd</code> file? Click ⚙️ and then <i class="fas fa-check"></i> <strong>Chunk Output in Console</strong>.</p>
+<section id="viewing-plots-in-plot-window" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="viewing-plots-in-plot-window"><span class="header-section-number">2.3.3</span> Viewing plots in plot window</h3>
+<p>Would you like your plots to appear in the plot window instead of below each chunk in the <code>.qmd</code> file? Click ⚙️ and then <i class="fas fa-check"></i> <strong>Chunk Output in Console</strong>.</p>
 </section>
-<section id="adding-figures-and-links" class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" data-anchor-id="adding-figures-and-links"><span class="header-section-number">2.3.5</span> Adding figures and links</h3>
+<section id="adding-figures-and-links" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="adding-figures-and-links"><span class="header-section-number">2.3.4</span> Adding figures and links</h3>
 <pre><code>Add images
 ![DESCRIPTION HERE](PATH HERE)
 
