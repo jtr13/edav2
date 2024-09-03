@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>(PART) R graphics – edav.info v2</title>
+<title>7&nbsp; Learning ggplot2 – edav.info v2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./faceting.html" rel="next">
-<link href="./git_GitHub.html" rel="prev">
+<link href="./R_graphics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./learning_ggplot2.html">(PART) R graphics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R_graphics.html">R graphics</a></li><li class="breadcrumb-item"><a href="./learning_ggplot2.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Learning ggplot2</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,108 +149,141 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./R_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./learning_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">(PART) R resources</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with factors</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with factors</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data importation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data importation</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data transformation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data transformation</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git_GitHub.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">GitHub/git Resources</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">GitHub/git Resources</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./R_graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R graphics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./learning_ggplot2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">(PART) R graphics</span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Learning ggplot2</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./faceting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Faceting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Faceting</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./continuous_var.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Unidimensional continuous variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Unidimensional continuous variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./uni_categorical_var.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unidimensional categorical variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Unidimensional categorical variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./two_continuous_var.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Two continuous variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Two continuous variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./multidimensional_continuous.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multidimensional continuous variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multidimensional continuous variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./multidimensional_categorical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multidimensional categorical variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multidimensional categorical variables</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Missing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./colors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Colors</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Colors</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./time_series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Time series</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Time series</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./spatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spatial data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spatial data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cutting_room_floor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">(PART) Appendix</span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Cutting room floor</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -261,31 +294,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-ggplot2" id="toc-learning-ggplot2" class="nav-link active" data-scroll-target="#learning-ggplot2">Learning ggplot2</a>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">7.1</span> <strong>Getting started</strong></a></li>
+  <li><a href="#grammar-of-graphics" id="toc-grammar-of-graphics" class="nav-link" data-scroll-target="#grammar-of-graphics"><span class="header-section-number">7.2</span> Grammar of Graphics</a></li>
+  <li><a href="#data-layers" id="toc-data-layers" class="nav-link" data-scroll-target="#data-layers"><span class="header-section-number">7.3</span> Data layers</a></li>
+  <li><a href="#customized-parts" id="toc-customized-parts" class="nav-link" data-scroll-target="#customized-parts"><span class="header-section-number">7.4</span> <strong>Customized parts</strong></a>
   <ul class="collapse">
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><strong>Getting started</strong></a></li>
-  <li><a href="#grammar-of-graphics" id="toc-grammar-of-graphics" class="nav-link" data-scroll-target="#grammar-of-graphics">Grammar of Graphics</a></li>
-  <li><a href="#data-layers" id="toc-data-layers" class="nav-link" data-scroll-target="#data-layers">Data layers</a></li>
-  <li><a href="#customized-parts" id="toc-customized-parts" class="nav-link" data-scroll-target="#customized-parts"><strong>Customized parts</strong></a>
-  <ul class="collapse">
-  <li><a href="#geometric-object-statistical-transformation-and-position-adjustment" id="toc-geometric-object-statistical-transformation-and-position-adjustment" class="nav-link" data-scroll-target="#geometric-object-statistical-transformation-and-position-adjustment"><strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
-  <li><a href="#scale" id="toc-scale" class="nav-link" data-scroll-target="#scale"><strong>Scale</strong></a></li>
-  <li><a href="#coordinate-system" id="toc-coordinate-system" class="nav-link" data-scroll-target="#coordinate-system"><strong>Coordinate system</strong></a></li>
-  <li><a href="#faceting" id="toc-faceting" class="nav-link" data-scroll-target="#faceting"><strong>Faceting</strong></a></li>
-  <li><a href="#labels" id="toc-labels" class="nav-link" data-scroll-target="#labels"><strong>Labels</strong></a></li>
+  <li><a href="#geometric-object-statistical-transformation-and-position-adjustment" id="toc-geometric-object-statistical-transformation-and-position-adjustment" class="nav-link" data-scroll-target="#geometric-object-statistical-transformation-and-position-adjustment"><span class="header-section-number">7.4.1</span> <strong>Geometric object, statistical transformation and position adjustment</strong></a></li>
+  <li><a href="#scale" id="toc-scale" class="nav-link" data-scroll-target="#scale"><span class="header-section-number">7.4.2</span> <strong>Scale</strong></a></li>
+  <li><a href="#coordinate-system" id="toc-coordinate-system" class="nav-link" data-scroll-target="#coordinate-system"><span class="header-section-number">7.4.3</span> <strong>Coordinate system</strong></a></li>
+  <li><a href="#faceting" id="toc-faceting" class="nav-link" data-scroll-target="#faceting"><span class="header-section-number">7.4.4</span> <strong>Faceting</strong></a></li>
+  <li><a href="#labels" id="toc-labels" class="nav-link" data-scroll-target="#labels"><span class="header-section-number">7.4.5</span> <strong>Labels</strong></a></li>
   </ul></li>
-  <li><a href="#resources-for-ggplot2" id="toc-resources-for-ggplot2" class="nav-link" data-scroll-target="#resources-for-ggplot2"><strong>Resources for ggplot2</strong></a></li>
-  <li><a href="#required-aesthetic-mappings" id="toc-required-aesthetic-mappings" class="nav-link" data-scroll-target="#required-aesthetic-mappings">Required aesthetic mappings</a></li>
-  </ul></li>
+  <li><a href="#resources-for-ggplot2" id="toc-resources-for-ggplot2" class="nav-link" data-scroll-target="#resources-for-ggplot2"><span class="header-section-number">7.5</span> <strong>Resources for ggplot2</strong></a></li>
+  <li><a href="#required-aesthetic-mappings" id="toc-required-aesthetic-mappings" class="nav-link" data-scroll-target="#required-aesthetic-mappings"><span class="header-section-number">7.6</span> Required aesthetic mappings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/learning_ggplot2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/learning_ggplot2.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R_graphics.html">R graphics</a></li><li class="breadcrumb-item"><a href="./learning_ggplot2.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Learning ggplot2</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">(PART) R graphics</h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Learning ggplot2</span></h1>
 </div>
 
 
@@ -302,10 +332,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="learning-ggplot2" class="level1">
-<h1>Learning ggplot2</h1>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started"><strong>Getting started</strong></h2>
+<section id="getting-started" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">7.1</span> <strong>Getting started</strong></h2>
 <p>Make sure you have installed the <strong>tidyverse</strong> collection of packages with:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -320,15 +348,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>for the <strong>ggplot2</strong> package only.</p>
 </section>
-<section id="grammar-of-graphics" class="level2">
-<h2 class="anchored" data-anchor-id="grammar-of-graphics">Grammar of Graphics</h2>
+<section id="grammar-of-graphics" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="grammar-of-graphics"><span class="header-section-number">7.2</span> Grammar of Graphics</h2>
 <p>Unlike many graphics software packages, <strong>ggplot2</strong> has an underlying grammar which enables you to create graphs by combining different basic components or building blocks. Therefore you are not limited by a list of premade charts but can design your own unique graphics given your data and research goals.</p>
 <p>The underlying grammar is called the Grammar of Graphics based on <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448">a book by Leland Wilkinson</a> with the same title. (That is what the “gg” in <strong>ggplot2</strong> stands for.)</p>
 <p>As implemented in <strong>ggplot2</strong> the five basic components of graphs are 1) layers, 2) scales, 3) coordinate system, 4) faceting system, and 5) theme.</p>
 <p>The layers contain the data; everything else in a sense helps us to view and interpret the data. Plots contain one or more layers.</p>
 </section>
-<section id="data-layers" class="level2">
-<h2 class="anchored" data-anchor-id="data-layers">Data layers</h2>
+<section id="data-layers" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="data-layers"><span class="header-section-number">7.3</span> Data layers</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/layers.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -344,8 +372,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co">#Data part</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width))  <span class="co">#Mapping part</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co"># Data part</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width))  <span class="co"># Mapping part</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -356,9 +384,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The most important part of all plots is data, which includes the information you want to visualize. Based on that, the next step is to decide its mapping, which determine how the data’s variable are mapped to aesthetic attributes on a graphic. Since data is independent from the other elements, you can always add several layers of data into the same ggplot while keeping the other components the same.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co">#Data part</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Petal.Length, Petal.Width)) <span class="sc">+</span>  <span class="co">#layer 1 with mapping </span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Sepal.Length, Sepal.Width), <span class="at">color=</span><span class="st">'red'</span>)  <span class="co">#layer 2 with a different mapping</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span>  <span class="co"># Data part</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Petal.Length, Petal.Width)) <span class="sc">+</span>  <span class="co"># layer 1 with mapping </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(Sepal.Length, Sepal.Width), <span class="at">color =</span> <span class="st">'red'</span>)  <span class="co"># layer 2 with a different mapping</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -368,21 +396,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="customized-parts" class="level2">
-<h2 class="anchored" data-anchor-id="customized-parts"><strong>Customized parts</strong></h2>
+<section id="customized-parts" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="customized-parts"><span class="header-section-number">7.4</span> <strong>Customized parts</strong></h2>
 <p>The following picture shows the order of ggplot functions:</p>
 <center>
 <img src="images/codingOrder.png" class="img-fluid" style="width:60.0%">
 </center>
 <p>For more function order suggestions and auto-correction when writing your own <strong>ggplot2</strong> functions, please refer to <a href="https://github.com/jtr13/ggformat">ggformat</a> addin created by Joyce.</p>
-<section id="geometric-object-statistical-transformation-and-position-adjustment" class="level3">
-<h3 class="anchored" data-anchor-id="geometric-object-statistical-transformation-and-position-adjustment"><strong>Geometric object, statistical transformation and position adjustment</strong></h3>
+<section id="geometric-object-statistical-transformation-and-position-adjustment" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="geometric-object-statistical-transformation-and-position-adjustment"><span class="header-section-number">7.4.1</span> <strong>Geometric object, statistical transformation and position adjustment</strong></h3>
 <p>Geometric object, statistical transformation and position adjustment are components that can be customized in each layer.</p>
 <p>Geometric objects, called <code>geoms</code>, control graphical elements representing the data–think shapes. Different types of plot have different aesthetics features. For example, a point <code>geom</code> has position, color, shape, and size aesthetics. You should first decide which kind of plot better explains the data before choosing <code>geoms</code> and use <code>help</code> function to check what aesthetics can be modified to achieve your desired effects.</p>
 <p>A statistical transformation <code>stat</code> transforms the data. And Position adjustment is applied when you need to adjust the position of elements on the plot for dense data, otherwise data points might obscure one another.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">'bin'</span>,<span class="at">position =</span> <span class="st">'stack'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">fill =</span> Species),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stat =</span> <span class="st">'bin'</span>,<span class="at">position =</span> <span class="st">'stack'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -392,17 +421,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="scale" class="level3">
-<h3 class="anchored" data-anchor-id="scale"><strong>Scale</strong></h3>
+<section id="scale" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="scale"><span class="header-section-number">7.4.2</span> <strong>Scale</strong></h3>
 <center>
 <img src="images/scale.png" class="img-fluid" style="width:50.0%">
 </center>
 <p>A scale controls how data is mapped to aesthetic attributes, so one scale for one layer.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">'bin'</span>,<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">fill =</span> Species),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stat =</span> <span class="st">'bin'</span>, <span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -412,13 +442,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="coordinate-system" class="level3">
-<h3 class="anchored" data-anchor-id="coordinate-system"><strong>Coordinate system</strong></h3>
+<section id="coordinate-system" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="coordinate-system"><span class="header-section-number">7.4.3</span> <strong>Coordinate system</strong></h3>
 <p>A coordinate system <code>coord</code> maps the position of objects onto the plane of the plot, and controls how the axes and grid lines are drawn. One ggplot can only have one `coord``</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">'bin'</span>,<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">fill =</span> Species),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stat =</span> <span class="st">'bin'</span>, <span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -428,13 +459,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="faceting" class="level3">
-<h3 class="anchored" data-anchor-id="faceting"><strong>Faceting</strong></h3>
+<section id="faceting" class="level3" data-number="7.4.4">
+<h3 data-number="7.4.4" class="anchored" data-anchor-id="faceting"><span class="header-section-number">7.4.4</span> <strong>Faceting</strong></h3>
 <p>Faceting can be used to split the data up into subsets of the entire dataset.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length), <span class="at">stat =</span> <span class="st">'bin'</span>) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(iris<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length), <span class="at">stat =</span> <span class="st">'bin'</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -444,12 +475,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="labels" class="level3">
-<h3 class="anchored" data-anchor-id="labels"><strong>Labels</strong></h3>
+<section id="labels" class="level3" data-number="7.4.5">
+<h3 data-number="7.4.5" class="anchored" data-anchor-id="labels"><span class="header-section-number">7.4.5</span> <strong>Labels</strong></h3>
 <p>Labels include titles, labels for x,y axis and annotates. Good graphics also need to give clear information by using labels to tell readers’ of the background knowledge of your data.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species), <span class="at">stat =</span> <span class="st">'bin'</span>,<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">fill =</span> Species), <span class="at">stat =</span> <span class="st">'bin'</span>,<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">'Stacked petal length of different species'</span>) <span class="sc">+</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">'Length of Petal'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -462,8 +493,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="resources-for-ggplot2" class="level2">
-<h2 class="anchored" data-anchor-id="resources-for-ggplot2"><strong>Resources for ggplot2</strong></h2>
+<section id="resources-for-ggplot2" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="resources-for-ggplot2"><span class="header-section-number">7.5</span> <strong>Resources for ggplot2</strong></h2>
 <ul>
 <li>For more implementations and examples, one easiest way is referring to the ggplot2 Cheatsheets provided by R. Follow the steps shown below and you can find the cheat-sheets in your RStudio.</li>
 </ul>
@@ -479,8 +510,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><a href="https://github.com/jtr13/ggformat">ggformat</a></p></li>
 </ol>
 </section>
-<section id="required-aesthetic-mappings" class="level2">
-<h2 class="anchored" data-anchor-id="required-aesthetic-mappings">Required aesthetic mappings</h2>
+<section id="required-aesthetic-mappings" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="required-aesthetic-mappings"><span class="header-section-number">7.6</span> Required aesthetic mappings</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -709,7 +740,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1135,13 +1165,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./git_GitHub.html" class="pagination-link" aria-label="GitHub/git Resources">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">GitHub/git Resources</span></span>
+      <a href="./R_graphics.html" class="pagination-link" aria-label="R graphics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">R graphics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./faceting.html" class="pagination-link" aria-label="Faceting">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Faceting</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Faceting</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

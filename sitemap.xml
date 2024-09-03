@@ -2,74 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jtr13.github.io/edav2/index.html</loc>
-    <lastmod>2024-09-03T03:36:17.237Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.103Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/learning_R.html</loc>
-    <lastmod>2024-09-03T03:36:17.237Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.103Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/factors.html</loc>
-    <lastmod>2024-09-03T03:36:17.205Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.071Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/data_import.html</loc>
-    <lastmod>2024-09-03T03:36:17.205Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.071Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/data_transformation.html</loc>
-    <lastmod>2024-09-03T03:36:17.205Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.071Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/git_GitHub.html</loc>
-    <lastmod>2024-09-03T03:36:17.205Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.071Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/learning_ggplot2.html</loc>
-    <lastmod>2024-09-03T03:36:17.237Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.103Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/faceting.html</loc>
-    <lastmod>2024-09-03T03:36:17.205Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.071Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/continuous_var.html</loc>
-    <lastmod>2024-09-03T03:36:17.169Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.035Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/uni_categorical_var.html</loc>
-    <lastmod>2024-09-03T03:36:17.249Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.111Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/two_continuous_var.html</loc>
-    <lastmod>2024-09-03T03:36:17.249Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.111Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/multidimensional_continuous.html</loc>
-    <lastmod>2024-09-03T03:36:17.237Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.103Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/multidimensional_categorical.html</loc>
-    <lastmod>2024-09-03T03:36:17.237Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.103Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/missing_data.html</loc>
-    <lastmod>2024-09-03T03:36:17.237Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.103Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/colors.html</loc>
-    <lastmod>2024-09-03T03:36:17.169Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.035Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/time_series.html</loc>
-    <lastmod>2024-09-03T03:36:17.249Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.111Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/spatial.html</loc>
-    <lastmod>2024-09-03T03:36:17.249Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.111Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/edav2/cutting_room_floor.html</loc>
-    <lastmod>2024-09-03T03:36:17.169Z</lastmod>
+    <lastmod>2024-09-03T14:58:09.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jtr13.github.io/edav2/R_resources.html</loc>
+    <lastmod>2024-09-03T14:58:09.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jtr13.github.io/edav2/R_graphics.html</loc>
+    <lastmod>2024-09-03T14:58:09.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jtr13.github.io/edav2/appendix.html</loc>
+    <lastmod>2024-09-03T14:58:09.031Z</lastmod>
   </url>
 </urlset>
