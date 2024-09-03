@@ -126,8 +126,9 @@
             "background-color" : "#e0e9f8"
         },
         "Information" : {
-            "text-color" : "#d2d2d2",
-            "selected-text-color" : "#805c00"
+            "text-color" : "#3379be",
+            "selected-text-color" : "#805c00",
+            "bold" : true
         },
         "Warning" : {
             "text-color" : "#d2d2d2",

@@ -47,15 +47,11 @@ rstudio_latest_version <- links[stringr::str_detect(links, "https://download1.rs
 
 9. [Learn the basic dplyr verbs](https://r4ds.had.co.nz/transform.html){target="_blank"} for data manipulation (*r4ds*) -- Concentrate on the main verbs: **`filter()`** (rows), **`select()`** (columns), **`mutate()`**, **`arrange()`** (rows), **`group_by()`**, and **`summarize()`**. Learn [the native R pipe **`|>`** operator](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/). It is very similar to the **magrittr** pipe **`%>%`** which you can see in action in the post ["How dplyr replaced my most common R idioms"](https://www.r-bloggers.com/2014/02/how-dplyr-replaced-my-most-common-r-idioms/), which provides a detailed comparison of base R vs. dplyr data transformation.
 
-10. Know how to [tidy your data](https://r4ds.had.co.nz/tidy-data.html){target="_blank"} -- The **`pivot_longer()`** function from the **tidyr** package -- successor to **`gather()`** -- will help you get your data in the right form for plotting.  More on this in class. Check out these [super cool animations](https://github.com/gadenbuie/tidyexplain){target="_blank"}, which follow a data frame as it is transformed by `tidyr` functions.
+10. Know how to [tidy your data](https://r4ds.had.co.nz/tidy-data.html){target="_blank"} -- The **`pivot_longer()`** function from the **tidyr** package -- successor to **`gather()`** -- will help you get your data in the right form for plotting.  More on this in class. Check out these [super cool animations](https://github.com/gadenbuie/tidyexplain?tab=readme-ov-file#semi-join){target="_blank"}, which follow a data frame as it is transformed by `tidyr` functions.
 
 <br>
 
 ## Troubleshooting
-
-### Document doesn’t knit
-
-Normally an error message will display in the `R Markdown section` pointing to some lines with specific reasons. Try Googling as your first option and if not finding a solution, leave a post on ed discussion.
 
 ### Functions stop working
 
@@ -77,48 +73,30 @@ Some other culprits:
 
 ## Tips & tricks
 
-### knitr
-
-Upon creating a new R markdown file, you should always notice a section like this:
-
-```
-{r setup, include=False}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-The chunk options refer to the first line and you can add some of the following options:
-
-```
-{r setup, include=False, warning=False, message=False, cache=True}
-knitr::opts_chunk$set(echo = TRUE)
-```
-`warning=FALSE` - Suppress warnings
-
-`message=FALSE` – Suppress messages, especially useful when loading packages
-
-`cache=TRUE` – only changed chunks will be evaluated, be careful though since changes in dependencies will not be detected.
-
 ### Sizing figures
 
-Always use chunk options to size figures.  You can set a default size in the YAML at the beginning of the .Rmd file as so:
+Always use chunk options to size figures.  You can set a default size in the YAML at the beginning of the .qmd file as so:
 
+``` yaml
+---
+format:
+  html:
+    fig-width: 6
+    fig-height: 4
+    out-width: 60%
+    embed-resources: true
+---
 ```
-output:
-  pdf_document:
-    fig_height: 3
-    fig_width: 5
-```
-
-Another method is to click the gear `r emo::ji("gear")` next to the Knit button, then  **Output Options...**, and finally the **Figures** tab.
 
 Then as needed override one or more defaults in particular chunks:
 
-`{r, fig.width=4, fig.height=2}`
 
+```{{r}}
+#| fig-width: 4
+#| fig-height: 2
+```
 
-Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `fig.align`; there are [many more](https://yihui.name/knitr/options/#plots){target="_blank"}.
-
-### R studio keyborad shortcuts
+### RStudio keyborad shortcuts
 
 **Insert R chunk**
 - option-command-i  (Mac) - ctrl+alt+I  (Windows)
@@ -127,7 +105,7 @@ Figure related chunk options include `fig.width`, `fig.height`, `fig.asp`, and `
 cat("```{r}\n```")
 ```
 
-**Insert `%>%`**   ("the pipe"):
+**Insert `|>`**   ("the pipe"):
 
 - shift-command(ctrl)-M  Mac/Windows
 
@@ -135,15 +113,12 @@ cat("```{r}\n```")
 
 - shift-command(ctrl)-C Mac/Windows
 
-**Knit Document**
-
-- shift-command(ctrl)-K  Mac/Windows
 
 For more shortcuts, refer [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
 
 ### Viewing plots in plot window
 
-Would you like your plots to appear in the plot window instead of below each chunk in the `.Rmd` file? Click `r emo::ji("gear")` and then  <i class="fas fa-check"></i> **Chunk Output in Console**.
+Would you like your plots to appear in the plot window instead of below each chunk in the `.qmd` file? Click `r emo::ji("gear")` and then  <i class="fas fa-check"></i> **Chunk Output in Console**.
 
 ### Adding figures and links
 
