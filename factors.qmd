@@ -107,9 +107,9 @@ For prominent NA bars which should not be eliminated, use ``fct_explicit_na(x)``
 library(dplyr)
 df <- data.frame(temperature = factor(c("cold", "warm", "hot", NA)), count = c(15, 5, 22, 12))
  
-df %>%   
-  mutate(temperature = fct_explicit_na(temperature, "NA") %>% 
-  fct_relevel("NA", "hot", "warm", "cold")) %>%
+df |>   
+  mutate(temperature = fct_explicit_na(temperature, "NA") |> 
+  fct_relevel("NA", "hot", "warm", "cold")) |>
   ggplot(aes(x = temperature, y = count)) +
   geom_col() +
   coord_flip() +

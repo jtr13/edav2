@@ -33,13 +33,13 @@ for (i in 1:10) mycars[sample(32,1), sample(11,1)] <- NA
 The most straightforward way to check missing values is using `is.na()` wrapped in `colSums()` / `rowSums()`. You will be able to observe the number of missing values column or row-wise.
 
 ```{r}
-colSums(is.na(mycars)) %>%
+colSums(is.na(mycars)) |>
   sort(decreasing = TRUE)
 ```
 
 ```{r}
 #Show only the head
-rowSums(is.na(head(mycars))) %>%
+rowSums(is.na(head(mycars))) |>
   sort(decreasing = TRUE)
 ```
 
@@ -48,9 +48,9 @@ rowSums(is.na(head(mycars))) %>%
 A graph can be more informative than plain numbers. If there are not a lot of rows or columns, we can use heatmaps to visualize the missing values. 
 
 ```{r}
-tidycars <- mycars %>% 
-    rownames_to_column("id") %>% 
-    gather(key, value, -id) %>% 
+tidycars <- mycars |> 
+    rownames_to_column("id") |> 
+    gather(key, value, -id) |> 
     mutate(missing = ifelse(is.na(value), "yes", "no"))
 ```
 
@@ -67,8 +67,8 @@ In the above example, we can clearly see where the missing values are for both r
 Now, to add more information to the graph, consider the following example:
 
 ```{r}
-tidycars <- tidycars %>% group_by(key) %>% 
-  mutate(Std = (value-mean(value, na.rm = TRUE))/sd(value, na.rm = TRUE)) %>% ungroup()
+tidycars <- tidycars |> group_by(key) |> 
+  mutate(Std = (value-mean(value, na.rm = TRUE))/sd(value, na.rm = TRUE)) |> ungroup()
 
 ggplot(tidycars, aes(x = key, y = fct_rev(id), fill = Std)) +
   geom_tile(color = "white") + 

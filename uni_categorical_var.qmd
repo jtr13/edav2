@@ -18,9 +18,9 @@ library(ggplot2)
 library(forcats)
 library(dplyr)
 
-Accident %>%
-  group_by(mode) %>%
-  summarise(freq = sum(Freq)) %>%
+Accident |>
+  group_by(mode) |>
+  summarise(freq = sum(Freq)) |>
   ggplot(aes(x=fct_reorder(mode,freq,.desc = TRUE),y=freq)) +
   geom_bar(stat = "identity",fill = "cornflowerblue") +
   ggtitle("Number of people with different modes in accident") +
@@ -31,9 +31,9 @@ Accident %>%
 … or top to bottom
 
 ```{r,fig.width=4.8, fig.height=3.6}
-Accident %>%
-  group_by(mode) %>%
-  summarise(freq = sum(Freq)) %>%
+Accident |>
+  group_by(mode) |>
+  summarise(freq = sum(Freq)) |>
   ggplot(aes(x=fct_rev(fct_reorder(mode,freq,.desc = TRUE)),y=freq)) +
   geom_bar(stat = "identity",fill = "cornflowerblue") +
   ggtitle("Number of people with different modes in accident") +
@@ -49,9 +49,9 @@ Accident %>%
 Ordinal data is data having a fixed category order and need to sort it in logical order of the categories (left to right)
 
 ```{r,fig.width=4.8, fig.height=3.6}
-Accident %>%
-  group_by(age) %>%
-  summarise(freq = sum(Freq)) %>%
+Accident |>
+  group_by(age) |>
+  summarise(freq = sum(Freq)) |>
   ggplot(aes(x=age,y=freq)) +
   geom_bar(stat = "identity",fill = "cornflowerblue") +
   ggtitle("Number of people of different ages in accident") +
@@ -63,9 +63,9 @@ Accident %>%
 Sort in logical order of the categories (starting at bottom OR top)
 
 ```{r,fig.width=4.8, fig.height=3.6}
-Accident %>%
-  group_by(age) %>%
-  summarise(freq = sum(Freq)) %>%
+Accident |>
+  group_by(age) |>
+  summarise(freq = sum(Freq)) |>
   ggplot(aes(x=age,y=freq)) +
   geom_bar(stat = "identity",fill = "cornflowerblue") +
   ggtitle("Number of people of different ages in accident") +
@@ -95,9 +95,9 @@ Sort by Obese Rate
 
 ```{r,fig.width=4.5, fig.height=6}
 library(tidyr)
-USStates %>%
-  select('State','Obese','HeavyDrinkers') %>%
-  gather(key='type',value='percentage',Obese,HeavyDrinkers) %>%
+USStates |>
+  select('State','Obese','HeavyDrinkers') |>
+  gather(key='type',value='percentage',Obese,HeavyDrinkers) |>
   ggplot(aes(x=percentage, y=fct_reorder2(State,type=='Obese',percentage,.desc=FALSE), color = type)) +
   geom_point() +
   ggtitle("Obese rate & heavy drinker rate in US") +

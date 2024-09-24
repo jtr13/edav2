@@ -67,7 +67,7 @@ Package `rvest` is widely used for web scraping. In the following example, `read
 ```{r}
 forcats_data <- read_html("https://cran.r-project.org/web/packages/forcats/index.html") 
 
-forcats_table <- forcats_data %>% html_table()
+forcats_table <- forcats_data |> html_table()
 forcats_table[[1]]
 ```
 If you want contents that are not in the table format, you can use `html_nodes()` specifying specific html structure. Namely,

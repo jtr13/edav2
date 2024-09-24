@@ -40,9 +40,9 @@ To transform the data, we use `pivot_longer`.
 ## `pivot_longer`
 
 ```{r}
-mtcars %>%  
-  rownames_to_column("carname") %>%
-  pivot_longer(cols = !carname, names_to = "Parameters",values_to = "value") %>%
+mtcars |>  
+  rownames_to_column("carname") |>
+  pivot_longer(cols = !carname, names_to = "Parameters",values_to = "value") |>
   head()
 ```
 Follow the simple two steps:
@@ -70,7 +70,7 @@ example
 ```
 
 ```{r}
-example %>% pivot_wider(names_from = Type, values_from = Number)
+example |> pivot_wider(names_from = Type, values_from = Number)
 ```
 
 It would make much more sense if `Case` and `Death` are separate features.
@@ -107,7 +107,7 @@ In the biopsy data, we do not require the variables “chromatin” and “mitos
 
 ```{r}
 #selecting all except the columns chromatin and mitoses
-biopsy_new <- biopsy_new %>% dplyr::select(-chromatin,-mitoses)
+biopsy_new <- biopsy_new |> dplyr::select(-chromatin,-mitoses)
 
 head(biopsy_new,5)
 ```
@@ -121,7 +121,7 @@ The variable `bare_nucleus` contains the values  from 1.00 to 10.00. If we wish 
 ```{r}
 #normalize the bare nuclei values 
 maximum_bare_nuclei<-max(biopsy_new$bare_nuclei,na.rm=TRUE)
-biopsy_new <- biopsy_new %>% mutate(bare_nuclei=bare_nuclei/maximum_bare_nuclei)
+biopsy_new <- biopsy_new |> mutate(bare_nuclei=bare_nuclei/maximum_bare_nuclei)
 
 head(biopsy_new,5)
 ```
@@ -135,7 +135,7 @@ In some situations, your new variable might involve conditions. You can consider
 For our example, say we only want the data of those tumor cells that have clump thickness greater than 6.
 
 ```{r}
-biopsy_new <- biopsy_new %>% filter(thickness>5.5)
+biopsy_new <- biopsy_new |> filter(thickness>5.5)
 
 head(biopsy_new,5)
 ```
@@ -173,8 +173,8 @@ summarize(biopsy_grouped, max(thickness), mean(cell_size), var(norm_nucleoli))
 The **slice_max** function helps you to find the top n values of a specific column. Suppose we now want to see the top five biopsies with the biggest thickness. Notice in this case, since we have more than five rows with thickness 10, all of them are selected (for neatness, we only show first several rows).
 
 ```{r}
-biopsy_new %>% 
-  slice_max(order_by = thickness,n=5) %>% 
+biopsy_new |> 
+  slice_max(order_by = thickness,n=5) |> 
   head()
 ```
 
@@ -184,8 +184,8 @@ Sometimes you will need to combine two data sets and this is when function join 
 
 ```{r}
 # Main dataset
-s77 <- data.frame(state.x77) %>% 
-  rownames_to_column("state") %>%
+s77 <- data.frame(state.x77) |> 
+  rownames_to_column("state") |>
   dplyr::select(-c(Illiteracy))
 
 head(s77)
@@ -194,7 +194,7 @@ head(s77)
 ```{r}
 # https://www.cookpolitical.com/2020-national-popular-vote-tracker
 partyinfo <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS3Z8Rq9xqOLISwoKdK0n6CFLBuPSCoXbbLeY8vhi-rzFS3ZFNEtR0BCdEbHcS-2Tlh5aPcnZbwBLao/pub?output=csv")
-partyinfo <- partyinfo %>%
+partyinfo <- partyinfo |>
   dplyr::select(state, called)
 
 head(left_join(s77, partyinfo))
@@ -209,9 +209,9 @@ When you want to perform a Chi-squared test or create a paired mosaic plot, your
 ```{r,echo=FALSE}
 library(Lock5withR)
 
-e_1 <- SleepStudy %>% 
-  group_by(ClassYear,AnxietyStatus) %>%
-  summarise(n = n()) %>%
+e_1 <- SleepStudy |> 
+  group_by(ClassYear,AnxietyStatus) |>
+  summarise(n = n()) |>
   pivot_wider(names_from = AnxietyStatus, values_from = n)
 
 e_1mat <- as.matrix(e_1[,2:4])

@@ -25,8 +25,8 @@ library(choroplethr)
 
 # data frame must contain "region" and "value" columns
 
-df_illiteracy <- state.x77 %>% as.data.frame() %>% 
-  rownames_to_column("state") %>% 
+df_illiteracy <- state.x77 |> as.data.frame() |> 
+  rownames_to_column("state") |> 
   transmute(region = tolower(`state`), value = Illiteracy)
 
 state_choropleth(df_illiteracy,
@@ -42,8 +42,8 @@ library(choroplethrMaps)
 data(county.regions)
 data(df_pop_county) 
 
-ny_county_fips = county.regions %>%
-  filter(state.name == "new york") %>%
+ny_county_fips = county.regions |>
+  filter(state.name == "new york") |>
   select(region)
 
 county_choropleth(df_pop_county, 
@@ -96,7 +96,7 @@ We use `sf` library to read in shape files. One of the first thing to remember i
 
 ```{r,message=FALSE}
 library(sf)
-ny_police = st_read('nyc_police/nypp.shp',quiet=TRUE) %>%
+ny_police = st_read('nyc_police/nypp.shp',quiet=TRUE) |>
   mutate(Precinct = as.character(Precinct))
 
 head(ny_police)
@@ -120,9 +120,9 @@ Only generating the map is not particularly meaningful. We want to combine data 
 library(readxl)
 library(tmap)
 
-ny_crime <- read_xls('data/felony.xls', skip = 1) %>% 
-  rename(Precinct = PCT, Crime = CRIME) %>% 
-  fill(Precinct) %>% 
+ny_crime <- read_xls('data/felony.xls', skip = 1) |> 
+  rename(Precinct = PCT, Crime = CRIME) |> 
+  fill(Precinct) |> 
   filter(Crime == "TOTAL SEVEN MAJOR FELONY OFFENSES")
 
 ny_crime <- left_join(ny_police, ny_crime)
@@ -131,7 +131,7 @@ ny_crime <- left_join(ny_police, ny_crime)
 We read in the felony data for nyc in 2021 and joined it with the `sf` object. Then, we create map using `tmap` package. Notice that in `tm_polygons()`, we specify the column to be `2021`.
 
 ```{r}
-ny_crime %>% 
+ny_crime |> 
   tm_shape() + 
   tm_polygons("2021", palette = "Blues", title="") + 
   tm_text("Precinct", size = .65) +

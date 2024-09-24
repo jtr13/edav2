@@ -22,9 +22,9 @@ library(pgmm)
 library(dplyr)
 library(tidyr)
 data(wine)  
-tidywine <- wine %>% 
+tidywine <- wine |> 
   pivot_longer(cols = -Type, names_to = "variable", values_to = "value")  
-tidywine %>%  
+tidywine |>  
   ggplot(aes(value)) +  
   geom_histogram() +  
   facet_wrap(~variable) +   
@@ -37,7 +37,7 @@ Axis scales can be made independent, by setting scales to ``free``, ``free_x``, 
 In this case, ``scales = "free_x"`` is a better option because the distribution of each numerical variable is more obvious.
 
 ```{r,fig.width=10, fig.height=6}
-tidywine  %>%
+tidywine  |>
   ggplot(aes(value)) +
   geom_histogram() +
   facet_wrap(~variable,scales = "free_x") +
@@ -50,10 +50,10 @@ tidywine  %>%
 ``facet_grid`` can be used to split data-sets on two variables and plot them on the horizontal and/or vertical direction.
 
 ```{r,fig.width=10, fig.height=6}
-wine %>%   
-  mutate(Type = paste("Type", Type)) %>%   
-  select(1:6) %>%   
-  pivot_longer(cols = -Type, names_to = "variable", values_to = "value") %>%  
+wine |>   
+  mutate(Type = paste("Type", Type)) |>   
+  select(1:6) |>   
+  pivot_longer(cols = -Type, names_to = "variable", values_to = "value") |>  
   ggplot(aes(value)) +  
   geom_histogram(color = mycol, fill = "lightblue") +  
   facet_grid(Type ~ variable, scales = "free_x") +  

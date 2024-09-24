@@ -69,10 +69,10 @@ library(readr)
 library(parcoords)
 df <- read_csv("https://data.ny.gov/api/views/ca8h-8gjq/rows.csv")
 
-df_a <- df %>% 
-  filter(Year == 2020) %>%
-  group_by(County,Region) %>%
-  summarise(across(where(is.numeric),sum)) %>%
+df_a <- df |> 
+  filter(Year == 2020) |>
+  group_by(County,Region) |>
+  summarise(across(where(is.numeric),sum)) |>
   mutate(Region = case_when(Region == 'Non-New York City' ~ 'Non-NYC',
                             Region == 'New York City' ~ 'NYC'))
 ```
@@ -80,9 +80,9 @@ df_a <- df %>%
 Package `parcoords` can help us in creating interactive parallel coordinate plots. The following example is created using New York State crime data. 
 
 ```{r,}
-df_a %>% 
-  select(-c("Year","Months Reported","Index Total","Violent Total","Property Total")) %>%
-  arrange(df_a) %>%
+df_a |> 
+  select(-c("Year","Months Reported","Index Total","Violent Total","Property Total")) |>
+  arrange(df_a) |>
   parcoords(rownames = FALSE,
             brushMode = "1D-axes",
             color = list(colorBy = "Region",
@@ -117,7 +117,7 @@ ratings = read_csv("rating.csv")
 As a common technique, we first standardize each variable to have mean of 0 and variance of 1 
 
 ```{r}
-scaled_ratings <- ratings %>% 
+scaled_ratings <- ratings |> 
   mutate(across(where(is.numeric), ~round((.x-mean(.x))/sd(.x), 2)))
 scaled_ratings
 ```
@@ -153,7 +153,7 @@ The above biplot is set to be without arrows. We can rougly identify clusters fr
 ```{r,fig.width=4.8, fig.height=3.6}
 scores <- pca$x[,1:2]
 k <- kmeans(scores, centers = 6)
-scores <- data.frame(scores) %>%
+scores <- data.frame(scores) |>
   mutate(cluster = factor(k$cluster), country = ratings$country)
 g4 <- ggplot(scores, aes(PC1, PC2, color = cluster, label = country)) +
   geom_point() +

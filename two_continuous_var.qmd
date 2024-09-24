@@ -88,7 +88,7 @@ You can create an interactive scatterplot using `plotly`. In the following examp
 ```{r,fig.width=6, fig.height=4.5}
 library(plotly)
 
-sample2 <- slice_sample(movies,prop=0.01) %>%
+sample2 <- slice_sample(movies,prop=0.01) |>
   filter(year > 2000)
 
 plot_ly(sample2, x = ~votes, y = ~rating,
@@ -127,7 +127,7 @@ As a default, the base R plot() function will create a scatterplot matrix when g
 ```{r}
 sample3 <- slice_sample(movies,prop=0.01) #sample data
 
-splomvar <- sample3 %>% 
+splomvar <- sample3 |> 
   dplyr::select(length, budget, votes, rating, year)
 
 plot(splomvar)

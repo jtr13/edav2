@@ -73,7 +73,7 @@ df <- read_excel("data/historicalweeklydata.xls",
 
 plot(df$Week, df$`30 yr FRM`, type = "l") # on the order of years
 
-g<-ggplot(df %>% filter(Week < as.Date("2006-01-01")), 
+g<-ggplot(df |> filter(Week < as.Date("2006-01-01")), 
        aes(Week, `30 yr FRM`)) + 
   geom_line() + 
   theme_grey(14)
@@ -88,7 +88,7 @@ We can control the x-axis breaks, limits, and labels with ``scale_x_date()``, an
 The following plot shows a multiple time series of U.S. Mortgage rates. 
 
 ```{r,fig.width=6, fig.height=4}
-df2 <- df %>% pivot_longer(cols = -c("Week"), names_to = "TYPE") %>%
+df2 <- df |> pivot_longer(cols = -c("Week"), names_to = "TYPE") |>
   mutate(TYPE = forcats::fct_reorder2(TYPE, Week, value))# puts legend in correct order
 
 ggplot(df2, aes(Week, value, color = TYPE)) +
@@ -102,7 +102,7 @@ To plot the time series in a specific period of time, use ``filter()`` before ``
 
 ```{r,fig.width=6, fig.height=4}
 library(lubridate)
-df2010 <- df2 %>% filter(year(Week) == 2010)
+df2010 <- df2 |> filter(year(Week) == 2010)
 ggplot(df2010, aes(Week, value, color = TYPE)) +
   geom_line() +
   ggtitle("U.S. Mortgage Rates")
@@ -139,7 +139,7 @@ Mark the pattern by high-lighting the data on very Saturday:
 g <- ggplot(data, aes(Date, Gross)) +
   geom_line() +
   ggtitle("Manchester by the Sea", "Daily Gross, United States")
-saturday <- data %>% filter(wday(Date) == 7) 
+saturday <- data |> filter(wday(Date) == 7) 
 g +
   geom_point(data = saturday, aes(Date, Gross), color = "deeppink")
 ```
@@ -174,13 +174,13 @@ sale$Q <- as.numeric(substr(sale$Quarter, 2, 2))
 # convert Q to end-of-quarter date 
 sale$Date <- as.Date(paste0(sale$Year, "-",as.character(sale$Q*3),"-30")) 
 
-Methoddata <- sale %>%
-  mutate(Revenue = Revenue/1000000) %>%
-  group_by(Date,`Order method type`) %>%
-  summarize(Revenue = sum(Revenue))  %>%
-  ungroup() %>%
-  group_by(`Order method type`) %>%
-  mutate(index = round(100*Revenue/Revenue[1], 2)) %>%
+Methoddata <- sale |>
+  mutate(Revenue = Revenue/1000000) |>
+  group_by(Date,`Order method type`) |>
+  summarize(Revenue = sum(Revenue))  |>
+  ungroup() |>
+  group_by(`Order method type`) |>
+  mutate(index = round(100*Revenue/Revenue[1], 2)) |>
   ungroup()
   
 g <- ggplot(Methoddata, aes(Date, index,color = `Order method type`)) +
