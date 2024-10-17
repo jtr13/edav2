@@ -12,7 +12,8 @@ Bar chats are used to display the frequency of multidimensional categorical vari
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-cases <- read.csv("data/icecream.csv")
+cases <- read.csv("data/icecream.csv") |> 
+  mutate(Age = fct_relevel(Age, "young"))
 icecreamcolors <- c("#ff99ff", "#cc9966") # pink, coffee
 ggplot(cases, aes(x = Age, fill = Favorite)) + 
     geom_bar() + scale_fill_manual(values = icecreamcolors)
