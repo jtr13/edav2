@@ -8,10 +8,10 @@ Bar chats are used to display the frequency of multidimensional categorical vari
 
 ### Stacked bar chart
 
-```{r,fig.width=4, fig.height=3}
-library(ggplot2)
-library(dplyr)
-library(tidyr)
+```{r}
+#| fig-width: 4
+#| fig-height: 3
+library(tidyverse)
 cases <- read.csv("data/icecream.csv") |> 
   mutate(Age = fct_relevel(Age, "young"))
 icecreamcolors <- c("#ff99ff", "#cc9966") # pink, coffee
@@ -93,7 +93,8 @@ Mosaic plots are used for visualizing data from two or more qualitative variable
 
 ```{r,fig.width=4.8, fig.height=3.6}
 library(grid)
-icecream <- read.csv("data/MusicIcecream.csv")
+icecream <- read.csv("data/MusicIcecream.csv") |> 
+  mutate(Age = fct_relevel(Age, "young"))
 icecreamcolors <- c("#ff99ff", "#cc9966") 
 counts2 <- icecream |>
   group_by(Age, Favorite) |>
