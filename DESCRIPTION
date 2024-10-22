@@ -19,6 +19,7 @@ Imports:
     grid,
     gridExtra,
     hexbin,
+    HH,
     Lock5withR,
     lubridate,
     parcoords,
