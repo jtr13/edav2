@@ -208,6 +208,7 @@ gdata <- gdata |> mutate(Section = factor(Section,
     ylab = NULL)
 ```
 
+Reference: R. Heiberger and N. Robbins, [Design of Diverging Stacked Bar Charts for Likert Scales and Other Applications](https://www.jstatsoft.org/article/view/v057i05)
 
 ## Alluvial diagrams
 
