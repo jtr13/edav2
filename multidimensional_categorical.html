@@ -311,12 +311,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#mosaic-plots-spine-plot" id="toc-mosaic-plots-spine-plot" class="nav-link" data-scroll-target="#mosaic-plots-spine-plot"><span class="header-section-number">13.3.5</span> Mosaic plots: spine plot</a></li>
   <li><a href="#mosaic-plot-tree-map" id="toc-mosaic-plot-tree-map" class="nav-link" data-scroll-target="#mosaic-plot-tree-map"><span class="header-section-number">13.3.6</span> Mosaic plot: tree map</a></li>
   </ul></li>
-  <li><a href="#alluvial-diagrams" id="toc-alluvial-diagrams" class="nav-link" data-scroll-target="#alluvial-diagrams"><span class="header-section-number">13.4</span> Alluvial diagrams</a>
+  <li><a href="#diverging-stacked-bar-chart" id="toc-diverging-stacked-bar-chart" class="nav-link" data-scroll-target="#diverging-stacked-bar-chart"><span class="header-section-number">13.4</span> Diverging stacked bar chart</a></li>
+  <li><a href="#diverging-stacked-bar-chart-with-faceting" id="toc-diverging-stacked-bar-chart-with-faceting" class="nav-link" data-scroll-target="#diverging-stacked-bar-chart-with-faceting"><span class="header-section-number">13.5</span> Diverging stacked bar chart (with faceting)</a></li>
+  <li><a href="#alluvial-diagrams" id="toc-alluvial-diagrams" class="nav-link" data-scroll-target="#alluvial-diagrams"><span class="header-section-number">13.6</span> Alluvial diagrams</a>
   <ul class="collapse">
-  <li><a href="#ggalluvial" id="toc-ggalluvial" class="nav-link" data-scroll-target="#ggalluvial"><span class="header-section-number">13.4.1</span> ggalluvial</a></li>
-  <li><a href="#geom_flow" id="toc-geom_flow" class="nav-link" data-scroll-target="#geom_flow"><span class="header-section-number">13.4.2</span> geom_flow</a></li>
+  <li><a href="#ggalluvial" id="toc-ggalluvial" class="nav-link" data-scroll-target="#ggalluvial"><span class="header-section-number">13.6.1</span> ggalluvial</a></li>
+  <li><a href="#geom_flow" id="toc-geom_flow" class="nav-link" data-scroll-target="#geom_flow"><span class="header-section-number">13.6.2</span> geom_flow</a></li>
   </ul></li>
-  <li><a href="#heat-map" id="toc-heat-map" class="nav-link" data-scroll-target="#heat-map"><span class="header-section-number">13.5</span> Heat map</a></li>
+  <li><a href="#heat-map" id="toc-heat-map" class="nav-link" data-scroll-target="#heat-map"><span class="header-section-number">13.7</span> Heat map</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jtr13/edav2/blob/main/multidimensional_categorical.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jtr13/edav2/edit/main/multidimensional_categorical.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/jtr13/edav2/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -612,59 +614,69 @@ X-squared = 997.48, df = 3, p-value &lt; 2.2e-16</code></pre>
 </div>
 </section>
 </section>
-<section id="alluvial-diagrams" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="alluvial-diagrams"><span class="header-section-number">13.4</span> Alluvial diagrams</h2>
+<section id="diverging-stacked-bar-chart" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="diverging-stacked-bar-chart"><span class="header-section-number">13.4</span> Diverging stacked bar chart</h2>
+<p>This type of chart works well with likert data, or any ordinal data with categories that span two opposing poles. The code below uses the <code>likert()</code> function from the <strong>HH</strong> package.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in library(HH): there is no package called 'HH'</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>gdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/gender.csv"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>HH<span class="sc">::</span><span class="fu">likert</span>(Group<span class="sc">~</span>., gdata, <span class="at">positive.order =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">col=</span><span class="fu">likertColorBrewer</span>(<span class="dv">3</span>, <span class="at">ReferenceZero =</span> <span class="cn">NULL</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">BrewerPaletteName =</span> <span class="st">"BrBG"</span>),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"% saying the country __ when </span><span class="sc">\n</span><span class="st"> it comes to giving women equal rights with men"</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"percent"</span>, <span class="at">ylab =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'HH'</code></pre>
+</div>
+</div>
+</section>
+<section id="diverging-stacked-bar-chart-with-faceting" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="diverging-stacked-bar-chart-with-faceting"><span class="header-section-number">13.5</span> Diverging stacked bar chart (with faceting)</h2>
+<p>Use <code>|</code> to condition (facet) on factor levels</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>gdata<span class="sc">$</span>Section <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Overall"</span>, <span class="st">"Gender"</span>, <span class="st">"Gender"</span>, <span class="st">"Party"</span>, <span class="st">"Party"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>gdata <span class="ot">&lt;-</span> gdata <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Section, Group, <span class="fu">everything</span>())</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sort facets manually</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>gdata <span class="ot">&lt;-</span> gdata <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Section =</span> <span class="fu">factor</span>(Section,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Party"</span>, <span class="st">"Gender"</span>, <span class="st">"Overall"</span>)))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">likert</span>(Group <span class="sc">~</span> . <span class="sc">|</span> Section,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> gdata,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">scales =</span> <span class="fu">list</span>(<span class="at">y =</span> <span class="fu">list</span>(<span class="at">relation =</span> <span class="st">"free"</span>)),  <span class="co"># equivalent to scales = "free_y"</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="co"># controls position of subplots</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">positive.order =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">likertColorBrewer</span>(<span class="dv">3</span>, <span class="at">ReferenceZero =</span> <span class="cn">NULL</span>,</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">BrewerPaletteName =</span> <span class="st">"BrBG"</span>),</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">"% saying the country __ when </span><span class="sc">\n</span><span class="st"> it comes to giving women equal rights with men"</span>, </span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"percent"</span>,</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in likert(Group ~ . | Section, data = gdata, scales = list(y = list(relation = "free")), : could not find function "likert"</code></pre>
+</div>
+</div>
+</section>
+<section id="alluvial-diagrams" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="alluvial-diagrams"><span class="header-section-number">13.6</span> Alluvial diagrams</h2>
 <p>Alluvial diagrams are usually used to represent the flow changes in network structure over time or between different levels.</p>
 <p>The following plot shows the essential components of alluvial plots used in the naming schemes and documentation (axis, alluvium, stratum, lode):</p>
 <center>
 <img src="images/alluvial_structure.png" class="img-fluid" style="width:75.0%">
 </center>
-<section id="ggalluvial" class="level3" data-number="13.4.1">
-<h3 data-number="13.4.1" class="anchored" data-anchor-id="ggalluvial"><span class="header-section-number">13.4.1</span> ggalluvial</h3>
+<section id="ggalluvial" class="level3" data-number="13.6.1">
+<h3 data-number="13.6.1" class="anchored" data-anchor-id="ggalluvial"><span class="header-section-number">13.6.1</span> ggalluvial</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalluvial)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Class1 =</span> <span class="fu">c</span>(<span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>),</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Class2 =</span> <span class="fu">c</span>(<span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span>, <span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span>),</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Class3 =</span> <span class="fu">c</span>(<span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>),</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Freq =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">3</span>, <span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">15</span>))</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="at">color=</span><span class="st">'black'</span>) <span class="sc">+</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>You can choose to color the alluvium by different variables, for example, the first variable <code>Class1</code> here:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Class1), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="geom_flow" class="level3" data-number="13.4.2">
-<h3 data-number="13.4.2" class="anchored" data-anchor-id="geom_flow"><span class="header-section-number">13.4.2</span> geom_flow</h3>
-<p>Another way of plotting alluvial diagrams is using <code>geom_flow</code> rather than <code>geom_alluvium</code>:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_flow</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Class1), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalluvial)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Class1 =</span> <span class="fu">c</span>(<span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>, <span class="st">"Stats"</span>, <span class="st">"Math"</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Class2 =</span> <span class="fu">c</span>(<span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span>, <span class="st">"French"</span>, <span class="st">"French"</span>, <span class="st">"Art"</span>, <span class="st">"Art"</span>),</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Class3 =</span> <span class="fu">c</span>(<span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Gym"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>, <span class="st">"Lunch"</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Freq =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">3</span>, <span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">15</span>))</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="at">color=</span><span class="st">'black'</span>) <span class="sc">+</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -673,35 +685,68 @@ X-squared = 997.48, df = 3, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-<p>After we use <code>geom_flow</code>, all Math students learning Art came together, which is also the same as Stats students. It makes the graph much clearer than <code>geom_alluvium</code> since there is less cross alluviums between each axises.</p>
-</section>
-</section>
-<section id="heat-map" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="heat-map"><span class="header-section-number">13.5</span> Heat map</h2>
-<p>Besides what have been systematically introduced in <code>Chapter 9.2 Heatmaps</code>, this part demonstrated a special case of heat map when both x and y are categorical. Here the heat map can been seen as a clustered bar chart and a pre-defined theme is used to show the dense more clearly.</p>
+<p>You can choose to color the alluvium by different variables, for example, the first variable <code>Class1</code> here:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcdExtra)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>theme_heat <span class="ot">&lt;-</span> <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>orderedclasses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Farm"</span>, <span class="st">"LoM"</span>, <span class="st">"UpM"</span>, <span class="st">"LoNM"</span>, <span class="st">"UpNM"</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> Yamaguchi87</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>mydata<span class="sc">$</span>Son <span class="ot">&lt;-</span> <span class="fu">factor</span>(mydata<span class="sc">$</span>Son, <span class="at">levels =</span> orderedclasses)</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>mydata<span class="sc">$</span>Father <span class="ot">&lt;-</span> <span class="fu">factor</span>(mydata<span class="sc">$</span>Father,</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> orderedclasses)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>mydata3 <span class="ot">&lt;-</span> mydata <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Country, Father) <span class="sc">|&gt;</span> </span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Freq)) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mydata3, <span class="fu">aes</span>(<span class="at">x =</span> Father, <span class="at">y =</span> Son)) <span class="sc">+</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> (Freq<span class="sc">/</span>Total)), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span> </span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"black"</span>, <span class="at">mid =</span> <span class="st">"white"</span>,</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">midpoint =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country) <span class="sc">+</span> theme_heat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Class1), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geom_flow" class="level3" data-number="13.6.2">
+<h3 data-number="13.6.2" class="anchored" data-anchor-id="geom_flow"><span class="header-section-number">13.6.2</span> geom_flow</h3>
+<p>Another way of plotting alluvial diagrams is using <code>geom_flow</code> rather than <code>geom_alluvium</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">axis1 =</span> Class1, <span class="at">axis2 =</span> Class2, <span class="at">axis3 =</span> Class3, <span class="at">y =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_flow</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Class1), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>() <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">after_stat</span>(stratum), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">after_stat</span>(count)))) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Class1"</span>, <span class="st">"Class2"</span>, <span class="st">"Class3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>After we use <code>geom_flow</code>, all Math students learning Art came together, which is also the same as Stats students. It makes the graph much clearer than <code>geom_alluvium</code> since there is less cross alluviums between each axises.</p>
+</section>
+</section>
+<section id="heat-map" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="heat-map"><span class="header-section-number">13.7</span> Heat map</h2>
+<p>Besides what have been systematically introduced in <code>Chapter 9.2 Heatmaps</code>, this part demonstrated a special case of heat map when both x and y are categorical. Here the heat map can been seen as a clustered bar chart and a pre-defined theme is used to show the dense more clearly.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcdExtra)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>theme_heat <span class="ot">&lt;-</span> <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>orderedclasses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Farm"</span>, <span class="st">"LoM"</span>, <span class="st">"UpM"</span>, <span class="st">"LoNM"</span>, <span class="st">"UpNM"</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> Yamaguchi87</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>mydata<span class="sc">$</span>Son <span class="ot">&lt;-</span> <span class="fu">factor</span>(mydata<span class="sc">$</span>Son, <span class="at">levels =</span> orderedclasses)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>mydata<span class="sc">$</span>Father <span class="ot">&lt;-</span> <span class="fu">factor</span>(mydata<span class="sc">$</span>Father,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> orderedclasses)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>mydata3 <span class="ot">&lt;-</span> mydata <span class="sc">|&gt;</span> <span class="fu">group_by</span>(Country, Father) <span class="sc">|&gt;</span> </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Freq)) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mydata3, <span class="fu">aes</span>(<span class="at">x =</span> Father, <span class="at">y =</span> Son)) <span class="sc">+</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> (Freq<span class="sc">/</span>Total)), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span> </span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"black"</span>, <span class="at">mid =</span> <span class="st">"white"</span>,</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">midpoint =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Country) <span class="sc">+</span> theme_heat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="multidimensional_categorical_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
