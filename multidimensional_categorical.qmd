@@ -172,6 +172,43 @@ treemap::treemap(GNI2014,
        format.legend = list(scientific = FALSE, big.mark = " "))
 ```
 
+## Diverging stacked bar chart
+
+This type of chart works well with likert data, or any ordinal data with categories that span two opposing poles. The code below uses the `likert()` function from the **HH** package.
+
+```{r}
+library(HH)
+gdata <- read_csv("data/gender.csv")
+HH::likert(Group~., gdata, positive.order = TRUE,
+           col=likertColorBrewer(3, ReferenceZero = NULL,
+                             BrewerPaletteName = "BrBG"),
+       main = "% saying the country __ when \n it comes to giving women equal rights with men",
+       xlab = "percent", ylab = "")
+```
+
+## Diverging stacked bar chart (with faceting)
+
+Use `|` to condition (facet) on factor levels
+
+```{r}
+gdata$Section <- c("Overall", "Gender", "Gender", "Party", "Party")
+gdata <- gdata |> dplyr::select(Section, Group, everything())
+# sort facets manually
+gdata <- gdata |> mutate(Section = factor(Section,
+                  levels = c("Party", "Gender", "Overall")))
+  likert(Group ~ . | Section,
+    data = gdata,
+    scales = list(y = list(relation = "free")),  # equivalent to scales = "free_y"
+    layout = c(1, 3), # controls position of subplots
+    positive.order = TRUE,
+     col=likertColorBrewer(3, ReferenceZero = NULL,
+                             BrewerPaletteName = "BrBG"),
+    main = "% saying the country __ when \n it comes to giving women equal rights with men", 
+    xlab = "percent",
+    ylab = NULL)
+```
+
+
 ## Alluvial diagrams
 
 Alluvial diagrams are usually used to represent the flow changes in network structure over time or between different levels. 
