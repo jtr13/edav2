@@ -47,7 +47,7 @@ It's not considered good practice to commit too often, but as a beginner, it's u
 ## Your repo with branching 
 Once you've comfortable with the workflow described above, you're ready to start branching. 
 <center>
-![](images/git/your-repo.jpeg)
+![](images/git/your-repo.jpeg){width=400px}
 </center>
 
 If it's *your* repo--or you have write access to someone else's repo--follow the steps in the [next section](#st-pr-on-another-repo-with-branching), skipping steps 1 and 3. For emphasis, if you have write access, the repo will be "origin" not "upstream" from your perspective, and you will clone it directly, not fork it first.
