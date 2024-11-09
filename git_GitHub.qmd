@@ -50,7 +50,7 @@ Once you've comfortable with the workflow described above, you're ready to start
 ![](images/git/your-repo.jpeg)
 </center>
 
-If it's *your* repo--or you have write access to someone else's repo--begin by cloning the repo as in the workflow above. For emphasis: if you have write access to someone else's repo, you should still *clone* the repo, not *fork* it. The repo will be referred to as "origin" even though you're not the owner; origin simply means the repo from which the project was cloned. Next, continue with [step 4](#step-4-branch) below, or follow the steps in [these slides](https://github.com/jtr13/EDAV/blob/master/pdfs/BranchingYourRepo.pdf){target="_blank"}, which provide step-by-step detail on creating a branch, doing work on the branch and then submitting a pull request to merge the changes into origin/main.
+If it's *your* repo--or you have write access to someone else's repo--follow the steps in the [next section](#st-pr-on-another-repo-with-branching), skipping steps 1 and 3. For emphasis, if you have write access, the repo will be "origin" not "upstream" from your perspective, and you will clone it directly, not fork it first.
 
 At any point, you can check the remotes (in this case, GitHub repositories) that are linked to your project with `git remote -v`. If your GitHub username is `person1` and you have write access to a repo called `finalproject` created by `person2`, your remotes will look like this:
 
