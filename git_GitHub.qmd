@@ -47,7 +47,7 @@ It's not considered good practice to commit too often, but as a beginner, it's u
 ## Your repo with branching 
 Once you've comfortable with the workflow described above, you're ready to start branching. 
 <center>
-![](images/git/your-repo.jpeg){width=400px}
+![](images/git/your-repo.jpeg){width=450px}
 </center>
 
 If it's *your* repo--or you have write access to someone else's repo--follow the steps in the [next section](#st-pr-on-another-repo-with-branching), skipping steps 1 and 3. For emphasis, if you have write access, the repo will be "origin" not "upstream" from your perspective, and you will clone it directly, not fork it first.
@@ -62,7 +62,7 @@ origin  https://github.com/person2/finalproject.git(push)
 
 ## 1st PR on another repo with branching
 <center>
-![](images/git/pull-request-1.png)
+![](images/git/pull-request-1.png){width=450px}
 </center>
 ### Step 1: Fork the upstream repo (once) {-}
 *Skip this step if you are syncing with a repo that you have write access to, whether it's your own or someone else's.*
@@ -161,7 +161,7 @@ Another great resource is ["Explore and extend a pull request"](https://happygit
 ## 2nd-*n*th PR on another repo with branching
 
 <center>
-![](images/git/pull-request-2.png)
+![](images/git/pull-request-2.png){width=450px}
 </center>
 
 After the first pull request, the process changes a little. We no longer need to fork and clone the repo. What we do need to do though is make sure that our local copy of the repository is up to date with the GitHub version.  There is some other cleanup we need to do, so after the first pull request, we'll replace steps #1 - #3 above with the following:
