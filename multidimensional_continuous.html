@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./two_continuous_var.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-46fd27ed32068f4ed147d3290e7c9c7b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-52fbc6485244fb7d9781237518279dd1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2f195be0a97f543e3d7f85bb83f0eaad.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-94ef6be8032521d455f7accb4c279847.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -134,7 +135,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -344,10 +347,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="12.1.1" class="anchored" data-anchor-id="basics-and-implications"><span class="header-section-number">12.1.1</span> Basics and implications</h3>
 <p>For the following example, we use the famous <code>iris</code> data set. After installing <code>GGally</code>, we use <code>ggparcoord</code> to create the plot simply by specifying the columns we want.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggparcoord</span>(iris, <span class="at">columns=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">title =</span> <span class="st">"Parallel coordinate plot for Iris flowers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">title =</span> <span class="st">"Parallel coordinate plot for Iris flowers"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -394,8 +397,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="12.1.2.6" class="anchored" data-anchor-id="application"><span class="header-section-number">12.1.2.6</span> Application</h4>
 <p>Consider the following example, we apply grouping, alpha tuning, scaling and splines on the <code>iris</code> data set. Compare the two plot and the modified graph is noticeably easier to interpret.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggparcoord</span>(iris, <span class="at">columns=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">groupColumn=</span><span class="dv">5</span>, <span class="at">alpha=</span><span class="fl">0.5</span>, <span class="at">scale=</span><span class="st">'uniminmax'</span>,<span class="at">splineFactor=</span><span class="dv">10</span>,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">title =</span> <span class="st">"Modified parallel coordinate plot for Iris flowers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggparcoord</span>(iris, <span class="at">columns=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">groupColumn=</span><span class="dv">5</span>, <span class="at">alpha=</span><span class="fl">0.5</span>, <span class="at">scale=</span><span class="st">'uniminmax'</span>,<span class="at">splineFactor=</span><span class="dv">10</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">title =</span> <span class="st">"Modified parallel coordinate plot for Iris flowers"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -410,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="12.1.3" class="anchored" data-anchor-id="interactive-parallel-coordinate-plot"><span class="header-section-number">12.1.3</span> Interactive parallel coordinate plot</h3>
 <p>Package <code>parcoords</code> can help us in creating interactive parallel coordinate plots. The following example is created using New York State crime data.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_a <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_a <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">"Year"</span>,<span class="st">"Months Reported"</span>,<span class="st">"Index Total"</span>,<span class="st">"Violent Total"</span>,<span class="st">"Property Total"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(df_a) <span class="sc">|&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">parcoords</span>(<span class="at">rownames =</span> <span class="cn">FALSE</span>,</span>
@@ -421,10 +424,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">withD3 =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">width =</span> <span class="dv">770</span>,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">height =</span> <span class="dv">600</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">height =</span> <span class="dv">600</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="parcoords html-widget" height="506px" id="htmlwidget-ac17929500541f7b3baa" style="width:100%;height:506px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="100%"></div>
-<script type="application/json" data-for="htmlwidget-ac17929500541f7b3baa">{"x":{"data":{"names":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62"],"County":["Albany","Allegany","Bronx","Broome","Cattaraugus","Cayuga","Chautauqua","Chemung","Chenango","Clinton","Columbia","Cortland","Delaware","Dutchess","Erie","Essex","Franklin","Fulton","Genesee","Greene","Hamilton","Herkimer","Jefferson","Kings","Lewis","Livingston","Madison","Monroe","Montgomery","Nassau","New York","Niagara","Oneida","Onondaga","Ontario","Orange","Orleans","Oswego","Otsego","Putnam","Queens","Rensselaer","Richmond","Rockland","Saratoga","Schenectady","Schoharie","Schuyler","Seneca","St Lawrence","Steuben","Suffolk","Sullivan","Tioga","Tompkins","Ulster","Warren","Washington","Wayne","Westchester","Wyoming","Yates"],"Region":["Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC"],"Murder":[34,6,111,10,2,4,2,4,2,2,2,2,2,18,138,0,0,2,0,0,0,2,6,175,0,0,4,98,2,46,84,32,26,64,4,18,0,0,0,0,78,24,20,18,8,12,0,0,2,2,6,66,8,0,0,14,0,0,2,50,0,2],"Rape":[216,76,523,252,74,140,166,64,104,118,54,80,60,186,386,66,64,62,68,50,8,80,148,701,28,56,82,462,22,108,430,194,224,362,146,262,42,158,60,18,515,136,84,100,164,82,24,8,54,100,112,342,92,38,94,130,100,102,120,224,36,16],"Robbery":[428,6,3519,156,12,38,72,56,14,6,22,10,2,176,1814,10,14,22,30,4,0,14,44,3816,0,10,20,1092,22,1046,3053,282,182,566,24,228,14,42,14,4,2549,178,245,118,40,216,8,4,2,14,12,632,34,4,80,48,4,10,36,790,4,2],"Aggravated Assault":[1520,58,8976,902,160,248,560,220,106,132,108,102,74,778,5044,44,80,140,108,330,6,118,358,9898,20,36,162,2908,92,2452,5697,814,684,2246,162,838,72,192,76,52,6487,572,998,448,250,810,54,8,52,158,104,1602,162,76,166,264,50,92,184,2104,50,12],"Burglary":[1434,172,2230,1338,274,334,1086,262,292,246,190,258,192,490,5360,98,232,280,202,116,14,254,516,4099,88,142,244,4560,180,1950,4449,1138,968,2984,374,872,164,480,160,86,2842,794,286,448,514,802,62,18,58,324,334,2254,250,142,470,442,158,102,356,1636,72,48],"Larceny":[10326,430,18728,7270,1098,1712,3842,2266,1002,1724,1028,1238,560,5518,26774,386,860,1338,1156,576,58,1288,2908,29306,146,860,1336,20474,1152,17482,32568,6336,6434,11888,2232,7092,582,2526,916,578,22431,4326,3163,4208,3362,5298,458,60,676,1622,1086,28868,1090,566,3374,2820,1146,436,1900,14328,428,358],"Motor Vehicle Theft":[858,56,2130,434,108,124,156,134,52,52,48,34,40,298,3930,20,56,72,90,24,6,46,136,2943,16,28,62,2788,62,1404,1395,746,416,1856,86,398,54,226,48,58,2544,342,246,206,146,490,24,0,32,44,94,2532,70,38,86,140,28,46,102,1484,18,4]},"options":{"rownames":false,"color":{"colorBy":"Region","colorScale":"scaleOrdinal","colorScheme":"schemeCategory10"},"brushMode":"1D-axes","brushPredicate":"AND","reorderable":false,"margin":{"top":50,"bottom":50,"left":100,"right":50},"alpha":0.5,"mode":false,"bundlingStrength":0.5,"smoothness":0,"width":770,"height":600},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script>
+<div class="parcoords html-widget" height="506px" id="htmlwidget-0eab1906c67c48a909f6" style="width:100%;height:506px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="100%"></div>
+<script type="application/json" data-for="htmlwidget-0eab1906c67c48a909f6">{"x":{"data":{"names":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62"],"County":["Albany","Allegany","Bronx","Broome","Cattaraugus","Cayuga","Chautauqua","Chemung","Chenango","Clinton","Columbia","Cortland","Delaware","Dutchess","Erie","Essex","Franklin","Fulton","Genesee","Greene","Hamilton","Herkimer","Jefferson","Kings","Lewis","Livingston","Madison","Monroe","Montgomery","Nassau","New York","Niagara","Oneida","Onondaga","Ontario","Orange","Orleans","Oswego","Otsego","Putnam","Queens","Rensselaer","Richmond","Rockland","Saratoga","Schenectady","Schoharie","Schuyler","Seneca","St Lawrence","Steuben","Suffolk","Sullivan","Tioga","Tompkins","Ulster","Warren","Washington","Wayne","Westchester","Wyoming","Yates"],"Region":["Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","NYC","Non-NYC","NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC","Non-NYC"],"Murder":[34,6,111,10,2,4,2,4,2,2,2,2,2,18,138,0,0,2,0,0,0,2,6,175,0,0,4,98,2,46,84,32,26,64,4,18,0,0,0,0,78,24,20,18,8,12,0,0,2,2,6,66,8,0,0,14,0,0,2,50,0,2],"Rape":[216,76,523,252,74,140,166,64,104,118,54,80,60,186,386,66,64,62,68,50,8,80,148,701,28,56,82,462,22,108,430,194,224,362,146,262,42,158,60,18,515,136,84,100,164,82,24,8,54,100,112,342,92,38,94,130,100,102,120,224,36,16],"Robbery":[428,6,3519,156,12,38,72,56,14,6,22,10,2,176,1814,10,14,22,30,4,0,14,44,3816,0,10,20,1092,22,1046,3053,282,182,566,24,228,14,42,14,4,2549,178,245,118,40,216,8,4,2,14,12,632,34,4,80,48,4,10,36,790,4,2],"Aggravated Assault":[1520,58,8976,902,160,248,560,220,106,132,108,102,74,778,5044,44,80,140,108,330,6,118,358,9898,20,36,162,2908,92,2452,5697,814,684,2246,162,838,72,192,76,52,6487,572,998,448,250,810,54,8,52,158,104,1602,162,76,166,264,50,92,184,2104,50,12],"Burglary":[1434,172,2230,1338,274,334,1086,262,292,246,190,258,192,490,5360,98,232,280,202,116,14,254,516,4099,88,142,244,4560,180,1950,4449,1138,968,2984,374,872,164,480,160,86,2842,794,286,448,514,802,62,18,58,324,334,2254,250,142,470,442,158,102,356,1636,72,48],"Larceny":[10326,430,18728,7270,1098,1712,3842,2266,1002,1724,1028,1238,560,5518,26774,386,860,1338,1156,576,58,1288,2908,29306,146,860,1336,20474,1152,17482,32568,6336,6434,11888,2232,7092,582,2526,916,578,22431,4326,3163,4208,3362,5298,458,60,676,1622,1086,28868,1090,566,3374,2820,1146,436,1900,14328,428,358],"Motor Vehicle Theft":[858,56,2130,434,108,124,156,134,52,52,48,34,40,298,3930,20,56,72,90,24,6,46,136,2943,16,28,62,2788,62,1404,1395,746,416,1856,86,398,54,226,48,58,2544,342,246,206,146,490,24,0,32,44,94,2532,70,38,86,140,28,46,102,1484,18,4]},"options":{"rownames":false,"color":{"colorBy":"Region","colorScale":"scaleOrdinal","colorScheme":"schemeCategory10"},"brushMode":"1D-axes","brushPredicate":"AND","reorderable":false,"margin":{"top":50,"bottom":50,"left":100,"right":50},"alpha":0.5,"mode":false,"bundlingStrength":0.5,"smoothness":0,"width":770,"height":600},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>In the interactive graph, for each feature, you can create a square box to filter for observations. For example, you can look at a certain county, or you can filter for all counties that are in New York City (Region=NYC). Overall, the interactive plot is more flexible for analysis.</p>
@@ -443,9 +446,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We first introduce PCA as the existence of biplot is built up on it. Given a data set with multiple variables, the goal of PCA is to reduce dimensionality by finding a few linear combinations of the variables that capture most of the variance. Consider the following example using rating of countries.</p>
 <p>As a common technique, we first standardize each variable to have mean of 0 and variance of 1</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>scaled_ratings <span class="ot">&lt;-</span> ratings <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>scaled_ratings <span class="ot">&lt;-</span> ratings <span class="sc">|&gt;</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span><span class="fu">round</span>((.x<span class="sc">-</span><span class="fu">mean</span>(.x))<span class="sc">/</span><span class="fu">sd</span>(.x), <span class="dv">2</span>)))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>scaled_ratings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>scaled_ratings</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13 × 7
    country     living_standard climate  food security hospitality infrastructure
@@ -467,8 +470,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>To apply PCA, we use function <code>prcomp()</code>. <code>summary()</code> will then be used to show result.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(ratings[,<span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>], <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(ratings[,<span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>], <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Importance of components:
                          PC1    PC2     PC3     PC4     PC5     PC6
@@ -479,9 +482,9 @@ Cumulative Proportion  0.573 0.9232 0.95544 0.98086 0.99348 1.00000</code></pre>
 </div>
 <p>As we can see that the first two principal components capture 92.3% of the total variance.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mat_round <span class="ot">&lt;-</span> <span class="cf">function</span>(matrix, <span class="at">n =</span> <span class="dv">3</span>) <span class="fu">apply</span>(matrix, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">round</span>(x, n))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mat_round <span class="ot">&lt;-</span> <span class="cf">function</span>(matrix, <span class="at">n =</span> <span class="dv">3</span>) <span class="fu">apply</span>(matrix, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">round</span>(x, n))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mat_round</span>(pca<span class="sc">$</span>rotation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mat_round</span>(pca<span class="sc">$</span>rotation)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   PC1    PC2    PC3    PC4    PC5    PC6
 living_standard -0.429  0.364  0.112 -0.673  0.466 -0.028
@@ -498,8 +501,8 @@ infrastructure  -0.484  0.252 -0.297 -0.121 -0.731  0.256</code></pre>
 <h3 data-number="12.2.2" class="anchored" data-anchor-id="draw-a-biplot"><span class="header-section-number">12.2.2</span> Draw a biplot</h3>
 <p>To draw a biplot, we suggest using <code>draw_biplot</code> from <code>redav</code> package. You can install the package using <code>remotes::install_github("jtr13/redav")</code>. Note that the function will apply PCA and draw the plot.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redav)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings,<span class="at">arrows=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redav)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings,<span class="at">arrows=</span><span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -510,7 +513,7 @@ infrastructure  -0.484  0.252 -0.297 -0.121 -0.731  0.256</code></pre>
 </div>
 <p>The above biplot is set to be without arrows. We can rougly identify clusters from the graph. By running some clustering algorithm like <code>k-means</code>, you will be able to see it clearer.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(scores, <span class="at">centers =</span> <span class="dv">6</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(scores) <span class="sc">|&gt;</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cluster =</span> <span class="fu">factor</span>(k<span class="sc">$</span>cluster), <span class="at">country =</span> ratings<span class="sc">$</span>country)</span>
@@ -518,7 +521,7 @@ infrastructure  -0.484  0.252 -0.297 -0.121 -0.731  0.256</code></pre>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">nudge_y =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color=</span><span class="st">"none"</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>g4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>g4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -529,7 +532,7 @@ infrastructure  -0.484  0.252 -0.297 -0.121 -0.731  0.256</code></pre>
 </div>
 <p>Now for a standard bibplot:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -541,7 +544,7 @@ infrastructure  -0.484  0.252 -0.297 -0.121 -0.731  0.256</code></pre>
 <p>To interpret the graph, you could imagine a perpendicular line from a certain point(country) to a feature arrow you are concerned. The further the intersection is on the arrow line, the higher the score. Take Spain for example, it has high score on all variables except hospitality as the imaginary line would land on the negative axis.</p>
 <p>You can also add calibrated axis, which will help you better compare a certain variable among countries.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings,<span class="st">"living_standard"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_biplot</span>(ratings,<span class="st">"living_standard"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -608,13 +611,14 @@ infrastructure  -0.484  0.252 -0.297 -0.121 -0.731  0.256</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

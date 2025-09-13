@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./uni_categorical_var.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-46fd27ed32068f4ed147d3290e7c9c7b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-52fbc6485244fb7d9781237518279dd1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2f195be0a97f543e3d7f85bb83f0eaad.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-94ef6be8032521d455f7accb4c279847.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -139,7 +140,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">edav.info v2</a> 
         <div class="sidebar-tools-main">
@@ -349,13 +352,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="11.1.1" class="anchored" data-anchor-id="basics-and-implications"><span class="header-section-number">11.1.1</span> Basics and implications</h3>
 <p>For the following example, we use data set <code>SpeedSki</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GDAdata)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GDAdata)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Birth year"</span>, <span class="at">y =</span> <span class="st">"Speed achieved (km/hr)"</span>) <span class="sc">+</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Skiers by birth year and speed achieved"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Skiers by birth year and speed achieved"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -370,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="11.1.2" class="anchored" data-anchor-id="overplotting"><span class="header-section-number">11.1.2</span> Overplotting</h3>
 <p>In some situations a scatter plot faces the problem of overplotting as there are so many points overlapping. Consider the following example from class. To save time, we randomly sample 20% of the data in advance.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2movies)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sample <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(movies, <span class="at">prop =</span> <span class="fl">0.2</span>)</span>
@@ -378,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sample,<span class="fu">aes</span>(<span class="at">x=</span>votes,<span class="at">y=</span>rating)) <span class="sc">+</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Votes vs. rating"</span>) <span class="sc">+</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -394,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>smaller circles - <code>size=...</code> or <code>shape="."</code></p></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sample,<span class="fu">aes</span>(<span class="at">x=</span>votes,<span class="at">y=</span>rating)) <span class="sc">+</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
@@ -411,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Smaller circle"</span>)</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(f1, f2, f3,<span class="at">nrow =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(f1, f2, f3,<span class="at">nrow =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -437,17 +440,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>You can zoom into a certain part of the graph to better understand the data points.</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sample2 <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(movies,<span class="at">prop=</span><span class="fl">0.01</span>) <span class="sc">|&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;</span> <span class="dv">2000</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(sample2, <span class="at">x =</span> <span class="sc">~</span>votes, <span class="at">y =</span> <span class="sc">~</span>rating,</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span><span class="fu">as.factor</span>(year), <span class="at">text=</span> <span class="sc">~</span>title,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">hoverinfo =</span> <span class="st">'text'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">hoverinfo =</span> <span class="st">'text'</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-ff2beae1cb4568e5c57c" style="width:60%;height:432px;"></div>
-<script type="application/json" data-for="htmlwidget-ff2beae1cb4568e5c57c">{"x":{"visdat":{"2430387e5fac":["function () ","plotlyVisDat"]},"cur_data":"2430387e5fac","attrs":{"2430387e5fac":{"x":{},"y":{},"text":{},"hoverinfo":"text","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"votes"},"yaxis":{"domain":[0,1],"automargin":true,"title":"rating"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[45,45,2812,30,35,196,64,139,62,5370,12,17,15,30,6,27,5,263,11,7,25,11,67,1365,434,6],"y":[6.5999999999999996,4.9000000000000004,6.0999999999999996,6.2000000000000002,6.2000000000000002,7.2000000000000002,3.1000000000000001,6.7999999999999998,6.2000000000000002,5.2999999999999998,7.2000000000000002,3.3999999999999999,4.7999999999999998,8,5.7000000000000002,5.5,6.5999999999999996,6.7000000000000002,7.2000000000000002,6.2000000000000002,5.5999999999999996,6.9000000000000004,5,7,6.0999999999999996,5.2000000000000002],"text":["Mars Turkey","Puratonikku sekusu","Mean Machine","All About You","Tre mogli","Mein Bruder, der Vampir","Wake Up and Smell the Coffee","Engel & Joe","Bak Ging lok yue liu","Exit Wounds","Soliloquy","Grande vie!, La","In Search of Peace","Offside","Guggen - Du store gauda","Besame mucho","Pangako... ikaw lang","Rentun ruusu","Delivery Day","Motevalede mahe mehr","Mapmaker, The","Ultima lezione, L'","Facing the Enemy","Discovery of Heaven, The","Bartleby","Zeitaku na hone"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2001","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[8,6,2660,8254,6,12,6,175,13,17,5,14,4114,8,80,46,6,593,16],"y":[7.5,6.7999999999999998,4.4000000000000004,6.9000000000000004,8,9.1999999999999993,7,5.2000000000000002,6.7000000000000002,5.2000000000000002,6,5.2000000000000002,6.9000000000000004,6.7000000000000002,6,5.7999999999999998,8.9000000000000004,6.0999999999999996,6.9000000000000004],"text":["One of Five","Lefty-Right","They","Good Girl, The","Kameleon sjocht yn it waar, De","Satellite","Viaje, El","Mentale, La","Beautiful","Golasy","Looking for Chencho","Monkey Love","Jian gui","Trop petit prince, Le","Touching Wild Horses","Luen oi hang sing","Paysage mexicain","Bollywood/Hollywood","Boxprinz, Der"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2002","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1332,6,173,15,52,31,12,8,7,46,27,91,683,8,1396,9,5,36,9,7,10,44],"y":[6.5999999999999996,5.2000000000000002,6.2999999999999998,8.0999999999999996,6,5.2999999999999998,3.3999999999999999,7.0999999999999996,8.6999999999999993,3.7000000000000002,5,6,4.7000000000000002,8.5,7.2999999999999998,9.5999999999999996,6,3.8999999999999999,7.9000000000000004,4.5999999999999996,7.7999999999999998,7.5999999999999996],"text":["Camp","Erste Nacht, Die","Rick","Foo-Foo Dust","Benjamim","Talking with Angels","Handbikemovie","Jimmy Neutron's Nicktoon Blast","Two Minutes After Midnight","Whatever We Do","Hoodlum & Son","Klasse von '99 - Schule war gestern, Leben ist jetzt, Die","Good Boy!","Tag der Befreiung, Der","Latter Days","Army of One","She Got Game","Horseplay","Carpenter and His Clumsy Wife, The","Martelo de Vulcano, O","Before the Bell Rang","Doggy Poo"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2003","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[10,773,33,215,16,6,350,7,5,11254,7,47,8,35,6,5,26,20,129,9],"y":[9.5,6.5,6.5999999999999996,7.9000000000000004,6.5,8.1999999999999993,8,6.5999999999999996,1.2,5.5,7.7000000000000002,5.0999999999999996,9.8000000000000007,3.6000000000000001,8.6999999999999993,8.5999999999999996,6.5999999999999996,7,7.7999999999999998,5.5999999999999996],"text":["Ister, The","Eulogy","Cartomante, A","Temporada de patos","Target of Opportunity","Rindu kami padamu","DiG!","Zwischen Tag und Nacht","Off Islanders","Alexander","Flip a Coin","Aetbaar","Out of Our Dens: The Richard and the Young Lions Story","Centipede!","Piedra sobre piedra","Chika's Bird","Lesbianas de Buenos Aires","Route 66: Ein amerikanischer Albtraum","In the Realms of the Unreal","Krooli"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2004","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[224,10],"y":[6.2999999999999998,9.0999999999999996],"text":["Valiant","90"],"hoverinfo":["text","text"],"type":"scatter","mode":"markers","name":"2005","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"line":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-6df0668afb265aade402" style="width:60%;height:432px;"></div>
+<script type="application/json" data-for="htmlwidget-6df0668afb265aade402">{"x":{"visdat":{"263d34b4baa1":["function () ","plotlyVisDat"]},"cur_data":"263d34b4baa1","attrs":{"263d34b4baa1":{"x":{},"y":{},"text":{},"hoverinfo":"text","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"votes"},"yaxis":{"domain":[0,1],"automargin":true,"title":"rating"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[26,7,12,16,513,6,22,13,6,17,69,5975,5,8,26,10,247,14,7,124,7],"y":[6.7000000000000002,2.7000000000000002,5,6.4000000000000004,6.2999999999999998,1.3999999999999999,6.2999999999999998,7.5999999999999996,7.2999999999999998,7.7000000000000002,6.9000000000000004,4.5999999999999996,6.2000000000000002,7.5999999999999996,4,6.7000000000000002,6.2000000000000002,6.5,7.5999999999999996,3.7000000000000002,3.7000000000000002],"text":["Monte Carlo","Alien Factor 2: The Alien Rampage","Trysting","Eonios fititis","Qianxi manbo","(Paris: XY)","Gasline","Nyarlathotep","Jurij","Cold Call","Salvajes","Jason X","Bruno","ShowChickens","Slammed","West 47th Street","Vacuuming Completely Nude in Paradise","Sally and Angela","Rupan sansei: Arukatorazu konnekushion","Spider's Web","Love Letters: A Romantic Trilogy"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2001","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[11,10,216,55,174,22,524,7,96,16,23279,7,12,79,10,286,21,34,35,885,1484,106,2955],"y":[7,5.7999999999999998,5.7000000000000002,7.2000000000000002,5.5,7,6.4000000000000004,6.5999999999999996,5.5,6.7000000000000002,7.2999999999999998,5.5,4.2000000000000002,7,7.7000000000000002,7.2999999999999998,9.0999999999999996,7.7999999999999998,5.7999999999999998,3.8999999999999999,4.9000000000000004,3.3999999999999999,6],"text":["Hwerow Hweg","Puddlejumper","Duct Tape Forever","Sibha kham doan sib ed","Crazy as Hell","Kiss and Run","Shuang tong","Mi-temps","Cravate club","Hirtenreise ins dritte Jahrtausend","About Schmidt","Project Redlight","Jak to sie robi z dziewczynami","Yomigaeri","Nazi, The","Bonaerense, El","Camp Pacific","Paradisco","Crime and Punishment","Juwanna Mann","Like Mike","Ma femme... s'appelle Maurice","Ken Park"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2002","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[22,19,42,5,34,9,805,8,5978,39,5,5,31,7,338,939,94,1174,41,80,187,5,5,29],"y":[1.8999999999999999,5,7.7000000000000002,7.4000000000000004,5.5999999999999996,6,7.2999999999999998,9.4000000000000004,5.5,7.0999999999999996,7.4000000000000004,8,5.7999999999999998,6.5999999999999996,7.4000000000000004,7.2999999999999998,6.2999999999999998,7.7999999999999998,4,5.0999999999999996,6.5999999999999996,9.4000000000000004,6,7.5999999999999996],"text":["Xuxa Abracadabra","Skrupellosen.com, Die","Samay: When Time Strikes","Little Kings","G-Sale","Bedwin Hacker","Batman: Dead End","Little Failures","Hunted, The","Gangaajal","Unbelievable Truth, The","Professional Courtesy","Gonderilmemis mektuplar","Zakka West","Raid","Wu jian dao 2","Regel nr. 1","Kontroll","Watermark","Superprodukcja","What Alice Found","Velvet and Rat Skins","Bus Stops Here, The","Chester Story, The"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2003","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[37,24,27,34,15,105,141,48,5,20,6,13,279,11,20,46,67,5],"y":[4.9000000000000004,6.2000000000000002,7.5999999999999996,7,3.7000000000000002,7.5,5,5.9000000000000004,8.8000000000000007,6.5999999999999996,9.3000000000000007,7.4000000000000004,7.7999999999999998,8,6.5999999999999996,6.0999999999999996,5.9000000000000004,8],"text":["Murder-Set-Pieces","Able Edwards","Iluzija","Soldiers Pay","Sanctuary","Roma","Charlie","Xanda","Spin Cycle, The","Hardwood","Timekeeper, The","Hochbetrieb","Mysterious Skin","Our Time Is Up","Frozen","Mango Kiss","Tu pa tam","Khwaab"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2004","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[50,43,24,35,18,17,295],"y":[6.7000000000000002,4.9000000000000004,4.5,7.7999999999999998,6.9000000000000004,9.3000000000000007,6.7000000000000002],"text":["Lucky: No Time for Love","Smile","Redeu-ai","Heads or Tails","Four-Eyed Monsters","500 Years Later","Pooh's Heffalump Movie"],"hoverinfo":["text","text","text","text","text","text","text"],"type":"scatter","mode":"markers","name":"2005","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"line":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -459,10 +462,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For these contour maps, we will use the <code>SpeedSki</code> dataset.</p>
 <p>Contour lines can be added to the plot using geom_density_2d() and contour lines work best when combined with other layers</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d</span>(<span class="at">bins=</span><span class="dv">5</span>) <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Scatter plot with contour line"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Scatter plot with contour line"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -479,12 +482,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For these scatterplot matrices, we use the <code>movies</code> dataset from the <code>ggplot2movies</code> package.</p>
 <p>As a default, the base R plot() function will create a scatterplot matrix when given multiple variables:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sample3 <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(movies,<span class="at">prop=</span><span class="fl">0.01</span>) <span class="co">#sample data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sample3 <span class="ot">&lt;-</span> <span class="fu">slice_sample</span>(movies,<span class="at">prop=</span><span class="fl">0.01</span>) <span class="co">#sample data</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>splomvar <span class="ot">&lt;-</span> sample3 <span class="sc">|&gt;</span> </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(length, budget, votes, rating, year)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(splomvar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(splomvar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -503,8 +506,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="11.2.1" class="anchored" data-anchor-id="basics-and-implications-1"><span class="header-section-number">11.2.1</span> Basics and implications</h3>
 <p>In the following example, we still use the <code>SpeedSki</code> data set.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -522,9 +525,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="11.2.2.1" class="anchored" data-anchor-id="change-number-of-bins-binwidth"><span class="header-section-number">11.2.2.1</span> Change number of bins / binwidth</h4>
 <p>By default, <code>geom_bin2d()</code> use 30 bins. Similar to a histogram, we can change the number of bins or binwidth.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>(<span class="at">binwidth =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Changing binwidth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Changing binwidth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -538,10 +541,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="combine-with-a-scatterplot" class="level4" data-number="11.2.2.2">
 <h4 data-number="11.2.2.2" class="anchored" data-anchor-id="combine-with-a-scatterplot"><span class="header-section-number">11.2.2.2</span> Combine with a scatterplot</h4>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>(<span class="at">binwidth =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>), <span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Combined with scatterplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Combined with scatterplot"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -555,10 +558,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="11.2.2.3" class="anchored" data-anchor-id="change-color-scale"><span class="header-section-number">11.2.2.3</span> Change color scale</h4>
 <p>You can change the continuous scale of color</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() <span class="sc">+</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Changing color scale"</span>) <span class="sc">+</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -572,9 +575,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="11.2.2.4" class="anchored" data-anchor-id="hex-heatmap"><span class="header-section-number">11.2.2.4</span> Hex heatmap</h4>
 <p>One alternative is a hex heatmap. You can create the graph using <code>geom_hex</code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hex</span>(<span class="at">binswidth =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Hex heatmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Hex heatmap"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -588,11 +591,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="11.2.2.5" class="anchored" data-anchor-id="alternative-approach-to-color"><span class="header-section-number">11.2.2.5</span> Alternative approach to color</h4>
 <p>If you look at all the previous examples, you might notice that lighter points correspond to more clustered points, which is somewhat counter-intuitive. The following example suggests an alternative approach in color scale.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SpeedSki, <span class="fu">aes</span>(Year, Speed)) <span class="sc">+</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hex</span>(<span class="at">bins=</span><span class="dv">12</span>) <span class="sc">+</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"grey"</span>, <span class="at">high =</span> <span class="st">"purple"</span>) <span class="sc">+</span>  </span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>(<span class="dv">18</span>) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Alternative approach to color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Alternative approach to color"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -659,13 +662,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
