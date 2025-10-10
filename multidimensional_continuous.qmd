@@ -79,19 +79,21 @@ df_a <- df |>
 
 Package `parcoords` can help us in creating interactive parallel coordinate plots. The following example is created using New York State crime data. 
 
-```{r,}
+```{r}
+#| fig-width: 10
+#| fig-height: 6
 df_a |> 
   select(-c("Year","Months Reported","Index Total","Violent Total","Property Total")) |>
   arrange(df_a) |>
   parcoords(rownames = FALSE,
+            reorderable = TRUE,
             brushMode = "1D-axes",
             color = list(colorBy = "Region",
                          colorScale = "scaleOrdinal",
                          colorScheme = "schemeCategory10"),
             alpha = 0.5,
-            withD3 = TRUE,
-            width = 770,
-            height = 600)
+            width = 800,
+            withD3 = TRUE)
 ```
 
 In the interactive graph, for each feature, you can create a square box to filter for observations. For example, you can look at a certain county, or you can filter for all counties that are in New York City (Region=NYC). Overall, the interactive plot is more flexible for analysis.

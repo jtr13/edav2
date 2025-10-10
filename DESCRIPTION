@@ -7,7 +7,6 @@ Imports:
     choroplethrMaps,
     d3r,
     dplyr,
-    emo,
     forcats,
     GDAdata,
     ggalluvial,

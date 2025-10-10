@@ -1,53 +1,117 @@
 # Faceting
 
-In this chapter, we will introduce facets, which are usually used to combine continuous and categorical data.
+In this chapter, we will introduce faceting, a technique that produces multiple plots in which the data is subsetted by a categorical feature.
 
-## Faceting on one variable
+## Faceting on one variable: `facet_wrap()`
 
-Facet partitions a plot into a matrix of panels. Each panel shows a different subset of the data. By default, ``facet_wrap`` gives consistent scales, which is easier for comparison between different panels.
-
-```{r,fig.width=4, fig.height=3}
-library(ggplot2)
-mycol = "#7192E3"  
-ggplot(iris, aes(Sepal.Length, Sepal.Width)) +  
-  geom_point(color = mycol) +  
-  facet_wrap(~Species) +  
-  theme_grey(18)
+```{r}
+#| echo: false
+library(tidyverse)
 ```
 
-Rather than faceting on factor level, we can have one panel for each numerical variable.
+```{r}
+#| fig-width: 5
+#| fig-height: 3
 
-```{r,fig.width=10, fig.height=6}
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +  
+  geom_point(color = "cornflowerblue") +  
+  facet_wrap(~Species)
+```
+
+To control the layout dimensions, you can choose the number of rows or columns (`nrow =` or `ncol =`).
+
+## Reordering facets
+
+Facets are ordered according to the factor level order of the faceted variable. See [the chapter on factors](factors.hmtl) for strategies on reordering factor levels. 
+
+```{r}
+library(MASS)
+painters |> 
+  rownames_to_column("Name") |> 
+  filter(School == "A") |> 
+  pivot_longer(Composition:Expression, names_to = "Skill",
+               values_to = "Score") |> 
+  ggplot(aes(x = Score, y = fct_reorder(Name, Score))) +
+  geom_point(color= "#786FB8") +
+  facet_wrap(~Skill, ncol = 1)
+  
+  
+  
+  
+
+```
+
+
+```{r}
+birds_plot <- birds |> 
+  group_by(phase_of_flt) |> 
+  summarize(count = n()) |> 
+  slice_max(order_by = count, n = 4)
+  
+ggplot(birds, aes(x = speed, y = after_stat(density))) + 
+  geom_histogram() +
+  facet_wrap(~phase_of_flt, nrow = 1)
+```
+
+
+## Faceting on two variables: `facet_grid()`
+
+With two variables, the rows represent the levels of one variable and the columns the other. These can be specified with the formula notation:
+`facet_wrap(`*row variable*` ~ `*column variable*`)`.
+
+```{r}
+library(scales)
+library(openintro)
+ggplot(cle_sac, aes(x = age, y = personal_income)) +
+  geom_point(size = 1, color = "cornflowerblue") +
+  facet_grid(sex ~ city) +
+  scale_y_continuous(labels = unit_format(unit = "K", scale = .001)) +
+  labs(x = "age (in years)", y = "personal income", 
+       caption = "Data: openintro::cle_sac") +
+  theme_bw(16)
+```
+
+## Faceting with categorical variables
+
+
+```{r}
+#| fig-width: 10
+#| fig-height: 6
+#| out-width: 90```
 library(pgmm) 
-library(dplyr)
-library(tidyr)
 data(wine)  
 tidywine <- wine |> 
-  pivot_longer(cols = -Type, names_to = "variable", values_to = "value")  
-tidywine |>  
-  ggplot(aes(value)) +  
-  geom_histogram() +  
-  facet_wrap(~variable) +   
-  ggtitle("Consistent scales") +  
+  pivot_longer(cols = -Type, names_to = "variable",
+               values_to = "value")  
+tidywine |>
+  ggplot(aes(value)) +
+  geom_histogram(color = "blue", fill = "cornflowerblue",
+                 bins = 20) +
+  facet_wrap(~variable) +
+  labs(title = "Fixed scales (default)") +
   theme_grey(14)
 ```
 
-Axis scales can be made independent, by setting scales to ``free``, ``free_x``, or ``free_y``. 
+Axis scales can be made independent, by setting scales to `free`, `free_x`, or `free_y`. 
 
-In this case, ``scales = "free_x"`` is a better option because the distribution of each numerical variable is more obvious.
+In this case, `scales = "free_x"` is a better option because the distribution of each numerical variable is more obvious.
 
-```{r,fig.width=10, fig.height=6}
-tidywine  |>
+```{r}
+#| fig-width: 10
+#| fig-height: 6
+#| out-width: 90```
+tidywine |>
   ggplot(aes(value)) +
-  geom_histogram() +
-  facet_wrap(~variable,scales = "free_x") +
-  ggtitle("Consistent scales") +
+  geom_histogram(color = "blue", fill = "cornflowerblue",
+                 bins = 20) +
+  facet_wrap(~variable, scales = "free_x") +
+  labs(title = "Free x scale") +
   theme_grey(14)
 ```
 
 ##  Faceting on two variables
 
-``facet_grid`` can be used to split data-sets on two variables and plot them on the horizontal and/or vertical direction.
+`facet_grid` can be used to split data-sets on two variables and plot them on the horizontal and/or vertical direction.
 
 ```{r,fig.width=10, fig.height=6}
 wine |>   

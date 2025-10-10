@@ -118,7 +118,7 @@ For more shortcuts, refer [here](https://support.rstudio.com/hc/en-us/articles/2
 
 ### Viewing plots in plot window
 
-Would you like your plots to appear in the plot window instead of below each chunk in the `.qmd` file? Click `r emo::ji("gear")` and then  <i class="fas fa-check"></i> **Chunk Output in Console**.
+Would you like your plots to appear in the plot window instead of below each chunk in the `.qmd` file? Click ⚙️ and then **Chunk Output in Console**.
 
 ### Adding figures and links
 

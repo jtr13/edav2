@@ -48,7 +48,7 @@ format:
 knitr:
   opts_chunk: 
     fig.align: center
-    out.width: 60%
+    out.width: 70%
     
     
 execute:
