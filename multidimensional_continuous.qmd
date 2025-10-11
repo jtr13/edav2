@@ -80,10 +80,9 @@ df_a <- df |>
 Package `parcoords` can help us in creating interactive parallel coordinate plots. The following example is created using New York State crime data. 
 
 ```{r}
-#| fig-width: 10
-#| fig-height: 6
-df_a |> 
-  select(-c("Year","Months Reported","Index Total","Violent Total","Property Total")) |>
+widget <- df_a |> 
+  select(-c("Year", "Months Reported", "Index Total", "Violent Total", 
+            "Property Total")) |>
   arrange(df_a) |>
   parcoords(rownames = FALSE,
             reorderable = TRUE,
@@ -92,9 +91,23 @@ df_a |>
                          colorScale = "scaleOrdinal",
                          colorScheme = "schemeCategory10"),
             alpha = 0.5,
-            width = 800,
+            width = 625, # for regular .html (not book format)
+            height = 650, # use fig-width and fig-height instead
             withD3 = TRUE)
+
+htmlwidgets::saveWidget(widget, "resources/pcp_widget.html",
+                        selfcontained = TRUE)
+
+# graph included through <iframe> in Quarto book so all interactive features
+#  would work; not necessary for regular .html output / reveal js
 ```
+
+
+<div style="margin: 0; padding: 0;">
+  <iframe src="resources/pcp_widget.html" width="100%" height="750px"
+        style="border: none; display: block; margin: 0 auto; padding: 0;">
+  </iframe>
+</div>
 
 In the interactive graph, for each feature, you can create a square box to filter for observations. For example, you can look at a certain county, or you can filter for all counties that are in New York City (Region=NYC). Overall, the interactive plot is more flexible for analysis.
 
