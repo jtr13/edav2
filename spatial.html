@@ -384,7 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">legend =</span> <span class="st">"Population"</span>,</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">county_zoom =</span> ny_county_fips<span class="sc">$</span>region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error: object 'df_pop_county' not found</code></pre>
+<pre><code>Error:
+! object 'df_pop_county' not found</code></pre>
 </div>
 </div>
 <p>We use <code>county_choropleth</code> to create a U.S map at county level and zoom into New York state. Note that <code>county_zoom</code> takes in fips codes of counties. For more reference, visit the <a href="https://www.rdocumentation.org/packages/choroplethr/versions/3.7.0">R documentation page</a>.</p>
